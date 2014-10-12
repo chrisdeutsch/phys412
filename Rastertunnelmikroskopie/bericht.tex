@@ -1,0 +1,87 @@
+% PAKETE UND DOKUMENTKONFIGURATION
+\documentclass[10pt, a4paper]{article}
+
+% Encoding für Umlaute
+\usepackage[utf8]{inputenc}
+
+% Silbentrennung
+\usepackage[ngerman]{babel}
+
+% erweiterte Matheumgebungen
+\usepackage{amsmath}
+
+%
+\usepackage{amsfonts}
+
+%
+\usepackage{amssymb}
+
+% Einheiten setzen z.B. \SI{10}{\kilo\gram\meter\per\second\squared}
+\usepackage{siunitx}
+
+% Randbreiten
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+
+% Bilder einfügen
+\usepackage{graphicx}
+
+% Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
+% 3 subsubsections)
+\setcounter{tocdepth}{2}
+
+% DOKUMENTINFORMATIONEN
+\title{P422 \\ Rastertunnelmikroskopie}
+
+\author{Christopher Deutsch \and Christian Bespin}
+
+\date{\today}
+
+\begin{document}
+  
+\maketitle
+
+% DURCHFÜHRUNGSDATUM UND ASSISTENT
+\begin{center}
+\begin{tabular}{l r}
+Durchführung: & 20./21. Oktober 2014 \\
+Gruppe: & 2 $\alpha$ \\
+Assistent: & Peter Klassen
+\end{tabular}
+\end{center}
+
+% ZUSAMMENFASSUNG
+\begin{abstract}
+% Text
+\end{abstract}
+
+% INHALTSVERZEICHNIS
+\tableofcontents
+% Neue Seite nach TOC
+\newpage
+
+% INHALT VERSUCHSPROTOKOLL
+\section{Grundlagen / Theorie}
+
+\section{Versuchsdurchführung}
+
+\section{Messdaten}
+
+\section{Auswertung}
+
+\section{Diskussion}
+
+\section{Zusammenfassung}
+
+% BIBLIOGRAPHIE
+
+% Maximale Anzahl der Einträge in Klammer
+% Zitieren mit \cite{lamport94}
+\begin{thebibliography}{9}
+
+% Beispiel
+\bibitem{binning}
+  G. Binning et al., Phys. Rev. Lett. 49, 57 (1982),
+  \emph{Surface Studies by Scanning Tunneling Microscopy}.
+\end{thebibliography}
+
+\end{document}

@@ -1,4 +1,4 @@
-% PACKAGES AND DOCUMENT CONFIGURATIONS
+% PAKETE UND DOKUMENTKONFIGURATION
 \documentclass[10pt, a4paper]{article}
 
 % Encoding für Umlaute
@@ -19,14 +19,17 @@
 % Einheiten setzen z.B. \SI{10}{\kilo\gram\meter\per\second\squared}
 \usepackage{siunitx}
 
+% Randbreiten
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
 
 % Bilder einfügen
 \usepackage{graphicx}
 
+% Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
+% 3 subsubsections)
+\setcounter{tocdepth}{2}
 
-% DOCUMENT INFORMATION
-
+% DOKUMENTINFORMATIONEN
 \title{P401 \\ Elektronische Übergänge in Atomen}
 
 \author{Christopher Deutsch \and Christian Bespin}
@@ -37,20 +40,26 @@
   
 \maketitle
 
+% DURCHFÜHRUNGSDATUM UND ASSISTENT
 \begin{center}
 \begin{tabular}{l r}
-Durchführungsdatum: & 20. Oktober 2014 \\
-Gruppe: & $\alpha$ 2 \\
+Durchführung: & 20./21. Oktober 2014 \\
+Gruppe: & 2 $\alpha$ \\
 Assistent: & Hans Wurst
 \end{tabular}
 \end{center}
 
-% ABSTRACT
-
+% ZUSAMMENFASSUNG
 \begin{abstract}
-% Abstract text
+% Text
 \end{abstract}
 
+% INHALTSVERZEICHNIS
+\tableofcontents
+% Neue Seite nach TOC
+\newpage
+
+% INHALT VERSUCHSPROTOKOLL
 \section{Grundlagen / Theorie}
 
 \section{Versuchsdurchführung}
@@ -63,7 +72,19 @@ Assistent: & Hans Wurst
 
 \section{Zusammenfassung}
 
-% BIBLIOGRAPHY
+% BIBLIOGRAPHIE
 
+% Maximale Anzahl der Einträge in Klammer
+% Zitieren mit \cite{lamport94}
+\begin{thebibliography}{9}
+
+% Beispiel
+\bibitem{lamport94}
+  Leslie Lamport,
+  \emph{\LaTeX: a document preparation system}.
+  Addison Wesley, Massachusetts,
+  2nd edition,
+  1994.
+\end{thebibliography}
 
 \end{document}

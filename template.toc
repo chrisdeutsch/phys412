@@ -1,0 +1,10 @@
+\select@language {ngerman}
+\contentsline {section}{\numberline {1}Grundlagen / Theorie}{2}
+\contentsline {section}{\numberline {2}Versuchsdurchf\IeC {\"u}hrung}{2}
+\contentsline {subsection}{\numberline {2.1}Versuchsbeschreibung}{2}
+\contentsline {subsection}{\numberline {2.2}Aufbau}{2}
+\contentsline {subsubsection}{\numberline {2.2.1}Hinweis zu einem der Ger\IeC {\"a}te oder whatever}{2}
+\contentsline {section}{\numberline {3}Messdaten}{2}
+\contentsline {section}{\numberline {4}Auswertung}{2}
+\contentsline {section}{\numberline {5}Diskussion}{2}
+\contentsline {section}{\numberline {6}Zusammenfassung}{2}

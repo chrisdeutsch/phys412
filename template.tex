@@ -17,7 +17,12 @@
 \usepackage{amssymb}
 
 % Einheiten setzen z.B. \SI{10}{\kilo\gram\meter\per\second\squared}
-\usepackage[output-decimal-marker={,}]{siunitx}
+% Fehler: \SI{10 +- 0,2e-4}{\metre}
+\usepackage{siunitx}
+\sisetup{
+  output-decimal-marker={,},
+  separate-uncertainty
+}
 
 % Randbreiten
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}

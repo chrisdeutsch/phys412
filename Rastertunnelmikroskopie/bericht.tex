@@ -25,7 +25,7 @@
 }
 
 % Randbreiten
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[left=3cm,right=4cm,top=3cm,bottom=3cm,twoside]{geometry}
 
 % Bilder einfügen
 \usepackage{graphicx}
@@ -68,10 +68,23 @@ Assistent: & Peter Klassen
 \section{Grundlagen}
 
 \subsection{Tunneleffekt und Tunnelstrom}
+Der Tunneleffekt ist ein quantenmechanisches Phänomen, welches einem einlaufenden Teilchen der Energie $E$ erlaubt, eine klassisch unüberwindbare Potentialschwelle der Höhe $V_0 > E$ mit endlicher Wahrscheinlichkeit zu durchqueren.
+Im Gegensatz zum klassischen Fall, bei dem das Teilchen am Potentialwall reflektiert wird, nimmt bei der quantenmechanischen Beschreibung das Betragsquadrat der Wellenfunktion $|\Psi|^2$ und damit die Aufenthaltswahrscheinlichkeitdichte des Teilchens, exponentiell mit der Eindringtiefe $d$ ab.
+
+Dieser Effekt wird beim Rastertunnelmikroskop (RTM) ausgenutzt, indem eine Spannung zwischen dem zu untersuchenden (leitenden) Objekt und der Spitze des RTM angelegt wird. Dadurch können Elektronen aus der Probe in die Spitze tunneln (oder umgekehrt), was zu einem Stromfluss $I_T$ führt.
+Dieser Tunnelstrom ist gegeben durch \cite{binning}:
+\begin{equation}
+  I_T \propto \exp(-\alpha d)
+\end{equation}
+also abhängig vom Abstand Spitze-Probe $d$, sowie von deren elektronischen Eigenschaften.
 
 \subsection{Funktionsweise des Rastertunnelmikroskops}
 \subsubsection{Aufbau}
 \subsubsection{Piezoeffekt}
+In Elementarzellen mit nicht-inversionssymmetrischer Ladungsverteilung kann, beim Anlegen eines externen elektrischen Feldes, ein elektrisches Dipolmoment induziert werden.
+Diese Polarisation führt zu einer Längenkontraktion/-ausdehnung der Elementarzelle aufgrund der Asymmetrie der Ladungsverteilung.
+Dieser Effekt wird makroskopisch als Längenänderung eines piezoelektrischen Zylinders bei angelegter Spannung sichtbar.
+
 \subsubsection{Betriebsmodi}
 \subsubsection{Regelkreis}
 \subsubsection{Auflösungsvermögen}

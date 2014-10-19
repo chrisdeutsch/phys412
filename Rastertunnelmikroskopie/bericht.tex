@@ -30,9 +30,6 @@
 % Bilder einfügen
 \usepackage{graphicx}
 
-% Textumflossene Grafiken
-\usepackage{wrapfig}
-
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
 \setcounter{tocdepth}{2}
@@ -84,12 +81,12 @@ also abhängig vom Abstand Spitze-Probe $s$, sowie von deren elektronischen Eige
 
 \subsection{Funktionsweise des Rastertunnelmikroskops}
 \subsubsection{Aufbau}
-\begin{wrapfigure}[14]{R}[0pt]{0.4\textwidth}
+\begin{figure}[h]
 \centering
-\includegraphics[width=0.4\textwidth]{./grafiken/rtm_aufbau.pdf}
-\caption{schematischer Aufbau eines RTM}
+\includegraphics[width=0.5\textwidth]{./grafiken/rtm_aufbau.pdf}
+\caption{schematischer Aufbau eines RTM mit Piezoelementen}
 \label{fig:aufbau}
-\end{wrapfigure}
+\end{figure}
 Abbildung \ref{fig:aufbau} zeigt den schematischen Aufbau eines Rastertunnelmikroskops.
 Dabei wird der Tunnelstrom $I_T$ gemessen und je nach Betriebsmodus (s.u.)  ausgewertet.
 Die Piezoelemente dienen der Bewegung der Spitze in alle drei Raumrichtungen, wobei sie entweder automatisch gesteuert werden können (s. konstanter Tunnelstrom unter \ref{sec:betriebsmodi}) oder direkt gesteuert werden können zur manuellen Ausrichtung der Spitze.
@@ -109,11 +106,11 @@ einmal wird der Tunnelstrom konstant gehalten, während im anderen Fall die Höh
 Im Fall des konstanten Tunnelstroms folgt die Spitze dem Profil der Probe.
 Dies wird erreicht, indem der Tunnelstrom gemessen wird und durch eine Rückkopplungsschleife die Spitze so positioniert wird, dass der Tunnelstrom einen konstanten, vorgegebenen Wert annimmt.
 Dafür sind die Piezoelemente notwendig, deren angelegte Spannung durch einen Regelkreis gesteuert wird.
-Dessen Reaktionszeit sorgt dafür, dass das Verfahren im Vergleich zum Betriebsmodus mit konstanter Höhe deutlich langsamer ist, jedoch wird hier die Gefahr eines \textit{Crashs} (s.u) unterbunden.
+Dessen Reaktionszeit sorgt dafür, dass das Verfahren im Vergleich zum Betriebsmodus mit konstanter Höhe deutlich langsamer ist, jedoch wird hier die Gefahr eines Zusammenstoßes von Spitze und Probe  unterbunden.
 
 Im zweiten Fall wird die Spitze mit einer festgelegten und konstanten Höhe über die Probe bewegt und der Tunnelstrom gemessen.
 Da seine Abhängigkeit von der elektronischen Struktur der Probe bekannt ist, lässt sich so ein Bild der Probe erstellen.
-Da außer der Bewegung der Spitze in einer Ebene keine weiteren Regelungen notwendig sind, ist dieses Verfahren geeignet, um in kurzer Zeit Bilder der Probe zu erhalten, allerdings besteht dabei die Gefahr eines s.g. \textit{Crashs}, bei dem die Spitze in die Probe fährt und dadurch zerstört wird.
+Da außer der Bewegung der Spitze in einer Ebene keine weiteren Regelungen notwendig sind, ist dieses Verfahren geeignet, um in kurzer Zeit Bilder der Probe zu erhalten, allerdings besteht dabei die Gefahr einer Kollision, bei dem die Spitze in die Probe fährt und dadurch zerstört wird.
 Dieser Betriebsmodus ist also für flache Strukturen der Probe mit einer durchschnittlichen Höhe kleiner als der Abstand Probe-Spitze geeignet \cite{colton}.
 Da es praktisch kaum möglich ist, vertikale Verschiebungen auszuschließen und die Probe nicht immer parallel zur horizontalen Bewegung der Spitze ausgerichtet ist, wird auch hier eine Rückkopplungsschleife, wie oben erklärt, verwendet, allerdings mit einer geringen Empfindlichkeit. Dadurch ist sichergestellt, dass die Spitze nicht auf schnelle Änderungen des Tunnelstroms reagiert, aber langfristig eine vorgegebene Höhe über der Probe (auch wenn diese gegen die horizontale Bewegungsebene der Spitze geneigt ist) erreicht wird.
  
@@ -139,7 +136,7 @@ Ein Wolframdraht wird in einer Kalilauge (KOH 2 M (2 \si{\mol\per\litre})) einge
 \subsection{Kristallstruktur von Graphit}
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.7\textwidth]{grafiken/graphit.pdf}
+  \includegraphics[width=0.6\textwidth]{grafiken/graphit.pdf}
   \caption{Versatz der Graphen-Ebenen in Graphit. Kohlenstoffatome in rot überlappen in den beiden obersten Ebenen}
 \end{figure}
 Graphit besteht aus geschichteten Ebenen von Kohlenstoff, welcher eine hexagonale Ringstruktur aufweist. 

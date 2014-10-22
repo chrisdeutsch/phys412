@@ -75,9 +75,11 @@ Dieser Effekt wird beim Rastertunnelmikroskop (RTM) ausgenutzt, indem eine Spann
 Der Tunnelstrom für eine Potentialschwelle der mittleren Höhe $\Phi$ (für kleine Vorspannungen $U$ ist dies gegeben durch die Austrittsarbeit der Probe \cite{colton}) ist gegeben durch \cite{binning}:
 \begin{equation}
   I_T \propto \exp(-\alpha \cdot \sqrt{\Phi} \cdot s) \quad \text{mit}\: \alpha = \SI{1,025}{\angstrom^{-1}\electronvolt^{-1/2}}
+  \label{eq:tunnelstrom}
 \end{equation}
 also abhängig vom Abstand Spitze-Probe $s$, sowie von deren elektronischen Eigenschaften.
-(Starke Abhängigkeit von $s$ und damit nur Einfluss des letzten Atoms der Spitze erläutern).
+An Gleichung \ref{eq:tunnelstrom} erkennt man bereits die hohe Sensitivität auf Abstandsänderungen in der Größenordnung von einem \si{\angstrom}.
+Aus diesem Grund ist das letzte Atom auf der Spitze maßgeblich für den gemessenen Tunnelstrom.
 
 \subsection{Funktionsweise des Rastertunnelmikroskops}
 \subsubsection{Aufbau}
@@ -126,6 +128,8 @@ Dafür wird dieser kontinuierlich gemessen und entsprechend seines aktuellen Wer
 Da $I_T$ exponentiell von der Höhe abhängt (und weiteren Faktoren), wird der Tunnelstrom zunächst logarithmiert, um ein direkt von der Höhe $s$ der Spitze über der Probe proportionales Signal zu erhalten.
 
 \subsubsection{Auflösungsvermögen}
+Laterale Auflösung abhängig von Krümmungsradius der Spitze: typisch \SI{1}{\angstrom}
+Tiefenauflösung typisch \SI{0,1}{\angstrom}
 
 \subsection{Spitzenherstellung}
 Um ein möglichst hohes Auflösungsvermögen zu erreichen, ist eine dünne Spitze (idealerweise ein einzelnes Atom) nötig. (Ätzen steht in \cite{colton})
@@ -135,16 +139,25 @@ Im Folgenden werden die im Versuch verwendeten Spitzenherstellungsmethoden disku
 Die Spitze eines Platin-Iridium Drahtes wird mit einem flach angesetzten Seitenschneider abgerissen. (Oxidiert nicht)
 
 \subsubsection{Ätzen von Wolfram Spitzen}
-An Luft bildet Wolfram schnell eine nichtleitende Oxidschicht, die die Spitzenqualität negativ beeinflusst.
-Ein Wolframdraht wird in einer Kalilauge (KOH 2 M (2 \si{\mol\per\litre})) eingetaucht. Im Elektrolyt befindet sich um diesen eine ringförmige Elektrode, welche die Ätzwirkung auf einen kleinen Bereich des Drahtes einschränkt.
+Beim Ätzen von Wolfram Spitzen gilt es zu beachten, dass diese an Luft schnell eine nichtleitende Oxidschicht bilden.
+Daher wird zunächst mit feinem Schleifpapier die Oxidschicht von dem Draht abgetragen und dieser anschließend gereinigt.
+Der Draht wird nun in der Ätzvorrichtung (Abbildung!!!) einige Millimeter in Kalilauge (Kaliumhydroxid mit Konzentration \SI{2}{\mol\per\cubic\deci\metre}) getaucht.
+Knapp unterhalb der Kalilaugenoberfläche befindet sich eine Ringelektrode um die Ätzwirkung zu lokalisieren.
+Zwischen Wolframdraht (Anode) und Ringelektrode wird eine Spannung von \SI{10}{\volt} angelegt, sodass sich Wolframionen aus dem Draht nahe der Wolframdraht--Kalilauge--Luft-Grenzschicht lösen können und zur Elektrode wandern.
+Nun wird der Stromfluss beobachtet um den Moment abzupassen, an dem der Draht am Meniskus bricht.
+Dies wird durch den schnellen Abfall des fließenden Stroms angekündigt, da der Querschnitt des Drahtes nun sehr klein ist.
 
 \subsection{Kristallstruktur von Graphit}
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{grafiken/graphit.pdf}
-  \caption{Versatz der Graphen-Ebenen in Graphit. Kohlenstoffatome in rot überlappen in den beiden obersten Ebenen}
+  \caption{Schematische Darstellung der obersten zwei Ebenen eines Graphit-Kristalls. Die Kohlenstoffatome die in der oberen Ebene (fett) und der Unteren (gestrichelt) überlappen sind in rot markiert.}
+  \label{fig:graphit}
 \end{figure}
-Graphit besteht aus geschichteten Ebenen von Kohlenstoff, welcher eine hexagonale Ringstruktur aufweist. 
+Graphit besteht aus planen Kohlenstoffebenen mit einer regelmäßigen hexagonalen Struktur.
+Der Abstand der Kohlenstoffatome in einer solchen Ebene ist \SI{1,42}{\angstrom} \cite{colton}.
+Diese Ebenen liegen unter einem Versatz übereinander, der das Zentrum eines Hexagons mit einem Kohlenstoffatom in der darunterliegenden Ebene zusammenfallen lässt (vgl. Abbildung \ref{fig:graphit}).
+Aufgrund des Einflusses der überlappenden Kohlenstoffatome (in der Zeichnung rot) auf die elektronische Struktur an der Oberfläche, sind nur die nicht-überlappenden Atome bei der Bildgebung maßgeblich. Aus diesem Grund ist der Abstand der bei der Rastertunnelmikroskopie sichtbaren Kohlenstoffatome \SI{2,46}{\angstrom} ($=2 \cdot \SI{1,42}{\angstrom} \cdot \sin(60\si{\degree})$)
 
 \subsection{Verwandte Rastermethoden}
 \begin{itemize}
@@ -157,6 +170,8 @@ Graphit besteht aus geschichteten Ebenen von Kohlenstoff, welcher eine hexagonal
   \item[--] konstante Höhe: Die Höheneinstellung bleibt unverändert und das Profil des Objektes ist gegeben durch die Auslenkung der Feder.
   \end{itemize}
   Es gibt noch weitere Betriebsmodi auf die hier nicht weiter eingegangen wird.
+  \item \textbf{Rasterelektronenmikroskopie:} Ein gebündelter Elektronenstrahl wird über ein Objekt gerastert.
+  Die dabei entstehenden gestreuten Elektronen, Sekundärelektronen, Bremsstrahlung etc. können über Detektoren eine Abbildung des Objekt reproduzieren.
 \end{itemize}
 
 \section{Versuchsdurchführung}

@@ -30,6 +30,13 @@
 % Bilder einfügen
 \usepackage{graphicx}
 
+%Verwise innerhalb des Dokuments
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,
+	allcolors = {black}
+}
+
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
 \setcounter{tocdepth}{2}
@@ -49,7 +56,7 @@
 \begin{center}
 \begin{tabular}{l r}
 Durchführung: & 20./21. Oktober 2014 \\
-Gruppe: & 2 $\alpha$ \\
+Gruppe: &$\alpha$ 2 \\
 Assistent: & Peter Klassen
 \end{tabular}
 \end{center}
@@ -122,7 +129,27 @@ Da es praktisch kaum möglich ist, vertikale Verschiebungen auszuschließen und 
 \end{itemize}
 
 \subsubsection{Regelkreis}
+
+Wie oben angesprochen, dient der Regelkreis dazu, den Tunnelstrom konstant zu halten.
+Dafür wird dieser kontinuierlich gemessen und entsprechend seines aktuellen Wertes wird das Piezoelement zur Höhensteuerung der Spitze mit einer Spannung versorgt, damit der Tunnelstrom einen vorgegebenen Wert annimmt.
+Da $I_T$ exponentiell von der Höhe abhängt (und weiteren Faktoren), wird der Tunnelstrom zunächst logarithmiert, um ein direkt von der Höhe $s$ der Spitze über der Probe proportionales Signal zu erhalten.
+Daraus kann dann die Höhe ermittelt werden und der Tunnelstrom über eine Rückkopplung auf einen vorgegebenen Wert eingestellt werden. 
+Dies geschieht durch eine entsprechende Spannung an den Piezoelementen, die die Höhe der Spitze über der Probe kontrollieren.
+
+Es gibt verschiedene Reglertypen, deren Unterscheidung grundsätzlich nach ihrer Art, zu schalten, erfolgt.
+So genannte P-Regler liefern beispielsweise ein zur Eingangsgröße proportionales Signal mit einer festen Verstärkung und schalten sprunghaft.
+In der Praxis werden solche Regler meist um eine integrierende und/oder differenzierende Funktion erweitert. Entsprechend spricht man dann beispielsweise von PI- oder PID-Reglern.
+Der integrierende Teil sorgt für eine zeitabhängige Schaltung, so dass auch die Eingangsgröße eine gewisse Zeit in der Vergangenheit überwacht wird und daraufhin ein entsprechendes Schaltverhalten eintritt, welches dann auch nicht sprunghaft, sondern linear abläuft.
+Der differenzierende Teil hingegen reagiert nicht auf den Wert des Eingangssignals sondern auf seine Änderungsgeschwindigkeit.
+Auf einen linearen Anstieg am Eingang folgt dann beispielsweise ein konstantes Signal am Ausgang des D-Reglers.
+
+\begin{itemize}
+\item Quelle wär ganz geil
+\end{itemize}
+
 \subsubsection{Auflösungsvermögen}
+Laterale Auflösung abhängig von Krümmungsradius der Spitze: typisch \SI{1}{\angstrom}
+Tiefenauflösung typisch \SI{0,1}{\angstrom}
 
 \subsection{Spitzenherstellung}
 Um ein möglichst hohes Auflösungsvermögen zu erreichen, ist eine dünne Spitze (idealerweise ein einzelnes Atom) nötig. (Ätzen steht in \cite{colton})
@@ -132,8 +159,13 @@ Im Folgenden werden die im Versuch verwendeten Spitzenherstellungsmethoden disku
 Die Spitze eines Platin-Iridium Drahtes wird mit einem flach angesetzten Seitenschneider abgerissen. (Oxidiert nicht)
 
 \subsubsection{Ätzen von Wolfram Spitzen}
-An Luft bildet Wolfram schnell eine nichtleitende Oxidschicht, die die Spitzenqualität negativ beeinflusst.
-Ein Wolframdraht wird in einer Kalilauge (KOH 2 M (2 \si{\mol\per\litre})) eingetaucht. Im Elektrolyt befindet sich um diesen eine ringförmige Elektrode, welche die Ätzwirkung auf einen kleinen Bereich des Drahtes einschränkt.
+Beim Ätzen von Wolfram Spitzen gilt es zu beachten, dass diese an Luft schnell eine nichtleitende Oxidschicht bilden.
+Daher wird zunächst mit feinem Schleifpapier die Oxidschicht von dem Draht abgetragen und dieser anschließend gereinigt.
+Der Draht wird nun in der Ätzvorrichtung (Abbildung!!!) einige Millimeter in Kalilauge (Kaliumhydroxid mit Konzentration \SI{2}{\mol\per\cubic\deci\metre}) getaucht.
+Knapp unterhalb der Kalilaugenoberfläche befindet sich eine Ringelektrode um die Ätzwirkung zu lokalisieren.
+Zwischen Wolframdraht (Anode) und Ringelektrode wird eine Spannung von \SI{10}{\volt} angelegt, sodass sich Wolframionen aus dem Draht nahe der Wolframdraht--Kalilauge--Luft-Grenzschicht lösen können und zur Elektrode wandern.
+Nun wird der Stromfluss beobachtet um den Moment abzupassen, an dem der Draht am Meniskus bricht.
+Dies wird durch den schnellen Abfall des fließenden Stroms angekündigt, da der Querschnitt des Drahtes nun sehr klein ist.
 
 \subsection{Kristallstruktur von Graphit}
 \begin{figure}[h]
@@ -163,6 +195,24 @@ Aufgrund des Einflusses der überlappenden Kohlenstoffatome (in der Zeichnung ro
 \end{itemize}
 
 \section{Versuchsdurchführung}
+
+\subsection{Herstellung der Spitzen}
+
+\subsubsection{Reißen der Platin-Iridium Spitzen}
+
+Zur Herstellung der Pl-Ir Spitzen wird ein möglichst kurzes Stück Draht (da sehr teuer) zunächst mit Ethanol gereinigt und mit einer Zange festgehalten, so dass das andere Ende mit einem Seitenschneider im spitzen Winkel gepackt werden kann.
+Dabei ist darauf zu achten, dass man mit dem Seitenschneider nicht schneidet, sondern den Draht nur festhält.
+Nun wird ruckartig und longitudinal Druck ausgeübt, so dass der Draht abreißt. Idealerweise ist dann schon eine geeignete Spitze entstanden, die direkt in das RTM eingesetzt werden kann.
+
+\subsubsection{Ätzen der Wolfram Spitzen}
+
+Bei den Wolfram Spitzen muss grundsätzlich bedacht werden, dass Wolfram an Luft schnell oxidiert. 
+Darum ist vor dem Ätzvorgang die Oxidschicht mit Schleifpapier zu entfernen und  der Draht mit Ethanol zu reinigen.
+Nach dem Ätzen (das genaue Verfahren ist im Theorieteil beschrieben) ist die Spitze erneut zu reinigen und zügig zu arbeiten, um einer Oxidation der Spitze vorzubeugen.
+
+\subsection{Handhabung von Probe und Spitze}
+
+
 
 \section{Messdaten}
 

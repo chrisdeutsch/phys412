@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.5">
-<info created="D:20141019100605" modified="D:20141019103224"/>
+<info created="D:20141019100605" modified="D:20141023220322"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -243,7 +243,7 @@ h
 192 640 l
 </path>
 <text matrix="1 0 0 1 -4 12" transformations="translations" pos="288 656" stroke="black" type="label" width="25.903" height="6.918" depth="0" valign="baseline">Probe</text>
-<text transformations="translations" pos="256 704" stroke="black" type="label" width="26.567" height="6.815" depth="1.93" valign="baseline">Spitze</text>
+<text transformations="translations" pos="256 704" stroke="black" type="label" width="26.567" height="6.815" depth="1.93" valign="center">Spitze</text>
 <path stroke="black">
 224 720 m
 256 720 l
@@ -435,6 +435,6 @@ h
 172 704 l
 176 708 l
 </path>
-<text matrix="1 0 0 1 4 -4" transformations="translations" pos="180 732" stroke="black" type="label" width="10.656" height="6.812" depth="1.49" valign="baseline">$I_{T}$</text>
+<text matrix="1 0 0 1 4 -4" transformations="translations" pos="180 732" stroke="black" type="label" width="10.565" height="6.812" depth="1.49" halign="center" valign="baseline">$I_\mathrm{T}$</text>
 </page>
 </ipe>

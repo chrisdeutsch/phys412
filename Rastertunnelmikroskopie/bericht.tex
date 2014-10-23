@@ -76,36 +76,46 @@ Assistent: & Peter Klassen
 
 \subsection{Tunneleffekt und Tunnelstrom}
 Der Tunneleffekt ist ein quantenmechanisches Phänomen, welches einem einlaufenden Teilchen der Energie $E$ erlaubt, eine klassisch unüberwindbare Potentialschwelle der Höhe $V_0 > E$ mit endlicher Wahrscheinlichkeit zu durchqueren.
-Im Gegensatz zum klassischen Fall, bei dem das Teilchen am Potentialwall reflektiert wird, nimmt bei der quantenmechanischen Beschreibung das Betragsquadrat der Wellenfunktion $|\Psi|^2$ und damit die Aufenthaltswahrscheinlichkeitdichte des Teilchens, exponentiell mit der Eindringtiefe $s$ ab.
+Im Gegensatz zum klassischen Fall, bei dem das Teilchen am Potentialwall reflektiert wird, nimmt bei der quantenmechanischen Beschreibung das Betragsquadrat der Wellenfunktion $|\Psi|^2$ und damit die Aufenthaltswahrscheinlichkeitdichte des Teilchens, exponentiell mit der Eindringtiefe $s$ in den Wall ab.
 
-Dieser Effekt wird beim Rastertunnelmikroskop (RTM) ausgenutzt, indem eine Spannung zwischen dem zu untersuchenden, leitenden Objekt und der ebenfalls leitenden Spitze des RTM angelegt wird. Dadurch können Elektronen aus der Probe in die Spitze tunneln (oder umgekehrt), was zu einem Stromfluss $I_T$ führt.
-Der Tunnelstrom für eine Potentialschwelle der mittleren Höhe $\Phi$ (für kleine Vorspannungen $U$ ist dies gegeben durch die Austrittsarbeit der Probe \cite{colton}) ist gegeben durch \cite{binning}:
+Dieser Effekt wird beim Rastertunnelmikroskop (RTM) ausgenutzt, indem eine Spannung $U$ zwischen dem zu untersuchenden, leitenden Objekt und der ebenfalls leitenden Spitze des RTM angelegt wird.
+Wenn nun die Spitze nah genug an die Probe gebracht wird, können die Elektronen durch die Potentialbarriere zwischen Spitze und Probe tunneln, was zu einem messbaren Tunnelstrom $I_\mathrm{T}$ führt.
+Der Tunnelstrom für eine Potentialschwelle der mittleren Höhe $\Phi$ ist gegeben durch \cite{binning}:
 \begin{equation}
-  I_T \propto \exp(-\alpha \cdot \sqrt{\Phi} \cdot s) \quad \text{mit}\: \alpha = \SI{1,025}{\angstrom^{-1}\electronvolt^{-1/2}}
+  I_\mathrm{T} \propto \exp(-\alpha \cdot \sqrt{\Phi} \cdot s) \quad \text{mit}\: \alpha = \SI{1,025}{\angstrom^{-1}\electronvolt^{-1/2}}
   \label{eq:tunnelstrom}
 \end{equation}
 also abhängig vom Abstand Spitze-Probe $s$, sowie von deren elektronischen Eigenschaften.
-An Gleichung \ref{eq:tunnelstrom} erkennt man bereits die hohe Sensitivität auf Abstandsänderungen in der Größenordnung von einem \si{\angstrom}.
-Aus diesem Grund ist das letzte Atom auf der Spitze maßgeblich für den gemessenen Tunnelstrom.
+
+Für kleine Spannungen $U$ ist die mittlere Höhe $\Phi$ gegeben durch die Austrittsarbeit des Elektrons aus dem Material \cite{colton}.
+An Gleichung \ref{eq:tunnelstrom} erkennt man bereits die hohe Sensitivität auf Abstandsänderungen in der Größenordnung von einem \si{\angstrom}, weshalb das vorderste Atom auf der Spitze maßgeblich für den gemessenen Tunnelstrom ist.
 
 \subsection{Funktionsweise des Rastertunnelmikroskops}
-\subsubsection{Aufbau}
+\subsubsection{Aufbau und Operation}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{./grafiken/rtm_aufbau.pdf}
 \caption{schematischer Aufbau eines RTM mit Piezoelementen}
 \label{fig:aufbau}
 \end{figure}
-Abbildung \ref{fig:aufbau} zeigt den schematischen Aufbau eines Rastertunnelmikroskops.
-Dabei wird der Tunnelstrom $I_T$ gemessen und je nach Betriebsmodus (s.u.)  ausgewertet.
-Die Piezoelemente dienen der Bewegung der Spitze in alle drei Raumrichtungen, wobei sie entweder automatisch gesteuert werden können (s. konstanter Tunnelstrom unter \ref{sec:betriebsmodi}) oder direkt gesteuert werden können zur manuellen Ausrichtung der Spitze.
-\begin{itemize}
-  \item Subatomare Auflösung -- Piezoeffekt
-\end{itemize}
+Der Kern des Rastertunnelmikroskops (schematisch in Abbildung \ref{fig:aufbau}) ist die Rastersonde mit der aufgesetzten leitenden Spitze.
+Diese kann über drei Piezoelemente (siehe auch \ref{sssec:Piezoeffekt}), deren Auslenkung proportional zu einer an ihnen anliegenden Spannung ist, räumlich bezüglich der Probe ausgerichtet werden.
+Es werden Piezos verwendet, da die Spitze mit subatomarer Präzision eingestellt werden muss, um eine laterale und vertikale Auflösung im subatomaren Bereich zu erzielen.
+
+Zwischen der Spitze der Sonde und der Probe liegt die Spannung $U$ an, damit bei ausreichender Annäherung ein messbarer Tunnelstrom entsteht.
+Dazu muss die Probe zunächst durch eine Grobeinstellung hinreichend nah an die Spitze geführt werden.
+Nachdem dies durchgeführt wurde, kann eine Feineinstellung über das z-Piezo erfolgen.
+
+Zur Bildgebung durchläuft die Sonde mithilfe der x-, y-Piezoelemente eine gleichmäßig Verteilung von Messpunkten in der x-y-Ebene (das Raster), deren Dichte im Wesentlichen durch die eingestellte Auflösung und den Messbereich gegeben sind.
+Die an den einzelnen Punkten gemessene Größe, sowie die Operation des z-Piezos hängt vom verwendeten Betriebsmodus des RTM ab und wird in Abschnitt \ref{sec:betriebsmodi} näher erläutert.
+
+
 \subsubsection{Piezoeffekt}
+\label{sssec:Piezoeffekt}
 In Elementarzellen mit nicht-inversionssymmetrischer Ladungsverteilung kann, beim Anlegen eines externen elektrischen Feldes, ein elektrisches Dipolmoment induziert werden.
 Diese Polarisation führt zu einer Längenkontraktion/-ausdehnung der Elementarzelle aufgrund der Asymmetrie der Ladungsverteilung.
 Dieser Effekt wird makroskopisch als Längenänderung eines piezoelektrischen Zylinders bei angelegter Spannung sichtbar.
+(vllt. Auflösungsbegründung aus vorigem Abschnitt hierher und konkrete Größenordnung für die Ausdehnung pro Spannung (d-Wert))
 
 \subsubsection{Betriebsmodi}
 \label{sec:betriebsmodi}
@@ -116,6 +126,7 @@ Im Fall des konstanten Tunnelstroms folgt die Spitze dem Profil der Probe.
 Dies wird erreicht, indem der Tunnelstrom gemessen wird und durch eine Rückkopplungsschleife die Spitze so positioniert wird, dass der Tunnelstrom einen konstanten, vorgegebenen Wert annimmt.
 Dafür sind die Piezoelemente notwendig, deren angelegte Spannung durch einen Regelkreis gesteuert wird.
 Dessen Reaktionszeit sorgt dafür, dass das Verfahren im Vergleich zum Betriebsmodus mit konstanter Höhe deutlich langsamer ist, jedoch wird hier die Gefahr eines Zusammenstoßes von Spitze und Probe  unterbunden.
+(Fährt Oberfläche konstanter Ladungsdichte ab).
 
 Im zweiten Fall wird die Spitze mit einer festgelegten und konstanten Höhe über die Probe bewegt und der Tunnelstrom gemessen.
 Da seine Abhängigkeit von der elektronischen Struktur der Probe bekannt ist, lässt sich so ein Bild der Probe erstellen.

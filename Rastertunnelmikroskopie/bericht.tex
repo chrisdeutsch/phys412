@@ -130,20 +130,18 @@ Wir gehen im Folgenden davon aus, dass wir die Spannung zwischen Spitze und Prob
 Dann sind im Betrieb eines Rastertunnelmikroskops grundsätzlich zwei Betriebsmodi zu unterscheiden:
 \begin{itemize}
   \item \textbf{konstanter Tunnelstrom:} Dieser wird erreicht, indem der Tunnelstrom an jedem Punkt gemessen wird und durch eine Rückkopplungsschleife (siehe auch Abschnitt \ref{sssec:Regelkreis}) die Höhe der Spitze so eingestellt wird, dass der Tunnelstrom einen konstanten, vorgegebenen Wert annimmt.
-Die Bildgebung erfolgt durch Darstellung der anliegenden Spannung am z-Piezo, welche proportional zur Ladungsdichte ist, da sich die Spitze des RTM aufgrund der Rückkopplung die Ebene konstanter Ladungsdichte durchrastert.
+Die Bildgebung erfolgt durch Darstellung der anliegenden Spannung am z-Piezo, welche proportional zur Ladungsdichte ist, da sich die Spitze des RTM, aufgrund des konstanten Tunnelstroms, in der Ebene konstanter Ladungsdichte bewegt.
 Weiterhin sorgt die Reaktionszeit des Regelkreises dafür, dass das Verfahren im Vergleich zum Betriebsmodus mit konstanter Höhe deutlich langsamer ist, jedoch die Gefahr eines Zusammenstoßes von Spitze und Probe unterbunden ist.
 
-  \item \textbf{konstante Höhe:}
-\end{itemize}
-Im zweiten Fall wird die Spitze mit einer festgelegten und konstanten Höhe über die Probe bewegt und der Tunnelstrom gemessen.
-Da seine Abhängigkeit von der elektronischen Struktur der Probe bekannt ist, lässt sich so ein Bild der Probe erstellen.
-Da außer der Bewegung der Spitze in einer Ebene keine weiteren Regelungen notwendig sind, ist dieses Verfahren geeignet, um in kurzer Zeit Bilder der Probe zu erhalten, allerdings besteht dabei die Gefahr einer Kollision, bei dem die Spitze in die Probe fährt und dadurch zerstört wird.
+  \item \textbf{konstante Höhe:} Die Spitze des RTM bewegt sich mit einer festgelegten und konstanten Höhe über die Probe.
+Die eigentliche Messgröße ist dabei der fließende Tunnelstrom, welcher ebenfalls Rückschlüsse auf die elektronische Struktur der Probe liefert.
+Da außer der Rasterbewegung der Spitze keine weiteren Regelungen notwendig sind, ist dieses Verfahren geeignet, um in kurzer Zeit Bilder der Probe zu erhalten, allerdings besteht dabei die Gefahr einer Kollision, bei der die Spitze in die Probe fährt und dadurch zerstört wird.
+
 Dieser Betriebsmodus ist also für flache Strukturen der Probe mit einer durchschnittlichen Höhe kleiner als der Abstand Probe-Spitze geeignet \cite{colton}.
-Da es praktisch kaum möglich ist, vertikale Verschiebungen auszuschließen und die Probe nicht immer parallel zur horizontalen Bewegung der Spitze ausgerichtet ist, wird auch hier eine Rückkopplungsschleife, wie oben erklärt, verwendet, allerdings mit einer geringen Empfindlichkeit. Dadurch ist sichergestellt, dass die Spitze nicht auf schnelle Änderungen des Tunnelstroms reagiert, aber langfristig eine vorgegebene Höhe über der Probe (auch wenn diese gegen die horizontale Bewegungsebene der Spitze geneigt ist) erreicht wird.
- 
-\begin{itemize}
-  \item Konstante Höhe (Tunnelstrom wird aufgezeichnet, proportional zur elektronischen Struktur, \emph{Crash}, schnell)
+Da es praktisch kaum möglich ist, vertikale Verschiebungen auszuschließen und die Probe nicht immer parallel zur horizontalen Bewegung der Spitze ausgerichtet ist, wird auch hier eine Rück\-kopp\-lungs\-schlei\-fe, wie oben erklärt, verwendet, allerdings mit einer geringen Empfindlichkeit. Dadurch ist sichergestellt, dass die Spitze nicht auf schnelle Änderungen des Tunnelstroms reagiert, aber langfristig eine vorgegebene Höhe über der Probe (auch wenn diese gegen die horizontale Bewegungsebene der Spitze geneigt ist) erreicht wird.
 \end{itemize}
+Neben diesen gibt es noch Betriesmoden bei denen der Abstand Spitze-Probe an jedem Punkt variiert wird, um die Austrittsarbeit zu bestimmen \cite{sakai}.
+Außerdem können durch eine Variation der Spannung zwischen Probe und Spitze weitere elektronische Eigenschaften der Probe bestimmt werden (\emph{Rastertunnelspektroskopie}).
 
 \subsubsection{Regelkreis}
 \label{sssec:Regelkreis}
@@ -282,6 +280,11 @@ Ist die Annäherung abgeschlossen, leuchtet die LED grün und es beginnt automat
   R. J. Colton, A. Engel, J. E. Frommer et al.,
   \emph{Procedures in Scanning Probe Microscopies},
   John Wiley 1998.
+
+\bibitem{sakai}
+  Akira Sakai,
+  \emph{Apparent Barrier Height and Barrier-Height Imaging of Surfaces},
+  Springer Berlin Heidelberg 2000.
   
 \end{thebibliography}
 

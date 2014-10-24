@@ -128,13 +128,13 @@ Dieser Effekt führt bei makroskopischen Objekten zu einer sehr kleinen Längen�
 \label{sec:betriebsmodi}
 Wir gehen im Folgenden davon aus, dass wir die Spannung zwischen Spitze und Probe in beiden Fällen konstant lassen.
 Dann sind im Betrieb eines Rastertunnelmikroskops grundsätzlich zwei Betriebsmodi zu unterscheiden:
-einmal wird der Tunnelstrom konstant gehalten, während im anderen Fall die Höhe der Spitze über der Probe konstant gehalten wird.
-Im Fall des konstanten Tunnelstroms folgt die Spitze dem Profil der Probe.
-Dies wird erreicht, indem der Tunnelstrom gemessen wird und durch eine Rückkopplungsschleife die Spitze so positioniert wird, dass der Tunnelstrom einen konstanten, vorgegebenen Wert annimmt.
-Dafür sind die Piezoelemente notwendig, deren angelegte Spannung durch einen Regelkreis gesteuert wird.
-Dessen Reaktionszeit sorgt dafür, dass das Verfahren im Vergleich zum Betriebsmodus mit konstanter Höhe deutlich langsamer ist, jedoch wird hier die Gefahr eines Zusammenstoßes von Spitze und Probe  unterbunden.
-(Fährt Oberfläche konstanter Ladungsdichte ab).
+\begin{itemize}
+  \item \textbf{konstanter Tunnelstrom:} Dieser wird erreicht, indem der Tunnelstrom an jedem Punkt gemessen wird und durch eine Rückkopplungsschleife (siehe auch Abschnitt \ref{sssec:Regelkreis}) die Höhe der Spitze so eingestellt wird, dass der Tunnelstrom einen konstanten, vorgegebenen Wert annimmt.
+Die Bildgebung erfolgt durch Darstellung der anliegenden Spannung am z-Piezo, welche proportional zur Ladungsdichte ist, da sich die Spitze des RTM aufgrund der Rückkopplung die Ebene konstanter Ladungsdichte durchrastert.
+Weiterhin sorgt die Reaktionszeit des Regelkreises dafür, dass das Verfahren im Vergleich zum Betriebsmodus mit konstanter Höhe deutlich langsamer ist, jedoch die Gefahr eines Zusammenstoßes von Spitze und Probe unterbunden ist.
 
+  \item \textbf{konstante Höhe:}
+\end{itemize}
 Im zweiten Fall wird die Spitze mit einer festgelegten und konstanten Höhe über die Probe bewegt und der Tunnelstrom gemessen.
 Da seine Abhängigkeit von der elektronischen Struktur der Probe bekannt ist, lässt sich so ein Bild der Probe erstellen.
 Da außer der Bewegung der Spitze in einer Ebene keine weiteren Regelungen notwendig sind, ist dieses Verfahren geeignet, um in kurzer Zeit Bilder der Probe zu erhalten, allerdings besteht dabei die Gefahr einer Kollision, bei dem die Spitze in die Probe fährt und dadurch zerstört wird.
@@ -142,11 +142,11 @@ Dieser Betriebsmodus ist also für flache Strukturen der Probe mit einer durchsc
 Da es praktisch kaum möglich ist, vertikale Verschiebungen auszuschließen und die Probe nicht immer parallel zur horizontalen Bewegung der Spitze ausgerichtet ist, wird auch hier eine Rückkopplungsschleife, wie oben erklärt, verwendet, allerdings mit einer geringen Empfindlichkeit. Dadurch ist sichergestellt, dass die Spitze nicht auf schnelle Änderungen des Tunnelstroms reagiert, aber langfristig eine vorgegebene Höhe über der Probe (auch wenn diese gegen die horizontale Bewegungsebene der Spitze geneigt ist) erreicht wird.
  
 \begin{itemize}
-  \item Konstanter Tunnelstrom (Rückkopplungsschleife und deren Reaktionszeit, proportional zum Probenprofil)
   \item Konstante Höhe (Tunnelstrom wird aufgezeichnet, proportional zur elektronischen Struktur, \emph{Crash}, schnell)
 \end{itemize}
 
 \subsubsection{Regelkreis}
+\label{sssec:Regelkreis}
 
 Wie oben angesprochen, dient der Regelkreis dazu, den Tunnelstrom konstant zu halten.
 Dafür wird dieser kontinuierlich gemessen und entsprechend seines aktuellen Wertes wird das Piezoelement zur Höhensteuerung der Spitze mit einer Spannung versorgt, damit der Tunnelstrom einen vorgegebenen Wert annimmt.

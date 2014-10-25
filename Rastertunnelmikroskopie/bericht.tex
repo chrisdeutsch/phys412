@@ -156,7 +156,7 @@ Je nach Anwendungsfall werden verschiedene Reglertypen mit jeweils unterschiedli
 So genannte \emph{P-Regler} liefern ein zur Eingangsgröße proportionales Signal mit einer festen Verstärkung.
 In der Praxis werden solche Regler meist um eine integrierende und/oder differenzierende Funktion erweitert. Entsprechend spricht man dann beispielsweise von \emph{PI-} oder \emph{PID-Reglern}.
 Der integrierende Teil sorgt für eine zeitabhängige Schaltung, so dass auch die Eingangsgröße eine gewisse Zeit in der Vergangenheit überwacht wird (\emph{Hysterese}) und daraufhin ein entsprechendes Schaltverhalten eintritt.
-Der differenzierende Teil hingegen reagiert nicht auf den Wert des Eingangssignals sondern auf Änderungen dessen.
+Der differenzierende Teil hingegen reagiert nicht auf den Wert des Eingangssignals sondern auf seine Änderungen dessen.
 
 \subsubsection{Auflösungsvermögen}
 Man sieht bereits an Gleichung \ref{eq:tunnelstrom} dass die Tiefenauflösung des RTM bei typischen Austrittsarbeiten $\Phi = \SI{4}{\electronvolt}$ idealerweise in der Größenordnung von \SI{0,1}{\angstrom} liegt.
@@ -210,8 +210,9 @@ d_\mathrm{max} = 2 \cdot \SI{1,42}{\angstrom} \cdot \sin\left( \frac{1}{2} \cdot
 
 \section{Versuchsdurchführung}
 
-In dem Versuch sollten geeignete Spitzen zum Abbilden von Gold- und Graphitoberflächen hergestellt werden und anschließend mit ihnen auf atomarer Ebene Bilder der jeweiligen Metalle genommen werden.
+In dem Versuch sollten geeignete Spitzen zum Abbilden von Graphitoberflächen hergestellt werden und anschließend mit ihnen auf atomarer Ebene Bilder der Oberfläche aufgenommen werden.
 Für Graphit sollten dabei Eigenschaften des Kristallgitters, wie Atomabstände und Winkel der Bindungen untersucht und aus den Bildern bestimmt werden. 
+Außerdem sollte mit einer Spitze die atomare Auflösung bei Graphit erreicht eine Goldoberfläche abgebildet werden und dies mit dem vorigen Bild verglichen werden.
 
 \subsection{Herstellung der Spitzen}
 
@@ -246,7 +247,10 @@ Nach dem Ätzen ist die Spitze erneut zu reinigen und zügig zu arbeiten, um ein
 
 Da das Rastertunnelmikroskop mit sehr feinen Mechaniken und Auflösungen auf atomarer Ebene arbeitet, ist ein besonders sorgfältiger, sauberer Umgang mit allen Teilen notwendig.
 Die Geräte wie Zangen, Pinzetten, aber auch die Drähte sollten vor der Verarbeitung immer mit Ethanol gereinigt werden.
-Ebenfalls sollte die Mechanik des RTM, also die Führungsschiene für den Probenhalter und der Probenhalter selber sauber gehalten werden, damit dieser ungehindert von den Piezoelementen bewegt werden kann.
+Ebenfalls sollte die Mechanik des RTM, also die Führungsschiene für den Probenhalter und der Probenhalter selber sauber gehalten werden, damit dieser ungehindert von dem Piezoelement zur Grobeinstellung bewegt werden kann.
+
+Diese Grobeinstellung erfolgt über den \emph{Slip-Stick-Effekt}, welcher ausnutzt, dass Haftreibung tendenziell größer ist als Gleitreibung und so durch eine langsame Ausdehnung des Piezos die Probe vorschiebt, aber eine ruckartiges Kontrahieren aufgrund der geringeren Gleitreibung und der Trägheit des Halters keine Positionsänderung hervorruft.
+Deshalb ist die Reinigung des Probenhalters kritisch, wie im Versuch mehrfach festgestellt wurde.
 
 \subsection{Datenaufnahme}
 

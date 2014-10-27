@@ -327,6 +327,7 @@ Mit diesem Wert erhalten wir für die Vergrößerung des RTM:
 \begin{align*}
   V_\mathrm{Abb.\ref{fig:ref_ptir}} = \num{55,0 +- 0,75e6}
 \end{align*}
+Zum Vergleich liegt die beugungsbegrenzte Vergrößerung für Lichtmikroskopie im optischen Bereich bei etwa $V_\mathrm{max}^\mathrm{Mikr.} = \num{1500}$, sodass wir mit dem RTM etwa die \num{37000}-fache Vergrößerung vom Lichtmikroskop an der Beugungsgrenze erreichen.
 
 \subsection{Bestimmung der Bindungslängen in Graphit}
 \label{ssec:laenge}
@@ -380,21 +381,34 @@ Wir erhalten also als Bindungslänge:
 \end{figure}
 Zur Bestimmung des Bindungswinkels legen wir für jede Winkelmessung zwei Hilfsgeraden durch die Maxima des Bildes (siehe Abbildung \ref{fig:hilfsgeraden}).
 Der Vergleich mit den Abbildungen \ref{fig:graphit} und \ref{fig:laengen} legt nahe, dass es sich bei dem durch die Geraden eingeschlossenen Winkel um den jeweiligen Bindungswinkel handelt.
+Insbesondere ist die Darstellung winkelerhaltend, da Darstellung und Messbereich ein Seitenverhältnis von $1:1$ aufweisen.
 Wir führen insgesamt sechs Winkelmessungen um ein Ergebnis zu erhalten, was unabhängig von der Winkelposition innerhalb des Hexagons ist.
 
 \input{./messwerte/Winkel.tex}
 
-Analog zum Abschnitt \ref{ssec:laenge} berechnen wir das arithmetische Mittel, die Standardabweichung der Einzelmessung und den daraus resultierenden Fehler des Mittelwerts aus den $N = 6$ Winkeln:
-\begin{align}
-  \bar{\varphi}_\mathrm{Bind.} = \SI{120,5}{\degree} \\
-  \sigma_\mathrm{\varphi} = \SI{8,6}{\degree} \\
-  \Delta \bar{\varphi}_\mathrm{Bind.} = \SI{3,6}{\degree}
-\end{align}
-womit wir für den Bindungswinkel
-\begin{equation}
+Analog zur Bestimmung der Bindungslängen berechnen wir den Bindungswinkel $\varphi_\mathrm{Bind.}$ durch Mittelung der $N = 6$ Winkel, um den Einfluss der Verzerrung des Bildes zu vermindern:
+\begin{itemize}
+  \item \textbf{arithmetisches Mittel:}
+  \begin{equation}
+    \bar{\varphi}_\mathrm{Bind.} = \frac{1}{N} \sum_{i=1}^N \varphi_i = \SI{120,5}{\degree}
+  \end{equation}
+  
+  \item \textbf{Standardabweichung der Einzelmessung:}
+  \begin{equation}
+    \sigma_\mathrm{\varphi} = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (\varphi_i - \bar{\varphi}_\mathrm{Bind.})^2} = \SI{8,6}{\degree}
+  \end{equation}
+  
+  \item \textbf{Fehler des Mittelwerts:}
+  \begin{equation}
+    \Delta \bar{\varphi}_\mathrm{Bind.} = \frac{\sigma_\mathrm{\varphi}}{\sqrt{N}} = \SI{3,6}{\degree}
+  \end{equation}
+\end{itemize}
+Mit diesen Werten erhalten wir für den Bindungswinkel:
+\begin{equation*}
   \varphi_\mathrm{Bind.} = \SI{120,5 +- 3,6}{\degree}
-\end{equation}
-erhalten.
+\end{equation*}
+Dieser Wert entspricht innerhalb der Fehlergrenzen dem für ein regelmäßiges Sechseck mit Innenwinkeln von $\varphi = \SI{120}{\degree}$ erwarteten Wert.
+
 
 \section{Diskussion / Interpretation}
 \label{sec:Diskussion}

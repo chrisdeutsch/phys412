@@ -121,7 +121,6 @@ Das durch die Polarisation entstandene elektrische Feld lässt sich als Spannung
 \centering
 \includegraphics[width=0.8\textwidth]{./grafiken/piezoeffekt.pdf}
 \caption{induziertes Dipolmoment bei Deformation einer nicht-inversionssymmetrischen Ladungsverteilung}
-\label{fig:aufbau}
 \end{figure}
 
 Umgekehrt kommt es beim Anlegen einer Spannung an einem piezoelektrischen Kristall zur Polarisation dessen und durch diese zur Deformation des Kristalls aufgrund der Asymmetrie der Ladungsverteilung.
@@ -183,6 +182,7 @@ Diese Methode liefert tendenziell besser definierte Spitzen als das mechanische 
 \end{itemize}
 
 \subsection{Kristallstruktur von Graphit}
+\label{ssec:graphit}
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{grafiken/graphit.pdf}
@@ -307,7 +307,49 @@ Der Fehler folgt aus Gauß'scher Fehlerfortpflanzung:
 \end{equation}
 
 
-\subsection{Bestimmung der Atomabstände und Bindungswinkel in Graphit}
+\subsection{Bestimmung der Bindungslängen in Graphit}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{./grafiken/ref_graphit_pt_ir_1nm_laenge.png}
+\caption{Konstruktion der hexagonalen Kohlenstoffringe im Bild des RTM. In den zwei oberen Ebenen überlappende Kohlenstoffatome sind in rot markiert. Die Zahlen dienen der Linienidentifikation in Tabelle (REFERENZ)}
+\label{fig:laengen}
+\end{figure}
+Um die Bindungslängen zu bestimmen, müssen wir zunächst die hexagonale Ringstruktur der obersten Graphenebene bestimmen.
+Dazu werden zunächst die nicht-überlappenden Kohlenstoffatome markiert, da diese als Erhebungen bei der Bildgebung sichtbar werden.
+Gemäß Abschnitt \ref{ssec:graphit} werden die in zwei obersten Ebenen überlappenden Kohlenstoffatome als Täler im Bild sichtbar, sodass auch diese markiert werden können.
+Verbindet man nun die eingezeichneten Punkte zu hexagonalen Ringen (auch in Hinblick auf Abbildung \ref{fig:graphit}) so erhalten wir Abbildung \ref{fig:laengen}.
+
+In der Abbildung sieht man deutlich, dass Ebene der Probe nicht mit der $(x,y)$-Ebene des RTM zusammengefallen ist, da die Bindungslängen in manche Richtungen stark gestaucht sind.
+Dies liegt daran, dass wir aufgrund des Darstellungstyps (\emph{Density Plot}) mit den eingezeichneten Linien nur die Projektion der Bindung in die $(x,y)$-Ebene des RTM erhalten.
+
+Wir Bestimmen die Längen der eingezeichneten Linien mit einem Grafikprogramm, wobei wir den Fehler der digitalen Längen vernachlässigen ($\Delta d \approx \SI{4}{\pico\metre}$), da dieser sehr klein gegenüber der Verzerrung des Bildes ist (besser formulieren!!!).
+Die gemessenen Längen finden sich in Anhang \ref{messw:laenge}.
+
+Um den systematischen Fehler aufgrund der Projektion (tendenzielle Unterschätzung der Bindungslänge) zu verringern, streichen wir zunächst die Messwerte (nach links-oben -- schlau formulieren!!!)\footnote{Das sind die Liniennummern: $3,7,9,11,13,18,20,22,24,28,30,33,37,39,42,45,47,50,53$}, da diese die größte Verzerrung aufgrund von Projektion aufweisen.
+Die bleibenden $N = \num{35}$ Längen können dann zur Bestimmung der Bindungslänge ausgewertet werden.
+
+Zunächst bestimmen wir die mittlere Bindungslänge durch das arithmetische Mittel und erhalten:
+\begin{equation}
+  \bar{d}_\mathrm{Bind.} = \frac{1}{N} \sum_{i=1}^N d_i= \SI{1,37}{\angstrom}
+\end{equation}
+Der Fehler einer Einzelmessung ist dabei gegeben durch die Standardabweichung $\sigma_\mathrm{Bind.}$:
+\begin{equation}
+  \sigma_\mathrm{Bind.} = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (d_i - \bar{d}_\mathrm{Bind.})^2} = \SI{0,15}{\angstrom}
+\end{equation}
+und folglich der Fehler des Mittelwerts als:
+\begin{equation}
+  \Delta \bar{d}_\mathrm{Bind.} = \frac{\sigma_\mathrm{Bind.}}{\sqrt{N}} = \SI{0,03}{\angstrom}
+\end{equation}
+Wir erhalten also als Bindungslänge:
+\begin{equation}
+  d_\mathrm{Bind.} = \SI{1,37 +- 0,03}{\angstrom}
+\end{equation}
+\begin{itemize}
+  \item Immernoch Projektion trotz Reduktion des Messdaten -- Ergebnis ist eher untere Grenze.
+  \item Vergleich mit dem Literaturwert Colton \SI{1,42}{\angstrom}. Wert mit Fehler wäre vllt. noch gut
+\end{itemize}
+
+\subsection{Bestimmung der Bindungswinkel in Graphit}
 
 
 \section{Diskussion / Interpretation}
@@ -346,6 +388,7 @@ Der Fehler folgt aus Gauß'scher Fehlerfortpflanzung:
 \begin{appendix}
 
 \section{Messdaten: Bindungslängen in Graphit}
+\label{messw:laenge}
 \input{./messwerte/Laenge.tex}
 
 \section{Messdaten: Bindungswinkel in Graphit}

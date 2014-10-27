@@ -307,7 +307,7 @@ Zudem ist die Kristallstruktur von Gold grundsätzlich schwieriger darzustellen,
 Die folgende quantitative Auswertung beschäftigt sich mit der Bestimmung der Vergrößerung des Rastertunnelmikroskops sowie einiger Kenngrößen der zugrundeliegenden Graphitstruktur wie der Bindungslänge und dem Bindungswinkel der hexagonalen Kohlenstoffringe.
 
 \subsection{Bestimmung der Vergrößerung des RTM}
-Zur Bestimmung der Vergrößerung von Abbildung \ref{fig:ref_ptir} ist zunächst anzumerken, dass das Seitenverhältnis von Abbildung und Messbereich $1$ ist, sodass die Vergrößerung in $x$- und $y$-Richtung gleich ist ($V_x = V_y$). Außerdem hängt die Größe des Bildes von der Vergrößerungsstufe im Computerprogramm bzw. der Größe des Ausdrucks ab. Als Referenzwert werden wir die Größe des Ausdrucks der Abbildung verwenden, sodass sich die Vergrößerung ergibt als:
+Zur Bestimmung der Vergrößerung von Abbildung \ref{fig:ref_ptir} ist zunächst anzumerken, dass das Seitenverhältnis von Abbildung und Messbereich $1:1$ ist, sodass die Vergrößerung in $x$- und $y$-Richtung gleich ist ($V_x = V_y$). Außerdem hängt die Größe des Bildes von der Vergrößerungsstufe im Computerprogramm bzw. der Größe des Ausdrucks ab. Als Referenzwert werden wir die Größe des Ausdrucks der Abbildung verwenden, sodass sich die Vergrößerung ergibt als:
 \begin{equation}
   V = V_x = \frac{L_x}{l_x}
 \end{equation}
@@ -328,7 +328,7 @@ Mit diesem Wert erhalten wir für die Vergrößerung des RTM:
 \begin{align*}
   V_\mathrm{Abb.\ref{fig:ref_ptir}} = \num{55,0 +- 0,75e6}
 \end{align*}
-Zum Vergleich liegt die beugungsbegrenzte Vergrößerung für Lichtmikroskopie im optischen Bereich bei etwa $V_\mathrm{max}^\mathrm{Mikr.} = \num{1500}$, sodass wir mit dem RTM etwa die \num{37000}-fache Vergrößerung vom Lichtmikroskop an der Beugungsgrenze erreichen.
+Zum Vergleich liegt die beugungsbegrenzte Vergrößerung für Lichtmikroskopie im optischen Bereich bei etwa $V_\mathrm{max}^\mathrm{Mikr.} \approx \num{1500}$, sodass wir mit dem RTM etwa die \num{37000}-fache Vergrößerung vom Lichtmikroskop an der Beugungsgrenze erreichen.
 
 \subsection{Bestimmung der Bindungslängen in Graphit}
 \label{ssec:laenge}
@@ -339,17 +339,19 @@ Zum Vergleich liegt die beugungsbegrenzte Vergrößerung für Lichtmikroskopie i
 \label{fig:laengen}
 \end{figure}
 Um die Bindungslängen zu bestimmen, müssen wir zunächst die hexagonale Ringstruktur der obersten Graphenebene bestimmen.
-Dazu werden zunächst die nicht-überlappenden Kohlenstoffatome markiert, da diese als Erhebungen bei der Bildgebung sichtbar werden.
+Da wir bei Vermessung der hexagonalen Struktur möglichst hohe Vergrößerung brauchen, verwenden wir das Ergebnis der Messung mit Pt-Ir Spitze da diese einen kleinen Messbereich von $\SI{1}{\nano\metre} \times \SI{1}{\nano\metre}$ aufweist.
+
+Zunächst werden die nicht-überlappenden Kohlenstoffatome markiert, da diese als Erhebungen bei der Bildgebung sichtbar werden.
 Gemäß Abschnitt \ref{ssec:graphit} werden die in zwei obersten Ebenen überlappenden Kohlenstoffatome als Täler im Bild sichtbar, sodass auch diese markiert werden können.
 Verbindet man nun die eingezeichneten Punkte zu hexagonalen Ringen (im Hinblick auf Abbildung \ref{fig:graphit}) so erhalten wir Abbildung \ref{fig:laengen}.
 
 In der Abbildung sieht man deutlich, dass Ebene der Probe nicht mit der $(x,y)$-Ebene des RTM zusammengefallen ist, da die Bindungslängen in manche Richtungen stark gestaucht sind.
 Dies liegt daran, dass wir aufgrund des Darstellungstyps (\emph{Density Plot}) mit den eingezeichneten Linien nur die Projektion der Bindung in die $(x,y)$-Ebene des RTM erhalten.
 
-Wir Bestimmen die Längen der eingezeichneten Linien mit einem Grafikprogramm, wobei wir den Fehler der digitalen Längen vernachlässigen ($\Delta d \approx \SI{4}{\pico\metre}$), da dieser sehr klein gegenüber der Verzerrung des Bildes ist (besser formulieren!!!).
+Wir Bestimmen die Längen der eingezeichneten Linien mit einem Grafikprogramm, wobei wir den Fehler der digitalen Längenbestimmung vernachlässigen, da dieser klein gegen die Verzerrung des Bildes ist.
 Die gemessenen Längen finden sich in Anhang \ref{messw:laenge}.
 
-Um den systematischen Fehler aufgrund der Projektion (tendenzielle Unterschätzung der Bindungslänge) zu verringern, streichen wir zunächst die Messwerte von Bindungen die in der Abbildung nach links-oben zeigen\footnote{Das sind die Liniennummern: $3,7,9,11,13,18,20,22,24,28,30,33,37,39,42,45,47,50,53$}, da diese die größte Verzerrung aufgrund von Projektion aufweisen.
+Um den systematischen Fehler aufgrund der Projektion (tendenzielle Unterschätzung der Bindungslänge) zu verringern, streichen wir zunächst die Messwerte von Bindungen die in der Abbildung nach links-oben zeigen\footnote{Liniennummern: $3,7,9,11,13,18,20,22,24,28,30,33,37,39,42,45,47,50,53$}, da diese die größte Stauchung aufgrund von Projektion aufweisen.
 Die bleibenden $N = \num{35}$ Längen können dann zur Bestimmung der Bindungslänge ausgewertet werden, wobei immernoch mit einer Unterschätzung des tatsächlichen Wertes zu rechnen ist.
 
 Zunächst bestimmen wir die mittlere Bindungslänge durch das arithmetische Mittel und erhalten:
@@ -368,10 +370,7 @@ Wir erhalten also als Bindungslänge:
 \begin{equation}
   d_\mathrm{Bind.} = \SI{1,37 +- 0,03}{\angstrom}
 \end{equation}
-\begin{itemize}
-  \item Immernoch Projektion trotz Reduktion des Messdaten -- Ergebnis ist eher untere Grenze.
-  \item Vergleich mit dem Literaturwert Colton \SI{1,42}{\angstrom}. Wert mit Fehler wäre vllt. noch gut
-\end{itemize}
+Wie erwartet, unterschätzt dieses Ergebnis den in \cite{colton} gegebenen Wert für den Abstand der Kohlenstoffatome von \SI{1,42}{\angstrom}. Dennoch liegt der Literaturwert innerhalb des $2\sigma$-Bereichs unserer Messung, sodass unsere Bestimmung der Bindungslänge akzeptabel ist.
 
 \subsection{Bestimmung der Bindungswinkel in Graphit}
 \begin{figure}[h]
@@ -380,6 +379,7 @@ Wir erhalten also als Bindungslänge:
 \caption{Hilfsgeraden zur Bestimmung der Bindungswinkel}
 \label{fig:hilfsgeraden}
 \end{figure}
+(Warum haben wir das Wolframbild genommen)
 Zur Bestimmung des Bindungswinkels legen wir für jede Winkelmessung zwei Hilfsgeraden durch die Maxima des Bildes (siehe Abbildung \ref{fig:hilfsgeraden}).
 Der Vergleich mit den Abbildungen \ref{fig:graphit} und \ref{fig:laengen} legt nahe, dass es sich bei dem durch die Geraden eingeschlossenen Winkel um den jeweiligen Bindungswinkel handelt.
 Insbesondere ist die Darstellung winkelerhaltend, da Darstellung und Messbereich ein Seitenverhältnis von $1:1$ aufweisen.

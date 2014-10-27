@@ -260,12 +260,12 @@ Deshalb ist die Reinigung des Probenhalters kritisch, wie im Versuch mehrfach fe
 Nach dem erfolgreichen Einsetzen von Probe und Spitze kann versucht werden, Daten aufzunehmen.
 Beim Einsetzen der Spitze ist zu beachten, dass diese nicht übermäßig lang ist, da sonst die Probe so weit hinten positioniert werden muss, dass der Stellmotor (\emph{Slip-Stick}-Piezo) ihn nicht mehr bewegen kann.
 Nun wird zunächst per Hand der Probenhalter möglichst nah an die Spitze bewegt und dann im Computerprogramm mit \textit{Advance} schrittweise näher herangefahren.
-Der Abstand ist dabei auf mit einer in der Abdeckung des RTM eingebauten Lupe zu kontrollieren.
+Der Abstand ist dabei mit einer in der Abdeckung des RTM eingebauten Lupe zu kontrollieren.
 Ist die Probe möglichst nah positioniert (die Kontroll-LED im Programm und auf dem Gerät selber sollte orange leuchten), kann mit \textit{Approach} im Computerprogramm eine automatische Annäherung mit dem z-Piezoelement gestartet werden.
 Dies gelingt nicht immer, dann muss erneut manuell korrigiert und ein weiterer Annäherungsversuch gestartet werden.
 Ist die Annäherung abgeschlossen, leuchtet die LED grün und es beginnt automatisch die Datennahme mit den eingestellten Parametern (zu rasternde Fläche, angestrebter Tunnelstrom etc.).
 
-Nach mehrfachen Versuchen pro Spitze gelang es meistens, eine laut Software gute Annäherung zu erreichen, wobei die Spitze, mit bloßem Auge erkennbar, bei einigen Durchgängen noch weit von der Probe entfernt war.
+Nach mehreren Versuchen pro Spitze gelang es meistens, eine laut Software gute Annäherung zu erreichen, wobei die Spitze, mit bloßem Auge erkennbar, bei einigen Durchgängen trotzdem noch weit von der Probe entfernt war.
 Teilweise konnte auch gar keine Annäherung durchgeführt werden, so dass die Kontroll-LED von orange direkt auf rot sprang, was bedeutet, dass die Spitze in die Probe gefahren ist.
 Ein weiterer Störfaktor sind Erschütterungen in dem Versuchsraum, hauptsächlich ausgelöst durch die im Nebenraum befindliche Werkstatt, deren Maschinen spürbare Erschütterungen des Tisches hervorriefen.
 
@@ -361,7 +361,7 @@ Zur Bestimmung des Bindungswinkels legen wir für jede Winkelmessung zwei Hilfsg
 Der Vergleich mit den Abbildungen \ref{fig:graphit} und \ref{fig:laengen} legt nahe, dass es sich bei dem durch die Geraden eingeschlossenen Winkel um den jeweiligen Bindungswinkel handelt.
 Wir führen insgesamt sechs Winkelmessungen um ein Ergebnis zu erhalten, was unabhängig von der Winkelposition innerhalb des Hexagons ist.
 
-Hier Tabelle mit Winkeln
+\input{./messwerte/Winkel.tex}
 
 Analog zum Abschnitt \ref{ssec:laenge} berechnen wir das arithmetische Mittel, die Standardabweichung der Einzelmessung und den daraus resultierenden Fehler des Mittelwerts aus den $N = 6$ Winkeln:
 \begin{align}
@@ -409,7 +409,6 @@ erhalten.
 \newpage
 
 \begin{appendix}
-
 \section{Messdaten: Bindungslängen in Graphit}
 \label{messw:laenge}
 \input{./messwerte/Laenge.tex}

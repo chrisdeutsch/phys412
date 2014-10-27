@@ -277,14 +277,14 @@ Eine genaue Erläuterung der Missstände wird in Abschnitt \ref{sec:Diskussion} 
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{./grafiken/originale/ref_graphit_pt_ir_1nm.png}
-\caption{Referenzbild Pt-Ir}
+\caption{Aufnahme einer Graphitoberfläche mit einer gerissenen Pt-Ir Spitze (Referenzbild)}
 \end{figure}
 
 \subsection{Messung der Graphitoberfläche mit einer geätzten W Spitze}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{./grafiken/originale/ref_graphit_w_2nm.png}
-\caption{Referenzbild W}
+\caption{Aufnahme einer Graphitoberfläche mit einer geätzten Wolfram Spitze}
 \end{figure}
 
 \subsection{Messung einer Goldoberfläche}
@@ -308,6 +308,7 @@ Der Fehler folgt aus Gauß'scher Fehlerfortpflanzung:
 
 
 \subsection{Bestimmung der Bindungslängen in Graphit}
+\label{ssec:laenge}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{./grafiken/laenge.png}
@@ -332,13 +333,13 @@ Zunächst bestimmen wir die mittlere Bindungslänge durch das arithmetische Mitt
 \begin{equation}
   \bar{d}_\mathrm{Bind.} = \frac{1}{N} \sum_{i=1}^N d_i= \SI{1,37}{\angstrom}
 \end{equation}
-Der Fehler einer Einzelmessung ist dabei gegeben durch die Standardabweichung $\sigma_\mathrm{Bind.}$:
+Der Fehler einer Einzelmessung ist dabei gegeben durch die Standardabweichung:
 \begin{equation}
-  \sigma_\mathrm{Bind.} = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (d_i - \bar{d}_\mathrm{Bind.})^2} = \SI{0,15}{\angstrom}
+  \sigma_\mathrm{d} = \sqrt{\frac{1}{N-1} \sum_{i=1}^N (d_i - \bar{d}_\mathrm{Bind.})^2} = \SI{0,15}{\angstrom}
 \end{equation}
 und folglich der Fehler des Mittelwerts als:
 \begin{equation}
-  \Delta \bar{d}_\mathrm{Bind.} = \frac{\sigma_\mathrm{Bind.}}{\sqrt{N}} = \SI{0,03}{\angstrom}
+  \Delta \bar{d}_\mathrm{Bind.} = \frac{\sigma_\mathrm{d}}{\sqrt{N}} = \SI{0,03}{\angstrom}
 \end{equation}
 Wir erhalten also als Bindungslänge:
 \begin{equation}
@@ -350,7 +351,29 @@ Wir erhalten also als Bindungslänge:
 \end{itemize}
 
 \subsection{Bestimmung der Bindungswinkel in Graphit}
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{./grafiken/collage.png}
+\caption{-}
+\label{fig:hilfsgeraden}
+\end{figure}
+Zur Bestimmung des Bindungswinkels legen wir für jede Winkelmessung zwei Hilfsgeraden durch die Maxima des Bildes (siehe Abbildung REF).
+Der Vergleich mit den Abbildungen \ref{fig:graphit} und \ref{fig:laengen} legt nahe, dass es sich bei dem durch die Geraden eingeschlossenen Winkel um den jeweiligen Bindungswinkel handelt.
+Wir führen insgesamt sechs Winkelmessungen um ein Ergebnis zu erhalten, was unabhängig von der Winkelposition innerhalb des Hexagons ist.
 
+Hier Tabelle mit Winkeln
+
+Analog zum Abschnitt \ref{ssec:laenge} berechnen wir das arithmetische Mittel, die Standardabweichung der Einzelmessung und den daraus resultierenden Fehler des Mittelwerts aus den $N = 6$ Winkeln:
+\begin{align}
+  \bar{\varphi}_\mathrm{Bind.} = \SI{120,5}{\degree} \\
+  \sigma_\mathrm{\varphi} = \SI{8,6}{\degree} \\
+  \Delta \bar{\varphi}_\mathrm{Bind.} = \SI{3,6}{\degree}
+\end{align}
+womit wir für den Bindungswinkel
+\begin{equation}
+  \varphi_\mathrm{Bind.} = \SI{120,5 +- 3,6}{\degree}
+\end{equation}
+erhalten.
 
 \section{Diskussion / Interpretation}
 \label{sec:Diskussion}
@@ -390,9 +413,6 @@ Wir erhalten also als Bindungslänge:
 \section{Messdaten: Bindungslängen in Graphit}
 \label{messw:laenge}
 \input{./messwerte/Laenge.tex}
-
-\section{Messdaten: Bindungswinkel in Graphit}
-\input{./messwerte/Winkel.tex}
 
 \end{appendix}
 

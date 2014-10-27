@@ -79,7 +79,7 @@ Assistent: & Peter Klassen
 
 \subsection{Tunneleffekt und Tunnelstrom}
 Der Tunneleffekt ist ein quantenmechanisches Phänomen, welches einem einlaufenden Teilchen der Energie $E$ erlaubt, eine klassisch unüberwindbare Potentialschwelle der Höhe $V_0 > E$ mit endlicher Wahrscheinlichkeit zu durchqueren.
-Im Gegensatz zum klassischen Fall, bei dem das Teilchen am Potentialwall reflektiert wird, nimmt bei der quantenmechanischen Beschreibung das Betragsquadrat der Wellenfunktion $|\Psi|^2$ und damit die Aufenthaltswahrscheinlichkeitdichte des Teilchens, exponentiell mit der Eindringtiefe $s$ in den Wall ab.
+Im Gegensatz zum klassischen Fall, bei dem das Teilchen am Potentialwall reflektiert wird, nimmt bei der quantenmechanischen Beschreibung das Betragsquadrat der Wellenfunktion $|\Psi|^2$ und damit die Aufenthaltswahrscheinlichkeitdichte des Teilchens exponentiell mit der Eindringtiefe $s$ in den Wall ab.
 
 Dieser Effekt wird beim Rastertunnelmikroskop (RTM) ausgenutzt, indem eine Spannung $U$ zwischen dem zu untersuchenden, leitenden Objekt und der ebenfalls leitenden Spitze des RTM angelegt wird.
 Wenn nun die Spitze nah genug an die Probe gebracht wird, können die Elektronen durch die Potentialbarriere zwischen Spitze und Probe tunneln, was zu einem messbaren Tunnelstrom $I_\mathrm{T}$ führt.
@@ -109,7 +109,7 @@ Zwischen der Spitze der Sonde und der Probe liegt die Spannung $U$ an, damit bei
 Dazu muss die Probe zunächst durch eine Grobeinstellung hinreichend nah an die Spitze geführt werden.
 Nachdem dies durchgeführt wurde, kann eine Feineinstellung über das z-Piezo erfolgen.
 
-Zur Bildgebung durchläuft die Sonde mithilfe der x-, y-Piezoelemente eine gleichmäßig Verteilung von Messpunkten in der x-y-Ebene (das Raster), deren Dichte im Wesentlichen durch die eingestellte Auflösung und den Messbereich gegeben sind.
+Zur Bildgebung durchläuft die Sonde mithilfe der x- und y-Piezoelemente eine gleichmäßig Verteilung von Messpunkten in der x-y-Ebene (das Raster), deren Dichte im Wesentlichen durch die eingestellte Auflösung und den Messbereich gegeben sind.
 Die an den einzelnen Punkten gemessene Größe, sowie die Operation des z-Piezos hängt vom verwendeten Betriebsmodus des RTM ab und wird in Abschnitt \ref{sec:betriebsmodi} näher erläutert.
 
 
@@ -133,7 +133,7 @@ Dann sind im Betrieb eines Rastertunnelmikroskops grundsätzlich zwei Betriebsmo
 \begin{itemize}
   \item \textbf{konstanter Tunnelstrom:} Dieser wird erreicht, indem der Tunnelstrom an jedem Punkt gemessen wird und durch eine Rückkopplungsschleife (siehe auch Abschnitt \ref{sssec:Regelkreis}) die Höhe der Spitze so eingestellt wird, dass der Tunnelstrom einen konstanten, vorgegebenen Wert annimmt.
 Die Bildgebung erfolgt durch Darstellung der anliegenden Spannung am z-Piezo, welche proportional zur Ladungsdichte ist, da sich die Spitze des RTM, aufgrund des konstanten Tunnelstroms, in der Ebene konstanter Ladungsdichte bewegt.
-Weiterhin sorgt die Reaktionszeit des Regelkreises dafür, dass das Verfahren im Vergleich zum Betriebsmodus mit konstanter Höhe deutlich langsamer ist, jedoch die Gefahr eines Zusammenstoßes von Spitze und Probe unterbunden ist.
+Weiterhin sorgt die Reaktionszeit des Regelkreises dafür, dass das Verfahren im Vergleich zum Betriebsmodus mit konstanter Höhe deutlich langsamer ist, jedoch die Gefahr eines Zusammenstoßes von Spitze und Probe unterbunden wird.
 
   \item \textbf{konstante Höhe:} Die Spitze des RTM bewegt sich mit einer festgelegten und konstanten Höhe über die Probe.
 Die eigentliche Messgröße ist dabei der fließende Tunnelstrom, welcher ebenfalls Rückschlüsse auf die elektronische Struktur der Probe liefert.
@@ -142,7 +142,7 @@ Da außer der Rasterbewegung der Spitze keine weiteren Regelungen notwendig sind
 Dieser Betriebsmodus ist also für flache Strukturen der Probe mit einer durchschnittlichen Höhe kleiner als der Abstand Probe-Spitze geeignet \cite{colton}.
 Da es praktisch kaum möglich ist, vertikale Verschiebungen auszuschließen und die Probe nicht immer parallel zur horizontalen Bewegung der Spitze ausgerichtet ist, wird auch hier eine Rück\-kopp\-lungs\-schlei\-fe, wie oben erklärt, verwendet, allerdings mit einer geringen Empfindlichkeit. Dadurch ist sichergestellt, dass die Spitze nicht auf schnelle Änderungen des Tunnelstroms reagiert, aber langfristig eine vorgegebene Höhe über der Probe (auch wenn diese gegen die horizontale Bewegungsebene der Spitze geneigt ist) erreicht wird.
 \end{itemize}
-Neben diesen gibt es noch Betriesmoden bei denen der Abstand Spitze-Probe an jedem Punkt variiert wird, um die Austrittsarbeit zu bestimmen \cite{sakai}.
+Neben diesen beiden gibt es noch Betriebsmodi bei denen der Abstand Spitze-Probe an jedem Punkt variiert wird, um die Austrittsarbeit zu bestimmen \cite{sakai}.
 Außerdem können durch eine Variation der Spannung zwischen Probe und Spitze weitere elektronische Eigenschaften der Probe bestimmt werden (\emph{Rastertunnelspektroskopie}).
 
 \subsubsection{Regelkreis}
@@ -158,7 +158,7 @@ Je nach Anwendungsfall werden verschiedene Reglertypen mit jeweils unterschiedli
 So genannte \emph{P-Regler} liefern ein zur Eingangsgröße proportionales Signal mit einer festen Verstärkung.
 In der Praxis werden solche Regler meist um eine integrierende und/oder differenzierende Funktion erweitert. Entsprechend spricht man dann beispielsweise von \emph{PI-} oder \emph{PID-Reglern}.
 Der integrierende Teil sorgt für eine zeitabhängige Schaltung, so dass auch die Eingangsgröße eine gewisse Zeit in der Vergangenheit überwacht wird (\emph{Hysterese}) und daraufhin ein entsprechendes Schaltverhalten eintritt.
-Der differenzierende Teil hingegen reagiert nicht auf den Wert des Eingangssignals sondern auf seine Änderungen dessen.
+Der differenzierende Teil hingegen reagiert nicht auf den Wert des Eingangssignals sondern auf Änderungen dessen.
 
 \subsubsection{Auflösungsvermögen}
 Man sieht bereits an Gleichung \ref{eq:tunnelstrom} dass die Tiefenauflösung des RTM bei typischen Austrittsarbeiten $\Phi = \SI{4}{\electronvolt}$ idealerweise in der Größenordnung von \SI{0,1}{\angstrom} liegt.
@@ -186,7 +186,7 @@ Diese Methode liefert tendenziell besser definierte Spitzen als das mechanische 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\textwidth]{grafiken/graphit.pdf}
-  \caption{Schematische Darstellung der obersten zwei Ebenen eines Graphit-Kristalls. Die Kohlenstoffatome die in der oberen Ebene (fett) und der Unteren (gestrichelt) überlappen sind in rot markiert.}
+  \caption{Schematische Darstellung der obersten zwei Ebenen eines Graphit-Kristalls. Die Kohlenstoffatome, die in der oberen (fett) und der unteren Ebene (gestrichelt) überlappen sind in rot markiert.}
   \label{fig:graphit}
 \end{figure}
 Graphit besteht aus planen Kohlenstoffebenen mit einer regelmäßigen hexagonalen Struktur, wobei der Abstand der Kohlenstoffatome \SI{1,42}{\angstrom} \cite{colton} und der Bindungswinkel \SI{120}{\degree} beträgt.
@@ -208,7 +208,7 @@ d_\mathrm{max} = 2 \cdot \SI{1,42}{\angstrom} \cdot \sin\left( \frac{1}{2} \cdot
   So ist das Profil des Objektes gegeben durch die Blattfederhöhe.
   \item[--] konstante Höhe: Die Höheneinstellung bleibt unverändert und das Profil des Objektes ist gegeben durch die Auslenkung der Feder.
   \end{itemize}
-  Es gibt noch weitere Betriebsmodi auf die hier nicht weiter eingegangen wird.
+  Es gibt bei der Rasterkraftmikroskopie noch weitere Betriebsmodi auf die an dieser Stelle aber nicht weiter eingegangen wird.
 \end{itemize}
 
 \section{Versuchsdurchführung}
@@ -216,7 +216,7 @@ d_\mathrm{max} = 2 \cdot \SI{1,42}{\angstrom} \cdot \sin\left( \frac{1}{2} \cdot
 
 In dem Versuch sollten geeignete Spitzen zum Abbilden von Graphitoberflächen hergestellt werden und anschließend mit ihnen auf atomarer Ebene Bilder der Oberfläche aufgenommen werden.
 Für Graphit sollten dabei Eigenschaften des Kristallgitters, wie Atomabstände und Winkel der Bindungen untersucht und aus den Bildern bestimmt werden. 
-Außerdem sollte mit einer Spitze die atomare Auflösung bei Graphit erreicht eine Goldoberfläche abgebildet werden und dies mit dem vorigen Bild verglichen werden.
+Außerdem sollte mit einer Spitze, die bei Graphit atomare Auflösung erreicht, eine Goldoberfläche abgebildet werden und diese mit dem vorigen Bild verglichen werden.
 
 \subsection{Herstellung der Spitzen}
 
@@ -253,7 +253,8 @@ Da das Rastertunnelmikroskop mit sehr feinen Mechaniken und Auflösungen auf ato
 Die Geräte wie Zangen, Pinzetten, aber auch die Drähte sollten vor der Verarbeitung immer mit Ethanol gereinigt werden.
 Ebenfalls sollte die Mechanik des RTM, also die Führungsschiene für den Probenhalter und der Probenhalter selber sauber gehalten werden, damit dieser ungehindert von dem Piezoelement zur Grobeinstellung bewegt werden kann.
 
-Diese Grobeinstellung erfolgt über den \emph{Slip-Stick-Effekt}, welcher ausnutzt, dass Haftreibung tendenziell größer ist als Gleitreibung und so durch eine langsame Ausdehnung des Piezos die Probe vorschiebt, aber eine ruckartiges Kontrahieren aufgrund der geringeren Gleitreibung und der Trägheit des Halters keine Positionsänderung hervorruft.
+Diese Grobeinstellung erfolgt über den \emph{Slip-Stick-Effekt}, welcher ausnutzt, dass Haftreibung tendenziell größer ist als Gleitreibung und so durch eine langsame Ausdehnung des Piezos die Probe vorschiebt.
+Ein ruckartiges Kontrahieren aufgrund der geringeren Gleitreibung und der Trägheit des Halters ruft allerdings keine Positionsänderung hervor.
 Deshalb ist die Reinigung des Probenhalters kritisch, wie im Versuch mehrfach festgestellt wurde.
 
 \subsection{Datenaufnahme}
@@ -262,7 +263,7 @@ Nach dem erfolgreichen Einsetzen von Probe und Spitze kann versucht werden, Date
 Beim Einsetzen der Spitze ist zu beachten, dass diese nicht übermäßig lang ist, da sonst die Probe so weit hinten positioniert werden muss, dass der Stellmotor (\emph{Slip-Stick}-Piezo) ihn nicht mehr bewegen kann.
 Nun wird zunächst per Hand der Probenhalter möglichst nah an die Spitze bewegt und dann im Computerprogramm mit \textit{Advance} schrittweise näher herangefahren.
 Der Abstand ist dabei mit einer in der Abdeckung des RTM eingebauten Lupe zu kontrollieren.
-Ist die Probe möglichst nah positioniert (die Kontroll-LED im Programm und auf dem Gerät selber sollte orange leuchten), kann mit \textit{Approach} im Computerprogramm eine automatische Annäherung mit dem z-Piezoelement gestartet werden.
+Ist die Probe möglichst nah positioniert (die Kontroll-LED im Programm und auf dem Gerät sollte orange leuchten), kann mit \textit{Approach} im Computerprogramm eine automatische Annäherung mit dem z-Piezoelement gestartet werden.
 Dies gelingt nicht immer, dann muss erneut manuell korrigiert und ein weiterer Annäherungsversuch gestartet werden.
 Ist die Annäherung abgeschlossen, leuchtet die LED grün und es beginnt automatisch die Datennahme mit den eingestellten Parametern (zu rasternde Fläche, angestrebter Tunnelstrom etc.).
 
@@ -272,7 +273,7 @@ Ein weiterer Störfaktor sind Erschütterungen in dem Versuchsraum, hauptsächli
 
 \section{Messdaten}
 Wir konnten leider keine verwertbaren Messergebnisse erzielen und verwenden daher die bereitgestellten Referenzbilder zur quantitativen Auswertung.
-Eine genaue Erläuterung der Missstände wird in Abschnitt \ref{sec:Diskussion} gegeben.
+Eine genaue Erläuterung der Störfaktoren wird in Abschnitt \ref{sec:Diskussion} gegeben.
 
 \subsection{Messung der Graphitoberfläche mit einer gerissenen Pt-Ir Spitze}
 \begin{figure}[!h]
@@ -290,7 +291,7 @@ Außerdem sieht man eine Verzerrung des Bildes in Form von unterschiedlichen Kan
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.5\textwidth]{./grafiken/originale/ref_graphit_w_2nm.png}
-\caption{Aufnahme einer Graphitoberfläche mit einer geätzten Wolfram Spitze}
+\caption{Aufnahme einer Graphitoberfläche mit einer geätzten Wolfram Spitze (Referenzbild)}
 \label{fig:ref_w}
 \end{figure}
 
@@ -301,13 +302,14 @@ Die hier genutzte Wolframspitze ist außerdem offensichtlich nicht von genügend
 
 \subsection{Messung einer Goldoberfläche}
 Die uns zur Verfügung stehenden Referenzbilder für Messungen einer Goldoberfläche sind leider alle nicht gut auszuwerten, da die dort genutzten Messbereiche nicht vergleichbar mit denen in den Messungen von Graphit sind.
-Zudem ist die Kristallstruktur von Gold grundsätzlich schwieriger darzustellen, da Gold eine homogenere Ladungsdichte als Graphit hat, es sind daher nicht so deutliche Berge und Täler wie bei Graphit zu sehen. 
+Zudem ist die Kristallstruktur von Gold grundsätzlich schwieriger darzustellen, da Gold eine homogenere Ladungsdichte als Graphit hat.
+Es sind daher nicht so deutliche Berge und Täler wie bei Graphit zu sehen. 
 
 \section{Auswertung}
 Die folgende quantitative Auswertung beschäftigt sich mit der Bestimmung der Vergrößerung des Rastertunnelmikroskops sowie einiger Kenngrößen der zugrundeliegenden Graphitstruktur wie der Bindungslänge und dem Bindungswinkel der hexagonalen Kohlenstoffringe.
 
-\subsection{Bestimmung der Vergrößerung des RTM}
-Zur Bestimmung der Vergrößerung von Abbildung \ref{fig:ref_ptir} ist zunächst anzumerken, dass das Seitenverhältnis von Abbildung und Messbereich $1:1$ ist, sodass die Vergrößerung in $x$- und $y$-Richtung gleich ist ($V_x = V_y$). Außerdem hängt die Größe des Bildes von der Vergrößerungsstufe im Computerprogramm bzw. der Größe des Ausdrucks ab. Als Referenzwert werden wir die Größe des Ausdrucks der Abbildung verwenden, sodass sich die Vergrößerung ergibt als:
+\subsection{Bestimmung der Vergrößerung des Mikroskops}
+Zur Bestimmung der Vergrößerung von Abbildung \ref{fig:ref_ptir} ist zunächst anzumerken, dass das Seitenverhältnis von Abbildung und Messbereich $1:1$ ist, sodass die Vergrößerung in $x$- und $y$-Richtung gleich ist ($V_x = V_y$). Außerdem hängt die Größe des Bildes von der Vergrößerungsstufe im Computerprogramm bzw. der Größe des Ausdrucks ab. Als Referenzwert werden wir die Größe des Ausdrucks der Abbildung \ref{fig:ref_ptir} in diesem Protokoll verwenden, sodass sich die Vergrößerung ergibt als:
 \begin{equation}
   V = V_x = \frac{L_x}{l_x}
 \end{equation}
@@ -342,16 +344,16 @@ Um die Bindungslängen zu bestimmen, müssen wir zunächst die hexagonale Ringst
 Da wir bei Vermessung der hexagonalen Struktur möglichst hohe Vergrößerung brauchen, verwenden wir das Ergebnis der Messung mit Pt-Ir Spitze da diese einen kleinen Messbereich von $\SI{1}{\nano\metre} \times \SI{1}{\nano\metre}$ aufweist.
 
 Zunächst werden die nicht-überlappenden Kohlenstoffatome markiert, da diese als Erhebungen bei der Bildgebung sichtbar werden.
-Gemäß Abschnitt \ref{ssec:graphit} werden die in zwei obersten Ebenen überlappenden Kohlenstoffatome als Täler im Bild sichtbar, sodass auch diese markiert werden können.
-Verbindet man nun die eingezeichneten Punkte zu hexagonalen Ringen (im Hinblick auf Abbildung \ref{fig:graphit}) so erhalten wir Abbildung \ref{fig:laengen}.
+Gemäß Abschnitt \ref{ssec:graphit} werden die in den zwei obersten Ebenen überlappenden Kohlenstoffatome als Täler im Bild sichtbar, sodass auch diese markiert werden können.
+Verbindet man nun die eingezeichneten Punkte zu hexagonalen Ringen (im Hinblick auf Abbildung \ref{fig:graphit}), so erhalten wir Abbildung \ref{fig:laengen}.
 
-In der Abbildung sieht man deutlich, dass Ebene der Probe nicht mit der $(x,y)$-Ebene des RTM zusammengefallen ist, da die Bindungslängen in manche Richtungen stark gestaucht sind.
+In der Abbildung sieht man deutlich, dass die Ebene der Probe nicht mit der $(x,y)$-Ebene des RTM zusammengefallen ist, da die Bindungslängen in manche Richtungen stark gestaucht sind.
 Dies liegt daran, dass wir aufgrund des Darstellungstyps (\emph{Density Plot}) mit den eingezeichneten Linien nur die Projektion der Bindung in die $(x,y)$-Ebene des RTM erhalten.
 
 Wir Bestimmen die Längen der eingezeichneten Linien mit einem Grafikprogramm, wobei wir den Fehler der digitalen Längenbestimmung vernachlässigen, da dieser klein gegen die Verzerrung des Bildes ist.
 Die gemessenen Längen finden sich in Anhang \ref{messw:laenge}.
 
-Um den systematischen Fehler aufgrund der Projektion (tendenzielle Unterschätzung der Bindungslänge) zu verringern, streichen wir zunächst die Messwerte von Bindungen die in der Abbildung nach links-oben zeigen\footnote{Liniennummern: $3,7,9,11,13,18,20,22,24,28,30,33,37,39,42,45,47,50,53$}, da diese die größte Stauchung aufgrund von Projektion aufweisen.
+Um den systematischen Fehler aufgrund der Projektion (tendenzielle Unterschätzung der Bindungslänge) zu verringern, streichen wir zunächst die Messwerte von Bindungen, die in der Abbildung nach links-oben zeigen\footnote{Liniennummern: $3,7,9,11,13,18,20,22,24,28,30,33,37,39,42,45,47,50,53$}, da diese die größte Stauchung aufgrund von Projektion aufweisen.
 Die bleibenden $N = \num{35}$ Längen können dann zur Bestimmung der Bindungslänge ausgewertet werden, wobei immernoch mit einer Unterschätzung des tatsächlichen Wertes zu rechnen ist.
 
 Zunächst bestimmen wir die mittlere Bindungslänge durch das arithmetische Mittel und erhalten:
@@ -414,7 +416,7 @@ Dieser Wert entspricht innerhalb der Fehlergrenzen dem für ein regelmäßiges S
 \section{Diskussion / Interpretation}
 \label{sec:Diskussion}
 
-Leider hat, wie in \ref{sec:durchfuehrung} bereits erwähnt, die Durchführung des Versuches nicht zu sinnvollen Bildern geführt.
+Leider hat, wie in Abschnitt \ref{sec:durchfuehrung} bereits erwähnt, die Durchführung des Versuches nicht zu sinnvollen Bildern geführt.
 Trotz vieler Versuche haben wir es nicht geschafft, Spitzen herzustellen, mit denen eine sinnvolle Datennahme möglich war.
 Die geforderte Sauberkeit konnte unserer Meinung nach sichergestellt werden, und auch die Herstellung der Pt-Ir Spitzen funktionierte nach etwas Übung wie beschrieben.
 Das Ätzen der Wolframspitzen wich in einigen Punkten von der Versuchsbeschreibung ab, Gründe hierfür könnten die limitierte Positionierbarkeit des Drahtes in der Lauge und die Qualität der Lauge sein.
@@ -426,7 +428,7 @@ Das Ätzen der Wolframspitzen wich in einigen Punkten von der Versuchsbeschreibu
 \label{fig:bohrer}
 \end{figure}
 
-Als weiterer Störfaktor kommen Erschütterungen von den Maschinen aus dem Nebenraum zustande. Abbildung \ref{fig:bohrer}, die am Ende des zweiten Versuchstages entstand zeigt dabei gut den Einfluss der Erschütterungen auf die Messung.
+Als weiterer Störfaktor kommen Erschütterungen von den Maschinen aus dem Nebenraum zustande. Abbildung \ref{fig:bohrer}, die am Ende des zweiten Versuchstages entstand, zeigt dabei gut den Einfluss der Erschütterungen auf die Messung.
 Während dieser Datennahme nahm im Nebenraum eine Bohrmaschine den Betrieb auf, was selbst Boden und Tische im Versuchsraum spürbar erschüttern ließ.
 Das Bild stellt gleichzeitig auch die beste unserer Messungen dar, leider jedoch nicht mit atomarer Auflösung.
 

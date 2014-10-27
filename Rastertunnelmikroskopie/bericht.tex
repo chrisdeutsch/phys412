@@ -278,6 +278,7 @@ Eine genaue Erläuterung der Missstände wird in Abschnitt \ref{sec:Diskussion} 
 \centering
 \includegraphics[width=0.5\textwidth]{./grafiken/originale/ref_graphit_pt_ir_1nm.png}
 \caption{Aufnahme einer Graphitoberfläche mit einer gerissenen Pt-Ir Spitze (Referenzbild)}
+\label{fig:ref_ptir}
 \end{figure}
 
 \subsection{Messung der Graphitoberfläche mit einer geätzten W Spitze}
@@ -285,6 +286,7 @@ Eine genaue Erläuterung der Missstände wird in Abschnitt \ref{sec:Diskussion} 
 \centering
 \includegraphics[width=0.5\textwidth]{./grafiken/originale/ref_graphit_w_2nm.png}
 \caption{Aufnahme einer Graphitoberfläche mit einer geätzten Wolfram Spitze}
+\label{fig:ref_w}
 \end{figure}
 
 \subsection{Messung einer Goldoberfläche}
@@ -295,17 +297,27 @@ Homogene Ladungsdichte erwähnen.
 Die folgende quantitative Auswertung beschäftigt sich mit der Bestimmung der Vergrößerung des Rastertunnelmikroskops sowie einiger Kenngrößen der zugrundeliegenden Graphitstruktur wie der Bindungslänge und dem Bindungswinkel der hexagonalen Kohlenstoffringe.
 
 \subsection{Bestimmung der Vergrößerung des RTM}
-Zur Bestimmung der Vergrößerung ist zunächst anzumerken, dass wir einen quadratischen Messbereich in ein quadratisches Bild auftragen (schlauer formulieren), sodass die Vergrößerung in x- und y-Richtung gleich ist ($V_x = V_y$). Außerdem hängt die Größe des Bildes von der Vergrößerungsstufe im Computerprogramm bzw. der Größe des Ausdrucks ab. Als Referenzwert werden wir die Größe des Ausdrucks verwenden, sodass sich die Vergrößerung ergibt als:
+Zur Bestimmung der Vergrößerung von Abbildung \ref{fig:ref_ptir} ist zunächst anzumerken, dass wir einen quadratischen Messbereich in ein quadratisches Bild auftragen (schlauer formulieren), sodass die Vergrößerung in x- und y-Richtung gleich ist ($V_x = V_y$). Außerdem hängt die Größe des Bildes von der Vergrößerungsstufe im Computerprogramm bzw. der Größe des Ausdrucks ab. Als Referenzwert werden wir die Größe des Ausdrucks der Abbildung verwenden, sodass sich die Vergrößerung ergibt als:
 \begin{equation}
   V = V_x = \frac{L_x}{l_x}
 \end{equation}
 wobei wir $L_x$ als x-Kantenlänge des Ausdrucks und $l_x$ als Größe des Messbereichs in x-Richtung definieren.
-
 Der Fehler folgt aus Gauß'scher Fehlerfortpflanzung:
 \begin{equation}
   \Delta V = \sqrt{\frac{\Delta L_x ^2}{l_x^2} + \frac{L_x^2 \cdot \Delta l_x^2}{l_x^4}}
 \end{equation}
-
+Wir messen die ausgedruckte Kantenlänge der Abbildung \ref{fig:ref_ptir} mit einem Lineal:
+\begin{equation*}
+  L_{x,\mathrm{Abb.\ref{fig:ref_ptir}}} = \SI{55 +- 0,5}{\milli\metre}
+\end{equation*}
+Wir nehmen auf dem Messbereich einen relativen Fehler von \SI{1}{\percent} an und erhalten:
+\begin{align*}
+  l_{x,\mathrm{Abb.\ref{fig:ref_ptir}}} = \SI{1,00 +- 0,01}{\nano\metre}
+\end{align*}
+Mit diesem Wert erhalten wir für die Vergrößerung der des RTM:
+\begin{align*}
+  V_\mathrm{Abb.\ref{fig:ref_ptir}} = \num{55,0 +- 0,75e6}
+\end{align*}
 
 \subsection{Bestimmung der Bindungslängen in Graphit}
 \label{ssec:laenge}

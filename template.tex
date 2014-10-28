@@ -10,10 +10,10 @@
 % erweiterte Matheumgebungen
 \usepackage{amsmath}
 
-%
+% zusätzliche mathematische Schriftarten
 \usepackage{amsfonts}
 
-%
+% verschiedene mathematische Symbole
 \usepackage{amssymb}
 
 % Einheiten setzen z.B. \SI{10}{\kilo\gram\meter\per\second\squared}
@@ -25,17 +25,20 @@
 }
 
 % Randbreiten
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[left=3cm,right=4cm,top=3cm,bottom=3cm,twoside]{geometry}
 
 % Bilder einfügen
 \usepackage{graphicx}
 
+% Verweise innerhalb des Dokuments
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,
+	allcolors = {black}
+}
 
 % bessere Tabellenlayouts
 \usepackage{booktabs}
-
-%Textumflossene Grafiken, z.B. \begin{wrapfigure}[14]{R}[1pt]{0.5\textwidth}
-\usepackage{wrapfig}
 
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
@@ -45,7 +48,7 @@
 % DOKUMENTINFORMATIONEN
 \title{P401 \\ Elektronische Übergänge in Atomen}
 
-\author{Christopher Deutsch \and Christian Bespin}
+\author{Christopher Deutsch\footnote{christopher.deutsch@uni-bonn.de} \and Christian Bespin\footnote{christian.bespin@uni-bonn.de}}
 
 \date{\today}
 
@@ -57,13 +60,14 @@
 \begin{center}
 \begin{tabular}{l r}
 Durchführung: & 20./21. Oktober 2014 \\
-Gruppe: & 2 $\alpha$ \\
-Assistent: & Hans Wurst
+Gruppe: & $\alpha$ 2 \\
+Assistent: & Peter Klassen
 \end{tabular}
 \end{center}
 
 % ZUSAMMENFASSUNG
 \begin{abstract}
+\noindent
 % Text
 \end{abstract}
 
@@ -106,5 +110,12 @@ Assistent: & Hans Wurst
   2nd edition,
   1994.
 \end{thebibliography}
+
+\newpage
+
+% APPENDIX
+\begin{appendix}
+
+\end{appendix}
 
 \end{document}

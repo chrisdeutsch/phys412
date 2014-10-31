@@ -3,6 +3,7 @@
 
 % Encoding für Umlaute
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 % Silbentrennung
 \usepackage[ngerman]{babel}
@@ -44,6 +45,8 @@
 % 3 subsubsections)
 \setcounter{tocdepth}{2}
 
+%manuelle angabe von Silbentrennung
+\hyphenation{Röntgen-strah-lung}
 
 % DOKUMENTINFORMATIONEN
 \title{P428 \\ Röntgenstrahlung und Materialanalyse}
@@ -79,6 +82,7 @@ Assistent: & Peter Klassen
 % INHALT VERSUCHSPROTOKOLL
 
 \section{Grundlagen}
+\subsection{Röntgenstrahlung}
   Als Röntgenstrahlung wird der Teil des elektromagnetischen Spektrums mit Energien zwischen einigen keV und mehreren MeV \cite{demtroeder} bezeichnet.
   Sie entsteht durch Beschuss geeigneter Kristalle mit Elektronen, die zuvor eine Beschleunigungsstrecke (in diesem Versuch \SI{35}{\kilo\volt}) durchlaufen haben.
   Die Elektronen erzeugen dabei auf zwei verschiedene Arten Röntgenstrahlung:
@@ -90,12 +94,16 @@ Assistent: & Peter Klassen
   Diese Energie entspricht der Energiedifferenz der Elektronen in den am Sprung beteiligten Schalen und ist charakteristisch für jedes Element.
   Das so entstandene Spektrum ist darum diskret.
   \end{itemize}
-  
+ 
+\subsection{Röntgenfluoreszenz}
+  Als Röntgenfluoreszenz bezeichnet man die Entstehung sekundärer, fluoreszierender Röntgenstrahlung.
+  Dies geschieht ähnlich wie die Erzeugung charakteristischer Röntgenstrahlung, nur dass nun bereits erzeugte Röntgenstrahlung anstatt den energiereichen Elektronen zur Bestrahlung eines Elements verwendet werden.
+  Diese sekundäre Röntgenstrahlung weist wieder ein charakteristisches Spektrum auf, aus dem man auf das beschossene Element schließen kann.
+  Das Verfahren zur Elementbestimmung (oder Anteilen an Elementen in dem Target (?)) nennt sich daher \textbf{Röntgenfluoreszenzanalyse}.
 \begin{itemize}
 \item
   \begin{itemize}
     \item Erzeugung und Nachweis
-    \item kontinuierliches und charakteristisches Röntgenspektrum
     \item Feinstruktur (char. Spektrum?)
   \end{itemize}
   \item Bragg Reflexion
@@ -106,7 +114,6 @@ Assistent: & Peter Klassen
   \end{itemize}
   \item Röntgenfluoreszenz
   \begin{itemize}
-    \item Grundlagen
     \item Bestimmung der Massenanteile einzelner Komponenten
   \end{itemize}
   \item Laue--Verfahren

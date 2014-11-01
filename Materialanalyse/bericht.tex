@@ -83,23 +83,44 @@ Assistent: & Peter Klassen
 
 \section{Grundlagen}
 \subsection{Röntgenstrahlung}
-  Als Röntgenstrahlung wird der Teil des elektromagnetischen Spektrums mit Energien zwischen einigen keV und mehreren MeV \cite{demtroeder} bezeichnet.
-  Sie entsteht durch Beschuss geeigneter Kristalle mit Elektronen, die zuvor eine Beschleunigungsstrecke (in diesem Versuch \SI{35}{\kilo\volt}) durchlaufen haben.
-  Die Elektronen erzeugen dabei auf zwei verschiedene Arten Röntgenstrahlung:
-  \begin{itemize}
-  \item \textbf{Bremsstrahlung} entsteht durch Streuung der Elektronen am Kristall, da diese bei jeder Geschwindigkeitsänderung Energie in Form von Strahlung abgeben.
-  Das entstehende Spektrum ist kontinuierlich und wird hauptsächlich durch die Beschleunigungsspannung begrenzt.
-  \item \textbf{charakteristische Strahlung} entsteht dadurch, dass die beschleunigten Elektronen im Bohrmodell ein Elektron auf einer inneren Schale des Atoms herauslöst.
-  Der so freigewordene Platz auf dieser Schale wird nun durch ein Elektron aus einer weiter außen liegenden Schale aufgefüllt, welches dabei Energie in Form von Röntgenstrahlung abgibt.
-  Diese Energie entspricht der Energiedifferenz der Elektronen in den am Sprung beteiligten Schalen und ist charakteristisch für jedes Element.
-  Das so entstandene Spektrum ist darum diskret.
-  \end{itemize}
+Als Röntgenstrahlung wird der Teil des elektromagnetischen Spektrums mit Photon-Energien zwischen \SI{100}{\electronvolt} und \SI{100}{\kilo\electronvolt} bezeichnet, wobei diese Grenzen nicht scharf sind und deshalb oft hinsichtlich der Strahlungsquelle eine Einordnung vollzogen wird.
+
+\subsubsection{Erzeugung}
+Es gibt zwei typische Erzeugungsmethoden von Röntgenstrahlung, welche auf dem Beschuss eines \emph{Targets} mit einem hochenergetischen Elektronenstrahl bestehen.
+Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten sind:
+\begin{itemize}
+  \item \textbf{Bremsstrahlung:} Die bei der Streuung der geladenen Elektronen an den Kernen des Targets vollzogene Geschwindigkeitsänderung des Elektrons, führt zur Emission eines Photons.
+  Das so entstandene Spektrum ist kontinuierlich, wobei eine maximale Photonenenergie gegeben ist, durch die kinetische Energie der einfallenden Elektronen, welche durch deren Beschleunigungsspannung $U$ gegeben ist.
+  \begin{align}
+    &E_\mathrm{kin. e^-} = h \cdot \nu_\mathrm{max} = \frac{hc}{\lambda_\mathrm{min}} \nonumber\\
+    &\Rightarrow \lambda_\mathrm{min} = \frac{h c}{e U} \quad \text{(Duane-Hunt-Gesetz)}
+  \end{align}
+  (BILD VON SPEKTRALVERTEILUNG und evtl. Kramers-Gesetz)
+  
+  Eine Quelle für reine Bremsstrahlung sind Synchrotronstrahlungsquellen.
+  
+  \item \textbf{charakteristische Strahlung:} Die einfallende hochenergetische Elektronenstrahlung ionisiert ein Elektron der inneren Schale eines Targetatoms.
+  Dadurch entsteht ein freier Zustand, welcher durch ein Elektron einer weiter äußeren Schale eingenommen werden kann.
+  Durch den Übergang wird ein Photon emittiert, dessen Energie gleich der Energiedifferenz der beiden Zustände ist.
+  Aufgrund dieser Abhängigkeit von der elektronisches Struktur des Targetatoms, ist das emittierte, diskrete Spektrum charakteristisch für das verwendete (Target)-Material.
+  Außerdem weist das emittierte Spektrum die Aufspaltung der Energieniveaus aufgrund von Fein- und Hyperfeinstruktur auf.
+  (BILD VON SPEKTRALVERTEILUNG)
+\end{itemize}
+In der Praxis treten beide Effekte bei der Erzeugung von Röntgenstrahlen in sogennanten Röntgenröhren auf.
+
+Eine \textbf{Röntgenröhre} besteht aus einem evakuierten Glaskolben mit einer Anordnung von geheizter Kathode und Anode aus Targetmaterial.
+Zwischen Kathode und Anode wird die Beschleunigungsspannung $U$ angelegt, sodass beim Heizen der Kathode mit der Heizspannung $U_\mathrm{Heiz}$ aufgrund des glühelektrischen Effekts ein Teil der Elektronen die Austrittsarbeit der Kathode überwinden kann und durch die Beschleunigungsspannung $U$ in Richtung der Anode beschleunigt werden.
+Nachdem die Beschleunigungsspannung $U$ durchlaufen wurde, treffen die Elektronen mit der Energie $e U$ auf das Anodenmaterial und erzeugen dabei Bremsstrahlung sowie charakteristische Strahlung, welche durch ein für Röntgenstrahlung durchlässiges Fenster im Glaskolben aus der Röhre austreten können.
+
+\subsubsection{Nachweis}
 Zum Nachweis von Röntgenstrahlung werden in diesem Versuch Geiger-Müller-Zählrohre, Röntgenenergiedetektor und Röntgenfilm verwendet.
-Der Röntgenfilm ist mit einer speziellen Beschichtung, die bei Auftreffen von Röntgenstrahlung Licht aussendet, versehen, welches wiederum eine lichtempfindliche Emulsion belichtet und so ein Bild erzeugt.
+Der Röntgenfilm ist mit einer speziellen Beschichtung, die bei Auftreffen von Röntgenstrahlung Licht aussendet (Schicht besser erläutern), versehen, welches wiederum eine lichtempfindliche Emulsion(?) belichtet und so ein Bild erzeugt.(Wikipedia?)
 Die Funktionsweise der beiden anderen Nachweismethoden wird weiter unten erklärt.
 
+Was noch erwähnt werden sollte:
 \begin{itemize}
-  \item Feinstruktur (char. Spektrum?)
+  \item Elektron-Loch Bildung in pn-Grenzschichten
+  \item Szintillationszähler
 \end{itemize}
 
 \subsection{Bragg-Reflexion}

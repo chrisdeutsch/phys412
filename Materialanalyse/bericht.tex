@@ -3,6 +3,7 @@
 
 % Encoding für Umlaute
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 % Silbentrennung
 \usepackage[ngerman]{babel}
@@ -25,7 +26,7 @@
 }
 
 % Randbreiten
-\usepackage[left=3cm,right=4cm,top=3cm,bottom=3cm,twoside]{geometry}
+\usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
 
 % Bilder einfügen
 \usepackage{graphicx}
@@ -44,6 +45,8 @@
 % 3 subsubsections)
 \setcounter{tocdepth}{2}
 
+% manuelle Angabe zur Silbentrennung (mehrere Wörter mit Leerzeichen in {} schreiben)
+\hyphenation{Rönt-gen-strah-lung}
 
 % DOKUMENTINFORMATIONEN
 \title{P428 \\ Röntgenstrahlung und Materialanalyse}
@@ -78,7 +81,94 @@ Assistent: & Peter Klassen
 
 % INHALT VERSUCHSPROTOKOLL
 
-\section{Grundlagen / Theorie}
+\section{Grundlagen}
+\subsection{Röntgenstrahlung}
+Als Röntgenstrahlung wird der Teil des elektromagnetischen Spektrums mit Photon-Energien zwischen \SI{100}{\electronvolt} und \SI{100}{\kilo\electronvolt} bezeichnet, wobei diese Grenzen nicht scharf sind und deshalb oft hinsichtlich der Strahlungsquelle eine Einordnung vollzogen wird.
+
+\subsubsection{Erzeugung}
+Es gibt zwei typische Erzeugungsmethoden von Röntgenstrahlung, welche auf dem Beschuss eines \emph{Targets} mit einem hochenergetischen Elektronenstrahl bestehen.
+Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten sind:
+\begin{itemize}
+  \item \textbf{Bremsstrahlung:} Die bei der Streuung der geladenen Elektronen an den Kernen des Targets vollzogene Geschwindigkeitsänderung des Elektrons, führt zur Emission eines Photons.
+  Das so entstandene Spektrum ist kontinuierlich, wobei eine maximale Photonenenergie gegeben ist, durch die kinetische Energie der einfallenden Elektronen, welche durch deren Beschleunigungsspannung $U$ gegeben ist.
+  \begin{align}
+    &E_\mathrm{kin. e^-} = h \cdot \nu_\mathrm{max} = \frac{hc}{\lambda_\mathrm{min}} \nonumber\\
+    &\Rightarrow \lambda_\mathrm{min} = \frac{h c}{e U} \quad \text{(Duane-Hunt-Gesetz)}
+  \end{align}
+  (BILD VON SPEKTRALVERTEILUNG und evtl. Kramers-Gesetz)
+  
+  Eine Quelle für reine Bremsstrahlung sind Synchrotronstrahlungsquellen.
+  
+  \item \textbf{charakteristische Strahlung:} Die einfallende hochenergetische Elektronenstrahlung ionisiert ein Elektron der inneren Schale eines Targetatoms.
+  Dadurch entsteht ein freier Zustand, welcher durch ein Elektron einer weiter äußeren Schale eingenommen werden kann.
+  Durch den Übergang wird ein Photon emittiert, dessen Energie gleich der Energiedifferenz der beiden Zustände ist.
+  Aufgrund dieser Abhängigkeit von der elektronisches Struktur des Targetatoms, ist das emittierte, diskrete Spektrum charakteristisch für das verwendete (Target)-Material.
+  Außerdem weist das emittierte Spektrum die Aufspaltung der Energieniveaus aufgrund von Fein- und Hyperfeinstruktur auf.
+  (BILD VON SPEKTRALVERTEILUNG)
+\end{itemize}
+In der Praxis treten beide Effekte bei der Erzeugung von Röntgenstrahlen in sogennanten Röntgenröhren auf.
+
+Eine \textbf{Röntgenröhre} besteht aus einem evakuierten Glaskolben mit einer Anordnung von geheizter Kathode und Anode aus Targetmaterial.
+Zwischen Kathode und Anode wird die Beschleunigungsspannung $U$ angelegt, sodass beim Heizen der Kathode mit der Heizspannung $U_\mathrm{Heiz}$ aufgrund des glühelektrischen Effekts ein Teil der Elektronen die Austrittsarbeit der Kathode überwinden kann und durch die Beschleunigungsspannung $U$ in Richtung der Anode beschleunigt werden.
+Nachdem die Beschleunigungsspannung $U$ durchlaufen wurde, treffen die Elektronen mit der Energie $e U$ auf das Anodenmaterial und erzeugen dabei Bremsstrahlung sowie charakteristische Strahlung, welche durch ein für Röntgenstrahlung durchlässiges Fenster im Glaskolben aus der Röhre austreten können.
+
+\subsubsection{Nachweis}
+Zum Nachweis von Röntgenstrahlung werden in diesem Versuch Geiger-Müller-Zählrohre, Röntgenenergiedetektor und Röntgenfilm verwendet.
+Der Röntgenfilm ist mit einer speziellen Beschichtung, die bei Auftreffen von Röntgenstrahlung Licht aussendet (Schicht besser erläutern), versehen, welches wiederum eine lichtempfindliche Emulsion(?) belichtet und so ein Bild erzeugt.(Wikipedia?)
+Die Funktionsweise der beiden anderen Nachweismethoden wird weiter unten erklärt.
+
+Was noch erwähnt werden sollte:
+\begin{itemize}
+  \item Elektron-Loch Bildung in pn-Grenzschichten
+  \item Szintillationszähler
+\end{itemize}
+
+\subsection{Bragg-Reflexion}
+
+\begin{itemize}
+  \item Röntgenbeugung
+  \item Bragg-Bedingung
+  \item Glanzwinkel
+\end{itemize}
+ 
+\subsection{Röntgenfluoreszenz}
+  Als Röntgenfluoreszenz bezeichnet man die Entstehung sekundärer, fluoreszierender Röntgenstrahlung.
+  Dies geschieht ähnlich wie die Erzeugung charakteristischer Röntgenstrahlung, nur dass nun bereits erzeugte Röntgenstrahlung anstatt den energiereichen Elektronen zur Bestrahlung eines Elements verwendet werden.
+  Diese sekundäre Röntgenstrahlung weist wieder ein charakteristisches Spektrum auf, aus dem man auf das beschossene Element schließen kann.
+  Das Verfahren zur Elementbestimmung (oder Anteilen an Elementen in dem Target (?)) nennt sich daher \textbf{Röntgenfluoreszenzanalyse}.
+  
+\begin{itemize}
+  \item Bestimmung der Massenanteile einzelner Komponenten
+\end{itemize}
+  
+\subsection{Laue-Verfahren}
+
+\begin{itemize}
+  \item Laue--Bedingung
+  \item Millersche Indizes (reziprokes Gitter)
+  \item Elementarzelle
+  \item Glanzwinkel
+  \item Netzebenenabstand
+\end{itemize}  
+
+\subsection{Geiger-Müller-Zählrohr}
+
+\begin{itemize}
+  \item Aufbau
+  \item Funktionsweise
+  \item Totzeit
+\end{itemize}
+  
+\subsection{Röntgenenergiedetektor}
+
+\begin{itemize}
+  \item Aufbau
+  \item Funktionsweise
+  \item PIN-Photodiode
+  \item Vielkanalanalysator
+\end{itemize}
+
+
 
 \section{Versuchsdurchführung}
 
@@ -109,7 +199,14 @@ Assistent: & Peter Klassen
   Addison Wesley, Massachusetts,
   2nd edition,
   1994.
+  
+\bibitem{demtroeder}
+	Wolfgang Demtröder,
+	\emph{Experimentalphysik 3}.
+	Springer Verlag,
+	3. Auflage
 \end{thebibliography}
+
 
 \newpage
 

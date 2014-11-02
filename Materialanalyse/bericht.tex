@@ -90,10 +90,14 @@ Es gibt zwei typische Erzeugungsmethoden von Röntgenstrahlung, welche auf dem B
 Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten sind:
 \begin{itemize}
   \item \textbf{Bremsstrahlung:} Die bei der Streuung der geladenen Elektronen an den Kernen des Targets vollzogene Geschwindigkeitsänderung des Elektrons, führt zur Emission eines Photons.
-  Das so entstandene Spektrum ist kontinuierlich, wobei eine maximale Photonenenergie gegeben ist, durch die kinetische Energie der einfallenden Elektronen, welche durch deren Beschleunigungsspannung $U$ gegeben ist.
+  Das so entstandene Spektrum ist kontinuierlich, wobei die maximale Photonenenergie gegeben ist durch die kinetische Energie der einfallenden Elektronen, welche durch deren Beschleunigungsspannung $U$ gegeben ist.
+  Überträgt das Elektron seine gesamte Energie auf ein einzelnes Photon:
   \begin{align}
-    &E_\mathrm{kin. e^-} = h \cdot \nu_\mathrm{max} = \frac{hc}{\lambda_\mathrm{min}} \nonumber\\
-    &\Rightarrow \lambda_\mathrm{min} = \frac{h c}{e U} \quad \text{(Duane-Hunt-Gesetz)}
+    &E_\mathrm{kin. e^-} = h \cdot \nu_\mathrm{max} = \frac{hc}{\lambda_\mathrm{min}}
+  \end{align}
+  so ist diese Grenze gegeben durch das \textbf{Duane-Hunt-Gesetz}
+  \begin{align}
+    \lambda_\mathrm{min} = \frac{h c}{e U} \quad \text{(Duane-Hunt-Gesetz)}
   \end{align}
   (BILD VON SPEKTRALVERTEILUNG und evtl. Kramers-Gesetz)
   
@@ -124,18 +128,31 @@ Was noch erwähnt werden sollte:
 \end{itemize}
 
 \subsection{Bragg-Reflexion}
+Betrachtet man die Beugung von einfallender elektromagnetischer Strahlung an parallelen Netzebenen eines Einkristalls, so führt die Interferenz der gebeugten Wellen zu einer Ausbildung von Beugungsmaxima.
+Bezeichnet $\theta$ den Winkel des einfallenden Strahls gegen die parallelen Netzebenen (Glanzwinkel), so erhält man konstruktive Interferenz, wenn der Weglängenunterschied zwischen zwei benachbarten Netzebenen ein Vielfaches der Wellenlänge $\lambda$ ist:
+\begin{align}
+  \Delta s = m \lambda \quad \text{für } m \in \mathbb{N}
+\end{align}
+Dabei ist der Weglängenunterschied gegeben durch den Netzebenenabstand $d$ und dem Glanzwinkel $\theta$:
+\begin{align}
+  \Delta s = 2 d \sin(\theta)
+\end{align}
+und man erhält die \textbf{Bedingung für Bragg-Reflexion}:
+\begin{align}
+  2 d \sin(\theta) = m \lambda
+\end{align}
+
+(Bild zur Veranschaulichung)
 
 \begin{itemize}
-  \item Röntgenbeugung
-  \item Bragg-Bedingung
-  \item Glanzwinkel
+  \item Röntgenbeugung (muss noch erklärt werden)
 \end{itemize}
  
 \subsection{Röntgenfluoreszenz}
-  Als Röntgenfluoreszenz bezeichnet man die Entstehung sekundärer, fluoreszierender Röntgenstrahlung.
-  Dies geschieht ähnlich wie die Erzeugung charakteristischer Röntgenstrahlung, nur dass nun bereits erzeugte Röntgenstrahlung anstatt den energiereichen Elektronen zur Bestrahlung eines Elements verwendet werden.
-  Diese sekundäre Röntgenstrahlung weist wieder ein charakteristisches Spektrum auf, aus dem man auf das beschossene Element schließen kann.
-  Das Verfahren zur Elementbestimmung (oder Anteilen an Elementen in dem Target (?)) nennt sich daher \textbf{Röntgenfluoreszenzanalyse}.
+Als Röntgenfluoreszenz bezeichnet man die Entstehung sekundärer, fluoreszierender Röntgenstrahlung.
+Dies geschieht ähnlich wie die Erzeugung charakteristischer Röntgenstrahlung, nur dass nun bereits erzeugte Röntgenstrahlung anstatt den energiereichen Elektronen zur Bestrahlung eines Elements verwendet werden.
+Diese sekundäre Röntgenstrahlung weist wieder ein charakteristisches Spektrum auf, aus dem man auf das beschossene Element schließen kann.
+Das Verfahren zur Elementbestimmung (oder Anteilen an Elementen in dem Target (?)) nennt sich daher \textbf{Röntgenfluoreszenzanalyse}.
   
 \begin{itemize}
   \item Bestimmung der Massenanteile einzelner Komponenten
@@ -149,7 +166,7 @@ Was noch erwähnt werden sollte:
   \item Elementarzelle
   \item Glanzwinkel
   \item Netzebenenabstand
-\end{itemize}  
+\end{itemize}
 
 \subsection{Geiger-Müller-Zählrohr}
 

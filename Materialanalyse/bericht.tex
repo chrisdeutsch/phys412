@@ -159,11 +159,25 @@ Als Röntgenfluoreszenz bezeichnet man die Entstehung sekundärer, fluoreszieren
 Dies geschieht ähnlich wie die Erzeugung charakteristischer Röntgenstrahlung, nur dass nun bereits erzeugte Röntgenstrahlung anstatt den energiereichen Elektronen zur Bestrahlung eines Elements verwendet werden.
 Diese sekundäre Röntgenstrahlung weist wieder ein charakteristisches Spektrum auf, aus dem man auf das beschossene Element schließen kann.
 Das Verfahren zur Elementbestimmung (oder Anteilen an Elementen in dem Target (?)) nennt sich daher \textbf{Röntgenfluoreszenzanalyse}.
-  
-\begin{itemize}
-  \item Bestimmung der Massenanteile einzelner Komponenten
-\end{itemize}
-  
+
+Aus Höhe der Linien im Count--Energie Diagramm kann Massenanteil des jeweiligen Stoffes bestimmt werden.
+Höhe der Linie ist nämlich proportional zur Anzahl der strahlenden Atome.
+Vergleicht man das aufgenommene Spektrum mit einem Referenzspektrum mit strahlenden Atomen:
+\begin{align}
+  n_0 = V \cdot \frac{\rho}{A}
+\end{align}
+($V$: durchstrahltes Volumen; $\rho$: Massendichte des Stoffes; $A$: Atomgewicht des Stoffes)
+So kann aus der Höhe des Peaks im zu analysierenden Spektrum $H$ mit der im Referenzspektrum $H_0$ verglichen werden und daraus die Anzahl $n$ der Atome im zu analysierenden Spektrum berechnet werden:
+\begin{align}
+  n = n_0 \cdot \frac{H}{H_0}
+\end{align}
+Daher ergibt sich der Massenanteil des $i$-ten Referenzmaterials im zu analysierenden Spektrums zu:
+\begin{align}
+  C_i = \frac{n_i \cdot A_i}{\sum_j n_j \cdot A_j} = \frac{V \cdot \frac{\rho_i}{A_i} \cdot \frac{H_i}{H_{0,i}} \cdot A_i}{\sum_j V \cdot \frac{\rho_j}{A_j} \cdot \frac{H_j}{H_{0,j}}\cdot A_j} = \frac{\rho_i \cdot \frac{H_i}{H_{0,i}}}{\sum_j \rho_j \cdot \frac{H_j}{H_{0,j}}}
+\end{align}
+wobei das durchstrahlte Volumen der einzelnen Proben als gleich angenommen wurde.
+
+
 \subsection{Laue-Verfahren}
 
 \subsubsection{Millersche Indizes}
@@ -201,7 +215,7 @@ Betrachte dazu das Beispiel in Abbildung \ref{fig:millerindizes}:
   
 \subsection{Röntgenenergiedetektor}
 \textbf{Aufbau:} PIN-Photodiode ($Q \propto E_\gamma$) -- Charge Amplifier (Integrator $U_\mathrm{out} \propto \int I = Q$) -- Verstärkerstufe ($U = V \cdot U_\mathrm{out}$)
-Außerdem Kühlnug der PIN-Diode um den Leckstrom zu verringern (Peltier-Effekt)
+Außerdem Kühlnug der PIN-Diode um den Leckstrom zu verringern (hier Peltier-Effekt)
 
 \textbf{PIN-Photodiode:} Besteht aus einer PIN-Halbleiterschicht, wobei I für intrinischem Halbleiter (undotiert) steht.
 Unter reverse Bias bildet sich eine Verarmungszone im intrinsischen Halbleiterbereich.

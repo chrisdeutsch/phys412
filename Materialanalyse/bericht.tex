@@ -100,9 +100,9 @@ Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten sind:
     \lambda_\mathrm{min} = \frac{h c}{e U} \quad \text{(Duane-Hunt-Gesetz)}
   \end{align}
   (BILD VON SPEKTRALVERTEILUNG und evtl. Kramers-Gesetz)
-  
+
   Eine Quelle für reine Bremsstrahlung sind Synchrotronstrahlungsquellen.
-  
+
   \item \textbf{charakteristische Strahlung:} Die einfallende hochenergetische Elektronenstrahlung ionisiert ein Elektron der inneren Schale eines Targetatoms.
   Dadurch entsteht ein freier Zustand, welcher durch ein Elektron einer weiter äußeren Schale eingenommen werden kann.
   Durch den Übergang wird ein Photon emittiert, dessen Energie gleich der Energiedifferenz der beiden Zustände ist.
@@ -153,17 +153,17 @@ und man erhält die \textbf{Bedingung für Bragg-Reflexion}:
 \begin{itemize}
   \item Röntgenbeugung (muss noch erklärt werden)
 \end{itemize}
- 
+
 \subsection{Röntgenfluoreszenz}
 Als Röntgenfluoreszenz bezeichnet man die Entstehung sekundärer, fluoreszierender Röntgenstrahlung.
 Dies geschieht ähnlich wie die Erzeugung charakteristischer Röntgenstrahlung, nur dass nun bereits erzeugte Röntgenstrahlung anstatt den energiereichen Elektronen zur Bestrahlung eines Elements verwendet werden.
 Diese sekundäre Röntgenstrahlung weist wieder ein charakteristisches Spektrum auf, aus dem man auf das beschossene Element schließen kann.
 Das Verfahren zur Elementbestimmung (oder Anteilen an Elementen in dem Target (?)) nennt sich daher \textbf{Röntgenfluoreszenzanalyse}.
-  
+
 \begin{itemize}
   \item Bestimmung der Massenanteile einzelner Komponenten
 \end{itemize}
-  
+
 \subsection{Laue-Verfahren}
 
 \subsubsection{Millersche Indizes}
@@ -193,12 +193,22 @@ Betrachte dazu das Beispiel in Abbildung \ref{fig:millerindizes}:
 
 \subsection{Geiger-Müller-Zählrohr}
 
+Das Geiger-Müller-Zählrohr besteht aus einem Metallzylinder, der die Kathode darstellt und einem Draht im Inneren des Zylinders, der die Anode bildet.
+Der Zylinder ist mit einem Gas unter hohem Druck gefüllt, wobei meistens Edelgas verwendet wird, da diese keinen negativen Ionen bilden, die den Betrieb stören können.
+Bei Eintritt von Teilchen in das Zählrohr werden die Gasatome ionisiert und so freie Elektronen erzeugt.
+Durch die zwischen Draht und Zylindermantel anliegende Spannung werden diese zum Draht beschleunigt.
+Dadurch entsteht ein Stromimpuls, der dann an einem digitalen Zähler registriert wird, wobei die Anzahl Elektronen bei geladenen zu zählenden Teilchen und damit die Anzahl Impulse der Anzahl der einfallenden Teilchen entspricht.
+Für den Betrieb ist die angelegte Gleichspannung zwischen Anode und Kathode entscheidend.
+Bei zu geringer Spannung können die freien Elektronen auf der Beschleunigungstrecke wieder mit den Gasatomen rekombinieren (Rekombinationsbereich), wodurch die Messung verfälscht wird.
+Erst ab einer bestimmten Gleichspannung erreichen alle Elektronen die Anode, womit dann die von der Strahlung im Zählrohr abgegebene Energie gemessen wird.
+Beim Geiger-Müller-Zählrohr ist das Zählrohr so ausgelegt, dass die Elektronen durch die Beschleunigung Energien erreichen, die zur weiteren Ionisation der Gasatome führen, wodurch sich ein s.g. Lawineneffekt einstellt.
+
 \begin{itemize}
   \item Aufbau
   \item Funktionsweise
   \item Totzeit
 \end{itemize}
-  
+
 \subsection{Röntgenenergiedetektor}
 \textbf{Aufbau:} PIN-Photodiode ($Q \propto E_\gamma$) -- Charge Amplifier (Integrator $U_\mathrm{out} \propto \int I = Q$) -- Verstärkerstufe ($U = V \cdot U_\mathrm{out}$)
 Außerdem Kühlnug der PIN-Diode um den Leckstrom zu verringern (Peltier-Effekt)
@@ -254,7 +264,7 @@ Mit jedem Impuls (Photondetektion) wird der zu dem digitalen Wert gehörende Bin
   Addison Wesley, Massachusetts,
   2nd edition,
   1994.
-  
+
 \bibitem{demtroeder}
 	Wolfgang Demtröder,
 	\emph{Experimentalphysik 3}.

@@ -180,6 +180,9 @@ wobei das durchstrahlte Volumen der einzelnen Proben als gleich angenommen wurde
 
 \subsection{Laue-Verfahren}
 
+\subsubsection{Elementarzelle}
+Translationsvektoren mit Basis $(\vec{a}, \vec{b}, \vec{c})$
+
 \subsubsection{Millersche Indizes}
 
 Zur Beschreibung von Gitterebenen in einem Kristall nutzt man die s.g. Millerschen Indizes $(hkl)$, mit denen eine Gitterebene eindeutig beschrieben ist.
@@ -196,6 +199,30 @@ Betrachte dazu das Beispiel in Abbildung \ref{fig:millerindizes}:
 \caption{Beispiel zur Bestimmung der Millerindizes mit $m_1=3$, $m_2=2$, $m_3=2$. Die Ebene wird dann beschrieben durch $(233)$ (mit $p=6$).}
 \label{fig:millerindizes}
 \end{figure}
+
+\subsubsection{reziprokes Gitter}
+Definiert anhand der Basisvektoren des Gitters (demtröder):
+
+\begin{align}
+  \vec{a}^{*} = \frac{2\pi}{V_\mathrm{E}} \cdot ( \vec{b} \times \vec{c} ) \nonumber\\
+  \vec{b}^{*} = \frac{2\pi}{V_\mathrm{E}} \cdot ( \vec{c} \times \vec{a} ) \nonumber\\
+  \vec{c}^{*} = \frac{2\pi}{V_\mathrm{E}} \cdot ( \vec{a} \times \vec{b} )
+\end{align}
+Mit dem Volumen der Elementarzelle
+\begin{align}
+  V_\mathrm{E} = \vec{a} \cdot \left( b \times c \right)
+\end{align}
+Besondere Zusammenhänge mit den durch die millersche Indizes $(hkl)$ ausgezeichnete Ebenenschar:
+\begin{align}
+  \vec{G} = h \vec{a}^{*} + k \vec{b}^{*} + l \vec{c}^{*}
+\end{align}
+steht senkrecht auf der Ebenenschar $(hkl)$.
+\begin{align}
+  | \vec{G} | = \frac{2\pi}{d_{hkl}}
+\end{align}
+wobei $d_{hkl}$ der Abstand zweier benachbarter Ebenen ist.
+
+
 
 \begin{itemize}
   \item Laue--Bedingung

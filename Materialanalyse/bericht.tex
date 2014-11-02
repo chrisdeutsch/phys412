@@ -183,15 +183,30 @@ Das Verfahren zur Elementbestimmung (oder Anteilen an Elementen in dem Target (?
 \end{itemize}
   
 \subsection{Röntgenenergiedetektor}
+\textbf{Aufbau:} PIN-Photodiode ($Q \propto E_\gamma$) -- Charge Amplifier (Integrator $U_\mathrm{out} \propto \int I = Q$) -- Verstärkerstufe ($U = V \cdot U_\mathrm{out}$)
+Außerdem Kühlnug der PIN-Diode um den Leckstrom zu verringern (Peltier-Effekt)
 
-\begin{itemize}
-  \item Aufbau
-  \item Funktionsweise
-  \item PIN-Photodiode
-  \item Vielkanalanalysator
-\end{itemize}
+\textbf{PIN-Photodiode:} Besteht aus einer PIN-Halbleiterschicht, wobei I für intrinischem Halbleiter (undotiert) steht.
+Unter reverse Bias bildet sich eine Verarmungszone im intrinsischen Halbleiterbereich.
+Wird ein Röntgenphoton in der intrinsischen Zone absorbiert (Photoeffekt) und löst ein Elektron aus den Halbleiteratomen, sodass ein Elektron-Loch Paar entsteht.
+Das hochenergetische Elektron kann nun weitere Kristallatome ionisieren oder auch unter Ausstrahlung eines charakteristischen Röntgenphotons erneut ein Elektron-Loch Paar erzeugen.
+Dies passiert sooft, bis die gesamte Energie des Röntgenphotons in Elektronen-Loch Paare umgewandelt wurde, deren Anzahl gegeben ist durch:
+\begin{align}
+  N = \frac{E_\gamma}{W_{e,\mathrm{Loch}}}
+\end{align}
+Dadurch entsteht ein Ladungsfluss proportional zur Energie des Röntgenquants.
 
+\textbf{Funktionsweise:} Dieser Strom kann wird in einem Integrator (Op amp?) aufintegriert um die Gesamtladung zu erhalten.
+Diese wird wiederum in einer nächsten Verstärkerstufe verstärkt, um eine zur Photonenenergie proportionale Spannung zu erhalten.
 
+\textbf{Vielkanalanalysator:} Ein DAC die zur Photonenenergie proportionale (verstärkte) Spannung $U$ in einen digitalen Wert um, sodass aufgrund der endlichen Auflösung des DAC's die Energien in Bins (Histogram!) deren Breite durch das Auflösungsvermögen gegeben sind.
+Mit jedem Impuls (Photondetektion) wird der zu dem digitalen Wert gehörende Bin um eins hochgezählt.
+
+\textbf{Kalibrierung:} Aufgrund der unbekannten Proportionalitäten und Nullpunktsverschiebung muss die Energie anhand von zwei Kalibrationswerten
+(Bestimmung von m und b) bestimmt werden.
+\begin{align}
+  E = m \cdot U_\mathrm{digital} + b
+\end{align}
 
 \section{Versuchsdurchführung}
 

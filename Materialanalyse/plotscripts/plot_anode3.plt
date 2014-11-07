@@ -13,6 +13,6 @@ set ylabel 'Z\"ahlrate / \si{\per\second}'
 
 set grid
 
-plot "./messdaten/anode3.txt" using 1:2 smooth unique t''
+plot "./messdaten/anode3.txt" using 1:2 with lines t''
 
 unset output

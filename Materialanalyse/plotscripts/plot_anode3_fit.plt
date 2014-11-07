@@ -16,6 +16,6 @@ set grid
 f(x)= 
 fit f(x) 
 
-plot "./messdaten/anode3.txt" using sin($1):2 smooth unique t'Messwerte #x-Fehler: ($3)*cos($3), f(x) t'Fitkurve'
+plot "./messdaten/anode3.txt" using sin($1):2 with lines t'Messwerte #x-Fehler: ($3)*cos($3), f(x) t'Fitkurve'
 
 unset output

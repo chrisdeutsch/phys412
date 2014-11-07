@@ -8,12 +8,12 @@ set key top right
 set key box
 
 set xrange [*:*]
-set xlabel 'Glanzwinkel $\theta$ / \si{\deg}'
+set xlabel 'Glanzwinkel $\theta$ / \si{\degree}'
 set yrange [*:*]
 set ylabel 'Z\"ahlrate'
 
 set grid
 
-plot "../messdaten/anode3.txt" using 1:2 smooth unique t'Zählrate'
+plot "./messdaten/anode3.txt" using 1:2 smooth unique t'Zählrate'
 
 unset output

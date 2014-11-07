@@ -13,6 +13,6 @@ set ylabel 'Z\"ahlrate / \si{\per\second}'
 
 set grid
 
-plot "./messdaten/anode3.txt" using 1:2 with lines t''
+plot "./messdaten/anode3.txt" using 1:2:(0.05):($2)*0.05 with xyerrorbars t'Messwerte', "./messdaten/anode3.txt" using 1:2 with lines lt 1 lc 1
 
 unset output

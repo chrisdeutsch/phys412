@@ -1,6 +1,6 @@
 set term epslatex color size 5,3
 
-set output '../plots/bragg/anode3.tex'
+set output './plots/anode3.tex'
 
 set title 'Gemessene Z\"ahlrate für unterschiedliche Winkel bei Bragg-Beugung'
 

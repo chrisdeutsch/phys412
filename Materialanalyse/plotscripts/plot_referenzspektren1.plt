@@ -7,7 +7,7 @@
 
 reset
 
-set term epslatex color size 6,9
+set term epslatex color size 5.7,9.5
 set output './plots/referenzspektren1.tex'
 
 unset key

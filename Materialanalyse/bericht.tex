@@ -328,29 +328,33 @@ Wir vermessen einen Glanzwinkelbereich von $\beta_\mathrm{min} = \SI{28,50}{\deg
 Am Folgetag wurden auch hier mithilfe von \emph{'Cassy Lab'} die Peakschwerpunkte der Feinstruktur bestimmt (näheres in der Auswertung).
 
 \subsection{Messdaten}
+\subsubsection{Charakteristischen Röntgenstrahlung einer unbekannten Röhre}
 
-\begin{figure}[h]
+
+\begin{figure}[!h]
 \centering
 \input{./plots/anode3.tex}
 \caption{Aufgenommenes Röntgenspektrum der unbekannten Anode bei Bragg-Streuung an einem NaCl-Kristall}
 \label{fig:anode3}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}[!h]
 \centering
 \input{./tables/peakschwerpunkt_grobstruktur.tex}
 \caption{Peakschwerpunkte in der Grobstruktur der unbekannten Anode und Umrechnung in die entsprechende Energie}
 \label{fig:peakschwerpunkt_grobstruktur}
 \end{table}
 
-\begin{figure}[h]
+\subsubsection{Feinstruktur der $K_\alpha$-Linie von Molybdän}
+
+\begin{figure}[!h]
 \centering
 \input{./plots/feinstruktur.tex}
 \caption{Feinstrukturaufspaltung im Röntgenspektrum der Molybdänanode bei Bragg-Streuung (in vierter Ordnung) an einem NaCl-Kristall}
 \label{fig:feinstruktur}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}[!h]
 \centering
 \input{./tables/peakschwerpunkt_feinstruktur.tex}
 \caption{Peakschwerpunkte in der Feinstruktur der Molybdänanode (in vierter Ordnung)}
@@ -359,6 +363,23 @@ Am Folgetag wurden auch hier mithilfe von \emph{'Cassy Lab'} die Peakschwerpunkt
 
 
 \subsection{Auswertung}
+
+\subsubsection{Grobstruktur}
+Aus der Bragg-Bedingung:
+\begin{align}
+  \lambda &= \frac{2d}{m} \sin(\beta) \\
+  \sigma_\lambda &= \frac{2d}{m} \cos(\beta) \cdot \sigma_\beta
+\end{align}
+
+Aus Planck und Dispersion:
+\begin{align}
+  E &= \frac{h c}{\lambda} \\
+  \sigma_E &= \frac{h c}{\lambda^2} \cdot \sigma_\lambda
+\end{align}
+
+
+
+
 
 Die Feinstruktur der $K_\alpha$-Linie von Molybdän \cite{booklet}:
 \begin{align*}

@@ -1,6 +1,6 @@
 reset
 
-set term epslatex color size 5,3
+set term epslatex color size 6,4
 
 set output './plots/anode3.tex'
 
@@ -22,6 +22,6 @@ set label 4 '4' at graph 0.57,0.16
 set label 5 '5' at graph 0.66,0.1
 set label 6 '6' at graph 0.72,0.11
 set label 7 '7' at graph 0.75,0.14
-plot "./messdaten/anode3.txt" using 1:2:(0.05):($2)*0.05 with xyerrorbars t'Messwerte', "./messdaten/anode3.txt" using 1:2 with lines lt 1 lc 1
+plot "./messdaten/anode3.txt" using 1:2:(0.05) with lines t'Messwerte'
 
 unset output

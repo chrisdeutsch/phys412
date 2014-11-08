@@ -9,7 +9,7 @@ set title 'Gemessene Z\"ahlrate für unterschiedliche Winkel bei Bragg-Beugung'
 unset key
 
 set xrange [*:*]
-set xlabel 'Glanzwinkel $\theta$ / \si{\degree}'
+set xlabel 'Glanzwinkel $\beta$ / \si{\degree}'
 set yrange [*:*]
 set ylabel 'Z\"ahlrate / \si{\per\second}'
 

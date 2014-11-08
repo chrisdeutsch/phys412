@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.5">
-<info created="D:20141108144930" modified="D:20141108150230"/>
+<info created="D:20141108144930" modified="D:20141108193427"/>
 <preamble>% Encoding für Umlaute
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -454,5 +454,10 @@ h
 77.2936 656.551 m
 52.3644 627.564 l
 </path>
+<path stroke="black" arrow="normal/tiny">
+269.142 550.353 m
+238.321 568.109 l
+</path>
+<text matrix="1 0 0 1 -9.71523 18.0904" transformations="translations" pos="281.537 528.913" stroke="black" type="label" width="48.777" height="6.868" depth="1.93" valign="baseline">Targettisch</text>
 </page>
 </ipe>

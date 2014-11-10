@@ -149,6 +149,7 @@ Dabei ist der Weglängenunterschied gegeben durch den Netzebenenabstand $d$ und 
 und man erhält die \textbf{Bedingung für Bragg-Reflexion}:
 \begin{align}
   2 d \sin(\beta) = m \lambda
+  \label{eq:bragg}
 \end{align}
 
 (Bild zur Veranschaulichung)
@@ -328,8 +329,10 @@ Darüberhinaus wurde die automatische Kristallkalibration der Software verwendet
 Dem Intensitätsverlust aufgrund der Verwendung dünnerer Spalte wird entgegengewirkt, indem die Messzeit pro Winkelschritt auf $\Delta t = \SI{120}{\second}$ erhöht wird.
 Wir vermessen einen Glanzwinkelbereich von $\beta_\mathrm{min} = \SI{28,50}{\degree}$ bis $\beta_\mathrm{max} = \SI{30,00}{\degree}$ in Schritten $\Delta \beta = \SI{0,01}{\degree}$ über Nacht.
 
-Am Folgetag wurden auch hier mithilfe von \emph{'Cassy Lab'} die Peakschwerpunkte der Feinstruktur bestimmt (näheres in der Auswertung).
+Am Folgetag wurden auch hier mithilfe von \emph{Cassy Lab} die Peakschwerpunkte der Feinstruktur bestimmt (näheres in der Auswertung).
 
+% Temporär damit ich nicht wahnsinnig werde
+\newpage
 \subsection{Messdaten}
 \subsubsection{Charakteristischen Röntgenstrahlung einer unbekannten Röhre}
 
@@ -348,6 +351,7 @@ Am Folgetag wurden auch hier mithilfe von \emph{'Cassy Lab'} die Peakschwerpunkt
 \label{fig:peakschwerpunkt_grobstruktur}
 \end{table}
 
+\newpage
 \subsubsection{Feinstruktur der $K_\alpha$-Linie von Molybdän}
 
 \begin{figure}[!h]
@@ -364,21 +368,42 @@ Am Folgetag wurden auch hier mithilfe von \emph{'Cassy Lab'} die Peakschwerpunkt
 \label{fig:peakschwerpunkt_feinstruktur}
 \end{table}
 
-
+\newpage
 \subsection{Auswertung}
 
-\subsubsection{Grobstruktur}
-Aus der Bragg-Bedingung:
+\subsubsection{Bestimmung der Peakschwerpunkte mit \emph{Cassy Lab}}
+Nach jeder Messung wurden die Schwerpunkte der im Spektrum sichtbaren Peaks mit \emph{Cassy Lab} bestimmt.
+Dazu wählen wir das entsprechende Werkzeug im Programm aus und markieren einen symmetrischen Teil um den Peak.
+In der Statuszeile des Programmes wird dann der Peakschwerpunkt $\beta$ sowie dessen Fehler $\sigma_\beta$ angegeben.
+Anzumerken ist, dass der Fehler des Peakschwerpunktes sehr stark von der Breite des ausgewählten Bereichs um den Peak abhängig ist.
+Daher haben wir versucht einen kleinen, symmetrischen Bereich um den Peak auszuwählen, um den Fehler zu verringern.
+Die entsprechenden Schwerpunkte und ihre Fehler wurden im vorigen Abschnitt aufgetragen.
+
+\subsubsection{Bestimmung von Wellenlänge und Energie der charakteristischen Strahlung}
+Zur Bestimmung der korrespondierenden Wellenlänge zu einem Beugungsmaximum bei Bragg-Reflektion, folgt aus der Bragg-Bedingung (Gleichung \ref{eq:bragg}):
 \begin{align}
-  \lambda &= \frac{2d}{m} \sin(\beta) \\
+  \lambda &= \frac{2d}{m} \sin(\beta)
+\end{align}
+Mit Gauß'scher Fehlerfortpflanzung folgt für den Fehler der Wellenlängenbestimmung $\sigma_\lambda$:
+\begin{align}
   \sigma_\lambda &= \frac{2d}{m} \cos(\beta) \cdot \sigma_\beta
 \end{align}
-
-Aus Planck und Dispersion:
+Es gilt zu beachten, dass $d$ der Abstand der für die Beugung verantwortlichen Kristallflächen ist.
+Aufgrund der Struktur von NaCl ist dies nicht die Gitterkonstante $a_\mathrm{NaCl} = \SI{5,6402}{\angstrom}$\cite{crc}, sondern $d = a_\mathrm{NaCl}/2 $.
+Schließlich folgt die Energie der Strahlung aus der Energie $E = h\nu$ und Dispersion $ c = h \nu$ des Photons:
 \begin{align}
   E &= \frac{h c}{\lambda} \\
   \sigma_E &= \frac{h c}{\lambda^2} \cdot \sigma_\lambda
 \end{align}
+
+\subsubsection{Grobstruktur}
+
+\begin{table}[!h]
+\centering
+\input{./tables/auswertung_grobstruktur.tex}
+\caption{}
+\label{tab:ausw_grob}
+\end{table}
 
 \begin{align}
   \Delta \lambda &= \lambda_1 - \lambda_2 \\
@@ -452,6 +477,13 @@ Die Feinstruktur der $K_\alpha$-Linie von Molybdän \cite{booklet}:
 	\emph{Experimentalphysik 3}.
 	Springer Verlag,
 	3. Auflage
+
+\bibitem{crc}
+  David R. Lide (ed),
+  \emph{CRC Handbook of Chemistry and Physics},
+  84th Edition. CRC Press. Boca Raton, Florida, 2003;
+  Section 4: Properties of the Elements and Inorganic Compounds --
+  \emph{Crystallographic Data on Mineals}
 
 \bibitem{booklet}
   Center for X-ray Optics and Advanced Light Source,

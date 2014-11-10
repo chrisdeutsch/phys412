@@ -129,6 +129,7 @@ Nachdem die Beschleunigungsspannung $U$ durchlaufen wurde, treffen die Elektrone
 \end{figure}
 
 \subsubsection{Nachweis}
+\label{sec:nachweis}
 Zum Nachweis von Röntgenstrahlung werden in diesem Versuch Geiger-Müller-Zählrohre, Röntgenenergiedetektor und Röntgenfilm verwendet.
 Der Röntgenfilm ist mit einer speziellen Silberbromid Beschichtung ausgestattet, wobei aus \ce{Br-} Ionen und der einfallenden Röntgenstrahlung \ce{Br} und freie Elektronen entstehen.
 Beim Entwickeln werden diese mit \ce{Ag+} zu Silberkörnern (\ce{Ag}) reduziert, was eine Schwarzfärbung des Films hervorruft.
@@ -280,6 +281,7 @@ Mit jedem Impuls (Photondetektion) wird der zu dem digitalen Wert gehörende Bin
 (Bestimmung von m und b) bestimmt werden.
 \begin{align}
   E = m \cdot U_\mathrm{digital} + b
+  \label{eq:kalibrierung}
 \end{align}
 
 \section{Versuchsteil 1: Bragg-Reflekion}
@@ -330,7 +332,7 @@ Die Unterschiede bestehen in der nun verwendeten Molybdän-Röhre, sowie dem Aus
 Darüberhinaus wurde die automatische Kristallkalibration der Software verwendet um die Nullstellung des Goniometers einzustellen.
 
 Dem Intensitätsverlust aufgrund der Verwendung dünnerer Spalte wird entgegengewirkt, indem die Messzeit pro Winkelschritt auf $\Delta t = \SI{120}{\second}$ erhöht wird.
-Wir vermessen einen Glanzwinkelbereich von $\beta_\mathrm{min} = \SI{28,50}{\degree}$ bis $\beta_\mathrm{max} = \SI{30,00}{\degree}$ in Schritten $\Delta \beta = \SI{0,01}{\degree}$ über Nacht.
+Wir vermessen einen Glanzwinkelbereich von $\beta_\mathrm{min} = \SI{28,50}{\degree}$ bis $\beta_\mathrm{max} = \SI{32,00}{\degree}$ in Schritten $\Delta \beta = \SI{0,01}{\degree}$ über Nacht.
 
 Am Folgetag wurden auch hier mithilfe von \emph{Cassy Lab} die Peakschwerpunkte der Feinstruktur bestimmt (näheres in der Auswertung).
 
@@ -438,7 +440,16 @@ Die Feinstruktur der $K_\alpha$-Linie von Molybdän \cite{booklet}:
 
 \section{Versuchsteil 2: Zerstörungsfreie Analyse chemischer Zusammensetzungen}
 \subsection{Versuchsdurchführung}
+Die Versuchsdurchführung ist ähnlich wie die in Versuchsteil 1.
+Allerdings werden zur Materialanalyse das Geiger-Müller-Zählrohr gegen einen Röntgenenergiedetektor getauscht und die entsprechenden Proben und Referenzmaterialien anstelle des NaCl Kristalls bestrahlt.
+Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwähnt, eine andere Darstellung im Computerprogramm, welches nun Counts für die einzelnen Kanäle des Röntgenenergiedetektors misst. Darum muss zunächst eine Energieeichung mit einem Kalibriertarget (hier FeZn) gemäß Gleichung (\ref{eq:kalibrierung}) durchgeführt werden.
 \subsection{Messdaten}
+\begin{figure}
+\centering
+\input{./plots/kalibrierung.tex}
+\caption{Aufgenommenes Spektrum des kalibriertargets (FeZn)}
+\label{fig:kalibrierung}
+\end{figure}
 \subsection{Auswertung}
 \subsection{Diskussion}
 
@@ -486,7 +497,7 @@ Die Feinstruktur der $K_\alpha$-Linie von Molybdän \cite{booklet}:
   \emph{CRC Handbook of Chemistry and Physics},
   84th Edition. CRC Press. Boca Raton, Florida, 2003;
   Section 4: Properties of the Elements and Inorganic Compounds --
-  \emph{Crystallographic Data on Mineals}
+  \emph{Crystallographic Data on Minerals}
 
 \bibitem{booklet}
   Center for X-ray Optics and Advanced Light Source,

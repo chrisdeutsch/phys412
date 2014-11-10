@@ -384,6 +384,7 @@ Daher haben wir versucht einen kleinen, symmetrischen Bereich um den Peak auszuw
 Die entsprechenden Schwerpunkte und ihre Fehler wurden im vorigen Abschnitt aufgetragen.
 
 \subsubsection{Bestimmung von Wellenlänge und Energie der charakteristischen Strahlung}
+\label{sssec:lambdaE}
 Zur Bestimmung der korrespondierenden Wellenlänge zu einem Beugungsmaximum bei Bragg-Reflektion, folgt aus der Bragg-Bedingung (Gleichung \ref{eq:bragg}):
 \begin{align}
   \lambda &= \frac{2d}{m} \sin(\beta)
@@ -394,23 +395,30 @@ Mit Gauß'scher Fehlerfortpflanzung folgt für den Fehler der Wellenlängenbesti
 \end{align}
 Es gilt zu beachten, dass $d$ der Abstand der für die Beugung verantwortlichen Kristallflächen ist.
 Aufgrund der Struktur von NaCl ist dies nicht die Gitterkonstante $a_\mathrm{NaCl} = \SI{5,6402}{\angstrom}$\cite{crc}, sondern $d = a_\mathrm{NaCl}/2 $.
-Schließlich folgt die Energie der Strahlung aus der Energie $E = h\nu$ und Dispersion $ c = h \nu$ des Photons:
+Schließlich folgt die Energie der Strahlung aus der Energie $E = h\nu$ und Dispersion $ c = \lambda \nu$ des Photons:
 \begin{align}
   E &= \frac{h c}{\lambda} \\
   \sigma_E &= \frac{h c}{\lambda^2} \cdot \sigma_\lambda
 \end{align}
 
-\subsubsection{Grobstruktur}
-\begin{table}[!h]
+\subsubsection{Zuordnung des Anodenmaterials an das charakteristische Röntgenspektrum der unbekannten Anode}
+\begin{table}[h]
 \centering
 \input{./tables/auswertung_grobstruktur.tex}
-\caption{Grob}
+\caption{Zuordnung der Linien aus Abbildung \ref{fig:anode3} an das charakteristische Röntgenspektrum von Wolfram und Vergleich mit den Literaturwerten}
 \label{tab:ausw_grob}
 \end{table}
+Nun möchten wir dem charakteristischen Spektrum (Abbildung \ref{fig:anode3}) der unbekannten Anode 3 das Anodenmaterial zuordnen.
+Zunächst betrachten wir dazu die prägnanten Peaks 1 - 3, von denen wir erstmal annehmen, dass sie in erster Beugungsordnung $m = 1$ entstanden sind.
+Mit den Formeln aus Abschnitt \ref{sssec:lambdaE} bestimmen wir nun Wellenlänge sowie Energie dieser drei Linien unter der getroffenen Annahme.
+In Anbetracht der berechneten Fehler schlagen wir dann im \emph{X-Ray Data Booklet} \cite{booklet} die Energien der drei Linien nach und stellen fest, dass die ersten drei Linien sehr gut mit den charakteristischen Linien $L\alpha, L\beta, L\gamma$ von Wolfram übereinstimmen.
+Ebenso können wir nun die Linien 4,6 und 7 dem Wolframspektrum zuordnen, wobei die Linien 6 und 7 sogar in 2. Ordnung entstanden sind.
+Dies lässt darauf schließen, dass unsere Anfangs getroffene Annahme gerechtfertigt war.
+Einzig den 5. Peak können wir keiner charakteristischen Linie von Wolfram zuordnen.
+Dies könnte daran liegen, dass dieser aufgrund von Verunreinigungen in dem Anodenmaterial entstanden ist.
 
-
-\subsubsection{Feinstruktur}
-\begin{table}[!h]
+\subsubsection{Bestimmung der Feinstrukturaufspaltung der $K_\alpha$-Linie von Molybdän}
+\begin{table}[h]
 \centering
 \input{./tables/auswertung_feinstruktur}
 \caption{Fein}

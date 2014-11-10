@@ -7,7 +7,7 @@
 
 reset
 
-set term epslatex color size 5.7,9.5
+set term epslatex color size 5.7,8
 set output './plots/referenzspektren2.tex'
 
 unset key
@@ -17,7 +17,9 @@ set macros
 
 set tics scale 1
 set xrange [0:*]
-set yrange [0:10000]
+set yrange [0:*]
+set xtics font ',6' 
+
 set grid
 
 # MACROS
@@ -26,17 +28,17 @@ NOXTICS = "set xtics (' ' 0, ' ' 100, ' ' 200, ' ' 300, ' ' 400, ' ' 500, ' ' 60
           unset xlabel"
 XTICS = "set xtics;\
           set xlabel 'x'"
-NOYTICS = "set format y ''; unset ylabel"
+NOYTICS = "set format y '%.0f'; unset ylabel"
 YTICS = "set format y '%.0f'; set ylabel 'Counts'"
 # Placement of the labels in the graphs
-POS = "at graph 0.92,0.92 font ',8'"
+POS = "at graph 0.88,0.92 font ',8'"
 
 # Margins for each row resp. column
 TMARGIN = "set tmargin at screen 0.95; set bmargin at screen 0.675"
 MMARGIN = "set tmargin at screen 0.65; set bmargin at screen 0.375"
 BMARGIN = "set tmargin at screen 0.35; set bmargin at screen 0.075"
-LMARGIN = "set lmargin at screen 0.1; set rmargin at screen 0.5"
-RMARGIN = "set lmargin at screen 0.5; set rmargin at screen 0.9"
+LMARGIN = "set lmargin at screen 0.1; set rmargin at screen 0.45"
+RMARGIN = "set lmargin at screen 0.55; set rmargin at screen 0.9"
 
 ### Start multiplot (2x3 layout)
 set multiplot layout 3,2 rowsfirst title 'Referenzspektren Teil 2'

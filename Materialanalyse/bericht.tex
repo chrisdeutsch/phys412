@@ -129,12 +129,79 @@ Nachdem die Beschleunigungsspannung $U$ durchlaufen wurde, treffen die Elektrone
 \label{fig:roehre}
 \end{figure}
 
-\subsubsection{Nachweis}
+\subsection{Röntgenfluoreszenz}
+Als Röntgenfluoreszenz bezeichnet man die Entstehung sekundärer, fluoreszierender Röntgenstrahlung.
+Dies geschieht ähnlich wie die Erzeugung charakteristischer Röntgenstrahlung, nur dass nun bereits erzeugte Röntgenstrahlung anstatt den energiereichen Elektronen zur Bestrahlung eines Elements verwendet werden.
+Diese sekundäre Röntgenstrahlung weist wieder ein charakteristisches Spektrum auf, aus dem man auf das beschossene Element schließen kann.
+Das Verfahren zur Elementbestimmung (oder Anteilen an Elementen in dem Target) nennt sich daher \textbf{Röntgenfluoreszenzanalyse}.
+
+\subsection{Nachweis}
 \label{sec:nachweis}
 Zum Nachweis von Röntgenstrahlung werden in diesem Versuch Geiger-Müller-Zählrohre, Röntgenenergiedetektor und Röntgenfilm verwendet.
+
+\subsubsection{Röntgenfilm}
 Der Röntgenfilm ist mit einer speziellen Silberbromid Beschichtung ausgestattet, wobei aus \ce{Br-} Ionen und der einfallenden Röntgenstrahlung \ce{Br} und freie Elektronen entstehen.
 Beim Entwickeln werden diese mit \ce{Ag+} zu Silberkörnern (\ce{Ag}) reduziert, was eine Schwarzfärbung des Films hervorruft.
-Die Funktionsweise der beiden anderen Nachweismethoden wird weiter unten erklärt.
+
+\subsubsection{Geiger-Müller-Zählrohr}
+Das Geiger-Müller-Zählrohr besteht aus einem Metallzylinder, der die Kathode darstellt und einem Draht im Inneren des Zylinders, der die Anode bildet.
+Der Zylinder ist mit einem Gas unter hohem Druck gefüllt, wobei meistens Edelgas verwendet wird, da diese keinen negativen Ionen bilden, die den Betrieb stören können.
+Bei Eintritt von Teilchen in das Zählrohr werden die Gasatome ionisiert und so freie Elektronen erzeugt.
+Durch die zwischen Draht und Zylindermantel anliegende Spannung werden diese zum Draht beschleunigt.
+Dadurch entsteht ein Stromimpuls, der dann an einem digitalen Zähler registriert wird, wobei die Anzahl Elektronen bei geladenen zu zählenden Teilchen und damit die Anzahl Impulse der Anzahl der einfallenden Teilchen entspricht.
+Für den Betrieb ist die angelegte Gleichspannung zwischen Anode und Kathode entscheidend.
+Bei zu geringer Spannung können die freien Elektronen auf der Beschleunigungstrecke wieder mit den Gasatomen rekombinieren (Rekombinationsbereich), wodurch die Messung verfälscht wird.
+Erst ab einer bestimmten Gleichspannung erreichen alle Elektronen die Anode, womit dann die von der Strahlung im Zählrohr abgegebene Energie gemessen wird.
+Beim Geiger-Müller-Zählrohr ist das Zählrohr so ausgelegt, dass die Elektronen durch die Beschleunigung Energien erreichen, die zur weiteren Ionisation der Gasatome führen, wodurch sich ein s.g. Lawineneffekt einstellt.
+
+\begin{itemize}
+  \item Aufbau
+  \item Funktionsweise
+  \item Totzeit
+\end{itemize}
+
+\subsubsection{Röntgenenergiedetektor}
+\textbf{Aufbau:} PIN-Photodiode ($Q \propto E_\gamma$) -- Charge Amplifier (Integrator $U_\mathrm{out} \propto \int I = Q$) -- Verstärkerstufe ($U = V \cdot U_\mathrm{out}$)
+Außerdem Kühlnug der PIN-Diode um den Leckstrom zu verringern (hier Peltier-Effekt)
+
+\textbf{PIN-Photodiode:} Besteht aus einer PIN-Halbleiterschicht, wobei I für intrinischem Halbleiter (undotiert) steht.
+Unter reverse Bias bildet sich eine Verarmungszone im intrinsischen Halbleiterbereich.
+Wird ein Röntgenphoton in der intrinsischen Zone absorbiert (Photoeffekt) und löst ein Elektron aus den Halbleiteratomen, sodass ein Elektron-Loch Paar entsteht.
+Das hochenergetische Elektron kann nun weitere Kristallatome ionisieren oder auch unter Ausstrahlung eines charakteristischen Röntgenphotons erneut ein Elektron-Loch Paar erzeugen.
+Dies passiert sooft, bis die gesamte Energie des Röntgenphotons in Elektronen-Loch Paare umgewandelt wurde, deren Anzahl gegeben ist durch:
+\begin{align}
+  N = \frac{E_\gamma}{W_{e,\mathrm{Loch}}}
+\end{align}
+Dadurch entsteht ein Ladungsfluss proportional zur Energie des Röntgenquants.
+
+\textbf{Funktionsweise:} Dieser Strom kann wird in einem Integrator (Op amp?) aufintegriert um die Gesamtladung zu erhalten.
+Diese wird wiederum in einer nächsten Verstärkerstufe verstärkt, um eine zur Photonenenergie proportionale Spannung zu erhalten.
+
+\textbf{Vielkanalanalysator:} Ein DAC die zur Photonenenergie proportionale (verstärkte) Spannung $U$ in einen digitalen Wert um, sodass aufgrund der endlichen Auflösung des DAC's die Energien in Bins (Histogram!) deren Breite durch das Auflösungsvermögen gegeben sind.
+Mit jedem Impuls (Photondetektion) wird der zu dem digitalen Wert gehörende Bin um eins hochgezählt.
+
+\textbf{Kalibrierung:} Aufgrund der unbekannten Proportionalitäten und Nullpunktsverschiebung muss die Energie anhand von zwei Kalibrationswerten
+(Bestimmung von m und b) bestimmt werden.
+\begin{align}
+  E = m \cdot U_\mathrm{digital} + b
+  \label{eq:kalibrierung}
+\end{align}
+
+Aus der Höhe der Linien im Count--Energie Diagramm kann der Massenanteil des jeweiligen Stoffes bestimmt werden, da die Höhe der Linie proportional zur Anzahl der strahlenden Atome ist.
+Vergleicht man das aufgenommene Spektrum mit einem Referenzspektrum mit strahlenden Atomen:
+\begin{align}
+  n_0 = V \cdot \frac{\rho}{A}
+\end{align}
+($V$: durchstrahltes Volumen; $\rho$: Massendichte des Stoffes; $A$: Atomgewicht des Stoffes)
+So kann die Höhe $H$ des Peaks im zu analysierenden Spektrum mit der im Referenzspektrum $H_0$ verglichen und daraus die Anzahl $n$ der Atome im zu analysierenden Spektrum berechnet werden:
+\begin{align}
+  n = n_0 \cdot \frac{H}{H_0}
+\end{align}
+Daher ergibt sich der Massenanteil des $i$-ten Referenzmaterials im zu analysierenden Spektrum zu:
+\begin{align}
+  C_i = \frac{n_i \cdot A_i}{\sum_j n_j \cdot A_j} = \frac{V \cdot \frac{\rho_i}{A_i} \cdot \frac{H_i}{H_{0,i}} \cdot A_i}{\sum_j V \cdot \frac{\rho_j}{A_j} \cdot \frac{H_j}{H_{0,j}}\cdot A_j} = \frac{\rho_i \cdot \frac{H_i}{H_{0,i}}}{\sum_j \rho_j \cdot \frac{H_j}{H_{0,j}}}
+\end{align}
+wobei das durchstrahlte Volumen der einzelnen Proben als gleich angenommen wird.
 
 Was noch erwähnt werden sollte:
 \begin{itemize}
@@ -142,7 +209,7 @@ Was noch erwähnt werden sollte:
   \item Szintillationszähler
 \end{itemize}
 
-\subsection{Bragg-Reflekion}
+\subsection{Bragg-Reflexion}
 Betrachtet man die Beugung von einfallender elektromagnetischer Strahlung an parallelen Netzebenen eines Einkristalls, so führt die Interferenz der gebeugten Wellen zu einer Ausbildung von Beugungsmaxima.
 Bezeichnet $\beta$ den Winkel des einfallenden Strahls gegen die parallelen Netzebenen (Glanzwinkel), so erhält man konstruktive Interferenz, wenn der Weglängenunterschied zwischen zwei benachbarten Netzebenen ein ganzzahliges Vielfaches der Wellenlänge $\lambda$ ist:
 \begin{align}
@@ -163,28 +230,6 @@ und man erhält die \textbf{Bedingung für Bragg-Reflexion}:
 \begin{itemize}
   \item Röntgenbeugung (muss noch erklärt werden)
 \end{itemize}
-
-\subsection{Röntgenfluoreszenz}
-Als Röntgenfluoreszenz bezeichnet man die Entstehung sekundärer, fluoreszierender Röntgenstrahlung.
-Dies geschieht ähnlich wie die Erzeugung charakteristischer Röntgenstrahlung, nur dass nun bereits erzeugte Röntgenstrahlung anstatt den energiereichen Elektronen zur Bestrahlung eines Elements verwendet werden.
-Diese sekundäre Röntgenstrahlung weist wieder ein charakteristisches Spektrum auf, aus dem man auf das beschossene Element schließen kann.
-Das Verfahren zur Elementbestimmung (oder Anteilen an Elementen in dem Target) nennt sich daher \textbf{Röntgenfluoreszenzanalyse}.
-
-Aus der Höhe der Linien im Count--Energie Diagramm kann der Massenanteil des jeweiligen Stoffes bestimmt werden, da die Höhe der Linie proportional zur Anzahl der strahlenden Atome ist.
-Vergleicht man das aufgenommene Spektrum mit einem Referenzspektrum mit strahlenden Atomen:
-\begin{align}
-  n_0 = V \cdot \frac{\rho}{A}
-\end{align}
-($V$: durchstrahltes Volumen; $\rho$: Massendichte des Stoffes; $A$: Atomgewicht des Stoffes)
-So kann die Höhe $H$ des Peaks im zu analysierenden Spektrum mit der im Referenzspektrum $H_0$ verglichen und daraus die Anzahl $n$ der Atome im zu analysierenden Spektrum berechnet werden:
-\begin{align}
-  n = n_0 \cdot \frac{H}{H_0}
-\end{align}
-Daher ergibt sich der Massenanteil des $i$-ten Referenzmaterials im zu analysierenden Spektrum zu:
-\begin{align}
-  C_i = \frac{n_i \cdot A_i}{\sum_j n_j \cdot A_j} = \frac{V \cdot \frac{\rho_i}{A_i} \cdot \frac{H_i}{H_{0,i}} \cdot A_i}{\sum_j V \cdot \frac{\rho_j}{A_j} \cdot \frac{H_j}{H_{0,j}}\cdot A_j} = \frac{\rho_i \cdot \frac{H_i}{H_{0,i}}}{\sum_j \rho_j \cdot \frac{H_j}{H_{0,j}}}
-\end{align}
-wobei das durchstrahlte Volumen der einzelnen Proben als gleich angenommen wird.
 
 \subsection{Laue-Verfahren}
 
@@ -240,51 +285,6 @@ wobei $d_{hkl}$ der Abstand zweier benachbarter Ebenen ist.
   \item Netzebenenabstand
 \end{itemize}
 
-\subsection{Geiger-Müller-Zählrohr}
-
-Das Geiger-Müller-Zählrohr besteht aus einem Metallzylinder, der die Kathode darstellt und einem Draht im Inneren des Zylinders, der die Anode bildet.
-Der Zylinder ist mit einem Gas unter hohem Druck gefüllt, wobei meistens Edelgas verwendet wird, da diese keinen negativen Ionen bilden, die den Betrieb stören können.
-Bei Eintritt von Teilchen in das Zählrohr werden die Gasatome ionisiert und so freie Elektronen erzeugt.
-Durch die zwischen Draht und Zylindermantel anliegende Spannung werden diese zum Draht beschleunigt.
-Dadurch entsteht ein Stromimpuls, der dann an einem digitalen Zähler registriert wird, wobei die Anzahl Elektronen bei geladenen zu zählenden Teilchen und damit die Anzahl Impulse der Anzahl der einfallenden Teilchen entspricht.
-Für den Betrieb ist die angelegte Gleichspannung zwischen Anode und Kathode entscheidend.
-Bei zu geringer Spannung können die freien Elektronen auf der Beschleunigungstrecke wieder mit den Gasatomen rekombinieren (Rekombinationsbereich), wodurch die Messung verfälscht wird.
-Erst ab einer bestimmten Gleichspannung erreichen alle Elektronen die Anode, womit dann die von der Strahlung im Zählrohr abgegebene Energie gemessen wird.
-Beim Geiger-Müller-Zählrohr ist das Zählrohr so ausgelegt, dass die Elektronen durch die Beschleunigung Energien erreichen, die zur weiteren Ionisation der Gasatome führen, wodurch sich ein s.g. Lawineneffekt einstellt.
-
-\begin{itemize}
-  \item Aufbau
-  \item Funktionsweise
-  \item Totzeit
-\end{itemize}
-
-\subsection{Röntgenenergiedetektor}
-\textbf{Aufbau:} PIN-Photodiode ($Q \propto E_\gamma$) -- Charge Amplifier (Integrator $U_\mathrm{out} \propto \int I = Q$) -- Verstärkerstufe ($U = V \cdot U_\mathrm{out}$)
-Außerdem Kühlnug der PIN-Diode um den Leckstrom zu verringern (hier Peltier-Effekt)
-
-\textbf{PIN-Photodiode:} Besteht aus einer PIN-Halbleiterschicht, wobei I für intrinischem Halbleiter (undotiert) steht.
-Unter reverse Bias bildet sich eine Verarmungszone im intrinsischen Halbleiterbereich.
-Wird ein Röntgenphoton in der intrinsischen Zone absorbiert (Photoeffekt) und löst ein Elektron aus den Halbleiteratomen, sodass ein Elektron-Loch Paar entsteht.
-Das hochenergetische Elektron kann nun weitere Kristallatome ionisieren oder auch unter Ausstrahlung eines charakteristischen Röntgenphotons erneut ein Elektron-Loch Paar erzeugen.
-Dies passiert sooft, bis die gesamte Energie des Röntgenphotons in Elektronen-Loch Paare umgewandelt wurde, deren Anzahl gegeben ist durch:
-\begin{align}
-  N = \frac{E_\gamma}{W_{e,\mathrm{Loch}}}
-\end{align}
-Dadurch entsteht ein Ladungsfluss proportional zur Energie des Röntgenquants.
-
-\textbf{Funktionsweise:} Dieser Strom kann wird in einem Integrator (Op amp?) aufintegriert um die Gesamtladung zu erhalten.
-Diese wird wiederum in einer nächsten Verstärkerstufe verstärkt, um eine zur Photonenenergie proportionale Spannung zu erhalten.
-
-\textbf{Vielkanalanalysator:} Ein DAC die zur Photonenenergie proportionale (verstärkte) Spannung $U$ in einen digitalen Wert um, sodass aufgrund der endlichen Auflösung des DAC's die Energien in Bins (Histogram!) deren Breite durch das Auflösungsvermögen gegeben sind.
-Mit jedem Impuls (Photondetektion) wird der zu dem digitalen Wert gehörende Bin um eins hochgezählt.
-
-\textbf{Kalibrierung:} Aufgrund der unbekannten Proportionalitäten und Nullpunktsverschiebung muss die Energie anhand von zwei Kalibrationswerten
-(Bestimmung von m und b) bestimmt werden.
-\begin{align}
-  E = m \cdot U_\mathrm{digital} + b
-  \label{eq:kalibrierung}
-\end{align}
-
 \section{Versuchsteil 1: Bragg-Reflekion}
 Im Folgenden wollen wir unter Ausnutzung von Bragg-Reflektion an einem NaCl-Einkristall die Wellenlänge und Energie des charakteristischen Röntgenspektrums einer unbekannten Röhrenanode bestimmen und anhand dessen das Anodenmaterial bestimmen.
 Anschließend wird die Feinstrukturaufspaltung $\Delta \lambda$ der $K_\alpha$-Linie der charakteristischen Röntgenstrahlung einer Molybdän-Anode in vierter Beugungsordnung bestimmt.
@@ -316,7 +316,7 @@ Wir vermessen einen Glanzwinkelbereich von $\beta_\mathrm{min} = \SI{2,0}{\degre
 Nach dem Abschluss der Messung wurde das Spektrum mithilfe der Funktion \emph{'Peakschwerpunkt berechnen'} des Programmes ausgemessen. Auf die genaue Vorgehensweise wird dabei in der Auswertung eingegangen.
 
 \subsubsection{Bestimmung der Feinstruktur der $K_\alpha$-Linie von Molybdän}
-Die Feinstrukturaufspaltung $\Delta \lambda$ der $K_\alpha$-Linie von Molybdän ist sehr klein um diese dennoch aufzulösen, kann eine höhere Beugungsordnungen vermessen werden.
+Die Feinstrukturaufspaltung $\Delta \lambda$ der $K_\alpha$-Linie von Molybdän ist sehr klein; um diese dennoch aufzulösen, kann eine höhere Beugungsordnungen vermessen werden.
 Dies sieht man leicht, wenn man die Bragg-Bedingung nach dem Glanzwinkel umstellt:
 \begin{align}
   \beta = \arcsin \left( \frac{m \lambda}{2 d} \right)
@@ -466,6 +466,13 @@ Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwäh
 \input{./plots/kalibrierung.tex}
 \caption{Aufgenommenes Spektrum des Kalibriertargets (FeZn)}
 \label{fig:kalibrierung}
+\end{figure}
+
+\begin{figure}
+\centering
+\input{./plots/probe1.tex}
+\caption{Probe 1}
+\label{fig:probe1}
 \end{figure}
 \subsection{Auswertung}
 \subsection{Diskussion}

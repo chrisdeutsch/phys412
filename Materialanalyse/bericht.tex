@@ -354,7 +354,7 @@ Am Folgetag wurden auch hier mithilfe von \emph{Cassy Lab} die Peakschwerpunkte 
 \centering
 \input{./tables/peakschwerpunkt_grobstruktur.tex}
 \caption{Peakschwerpunkte in der Grobstruktur der unbekannten Anode und Umrechnung in die entsprechende Energie}
-\label{fig:peakschwerpunkt_grobstruktur}
+\label{tab:peakschwerpunkt_grobstruktur}
 \end{table}
 
 \newpage
@@ -371,7 +371,7 @@ Am Folgetag wurden auch hier mithilfe von \emph{Cassy Lab} die Peakschwerpunkte 
 \centering
 \input{./tables/peakschwerpunkt_feinstruktur.tex}
 \caption{Peakschwerpunkte in der Feinstruktur der Molybdänanode (in vierter Ordnung)}
-\label{fig:peakschwerpunkt_feinstruktur}
+\label{tab:peakschwerpunkt_feinstruktur}
 \end{table}
 
 \newpage
@@ -407,7 +407,7 @@ Schließlich folgt die Energie der Strahlung aus der Energie $E = h\nu$ und Disp
 \begin{table}[h]
 \centering
 \input{./tables/auswertung_grobstruktur.tex}
-\caption{Zuordnung der Linien aus Abbildung \ref{fig:anode3} an das charakteristische Röntgenspektrum von Wolfram und Vergleich mit den Literaturwerten}
+\caption{Zuordnung der Linien aus Abbildung \ref{fig:anode3} / Tabelle \ref{tab:peakschwerpunkt_grobstruktur} an das charakteristische Röntgenspektrum von Wolfram und Vergleich mit den Literaturwerten}
 \label{tab:ausw_grob}
 \end{table}
 Nun möchten wir dem charakteristischen Spektrum (Abbildung \ref{fig:anode3}) der unbekannten Anode 3 das Anodenmaterial zuordnen.
@@ -423,26 +423,36 @@ Dies könnte daran liegen, dass dieser aufgrund von Verunreinigungen in dem Anod
 \begin{table}[h]
 \centering
 \input{./tables/auswertung_feinstruktur}
-\caption{Fein}
+\caption{Wellenlängen und Energien der Feinstruktur der $K_\alpha$-Linie von Molybdän und Bestimmung der Feinstrukturaufspaltung $\Delta \lambda$}
 \label{tab:ausw_fein}
 \end{table}
+Zunächst bestimmen wir analog zu den vorigen Abschnitten Wellenlänge und Energie der beiden Linien vierter Beugungsordnung ($m=4$) in Abbildung \ref{fig:feinstruktur} aus den zugehörigen Peakschwerpunkten der Tabelle \ref{tab:peakschwerpunkt_feinstruktur}.
+Außerdem soll noch die Feinstrukturaufspaltung $\Delta \lambda$ berechnet werden:
 \begin{align}
   \Delta \lambda &= \lambda_1 - \lambda_2 \\
   \sigma_{\Delta \lambda} &= \sqrt{\sigma_{\lambda_1}^2 + \sigma_{\lambda_2}^2}
 \end{align}
+Die Wellenlängen, Energien und die Feinstrukturaufspaltung wurden in Tabelle \ref{tab:ausw_fein} eingetragen.
 
-Die Feinstruktur der $K_\alpha$-Linie von Molybdän \cite{booklet}:
+Zum Vergleich berechnen wir den Literaturwert der Feinstrukturaufspaltung der $K_\alpha$-Linie für Molybdän aus der in \cite{booklet} gegebenen Feinstruktur:
 \begin{align*}
   E(K_{\alpha_1}) = \SI{17479,34}{\electronvolt} \qquad E(K_{\alpha_2}) = \SI{17374,3}{\electronvolt}
 \end{align*}
-
+Mit diesen Werten bestimmt man die Aufspaltung gemäß:
 \begin{align*}
   \Delta \lambda &= h c \left( \frac{1}{E(K_{\alpha_2})} - \frac{1}{E(K_{\alpha_1})} \right) \\
   &\approx \SI{428,87}{\femto\metre}
 \end{align*}
-
+Dies stimmt innerhalb der Fehlergrenzen mit der experimentellen Bestimmung:
+\begin{align*}
+  \Delta \lambda_\mathrm{exp.} = \SI{424,4+-60,9}{\femto\metre}
+\end{align*}
+überein.
+Einzig der experimentelle Fehler erscheint sehr groß.
+Dies könnte daran liegen, dass wir den Bereich der Peakschwerpunktsbestimmung zu groß gewählt haben und dadurch schon der Fehler des Peakschwerpunktes zu groß ist.
 
 \subsection{Diskussion}
+Vergleichen sie Ergebnisse mit Literatur; Diskutieren sie woher die Aufspaltung bei der Feinstrukturmessung zustande kommt und warum sie erst bei höherer Ordnung sichtbar wird.
 
 
 \section{Versuchsteil 2: Zerstörungsfreie Analyse chemischer Zusammensetzungen}

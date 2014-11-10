@@ -25,6 +25,9 @@
   separate-uncertainty
 }
 
+% chemische Moleküle richtig setzen
+\usepackage{mhchem}
+
 % Randbreiten
 \usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
 
@@ -91,7 +94,7 @@ Als Röntgenstrahlung wird der Teil des elektromagnetischen Spektrums mit Photon
 
 \subsubsection{Erzeugung}
 Es gibt zwei typische Erzeugungsmethoden von Röntgenstrahlung, welche auf dem Beschuss eines \emph{Targets} mit einem hochenergetischen Elektronenstrahl bestehen.
-Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten sind:
+Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten, sind:
 \begin{itemize}
   \item \textbf{Bremsstrahlung:} Die bei der Streuung der geladenen Elektronen an den Kernen des Targets vollzogene Geschwindigkeitsänderung des Elektrons, führt zur Emission eines Photons.
   Das so entstandene Spektrum ist kontinuierlich, wobei die maximale Photonenenergie gegeben ist durch die kinetische Energie der einfallenden Elektronen, welche durch deren Beschleunigungsspannung $U$ gegeben ist.
@@ -128,7 +131,8 @@ Nachdem die Beschleunigungsspannung $U$ durchlaufen wurde, treffen die Elektrone
 
 \subsubsection{Nachweis}
 Zum Nachweis von Röntgenstrahlung werden in diesem Versuch Geiger-Müller-Zählrohre, Röntgenenergiedetektor und Röntgenfilm verwendet.
-Der Röntgenfilm ist mit einer speziellen Beschichtung, die bei Auftreffen von Röntgenstrahlung Licht aussendet (Schicht besser erläutern), versehen, welches wiederum eine lichtempfindliche Emulsion(?) belichtet und so ein Bild erzeugt.(Wikipedia?)
+Der Röntgenfilm ist mit einer speziellen Silberbromid Beschichtung ausgestattet, wobei aus \ce{Br-} Ionen und der einfallenden Röntgenstrahlung \ce{Br} und freie Elektronen entstehen.
+Beim Entwickeln werden diese mit \ce{Ag+} zu Silberkörnern (\ce{Ag}) reduziert, was eine Schwarzfärbung des Films hervorruft.
 Die Funktionsweise der beiden anderen Nachweismethoden wird weiter unten erklärt.
 
 Was noch erwähnt werden sollte:
@@ -163,24 +167,23 @@ und man erhält die \textbf{Bedingung für Bragg-Reflexion}:
 Als Röntgenfluoreszenz bezeichnet man die Entstehung sekundärer, fluoreszierender Röntgenstrahlung.
 Dies geschieht ähnlich wie die Erzeugung charakteristischer Röntgenstrahlung, nur dass nun bereits erzeugte Röntgenstrahlung anstatt den energiereichen Elektronen zur Bestrahlung eines Elements verwendet werden.
 Diese sekundäre Röntgenstrahlung weist wieder ein charakteristisches Spektrum auf, aus dem man auf das beschossene Element schließen kann.
-Das Verfahren zur Elementbestimmung (oder Anteilen an Elementen in dem Target (?)) nennt sich daher \textbf{Röntgenfluoreszenzanalyse}.
+Das Verfahren zur Elementbestimmung (oder Anteilen an Elementen in dem Target) nennt sich daher \textbf{Röntgenfluoreszenzanalyse}.
 
-Aus Höhe der Linien im Count--Energie Diagramm kann Massenanteil des jeweiligen Stoffes bestimmt werden.
-Höhe der Linie ist nämlich proportional zur Anzahl der strahlenden Atome.
+Aus der Höhe der Linien im Count--Energie Diagramm kann der Massenanteil des jeweiligen Stoffes bestimmt werden, da die Höhe der Linie proportional zur Anzahl der strahlenden Atome ist.
 Vergleicht man das aufgenommene Spektrum mit einem Referenzspektrum mit strahlenden Atomen:
 \begin{align}
   n_0 = V \cdot \frac{\rho}{A}
 \end{align}
 ($V$: durchstrahltes Volumen; $\rho$: Massendichte des Stoffes; $A$: Atomgewicht des Stoffes)
-So kann aus der Höhe des Peaks im zu analysierenden Spektrum $H$ mit der im Referenzspektrum $H_0$ verglichen werden und daraus die Anzahl $n$ der Atome im zu analysierenden Spektrum berechnet werden:
+So kann die Höhe $H$ des Peaks im zu analysierenden Spektrum mit der im Referenzspektrum $H_0$ verglichen und daraus die Anzahl $n$ der Atome im zu analysierenden Spektrum berechnet werden:
 \begin{align}
   n = n_0 \cdot \frac{H}{H_0}
 \end{align}
-Daher ergibt sich der Massenanteil des $i$-ten Referenzmaterials im zu analysierenden Spektrums zu:
+Daher ergibt sich der Massenanteil des $i$-ten Referenzmaterials im zu analysierenden Spektrum zu:
 \begin{align}
   C_i = \frac{n_i \cdot A_i}{\sum_j n_j \cdot A_j} = \frac{V \cdot \frac{\rho_i}{A_i} \cdot \frac{H_i}{H_{0,i}} \cdot A_i}{\sum_j V \cdot \frac{\rho_j}{A_j} \cdot \frac{H_j}{H_{0,j}}\cdot A_j} = \frac{\rho_i \cdot \frac{H_i}{H_{0,i}}}{\sum_j \rho_j \cdot \frac{H_j}{H_{0,j}}}
 \end{align}
-wobei das durchstrahlte Volumen der einzelnen Proben als gleich angenommen wurde.
+wobei das durchstrahlte Volumen der einzelnen Proben als gleich angenommen wird.
 
 \subsection{Laue-Verfahren}
 
@@ -196,7 +199,7 @@ Die Millerschen Indizes erhält man, wenn man die Kehrwerte $\frac{1}{m_i}$ betr
 \begin{align}
 h=\dfrac{p}{m_1} \quad\quad k=\dfrac{p}{m_2} \quad\quad l=\dfrac{p}{m_3}
 \end{align}
-Betrachte dazu das Beispiel in Abbildung \ref{fig:millerindizes}:
+Betrachte dazu auch das Beispiel in Abbildung \ref{fig:millerindizes}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth]{./grafiken/millerindizes.pdf}
@@ -230,7 +233,7 @@ wobei $d_{hkl}$ der Abstand zweier benachbarter Ebenen ist.
 
 \begin{itemize}
   \item Laue--Bedingung
-  \item Millersche Indizes (reziprokes Gitter)
+  \item reziprokes Gitter
   \item Elementarzelle
   \item Glanzwinkel
   \item Netzebenenabstand
@@ -280,7 +283,7 @@ Mit jedem Impuls (Photondetektion) wird der zu dem digitalen Wert gehörende Bin
   E = m \cdot U_\mathrm{digital} + b
 \end{align}
 
-\section{Bragg-Reflekion}
+\section{Versuchsteil 1: Bragg-Reflekion}
 Im Folgenden wollen wir unter Ausnutzung von Bragg-Reflektion an einem NaCl-Einkristall die Wellenlänge und Energie des charakteristischen Röntgenspektrums einer unbekannten Röhrenanode bestimmen und anhand dessen das Anodenmaterial bestimmen.
 Anschließend wird die Feinstrukturaufspaltung $\Delta \lambda$ der $K_\alpha$-Linie der charakteristischen Röntgenstrahlung einer Molybdän-Anode in vierter Beugungsordnung bestimmt.
 
@@ -434,13 +437,13 @@ Die Feinstruktur der $K_\alpha$-Linie von Molybdän \cite{booklet}:
 \end{table}
 \subsection{Diskussion}
 
-\section{Zerstörungsfreie Analyse chemischer Zusammensetzungen}
+\section{Versuchsteil 2: Zerstörungsfreie Analyse chemischer Zusammensetzungen}
 \subsection{Versuchsdurchführung}
 \subsection{Messdaten}
 \subsection{Auswertung}
 \subsection{Diskussion}
 
-\section{Laue-Aufnahme}
+\section{Versuchsteil 3: Laue-Aufnahme}
 \subsection{Versuchsdurchführung}
 \subsection{Messdaten}
 \subsection{Auswertung}

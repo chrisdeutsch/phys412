@@ -25,6 +25,8 @@
   separate-uncertainty
 }
 
+\DeclareSIUnit\pixel{px}
+
 % chemische Moleküle richtig setzen
 \usepackage{mhchem}
 
@@ -557,8 +559,39 @@ Probe 3 weist ein sehr ähnliches Spektrum wie Probe 2 auf mit (bis auf die Höh
 
 \section{Versuchsteil 3: Laue-Aufnahme}
 \subsection{Versuchsdurchführung}
+
+
+
 \subsection{Messdaten}
+
+
 \subsection{Auswertung}
+\begin{table}[h]
+\centering
+\input{./tables/auswertung_laue_digital.tex}
+\caption{digitale Daten}
+\label{tab:laue_digi}
+\end{table}
+
+\begin{table}[h]
+\centering
+\input{./tables/auswertung_laue_millimeter.tex}
+\caption{Daten}
+\label{tab:laue_mm}
+\end{table}
+
+
+\textbf{Länge}:
+\begin{align}
+  L = \SI{11 +- 2}{\milli\metre}
+\end{align}
+
+\textbf{Maßstab}:
+\begin{align}
+  M = \SI{0.08492 +- 0.00056}{\milli\metre\per\pixel}
+\end{align}
+
+
 \subsection{Diskussion}
 
 

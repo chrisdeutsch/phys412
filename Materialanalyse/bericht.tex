@@ -161,6 +161,7 @@ Beim Geiger-Müller-Zählrohr ist das Zählrohr so ausgelegt, dass die Elektrone
 \end{itemize}
 
 \subsubsection{Röntgenenergiedetektor}
+\label{sec:energiedetektor}
 \textbf{Aufbau:} PIN-Photodiode ($Q \propto E_\gamma$) -- Charge Amplifier (Integrator $U_\mathrm{out} \propto \int I = Q$) -- Verstärkerstufe ($U = V \cdot U_\mathrm{out}$)
 Außerdem Kühlnug der PIN-Diode um den Leckstrom zu verringern (hier Peltier-Effekt)
 
@@ -484,12 +485,33 @@ Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwäh
 
 
 \subsection{Auswertung}
+\subsubsection{Energieeichung durch das charakteristische FeZn-Spektrum}
+Wie schon in Abschnitt \ref{sec:energiedetektor} besprochen, sind uns die Proportionalitäten sowie die Nullpunktsverschiebung des Röntgenenergiedetektors unbekannt.
+Anhand des bekannten charakteristischen Spektrums\footnote{Aus dem \emph{X-Ray Data Booklet}\cite{booklet}} des FeZn-Plättchens kann nach dem Anpassen einer Eichgerade:
+\begin{align}
+  E(n) &= \Delta E \cdot n + E_\mathrm{Offset}
+  \label{eq:eichgerade}
+\end{align}
+jedem \emph{Bin} $n$ die Energie $E$ zugeordnet werden.
+
+Um die Eichgerade aus dem aufgenommenen Spektrum zu berechnen, identifizieren wir zunächst die $K_\alpha$- und $K_\beta$-Linien von Eisen und Zink (in Abbildung \ref{fig:kalibrierung} bereits geschehen).
+Leider konnte die $K_\beta$-Linie von Eisen nicht gut aufgelöst werden.
+Nun bestimmen wir die Peakschwerpunkte optisch, wobei wir für die beiden $\beta$-Linien etwas größere Fehler schätzen, da diese nicht sehr scharf sind.
+Schließlich ordnen wir jeder Linie ihren Literaturwert zu und erhalten die Tabelle \ref{tab:eichgerade}.
 \begin{table}[h]
 \centering
 \input{./tables/eichgerade.tex}
 \caption{Peakbestimmung}
 \label{tab:eichgerade}
 \end{table}
+
+Anschließend tragen wir die Linenenergie $E_\mathrm{Lit.}$ der Linien gegen ihren Peakschwerpunkt $n$ auf und passen eine Gerade an die Messwerte an.
+Wir erhalten für die Parameter der Gleichung \ref{eq:eichgerade}:
+\begin{align}
+  \Delta E &= \SI{67,53 +- 1,27}{\electronvolt}\\
+  E_\mathrm{Offset} &= \SI{-725 +- 164}{\electronvolt}
+\end{align}
+Die Datenpunkte und die angepasste Gerade wurden in Abbildung \ref{fig:energieeichung} aufgetragen und legen (in Anbetracht der Messfehler) einen passablen Fit nahe.
 
 \begin{figure}[h]
 \centering
@@ -498,12 +520,6 @@ Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwäh
 \label{fig:energieeichung}
 \end{figure}
 
-\textbf{Geradenfit}:
-\begin{align}
-  E(n) &= \Delta E \cdot n + E_\mathrm{Offset}\\
-  \Delta E &= \SI{67,53 +- 1,27}{\electronvolt}\\
-  E_\mathrm{Offset} &= \SI{-725 +- 164}{\electronvolt}
-\end{align}
 
 
 

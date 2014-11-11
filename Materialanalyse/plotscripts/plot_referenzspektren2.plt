@@ -24,10 +24,10 @@ set grid
 
 # MACROS
 # x- and ytics for each row resp. column
-NOXTICS = "set xtics (' ' 0, ' ' 100, ' ' 200, ' ' 300, ' ' 400, ' ' 500, ' ' 600); \
+NOXTICS = "set xtics (0, 128, 256, 384, 512); \
           unset xlabel"
 XTICS = "set xtics;\
-          set xlabel 'x'"
+          set xlabel 'Kanalnummer'"
 NOYTICS = "set format y '%.0f'; unset ylabel"
 YTICS = "set format y '%.0f'; set ylabel 'Counts'"
 # Placement of the labels in the graphs

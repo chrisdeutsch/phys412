@@ -23,10 +23,10 @@ set label 2 '$K_\beta(\mathrm{Fe})$' at graph 0.44,0.2 font ',6'
 set label 3 '$K_\alpha(\mathrm{Zn})$' at graph 0.52,0.12 font ',6'
 set label 4 '$K_\beta(\mathrm{Zn})$' at graph 0.57,0.05 font ',6'
 
-set arrow from 106,0 to 106,7026 nohead
-set arrow from 115,0 to 115,1243 nohead
-set arrow from 138,0 to 138,754 nohead
-set arrow from 153,0 to 153,159 nohead
+set arrow from 105,0 to 105,7552 nohead
+set arrow from 114,0 to 114,1380 nohead
+set arrow from 137,0 to 137,780 nohead
+set arrow from 152,0 to 152,135 nohead
 
 plot "./messdaten/materialanalyse/eichprobe_FeZn.txt" using 1:2 with lines t'Messwerte'
 

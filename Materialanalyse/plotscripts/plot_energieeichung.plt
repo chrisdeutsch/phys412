@@ -13,7 +13,7 @@ set xtics
 set mxtics
 set xlabel 'Kanalnummer'
 set yrange [*:*]
-set ylabel 'Energie'
+set ylabel 'Energie $E$ / \si{\electronvolt}'
 
 set grid
 

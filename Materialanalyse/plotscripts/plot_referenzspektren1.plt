@@ -16,7 +16,7 @@ unset key
 set macros
 
 set tics scale 1
-set xrange [0:*]
+set xrange [0:34.066765]
 set yrange [0:*]
 set xtics font ',6' 
 
@@ -24,10 +24,10 @@ set grid
 
 # MACROS
 # x- and ytics for each row resp. column
-NOXTICS = "set xtics (0, 128, 256, 384, 512); \
+NOXTICS = "set xtics ( ' ' 0, ' ' 5, ' ' 10, ' ' 15, ' ' 20,  ' ' 25, ' ' 30); \
           unset xlabel"
-XTICS = "set xtics;\
-          set xlabel 'Kanalnummer'"
+XTICS = "set xtics (0, 5, 10, 15, 20, 25, 30);\
+          set xlabel 'Energie $E$ / \si{\kilo\electronvolt}'"
 NOYTICS = "set format y '%.0f'; unset ylabel"
 YTICS = "set format y '%.0f'; set ylabel 'Counts'"
 # Placement of the labels in the graphs
@@ -47,37 +47,37 @@ set multiplot layout 3,2 rowsfirst title 'Referenzspektren Teil 1'
 @NOXTICS; @YTICS
 @TMARGIN; @LMARGIN
 set label 1 'Pb' @POS
-plot './messdaten/materialanalyse/referenzspektren/blei.txt' with lines ls 1
+plot './messdaten/materialanalyse/referenzspektren/blei.txt' using ((-725.206+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH b
 @NOXTICS; @NOYTICS
 @TMARGIN; @RMARGIN
 set label 1 'Fe' @POS
-plot './messdaten/materialanalyse/referenzspektren/eisen.txt' with lines ls 1
+plot './messdaten/materialanalyse/referenzspektren/eisen.txt' using ((-725.206+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH c
 @NOXTICS; @YTICS
 @MMARGIN; @LMARGIN
 set label 1 'Au' @POS
-plot './messdaten/materialanalyse/referenzspektren/gold.txt' with lines ls 1
+plot './messdaten/materialanalyse/referenzspektren/gold.txt' using ((-725.206+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH d
 @NOXTICS; @NOYTICS
 @MMARGIN; @RMARGIN
 set label 1 'In' @POS
-plot './messdaten/materialanalyse/referenzspektren/indium.txt' with lines ls 1
+plot './messdaten/materialanalyse/referenzspektren/indium.txt' using ((-725.206+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH e
 @XTICS; @YTICS
 @BMARGIN; @LMARGIN
 set label 1 'Cu' @POS
-plot './messdaten/materialanalyse/referenzspektren/kupfer.txt' with lines ls 1
+plot './messdaten/materialanalyse/referenzspektren/kupfer.txt' using ((-725.206+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH f
 @XTICS; @NOYTICS
 @BMARGIN; @RMARGIN
 set label 1 'Ni' @POS
-plot './messdaten/materialanalyse/referenzspektren/nickel.txt' with lines ls 1
+plot './messdaten/materialanalyse/referenzspektren/nickel.txt' using ((-725.206+67.5264*($1))/1000):2 with lines ls 1
 
 unset multiplot
 unset output

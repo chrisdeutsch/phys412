@@ -27,7 +27,7 @@ set grid
 NOXTICS = "set xtics ( ' ' 0, ' ' 5, ' ' 10, ' ' 15, ' ' 20,  ' ' 25, ' ' 30); \
           unset xlabel"
 XTICS = "set xtics (0, 5, 10, 15, 20, 25, 30);\
-          set xlabel 'Energie $E$ / \si{\kilo\electronvolt}'"
+          set xlabel 'Energie $E / \\si{\\kilo\\electronvolt}$'"
 NOYTICS = "set format y '%.0f'; unset ylabel"
 YTICS = "set format y '%.0f'; set ylabel 'Counts'"
 # Placement of the labels in the graphs
@@ -47,37 +47,37 @@ set multiplot layout 3,2 rowsfirst title 'Referenzspektren Teil 2'
 @NOXTICS; @YTICS
 @TMARGIN; @LMARGIN
 set label 1 'Ag' @POS
-plot './messdaten/materialanalyse/referenzspektren/silber.txt' using ((-725.206+67.5264*($1))/1000):2 with lines ls 1
+plot './messdaten/materialanalyse/referenzspektren/silber.txt' using ((-657.68+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH b
 @NOXTICS; @NOYTICS
 @TMARGIN; @RMARGIN
 set label 1 'Ti' @POS
-plot './messdaten/materialanalyse/referenzspektren/titan.txt' using ((-725.206+67.5264*($1))/1000):2 with lines ls 1
+plot './messdaten/materialanalyse/referenzspektren/titan.txt' using ((-657.68+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH c
 @NOXTICS; @YTICS
 @MMARGIN; @LMARGIN
 set label 1 'W' @POS
-plot './messdaten/materialanalyse/referenzspektren/wolfram.txt' using ((-725.206+67.5264*($1))/1000):2 with lines ls 1
+plot './messdaten/materialanalyse/referenzspektren/wolfram.txt' using ((-657.68+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH d
 @NOXTICS; @NOYTICS
 @MMARGIN; @RMARGIN
 set label 1 'Sn' @POS
-plot './messdaten/materialanalyse/referenzspektren/zinn.txt' using ((-725.206+67.5264*($1))/1000):2 with lines ls 1
+plot './messdaten/materialanalyse/referenzspektren/zinn.txt' using ((-657.68+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH e
 @XTICS; @YTICS
 @BMARGIN; @LMARGIN
 set label 1 'Zn' @POS
-plot './messdaten/materialanalyse/referenzspektren/zink.txt' using ((-725.206+67.5264*($1))/1000):2 with lines ls 1
+plot './messdaten/materialanalyse/referenzspektren/zink.txt' using ((-657.68+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH f
 @XTICS; @NOYTICS
 @BMARGIN; @RMARGIN
 set label 1 'Zr' @POS
-plot './messdaten/materialanalyse/referenzspektren/zirkonium.txt' using ((-725.206+67.5264*($1))/1000):2 with lines ls 1
+plot './messdaten/materialanalyse/referenzspektren/zirkonium.txt' using ((-657.68+67.5264*($1))/1000):2 with lines ls 1
 
 unset multiplot
 unset output

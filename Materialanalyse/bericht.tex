@@ -465,21 +465,25 @@ Vergleichen sie Ergebnisse mit Literatur; Diskutieren sie woher die Aufspaltung 
 Die Versuchsdurchführung ist ähnlich wie die in Versuchsteil 1.
 Allerdings werden zur Materialanalyse das Geiger-Müller-Zählrohr gegen einen Röntgenenergiedetektor getauscht und die entsprechenden Proben und Referenzmaterialien anstelle des NaCl Kristalls bestrahlt.
 Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwähnt, eine andere Darstellung im Computerprogramm, welches nun Counts für die einzelnen Kanäle des Röntgenenergiedetektors misst. Darum muss zunächst eine Energieeichung mit einem Kalibriertarget (hier FeZn) gemäß Gleichung (\ref{eq:kalibrierung}) durchgeführt werden.
+
 \subsection{Messdaten}
-\begin{figure}
+\begin{figure}[h]
 \centering
 \input{./plots/kalibrierung.tex}
 \caption{Aufgenommenes Spektrum des Kalibriertargets (FeZn)}
 \label{fig:kalibrierung}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
-\input{./plots/energieeichung.tex}
-\caption{Zuordnung der Energien zu den Kanalnummern}
-\label{fig:energieeichung}
+\input{./plots/probe1.tex}
+\caption{Probe 1}
+\label{fig:probe1}
 \end{figure}
 
+
+
+\subsection{Auswertung}
 \begin{table}[h]
 \centering
 \input{./tables/eichgerade.tex}
@@ -487,13 +491,25 @@ Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwäh
 \label{tab:eichgerade}
 \end{table}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
-\input{./plots/probe1.tex}
-\caption{Probe 1}
-\label{fig:probe1}
+\input{./plots/energieeichung.tex}
+\caption{Zuordnung der Energien zu den Kanalnummern}
+\label{fig:energieeichung}
 \end{figure}
-\subsection{Auswertung}
+
+\textbf{Geradenfit}:
+\begin{align}
+  E(n) &= \Delta E \cdot n + E_\mathrm{Offset}\\
+  \Delta E &= \SI{67,53 +- 1,27}{\electronvolt}\\
+  E_\mathrm{Offset} &= \SI{-725 +- 164}{\electronvolt}
+\end{align}
+
+
+
+
+
+
 \subsection{Diskussion}
 
 \section{Versuchsteil 3: Laue-Aufnahme}

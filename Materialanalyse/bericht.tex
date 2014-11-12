@@ -203,7 +203,7 @@ So kann die Höhe $H$ des Peaks im zu analysierenden Spektrum mit der im Referen
 Daher ergibt sich der Massenanteil des $i$-ten Referenzmaterials im zu analysierenden Spektrum zu:
 \begin{align}
   C_i = \frac{n_i \cdot A_i}{\sum_j n_j \cdot A_j} = \frac{V \cdot \frac{\rho_i}{A_i} \cdot \frac{H_i}{H_{0,i}} \cdot A_i}{\sum_j V \cdot \frac{\rho_j}{A_j} \cdot \frac{H_j}{H_{0,j}}\cdot A_j} = \frac{\rho_i \cdot \frac{H_i}{H_{0,i}}}{\sum_j \rho_j \cdot \frac{H_j}{H_{0,j}}}
-  \label{eq:masseanteile}
+  \label{eq:massenanteile}
 \end{align}
 wobei das durchstrahlte Volumen der einzelnen Proben als gleich angenommen wird.
 
@@ -566,7 +566,20 @@ Probe 3 weist ein sehr ähnliches Spektrum wie Probe 2 auf mit (bis auf die Höh
 
 \subsubsection{Massenanteile der Komponenten in Probe 1}
 
-Wir wollen nun für eine Probe die Massenanteile der einzelnen Komponenten bestimmen und wählen dafür Probe 1 aus.
+Wir wollen nun für eine Probe die Massenanteile der einzelnen Komponenten bestimmen und wählen dafür Probe 2 aus.
+Dazu nutzen wir Formel (\ref{eq:massenanteile}), die sich für den hier vorliegenden Fall von nur zwei Komponenten vereinfacht zu:
+\begin{align}
+C_i = \frac{\rho_i \cdot \frac{H_i}{H_{0,i}}}{\rho_i \cdot \frac{H_i}{H_{0,i}}+\rho_j \cdot \frac{H_j}{H_{0,j}}}
+\label{eq:masseanteile_simple}
+\end{align}
+Wobei die Variablen mit $i, j$ Kupfer bzw. Zink zugeordnet werden.
+Die verwendeten Werte für die Dichten sind in Tabelle \ref{tab:massenanteile} nachzulesen, die Höhen der Peaks haben wir aus den Messwerten direkt ablesen können und dabei einen Fehler von \SI{5}{\percent} angenommen.
+Mit \ref{eq:masseanteile_simple} erhält man dann die in Tabelle \ref{tab:massenanteile} angegebenen Massenanteile der beiden Komponenten in der Legierung.
+Der Fehler wurde mit Gauß'scher Fehlerfortpflanzung berechnet, auf die Angabe der Formel wird hier aus Gründen der Übersichtlichkeit verzichtet.
+
+Die gefundenen Werte deuten auf einen für Messing recht hohen Anteil Zink hin, da aus Stabilitätsgründen praktisch in allen Varianten von Messing mehr als \SI{58}{\percent} Kupfer verarbeitet ist.
+Die Farbe von Messing geht mit steigendem Zinkanteil von bräunlich in gelb über und wir konnten im Versuch deutlich eine helle gelbe Färbung der Probe feststellen, die bereits Messing vermuten ließ.
+Die gefundenen Komponenten und ihre Massenanteile stimmen also mit unseren Erwartungen überein. 
 
 \begin{table}[h]
 \centering

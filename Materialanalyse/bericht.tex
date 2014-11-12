@@ -516,13 +516,16 @@ Die Datenpunkte und die angepasste Gerade wurden in Abbildung \ref{fig:energieei
 
 \clearpage
 
+\subsubsection{Bestimmung der Komponenten der Legierungen}
+
 Wir vergleichen nun die aufgenommenen Spektren der Proben mit denen der Referenzmessungen.
 Anhand der Lage (und teilweise auch der Höhe) der Peaks kann so ausgesagt werden, welche Metalle zu welchen Anteilen in den Legierungen enthalten sind.
 Zur Bestimmung der Elemente in der Legierung reicht dabei aus, Übereinstimmungen der Lage der Peaks in Proben- und Referenzspektrum zu finden, solange die Größenordnung der Höhen übereinstimmt.
 Zur Bestimmung der Masseanteile gemäß (\ref{eq:masseanteile}) muss weiterhin auch noch die Höhe der Peaks gemessen werden.
 
-Bei Probe 1 finden wir so durch Vergleich mit dem Referenzspektrum, dass das höchste Peak Eisen entspricht.
-Das weiter links liegende Peak kann mit der abgelesenen Energie und \cite{booklet} zu Chrom bestimmt werden, genau wird das sehr kleine Peak bei ca. \SI{10}{\kilo\electronvolt} zu Wolfram zugeordnet, da es im Referenzspektrum kaum zu erkennen ist (entspricht laut \cite{booklet} der $L\beta_1$ Linie).
+Bei Probe 1 finden wir so durch Vergleich mit dem Referenzspektrum (s. Anhang \ref{sec:referenzspektren}), dass das höchste Peak Eisen entspricht.
+Die zwei nah beieinander liegenden Peaks von Eisen (das zweite bei etwa \SI{7000}{\electronvolt}) lassen sich wie im Kalibrier- und Referenzspektrum nicht auflösen, wodurch der Knick bei der oben genannten Energie erklärt werden kann.
+Das weiter links liegende Peak kann mit der abgelesenen Energie und \cite{booklet} zu Chrom bestimmt werden, genau wird das sehr kleine Peak bei ca. \SI{10}{\kilo\electronvolt} zu Wolfram zugeordnet, da es im Referenzspektrum kaum zu erkennen ist (entspricht laut \cite{booklet} der $L\beta_1$ Linie bei \SI{9672}{\electronvolt}).
 
 \begin{figure}[h]
 \centering
@@ -557,6 +560,10 @@ Probe 3 weist ein sehr ähnliches Spektrum wie Probe 2 auf mit (bis auf die Höh
 \caption{Probe 4}
 \label{fig:probe4}
 \end{figure}
+
+\subsubsection{Massenanteile der Komponenten in Probe 1}
+
+Wir wollen nun für eine Probe die Massenanteile der einzelnen Komponenten bestimmen und wählen dafür Probe 1 aus.
 
 \subsection{Diskussion}
 
@@ -666,16 +673,6 @@ Analog wurde die Bestimmung der Netzebene $(hkl)$ für die Reflexe $P_2$ und $P_
 
 \section{Zusammenfassung}
 
-\begin{figure}
-\centering
-\input{./plots/referenzspektren1.tex}
-\end{figure}
-
-\begin{figure}
-\centering
-\input{./plots/referenzspektren2.tex}
-\end{figure}
-
 % BIBLIOGRAPHIE
 
 % Maximale Anzahl der Einträge in Klammer
@@ -706,6 +703,17 @@ Analog wurde die Bestimmung der Netzebene $(hkl)$ für die Reflexe $P_2$ und $P_
 
 % APPENDIX
 \begin{appendix}
+\section{Referenzspektren zur Materialanalyse}
+\label{sec:referenzspektren}
+\begin{figure}[h]
+\centering
+\input{./plots/referenzspektren1.tex}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\input{./plots/referenzspektren2.tex}
+\end{figure}
 
 \end{appendix}
 

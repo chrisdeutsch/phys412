@@ -22,6 +22,6 @@ set ylabel 'Counts'
 
 set grid xtics x2tics ytics
 
-plot "./messdaten/materialanalyse/probe4.txt" using 1:2 with lines t'Messwerte' axis x1y1, "./messdaten/materialanalyse/probe4.txt" using ((-725.206+67.5264*($1))/1000):2 with lines t' ' axis x2y1 lt 1 lc 1
+plot "./messdaten/materialanalyse/probe4.txt" using 1:2 with lines t'Messwerte' axis x1y1, "./messdaten/materialanalyse/probe4.txt" using ((-657.68+67.5264*($1))/1000):2 with lines t' ' axis x2y1 lt 1 lc 1
 
 unset output

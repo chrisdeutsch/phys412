@@ -203,6 +203,7 @@ So kann die Höhe $H$ des Peaks im zu analysierenden Spektrum mit der im Referen
 Daher ergibt sich der Massenanteil des $i$-ten Referenzmaterials im zu analysierenden Spektrum zu:
 \begin{align}
   C_i = \frac{n_i \cdot A_i}{\sum_j n_j \cdot A_j} = \frac{V \cdot \frac{\rho_i}{A_i} \cdot \frac{H_i}{H_{0,i}} \cdot A_i}{\sum_j V \cdot \frac{\rho_j}{A_j} \cdot \frac{H_j}{H_{0,j}}\cdot A_j} = \frac{\rho_i \cdot \frac{H_i}{H_{0,i}}}{\sum_j \rho_j \cdot \frac{H_j}{H_{0,j}}}
+  \label{eq:masseanteile}
 \end{align}
 wobei das durchstrahlte Volumen der einzelnen Proben als gleich angenommen wird.
 
@@ -514,6 +515,11 @@ Die Datenpunkte und die angepasste Gerade wurden in Abbildung \ref{fig:energieei
 \end{figure}
 
 \clearpage
+
+Wir vergleichen nun die aufgenommenen Spektren der Proben mit denen der Referenzmessungen.
+Anhand der Lage (und teilweise auch der Höhe) der Peaks kann so ausgesagt werden, welche Metalle zu welchen Anteilen in den Legierungen enthalten sind.
+Zur Bestimmung der Elemente in der Legierung reicht dabei aus, Übereinstimmungen der Lage der Peaks in Proben- und Referenzspektrum zu finden, solange die Größenordnung der Höhen übereinstimmt.
+Zur Bestimmung der Masseanteile gemäß (\ref{eq:masseanteile}) muss weiterhin auch noch die Höhe der Peaks gemessen werden.
 
 \begin{figure}[h]
 \centering

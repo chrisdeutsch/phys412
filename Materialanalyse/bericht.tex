@@ -281,6 +281,7 @@ Besondere Zusammenhänge mit den durch die millersche Indizes $(hkl)$ ausgezeich
 steht senkrecht auf der Ebenenschar $(hkl)$.
 \begin{align}
   | \vec{G} | = \frac{2\pi}{d_{hkl}}
+  \label{eq:netzebenenabstand}
 \end{align}
 wobei $d_{hkl}$ der Abstand zweier benachbarter Ebenen ist.
 
@@ -647,16 +648,55 @@ Wie man sieht, erhalten wir eine sehr kleine Abweichung von der Hypothese. In de
 Die Bestimmung der Netzebenenschar ist sehr sicher, da die Fehler der skalierten Koordinaten klein gegen $1$ sind und aufgrund der Einschränkung, dass die Tripel ganzzahlig und ungemischt sein müssen eine falsche Bestimmung sehr unwahrscheinlich ist.
 Wir können also mit großer Sicherheit sagen, dass der Reflex $P_1$ aufgrund der Netzebenenschar $(2\overline{4}2)$ entstanden ist.
 Analog wurde die Bestimmung der Netzebene $(hkl)$ für die Reflexe $P_2$ und $P_3$ in Tabelle \ref{tab:laue_fit} eingetragen.
-
-\subsubsection{Berechnung von Netzebenenabstand, Glanzwinkel und Wellenlänge der Laue-Reflexe}
-
-
-
 \begin{table}[h]
 \centering
 \input{./tables/auswertung_laue_fit.tex}
 \caption{Daten}
 \label{tab:laue_fit}
+\end{table}
+
+
+\subsubsection{Berechnung von Netzebenenabstand, Glanzwinkel und Wellenlänge der Laue-Reflexe}
+Im Folgenden wollen wir die jedem Laue-Reflex zugehörigen Netzebenenabstande $d_{hkl}$, Glanzwinkel $\vartheta$ sowie Wellenlänge $\lambda$ der reflexerzeugenden Strahlung berechnen.
+Da wir, wie zuvor besprochen, die Miller'schen Indizes $(hkl)$ mit hoher Wahrscheinlichkeit korrekt bestimmt haben, werden wir dabei auf eine ausführliche Fehlerrechnung verzichten.
+
+Zunächst wollen wir die Netzebenabstände $d_{hkl}$ bestimmen.
+Dafür benötigen wir die Gitterkonstante des LiF-Kristalls, welche durch:
+\begin{align*}
+  a_\mathrm{LiF} = \SI{420.80}{\pico\metre}
+\end{align*}
+gegeben ist\cite{crc}.
+Dann berechnet sich der Abstand der Netzebenen aus:
+\begin{align}
+  d_{hkl} = \frac{a}{\sqrt{h^2+k^2+l^2}}
+\end{align}
+was leicht aus Gleichung \ref{eq:netzebenenabstand}, der Definition der reziproken Gittervektoren und den Eigenschaften des kubischen Gitters folgt.
+
+Die Berechnung des Glanzwinkels erfolgt zum Vergleich auf zwei Arten:
+\begin{itemize}
+  \item Berechnung über die Miller'schen Indizes:
+  \begin{align}
+    \vartheta = \arctan{\left( \frac{l}{\sqrt{h^2+k^2}} \right)}
+    \label{eq:millerglanzwinkel}
+  \end{align}
+  
+  \item Berechnung über die experimentelle Messung von $x_Q, y_Q$ und $L$:
+  \begin{align}
+    \vartheta = \frac{1}{2} \arctan{\left( \frac{\sqrt{x_Q^2 + y_Q^2}}{L} \right)}
+  \end{align}
+  unter Beachtung der Fehler\footnote{Bei der Fehlerrechnung wurden die Fehler in $x_Q, y_Q$ und $L$ beachtet. Auf eine Angabe der Fehlerformel soll hier aber verzichtet werden.}.
+\end{itemize}
+
+Schließlich kann über die Bragg-Reflektion (Äquivalenz von Laue-Bedingung und Bragg-Bedingung) an den Netzebenen mit Abstand $d_{hkl}$ die Wellenlänge der Strahlung berechnet werden:
+\begin{align}
+  \lambda = 2 d_{hkl} \sin(\vartheta)
+\end{align}
+
+\begin{table}[h]
+\centering
+\input{./tables/auswertung_laue_winkeletc.tex}
+\caption{Daten}
+\label{tab:laue_winkel}
 \end{table}
 
 

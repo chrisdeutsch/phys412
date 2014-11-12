@@ -554,12 +554,29 @@ Probe 3 weist ein sehr ähnliches Spektrum wie Probe 2 auf mit (bis auf die Höh
 \section{Versuchsteil 3: Laue-Aufnahme}
 \subsection{Versuchsdurchführung}
 
-
-
 \subsection{Messdaten}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.60\textwidth]{./grafiken/film.pdf}
+\caption{Scan des Röntgenfilms (Länge der langen Kante \SI{76 +- 0.5}{\milli\metre} auf \SI{895}{\pixel}}
+\label{fig:film}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth]{./grafiken/film_koord.pdf}
+\caption{bearbeiteter Ausschnitt des Röntgenfilms}
+\label{fig:film_koord}
+\end{figure}
+
 
 
 \subsection{Auswertung}
+\subsubsection{Bestimmung der verursachenden Netzebenenschar eines Laue-Reflexes}
+Zunächst wurde der Röntgenfilm in Abbildung \ref{fig:film} mit einem Scanner digitalisiert.
+Anschließend wurde das digitale Bild entsprechend bearbeitet, um Abbildung \ref{fig:film_koord} zu erhalten.
+Dort messen wir mit digitalen Hilfsmitteln (\emph{Gimp}) die Koordinaten der Reflexe $P_1, P_2$ und $P_3$, welche wir auswerten wollen.
+Die Koordinaten der Punkte wurden in Tabelle \ref{tab:laue_digi} in Pixeln angegeben.
 \begin{table}[h]
 \centering
 \input{./tables/auswertung_laue_digital.tex}
@@ -567,6 +584,21 @@ Probe 3 weist ein sehr ähnliches Spektrum wie Probe 2 auf mit (bis auf die Höh
 \label{tab:laue_digi}
 \end{table}
 
+Zum Umrechnen der Koordinaten wurde anhand der langen Kante des Röntgenfilms $b_\mathrm{mm} = \SI{76 +- 0.5}{\milli\metre}$ auf $b_\mathrm{px} = \SI{895}{\pixel}$ der Maßstab zu:
+\begin{align}
+  \frac{b_\mathrm{mm}}{b_\mathrm{px}} = \SI{0.08492 +- 0.00056}{\milli\metre\per\pixel}
+\end{align}
+bestimmt.
+Anschließend kann die zu jedem Reflex gehörige Koordinate $z_Q$ berechnet werden:
+\begin{align}
+  z_Q = \sqrt{x_Q^2 + y_Q^2 + L^2} - L
+\end{align}
+wobei $L = \SI{11 +- 2}{\milli\metre}$ der Abstand Kollimator-Film ist.
+Wir berechnen den Fehler $\sigma_z$ über Gauß'sche Fehlerfortpflanzung und erhalten:
+\begin{align}
+  \sigma_z = \sqrt{ \frac{1}{x_Q^2 + y_Q^2 + L^2} \left( x_Q^2  \sigma_x^2 + y_Q^2 \sigma_y^2 \right) + \left( \frac{z_Q}{x_Q^2 + y_Q^2 + L^2}-1\right)^2 \sigma_z^2}
+\end{align}
+Die Ergebnisse der Umrechnung von \si{\pixel} in \si{\milli\metre} sowie die Berechnung von $z_Q$ findet sich in Tabelle \ref{tab:laue_mm}.
 \begin{table}[h]
 \centering
 \input{./tables/auswertung_laue_millimeter.tex}
@@ -574,16 +606,50 @@ Probe 3 weist ein sehr ähnliches Spektrum wie Probe 2 auf mit (bis auf die Höh
 \label{tab:laue_mm}
 \end{table}
 
-
-\textbf{Länge}:
+Nun suchen wir zu jedem Laue-Reflex das kleinste, ganzzahlige und ungemischte Zahlentripel $(h,k,l)$, welches das Verhältnis:
 \begin{align}
-  L = \SI{11 +- 2}{\milli\metre}
+  h:k:l = x_Q : y_Q : z_Q
 \end{align}
+erfüllt.
+Dabei ist eine Menge von Zahlen ungemischt, wenn diese nur gerade oder nur ungerade Zahlen enthält.
+Enthält die Menge sowohl gerade als auch ungerade Zahlen so nennt man diese gemischt.
 
-\textbf{Maßstab}:
+Wir wollen nun am Beispiel des Reflexes $P_1$ die Vorgehensweise zur Bestimmung der verursachenden Netzebenenschar $(hkl)$ erklären.
+Der Punkt $Q$ hat die Koordinaten:
+\begin{align*}
+  x_Q &= \SI{5.01 +- 0.10}{\milli\metre} \\
+  y_Q &= \SI{-9.94 +- 0.11}{\milli\metre} \\
+  z_Q &= \SI{4.65 +- 0.60}{\milli\metre}
+\end{align*}
+Es ist leicht zu sehen, dass die Koordinaten ein $(1:-2:1)$-Verhältnis aufweisen, welches der Netzebenenschar $(1\overline{2}1)$ entsprechen würde.
+Dies entspricht jedoch einer gemischten Zahl und kann daher nicht die verursachende Netzebenenschar sein.
+Daher skalieren wir das Verhältnis mit einem Faktor $2$ um das kleinste, ganzzahlige, ungemischte Tripel $(2\overline{4}2)$ zu erhalten.
+Um dies zu quantifizieren, betrachten wir die quadratische Abweichung der mit $\lambda$ skalierten Koordinaten $Q$ von der Hypothese $(hkl) = (2\overline{4}2)$:
 \begin{align}
-  M = \SI{0.08492 +- 0.00056}{\milli\metre\per\pixel}
+  \chi^2(\lambda) = \frac{(h-\lambda x_Q)^2}{\sigma_x^2} + \frac{(k-\lambda y_Q)^2}{\sigma_y^2} + \frac{(l-\lambda z_Q)^2}{\sigma_z^2}
 \end{align}
+Schließlich minimieren wir diese und erhalten:
+\begin{align*}
+  \lambda_\mathrm{min} &= \SI{0,402}{\per\milli\metre} \\
+  \chi^2(\lambda_\mathrm{min}) &= \num{0,072}
+\end{align*}
+Wie man sieht, erhalten wir eine sehr kleine Abweichung von der Hypothese. In der Tabelle \ref{tab:laue_fit} finden sich die skalierten Koordinaten und Chi-Quadrate für alle drei Reflexe.
+
+Die Bestimmung der Netzebenenschar ist sehr sicher, da die Fehler der skalierten Koordinaten klein gegen $1$ sind und aufgrund der Einschränkung, dass die Tripel ganzzahlig und ungemischt sein müssen eine falsche Bestimmung sehr unwahrscheinlich ist.
+Wir können also mit großer Sicherheit sagen, dass der Reflex $P_1$ aufgrund der Netzebenenschar $(2\overline{4}2)$ entstanden ist.
+Analog wurde die Bestimmung der Netzebene $(hkl)$ für die Reflexe $P_2$ und $P_3$ in Tabelle \ref{tab:laue_fit} eingetragen.
+
+\subsubsection{Berechnung von Netzebenenabstand, Glanzwinkel und Wellenlänge der Laue-Reflexe}
+
+
+
+\begin{table}[h]
+\centering
+\input{./tables/auswertung_laue_fit.tex}
+\caption{Daten}
+\label{tab:laue_fit}
+\end{table}
+
 
 
 \subsection{Diskussion}

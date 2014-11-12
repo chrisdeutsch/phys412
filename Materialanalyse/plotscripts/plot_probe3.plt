@@ -8,11 +8,11 @@ set title 'Spektrum von Probe 3'
 
 unset key
 
-set xrange [*:512]
-set xtics (0, 128, 256, 384, 512)
+set xrange [*:256]
+set xtics (0, 64, 128, 192, 256)
 set xtics nomirror
-set x2range [-0.829619:34.066765]
-set x2tics nomirror (0, 5, 10, 15, 20, 25, 30)
+set x2range [-0.65768:16.6290784]
+set x2tics nomirror (0, 5, 10, 15)
 set mx2tics
 set x2label 'Energie / $\si{\kilo\electronvolt}$'
 set mxtics

@@ -170,13 +170,22 @@ Beim Entwickeln werden diese mit \ce{Ag+} zu Silberkörnern (\ce{Ag}) reduziert,
 \subsubsection{Geiger-Müller-Zählrohr}
 Das Geiger-Müller-Zählrohr besteht aus einem Metallzylinder, der die Kathode darstellt und einem Draht im Inneren des Zylinders, der die Anode bildet.
 Der Zylinder ist mit einem Gas unter hohem Druck gefüllt, wobei meistens Edelgas verwendet wird, da diese keinen negativen Ionen bilden, die den Betrieb stören können.
-Bei Eintritt von Teilchen in das Zählrohr werden die Gasatome ionisiert und so freie Elektronen erzeugt.
-Durch die zwischen Draht und Zylindermantel anliegende Spannung werden diese zum Draht beschleunigt.
-Dadurch entsteht ein Stromimpuls, der dann an einem digitalen Zähler registriert wird, wobei die Anzahl Elektronen bei geladenen zu zählenden Teilchen und damit die Anzahl Impulse der Anzahl der einfallenden Teilchen entspricht.
-Für den Betrieb ist die angelegte Gleichspannung zwischen Anode und Kathode entscheidend.
-Bei zu geringer Spannung können die freien Elektronen auf der Beschleunigungstrecke wieder mit den Gasatomen rekombinieren (Rekombinationsbereich), wodurch die Messung verfälscht wird.
-Erst ab einer bestimmten Gleichspannung erreichen alle Elektronen die Anode, womit dann die von der Strahlung im Zählrohr abgegebene Energie gemessen wird.
-Beim Geiger-Müller-Zählrohr ist das Zählrohr so ausgelegt, dass die Elektronen durch die Beschleunigung Energien erreichen, die zur weiteren Ionisation der Gasatome führen, wodurch sich ein sogenannter Lawineneffekt einstellt.
+Bei Eintritt von Teilchen in das Zählrohr werden die Gasatome im Inneren ionisiert und so freie Elektronen und positiv geladene Ionen erzeugt.
+Durch die zwischen Draht und Zylindermantel anliegende Spannung werden die Elektronen zum Draht beschleunigt, die Ionen aufgrund ihrer höheren Masse deutlich langsamer zum Mantel hin.
+
+Für den Betrieb ist die angelegte Gleichspannung zwischen Anode und Kathode entscheidend:
+Bei geringer Spannung können die freien Elektronen auf der Beschleunigungsstrecke wieder mit den Ionen rekombinieren, wodurch der gemessene Stromimpuls nur von den Elektronen erzeugt wird, die die Anode erreichen.
+So kann keine verlässliche aussage über die einfallende Strahlung gemacht werden (\emph{Rekombinationsbereich}).
+Erst ab einer bestimmten Gleichspannung ($\sim \SI{100}{\volt}$) erreichen alle Elektronen die Anode, womit dann die von der Strahlung im Zählrohr abgegebene Energie gemessen wird (\emph{Ionisationskammer}).
+Erhöht man die Spannung weiter erreicht man den \emph{Proportionalitätsbereich}.
+Hier werden die Elektronen so stark beschleunigt, dass sie auf dem Weg zum Draht genug Energie gewinnen, um weitere Gasatome zu ionisieren.
+So entsteht ein Lawineneffekt, der den gemessenen Stromimpuls deutlich vergrößert (bei $n$ Elektronen pro Lawine ist dieser $n$-mal größer) und so genauere Messungen als in der Ionisationskammer ermöglicht.
+Beim \emph{Geiger-Müller-Bereich} ist die angelegte Spannung so hoch, dass die Elektronen, ähnlich wie im Proportionalitätsbereich, weitere Atome ionisieren können, und dass die dabei entstandenen Elektronen wieder Atome ionisieren.
+Der Lawineneffekt wird also deutlich verstärkt und eine selbstständige Gasentladung ausgelöst.
+Diese endet erst, wenn sich durch die entstandenen, positiv geladenen Ionen, die (langsam) zum Mantel des Zylinders beschleunigt werden, eine Raumladungszone im Rohr ausbildet, die die Feldstärke verringert.
+Zur Auslösung werden nur sehr wenige freie Elektronen benötigt, wodurch das Geiger-Müller-Zählrohr eine sehr hohe Empfindlichkeit hat.
+Die gemessenen Stromimpulse sind durch die hohe Beschleunigungsspannung, die die Elektronen erfahren, alle gleich groß, es wird also nur die Anzahl und nicht Energie der einfallenden Strahlung gemessen.
+Durch den angesprochenen Effekt der selbstständigen Gasentladung hat das Geiger-Müller-Zählrohr eine s.g. \emph{Totzeit}, welche beschreibt, wie lange keine neu einfallende Strahlung gemessen werden kann, da die Gasatome vorher beinahe alle ionisiert sind und erst wieder mit den Elektronen rekombinieren müssen.
 
 \subsubsection{Röntgenenergiedetektor}
 \label{sec:energiedetektor}

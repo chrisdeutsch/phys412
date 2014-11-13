@@ -59,7 +59,6 @@ plot './messdaten/materialanalyse/referenzspektren/eisen.txt' using ((-657.68+67
 
 # --- GRAPH c
 set xrange [0:30]
-#set xtics (0, 5, 10, 15, 20, 25, 30)
 @NOXTICS; @YTICS
 @MMARGIN; @LMARGIN
 set label 1 'Au' @POS
@@ -67,7 +66,6 @@ plot './messdaten/materialanalyse/referenzspektren/gold.txt' using ((-657.68+67.
 
 # --- GRAPH d
 set xrange [0:30]
-#set xtics (0, 5, 10, 15, 20, 25, 30)
 @NOXTICS; @NOYTICS
 @MMARGIN; @RMARGIN
 set label 1 'In' @POS

@@ -125,7 +125,7 @@ In der Praxis treten beide Effekte bei der Erzeugung von Röntgenstrahlen in sog
   \label{fig:spektrum}
 \end{figure}
 
-Eine \textbf{Röntgenröhre} besteht aus einem evakuierten Glaskolben mit einer Anordnung von geheizter Kathode und Anode aus Targetmaterial.
+Eine \textbf{Röntgenröhre} (schematisch in Abbildung \ref{fig:roehre}) besteht aus einem evakuierten Glaskolben mit einer Anordnung von geheizter Kathode und Anode aus Targetmaterial.
 Zwischen Kathode und Anode wird die Beschleunigungsspannung $U$ angelegt, sodass beim Heizen der Kathode mit der Heizspannung $U_\mathrm{Heiz}$ aufgrund des glühelektrischen Effekts ein Teil der Elektronen die Austrittsarbeit der Kathode überwinden kann und durch die Beschleunigungsspannung $U$ in Richtung der Anode beschleunigt werden.
 Nachdem die Beschleunigungsspannung $U$ durchlaufen wurde, treffen die Elektronen mit der Energie $e U$ auf das Anodenmaterial und erzeugen dabei Bremsstrahlung sowie charakteristische Strahlung, welche durch ein für Röntgenstrahlung durchlässiges Fenster im Glaskolben aus der Röhre austreten können.
 \begin{figure}[h]
@@ -140,6 +140,24 @@ Als Röntgenfluoreszenz bezeichnet man die Entstehung sekundärer, fluoreszieren
 Dies geschieht ähnlich wie die Erzeugung charakteristischer Röntgenstrahlung, nur dass nun bereits erzeugte Röntgenstrahlung anstatt den energiereichen Elektronen zur Bestrahlung eines Elements verwendet werden.
 Diese sekundäre Röntgenstrahlung weist wieder ein charakteristisches Spektrum auf, aus dem man auf das beschossene Element schließen kann.
 Das Verfahren zur Elementbestimmung (oder Anteilen an Elementen in dem Target) nennt sich daher \textbf{Röntgenfluoreszenzanalyse}.
+
+\subsubsection{Massenanteilbestimmung durch Röntgenfluoreszenz}
+Aus der Höhe der Linien im Count--Energie Diagramm eines Röntgenfluoreszenzspektrums kann der Massenanteil des jeweiligen Stoffes bestimmt werden, da die Höhe der Linie proportional zur Anzahl der strahlenden Atome ist.
+Vergleicht man das aufgenommene Spektrum mit einem Referenzspektrum mit strahlenden Atomen:
+\begin{align}
+  n_0 = V \cdot \frac{\rho}{A}
+\end{align}
+($V$: durchstrahltes Volumen; $\rho$: Massendichte des Stoffes; $A$: Atomgewicht des Stoffes).
+So kann die Höhe $H$ des Peaks im zu analysierenden Spektrum mit der im Referenzspektrum $H_0$ verglichen und daraus die Anzahl $n$ der strahlenden Atome näherungsweise berechnet werden:
+\begin{align}
+  n = n_0 \cdot \frac{H}{H_0}
+\end{align}
+Daher ergibt sich der Massenanteil des $i$-ten Referenzmaterials im zu analysierenden Spektrum zu:
+\begin{align}
+  C_i = \frac{n_i \cdot A_i}{\sum_j n_j \cdot A_j} = \frac{V \cdot \frac{\rho_i}{A_i} \cdot \frac{H_i}{H_{0,i}} \cdot A_i}{\sum_j V \cdot \frac{\rho_j}{A_j} \cdot \frac{H_j}{H_{0,j}}\cdot A_j} = \frac{\rho_i \cdot \frac{H_i}{H_{0,i}}}{\sum_j \rho_j \cdot \frac{H_j}{H_{0,j}}}
+  \label{eq:massenanteile}
+\end{align}
+wobei das durchstrahlte Volumen der einzelnen Proben als gleich angenommen wird und die Summe über $j$ alle Elemente der Probe durchläuft.
 
 \subsection{Nachweis}
 \label{sec:nachweis}
@@ -158,64 +176,37 @@ Dadurch entsteht ein Stromimpuls, der dann an einem digitalen Zähler registrier
 Für den Betrieb ist die angelegte Gleichspannung zwischen Anode und Kathode entscheidend.
 Bei zu geringer Spannung können die freien Elektronen auf der Beschleunigungstrecke wieder mit den Gasatomen rekombinieren (Rekombinationsbereich), wodurch die Messung verfälscht wird.
 Erst ab einer bestimmten Gleichspannung erreichen alle Elektronen die Anode, womit dann die von der Strahlung im Zählrohr abgegebene Energie gemessen wird.
-Beim Geiger-Müller-Zählrohr ist das Zählrohr so ausgelegt, dass die Elektronen durch die Beschleunigung Energien erreichen, die zur weiteren Ionisation der Gasatome führen, wodurch sich ein s.g. Lawineneffekt einstellt.
-
-\begin{itemize}
-  \item Aufbau
-  \item Funktionsweise
-  \item Totzeit
-\end{itemize}
+Beim Geiger-Müller-Zählrohr ist das Zählrohr so ausgelegt, dass die Elektronen durch die Beschleunigung Energien erreichen, die zur weiteren Ionisation der Gasatome führen, wodurch sich ein sogenannter Lawineneffekt einstellt.
 
 \subsubsection{Röntgenenergiedetektor}
 \label{sec:energiedetektor}
-\textbf{Aufbau:} PIN-Photodiode ($Q \propto E_\gamma$) -- Charge Amplifier (Integrator $U_\mathrm{out} \propto \int I = Q$) -- Verstärkerstufe ($U = V \cdot U_\mathrm{out}$)
-Außerdem Kühlnug der PIN-Diode um den Leckstrom zu verringern (hier Peltier-Effekt)
 
-\textbf{PIN-Photodiode:} Besteht aus einer PIN-Halbleiterschicht, wobei I für intrinischem Halbleiter (undotiert) steht.
-Unter reverse Bias bildet sich eine Verarmungszone im intrinsischen Halbleiterbereich.
-Wird ein Röntgenphoton in der intrinsischen Zone absorbiert (Photoeffekt) und löst ein Elektron aus den Halbleiteratomen, sodass ein Elektron-Loch Paar entsteht.
-Das hochenergetische Elektron kann nun weitere Kristallatome ionisieren oder auch unter Ausstrahlung eines charakteristischen Röntgenphotons erneut ein Elektron-Loch Paar erzeugen.
-Dies passiert sooft, bis die gesamte Energie des Röntgenphotons in Elektronen-Loch Paare umgewandelt wurde, deren Anzahl gegeben ist durch:
+Das Kernstück des Röntgenenergiedetektors ist eine \textbf{PIN-Photodiode}, welche aus einer PIN-Halbleiterschicht besteht (I: intrinsischer (undotierter) Halbleiter).
+An diese wird eine Spannung in Sperrrichtung angelegt, sodass sich in der intrinsischen Zone eine Ladungsträgerverarmungszone ausbildet.
+Wird ein Röntgenphoton in der intrinsischen Schicht über den Photoeffekt absorbiert, so löst dies ein Elektron aus dem Halbleiter und bildet ein Elektron-Loch-Paar.
+Das hochenergetische Elektron kann nun weitere Elektronen aus dem Halbleiter auslösen.
+Es werden soviele Elektronen ausgelöst, bis die gesamte Energie des Röntgenphotons in die Erzeugung von Elektronen-Loch-Paaren übergangen ist.
+Dadurch ist die Anzahl der Elektronen-Loch-Paare gegeben durch:
 \begin{align}
   N = \frac{E_\gamma}{W_{e,\mathrm{Loch}}}
 \end{align}
-Dadurch entsteht ein Ladungsfluss proportional zur Energie des Röntgenquants.
+wobei $W_{e,\mathrm{Loch}}$ die Energie zur Bildung eines Elektron-Loch-Paars ist.
+Dadurch entsteht eine zur Photonenenergie $E_\gamma$ proportionalen Ladung $Q$, welche einen Strom durch die Diode auslöst.
+In der nächsten Stufe des Röntgenenergiedetektors wird der Strom in einem Integrator über die Zeit integriert, um somit eine zur Gesamtladung $Q$ proportionale Ausgangsspannung zu erhalten.
+Schließlich wird die Spannung in einer letzten Verstärkerstufe verstärkt, um eine an den ADC des nachgeschalteten Vielkanalanalysators angepasste Spannung zu erhalten.
 
-\textbf{Funktionsweise:} Dieser Strom kann wird in einem Integrator (Op amp?) aufintegriert um die Gesamtladung zu erhalten.
-Diese wird wiederum in einer nächsten Verstärkerstufe verstärkt, um eine zur Photonenenergie proportionale Spannung zu erhalten.
+Der \textbf{Vielkanalanalysator} besteht im Wesentlichen aus einem Analog-Digital-Konverter, der einen eingehenden Spannungsimpuls in einen zur Höhe des Impulses proportionalen digitalen Wert $n$ umwandelt.
+Der größtmögliche Wert von $n$ ist gegeben durch die Anzahl der Kanäle des Vielkanalanalysators.
+Mit jedem eingehenden Spannungsimpuls der Höhe $n$ wird der Wert des $n$-ten \emph{Bins} um eins hochgezählt, sodass man ein Count-Kanal-Histogramm erhält.
 
-\textbf{Vielkanalanalysator:} Ein DAC die zur Photonenenergie proportionale (verstärkte) Spannung $U$ in einen digitalen Wert um, sodass aufgrund der endlichen Auflösung des DAC's die Energien in Bins (Histogram!) deren Breite durch das Auflösungsvermögen gegeben sind.
-Mit jedem Impuls (Photondetektion) wird der zu dem digitalen Wert gehörende Bin um eins hochgezählt.
-
-\textbf{Kalibrierung:} Aufgrund der unbekannten Proportionalitäten und Nullpunktsverschiebung muss die Energie anhand von zwei Kalibrationswerten
-(Bestimmung von m und b) bestimmt werden.
+Aufgrund der unbekannten Proportionalitäten und Nullpunktsverschiebung des Röntgenenergiedetektors muss für die Zuordnung der zu den Kanälen zugehörigen Energie eine \textbf{Kalibrierung} durchgeführt werden.
+Dazu sind mindestens zwei Kalibrationswerte nötig um eine Eichgerade anzupassen:
 \begin{align}
-  E = m \cdot U_\mathrm{digital} + b
+  E = \Delta E \cdot n + E_\mathrm{Offset}
   \label{eq:kalibrierung}
 \end{align}
+sodass die Steigung $\Delta E$ (Energieintervall pro Kanal) und die Nullpunktsverschiebung $E_\mathrm{Offset}$ bestimmt werden kann.
 
-Aus der Höhe der Linien im Count--Energie Diagramm kann der Massenanteil des jeweiligen Stoffes bestimmt werden, da die Höhe der Linie proportional zur Anzahl der strahlenden Atome ist.
-Vergleicht man das aufgenommene Spektrum mit einem Referenzspektrum mit strahlenden Atomen:
-\begin{align}
-  n_0 = V \cdot \frac{\rho}{A}
-\end{align}
-($V$: durchstrahltes Volumen; $\rho$: Massendichte des Stoffes; $A$: Atomgewicht des Stoffes)
-So kann die Höhe $H$ des Peaks im zu analysierenden Spektrum mit der im Referenzspektrum $H_0$ verglichen und daraus die Anzahl $n$ der Atome im zu analysierenden Spektrum berechnet werden:
-\begin{align}
-  n = n_0 \cdot \frac{H}{H_0}
-\end{align}
-Daher ergibt sich der Massenanteil des $i$-ten Referenzmaterials im zu analysierenden Spektrum zu:
-\begin{align}
-  C_i = \frac{n_i \cdot A_i}{\sum_j n_j \cdot A_j} = \frac{V \cdot \frac{\rho_i}{A_i} \cdot \frac{H_i}{H_{0,i}} \cdot A_i}{\sum_j V \cdot \frac{\rho_j}{A_j} \cdot \frac{H_j}{H_{0,j}}\cdot A_j} = \frac{\rho_i \cdot \frac{H_i}{H_{0,i}}}{\sum_j \rho_j \cdot \frac{H_j}{H_{0,j}}}
-  \label{eq:massenanteile}
-\end{align}
-wobei das durchstrahlte Volumen der einzelnen Proben als gleich angenommen wird.
-
-Was noch erwähnt werden sollte:
-\begin{itemize}
-  \item Elektron-Loch Bildung in pn-Grenzschichten
-  \item Szintillationszähler
-\end{itemize}
 
 \subsection{Bragg-Reflexion}
 Betrachtet man die Beugung von einfallender elektromagnetischer Strahlung an parallelen Netzebenen eines Einkristalls, so führt die Interferenz der gebeugten Wellen zu einer Ausbildung von Beugungsmaxima.

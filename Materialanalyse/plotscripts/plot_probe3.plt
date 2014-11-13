@@ -26,7 +26,6 @@ set grid xtics x2tics ytics
 set label 1 'K$_{\alpha}$(Cu)' at graph 0.42,0.95
 set label 2 'K$_{\alpha}$(Zn)' at graph 0.47,0.7
 set label 3 'K$_{\beta}$(Zn)' at graph  0.55,0.07
-set label 4 'L$_{\beta_{1,2}}$(Pb)' at graph 0.8,0.05
 
 plot "./messdaten/materialanalyse/probe3.txt" using 1:2 with lines t'Messwerte' axis x1y1, "./messdaten/materialanalyse/probe3.txt" using ((-657.68+67.5264*($1))/1000):2 with lines t' ' axis x2y1 lt 1 lc 1
 

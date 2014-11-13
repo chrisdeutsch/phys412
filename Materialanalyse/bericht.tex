@@ -123,7 +123,7 @@ In der Praxis treten beide Effekte bei der Erzeugung von Röntgenstrahlen in sog
 \begin{figure}[h]
   \centering
   \includegraphics[width=1\textwidth]{./grafiken/Tube_Cu_LiF.pdf}
-  \caption{Charakteristisches Spektrum einer Kupferanode nach Bragg-Reflektion an einem LiF-Kristall. Der Untergrund entsteht aufgrund der emittierten Bremsstrahlung der in der Anode gestreuten Elektronen. Auf diesem liegt das charakteristische Röntgenspektrum der Anode. Quelle: \url{http://commons.wikimedia.org/wiki/File:Tube_Cu_LiF.PNG} (Letzter Zugriff: 13. November 2014)}
+  \caption{Charakteristisches Spektrum einer Kupferanode nach Bragg-Reflexion an einem LiF-Kristall. Der Untergrund entsteht aufgrund der emittierten Bremsstrahlung der in der Anode gestreuten Elektronen. Auf diesem liegt das charakteristische Röntgenspektrum der Anode. Quelle: \url{http://commons.wikimedia.org/wiki/File:Tube_Cu_LiF.PNG} (Letzter Zugriff: 13. November 2014)}
   \label{fig:spektrum}
 \end{figure}
 
@@ -219,7 +219,7 @@ Dazu sind mindestens zwei Kalibrationswerte nötig um eine Eichgerade anzupassen
 sodass die Steigung $\Delta E$ (Energieintervall pro Kanal) und die Nullpunktsverschiebung $E_\mathrm{Offset}$ bestimmt werden kann.
 
 
-\subsection{Bragg-Reflektion}
+\subsection{Bragg-Reflexion}
 Betrachtet man die Beugung von einfallender elektromagnetischer Strahlung an parallelen Netzebenen eines Einkristalls, so führt die Interferenz der gebeugten Wellen zu einer Ausbildung von Beugungsmaxima.
 Bezeichnet $\beta$ den Winkel des einfallenden Strahls gegen die parallelen Netzebenen (Glanzwinkel), so erhält man konstruktive Interferenz, wenn der Weglängenunterschied zwischen zwei benachbarten Netzebenen ein ganzzahliges Vielfaches der Wellenlänge $\lambda$ ist:
 \begin{align}
@@ -229,7 +229,7 @@ Dabei ist der Weglängenunterschied gegeben durch den Netzebenenabstand $d$ und 
 \begin{align}
   \Delta s = 2 d \sin(\beta)
 \end{align}
-und man erhält die \textbf{Bedingung für Bragg-Reflektion}:
+und man erhält die \textbf{Bedingung für Bragg-Reflexion}:
 \begin{align}
   2 d \sin(\beta) = m \lambda
   \label{eq:bragg}
@@ -306,8 +306,8 @@ Mit der Definition des reziproken Gitters folgt daher für die Laue-Bedingung:
 \end{align}
 die Änderung des Wellenvektors muss also ein beliebiger reziproker Gittervektor sein.
 
-\section{Versuchsteil 1: Bragg-Reflektion}
-Im Folgenden wollen wir unter Ausnutzung von Bragg-Reflektion an einem NaCl-Einkristall die Wellenlänge und Energie des charakteristischen Röntgenspektrums einer unbekannten Röhrenanode bestimmen und anhand dessen das Anodenmaterial bestimmen.
+\section{Versuchsteil 1: Bragg-Reflexion}
+Im Folgenden wollen wir unter Ausnutzung von Bragg-Reflexion an einem NaCl-Einkristall die Wellenlänge und Energie des charakteristischen Röntgenspektrums einer unbekannten Röhrenanode bestimmen und anhand dessen das Anodenmaterial bestimmen.
 Anschließend wird die Feinstrukturaufspaltung $\Delta \lambda$ der $K_\alpha$-Linie der charakteristischen Röntgenstrahlung einer Molybdän-Anode in vierter Beugungsordnung bestimmt.
 
 \subsection{Versuchsdurchführung}
@@ -315,7 +315,7 @@ Anschließend wird die Feinstrukturaufspaltung $\Delta \lambda$ der $K_\alpha$-L
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.9\textwidth]{./grafiken/aufbau_bragg.pdf}
-\caption{Versuchsaufbau zur Bragg-Reflektion am NaCl-Kristall}
+\caption{Versuchsaufbau zur Bragg-Reflexion am NaCl-Kristall}
 \label{fig:bragg_aufbau}
 \end{figure}
 Zur Aufnahme des charakteristischen Röntgenspektrums einer unbekannten Anode wird das Vollschutzröntgengerät verwendet, dessen innerer Aufbau in Abbildung \ref{fig:bragg_aufbau} dargestellt ist.
@@ -328,7 +328,7 @@ In diesen setzen wir das Geiger-Müller-Zählrohr ein und schließen es an die v
 Schließlich wird der Targettisch an dem Goniometer befestigt und der NaCl-Kristall so auf dem Tisch befestigt, dass dessen Rotationsachse etwa auf der Kristalloberfläche liegt.
 Dabei wurden Sensorarm und Goniometer so positioniert, dass der Abstand Kollimatorspalt--Target und Sensorarm--Target \num{5} bis \SI{6}{\centi\metre} beträgt.
 Das Goniometer dient nun zur computergesteuerten Einstellung der Winkel von Targettisch $\beta_\mathrm{Target}$ und Sensorarm $\beta_\mathrm{Sensor}$ zur Horizontalen.
-Da bei Bragg-Reflektion der Winkel des einfallenden Strahls zum Target gleich dem des Ausfallenden ist, wird das Goniometer im \emph{Coupled}-Modus betrieben, welcher das Target und den Sensorarm stets so einstellt, dass die Bedingung $\beta = \beta_\mathrm{Target} = 2\beta_\mathrm{Sensor}$ erfüllt ist.
+Da bei Bragg-Reflexion der Winkel des einfallenden Strahls zum Target gleich dem des Ausfallenden ist, wird das Goniometer im \emph{Coupled}-Modus betrieben, welcher das Target und den Sensorarm stets so einstellt, dass die Bedingung $\beta = \beta_\mathrm{Target} = 2\beta_\mathrm{Sensor}$ erfüllt ist.
 
 Die eigentliche Messung wird nun computergesteuert durchgeführt.
 Dabei verwenden wir eine Röhrenspannung von \SI{35}{\kilo\volt} mit einem Emissionsstrom zwischen Glühkathode und Anode von \SI{1}{\milli\ampere}.
@@ -414,7 +414,7 @@ Die entsprechenden Schwerpunkte und ihre Fehler wurden im vorigen Abschnitt aufg
 
 \subsubsection{Bestimmung von Wellenlänge und Energie der charakteristischen Strahlung}
 \label{sssec:lambdaE}
-Zur Bestimmung der korrespondierenden Wellenlänge zu einem Beugungsmaximum bei Bragg-Reflektion, folgt aus der Bragg-Bedingung (Gleichung \ref{eq:bragg}):
+Zur Bestimmung der korrespondierenden Wellenlänge zu einem Beugungsmaximum bei Bragg-Reflexion, folgt aus der Bragg-Bedingung (Gleichung \ref{eq:bragg}):
 \begin{align}
   \lambda &= \frac{2d}{m} \sin(\beta)
 \end{align}
@@ -772,7 +772,7 @@ Die Berechnung des Glanzwinkels $\vartheta$ erfolgt zum Vergleich auf zwei Arten
   \end{align}
   unter Beachtung der Fehler\footnote{Bei der Fehlerrechnung wurden die Fehler in $x_Q, y_Q$ und $L$ beachtet. Auf eine Angabe der Fehlerformel soll hier aber verzichtet werden.}.
 \end{itemize}
-Schließlich kann über die Bragg-Reflektion (Äquivalenz von Laue-Bedingung und Bragg-Bedingung) an den Netzebenen mit Abstand $d_{hkl}$ die Wellenlänge der Strahlung berechnet werden:
+Schließlich kann über die Bragg-Reflexion (Äquivalenz von Laue-Bedingung und Bragg-Bedingung) an den Netzebenen mit Abstand $d_{hkl}$ die Wellenlänge der Strahlung berechnet werden:
 \begin{align}
   \lambda = 2 d_{hkl} \sin(\vartheta)
 \end{align}

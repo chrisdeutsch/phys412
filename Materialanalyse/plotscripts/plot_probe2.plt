@@ -4,7 +4,7 @@ set term epslatex color size 5.5,3.5
 
 set output './plots/probe2.tex'
 
-set title 'Spektrum von Probe 2'
+#set title 'Spektrum von Probe 2'
 
 unset key
 

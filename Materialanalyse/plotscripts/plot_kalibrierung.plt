@@ -4,7 +4,7 @@ set term epslatex color size 5.5,3.5
 
 set output './plots/kalibrierung.tex'
 
-set title 'Spektrum des FeZn-Kalibriertargets zur Energieeichung'
+#set title 'Spektrum des FeZn-Kalibriertargets zur Energieeichung'
 
 unset key
 

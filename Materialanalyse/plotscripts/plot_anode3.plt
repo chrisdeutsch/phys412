@@ -4,7 +4,7 @@ set term epslatex color size 6,4
 
 set output './plots/anode3.tex'
 
-set title 'Gemessene Z\"ahlrate für unterschiedliche Winkel bei Bragg-Beugung'
+set title 'charakteristisches Röntgenspektrum der Anode 3'
 
 unset key
 

@@ -601,7 +601,7 @@ Der Fehler wurde mit Gauß'scher Fehlerfortpflanzung berechnet, auf die Angabe d
 \begin{table}[h]
 \centering
 \input{./tables/auswertung_massenanteile.tex}
-\caption{Massenanteile}
+\caption{Auswertung und Endergebnis der Massenanteile in Probe 2}
 \label{tab:massenanteile}
 \end{table}
 
@@ -697,7 +697,7 @@ Daher suchen wir zu jedem Laue-Reflex das kleinste, ganzzahlige und ungemischte 
 \end{align}
 erfüllt.
 Dabei ist eine Menge von Zahlen ungemischt, wenn diese nur gerade oder nur ungerade Zahlen enthält.
-Enthält die Menge sowohl gerade als auch ungerade Zahlen so nennt man diese gemischt.
+Enthält die Menge sowohl gerade als auch ungerade Zahlen, so nennt man diese gemischt.
 
 Wir wollen nun am Beispiel des Reflexes $P_1$ die Vorgehensweise zur Bestimmung der verursachenden Netzebenenschar $(hkl)$ erklären.
 Der Punkt $Q$ hat die Koordinaten:
@@ -707,8 +707,8 @@ Der Punkt $Q$ hat die Koordinaten:
   z_Q &= \SI{4.65 +- 0.60}{\milli\metre}
 \end{align*}
 Es ist leicht zu sehen, dass die Koordinaten ein $(1:-2:1)$-Verhältnis aufweisen, welches der Netzebenenschar $(1\overline{2}1)$ entsprechen würde.
-Dies ist jedoch einer gemischten Zahl und kann daher nicht die verursachende Netzebenenschar sein.
-Daher skalieren wir das Verhältnis mit einem Faktor $2$ um das kleinste, ganzzahlige, ungemischte Tripel $(2\overline{4}2)$ zu erhalten.
+Dies ist jedoch ein gemischtes Zahlentripel und kann daher nicht die verursachende Netzebenenschar sein.
+Daher skalieren wir das Verhältnis mit einem Faktor $2$, um das kleinste, ganzzahlige, ungemischte Tripel $(2\overline{4}2)$ zu erhalten.
 Um dies zu quantifizieren, betrachten wir die quadratische Abweichung der mit $\lambda$ skalierten Koordinaten $Q$ von der Hypothese $(hkl) = (2\overline{4}2)$:
 \begin{align}
   \chi^2(\lambda) = \frac{(h-\lambda x_Q)^2}{\sigma_x^2} + \frac{(k-\lambda y_Q)^2}{\sigma_y^2} + \frac{(l-\lambda z_Q)^2}{\sigma_z^2}
@@ -720,7 +720,7 @@ Schließlich minimieren wir diese und erhalten:
 \end{align*}
 Wie man sieht, erhalten wir eine sehr kleine Abweichung von der Hypothese. In der Tabelle \ref{tab:laue_fit} finden sich die skalierten Koordinaten und Chi-Quadrate für alle drei Reflexe.
 
-Die Bestimmung der Netzebenenschar ist sehr sicher, da die Fehler der skalierten Koordinaten klein gegen $1$ sind und aufgrund der Einschränkung, dass die Tripel ganzzahlig und ungemischt sein müssen eine falsche Bestimmung sehr unwahrscheinlich ist.
+Die Bestimmung der Netzebenenschar ist sehr sicher, da die Fehler der skalierten Koordinaten klein gegen $1$ sind und aufgrund der Einschränkung, dass die Tripel ganzzahlig und ungemischt sein müssen, eine falsche Bestimmung sehr unwahrscheinlich ist.
 Wir können also mit großer Sicherheit sagen, dass der Reflex $P_1$ aufgrund der Netzebenenschar $(2\overline{4}2)$ entstanden ist.
 Analog wurde die Bestimmung der Netzebene $(hkl)$ für die Reflexe $P_2$ und $P_3$ in Tabelle \ref{tab:laue_fit} eingetragen.
 \begin{table}[h]
@@ -733,7 +733,7 @@ Analog wurde die Bestimmung der Netzebene $(hkl)$ für die Reflexe $P_2$ und $P_
 
 
 \subsubsection{Berechnung von Netzebenenabstand, Glanzwinkel und Wellenlänge der Laue-Reflexe}
-Im Folgenden wollen wir die jedem Laue-Reflex zugehörigen Netzebenenabstande $d_{hkl}$, Glanzwinkel $\vartheta$ sowie Wellenlänge $\lambda$ der reflexerzeugenden Strahlung berechnen.
+Im Folgenden wollen wir die jedem Laue-Reflex zugehörigen Netzebenenabstände $d_{hkl}$, Glanzwinkel $\vartheta$ sowie Wellenlänge $\lambda$ der reflexerzeugenden Strahlung berechnen.
 Da wir, wie zuvor besprochen, die Millerindizes $(hkl)$ mit hoher Wahrscheinlichkeit korrekt bestimmt haben, werden wir dabei auf eine ausführliche Fehlerrechnung verzichten.
 
 Zunächst wollen wir die Netzebenabstände $d_{hkl}$ bestimmen.
@@ -819,9 +819,9 @@ Die experimentellen Winkel $\vartheta_\mathrm{exp}$ stimmen innerhalb der Fehler
 
 \begin{figure}[h]
 \centering
-\input{./plots/referenzspektren2.tex}
+\resizebox{\columnwidth}{!}{%
+\input{./plots/referenzspektren2.tex}}
 \end{figure}
-
 \end{appendix}
 
 \end{document}

@@ -237,19 +237,16 @@ und man erhält die \textbf{Bedingung für Bragg-Reflexion}:
 
 \subsection{Laue-Verfahren}
 
-\subsubsection{Elementarzelle}
-Translationsvektoren mit Basis $(\vec{a}, \vec{b}, \vec{c})$
-
 \subsubsection{Millersche Indizes}
 
-Zur Beschreibung von Gitterebenen in einem Kristall nutzt man die s.g. Millerschen Indizes $(hkl)$, mit denen eine Gitterebene eindeutig beschrieben ist.
-Man legt dabei das reale Gitter im Kristall mit den Einheitsvektoren $\vec{a}$, $\vec{b}$, $\vec{c}$ zugrunde und betrachtet die Schnittpunkte der betrachteten Gitterebene mit den jeweiligen Achsen.
+Zur Beschreibung von Gitterebenen in einem Kristall nutzt man die sogenannten Millerschen Indizes $(hkl)$, mit denen eine Gitterebeneschar eindeutig beschrieben ist.
+Man legt dabei das reale Gitter im Kristall mit Basisvektoren der Elementarzelle $\vec{a}$, $\vec{b}$, $\vec{c}$ zugrunde und betrachtet die Schnittpunkte der betrachteten Gitterebene mit den jeweiligen Achsen.
 Die Schnittpunkte werden dann geschrieben als S$_i=m_i\vec{e}_i$ mit $i=1,2,3$ und $\vec{e}_i= \vec{a}, \vec{b}, \vec{c}$.
 Die Millerschen Indizes erhält man, wenn man die Kehrwerte $\frac{1}{m_i}$ betrachtet und $p$ so wählt, dass die reziproken Werte ganze, teilerfremde Zahlen werden\cite{demtroeder}:
 \begin{align}
 h=\dfrac{p}{m_1} \quad\quad k=\dfrac{p}{m_2} \quad\quad l=\dfrac{p}{m_3}
 \end{align}
-Betrachte dazu auch das Beispiel in Abbildung \ref{fig:millerindizes}.
+Man betrachte dazu auch das Beispiel in Abbildung \ref{fig:millerindizes}.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth]{./grafiken/millerindizes.pdf}
@@ -258,8 +255,7 @@ Betrachte dazu auch das Beispiel in Abbildung \ref{fig:millerindizes}.
 \end{figure}
 
 \subsubsection{reziprokes Gitter}
-Definiert anhand der Basisvektoren des Gitters (demtröder):
-
+Das reziproke Gitter wird definiert indem man die Basisvektoren $\vec{a}, \vec{b}$ und $\vec{c}$ der Elementarzelle des Gitters betrachtet\cite{demtroeder}:
 \begin{align}
   \vec{a}^{*} = \frac{2\pi}{V_\mathrm{E}} \cdot ( \vec{b} \times \vec{c} ) \nonumber\\
   \vec{b}^{*} = \frac{2\pi}{V_\mathrm{E}} \cdot ( \vec{c} \times \vec{a} ) \nonumber\\
@@ -269,27 +265,35 @@ Mit dem Volumen der Elementarzelle
 \begin{align}
   V_\mathrm{E} = \vec{a} \cdot \left( b \times c \right)
 \end{align}
-Besondere Zusammenhänge mit den durch die millersche Indizes $(hkl)$ ausgezeichnete Ebenenschar:
+Der Zusammenhang zu den Millerschen Indizes $(hkl)$ erfolgt über einen reziproken Gittervektor $\vec{G}$ mit ganzzahligen Koordinaten:
 \begin{align}
   \vec{G} = h \vec{a}^{*} + k \vec{b}^{*} + l \vec{c}^{*}
   \label{eq:rezip_miller}
 \end{align}
-steht senkrecht auf der Ebenenschar $(hkl)$.
+dieser Gittervektor steht gerade senkrecht auf der durch $(hkl)$ ausgezeichneten Ebenenschar. Außerdem ist dessen Länge $| \vec{G} |$ antiproportional zum Abstand der Netzebenen $d_{hkl}$:
 \begin{align}
   | \vec{G} | = \frac{2\pi}{d_{hkl}}
   \label{eq:netzebenenabstand}
 \end{align}
-wobei $d_{hkl}$ der Abstand zweier benachbarter Ebenen ist.
 
-
-
-\begin{itemize}
-  \item Laue--Bedingung
-  \item reziprokes Gitter
-  \item Elementarzelle
-  \item Glanzwinkel
-  \item Netzebenenabstand
-\end{itemize}
+\subsubsection{Laue-Bedingung}
+Bei dem Laue-Verfahren betrachtet man die elastische Streuung von Photonen an zwei beliebigen Gitteratomen, deren relative Lage durch einen Translationsvektor:
+\begin{align}
+  \vec{T} = m_1 \vec{a} + m_2 \vec{b} + m_3 \vec{c}
+\end{align}
+gegeben ist, wobei die Vektoren $\vec{a}, \vec{b}$ und $\vec{c}$ die Basisvektoren der Elementarzelle des Gitters sind und damit dessen Translationssymmetrie angeben.
+Die Bedingung der konstruktiven Interferenz für die Photonen an diesen zwei Gitteratomen ist:
+\begin{align}
+  \vec{T} \cdot \Delta \vec{k} = 2\pi \cdot m \qquad \text{für } m \in \mathbb{Z}
+  \label{eq:bed_konstr_interferenz_laue}
+\end{align}
+wobei $\Delta \vec{k} = \vec{k}' - \vec{k}$ die Differenz der Wellenvektoren vor und nach der Streuung ist.
+Da bei der Laue-Aufnahme die Streuung an einer großen Zahl von Atomen stattfindet, muss Gleichung \ref{eq:bed_konstr_interferenz_laue} für beliebige Translationsvektoren $\vec{T}$ des Gitters erfüllt sein, um einen sichtbaren Reflex zu erzeugen.
+Mit der Definition des reziproken Gitters folgt daher für die Laue-Bedingung:
+\begin{align}
+  \Delta \vec{k} = \vec{G}
+\end{align}
+die Änderung des Wellenvektors muss also ein beliebiger reziproker Gittervektor sein.
 
 \section{Versuchsteil 1: Bragg-Reflekion}
 Im Folgenden wollen wir unter Ausnutzung von Bragg-Reflektion an einem NaCl-Einkristall die Wellenlänge und Energie des charakteristischen Röntgenspektrums einer unbekannten Röhrenanode bestimmen und anhand dessen das Anodenmaterial bestimmen.

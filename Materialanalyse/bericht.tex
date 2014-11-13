@@ -30,6 +30,9 @@
 % chemische Moleküle richtig setzen
 \usepackage{mhchem}
 
+% Float Barriers
+\usepackage{placeins}
+
 % Randbreiten
 \usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
 
@@ -370,9 +373,9 @@ Wir vermessen einen Glanzwinkelbereich von $\beta_\mathrm{min} = \SI{28,50}{\deg
 
 Am Folgetag wurden auch hier mithilfe von \emph{Cassy Lab} die Peakschwerpunkte der Feinstruktur bestimmt (näheres in der Auswertung).
 
-\newpage
 \subsection{Messdaten}
 \subsubsection{Charakteristischen Röntgenstrahlung einer unbekannten Röhre}
+\FloatBarrier
 
 \begin{figure}[!h]
 \centering
@@ -389,9 +392,9 @@ Am Folgetag wurden auch hier mithilfe von \emph{Cassy Lab} die Peakschwerpunkte 
 \label{tab:peakschwerpunkt_grobstruktur}
 \end{table}
 
-\newpage
+\FloatBarrier
 \subsubsection{Feinstruktur der $K_\alpha$-Linie von Molybdän}
-
+\FloatBarrier
 \begin{figure}[!h]
 \centering
 \resizebox{\columnwidth}{!}{%
@@ -406,6 +409,7 @@ Am Folgetag wurden auch hier mithilfe von \emph{Cassy Lab} die Peakschwerpunkte 
 \caption{Peakschwerpunkte in der Feinstruktur der Molybdänanode (in vierter Ordnung)}
 \label{tab:peakschwerpunkt_feinstruktur}
 \end{table}
+\FloatBarrier
 
 \subsection{Auswertung}
 
@@ -498,13 +502,45 @@ Die Röntgenröhre wird wie vorher mit \SI{35}{\kilo\volt} Beschleunigungsspannu
 Die Messung wird als Vielkanalmessung auf $512$ Kanälen mit negativen Pulsen und einer Verstärkung von \num{-2.5} durchgeführt; die Messdauer beträgt für alle Messungen \SI{180}{\second}.
 Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwähnt, eine andere Darstellung im Computerprogramm, welches nun Counts für die einzelnen Kanäle des Röntgenenergiedetektors misst. Darum muss zunächst eine Energieeichung mit einem Kalibriertarget (hier FeZn) gemäß Gleichung \ref{eq:kalibrierung} durchgeführt werden.
 
+\newpage
 \subsection{Messdaten}
+\FloatBarrier
 \begin{figure}[!h]
 \centering
 \input{./plots/kalibrierung.tex}
 \caption{Spektrum des Kalibriertargets (FeZn)}
 \label{fig:kalibrierung}
 \end{figure}
+
+\begin{figure}[!h]
+\centering
+\input{./plots/probe1.tex}
+\caption{Fluoreszenzspektrum der Probe 1}
+\label{fig:probe1}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\input{./plots/probe2.tex}
+\caption{Fluoreszenzspektrum der Probe 2}
+\label{fig:probe2}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\input{./plots/probe3.tex}
+\caption{Fluoreszenzspektrum der Probe 3}
+\label{fig:probe3}
+\end{figure}
+
+\begin{figure}[!h]
+\centering
+\input{./plots/probe4.tex}
+\caption{Fluoreszenzspektrum der Probe 4}
+\label{fig:probe4}
+\end{figure}
+
+\FloatBarrier
 
 \subsection{Auswertung}
 \subsubsection{Energieeichung durch das charakteristische FeZn-Spektrum}
@@ -557,12 +593,7 @@ Anhaltspunkt dafür ist, dass der untere Teil der abfallenden Flanke von Eisen s
 Der flache Peak bei ca. \SI{10}{\kilo\electronvolt} gehört auch zu Eisen, wir finden ihn auch im Referenzspektrum.
 Der weiter links liegende Peak (ca. \SI{5.5}{\kilo\electronvolt}) kann mit der abgelesenen Energie und \cite{booklet} zu Chrom bestimmt werden.
 
-\begin{figure}[!h]
-\centering
-\input{./plots/probe1.tex}
-\caption{Fluoreszenzspektrum der Probe 1}
-\label{fig:probe1}
-\end{figure}
+
 
 Für Probe 2 finden wir eine Legierung von Kupfer und Zink, was auf Messing schließen lässt.
 Auffallend ist dabei der hohe, schmale Peak des Kupferspektrums bei ca. \SI{8}{\kilo\electronvolt} und der nah daran liegende Peak von Zink, knapp unter \SI{9}{\kilo\electronvolt}.
@@ -571,22 +602,12 @@ Die Höhen der jeweiligen Peaks addieren sich durch teilweise Überlagerungen de
 Der flache Bereich in der linken Hälfte der Abbildung ist dabei Kupfer zuzuordnen, was man auch im Referenzspektrum gut sehen kann.
 Rechts der beiden K$_{\alpha}$-Peaks findet man auch ein weiterer Peak (K$_{\beta}$ bei \SI{9.6}{\kilo\electronvolt}), was eine Bestätigung für das Vorhandensein von Zink ist.
 
-\begin{figure}[!h]
-\centering
-\input{./plots/probe2.tex}
-\caption{Fluoreszenzspektrum der Probe 2}
-\label{fig:probe2}
-\end{figure}
+
 
 Probe 3 weist ein sehr ähnliches Spektrum wie Probe 2 auf mit (bis auf die Höhen der Peaks) gleichen Charakteristika, so dass wir auch hier Kupfer und Zink als Hauptbestandteile der Legierung bestimmen.
 Man sieht an den Höhen der Peaks allerdings, dass es sich hier um eine andere Massenverteilung handelt als in Probe 2.
 
-\begin{figure}[!h]
-\centering
-\input{./plots/probe3.tex}
-\caption{Fluoreszenzspektrum der Probe 3}
-\label{fig:probe3}
-\end{figure}
+
 
 Keins der uns vorliegenden Referenzspektren passte auf das Spektrum von Probe 4, weswegen wir hier für alle Komponenten auf \cite{booklet} zurückgreifen mussten.
 Im Spektrum lassen sich drei deutliche Peaks ablesen, wobei der höchste bei \SI{7}{\kilo\electronvolt} der K$_{\alpha}$-Linie von Kobalt entspricht.
@@ -594,12 +615,6 @@ Der Peak rechts von diesem lässt sich dann der K$_{\beta}$-Linie (\SI{7.7}{\kil
 Kobalt passt zu der Beobachtung, die wir während der Durchführung machten, dass Probe 4 magnetisch war.
 Den verbleibenden Peak im Spektrum kann man über seine Energie der L$_{\alpha}$-Linie (\SI{5.6}{\kilo\electronvolt}) von Samarium zuordnen. 
 
-\begin{figure}[!h]
-\centering
-\input{./plots/probe4.tex}
-\caption{Fluoreszenzspektrum der Probe 4}
-\label{fig:probe4}
-\end{figure}
 
 \subsubsection{Massenanteile der Komponenten in Probe 2}
 
@@ -651,7 +666,9 @@ Die eingestellten Parameter der Röntgenröhre bleiben wieder unverändert ($U =
 Wir stellen die für LiF empfohlene Belichtungszeit von \SI{1200}{\second} ein und belichten den Film über die gesamte Dauer.
 Anschließend transferieren wir den Film aus seiner Schutzhülle in die Entwicklerdose und entwickeln den Film.
 
+\newpage
 \subsection{Messdaten}
+\FloatBarrier
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.60\textwidth]{./grafiken/film.pdf}
@@ -665,7 +682,7 @@ Anschließend transferieren wir den Film aus seiner Schutzhülle in die Entwickl
 \caption{Vergrößerter Ausschnitt des Röntgenfilms mit eingetragenem Koordinatensystem und markierten Reflexen}
 \label{fig:film_koord}
 \end{figure}
-
+\FloatBarrier
 
 \subsection{Auswertung}
 

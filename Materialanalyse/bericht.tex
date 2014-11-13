@@ -95,6 +95,7 @@ Assistent: & Farah Noreen Afzal
 Als Röntgenstrahlung wird der Teil des elektromagnetischen Spektrums mit Photon-Energien zwischen \SI{100}{\electronvolt} und \SI{100}{\kilo\electronvolt} bezeichnet, wobei diese Grenzen nicht scharf sind und deshalb oft hinsichtlich der Strahlungsquelle eine Einordnung vollzogen wird.
 
 \subsubsection{Erzeugung}
+\label{sec:röntgenerzeugung}
 Es gibt zwei typische Erzeugungsmethoden von Röntgenstrahlung, welche auf dem Beschuss eines \emph{Targets} mit einem hochenergetischen Elektronenstrahl bestehen.
 Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten, sind:
 \begin{itemize}
@@ -327,7 +328,16 @@ Wir vermessen einen Glanzwinkelbereich von $\beta_\mathrm{min} = \SI{2,0}{\degre
 Nach dem Abschluss der Messung wurde das Spektrum mithilfe der Funktion \emph{'Peakschwerpunkt berechnen'} des Programmes ausgemessen. Auf die genaue Vorgehensweise wird dabei in der Auswertung eingegangen.
 
 \subsubsection{Bestimmung der Feinstruktur der $K_\alpha$-Linie von Molybdän}
-Die Feinstrukturaufspaltung $\Delta \lambda$ der $K_\alpha$-Linie von Molybdän ist sehr klein; um diese dennoch aufzulösen, kann eine höhere Beugungsordnungen vermessen werden.
+Da charakteristische Röntgenstrahlung durch elektronische Übergänge im Atom entstehen (siehe Abschnitt \ref{sec:röntgenerzeugung}), sind Störungen der atomaren Energieniveaus auch im charakteristischen Spektrum sichtbar.
+Die Feinstrukturaufspaltung des Röntgenspektrums wird daher verursacht durch (analog zum Atom):
+\begin{itemize}
+  \item relativistische Korrektur der kinetischen Energie der Elektronen
+  
+  \item Korrektur der potentiellen Energie des Elektrons aufgrund dessen Delokalisierung um die reduzierte Comptonwellenlänge $\lambda / 2\pi$ (Heisenberg'sche Unschärferelation) im Coulomb-Potential des Kerns
+  
+  \item Kopplung des Elektronenspins an das Magnetfeld verursacht durch den Bahndrehimpuls des Elektrons um den Kern
+\end{itemize}
+Im Vergleich zur Grobstruktur ist die Feinstrukturaufspaltung $\Delta \lambda$ der $K_\alpha$-Linie von Molybdän ist sehr klein; um diese dennoch aufzulösen, kann eine höhere Beugungsordnungen vermessen werden.
 Dies sieht man leicht, wenn man die Bragg-Bedingung nach dem Glanzwinkel umstellt:
 \begin{align}
   \beta = \arcsin \left( \frac{m \lambda}{2 d} \right)
@@ -461,9 +471,6 @@ Dies stimmt innerhalb der Fehlergrenzen mit der experimentellen Bestimmung:
 überein.
 Einzig der experimentelle Fehler erscheint sehr groß.
 Dies könnte daran liegen, dass wir den Bereich der Peakschwerpunktsbestimmung zu groß gewählt haben und dadurch schon der Fehler des Peakschwerpunktes zu groß ist.
-
-\subsection{Diskussion}
-Vergleichen sie Ergebnisse mit Literatur; Diskutieren sie woher die Aufspaltung bei der Feinstrukturmessung zustande kommt und warum sie erst bei höherer Ordnung sichtbar wird.
 
 
 \section{Versuchsteil 2: Zerstörungsfreie Analyse chemischer Zusammensetzungen}
@@ -704,7 +711,7 @@ Analog wurde die Bestimmung der Netzebene $(hkl)$ für die Reflexe $P_2$ und $P_
 
 \subsubsection{Berechnung von Netzebenenabstand, Glanzwinkel und Wellenlänge der Laue-Reflexe}
 Im Folgenden wollen wir die jedem Laue-Reflex zugehörigen Netzebenenabstande $d_{hkl}$, Glanzwinkel $\vartheta$ sowie Wellenlänge $\lambda$ der reflexerzeugenden Strahlung berechnen.
-Da wir, wie zuvor besprochen, die Miller'schen Indizes $(hkl)$ mit hoher Wahrscheinlichkeit korrekt bestimmt haben, werden wir dabei auf eine ausführliche Fehlerrechnung verzichten.
+Da wir, wie zuvor besprochen, die Millerindizes $(hkl)$ mit hoher Wahrscheinlichkeit korrekt bestimmt haben, werden wir dabei auf eine ausführliche Fehlerrechnung verzichten.
 
 Zunächst wollen wir die Netzebenabstände $d_{hkl}$ bestimmen.
 Dafür benötigen wir die Gitterkonstante des LiF-Kristalls, welche durch:
@@ -717,10 +724,9 @@ Dann berechnet sich der Abstand der Netzebenen aus:
   d_{hkl} = \frac{a}{\sqrt{h^2+k^2+l^2}}
 \end{align}
 was leicht aus Gleichung \ref{eq:netzebenenabstand}, der Definition der reziproken Gittervektoren und den Eigenschaften des kubischen Gitters folgt.
-
 Die Berechnung des Glanzwinkels $\vartheta$ erfolgt zum Vergleich auf zwei Arten:
 \begin{itemize}
-  \item Berechnung über die Miller'schen Indizes:
+  \item Berechnung über die Millerindizes:
   \begin{align}
     \vartheta = \arctan{\left( \frac{l}{\sqrt{h^2+k^2}} \right)}
     \label{eq:millerglanzwinkel}
@@ -732,11 +738,12 @@ Die Berechnung des Glanzwinkels $\vartheta$ erfolgt zum Vergleich auf zwei Arten
   \end{align}
   unter Beachtung der Fehler\footnote{Bei der Fehlerrechnung wurden die Fehler in $x_Q, y_Q$ und $L$ beachtet. Auf eine Angabe der Fehlerformel soll hier aber verzichtet werden.}.
 \end{itemize}
-
 Schließlich kann über die Bragg-Reflektion (Äquivalenz von Laue-Bedingung und Bragg-Bedingung) an den Netzebenen mit Abstand $d_{hkl}$ die Wellenlänge der Strahlung berechnet werden:
 \begin{align}
   \lambda = 2 d_{hkl} \sin(\vartheta)
 \end{align}
+Alle berechneten Werte wurden in Tabelle \ref{tab:laue_winkel} aufgeführt.
+Die experimentellen Winkel $\vartheta_\mathrm{exp}$ stimmen innerhalb der Fehler gut mit den theoretischen Werten $\vartheta$ aufgrund der Indizes der Netzebenen überein.
 
 \begin{table}[h]
 \centering
@@ -745,7 +752,6 @@ Schließlich kann über die Bragg-Reflektion (Äquivalenz von Laue-Bedingung und
 \label{tab:laue_winkel}
 \end{table}
 
-\subsection{Diskussion}
 
 
 \section{Zusammenfassung}

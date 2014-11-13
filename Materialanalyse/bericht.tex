@@ -208,7 +208,7 @@ Dazu sind mindestens zwei Kalibrationswerte nötig um eine Eichgerade anzupassen
 sodass die Steigung $\Delta E$ (Energieintervall pro Kanal) und die Nullpunktsverschiebung $E_\mathrm{Offset}$ bestimmt werden kann.
 
 
-\subsection{Bragg-Reflexion}
+\subsection{Bragg-Reflekion}
 Betrachtet man die Beugung von einfallender elektromagnetischer Strahlung an parallelen Netzebenen eines Einkristalls, so führt die Interferenz der gebeugten Wellen zu einer Ausbildung von Beugungsmaxima.
 Bezeichnet $\beta$ den Winkel des einfallenden Strahls gegen die parallelen Netzebenen (Glanzwinkel), so erhält man konstruktive Interferenz, wenn der Weglängenunterschied zwischen zwei benachbarten Netzebenen ein ganzzahliges Vielfaches der Wellenlänge $\lambda$ ist:
 \begin{align}
@@ -218,7 +218,7 @@ Dabei ist der Weglängenunterschied gegeben durch den Netzebenenabstand $d$ und 
 \begin{align}
   \Delta s = 2 d \sin(\beta)
 \end{align}
-und man erhält die \textbf{Bedingung für Bragg-Reflexion}:
+und man erhält die \textbf{Bedingung für Bragg-Reflekion}:
 \begin{align}
   2 d \sin(\beta) = m \lambda
   \label{eq:bragg}
@@ -359,12 +359,11 @@ Am Folgetag wurden auch hier mithilfe von \emph{Cassy Lab} die Peakschwerpunkte 
 \subsection{Messdaten}
 \subsubsection{Charakteristischen Röntgenstrahlung einer unbekannten Röhre}
 
-
 \begin{figure}[!h]
 \centering
 \resizebox{\columnwidth}{!}{%
 \input{./plots/anode3.tex}}
-\caption{Aufgenommenes Röntgenspektrum der unbekannten Anode bei Bragg-Streuung an einem NaCl-Kristall}
+\caption{Aufgenommenes Röntgenspektrum der unbekannten Anode 3 bei Bragg-Streuung an einem NaCl-Kristall}
 \label{fig:anode3}
 \end{figure}
 
@@ -484,7 +483,7 @@ Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwäh
 \begin{figure}[!h]
 \centering
 \input{./plots/kalibrierung.tex}
-\caption{Aufgenommenes Spektrum des Kalibriertargets (FeZn)}
+\caption{Spektrum des Kalibriertargets (FeZn)}
 \label{fig:kalibrierung}
 \end{figure}
 
@@ -505,7 +504,7 @@ Schließlich ordnen wir jeder Linie ihren Literaturwert zu und erhalten die Tabe
 \begin{table}[h]
 \centering
 \input{./tables/eichgerade.tex}
-\caption{Peakbestimmung}
+\caption{Bestimmung der Peaks des Kalibriertargets}
 \label{tab:eichgerade}
 \end{table}
 
@@ -521,7 +520,7 @@ Die Datenpunkte und die angepasste Gerade wurden in Abbildung \ref{fig:energieei
 \centering
 \resizebox{\columnwidth}{!}{%
 \input{./plots/energieeichung.tex}}
-\caption{Zuordnung der Energien zu den Kanalnummern}
+\caption{Eichgerade des Röntgenenergiedetektors mit den Daten des FeZn-Kalibriertargets}
 \label{fig:energieeichung}
 \end{figure}
 
@@ -542,7 +541,7 @@ Der weiter links liegende Peak (ca. \SI{5.5}{\kilo\electronvolt}) kann mit der a
 \begin{figure}[!h]
 \centering
 \input{./plots/probe1.tex}
-\caption{Probe 1}
+\caption{Fluoreszenzspektrum der Probe 1}
 \label{fig:probe1}
 \end{figure}
 
@@ -556,7 +555,7 @@ Rechts der beiden K$_{\alpha}$-Peaks findet man auch ein weiterer Peak (K$_{\bet
 \begin{figure}[!h]
 \centering
 \input{./plots/probe2.tex}
-\caption{Probe 2}
+\caption{Fluoreszenzspektrum der Probe 2}
 \label{fig:probe2}
 \end{figure}
 
@@ -566,7 +565,7 @@ Man sieht an den Höhen der Peaks allerdings, dass es sich hier um eine andere M
 \begin{figure}[!h]
 \centering
 \input{./plots/probe3.tex}
-\caption{Probe 3}
+\caption{Fluoreszenzspektrum der Probe 3}
 \label{fig:probe3}
 \end{figure}
 
@@ -579,7 +578,7 @@ Den verbleibenden Peak im Spektrum kann man über seine Energie der L$_{\alpha}$
 \begin{figure}[!h]
 \centering
 \input{./plots/probe4.tex}
-\caption{Probe 4}
+\caption{Fluoreszenzspektrum der Probe 4}
 \label{fig:probe4}
 \end{figure}
 

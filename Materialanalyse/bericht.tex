@@ -55,7 +55,7 @@
 \setcounter{tocdepth}{2}
 
 % manuelle Angabe zur Silbentrennung (mehrere Wörter mit Leerzeichen in {} schreiben)
-\hyphenation{Rönt-gen-strah-lung}
+\hyphenation{Rönt-gen-strah-lung Peak-schwer-punk-te Netz-e-ben-en-schar}
 
 % DOKUMENTINFORMATIONEN
 \title{P428 \\ Röntgenstrahlung und Materialanalyse}
@@ -119,7 +119,7 @@ Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten, sind:
   Aufgrund dieser Abhängigkeit von der elektronisches Struktur des Targetatoms, ist das emittierte, diskrete Spektrum charakteristisch für das verwendete (Target)-Material.
   Außerdem weist das emittierte Spektrum die Aufspaltung der Energieniveaus aufgrund von Fein- und Hyperfeinstruktur auf.
 \end{itemize}
-In der Praxis treten beide Effekte bei der Erzeugung von Röntgenstrahlen in sogennanten Röntgenröhren auf, wie in Abbildung \ref{fig:spektrum} zu sehen ist.
+In der Praxis treten beide Effekte bei der Erzeugung von Röntgenstrahlen in sogenannten Röntgenröhren auf, wie in Abbildung \ref{fig:spektrum} zu sehen ist.
 \begin{figure}[h]
   \centering
   \includegraphics[width=1\textwidth]{./grafiken/Tube_Cu_LiF.pdf}
@@ -196,7 +196,7 @@ Das Kernstück des Röntgenenergiedetektors ist eine \textbf{PIN-Photodiode}, we
 An diese wird eine Spannung in Sperrrichtung angelegt, sodass sich in der intrinsischen Zone eine Ladungsträgerverarmungszone ausbildet.
 Wird ein Röntgenphoton in der intrinsischen Schicht über den Photoeffekt absorbiert, so löst dies ein Elektron aus dem Halbleiter und bildet ein Elektron-Loch-Paar.
 Das hochenergetische Elektron kann nun weitere Elektronen aus dem Halbleiter auslösen.
-Es werden soviele Elektronen ausgelöst, bis die gesamte Energie des Röntgenphotons in die Erzeugung von Elektronen-Loch-Paaren übergangen ist.
+Es werden so viele Elektronen ausgelöst, bis die gesamte Energie des Röntgenphotons in die Erzeugung von Elektronen-Loch-Paaren übergangen ist.
 Dadurch ist die Anzahl der Elektronen-Loch-Paare gegeben durch:
 \begin{align}
   N = \frac{E_\gamma}{W_{e,\mathrm{Loch}}}
@@ -219,7 +219,7 @@ Dazu sind mindestens zwei Kalibrationswerte nötig um eine Eichgerade anzupassen
 sodass die Steigung $\Delta E$ (Energieintervall pro Kanal) und die Nullpunktsverschiebung $E_\mathrm{Offset}$ bestimmt werden kann.
 
 
-\subsection{Bragg-Reflekion}
+\subsection{Bragg-Reflektion}
 Betrachtet man die Beugung von einfallender elektromagnetischer Strahlung an parallelen Netzebenen eines Einkristalls, so führt die Interferenz der gebeugten Wellen zu einer Ausbildung von Beugungsmaxima.
 Bezeichnet $\beta$ den Winkel des einfallenden Strahls gegen die parallelen Netzebenen (Glanzwinkel), so erhält man konstruktive Interferenz, wenn der Weglängenunterschied zwischen zwei benachbarten Netzebenen ein ganzzahliges Vielfaches der Wellenlänge $\lambda$ ist:
 \begin{align}
@@ -229,7 +229,7 @@ Dabei ist der Weglängenunterschied gegeben durch den Netzebenenabstand $d$ und 
 \begin{align}
   \Delta s = 2 d \sin(\beta)
 \end{align}
-und man erhält die \textbf{Bedingung für Bragg-Reflekion}:
+und man erhält die \textbf{Bedingung für Bragg-Reflektion}:
 \begin{align}
   2 d \sin(\beta) = m \lambda
   \label{eq:bragg}
@@ -248,12 +248,12 @@ und man erhält die \textbf{Bedingung für Bragg-Reflekion}:
 
 \subsection{Laue-Verfahren}
 
-\subsubsection{Millersche Indizes}
+\subsubsection{Millerindizes}
 
-Zur Beschreibung von Gitterebenen in einem Kristall nutzt man die sogenannten Millerschen Indizes $(hkl)$, mit denen eine Gitterebeneschar eindeutig beschrieben ist.
+Zur Beschreibung von Gitterebenen in einem Kristall nutzt man die sogenannten Millerindizes $(hkl)$, mit denen eine Gitterebenenschar eindeutig beschrieben ist.
 Man legt dabei das reale Gitter im Kristall mit Basisvektoren der Elementarzelle $\vec{a}$, $\vec{b}$, $\vec{c}$ zugrunde und betrachtet die Schnittpunkte der betrachteten Gitterebene mit den jeweiligen Achsen.
 Die Schnittpunkte werden dann geschrieben als S$_i=m_i\vec{e}_i$ mit $i=1,2,3$ und $\vec{e}_i= \vec{a}, \vec{b}, \vec{c}$.
-Die Millerschen Indizes erhält man, wenn man die Kehrwerte $\frac{1}{m_i}$ betrachtet und $p$ so wählt, dass die reziproken Werte ganze, teilerfremde Zahlen werden\cite{demtroeder}:
+Die Millerindizes erhält man, wenn man die Kehrwerte $\frac{1}{m_i}$ betrachtet und $p$ so wählt, dass die reziproken Werte ganze, teilerfremde Zahlen werden\cite{demtroeder}:
 \begin{align}
 h=\dfrac{p}{m_1} \quad\quad k=\dfrac{p}{m_2} \quad\quad l=\dfrac{p}{m_3}
 \end{align}
@@ -276,7 +276,7 @@ Mit dem Volumen der Elementarzelle
 \begin{align}
   V_\mathrm{E} = \vec{a} \cdot \left( b \times c \right)
 \end{align}
-Der Zusammenhang zu den Millerschen Indizes $(hkl)$ erfolgt über einen reziproken Gittervektor $\vec{G}$ mit ganzzahligen Koordinaten:
+Der Zusammenhang zu den Millerindizes $(hkl)$ erfolgt über einen reziproken Gittervektor $\vec{G}$ mit ganzzahligen Koordinaten:
 \begin{align}
   \vec{G} = h \vec{a}^{*} + k \vec{b}^{*} + l \vec{c}^{*}
   \label{eq:rezip_miller}
@@ -306,7 +306,7 @@ Mit der Definition des reziproken Gitters folgt daher für die Laue-Bedingung:
 \end{align}
 die Änderung des Wellenvektors muss also ein beliebiger reziproker Gittervektor sein.
 
-\section{Versuchsteil 1: Bragg-Reflekion}
+\section{Versuchsteil 1: Bragg-Reflektion}
 Im Folgenden wollen wir unter Ausnutzung von Bragg-Reflektion an einem NaCl-Einkristall die Wellenlänge und Energie des charakteristischen Röntgenspektrums einer unbekannten Röhrenanode bestimmen und anhand dessen das Anodenmaterial bestimmen.
 Anschließend wird die Feinstrukturaufspaltung $\Delta \lambda$ der $K_\alpha$-Linie der charakteristischen Röntgenstrahlung einer Molybdän-Anode in vierter Beugungsordnung bestimmt.
 
@@ -360,7 +360,7 @@ Wir erhalten also eine größere Winkeldifferenz in höheren Ordnungen, sodass w
 
 Der Versuchsaufbau entspricht zu großen Teilen dem des vorigen Versuchsteil.
 Die Unterschiede bestehen in der nun verwendeten Molybdän-Röhre, sowie dem Austausch des Kollimators sowie des Zählrohrspalts durch hochauflösende \SI{0,3}{\milli\metre} Spalte, um ein hohes Winkelauflösungsvermögen zu erreichen.
-Darüberhinaus wurde die automatische Kristallkalibration der Software verwendet um die Nullstellung des Goniometers einzustellen.
+Darüber hinaus wurde die automatische Kristallkalibration der Software verwendet um die Nullstellung des Goniometers einzustellen.
 
 Dem Intensitätsverlust aufgrund der Verwendung dünnerer Spalte wird entgegengewirkt, indem die Messzeit pro Winkelschritt auf $\Delta t = \SI{120}{\second}$ erhöht wird.
 Wir vermessen einen Glanzwinkelbereich von $\beta_\mathrm{min} = \SI{28,50}{\degree}$ bis $\beta_\mathrm{max} = \SI{32,00}{\degree}$ in Schritten $\Delta \beta = \SI{0,01}{\degree}$ über Nacht.
@@ -543,7 +543,7 @@ Die Datenpunkte und die angepasste Gerade wurden in Abbildung \ref{fig:energieei
 Wir vergleichen nun die aufgenommenen Spektren der Proben mit denen der Referenzmessungen.
 Anhand der Lage (und teilweise auch der Höhe) der Peaks kann so ausgesagt werden, welche Metalle zu welchen Anteilen in den Legierungen enthalten sind.
 Zur Bestimmung der Elemente in der Legierung reicht dabei aus, Übereinstimmungen der Lage der Peaks in Proben- und Referenzspektrum zu finden, solange die Größenordnung der Höhen übereinstimmt.
-Zur Bestimmung der Masseanteile gemäß (\ref{eq:massenanteile}) muss weiterhin auch noch die Höhe der Peaks gemessen werden.
+Zur Bestimmung der Massenanteile gemäß (\ref{eq:massenanteile}) muss weiterhin auch noch die Höhe der Peaks gemessen werden.
 Im Folgenden werden zunächst die Komponenten der unterschiedlichen Legierungen identifiziert, wobei wir jeweils nur den Energiebereich dargestellt haben, der von $0$ verschieden war.
 
 Bei Probe 1 finden wir so durch Vergleich mit dem Referenzspektrum (s. Anhang \ref{sec:referenzspektren}), dass das höchste Peak bei ca. \SI{6.4}{\kilo\electronvolt} Eisen entspricht.
@@ -561,7 +561,7 @@ Der weiter links liegende Peak (ca. \SI{5.5}{\kilo\electronvolt}) kann mit der a
 
 Für Probe 2 finden wir eine Legierung von Kupfer und Zink, was auf Messing schließen lässt.
 Auffallend ist dabei der hohe, schmale Peak des Kupferspektrums bei ca. \SI{8}{\kilo\electronvolt} und der nah daran liegende Peak von Zink, knapp unter \SI{9}{\kilo\electronvolt}.
-Bei beiden handelt es sich um die K$_{\alpha}$ Linien der jeweilgen Elemente.
+Bei beiden handelt es sich um die K$_{\alpha}$ Linien der jeweiligen Elemente.
 Die Höhen der jeweiligen Peaks addieren sich durch teilweise Überlagerungen der Spektren, da die Peaks sehr nah beieinander liegen.
 Der flache Bereich in der linken Hälfte der Abbildung ist dabei Kupfer zuzuordnen, was man auch im Referenzspektrum gut sehen kann.
 Rechts der beiden K$_{\alpha}$-Peaks findet man auch ein weiterer Peak (K$_{\beta}$ bei \SI{9.6}{\kilo\electronvolt}), was eine Bestätigung für das Vorhandensein von Zink ist.
@@ -788,9 +788,9 @@ Die experimentellen Winkel $\vartheta_\mathrm{exp}$ stimmen innerhalb der Fehler
 
 \subsection{Diskussion}
 Dieser Versuchsteil konnte erfolgreich abgeschlossen werden.
-Wir konnten die Laue-Reflexe auf dem Röntgenfilm erfolgreich den jeweiligen Netzebenenscharen zuordnen und aus Kenntniss dieser die weiteren Kenngrößen der Streuung berechnen.
+Wir konnten die Laue-Reflexe auf dem Röntgenfilm erfolgreich den jeweiligen Netzebenenscharen zuordnen und aus Kenntnis dieser die weiteren Kenngrößen der Streuung berechnen.
 So konnte der Netzebenenabstand $d_{hkl}$ und Wellenlänge $\lambda$ der gestreuten Strahlung bestimmt werden.
-Darüberhinaus wurde der Glanzwinkel $\vartheta$ sowohl aufgrund von theoretischer Erwartung als auch geometrisch berechnet.
+Darüber hinaus wurde der Glanzwinkel $\vartheta$ sowohl aufgrund von theoretischer Erwartung als auch geometrisch berechnet.
 Die geometrische Bestimmung stimmt innerhalb ihrer Fehlergrenzen gut mit der Theoretischen überein.
 
 

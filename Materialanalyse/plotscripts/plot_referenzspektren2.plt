@@ -16,7 +16,6 @@ unset key
 set macros
 
 set tics scale 1
-set xrange [0:34.066765]
 set yrange [0:*]
 set xtics font ',6' 
 

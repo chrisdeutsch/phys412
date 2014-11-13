@@ -356,8 +356,6 @@ Wir vermessen einen Glanzwinkelbereich von $\beta_\mathrm{min} = \SI{28,50}{\deg
 
 Am Folgetag wurden auch hier mithilfe von \emph{Cassy Lab} die Peakschwerpunkte der Feinstruktur bestimmt (näheres in der Auswertung).
 
-% Temporär damit ich nicht wahnsinnig werde
-\newpage
 \subsection{Messdaten}
 \subsubsection{Charakteristischen Röntgenstrahlung einer unbekannten Röhre}
 
@@ -376,7 +374,6 @@ Am Folgetag wurden auch hier mithilfe von \emph{Cassy Lab} die Peakschwerpunkte 
 \label{tab:peakschwerpunkt_grobstruktur}
 \end{table}
 
-\newpage
 \subsubsection{Feinstruktur der $K_\alpha$-Linie von Molybdän}
 
 \begin{figure}[!h]
@@ -393,7 +390,6 @@ Am Folgetag wurden auch hier mithilfe von \emph{Cassy Lab} die Peakschwerpunkte 
 \label{tab:peakschwerpunkt_feinstruktur}
 \end{table}
 
-\newpage
 \subsection{Auswertung}
 
 \subsubsection{Bestimmung der Peakschwerpunkte mit \emph{Cassy Lab}}
@@ -473,9 +469,13 @@ Dies könnte daran liegen, dass wir den Bereich der Peakschwerpunktsbestimmung z
 
 
 \section{Versuchsteil 2: Zerstörungsfreie Analyse chemischer Zusammensetzungen}
+
 \subsection{Versuchsdurchführung}
 Die Versuchsdurchführung ist ähnlich wie die in Versuchsteil 1.
 Allerdings werden zur Materialanalyse das Geiger-Müller-Zählrohr gegen einen Röntgenenergiedetektor getauscht und die entsprechenden Proben und Referenzmaterialien anstelle des NaCl Kristalls bestrahlt.
+Wir wählen weiterhin die Winkel fest mit $\beta=\SI{45}{\degree}$ und im \emph{Coupled}-Modus, so dass $2\beta=\SI{90}{\degree}$ ist.
+Die Röntgenröhre wird wie vorher mit \SI{35}{\kilo\volt} Beschleunigungsspannung bei \SI{1}{\milli\ampere} betrieben und ein Kollimatorspalt von \SI{1}{\milli\metre} Spaltbreite eingesetzt.
+Die Messung wird als Vielkanalmessung auf $512$ Kanälen mit negativen Pulsen und einer Verstärkung von \num{-2.5} durchgeführt; die Messdauer beträgt für alle Messungen \SI{180}{\second}.
 Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwähnt, eine andere Darstellung im Computerprogramm, welches nun Counts für die einzelnen Kanäle des Röntgenenergiedetektors misst. Darum muss zunächst eine Energieeichung mit einem Kalibriertarget (hier FeZn) gemäß Gleichung (\ref{eq:kalibrierung}) durchgeführt werden.
 
 \subsection{Messdaten}
@@ -529,7 +529,8 @@ Die Datenpunkte und die angepasste Gerade wurden in Abbildung \ref{fig:energieei
 Wir vergleichen nun die aufgenommenen Spektren der Proben mit denen der Referenzmessungen.
 Anhand der Lage (und teilweise auch der Höhe) der Peaks kann so ausgesagt werden, welche Metalle zu welchen Anteilen in den Legierungen enthalten sind.
 Zur Bestimmung der Elemente in der Legierung reicht dabei aus, Übereinstimmungen der Lage der Peaks in Proben- und Referenzspektrum zu finden, solange die Größenordnung der Höhen übereinstimmt.
-Zur Bestimmung der Masseanteile gemäß (\ref{eq:masseanteile}) muss weiterhin auch noch die Höhe der Peaks gemessen werden.
+Zur Bestimmung der Masseanteile gemäß (\ref{eq:massenanteile}) muss weiterhin auch noch die Höhe der Peaks gemessen werden.
+Im Folgenden werden zunächst die Komponenten der unterschiedlichen Legierungen identifiziert, wobei wir jeweils nur den Energiebereich dargestellt haben, der von $0$ verschieden war.
 
 Bei Probe 1 finden wir so durch Vergleich mit dem Referenzspektrum (s. Anhang \ref{sec:referenzspektren}), dass das höchste Peak bei ca. \SI{6.4}{\kilo\electronvolt} Eisen entspricht.
 Dieser Peak wird dabei noch überlagert von einem Peak aus dem Nickelspektrum (bei \SI{7.3}{\kilo\electronvolt}), so dass wir dieses als zweite Komponente identifizieren können.
@@ -583,7 +584,7 @@ Den verbleibenden Peak im Spektrum kann man über seine Energie der L$_{\alpha}$
 \label{fig:probe4}
 \end{figure}
 
-\subsubsection{Massenanteile der Komponenten in Probe 1}
+\subsubsection{Massenanteile der Komponenten in Probe 2}
 
 Wir wollen nun für eine Probe die Massenanteile der einzelnen Komponenten bestimmen und wählen dafür Probe 2 aus.
 Dazu nutzen wir Formel (\ref{eq:massenanteile}), die sich für den hier vorliegenden Fall von nur zwei Komponenten vereinfacht zu:
@@ -593,12 +594,8 @@ C_i = \frac{\rho_i \cdot \frac{H_i}{H_{0,i}}}{\rho_i \cdot \frac{H_i}{H_{0,i}}+\
 \end{align}
 Wobei die Variablen mit $i, j$ Kupfer bzw. Zink zugeordnet werden.
 Die verwendeten Werte für die Dichten sind in Tabelle \ref{tab:massenanteile} nachzulesen, die Höhen der Peaks haben wir aus den Messwerten direkt ablesen können und dabei einen Fehler von \SI{5}{\percent} angenommen.
-Mit \ref{eq:masseanteile_simple} erhält man dann die in Tabelle \ref{tab:massenanteile} angegebenen Massenanteile der beiden Komponenten in der Legierung.
+Mit (\ref{eq:masseanteile_simple}) erhält man dann die in Tabelle \ref{tab:massenanteile} angegebenen Massenanteile der beiden Komponenten in der Legierung.
 Der Fehler wurde mit Gauß'scher Fehlerfortpflanzung berechnet, auf die Angabe der Formel wird hier aus Gründen der Übersichtlichkeit verzichtet.
-
-Die gefundenen Werte deuten auf einen für Messing recht hohen Anteil Zink hin, da aus Stabilitätsgründen praktisch in allen Varianten von Messing mehr als \SI{58}{\percent} Kupfer verarbeitet ist.
-Die Farbe von Messing geht mit steigendem Zinkanteil von bräunlich in gelb über und wir konnten im Versuch deutlich eine helle gelbe Färbung der Probe feststellen, die bereits Messing vermuten ließ.
-Die gefundenen Komponenten und ihre Massenanteile stimmen also mit unseren Erwartungen überein. 
 
 \begin{table}[h]
 \centering
@@ -607,7 +604,22 @@ Die gefundenen Komponenten und ihre Massenanteile stimmen also mit unseren Erwar
 \label{tab:massenanteile}
 \end{table}
 
+Die gefundenen Werte deuten auf einen für Messing recht hohen Anteil Zink hin, da aus Stabilitätsgründen praktisch in allen Varianten von Messing mehr als \SI{58}{\percent} Kupfer verarbeitet ist (d.h. maximal \SI{42}{\percent} Zinkanteil bei einer reinen CuZn-Legierung).
+Die Farbe von Messing geht mit steigendem Zinkanteil von bräunlich in gelb über und wir konnten im Versuch deutlich eine helle gelbe Färbung der Probe feststellen, die bereits Messing vermuten ließ.
+Die gefundenen Komponenten und ihre Massenanteile stimmen also mit unseren Erwartungen überein.
+
+Dabei muss allerdings berücksichtigt werden, dass das Spektrum durch verschiedene Faktoren verfälscht werden kann.
+Dazu zählen beispielsweise die Absorption von Röntgenstrahlung, die energieabhängig ist und so nicht gleichmäßig das Spektrum beeinflusst, aber auch Verunreinigungen der Probe an der Oberfläche, die teilweise auch optisch zu erkennen waren.
+Ein Faktor, der sich vor allem auf die Massenanteilsbestimmung auswirkt ist die sekundäre Fluoreszenz, wobei die angeregten (sichtbaren) Linien wiederum Linien des anderen Elements anregen können, was die Höhe der Peaks beeinflusst und so die Massenanteile verzerrt.
+Der Abstand zwischen Drehachse und Eintrittsöffnung des Energiedetektors bestimmt die Anzahl Counts, da der Raumwinkel der Detektoröffnung mit $\frac{1}{r^2}$ ($r$: Abstand Quelle -- Detektor) abnimmt.
+Bei zu großen Abständen kann es so passieren, dass die Spektren nicht mehr auswertbar sind. 
+
 \subsection{Diskussion}
+
+Insgesamt hat die Durchführung und Auswertung dieses Versuchsteils keine Probleme bereitet.
+Die gemessenen Werte ließen sich gut darstellen und auswerten.
+Bei der Zuordnung der Komponenten in den Legierungen gab es teilweise Schwierigkeiten bei Elementen, für die wir kein Referenzspektrum zur Verfügung hatten, da man zu den Energien der jeweiligen Peaks unter Berücksichtigung von Messfehlern oftmals mehrere Elemente in den Tabellen in \cite{booklet} fand.
+Besonders die makroskopischen Eigenschaften der Proben wie Färbung oder Magnetismus lassen sich auch durch die Komponenten in den Legierungen und ihren Zusammensetzungen bestätigen.
 
 \section{Versuchsteil 3: Laue-Aufnahme}
 Im Folgenden soll mithilfe des Röntgengeräts eine Laue-Aufnahme eines LiF-Kristalls genommen werden.

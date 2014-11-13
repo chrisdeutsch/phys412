@@ -24,7 +24,7 @@ set grid xtics x2tics ytics
 
 set label 1 'K$_{\alpha}$(Co)' at graph 0.52,0.95
 set label 2 'K$_{\beta}$(Co)' at graph 0.57,0.22
-set label 3 'L$_{\alpha}$(Sm)' at graph 0.35,0.21
+set label 3 'L$_{\alpha}$(Sm)' at graph 0.34,0.21
 
 plot "./messdaten/materialanalyse/probe4.txt" using 1:2 with lines t'Messwerte' axis x1y1, "./messdaten/materialanalyse/probe4.txt" using ((-657.68+67.5264*($1))/1000):2 with lines t' ' axis x2y1 lt 1 lc 1
 

@@ -23,9 +23,9 @@ set grid
 
 # MACROS
 # x- and ytics for each row resp. column
-NOXTICS = "set xtics (0, 5, 10, 15, 20, 25, 30);\
+NOXTICS = "set xtics autofreq;\
           set xlabel ''"
-XTICS = "set xtics (0, 5, 10, 15, 20, 25, 30);\
+XTICS = "set xtics autofreq;\
           set xlabel 'Energie $E / \\si{\\kilo\\electronvolt}$'"
 NOYTICS = "set format y '%.0f'; unset ylabel"
 YTICS = "set format y '%.0f'; set ylabel 'Counts'"
@@ -50,7 +50,8 @@ set label 1 'Pb' @POS
 plot './messdaten/materialanalyse/referenzspektren/blei.txt' using ((-657.68+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH b
-set xrange [0:15]
+set xrange [2:11]
+set xtics ('2,5' 2.5, 5, '7,5' 7.5, 10)
 @NOXTICS; @NOYTICS
 @TMARGIN; @RMARGIN
 set label 1 'Fe' @POS
@@ -58,6 +59,7 @@ plot './messdaten/materialanalyse/referenzspektren/eisen.txt' using ((-657.68+67
 
 # --- GRAPH c
 set xrange [0:30]
+#set xtics (0, 5, 10, 15, 20, 25, 30)
 @NOXTICS; @YTICS
 @MMARGIN; @LMARGIN
 set label 1 'Au' @POS
@@ -65,20 +67,21 @@ plot './messdaten/materialanalyse/referenzspektren/gold.txt' using ((-657.68+67.
 
 # --- GRAPH d
 set xrange [0:30]
+#set xtics (0, 5, 10, 15, 20, 25, 30)
 @NOXTICS; @NOYTICS
 @MMARGIN; @RMARGIN
 set label 1 'In' @POS
 plot './messdaten/materialanalyse/referenzspektren/indium.txt' using ((-657.68+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH e
-set xrange [0:15]
+set xrange [5:10]
 @XTICS; @YTICS
 @BMARGIN; @LMARGIN
 set label 1 'Cu' @POS
 plot './messdaten/materialanalyse/referenzspektren/kupfer.txt' using ((-657.68+67.5264*($1))/1000):2 with lines ls 1
 
 # --- GRAPH f
-set xrange [0:15]
+set xrange [5:10]
 @XTICS; @NOYTICS
 @BMARGIN; @RMARGIN
 set label 1 'Ni' @POS

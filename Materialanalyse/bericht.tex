@@ -475,13 +475,13 @@ Dies könnte daran liegen, dass wir den Bereich der Peakschwerpunktsbestimmung z
 \subsection{Versuchsdurchführung}
 Die Versuchsdurchführung ist ähnlich wie die in Versuchsteil 1.
 Allerdings werden zur Materialanalyse das Geiger-Müller-Zählrohr gegen einen Röntgenenergiedetektor getauscht und die entsprechenden Proben und Referenzmaterialien anstelle des NaCl Kristalls bestrahlt.
-Wir wählen weiterhin die Winkel fest mit $\beta=\SI{45}{\degree}$ und im \emph{Coupled}-Modus, so dass $2\beta=\SI{90}{\degree}$ ist.
-Die Röntgenröhre wird wie vorher mit \SI{35}{\kilo\volt} Beschleunigungsspannung bei \SI{1}{\milli\ampere} betrieben und ein Kollimatorspalt von \SI{1}{\milli\metre} Spaltbreite eingesetzt.
+Wir wählen nun die Winkel fest mit $\beta_\mathrm{Target}=\SI{45}{\degree}$ und im \emph{Coupled}-Modus, so dass $\beta_\mathrm{Sensor} = \SI{90}{\degree}$ ist.
+Die Röntgenröhre wird wie vorher mit \SI{35}{\kilo\volt} Beschleunigungsspannung bei \SI{1}{\milli\ampere} Emissionsstrom betrieben und ein Kollimatorspalt von \SI{1}{\milli\metre} Spaltbreite eingesetzt.
 Die Messung wird als Vielkanalmessung auf $512$ Kanälen mit negativen Pulsen und einer Verstärkung von \num{-2.5} durchgeführt; die Messdauer beträgt für alle Messungen \SI{180}{\second}.
-Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwähnt, eine andere Darstellung im Computerprogramm, welches nun Counts für die einzelnen Kanäle des Röntgenenergiedetektors misst. Darum muss zunächst eine Energieeichung mit einem Kalibriertarget (hier FeZn) gemäß Gleichung (\ref{eq:kalibrierung}) durchgeführt werden.
+Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwähnt, eine andere Darstellung im Computerprogramm, welches nun Counts für die einzelnen Kanäle des Röntgenenergiedetektors misst. Darum muss zunächst eine Energieeichung mit einem Kalibriertarget (hier FeZn) gemäß Gleichung \ref{eq:kalibrierung} durchgeführt werden.
 
 \subsection{Messdaten}
-\begin{figure}[h]
+\begin{figure}[!h]
 \centering
 \input{./plots/kalibrierung.tex}
 \caption{Aufgenommenes Spektrum des Kalibriertargets (FeZn)}
@@ -496,7 +496,7 @@ Anhand des bekannten charakteristischen Spektrums\footnote{Aus dem \emph{X-Ray D
   E(n) &= \Delta E \cdot n + E_\mathrm{Offset}
   \label{eq:eichgerade}
 \end{align}
-jedem \emph{Bin} $n$ die Energie $E$ zugeordnet werden.
+jedem Kanal $n$ die Energie $E$ zugeordnet werden.
 
 Um die Eichgerade aus dem aufgenommenen Spektrum zu berechnen, identifizieren wir zunächst die $K_\alpha$- und $K_\beta$-Linien von Eisen und Zink (in Abbildung \ref{fig:kalibrierung} bereits geschehen).
 Leider konnte die $K_\beta$-Linie von Eisen nicht gut aufgelöst werden.
@@ -538,8 +538,6 @@ Dieser Peak wird dabei noch überlagert von einem Peak aus dem Nickelspektrum (b
 Anhaltspunkt dafür ist, dass der untere Teil der abfallenden Flanke von Eisen sehr breit ist, breiter als im Referenzspektrum, so dass vermutet werden kann, hier einen weiteren Peak zu finden.
 Der flache Peak bei ca. \SI{10}{\kilo\electronvolt} gehört auch zu Eisen, wir finden ihn auch im Referenzspektrum.
 Der weiter links liegende Peak (ca. \SI{5.5}{\kilo\electronvolt}) kann mit der abgelesenen Energie und \cite{booklet} zu Chrom bestimmt werden.
-Mit \cite{booklet} ließ sich ebenfalls die in den Plots eingetragene Linie (hier nur K$_{\alpha}$) feststellen.
-Bei genauem Hinsehen fällt auf, dass es sich hierbei um eine Doppellinie handelt, da die Spitze des Peaks nicht scharf ausgeprägt ist.
 
 \begin{figure}[!h]
 \centering
@@ -588,7 +586,7 @@ Den verbleibenden Peak im Spektrum kann man über seine Energie der L$_{\alpha}$
 \subsubsection{Massenanteile der Komponenten in Probe 2}
 
 Wir wollen nun für eine Probe die Massenanteile der einzelnen Komponenten bestimmen und wählen dafür Probe 2 aus.
-Dazu nutzen wir Formel (\ref{eq:massenanteile}), die sich für den hier vorliegenden Fall von nur zwei Komponenten vereinfacht zu:
+Dazu nutzen wir Gleichung \ref{eq:massenanteile}, die sich für den hier vorliegenden Fall von nur zwei Komponenten vereinfacht zu:
 \begin{align}
 C_i = \frac{\rho_i \cdot \frac{H_i}{H_{0,i}}}{\rho_i \cdot \frac{H_i}{H_{0,i}}+\rho_j \cdot \frac{H_j}{H_{0,j}}}
 \label{eq:masseanteile_simple}
@@ -645,7 +643,7 @@ Anschließend transferieren wir den Film aus seiner Schutzhülle in die Entwickl
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.9\textwidth]{./grafiken/film_koord.pdf}
+\includegraphics[width=0.8\textwidth]{./grafiken/film_koord.pdf}
 \caption{Vergrößerter Ausschnitt des Röntgenfilms mit eingetragenem Koordinatensystem und markierten Reflexen}
 \label{fig:film_koord}
 \end{figure}
@@ -749,13 +747,13 @@ Dann berechnet sich der Abstand der Netzebenen aus:
 was leicht aus Gleichung \ref{eq:netzebenenabstand}, der Definition der reziproken Gittervektoren und den Eigenschaften des kubischen Gitters folgt.
 Die Berechnung des Glanzwinkels $\vartheta$ erfolgt zum Vergleich auf zwei Arten:
 \begin{itemize}
-  \item Berechnung über die Millerindizes:
+  \item theoretische Berechnung über die Millerindizes:
   \begin{align}
     \vartheta = \arctan{\left( \frac{l}{\sqrt{h^2+k^2}} \right)}
     \label{eq:millerglanzwinkel}
   \end{align}
   
-  \item Berechnung über die experimentelle Messung von $x_Q, y_Q$ und $L$:
+  \item geometrische Berechnung über die experimentelle Messung von $x_Q, y_Q$ und $L$:
   \begin{align}
     \vartheta = \frac{1}{2} \arctan{\left( \frac{\sqrt{x_Q^2 + y_Q^2}}{L} \right)}
   \end{align}

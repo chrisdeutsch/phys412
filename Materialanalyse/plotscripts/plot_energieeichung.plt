@@ -4,7 +4,7 @@ set term epslatex color size 5.5,3.5
 
 set output './plots/energieeichung.tex'
 
-set title 'Energieeichung durch das Spektrum von FeZn'
+#set title 'Energieeichung durch das Spektrum von FeZn'
 
 set key top left
 

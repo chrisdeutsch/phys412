@@ -4,7 +4,7 @@ set term epslatex color size 6,4
 
 set output './plots/feinstruktur.tex'
 
-set title 'Feinstrukturaufspaltung der $K_\alpha$-Linie einer Molybdän-Anode'
+#set title 'Feinstrukturaufspaltung der $K_\alpha$-Linie einer Molybdän-Anode'
 
 unset key
 

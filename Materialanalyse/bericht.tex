@@ -217,7 +217,7 @@ Dazu sind mindestens zwei Kalibrationswerte nötig um eine Eichgerade anzupassen
 sodass die Steigung $\Delta E$ (Energieintervall pro Kanal) und die Nullpunktsverschiebung $E_\mathrm{Offset}$ bestimmt werden kann.
 
 
-\subsection{Bragg-Reflexion}
+\subsection{Bragg-Reflekion}
 Betrachtet man die Beugung von einfallender elektromagnetischer Strahlung an parallelen Netzebenen eines Einkristalls, so führt die Interferenz der gebeugten Wellen zu einer Ausbildung von Beugungsmaxima.
 Bezeichnet $\beta$ den Winkel des einfallenden Strahls gegen die parallelen Netzebenen (Glanzwinkel), so erhält man konstruktive Interferenz, wenn der Weglängenunterschied zwischen zwei benachbarten Netzebenen ein ganzzahliges Vielfaches der Wellenlänge $\lambda$ ist:
 \begin{align}
@@ -227,7 +227,7 @@ Dabei ist der Weglängenunterschied gegeben durch den Netzebenenabstand $d$ und 
 \begin{align}
   \Delta s = 2 d \sin(\beta)
 \end{align}
-und man erhält die \textbf{Bedingung für Bragg-Reflexion}:
+und man erhält die \textbf{Bedingung für Bragg-Reflekion}:
 \begin{align}
   2 d \sin(\beta) = m \lambda
   \label{eq:bragg}
@@ -368,12 +368,11 @@ Am Folgetag wurden auch hier mithilfe von \emph{Cassy Lab} die Peakschwerpunkte 
 \subsection{Messdaten}
 \subsubsection{Charakteristischen Röntgenstrahlung einer unbekannten Röhre}
 
-
 \begin{figure}[!h]
 \centering
 \resizebox{\columnwidth}{!}{%
 \input{./plots/anode3.tex}}
-\caption{Aufgenommenes Röntgenspektrum der unbekannten Anode bei Bragg-Streuung an einem NaCl-Kristall}
+\caption{Aufgenommenes Röntgenspektrum der unbekannten Anode 3 bei Bragg-Streuung an einem NaCl-Kristall}
 \label{fig:anode3}
 \end{figure}
 
@@ -484,16 +483,16 @@ Dies könnte daran liegen, dass wir den Bereich der Peakschwerpunktsbestimmung z
 \subsection{Versuchsdurchführung}
 Die Versuchsdurchführung ist ähnlich wie die in Versuchsteil 1.
 Allerdings werden zur Materialanalyse das Geiger-Müller-Zählrohr gegen einen Röntgenenergiedetektor getauscht und die entsprechenden Proben und Referenzmaterialien anstelle des NaCl Kristalls bestrahlt.
-Wir wählen weiterhin die Winkel fest mit $\beta=\SI{45}{\degree}$ und im \emph{Coupled}-Modus, so dass $2\beta=\SI{90}{\degree}$ ist.
-Die Röntgenröhre wird wie vorher mit \SI{35}{\kilo\volt} Beschleunigungsspannung bei \SI{1}{\milli\ampere} betrieben und ein Kollimatorspalt von \SI{1}{\milli\metre} Spaltbreite eingesetzt.
+Wir wählen nun die Winkel fest mit $\beta_\mathrm{Target}=\SI{45}{\degree}$ und im \emph{Coupled}-Modus, so dass $\beta_\mathrm{Sensor} = \SI{90}{\degree}$ ist.
+Die Röntgenröhre wird wie vorher mit \SI{35}{\kilo\volt} Beschleunigungsspannung bei \SI{1}{\milli\ampere} Emissionsstrom betrieben und ein Kollimatorspalt von \SI{1}{\milli\metre} Spaltbreite eingesetzt.
 Die Messung wird als Vielkanalmessung auf $512$ Kanälen mit negativen Pulsen und einer Verstärkung von \num{-2.5} durchgeführt; die Messdauer beträgt für alle Messungen \SI{180}{\second}.
-Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwähnt, eine andere Darstellung im Computerprogramm, welches nun Counts für die einzelnen Kanäle des Röntgenenergiedetektors misst. Darum muss zunächst eine Energieeichung mit einem Kalibriertarget (hier FeZn) gemäß Gleichung (\ref{eq:kalibrierung}) durchgeführt werden.
+Durch den Röntgenenergiedetektor erhalten wir, wie in \ref{sec:nachweis} erwähnt, eine andere Darstellung im Computerprogramm, welches nun Counts für die einzelnen Kanäle des Röntgenenergiedetektors misst. Darum muss zunächst eine Energieeichung mit einem Kalibriertarget (hier FeZn) gemäß Gleichung \ref{eq:kalibrierung} durchgeführt werden.
 
 \subsection{Messdaten}
-\begin{figure}[h]
+\begin{figure}[!h]
 \centering
 \input{./plots/kalibrierung.tex}
-\caption{Aufgenommenes Spektrum des Kalibriertargets (FeZn)}
+\caption{Spektrum des Kalibriertargets (FeZn)}
 \label{fig:kalibrierung}
 \end{figure}
 
@@ -505,7 +504,7 @@ Anhand des bekannten charakteristischen Spektrums\footnote{Aus dem \emph{X-Ray D
   E(n) &= \Delta E \cdot n + E_\mathrm{Offset}
   \label{eq:eichgerade}
 \end{align}
-jedem \emph{Bin} $n$ die Energie $E$ zugeordnet werden.
+jedem Kanal $n$ die Energie $E$ zugeordnet werden.
 
 Um die Eichgerade aus dem aufgenommenen Spektrum zu berechnen, identifizieren wir zunächst die $K_\alpha$- und $K_\beta$-Linien von Eisen und Zink (in Abbildung \ref{fig:kalibrierung} bereits geschehen).
 Leider konnte die $K_\beta$-Linie von Eisen nicht gut aufgelöst werden.
@@ -514,7 +513,7 @@ Schließlich ordnen wir jeder Linie ihren Literaturwert zu und erhalten die Tabe
 \begin{table}[h]
 \centering
 \input{./tables/eichgerade.tex}
-\caption{Peakbestimmung}
+\caption{Bestimmung der Peaks des Kalibriertargets}
 \label{tab:eichgerade}
 \end{table}
 
@@ -530,7 +529,7 @@ Die Datenpunkte und die angepasste Gerade wurden in Abbildung \ref{fig:energieei
 \centering
 \resizebox{\columnwidth}{!}{%
 \input{./plots/energieeichung.tex}}
-\caption{Zuordnung der Energien zu den Kanalnummern}
+\caption{Eichgerade des Röntgenenergiedetektors mit den Daten des FeZn-Kalibriertargets}
 \label{fig:energieeichung}
 \end{figure}
 
@@ -547,13 +546,11 @@ Dieser Peak wird dabei noch überlagert von einem Peak aus dem Nickelspektrum (b
 Anhaltspunkt dafür ist, dass der untere Teil der abfallenden Flanke von Eisen sehr breit ist, breiter als im Referenzspektrum, so dass vermutet werden kann, hier einen weiteren Peak zu finden.
 Der flache Peak bei ca. \SI{10}{\kilo\electronvolt} gehört auch zu Eisen, wir finden ihn auch im Referenzspektrum.
 Der weiter links liegende Peak (ca. \SI{5.5}{\kilo\electronvolt}) kann mit der abgelesenen Energie und \cite{booklet} zu Chrom bestimmt werden.
-Mit \cite{booklet} ließ sich ebenfalls die in den Plots eingetragene Linie (hier nur K$_{\alpha}$) feststellen.
-Bei genauem Hinsehen fällt auf, dass es sich hierbei um eine Doppellinie handelt, da die Spitze des Peaks nicht scharf ausgeprägt ist.
 
 \begin{figure}[!h]
 \centering
 \input{./plots/probe1.tex}
-\caption{Probe 1}
+\caption{Fluoreszenzspektrum der Probe 1}
 \label{fig:probe1}
 \end{figure}
 
@@ -567,7 +564,7 @@ Rechts der beiden K$_{\alpha}$-Peaks findet man auch ein weiterer Peak (K$_{\bet
 \begin{figure}[!h]
 \centering
 \input{./plots/probe2.tex}
-\caption{Probe 2}
+\caption{Fluoreszenzspektrum der Probe 2}
 \label{fig:probe2}
 \end{figure}
 
@@ -577,7 +574,7 @@ Man sieht an den Höhen der Peaks allerdings, dass es sich hier um eine andere M
 \begin{figure}[!h]
 \centering
 \input{./plots/probe3.tex}
-\caption{Probe 3}
+\caption{Fluoreszenzspektrum der Probe 3}
 \label{fig:probe3}
 \end{figure}
 
@@ -590,21 +587,21 @@ Den verbleibenden Peak im Spektrum kann man über seine Energie der L$_{\alpha}$
 \begin{figure}[!h]
 \centering
 \input{./plots/probe4.tex}
-\caption{Probe 4}
+\caption{Fluoreszenzspektrum der Probe 4}
 \label{fig:probe4}
 \end{figure}
 
 \subsubsection{Massenanteile der Komponenten in Probe 2}
 
 Wir wollen nun für eine Probe die Massenanteile der einzelnen Komponenten bestimmen und wählen dafür Probe 2 aus.
-Dazu nutzen wir Formel (\ref{eq:massenanteile}), die sich für den hier vorliegenden Fall von nur zwei Komponenten vereinfacht zu:
+Dazu nutzen wir Gleichung \ref{eq:massenanteile}, die sich für den hier vorliegenden Fall von nur zwei Komponenten vereinfacht zu:
 \begin{align}
 C_i = \frac{\rho_i \cdot \frac{H_i}{H_{0,i}}}{\rho_i \cdot \frac{H_i}{H_{0,i}}+\rho_j \cdot \frac{H_j}{H_{0,j}}}
 \label{eq:masseanteile_simple}
 \end{align}
 Wobei die Variablen mit $i, j$ Kupfer bzw. Zink zugeordnet werden.
 Die verwendeten Werte für die Dichten sind in Tabelle \ref{tab:massenanteile} nachzulesen, die Höhen der Peaks haben wir aus den Messwerten direkt ablesen können und dabei einen Fehler von \SI{5}{\percent} angenommen.
-Mit (\ref{eq:masseanteile_simple}) erhält man dann die in Tabelle \ref{tab:massenanteile} angegebenen Massenanteile der beiden Komponenten in der Legierung.
+Mit Gleichung \ref{eq:masseanteile_simple} erhält man dann die in Tabelle \ref{tab:massenanteile} angegebenen Massenanteile der beiden Komponenten in der Legierung.
 Der Fehler wurde mit Gauß'scher Fehlerfortpflanzung berechnet, auf die Angabe der Formel wird hier aus Gründen der Übersichtlichkeit verzichtet.
 
 \begin{table}[h]
@@ -620,7 +617,7 @@ Die gefundenen Komponenten und ihre Massenanteile stimmen also mit unseren Erwar
 
 Dabei muss allerdings berücksichtigt werden, dass das Spektrum durch verschiedene Faktoren verfälscht werden kann.
 Dazu zählen beispielsweise die Absorption von Röntgenstrahlung, die energieabhängig ist und so nicht gleichmäßig das Spektrum beeinflusst, aber auch Verunreinigungen der Probe an der Oberfläche, die teilweise auch optisch zu erkennen waren.
-Ein Faktor, der sich vor allem auf die Massenanteilsbestimmung auswirkt ist die sekundäre Fluoreszenz, wobei die angeregten (sichtbaren) Linien wiederum Linien des anderen Elements anregen können, was die Höhe der Peaks beeinflusst und so die Massenanteile verzerrt.
+Ein Faktor, der sich vor allem auf die Massenanteilsbestimmung auswirkt ist die sekundäre Fluoreszenz, wobei die von der Probe emittierte charakteristische Strahlung wiederum Fluoreszenzphotonen des anderen Elements anregen können, was die Höhe der Peaks beeinflusst und so die Massenanteile verzerrt.
 Der Abstand zwischen Drehachse und Eintrittsöffnung des Energiedetektors bestimmt die Anzahl Counts, da der Raumwinkel der Detektoröffnung mit $\frac{1}{r^2}$ ($r$: Abstand Quelle -- Detektor) abnimmt.
 Bei zu großen Abständen kann es so passieren, dass die Spektren nicht mehr auswertbar sind. 
 
@@ -654,7 +651,7 @@ Anschließend transferieren wir den Film aus seiner Schutzhülle in die Entwickl
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.9\textwidth]{./grafiken/film_koord.pdf}
+\includegraphics[width=0.8\textwidth]{./grafiken/film_koord.pdf}
 \caption{Vergrößerter Ausschnitt des Röntgenfilms mit eingetragenem Koordinatensystem und markierten Reflexen}
 \label{fig:film_koord}
 \end{figure}
@@ -758,13 +755,13 @@ Dann berechnet sich der Abstand der Netzebenen aus:
 was leicht aus Gleichung \ref{eq:netzebenenabstand}, der Definition der reziproken Gittervektoren und den Eigenschaften des kubischen Gitters folgt.
 Die Berechnung des Glanzwinkels $\vartheta$ erfolgt zum Vergleich auf zwei Arten:
 \begin{itemize}
-  \item Berechnung über die Millerindizes:
+  \item theoretische Berechnung über die Millerindizes:
   \begin{align}
     \vartheta = \arctan{\left( \frac{l}{\sqrt{h^2+k^2}} \right)}
     \label{eq:millerglanzwinkel}
   \end{align}
   
-  \item Berechnung über die experimentelle Messung von $x_Q, y_Q$ und $L$:
+  \item geometrische Berechnung über die experimentelle Messung von $x_Q, y_Q$ und $L$:
   \begin{align}
     \vartheta = \frac{1}{2} \arctan{\left( \frac{\sqrt{x_Q^2 + y_Q^2}}{L} \right)}
   \end{align}
@@ -784,9 +781,18 @@ Die experimentellen Winkel $\vartheta_\mathrm{exp}$ stimmen innerhalb der Fehler
 \label{tab:laue_winkel}
 \end{table}
 
+\subsection{Diskussion}
+Dieser Versuchsteil konnte erfolgreich abgeschlossen werden.
+Wir konnten die Laue-Reflexe auf dem Röntgenfilm erfolgreich den jeweiligen Netzebenenscharen zuordnen und aus Kenntniss dieser die weiteren Kenngrößen der Streuung berechnen.
+So konnte der Netzebenenabstand $d_{hkl}$ und Wellenlänge $\lambda$ der gestreuten Strahlung bestimmt werden.
+Darüberhinaus wurde der Glanzwinkel $\vartheta$ sowohl aufgrund von theoretischer Erwartung als auch geometrisch berechnet.
+Die geometrische Bestimmung stimmt innerhalb ihrer Fehlergrenzen gut mit der Theoretischen überein.
 
 
-\section{Zusammenfassung}
+\section{Fazit}
+
+
+
 
 % BIBLIOGRAPHIE
 

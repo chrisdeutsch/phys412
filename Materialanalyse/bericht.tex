@@ -95,6 +95,7 @@ Assistent: & Farah Noreen Afzal
 Als Röntgenstrahlung wird der Teil des elektromagnetischen Spektrums mit Photon-Energien zwischen \SI{100}{\electronvolt} und \SI{100}{\kilo\electronvolt} bezeichnet, wobei diese Grenzen nicht scharf sind und deshalb oft hinsichtlich der Strahlungsquelle eine Einordnung vollzogen wird.
 
 \subsubsection{Erzeugung}
+\label{sec:röntgenerzeugung}
 Es gibt zwei typische Erzeugungsmethoden von Röntgenstrahlung, welche auf dem Beschuss eines \emph{Targets} mit einem hochenergetischen Elektronenstrahl bestehen.
 Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten, sind:
 \begin{itemize}
@@ -277,6 +278,7 @@ Mit dem Volumen der Elementarzelle
 Besondere Zusammenhänge mit den durch die millersche Indizes $(hkl)$ ausgezeichnete Ebenenschar:
 \begin{align}
   \vec{G} = h \vec{a}^{*} + k \vec{b}^{*} + l \vec{c}^{*}
+  \label{eq:rezip_miller}
 \end{align}
 steht senkrecht auf der Ebenenschar $(hkl)$.
 \begin{align}
@@ -326,7 +328,16 @@ Wir vermessen einen Glanzwinkelbereich von $\beta_\mathrm{min} = \SI{2,0}{\degre
 Nach dem Abschluss der Messung wurde das Spektrum mithilfe der Funktion \emph{'Peakschwerpunkt berechnen'} des Programmes ausgemessen. Auf die genaue Vorgehensweise wird dabei in der Auswertung eingegangen.
 
 \subsubsection{Bestimmung der Feinstruktur der $K_\alpha$-Linie von Molybdän}
-Die Feinstrukturaufspaltung $\Delta \lambda$ der $K_\alpha$-Linie von Molybdän ist sehr klein; um diese dennoch aufzulösen, kann eine höhere Beugungsordnungen vermessen werden.
+Da charakteristische Röntgenstrahlung durch elektronische Übergänge im Atom entstehen (siehe Abschnitt \ref{sec:röntgenerzeugung}), sind Störungen der atomaren Energieniveaus auch im charakteristischen Spektrum sichtbar.
+Die Feinstrukturaufspaltung des Röntgenspektrums wird daher verursacht durch (analog zum Atom):
+\begin{itemize}
+  \item relativistische Korrektur der kinetischen Energie der Elektronen
+  
+  \item Korrektur der potentiellen Energie des Elektrons aufgrund dessen Delokalisierung um die reduzierte Comptonwellenlänge $\lambda / 2\pi$ (Heisenberg'sche Unschärferelation) im Coulomb-Potential des Kerns
+  
+  \item Kopplung des Elektronenspins an das Magnetfeld verursacht durch den Bahndrehimpuls des Elektrons um den Kern
+\end{itemize}
+Im Vergleich zur Grobstruktur ist die Feinstrukturaufspaltung $\Delta \lambda$ der $K_\alpha$-Linie von Molybdän ist sehr klein; um diese dennoch aufzulösen, kann eine höhere Beugungsordnungen vermessen werden.
 Dies sieht man leicht, wenn man die Bragg-Bedingung nach dem Glanzwinkel umstellt:
 \begin{align}
   \beta = \arcsin \left( \frac{m \lambda}{2 d} \right)
@@ -460,9 +471,6 @@ Dies stimmt innerhalb der Fehlergrenzen mit der experimentellen Bestimmung:
 überein.
 Einzig der experimentelle Fehler erscheint sehr groß.
 Dies könnte daran liegen, dass wir den Bereich der Peakschwerpunktsbestimmung zu groß gewählt haben und dadurch schon der Fehler des Peakschwerpunktes zu groß ist.
-
-\subsection{Diskussion}
-Vergleichen sie Ergebnisse mit Literatur; Diskutieren sie woher die Aufspaltung bei der Feinstrukturmessung zustande kommt und warum sie erst bei höherer Ordnung sichtbar wird.
 
 
 \section{Versuchsteil 2: Zerstörungsfreie Analyse chemischer Zusammensetzungen}
@@ -602,14 +610,14 @@ Die gefundenen Komponenten und ihre Massenanteile stimmen also mit unseren Erwar
 \subsection{Diskussion}
 
 \section{Versuchsteil 3: Laue-Aufnahme}
-Im Folgenden soll eine Laue-Aufnahme eines LiF-Kristalls auf einem Röntgenfilm aufgenommen werden.
+Im Folgenden soll mithilfe des Röntgengeräts eine Laue-Aufnahme eines LiF-Kristalls genommen werden.
 
 \subsection{Versuchsdurchführung}
 Zunächst entfernen wir Targethalter und Sensorarm aus dem Experimentierraum des Röntgengerätes und bauen die Experimentierschiene mit aufgesetztem Filmhalter ein.
 Auf diesem haben wir den Röntgenfilm zentral und plan eingespannt.
 Anschließend stecken wir auf den \SI{1}{\milli\metre} Kollimatorspalt eine Lochblende mit LiF-Kristall, welcher so ausgerichtet wird, dass dessen Kanten senkrecht beziehungsweise waagerecht verlaufen.
 Zuletzt schieben wir den Film auf der Schiene circa \SI{11}{\milli\metre} vor die Lochblende.
-Da man aufgrund der räumlichen Gegebenheiten im Experimentierraum nur schlecht den Maßstab der Experimentierschiene ablesen konnte und die Lage des Films innerhalb seiner dicken Plastikhülle nicht genau feststellen kann, nehmen wir auf den Abstand des Films vom LiF-Kristall einen Fehler von \SI{2}{\milli\metre} an.
+Da man aufgrund der räumlichen Gegebenheiten im Experimentierraum nur schlecht den Maßstab der Experimentierschiene ablesen konnte und wir die Lage des Films innerhalb seiner dicken Plastikhülle nicht genau feststellen konnten, nehmen wir auf den Abstand des Films vom LiF-Kristall einen Fehler von \SI{2}{\milli\metre} an.
 Die eingestellten Parameter der Röntgenröhre bleiben wieder unverändert ($U = \SI{35}{\kilo\volt}$, $I = \SI{1,0}{\milli\ampere}$).
 Wir stellen die für LiF empfohlene Belichtungszeit von \SI{1200}{\second} ein und belichten den Film über die gesamte Dauer.
 Anschließend transferieren wir den Film aus seiner Schutzhülle in die Entwicklerdose und entwickeln den Film.
@@ -630,12 +638,14 @@ Anschließend transferieren wir den Film aus seiner Schutzhülle in die Entwickl
 \end{figure}
 
 
-
 \subsection{Auswertung}
-\subsubsection{Bestimmung der verursachenden Netzebenenschar eines Laue-Reflexes}
+
+\subsubsection{Bestimmung der zugehörigen Netzebenenschar eines Laue-Reflexes}
 Zunächst wurde der Röntgenfilm in Abbildung \ref{fig:film} mit einem Scanner digitalisiert.
-Anschließend wurde das digitale Bild entsprechend bearbeitet, um Abbildung \ref{fig:film_koord} zu erhalten.
+Anschließend wurde das digitale Bild entsprechend bearbeitet\footnote{Bei der Bearbeitung wurde beachtet, dass die Auflösung des Bildes und damit der Maßstab gleich bleibt.}, um Abbildung \ref{fig:film_koord} zu erhalten.
 Dort messen wir mit digitalen Hilfsmitteln (\emph{Gimp}) die Koordinaten der Reflexe $P_1, P_2$ und $P_3$, welche wir auswerten wollen.
+Für diese Reflexe haben wir uns entschieden, da jeder andere \emph{sichtbare} Reflex aus Rotation und Spiegelung erzeugt werden kann.
+Das heißt, dass die Millerindizes sich höchstens in Permutation und Vorzeichen unterscheiden.
 Die Koordinaten der Punkte wurden in Tabelle \ref{tab:laue_digi} in Pixeln angegeben.
 \begin{table}[h]
 \centering
@@ -649,7 +659,7 @@ Zum Umrechnen der Koordinaten wurde anhand der langen Kante des Röntgenfilms $b
   \frac{b_\mathrm{mm}}{b_\mathrm{px}} = \SI{0.08492 +- 0.00056}{\milli\metre\per\pixel}
 \end{align}
 bestimmt.
-Anschließend kann die zu jedem Reflex gehörige Koordinate $z_Q$ berechnet werden:
+Anschließend kann die zu jedem Reflex gehörige Koordinate $z_Q$ des Hilfspunkts $Q = (x_Q, y_Q, z_Q)$ über die Laue-Bedingung und die Eigenschaften des kubischen LiF-Gitters, welches im Laborkoordinatensystem ausgerichtet ist, berechnet werden:
 \begin{align}
   z_Q = \sqrt{x_Q^2 + y_Q^2 + L^2} - L
 \end{align}
@@ -666,7 +676,9 @@ Die Ergebnisse der Umrechnung von \si{\pixel} in \si{\milli\metre} sowie die Ber
 \label{tab:laue_mm}
 \end{table}
 
-Nun suchen wir zu jedem Laue-Reflex das kleinste, ganzzahlige und ungemischte Zahlentripel $(h,k,l)$, welches das Verhältnis:
+Der Vektor $\vec{Q}$ liegt parallel zum reziproken Gittervektor der Netzebenenschar, die den Reflex verursacht.
+Deshalb müssen aufgrund von Gleichung \ref{eq:rezip_miller} die Millerindizes das gleiche Verhältnis aufweisen, wie die Koordinaten des Hilfspunkts $Q$.
+Daher suchen wir zu jedem Laue-Reflex das kleinste, ganzzahlige und ungemischte Zahlentripel $(h,k,l)$, welches das Verhältnis:
 \begin{align}
   h:k:l = x_Q : y_Q : z_Q
 \end{align}
@@ -682,7 +694,7 @@ Der Punkt $Q$ hat die Koordinaten:
   z_Q &= \SI{4.65 +- 0.60}{\milli\metre}
 \end{align*}
 Es ist leicht zu sehen, dass die Koordinaten ein $(1:-2:1)$-Verhältnis aufweisen, welches der Netzebenenschar $(1\overline{2}1)$ entsprechen würde.
-Dies entspricht jedoch einer gemischten Zahl und kann daher nicht die verursachende Netzebenenschar sein.
+Dies ist jedoch einer gemischten Zahl und kann daher nicht die verursachende Netzebenenschar sein.
 Daher skalieren wir das Verhältnis mit einem Faktor $2$ um das kleinste, ganzzahlige, ungemischte Tripel $(2\overline{4}2)$ zu erhalten.
 Um dies zu quantifizieren, betrachten wir die quadratische Abweichung der mit $\lambda$ skalierten Koordinaten $Q$ von der Hypothese $(hkl) = (2\overline{4}2)$:
 \begin{align}
@@ -708,7 +720,7 @@ Analog wurde die Bestimmung der Netzebene $(hkl)$ für die Reflexe $P_2$ und $P_
 
 \subsubsection{Berechnung von Netzebenenabstand, Glanzwinkel und Wellenlänge der Laue-Reflexe}
 Im Folgenden wollen wir die jedem Laue-Reflex zugehörigen Netzebenenabstande $d_{hkl}$, Glanzwinkel $\vartheta$ sowie Wellenlänge $\lambda$ der reflexerzeugenden Strahlung berechnen.
-Da wir, wie zuvor besprochen, die Miller'schen Indizes $(hkl)$ mit hoher Wahrscheinlichkeit korrekt bestimmt haben, werden wir dabei auf eine ausführliche Fehlerrechnung verzichten.
+Da wir, wie zuvor besprochen, die Millerindizes $(hkl)$ mit hoher Wahrscheinlichkeit korrekt bestimmt haben, werden wir dabei auf eine ausführliche Fehlerrechnung verzichten.
 
 Zunächst wollen wir die Netzebenabstände $d_{hkl}$ bestimmen.
 Dafür benötigen wir die Gitterkonstante des LiF-Kristalls, welche durch:
@@ -721,10 +733,9 @@ Dann berechnet sich der Abstand der Netzebenen aus:
   d_{hkl} = \frac{a}{\sqrt{h^2+k^2+l^2}}
 \end{align}
 was leicht aus Gleichung \ref{eq:netzebenenabstand}, der Definition der reziproken Gittervektoren und den Eigenschaften des kubischen Gitters folgt.
-
-Die Berechnung des Glanzwinkels erfolgt zum Vergleich auf zwei Arten:
+Die Berechnung des Glanzwinkels $\vartheta$ erfolgt zum Vergleich auf zwei Arten:
 \begin{itemize}
-  \item Berechnung über die Miller'schen Indizes:
+  \item Berechnung über die Millerindizes:
   \begin{align}
     \vartheta = \arctan{\left( \frac{l}{\sqrt{h^2+k^2}} \right)}
     \label{eq:millerglanzwinkel}
@@ -736,11 +747,12 @@ Die Berechnung des Glanzwinkels erfolgt zum Vergleich auf zwei Arten:
   \end{align}
   unter Beachtung der Fehler\footnote{Bei der Fehlerrechnung wurden die Fehler in $x_Q, y_Q$ und $L$ beachtet. Auf eine Angabe der Fehlerformel soll hier aber verzichtet werden.}.
 \end{itemize}
-
 Schließlich kann über die Bragg-Reflektion (Äquivalenz von Laue-Bedingung und Bragg-Bedingung) an den Netzebenen mit Abstand $d_{hkl}$ die Wellenlänge der Strahlung berechnet werden:
 \begin{align}
   \lambda = 2 d_{hkl} \sin(\vartheta)
 \end{align}
+Alle berechneten Werte wurden in Tabelle \ref{tab:laue_winkel} aufgeführt.
+Die experimentellen Winkel $\vartheta_\mathrm{exp}$ stimmen innerhalb der Fehler gut mit den theoretischen Werten $\vartheta$ aufgrund der Indizes der Netzebenen überein.
 
 \begin{table}[h]
 \centering
@@ -749,7 +761,6 @@ Schließlich kann über die Bragg-Reflektion (Äquivalenz von Laue-Bedingung und
 \label{tab:laue_winkel}
 \end{table}
 
-\subsection{Diskussion}
 
 
 \section{Zusammenfassung}

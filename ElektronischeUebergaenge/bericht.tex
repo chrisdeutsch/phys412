@@ -105,6 +105,29 @@ Assistent: & ASSISTENT
 
 \subsection{Franck-Hertz-Versuch}
 
+Der Franck-Hertz-Versuch wurde um 1914 von James Franck und Gustav Hertz \cite{demtroeder3} durchgeführt und demonstrierte die Wichtigkeit der Energiequantelung bei Stoßprozessen.
+In dem Versuch wird eine mit Quecksilberdampf bei Unterdruck (ca. \SI{e-2}{\milli\bar}) gefüllte Elektronenröhre genutzt, bei der zwischen Kathode und Anode ein Gitter eingebaut ist, und die variable Beschleunigungsspannung $U$ zwischen Kathode und Gitter anliegt.
+Zwischen diesem und der Anode wird eine konstante Gegenspannung $\Delta U$ angelegt.
+
+\begin{figure}[h]
+\centering
+%\resizebox{\columnwidth}{!}{%
+%\input{./figures/franck-hertz_aufbau.pdf}}
+\caption{Aufbau des Franck-Hertz-Versuches}
+\label{fig:franck-hertz_aufbau}
+\end{figure}
+
+Durch den glühlektrischen Effekt treten an der Kathode bei Anlegen einer hohen Spannung Elektronen aus.
+Dies geschieht dadurch, dass die Elektronen im Draht durch die hohe Spannung angeregt werden und die (vom Material abhängige) Austrittsarbeit überwinden.
+Die Stromdichte der aus einem Metall austretenden Elektronen wird beschrieben durch die \textbf{Richardson-Gleichung} \cite{np_richardson}:
+\begin{align*}
+j=AT^2\cdot \exp\left({-\dfrac{\omega}{\mathrm{k_B}T}}\right)
+\end{align*}
+Dabei ist $T$ die absolute Temperatur, $\mathrm{k_B}$ die Boltzmann-Konstante und $A$ und $\omega$ materialabhängige Konstanten.
+Die so ausgetretenen Elektronen werden von dem äußeren anliegenden Feld durch die Beschleunigungsspannung zum Gitter hin beschleunigt und erreichen dabei die Energie $eU$.
+Durch die zwischen Gitter und Anode anliegende Gegenspannung werden die Elektronen nach Passieren des Gitters abgebremst und nur solche mit Energie größer als $e\Delta U$ erreichen die Anode.
+Der Aufbau bildet so ein Triodensystem.
+
 \subsubsection{Röhrenelektronik}
 
 \begin{itemize}
@@ -156,12 +179,17 @@ Assistent: & ASSISTENT
 \begin{thebibliography}{9}
 
 % Beispiel
-\bibitem{lamport94}
-  Leslie Lamport,
-  \emph{\LaTeX: a document preparation system}.
-  Addison Wesley, Massachusetts,
-  2nd edition,
-  1994.
+\bibitem{np_richardson}
+ Nobelprize.org,
+ \emph{"The Nobel Prize in Physics 1928"}.
+ Nobel Media AB 2014. Web. 15\\
+ (\url{http://www.nobelprize.org/nobel_prizes/physics/laureates/1928/richardson-lecture.pdf} abgerufen am 15.11.2014)
+  
+\bibitem{demtroeder3}
+	Wolfgang Demtröder,
+	\emph{Experimentalphysik 3}.
+	Springer Verlag,
+	3. Auflage
 \end{thebibliography}
 
 \newpage

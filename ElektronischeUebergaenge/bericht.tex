@@ -111,8 +111,7 @@ Zwischen diesem und der Anode wird eine konstante Gegenspannung $\Delta U$ angel
 
 \begin{figure}[h]
 \centering
-%\resizebox{\columnwidth}{!}{%
-%\input{./figures/franck-hertz_aufbau.pdf}}
+\includegraphics[width=0.8\textwidth]{./figures/franck-hertz_aufbau.pdf}
 \caption{Aufbau des Franck-Hertz-Versuches}
 \label{fig:franck-hertz_aufbau}
 \end{figure}
@@ -125,8 +124,21 @@ j=AT^2\cdot \exp\left({-\dfrac{\omega}{\mathrm{k_B}T}}\right)
 \end{align*}
 Dabei ist $T$ die absolute Temperatur, $\mathrm{k_B}$ die Boltzmann-Konstante und $A$ und $\omega$ materialabhängige Konstanten.
 Die so ausgetretenen Elektronen werden von dem äußeren anliegenden Feld durch die Beschleunigungsspannung zum Gitter hin beschleunigt und erreichen dabei die Energie $eU$.
-Durch die zwischen Gitter und Anode anliegende Gegenspannung werden die Elektronen nach Passieren des Gitters abgebremst und nur solche mit Energie größer als $e\Delta U$ erreichen die Anode.
+Durch die zwischen Gitter und Anode anliegende Gegenspannung werden die Elektronen nach Passieren des Gitters abgebremst und nur solche mit Energien größer als $e\Delta U$ erreichen die Anode.
 Der Aufbau bildet so ein Triodensystem.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/franck-hertz_ergebnis.pdf}
+\caption{Anodenstrom beim Franck-Hertz-Versuch mit Quecksilber, aufgetragen gegen die Beschleunigungsspannung; nach Originaldaten von Franck und Hertz. Quelle: \url{http://upload.wikimedia.org/wikipedia/commons/5/50/Franck-Hertz_de.svg} (abgerufen am 14.11.2014)}
+\label{fig:franck-hertz_ergebnis}
+\end{figure}
+
+Bei der Durchführung des Versuches stellte man fest, dass der Anodenstrom sich wie in Abbildung \ref{fig:franck-hertz_ergebnis} verhält.
+Man sieht dabei, dass in Abständen von \SI{4.9}{\volt} (der Wert gilt nur für Quecksilber) der Strom stark einbricht und ab den Minima jeweils einer Diodencharakteristik folgt \cite{demtroeder3}.
+Der Grund dafür ist, dass die Elektronen auf der Beschleunigungsstrecke inelastische Stöße mit den Quecksilberatomen ausführen und diese dadurch anregen.
+Die dabei an das Quecksilber abgegebene Energie steht den Elektronen nicht mehr zur Verfügung, um die Anode zu erreichen, der Strom bricht ein. 
+Der Abstand der Maxima entspricht dabei genau der Anregungsenergie der Quecksilberatome.
 
 \subsubsection{Röhrenelektronik}
 

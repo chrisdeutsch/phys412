@@ -1,5 +1,5 @@
 % PAKETE UND DOKUMENTKONFIGURATION
-\documentclass[10pt, a4paper]{article}
+\documentclass[11pt, a4paper]{article}
 
 % Encoding für Umlaute
 \usepackage[utf8]{inputenc}
@@ -82,7 +82,28 @@ Assistent: & ASSISTENT
 
 \subsection{Zeeman-Effekt}
 
+Der Zeeman-Effekt beschreibt die Aufspaltung entarteter Energien unter Einfluss eines äußeren Magnetfeldes.
+In diesem Versuch wollen wir uns dabei auf den normalen Zeeman-Effekt beschränken; dieser gilt für Atome, deren Gesamtspin gleich $0$ ist und so nur Drehimpulse $\vec{L}$ zum Gesamtdrehimpuls $\vec{J}=\vec{L}+\vec{S}$ beitragen.
+
 \subsubsection{Verhalten von Atomen in äußeren Feldern}
+
+Aus der Lösung der Schrödingergleichung für ein Elektron im Coulombpotenzial eines Kerns folgt, dass es nur diskrete Energiewerte annehmen kann.
+Diese werden über die so genannte Hauptquantenzahl $n$ bestimmt.
+Zusätzlich dazu kann man weitere Quantenzahlen definieren, wir beschränken uns hier auf die Quantenzahl $l$ für den Drehimpuls und $s$ für den Spin.
+Für $n$ und $l$ gilt $n=1, 2, 3 \dots$ und $l=0, 1, 2 \dots n-1$, wobei die Werte für $l$ häufig mit den Buchstaben s, p, d, f, g $\dots$ (ab f wie im Alphabet) identifiziert werden.
+Da es nicht möglich ist, zwei Komponenten $L_i, L_j$ des Drehimpulses gleichzeitig zu bestimmen (folgt aus Kommutatorrelation), erhält man bei einer Messung von $|\vec{L}|$ und $L_z$, welche durchgeführt werden kann, eine weitere Quantenzahl $m_l$. Sie beschreibt im Vektormodell anschaulich die Projektion von $\vec{L}$ auf die $z$-Achse.
+Dabei gilt:
+\begin{align*}
+|\vec{L}|&=\si{\planckbar}\sqrt{l(l+1)}\\
+l_z&=\si{\planckbar}\mathrm{m}_l
+\end{align*}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.4\textwidth]{./figures/termschema_cadmium.pdf}
+\caption{Übergang von $^1$D$_2$ nach $^1$P$_1$ in der fünften Schale in Cadmium}
+\label{fig:termschema_cadmium}
+\end{figure}
 
 \begin{itemize}
 \item Zeeman Effekt
@@ -111,7 +132,7 @@ Zwischen diesem und der Anode wird eine konstante Gegenspannung $\Delta U$ angel
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.8\textwidth]{./figures/franck-hertz_aufbau.pdf}
+\includegraphics[width=0.7\textwidth]{./figures/franck-hertz_aufbau.pdf}
 \caption{Aufbau des Franck-Hertz-Versuches}
 \label{fig:franck-hertz_aufbau}
 \end{figure}
@@ -139,6 +160,7 @@ Man sieht dabei, dass in Abständen von \SI{4.9}{\volt} (der Wert gilt nur für 
 Der Grund dafür ist, dass die Elektronen auf der Beschleunigungsstrecke inelastische Stöße mit den Quecksilberatomen ausführen und diese dadurch anregen.
 Die dabei an das Quecksilber abgegebene Energie steht den Elektronen nicht mehr zur Verfügung, um die Anode zu erreichen, der Strom bricht ein. 
 Der Abstand der Maxima entspricht dabei genau der Anregungsenergie der Quecksilberatome.
+In diesem Versuch soll die Übergangsenergie der Resonanzlinien von Quecksilber bestimmt werden. (ist das gleich der Anregungsenergie?)
 
 \subsubsection{Röhrenelektronik}
 

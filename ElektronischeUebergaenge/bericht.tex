@@ -40,9 +40,25 @@
 % bessere Tabellenlayouts
 \usepackage{booktabs}
 
+% Seitenlayout (Kopfzeile)
+\usepackage{fancyhdr}
+
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
 \setcounter{tocdepth}{2}
+
+% FANCYHDR SETUP
+\pagestyle{fancy}
+\fancyhead[EL,OR]{\thepage}
+\fancyhead[ER]{\leftmark}
+\fancyhead[OL]{\rightmark}
+
+\renewcommand{\sectionmark}[1]{
+\markboth{\thesubsection{} #1}{\thesection{} #1}
+}
+\renewcommand{\subsectionmark}[1]{
+\markright{\thesubsection{} #1}
+}
 
 
 % DOKUMENTINFORMATIONEN
@@ -53,6 +69,8 @@
 \date{\today}
 
 \begin{document}
+
+\begin{titlepage}
 
 \maketitle
 
@@ -70,6 +88,8 @@ Assistent: & ASSISTENT
 \noindent
 % Text
 \end{abstract}
+
+\end{titlepage}
 
 % INHALTSVERZEICHNIS
 \tableofcontents
@@ -163,6 +183,13 @@ Damit folgt mit der Halbwertsbreite $\Delta \lambda$ der Maxima des Fabry-Pérot
 \end{align}
 
 
+
+\begin{figure}
+\centering
+\input{./plots/fabry_perot_transmission.tex}
+\caption{UNTERSCHRIFT}
+\label{fig:fabry_transmission}
+\end{figure}
 
 \begin{itemize}
 \item Funktionsprinzip

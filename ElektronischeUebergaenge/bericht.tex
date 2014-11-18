@@ -168,7 +168,13 @@ wobei man den Finesse-Koeffizienten
 \end{align}
 definiert.\footnote{Quelle: Vorlesung Linden}
 
-(Qualitatives Verhalten Bild)
+\begin{figure}[h]
+	\centering
+	\input{./plots/fabry_perot_transmission.tex}
+	\caption{UNTERSCHRIFT}
+	\label{fig:fabry_transmission}
+\end{figure}
+
 Zwei wichtige Kenngrößen des Fabry-Pérot-Etalons sind die Halbwertsbreite des Transmissionsmaximums $\delta \lambda$, sowie der freie Spektralbereich $\Delta \lambda$, welcher als Abstand zweier Transmissionsmaxima definiert ist.
 Mit diesen zwei Größen definiert man die Finesse $\mathcal{F}$ des Etalons\footnote{Quelle!}:
 \begin{align}
@@ -182,22 +188,12 @@ Damit folgt mit der Halbwertsbreite $\Delta \lambda$ der Maxima des Fabry-Pérot
 	A = \frac{\lambda}{\Delta \lambda} = \frac{m \cdot \pi}{1 - r^2} = \mathcal{F} \cdot \frac{m}{r}
 \end{align}
 
-
-
-\begin{figure}
-\centering
-\input{./plots/fabry_perot_transmission.tex}
-\caption{UNTERSCHRIFT}
-\label{fig:fabry_transmission}
-\end{figure}
-
-\begin{itemize}
-\item Funktionsprinzip
-\item Auflösungsvermögen
-\item Finesse
-\end{itemize}
-
 \subsubsection{Natürliche Linienbreite und Linienverbreiterung}
+Aufgrund der Heisenberg'schen Unschärferelation führt die endlichen Lebensdauer $\tau$ angeregter Zustände zu einer Energieunschärfe $\Gamma$ bei der Relaxation des Zustandes.
+Die Energieunschärfe ist gegeben durch:
+\begin{align}
+	\Gamma = \frac{\hbar}{\tau}
+\end{align}
 
 \subsubsection{$\frac{\lambda}{4}$-Platte}
 

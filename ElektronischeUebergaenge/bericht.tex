@@ -111,6 +111,58 @@ l_z&=\si{\planckbar}\mathrm{m}_l
 \end{itemize}
 
 \subsubsection{Fabry-Pérot-Etalon}
+Das Fabry-Pérot-Etalon besteht aus einer transparenten Platte, welche beidseitig von Luft umgeben ist.
+Trifft elektromagnetische Welle unter dem Winkel $\alpha$ auf das Etalon, so wird diese an beiden Grenzfläche gemäß des Reflektionskoeffizienten\footnote{Der Reflektionskoeffizient beschreibt die Änderung der Amplitude der elektromagnetischen Welle bei Reflektion an der Grenzfläche. Das Verhältnis der Intensitäten ist durch den Reflektionsgrad $R = r^2$ gegeben.} $r$ reflektiert und zum Teil transmittiert.
+Dies führt dazu, dass die Welle innerhalb des Etalons sehr oft hin- und her reflektiert wird und es somit auf Transmissionsseite der Platte zur Vielstrahlinterferenz der transmittierten Strahlen kommt.
+Da in diesem Versuch das Fabry-Pérot-Etalon in Transmission betrieben wird, wollen wir uns auf diesen Fall beschränken.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{./figures/fabry_perot.pdf}
+	\caption{Berechnung der optischen Weglänge des Fabry-Pérot-Etalons}
+	\label{fig:fabry_perot}
+\end{figure}
+Um die Bedingung für konstruktive Interferenz zu erhalten, muss zunächst der optische Gangunterschied zwei benachbarter Strahlen berechnet werden.
+Gemäß Abbildung \ref{fig:fabry_perot} ist dieser gegeben durch:
+\begin{align}
+	\Delta s = \frac{2 n d}{\cos(\beta)} - 2 n d \sin(\alpha) \tan(\beta)
+\end{align}
+Mit dem Brechungsgesetz $\sin(\alpha) = n \sin(\beta)$ folgt:
+\begin{align}
+	\Delta s = 2 d \sqrt{n^2 - \sin^2(\alpha)}
+\end{align}
+Damit zwei benachbarte Strahlen nach der Transmission in Phase sind, muss deren Phasendifferenz $\Delta \varphi$ ein ganzzahliges Vielfaches von $2\pi$ sein:
+\begin{align}
+	\Delta \varphi = k \cdot \Delta s = \frac{2\pi}{\lambda} \Delta s = 2 \pi \cdot m \quad \text{für } m \in \mathbb{Z}
+\end{align}
+Damit ist die Bedingung für ein Maximum der Transmission:
+\begin{align}
+	m \lambda = 2 d \sqrt{n^2 - \sin^2(\alpha)}
+\end{align}
+Führt man die Berechnung der Transmission unter Beachtung der Amplituden und Phasen der einzelnen Teilwellen durch, so erhält man für den Transmissionsgrad $T = I_\mathrm{T} / I_0$:
+\begin{align}
+	T = \frac{1}{1 + F \sin^2(\Delta \varphi / 2)}
+\end{align}
+wobei man den Finesse-Koeffizienten
+\begin{align}
+	F = \left( \frac{2 r}{1 - r^2} \right)^2
+\end{align}
+definiert.\footnote{Quelle: Vorlesung Linden}
+
+(Qualitatives Verhalten Bild)
+Zwei wichtige Kenngrößen des Fabry-Pérot-Etalons sind die Halbwertsbreite des Transmissionsmaximums $\delta \lambda$, sowie der freie Spektralbereich $\Delta \lambda$, welcher als Abstand zweier Transmissionsmaxima definiert ist.
+Mit diesen zwei Größen definiert man die Finesse $\mathcal{F}$ des Etalons\footnote{Quelle!}:
+\begin{align}
+	\mathcal{F} = \frac{\Delta \lambda}{\delta \lambda} = \frac{\pi r}{1 - r^2}
+\end{align}
+
+Das Auflösungsvermögen ist definiert als das Verhältnis der Wellenlänge $\lambda$ zur Wellenlängendifferenz von zwei gerade noch auflösbaren Linien.
+Gerade noch auflösbar heißt dabei, dass das Rayleigh-Kriterium erfüllt ist, welches besagt, dass der Abstand der beiden Intensitätsmaxima genau der Halbwertsbreite des Intensitätsverlaufs entspricht.
+Damit folgt mit der Halbwertsbreite $\Delta \lambda$ der Maxima des Fabry-Pérot-Etalons:\footnote{Quelle: HAUER!}
+\begin{align}
+	A = \frac{\lambda}{\Delta \lambda} = \frac{m \cdot \pi}{1 - r^2} = \mathcal{F} \cdot \frac{m}{r}
+\end{align}
+
+
 
 \begin{itemize}
 \item Funktionsprinzip

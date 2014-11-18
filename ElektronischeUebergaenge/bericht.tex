@@ -204,6 +204,25 @@ Die Kombination von natürlicher Linienbreite (Lorentz) und Dopplerverbreiterung
 \subsubsection{$\frac{\lambda}{4}$-Platte}
 
 \subsubsection{Hall-Sonde}
+(Grafik!!!)
+In Hall-Sonden wird der Hall-Effekt ausgenutzt, welcher besagt, dass an einem stromdurchflossenen Leiter im Magnetfeld $B_y$ eine Spannung $U_\mathrm{Hall}$ über den Seitenflächen des Leitermaterials entsteht, die aufgrund der Lorentzkraft auf die bewegten Ladungsträger entsteht.
+Die Ladungsträger werden durch die Lorentzkraft soweit ausgelenkt, bis das durch die Auslenkung entstandene elektrische Feld $E_\mathrm{Hall}$ die Lorentzkraft kompensiert:
+\begin{align}
+	e E_\mathrm{Hall} = e v_x B_y
+	\label{eq:kompensation}
+\end{align}
+Dabei ist die an den Stirnflächen mit Abstand $d$ anliegende Spannung gegeben durch $E_\mathrm{Hall} = U_\mathrm{Hall} / d$, womit aus Gleichung \ref{eq:kompensation} folgt:
+\begin{align}
+	U_\mathrm{Hall} = d v_x B_y
+\end{align}
+Die Geschwindigkeit der Ladungsträger $v_x$ lässt sich nun über die Stromdichte $j_x = e n v_x = I/A$ ausdrücken, wobei $A = d \cdot b$ die Querschnittsfläche des Leiters ist.
+Damit folgt die Hall-Spannung:
+\begin{align}
+	U_\mathrm{Hall} = \frac{I B_y}{b\, n\, e}
+\end{align}
+Somit ist die Hall-Spannung proportional zum Magnetfeld $B_y$ und kann damit zur Messung desselben verwendet werden.
+Praktisch werden, um bei kleinem Strom $I$ große Spannung zu erzielen, Halbleitermaterialien verwendet, da diese eine kleine Ladungsträgerdichte $n$ aufweisen.
+
 
 \subsection{Franck-Hertz-Versuch}
 

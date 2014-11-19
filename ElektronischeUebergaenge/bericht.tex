@@ -46,6 +46,9 @@
 % Seitenlayout (Kopfzeile)
 \usepackage{fancyhdr}
 
+% Float Barriers
+\usepackage{placeins}
+
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
 \setcounter{tocdepth}{2}
@@ -321,14 +324,12 @@ Praktisch werden, um bei kleinem Strom $I$ große Spannung zu erzielen, Halbleit
 Der Franck-Hertz-Versuch wurde um 1914 von James Franck und Gustav Hertz \cite{demtroeder3} durchgeführt und demonstrierte die Wichtigkeit der Energiequantelung bei Stoßprozessen.
 In dem Versuch wird eine mit Quecksilberdampf bei Unterdruck (ca. \SI{e-2}{\milli\bar}) gefüllte Elektronenröhre genutzt, bei der zwischen Kathode und Anode ein Gitter eingebaut ist, und die variable Beschleunigungsspannung $U$ zwischen Kathode und Gitter anliegt.
 Zwischen diesem und der Anode wird eine konstante Gegenspannung $\Delta U$ angelegt.
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{./figures/franck-hertz_aufbau.pdf}
 \caption{Aufbau des Franck-Hertz-Versuches}
 \label{fig:franck-hertz_aufbau}
 \end{figure}
-
 Durch den glühlektrischen Effekt treten an der Kathode bei Anlegen einer hohen Spannung Elektronen aus.
 Dies geschieht dadurch, dass die Elektronen im Draht durch die hohe Spannung angeregt werden und die (vom Material abhängige) Austrittsarbeit überwinden.
 Die Stromdichte der aus einem Metall austretenden Elektronen wird beschrieben durch die \textbf{Richardson-Gleichung} \cite{np_richardson}:
@@ -339,14 +340,12 @@ Dabei ist $T$ die absolute Temperatur, $\mathrm{k_B}$ die Boltzmann-Konstante un
 Die so ausgetretenen Elektronen werden von dem äußeren anliegenden Feld durch die Beschleunigungsspannung zum Gitter hin beschleunigt und erreichen dabei die Energie $eU$.
 Durch die zwischen Gitter und Anode anliegende Gegenspannung werden die Elektronen nach Passieren des Gitters abgebremst und nur solche mit Energien größer als $e\Delta U$ erreichen die Anode.
 Der Aufbau bildet so ein Triodensystem.
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{./figures/franck-hertz_ergebnis.pdf}
 \caption{Anodenstrom beim Franck-Hertz-Versuch mit Quecksilber, aufgetragen gegen die Beschleunigungsspannung; nach Originaldaten von Franck und Hertz. Quelle: \url{http://upload.wikimedia.org/wikipedia/commons/5/50/Franck-Hertz_de.svg} (abgerufen am 14.11.2014)}
 \label{fig:franck-hertz_ergebnis}
 \end{figure}
-
 Bei der Durchführung des Versuches stellte man fest, dass der Anodenstrom sich wie in Abbildung \ref{fig:franck-hertz_ergebnis} verhält.
 Man sieht dabei, dass in Abständen von \SI{4.9}{\volt} (der Wert gilt nur für Quecksilber) der Strom stark einbricht und ab den Minima jeweils einer Diodencharakteristik folgt \cite{demtroeder3}.
 Der Grund dafür ist, dass die Elektronen auf der Beschleunigungsstrecke inelastische Stöße mit den Quecksilberatomen ausführen und diese dadurch anregen.
@@ -382,14 +381,6 @@ In diesem Versuch soll die Übergangsenergie der Resonanzlinien von Quecksilber 
 \item Resonanzabsorption
 \end{itemize}
 
-\section{Versuchsdurchführung}
-
-\subsection{Versuchsbeschreibung}
-
-\subsection{Aufbau}
-
-\subsubsection{Hinweis zu einem der Geräte oder whatever}
-
 \section{Teil 1: Zeemann-Effekt}
 \begin{figure}[h]
 	\centering
@@ -412,26 +403,26 @@ In diesem Versuch soll die Übergangsenergie der Resonanzlinien von Quecksilber 
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1.0\textwidth]{./figures/zeeman_transversal.pdf}
+	\includegraphics[width=0.9\textwidth]{./figures/zeeman_transversal.pdf}
 	\caption{transversal}
 	\label{fig:zeeman_transversal}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1.0\textwidth]{./figures/zeeman_longitudinal.pdf}
+	\includegraphics[width=0.9\textwidth]{./figures/zeeman_longitudinal.pdf}
 	\caption{longitudinal}
 	\label{fig:zeeman_longitudinal}
 \end{figure}
 
-\begin{table}
+\begin{table}[h]
 	\centering
 	\input{./tables/aufloesung_transversal.tex}
 	\caption{Messdaten zur Bestimmung der Auflösung in transversalem Aufbau}
 	\label{tab:aufloesung_transversal}
 \end{table}
 
-\begin{table}
+\begin{table}[h]
 	\centering
 	\input{./tables/aufloesung_longitudinal.tex}
 	\caption{Messdaten zur Bestimmung der Auflösung in longitudinalem Aufbau}
@@ -440,22 +431,42 @@ In diesem Versuch soll die Übergangsenergie der Resonanzlinien von Quecksilber 
 
 \subsection{Diskussion}
 
+% damit ich nicht wahnsinnig werde
+\FloatBarrier
+
 \section{Teil 2: Franck-Hertz-Versuch}
+
+\subsection{Durchführung}
+
+Der Versuch war bereits fertig aufgebaut, so dass lediglich das Cassy-Instrument in Betrieb genommen werden musste.
+Dieses misst einmal die vom Steuergerät der Röhre ausgegebene Beschleunigungsspannung und digitalisiert die am anderen Ausgang liegende Spannung, die intern über einen Widerstand aus dem Anodenstrom gewonnen wird.
+Da $U=R\,I$ gilt und konkrete Werte des Anodenstroms für die Auswertung irrelevant sind, braucht diese Umwandlung nicht weiter berücksichtigt werden.
+
+An dem Gerät, das mit dem Ofen verbunden ist, können diverse Parameter eingestellt werden, unter anderem die für uns relevante Signalform der Beschleunigungsspannung (wir wählen gemäß der Anleitung eine positive Rampe), sowie deren Maximalwert.
+Weiterhin können Temperatur der Röhre eingestellt und aktuelle Temperaturwerte überprüft werden, sowie einige weitere Optionen, die für den Versuch nicht benötigt wurden.
+
+Vor jeder Messung haben wir mit der Option, manuell die Beschleunigungsspannung einzustellen, diese langsam erhöht bis der Effekt des Durchzündens erkennbar war und haben dann für den Maximalwert der Beschleunigungsspannung einen leicht darunter liegenden Wert gewählt, um den Aufbau nicht zu beschädigen.
 
 \subsection{Messdaten}
 
-\begin{figure}[h]
-\centering
-\input{./plots/fh_vartemp.tex}
-\caption{Variable Temperatur bei $\Delta U=\SI{2}{\volt}$ Gegenspannung}
-\label{fig:fh_vartemp}
-\end{figure}
-
+Zunächst führen wir die Messung für verschiedene Gegenspannungen bei konstanter Temperatur durch.
+Für diese wählen wir \SI{160}{\degreeCelsius} und überprüfen vor den Messungen, wie oben angesprochen, dass kein Durchzünden stattfinden kann.
+Darum wählen wir als Maximalwert der positiven Rampe \SI{42}{\kilo\volt} und messen für vier Gegenspannungen zwischen \SI{2}{\volt} und \SI{3.5}{\volt} den Anodenstrom.
+Die Messwerte sind in Abbildung \ref{fig:fh_varvolt} dargestellt.
+Für die Diagramme wählen wir zur Skalierung der y-Achse willkürliche Einheiten, da diese nicht zur Auswertung benötigt werden und durch die im Steuergerät durchgeführte Umwandlung des Stroms in eine von Cassy messbare Spannung der Umrechnungsfaktor nicht bekannt ist.
 \begin{figure}[h]
 \centering
 \input{./plots/fh_varvolt.tex}
 \caption{Variable Gegenspannung bei $T=\SI{160}{\degreeCelsius}$}
 \label{fig:fh_varvolt}
+\end{figure}
+Für die Messung mit variabler Temperatur erhalten wir die in Abbildung \ref{fig:fh_vartemp} dargestellten Ergebnisse.
+Dabei wählten wir als konstante Gegenspannung \SI{2}{\volt} und nutzen wieder willkürliche Einheiten für den gemessenen Anodenstrom.
+\begin{figure}[h]
+\centering
+\input{./plots/fh_vartemp.tex}
+\caption{Variable Temperatur bei $\Delta U=\SI{2}{\volt}$ Gegenspannung}
+\label{fig:fh_vartemp}
 \end{figure}
 
 \subsection{Auswertung}

@@ -63,7 +63,6 @@
 \markright{\thesubsection{} #1}
 }
 
-
 % DOKUMENTINFORMATIONEN
 \title{P401 \\ Elektronische Übergänge in Atomen}
 
@@ -117,11 +116,11 @@ Für $n$ und $l$ gilt $n=1, 2, 3 \dots$ und $l=0, 1, 2 \dots n-1$, wobei die Wer
 Da es nicht möglich ist, zwei Komponenten $L_i, L_j$ des Drehimpulses gleichzeitig zu bestimmen (folgt aus Kommutatorrelation), erhält man bei einer Messung von $|\vec{L}|$ und $L_z$, welche durchgeführt werden kann, eine weitere Quantenzahl $m_l$. Sie beschreibt im Vektormodell anschaulich die Projektion von $\vec{L}$ auf die $z$-Achse.
 Dabei gilt:
 \begin{align*}
-|\vec{L}|&=\si{\planckbar}\sqrt{l(l+1)}\\
-l_z&=\si{\planckbar}\mathrm{m}_l
+|\vec{L}|&=\hbar\sqrt{l(l+1)}\\
+l_z&=\hbar\mathrm{m}_l
 \end{align*}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=0.4\textwidth]{./figures/termschema_cadmium.pdf}
 \caption{Übergang von $^1$D$_2$ nach $^1$P$_1$ in der fünften Schale in Cadmium}
@@ -153,7 +152,7 @@ Wählt man $\vec{B} = (0,0,B_z)$ und dementsprechend die z-Achse als Quantisieru
 Somit wird für feste Drehimpulsquantenzahl $\ell$ die Entartung des zugehörigen Energieniveaus aufgehoben, da sich dieses in $(2\ell + 1)$ Niveaus aufspaltet.
 
 Im Gegensatz dazu wird beim anomalen Zeeman-Effekt das magnetische Moment aufgrund des Elektronenspins beachtet.
-Dies führt dazu, dass magnetische Moment des Elektrons gegeben ist durch:
+Dies führt dazu, dass das magnetische Moment des Elektrons gegeben ist durch:
 \begin{align}
 \vec{\mu} = -\frac{\mu_\mathrm{B}}{\hbar} \left( \vec{l} + g_s \vec{s} \right)
 \end{align}
@@ -391,7 +390,18 @@ In diesem Versuch soll die Übergangsenergie der Resonanzlinien von Quecksilber 
 
 \subsubsection{Hinweis zu einem der Geräte oder whatever}
 
-\section{Messdaten}
+\section{Teil 1: Zeemann-Effekt}
+
+\subsection{Messdaten}
+
+\begin{figure}[h]
+\centering
+\input{./plots/kalibrierung1.tex}
+\caption{Erster Durchgang kalibrierung}
+\label{fig:kalibrierung1}
+\end{figure}
+
+\subsection{Auswertung}
 
 \begin{figure}[h]
 	\centering
@@ -421,11 +431,29 @@ In diesem Versuch soll die Übergangsenergie der Resonanzlinien von Quecksilber 
 	\label{tab:aufloesung_longitudinal}
 \end{table}
 
-\section{Auswertung}
+\subsection{Diskussion}
 
-\section{Diskussion}
+\section{Teil 2: Franck-Hertz-Versuch}
 
-\section{Zusammenfassung}
+\subsection{Messdaten}
+
+\begin{figure}[h]
+\centering
+\input{./plots/fh_vartemp.tex}
+\caption{Variable Temperatur bei $\Delta U=\SI{2}{\volt}$ Gegenspannung}
+\label{fig:fh_vartemp}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\input{./plots/fh_varvolt.tex}
+\caption{Variable Gegenspannung bei $T=\SI{160}{\degreeCelsius}$}
+\label{fig:fh_varvolt}
+\end{figure}
+
+\subsection{Auswertung}
+
+\subsection{Diskussion}
 
 % BIBLIOGRAPHIE
 

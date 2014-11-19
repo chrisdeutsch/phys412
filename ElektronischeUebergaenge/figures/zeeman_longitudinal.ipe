@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.5">
-<info created="D:20141119173324" modified="D:20141119182117"/>
+<info created="D:20141119173324" modified="D:20141119182647"/>
 <preamble>% Encoding für Umlaute
 \usepackage[utf8]{inputenc}
 
@@ -373,7 +373,7 @@ h
 <path matrix="1 0 0 1 0 -176" stroke="red">
 54 0 0 54 416 608 e
 </path>
-<text transformations="translations" pos="184 316" stroke="black" type="minipage" width="304" height="19.139" depth="14.18" valign="top" style="center">c,d) Die Polarisatorwinkel $\alpha_\mathrm{Pol.}$ wurden relativ zur Einstellung der $\lambda/4$-Platte gemessen.
+<text matrix="1 0 0 1 0 -8" transformations="translations" pos="184 316" stroke="black" type="minipage" width="304" height="19.139" depth="14.18" valign="top" style="center">c,d) Die Polarisatorwinkel $\alpha_\mathrm{Pol.}$ wurden relativ zur Einstellung der $\lambda/4$-Platte gemessen.
 Die gepunktete Linie der $\pi$-Komponente hat geringe Intensität ist aber noch zu erkennen.</text>
 </page>
 </ipe>

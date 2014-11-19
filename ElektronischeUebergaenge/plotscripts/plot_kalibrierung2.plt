@@ -2,7 +2,7 @@ reset
 
 set term epslatex color size 5,4
 
-set output './plots/kalibrierung1.tex'
+set output './plots/kalibrierung2.tex'
 
 set title ''
 
@@ -16,8 +16,8 @@ set ylabel 'Magnetfeld $B$ im Luftspalt / \si{\milli\tesla}'
 set grid
 
 f(x)= a*x**3 + b*x**2 + c*x + d
-fit f(x) './messwerte/kalibrierung1.txt' using 1:2:(10) via a, b, c, d
+fit f(x) './messwerte/kalibrierung2.txt' using 1:2:(10) via a, b, c, d
 
-plot './messwerte/kalibrierung1.txt' using 1:2:(0.01):(10) with xyerrorbars t'Messwerte', f(x) t'Fitfunktion'
+plot './messwerte/kalibrierung2.txt' using 1:2:(0.01):(10) with xyerrorbars t'Messwerte', f(x) t'Fitfunktion'
 
 unset output

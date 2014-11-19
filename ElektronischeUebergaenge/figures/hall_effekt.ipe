@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.5">
-<info created="D:20141118205217" modified="D:20141118205219"/>
+<info created="D:20141118205217" modified="D:20141119142919"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -336,27 +336,27 @@ h
 </path>
 <text matrix="1 0 0 1 8 56" transformations="translations" pos="388 580" stroke="black" type="label" width="5.185" height="6.918" depth="0" valign="baseline">$d$</text>
 <text matrix="1 0 0 1 -24 -48" transformations="translations" pos="404 636" stroke="black" type="label" width="4.276" height="6.918" depth="0" valign="baseline">$b$</text>
-<path matrix="1 0 0 1 16 0" stroke="black" rarrow="normal/normal">
+<path matrix="1 0 0 1 16 0" stroke="black">
 264 584 m
 288 608 l
 </path>
-<path matrix="1 0 0 1 16 0" stroke="black" dash="dashed">
+<path matrix="1 0 0 1 16 0" stroke="black" dash="dashed" arrow="normal/normal">
 288 608 m
 344 664 l
 </path>
-<path stroke="black" rarrow="normal/normal">
+<path stroke="black">
 264 584 m
 288 608 l
 </path>
-<path stroke="black" dash="dashed">
+<path stroke="black" dash="dashed" arrow="normal/normal">
 288 608 m
 344 664 l
 </path>
-<path matrix="1 0 0 1 -16 0" stroke="black" rarrow="normal/normal">
+<path matrix="1 0 0 1 -16 0" stroke="black">
 264 584 m
 288 608 l
 </path>
-<path matrix="1 0 0 1 -16 0" stroke="black" dash="dashed">
+<path matrix="1 0 0 1 -16 0" stroke="black" dash="dashed" arrow="normal/normal">
 288 608 m
 344 664 l
 </path>

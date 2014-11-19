@@ -10,6 +10,9 @@
 % erweiterte Matheumgebungen
 \usepackage{amsmath}
 
+% Braket Notation
+\usepackage{braket}
+
 % zusätzliche mathematische Schriftarten
 \usepackage{amsfonts}
 
@@ -102,7 +105,7 @@ Assistent: & ASSISTENT
 
 \subsection{Zeeman-Effekt}
 
-Der Zeeman-Effekt beschreibt die Aufspaltung entarteter Energien unter Einfluss eines äußeren Magnetfeldes.
+Der Zeeman-Effekt beschreibt die Aufspaltung entarteter Energieniveaus unter Einfluss eines äußeren Magnetfeldes.
 In diesem Versuch wollen wir uns dabei auf den normalen Zeeman-Effekt beschränken; dieser gilt für Atome, deren Gesamtspin gleich $0$ ist und so nur Drehimpulse $\vec{L}$ zum Gesamtdrehimpuls $\vec{J}=\vec{L}+\vec{S}$ beitragen.
 
 \subsubsection{Verhalten von Atomen in äußeren Feldern}
@@ -125,10 +128,73 @@ l_z&=\si{\planckbar}\mathrm{m}_l
 \label{fig:termschema_cadmium}
 \end{figure}
 
+Herleitung:
+Ein Elektron im Atom habe den Bahndrehimpuls $\vec{\ell}$, welches im klassischen Bild einem Kreisstrom entspricht.
+Dieser führt zu einem magnetischen Dipolmoment, welches gegeben ist durch:
+\begin{align}
+	\vec{\mu}_\ell = - \frac{\mu_\mathrm{B}}{\hbar} \vec{\ell}
+\end{align}
+wobei das Bohr'sche Magneton definiert ist als:
+\begin{align}
+	\mu_\mathrm{B} = \frac{e \hbar}{2 m_e}
+\end{align}
+Die potentielle Energie eines magnetischen Dipols im externen magnetischen Feld $B$ ist gegeben durch:
+\begin{align}
+	E_\mathrm{pot} = - \vec{\mu} \cdot \vec{B}
+\end{align}
+Damit kommt es zu einer Energieverschiebung $\Delta E$ der Niveaus aufgrund der potentiellen Energie des Dipols im Magnetfeld:
+\begin{align}
+	\Delta E = \frac{\mu_\mathrm{B}}{\hbar} \left( \vec{\ell} \cdot \vec{B} \right)
+\end{align}
+Wählt man $\vec{B} = (0,0,B_z)$ und dementsprechend die z-Achse als Quantisierungsachse des Drehimpulses, so folgt $\ell_z = \hbar m_\ell$ aus der magnetischen Quantenzahl $m_\ell$ und die Energieverschiebung ergibt sich zu:
+\begin{align}
+	\Delta E = \mu_\mathrm{B} m_\ell B_z
+\end{align}
+Somit wird für feste Drehimpulsquantenzahl $\ell$ die Entartung des zugehörigen Energieniveaus aufgehoben, da sich dieses in $(2\ell + 1)$ Niveaus aufspaltet.
+
+Im Gegensatz dazu wird beim anomalen Zeeman-Effekt das magnetische Moment aufgrund des Elektronenspins beachtet.
+Dies führt dazu, dass magnetische Moment des Elektrons gegeben ist durch:
+\begin{align}
+\vec{\mu} = -\frac{\mu_\mathrm{B}}{\hbar} \left( \vec{l} + g_s \vec{s} \right)
+\end{align}
+Zur Beschreibung der Energieverschiebung ist hier die Kopplung von Spin und Bahndrehimpuls $\vec{j} = \vec{\ell} + \vec{s}$ nötig.
+Da $g_s \approx 2$ ist, ist das magnetische Moment des Elektrons nicht parallel zum Gesamtdrehimpuls $\vec{j}$ und präzediert um diesen.
+Daher muss ein effektives magnetisches Moment als Projektion von $\vec{\mu}$ auf $\vec{j}$ berechnet werden, was zu dem effektiven Moment:
+\begin{align}
+	\vec{\mu}_\mathrm{eff} = - g_j \frac{\mu_\mathrm{B}}{\hbar} \vec{j} 
+\end{align}
+führt.
+Dabei ist der sogenannte Landé-Faktor $g_j$ abhängig von den Quantenzahlen $l,s,j$ des Zustandes.
+Damit folgt analog zum normalen Zeeman-Effekt:
+\begin{align}
+	\Delta E = \mu_\mathrm{B} g_j m_j B_z
+\end{align}
+
+
+\subsubsection{Auswahlregeln}
+Die Auswahlregeln für elektrische Dipolübergänge erhält man durch Berechnung der Übergangswahrscheinlichkeit vom Zustand $|i\rangle$ in den Endzustand $|f\rangle$ durch Fermi's Goldene Regel:
+\begin{align}
+	\lambda_{i\rightarrow f} = \frac{2 \pi}{\hbar} | \braket{f|H^\prime|i} |^2 \rho(E_\mathrm{f})
+\end{align}
+Dabei ist der Störhamiltonian $H^\prime$ gegeben durch die Störung der Energie aufgrund der Kopplung von einem externen elektrischen Feld $\vec{E}$ an das elektrische Dipolmoment $\vec{p}$ des Zustandes:
+\begin{align}
+	H^\prime = - \vec{p} \cdot \vec{E}
+\end{align}
+Kennzeichnend dafür, ob ein Übergang erlaubt ist, ist das jeweilige Matrixelement des Störhamiltonians.
+Somit erhält man die Auswahlregeln aus den nicht verschwindenden Matrixelementen:
 \begin{itemize}
-\item Zeeman Effekt
-\item Niveauaufspaltung, Auswahlregeln und Übergänge von Cadmium
+	\item $\Delta n$ beliebig
+	\item $\Delta \ell = \pm 1$ \quad (Drehimpulserhaltung mit $s_\mathrm{Photon} = \pm \hbar$)
+	\item $\Delta s = 0$ \quad (reine Spin-Flips sind nicht möglich)
+	\item $\Delta j = 0, \pm 1$, außer $j_i=0 \rightarrow j_f=0$
+	\item $\Delta m_j = 0, \pm 1$
 \end{itemize}
+($n$: Hauptquantenzahl, $\ell$: Drehimpulsquantenzahl, $s$: Spinquantenzahl, $j$: Gesamtdrehimpulsquantenzahl, $m_j$: magnetische Quantenzahl)
+
+Mit diesen Auswahlregeln folgen die Übergänge für Cadmium aus Abbildung \ref{fig:termschema_cadmium}.
+Anzumerken ist, dass es sich dabei um den normalen Zeeman-Effekt handelt und dadurch die Aufspaltung der P-Schale ($\ell = 1$) den gleichen Abstand hat, wie die der D-Schale ($\ell = 2$).
+Dadurch kommt es hier zu insgesamt drei Übergängen, mit unterschiedlichen Energien.
+Im Vergleich dazu, liefert der anormaler Zeeman-Effekt mehrere Übergänge mit unterschiedlicher Energie, da sich die Energie aufgrund der Abhängigkeit vom Landé-Faktor in den jeweiligen Schalen nicht äquidistant aufspalten.
 
 \subsubsection{Fabry-Pérot-Etalon}
 Das Fabry-Pérot-Etalon besteht aus einer transparenten Platte, welche beidseitig von Luft umgeben ist.

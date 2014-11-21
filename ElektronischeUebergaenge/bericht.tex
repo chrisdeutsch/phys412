@@ -250,14 +250,14 @@ definiert.\footnote{Quelle: Vorlesung Linden}
 Zwei wichtige Kenngrößen des Fabry-Pérot-Etalons sind die Halbwertsbreite des Transmissionsmaximums $\delta \lambda$, sowie der freie Spektralbereich $\Delta \lambda$, welcher als Abstand zweier Transmissionsmaxima definiert ist.
 Mit diesen zwei Größen definiert man die Finesse $\mathcal{F}$ des Etalons\footnote{Quelle!}:
 \begin{align}
-	\mathcal{F} = \frac{\Delta \lambda}{\delta \lambda} = \frac{\pi r}{1 - r^2}
+	\mathcal{F} = \frac{\Delta \lambda}{\delta \lambda} = \frac{\pi \sqrt{F}}{2} = \frac{\pi r}{1 - r^2}
 \end{align}
 
 Das Auflösungsvermögen ist definiert als das Verhältnis der Wellenlänge $\lambda$ zur Wellenlängendifferenz von zwei gerade noch auflösbaren Linien.
 Gerade noch auflösbar heißt dabei, dass das Rayleigh-Kriterium erfüllt ist, welches besagt, dass der Abstand der beiden Intensitätsmaxima genau der Halbwertsbreite des Intensitätsverlaufs entspricht.
-Damit folgt mit der Halbwertsbreite $\delta \lambda$ der Maxima des Fabry-Pérot-Etalons:\footnote{Quelle: HAUER!}
+Damit folgt mit der Halbwertsbreite $\delta \lambda$ der Maxima des Fabry-Pérot-Etalons:\footnote{Quelle: Hecht}
 \begin{align}
-	A = \frac{\lambda}{\delta \lambda} = \frac{m \cdot \pi}{1 - r^2} = \mathcal{F} \cdot \frac{m}{r}
+	\mathcal{R} = \frac{\lambda}{\delta \lambda} = \mathcal{F} \cdot m
 \end{align}
 
 \subsubsection{Natürliche Linienbreite und Linienverbreiterung}
@@ -382,12 +382,38 @@ In diesem Versuch soll die Übergangsenergie der Resonanzlinien von Quecksilber 
 \end{itemize}
 
 \section{Teil 1: Zeemann-Effekt}
+Hier kurze Einführung (was wird gemacht)
+
+\subsection{Versuchsdurchführung}
+
+\subsubsection{Versuchsaufbau und Justage}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{./figures/aufbau_zeeman.pdf}
-	\caption{Aufbau Zeeman. LD Didactic}
+	\caption{Aufbau Zeeman transversal. LD Didactic. \textbf{a}) Cadmiumlampe \textbf{b}) Klammern \textbf{c}) Polschuhe \textbf{d}) Kondensor $f=\SI{150}{\milli\metre}$ \textbf{e}) Fabry-Pérot-Etalon \textbf{f}) Abbildungslinse $f=\SI{150}{\milli\metre}$ \textbf{g}) Interferenzfilter \textbf{h}) Okular }
 	\label{fig:aufbau_zeeman}
 \end{figure}
+
+Zur Beobachtung der Energieaufspaltung des Zeeman-Effekts bauen wir die Apperatur wie in Abbildung \ref{fig:aufbau_zeeman} auf.
+Dazu führen wir zunächst die Cadmium-Lampe zwischen die Polschuhe, welche mit dem Kern der beiden Magnetspulen verbunden sind.
+Dabei achten wir darauf, dass die Verbindung der Lampe mit dem Netzgerät, sowie die Abschmelzstelle des Lampenkolbens nicht im Strahlengang liegt.
+(Knebelschrauben erwähnen?)
+
+Nun bauen wir die optischen Elemente (\textbf{d} -- \textbf{h}) ein.
+Zur Justage der Apperatur halten wir vor das Fabry-Pérot-Etalon ein Blatt Papier und stellen die Kondensorlinse so ein, dass das Etalon komplett ausgeleuchtet wird.
+Direkt vor das Okular mit Strichskala stellen wir den Interferenzfilter mit Mittelwellenlänge $\lambda = \SI{643,8 +- 2}{\nano\metre}$ um das sichtbare Raumlicht zu minimieren.
+Anschließend stellen wir die Abbildungslinse (\textbf{f}) so ein, dass das Etalon scharf durch das Okular abgebildet wird.
+Da das Zentrum des Ringsystems nicht mit der Strichskala des Okulars übereinstimmt, kippen wir das Fabry-Pérot-Etalon mit den daran angebrachten Stellschrauben bis dies der Fall ist.
+
+\subsubsection{Beobachtung der Aufspaltung in transversaler Konfiguration}
+
+\subsubsection{Beobachtung der Aufspaltung in longitudinaler Konfiguration}
+
+
+
+
+\subsubsection{Messung des Zeeman-Effekts}
+
 
 
 \subsection{Messdaten}
@@ -435,6 +461,7 @@ In diesem Versuch soll die Übergangsenergie der Resonanzlinien von Quecksilber 
 \FloatBarrier
 
 \section{Teil 2: Franck-Hertz-Versuch}
+Hier kurze Einführung (was wird gemacht)
 
 \subsection{Durchführung}
 

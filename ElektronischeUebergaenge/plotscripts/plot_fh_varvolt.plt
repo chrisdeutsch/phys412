@@ -17,8 +17,8 @@ set ylabel 'Anodenstrom $I$ / w.E.'
 
 set grid
 
-load './../../gnuplot-colorbrewer/qualitative/Set1.plt'
+load './../gnuplot_linestyles.plt'
 
-plot './messwerte/variable gegenspannung/2V.txt' using 1:2 with lines t'$\Delta U=\SI{2.0}{\volt}$' lc 1 lt 1 lw 2, './messwerte/variable gegenspannung/2-5V.txt' using 1:2 with lines t'$\Delta U=\SI{2.5}{\volt}$'  lc 2 lt 1 lw 2, './messwerte/variable gegenspannung/3V.txt' using 1:2 with lines t'$\Delta U=\SI{3.0}{\volt}$' lc 3 lt 1 lw 2, './messwerte/variable gegenspannung/3-5V.txt' using 1:2 with lines t'$\Delta U=\SI{3.5}{\volt}$' lc 4 lt 1 lw 2 #,'./messwerte/variable gegenspannung/5V.txt' using 1:2 with lines t'$\Delta U=\SI{5.0}{\volt}$' lc 5 lt 1 lw 2
+plot './messwerte/variable gegenspannung/2V.txt' using 1:2 with lines t'$\Delta U=\SI{2.0}{\volt}$' ls 1 lw 2, './messwerte/variable gegenspannung/2-5V.txt' using 1:2 with lines t'$\Delta U=\SI{2.5}{\volt}$'  ls 2 lw 2, './messwerte/variable gegenspannung/3V.txt' using 1:2 with lines t'$\Delta U=\SI{3.0}{\volt}$' ls 3 lw 2, './messwerte/variable gegenspannung/3-5V.txt' using 1:2 with lines t'$\Delta U=\SI{3.5}{\volt}$' ls 4 lw 2 #,'./messwerte/variable gegenspannung/5V.txt' using 1:2 with lines t'$\Delta U=\SI{5.0}{\volt}$' ls 5 lw 2
 
 unset output

@@ -32,6 +32,7 @@ load './../gnuplot_linestyles.plt'
 plot 	'./messwerte/bestimmung_magneton.txt' using 1:(-$2):3 with yerrorbars ls 1 t'E-',\
     './messwerte/bestimmung_magneton.txt' using 1:4:5 with yerrorbars ls 2 t'E+',\
     f(x) ls 1 lw 2 t'E-',\
-    g(x) ls 2 lw 2 t'E+'
+    g(x) ls 2 lw 2 t'E+',\
+    5.78838e-8 * x ls 3 lw 2 t'Literatur'
 
 unset output

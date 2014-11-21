@@ -15,9 +15,9 @@ set ylabel 'Magnetfeld $B$ im Luftspalt / \si{\milli\tesla}'
 
 set grid
 
-f(x)= a*x**3 + b*x**2 + c*x + d
-fit f(x) './messwerte/kalibrierung1.txt' using 1:2:(10) via a, b, c, d
+f(x)= a*x**3 + b*x**2 + c*x
+fit f(x) './messwerte/kalibrierung1.txt' using 1:2:(5) via a, b, c
 
-plot './messwerte/kalibrierung1.txt' using 1:2:(0.01):(10) with xyerrorbars t'Messwerte', f(x) t'Fitfunktion'
+plot './messwerte/kalibrierung1.txt' using 1:2:(0.01):(5) with xyerrorbars t'Messwerte', f(x) t'Fitfunktion'
 
 unset output

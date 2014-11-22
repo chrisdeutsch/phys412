@@ -1,6 +1,6 @@
 reset
 
-set term epslatex color size 5,4
+set term epslatex color size 5,3.5
 
 set output './plots/fh_varvolt.tex'
 

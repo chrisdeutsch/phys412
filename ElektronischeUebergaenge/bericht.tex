@@ -382,7 +382,7 @@ In diesem Versuch soll die Übergangsenergie der Resonanzlinien von Quecksilber 
 \item Resonanzabsorption
 \end{itemize}
 
-\section{Teil 1: Zeemann-Effekt}
+\section{Zeemann-Effekt}
 Hier kurze Einführung (was wird gemacht)
 
 \subsection{Versuchsdurchführung}
@@ -540,7 +540,7 @@ Da die Energieaufspaltung gegeben ist durch:
 % damit ich nicht wahnsinnig werde
 \FloatBarrier
 
-\section{Teil 2: Franck-Hertz-Versuch}
+\section{Franck-Hertz-Versuch}
 Hier kurze Einführung (was wird gemacht)
 
 \subsection{Durchführung}
@@ -552,7 +552,7 @@ Da $U=R\,I$ gilt und konkrete Werte des Anodenstroms für die Auswertung irrelev
 An dem Gerät, das mit dem Ofen verbunden ist, können diverse Parameter eingestellt werden, unter anderem die für uns relevante Signalform der Beschleunigungsspannung (wir wählen gemäß der Anleitung eine positive Rampe), sowie deren Maximalwert.
 Weiterhin können Temperatur der Röhre eingestellt und aktuelle Temperaturwerte überprüft werden, sowie einige weitere Optionen, die für den Versuch nicht benötigt wurden.
 
-Vor jeder Messung haben wir mit der Option, manuell die Beschleunigungsspannung einzustellen, diese langsam erhöht bis der Effekt des Durchzündens erkennbar war und haben dann für den Maximalwert der Beschleunigungsspannung einen leicht darunter liegenden Wert gewählt, um den Aufbau nicht zu beschädigen.
+Vor jeder Messung haben wir mit der Option, manuell die Beschleunigungsspannung einzustellen, diese langsam erhöht bis der Effekt des Durchzündens erkennbar war und haben für den Maximalwert der Beschleunigungsspannung einen leicht darunter liegenden Wert gewählt, um den Aufbau nicht zu beschädigen.
 
 \subsection{Messdaten}
 
@@ -561,15 +561,15 @@ Für diese wählen wir \SI{160}{\degreeCelsius} und überprüfen vor den Messung
 Darum wählen wir als Maximalwert der positiven Rampe \SI{42}{\kilo\volt} und messen für vier Gegenspannungen zwischen \SI{2}{\volt} und \SI{3.5}{\volt} den Anodenstrom.
 Die Messwerte sind in Abbildung \ref{fig:fh_varvolt} dargestellt.
 Für die Diagramme wählen wir zur Skalierung der y-Achse willkürliche Einheiten, da diese nicht zur Auswertung benötigt werden und durch die im Steuergerät durchgeführte Umwandlung des Stroms in eine von Cassy messbare Spannung der Umrechnungsfaktor nicht bekannt ist.
-\begin{figure}[h]
+\begin{figure}[!h]
 \centering
 \input{./plots/fh_varvolt.tex}
 \caption{Variable Gegenspannung bei $T=\SI{160}{\degreeCelsius}$}
 \label{fig:fh_varvolt}
 \end{figure}
 Für die Messung mit variabler Temperatur erhalten wir die in Abbildung \ref{fig:fh_vartemp} dargestellten Ergebnisse.
-Dabei wählten wir als konstante Gegenspannung \SI{2}{\volt} und nutzen wieder willkürliche Einheiten für den gemessenen Anodenstrom.
-\begin{figure}[h]
+Dabei wählten wir als konstante Gegenspannung \SI{2}{\volt} und nutzen abermals willkürliche Einheiten für den gemessenen Anodenstrom.
+\begin{figure}[!h]
 \centering
 \input{./plots/fh_vartemp.tex}
 \caption{Variable Temperatur bei $\Delta U=\SI{2}{\volt}$ Gegenspannung}
@@ -586,11 +586,11 @@ Als Fithypothese wählen wir dabei
 \mathcal{G}_i(x)=A\,\exp\left[-\frac{1}{2}\left(\frac{x-S_i}{b}\right)^2\right] + c
 \end{align*}
 mit dem Peakschwerpunkt $S_i$, den wir zur Auswertung benötigen.
-Wir lassen die Parameter nun an jeweils 4 Maxima pro Datensatz anpassen, wobei wir die Maxima mit $i$ von links nach rechts durchnummerieren, beginnend bei dem Maximum zwischen \SI{15}{\kilo\volt} und \SI{20}{\kilo\volt}, da das davor liegende Maximum in keinem Fall gut gefittet werden kann.
+Wir lassen die Parameter nun an jeweils 4 Maxima pro Datensatz anpassen, wobei wir die Maxima mit $i$ von links nach rechts durchnummerieren, beginnend bei dem Maximum zwischen \SI{15}{\kilo\volt} und \SI{20}{\kilo\volt}, da das davor liegende Maximum besonders für hohe Gegenspannungen und hohe Temperaturen nicht gut gefittet werden kann.
 Die Ergebnisse für die Schwerpunkte $S_i$ sind in Tabelle \ref{tab:fh_schwerpunkte} dargestellt, sowie bereits die Mittelwerte und deren (über die Standardabweichung bestimmten) Fehler für jeden Datensatz.
 Nun mitteln wir diese Werte erneut, um einen Gesamtwert für den Energieabstand $\Delta E$ zu erhalten.
 \begin{align*}
-\Delta E = \SI{4.922+-0.027}{\electronvolt}
+\Delta E = \SI{4.922+-0.021}{\electronvolt}
 \end{align*}
 
 \begin{table}[h]
@@ -601,7 +601,29 @@ Nun mitteln wir diese Werte erneut, um einen Gesamtwert für den Energieabstand 
 \label{tab:fh_schwerpunkte}
 \end{table}
 
+Um diesen Wert zu verstehen, muss man das Termschema und den Wirkungsquerschnitt bei Elektronenstoßanregung von Quecksilber betrachten.
+In der Grafik zu letzterem sieht man vier Wirkungsquerschnitte für verschiedene Übergänge im Quecksilber in Abhängigkeit von den stoßenden Elektronen.
+Da Linie 4 erst knapp unter \SI{20}{\electronvolt} ihr Maximum hat, Stöße offensichtlich aber auch schon bei geringen Energien stattfinden, werden wir diese nicht weiter beachten.
+Genauso ignorieren wir Linie 1, da der maximale Wirkungsquerschnitt hier sehr gering ist im Vergleich zu den anderen in Betracht kommenden Linien 2 und 3.
+
+Wir betrachten zur weiteren Auswertung darum nur noch die Linien 2 und 3, wobei wir davon ausgehen können, dass der Wirkungsquerschnitt von Linie 2 ausreicht, um Stöße der Elektronen mit den Quecksilberatomen auszulösen.
+Ein Argument für diese Annahme ist, dass die Linie bei geringeren Energien als Linie 3 sowohl beginnt, als auch ihr Maximum erreicht.
+Die Linie 2 korrespondiert mit dem Übergang $6^1$S$_0\rightarrow6^3$P$_1$, so dass dieser am häufigsten stattfinden wird.
+Dennoch können einige Elektronen bei dieser Energie keine Stöße ausführen und werden weiter beschleunigt, so dass diese erst gemäß Linie 3 Stöße ausführen können.
+Darum wird der Übergang $6^1$S$_0\rightarrow6^3$P$_2$ in den Messwerten auch zu finden sein.
+
+Zusammen mit dem Termschema, mit dem der Linie 2 die Energie \SI{4.89}{\electronvolt} und Linie 3 die Energie \SI{5.46}{\electronvolt} zugeordnet werden kann, erklärt sich damit die gefundene Energiedifferenz von $\Delta E = \SI{4.922+-0.021}{\electronvolt}$.
+Diese liegt knapp über dem Wert von \SI{4.89}{\electronvolt}, da nebem diesem Übergang in Quecksilber auch einer mit \SI{5.46}{\electronvolt} stattfindet, allerdings deutlich seltener.
+
+EVTL BERECHNNG WIE HAUER feat. DIETER
+
+\subsubsection{Abhängigkeit des Anodenstroms von der Gegenspannung bzw. Temperatur}
+
+
+
 \subsection{Diskussion}
+
+\FloatBarrier
 
 % BIBLIOGRAPHIE
 
@@ -623,49 +645,12 @@ Nun mitteln wir diese Werte erneut, um einen Gesamtwert für den Energieabstand 
 	3. Auflage
 \end{thebibliography}
 
+\newpage
+
 % APPENDIX
 \begin{appendix}
-\newpage
 \section{Darstellung der Aufspaltung beim Zeeman-Effekt}
 
-\begin{figure}[h]
-\centering
-\input{./plots/zeemann_aufspaltung/b4.tex}
-\caption{4 A}
-\label{fig:gauss1}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\input{./plots/zeemann_aufspaltung/b4-5.tex}
-\caption{4.5 A}
-\label{fig:gauss2}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\input{./plots/zeemann_aufspaltung/b5.tex}
-\caption{5A}
-\label{fig:gauss3}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\input{./plots/zeemann_aufspaltung/b5-5.tex}
-\caption{5.5A}
-\label{fig:gauss4}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\input{./plots/zeemann_aufspaltung/b6.tex}
-\caption{6A}
-\label{fig:gauss5}
-\end{figure}
-
-<<<<<<< HEAD
-\section{Gaußfits}
-\FloatBarrier
 
 \begin{figure}[h]
 	\centering
@@ -746,49 +731,7 @@ Nun mitteln wir diese Werte erneut, um einen Gesamtwert für den Energieabstand 
 
 \FloatBarrier
 
-=======
-\begin{figure}[h]
-\centering
-\input{./plots/zeemann_aufspaltung/b6-5.tex}
-\caption{6.5A}
-\label{fig:gauss6}
-\end{figure}
 
-\begin{figure}[h]
-\centering
-\input{./plots/zeemann_aufspaltung/b7.tex}
-\caption{7 A}
-\label{fig:gauss7}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\input{./plots/zeemann_aufspaltung/b7-5.tex}
-\caption{7.5A}
-\label{fig:gauss8}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\input{./plots/zeemann_aufspaltung/b8.tex}
-\caption{8A}
-\label{fig:gauss9}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\input{./plots/zeemann_aufspaltung/b8-5.tex}
-\caption{8.5A}
-\label{fig:gauss10}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\input{./plots/zeemann_aufspaltung/b8-9.tex}
-\caption{8.9A}
-\label{fig:gauss11}
-\end{figure}
->>>>>>> d82d78ce28c8d1d4cbd2e5e1756e94d7f0579840
 \end{appendix}
 
 \end{document}

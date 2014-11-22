@@ -608,10 +608,10 @@ mit dem Peakschwerpunkt $S_i$, den wir zur Auswertung benötigen.
 Wir lassen die Parameter nun an jeweils 4 Maxima pro Datensatz anpassen, wobei wir die Maxima mit $i$ von links nach rechts durchnummerieren, beginnend bei dem Maximum zwischen \SI{15}{\kilo\volt} und \SI{20}{\kilo\volt}, da das davor liegende Maximum besonders für hohe Gegenspannungen und hohe Temperaturen nicht gut gefittet werden kann.
 Die Ergebnisse für die Schwerpunkte $S_i$ sind in Tabelle \ref{tab:fh_schwerpunkte} dargestellt, sowie bereits die Mittelwerte und deren (über die Standardabweichung bestimmten) Fehler für jeden Datensatz.
 Nun mitteln wir diese Werte erneut, um einen Gesamtwert für den Energieabstand $\Delta E$ zu erhalten.
+Wir finden so:
 \begin{align*}
 \Delta E = \SI{4.922+-0.021}{\electronvolt}
 \end{align*}
-
 \begin{table}[h]
 \centering
 \resizebox{\columnwidth}{!}{%
@@ -619,7 +619,6 @@ Nun mitteln wir diese Werte erneut, um einen Gesamtwert für den Energieabstand 
 \caption{Messwerte der Peakschwerpunkte}
 \label{tab:fh_schwerpunkte}
 \end{table}
-
 Um diesen Wert zu verstehen, muss man das Termschema und den Wirkungsquerschnitt bei Elektronenstoßanregung von Quecksilber betrachten.
 In der Grafik zu letzterem sieht man vier Wirkungsquerschnitte für verschiedene Übergänge im Quecksilber in Abhängigkeit von den stoßenden Elektronen.
 Da Linie 4 erst knapp unter \SI{20}{\electronvolt} ihr Maximum hat, Stöße offensichtlich aber auch schon bei geringen Energien stattfinden, werden wir diese nicht weiter beachten.
@@ -628,7 +627,7 @@ Genauso ignorieren wir Linie 1, da der maximale Wirkungsquerschnitt hier sehr ge
 Wir betrachten zur weiteren Auswertung darum nur noch die Linien 2 und 3, wobei wir davon ausgehen können, dass der Wirkungsquerschnitt von Linie 2 ausreicht, um Stöße der Elektronen mit den Quecksilberatomen auszulösen.
 Ein Argument für diese Annahme ist, dass die Linie bei geringeren Energien als Linie 3 sowohl beginnt, als auch ihr Maximum erreicht.
 Die Linie 2 korrespondiert mit dem Übergang $6^1$S$_0\rightarrow6^3$P$_1$, so dass dieser am häufigsten stattfinden wird.
-Dennoch können einige Elektronen bei dieser Energie keine Stöße ausführen und werden weiter beschleunigt, so dass diese erst gemäß Linie 3 Stöße ausführen können.
+Dennoch können einige Elektronen bei dieser Energie keine Stöße ausführen und werden weiter beschleunigt, so dass diese gemäß Linie 3 stoßen werden.
 Darum wird der Übergang $6^1$S$_0\rightarrow6^3$P$_2$ in den Messwerten auch zu finden sein.
 
 Zusammen mit dem Termschema, mit dem der Linie 2 die Energie \SI{4.89}{\electronvolt} und Linie 3 die Energie \SI{5.46}{\electronvolt} zugeordnet werden kann, erklärt sich damit die gefundene Energiedifferenz von $\Delta E = \SI{4.922+-0.021}{\electronvolt}$.
@@ -638,7 +637,14 @@ EVTL BERECHNNG WIE HAUER feat. DIETER
 
 \subsubsection{Abhängigkeit des Anodenstroms von der Gegenspannung bzw. Temperatur}
 
-
+Zur Abhängigkeit des Anodenstroms von der Röhrentemperatur bzw. der angelegten Gegenspannung zwischen Gitter und Anode betrachten wir zunächst die Abbildung \ref{fig:fh_varvolt}, bei der die Temperatur für alle Messungen \SI{160}{\degreeCelsius} betrug.
+Man sieht in dieser Darstellungsform deutlich, dass die Maxima für höhere Gegenspannungen kleiner werden, was daran liegt, dass die Elektronen nach dem Stoß nicht mehr genügend Energie haben, um die Gegenspannung zu durchlaufen.
+Sie werden demzufolge nicht an der Anode registriert und der Anodenstrom sinkt im Vergleich zu einer geringeren Gegenspannung.
+Weiterhin fällt auf, dass die Minima für höhere Gegenspannungen ebenfalls niedriger liegen.
+Die Ursache dafür liegt an Elektronen geringer Energien nach dem Stoß, beispielsweise \SI{2.5}{\electronvolt}.
+Ein Elektron dieser Energie kann bei \SI{2}{\volt} Gegenspannung noch registriert werden, bei \SI{3}{\volt} nicht mehr, weswegen der Anodenstrom im zweiten Fall geringer ausfällt.
+Als letztes bemerkt man, dass sich die Extrema für höhere Gegenspannungen nach rechts verschieben, was sich mit dem Beschleunigungsprozess der Elektronen erklären lässt.
+Diese müssen eine höhere Beschleunigungsspannung durchlaufen, um nach dem Stoß noch genügend Energie zu haben, damit sie die Anode erreichen.
 
 \subsection{Diskussion}
 

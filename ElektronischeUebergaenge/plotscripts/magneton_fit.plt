@@ -21,10 +21,10 @@ g(x) = m2 * x
 
 
 # E- Fit
-fit [x=350.0:570.0] f(x) './messwerte/bestimmung_magneton.txt' using 1:(-$3*10**5):($4*10**5) via m1
+fit [x=350.0:700.0] f(x) './messwerte/bestimmung_magneton.txt' using 1:(-$3*10**5):($4*10**5) via m1
 
 # E+ Fit
-fit [x=350.0:570.0] g(x) './messwerte/bestimmung_magneton.txt' using 1:($5*10**5):($6*10**5) via m2
+fit [x=350.0:700.0] g(x) './messwerte/bestimmung_magneton.txt' using 1:($5*10**5):($6*10**5) via m2
 
 
 load './../gnuplot_linestyles.plt'

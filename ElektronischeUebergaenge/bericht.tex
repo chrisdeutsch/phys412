@@ -498,6 +498,25 @@ Da die Energieaufspaltung gegeben ist durch:
 \begin{align}
 	\Delta E = \mu_\mathrm{B} \Delta m_\ell B
 \end{align}
+Wenn man $\Delta E$ gegen $B$ aufträgt so erhält man eine Gerade mit Steigung $\pm \mu_\mathrm{B}$.
+
+Dazu muss zunächst das Magnetfeld $B$ berechnet werden.
+Da unsere beiden Magnetfeldkalibrierungen eine kleine Abweichung im Bereich hoher Ströme aufweisen, entscheiden wir uns dafür die die beiden Kalibrationen varianzgewichtet zu Mitteln.
+
+\begin{itemize}
+	\item \textbf{Kalibration 1:}
+	\begin{align}
+	B_1(I) = \SI{-0.389 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
+	       +\SI{0.747+-0.182}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
+	       + \SI{96.606 +- 0.602}{\milli\tesla\per\ampere} &\cdot I
+	\end{align}
+	\item \textbf{Kalibration 2:}
+	\begin{align}
+	B_2(I) = \SI{-0.518 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
+	+\SI{2.153+-0.183}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
+	+ \SI{93.086 +- 0.566}{\milli\tesla\per\ampere} &\cdot I
+	\end{align}
+\end{itemize}
 
 \begin{figure}[h]
 	\centering

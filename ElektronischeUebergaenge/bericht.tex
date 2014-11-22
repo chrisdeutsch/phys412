@@ -464,13 +464,13 @@ Mit den Fits an die Messdaten erhalten wir Tabelle \ref{tab:peakschwerpunkte_mag
 
 Berechnung der relativen Abweichung von der $\pi$-Linie mit der Interferenzbedingung \ref{eq:interferenzbedingung}:
 \begin{align}
-	\frac{\Delta \lambda_\pm}{\lambda_\pi^0} = \frac{\lambda_{\sigma^\pm} - \lambda_\pi^0}{\lambda_\pi^0} = \frac{\sqrt{n^2 - \sin^2(\alpha_{\pm})}}{\sqrt{n^2 - \sin^2(\alpha_0)}} - 1
+	\frac{\Delta \lambda_\pm}{\lambda_\pi^0} = \frac{\lambda_{\sigma^\pm} - \lambda_\pi^0}{\lambda_\pi^0} = \frac{\sqrt{n^2 - \sin^2(\alpha_{\pm})}}{\sqrt{n^2 - \sin^2(\alpha_\pi)}} - 1
 \end{align}
 
 Der Fehler berechnet sich mit Gaußscher Fehlerfortpflanzung zu:
 \begin{align}
-	\Delta \left( \frac{\Delta \lambda_\pm}{\lambda_\pi^0} \right) = & \left( \frac{\sin^2(\alpha_\pm) \cos^2(\alpha_\pm)}{(n^2-\sin^2(\alpha_\pm))(n^2-\sin^2(\alpha_0))} \cdot \Delta \alpha_\pm^2 \right. \nonumber\\
-	& \left. + \frac{\sin^2(\alpha_0) \cos^2(\alpha_0) (n^2 - \sin^2(\alpha_\pm))}{(n^2-\sin^2(\alpha_0))^3} \cdot \Delta \alpha_0^2\right)^\frac{1}{2}
+	\Delta \left( \frac{\Delta \lambda_\pm}{\lambda_\pi^0} \right) = & \left( \frac{\sin^2(\alpha_\pm) \cos^2(\alpha_\pm)}{(n^2-\sin^2(\alpha_\pm))(n^2-\sin^2(\alpha_\pi))} \cdot \Delta \alpha_\pm^2 \right. \nonumber\\
+	& \left. + \frac{\sin^2(\alpha_\pi) \cos^2(\alpha_\pi) (n^2 - \sin^2(\alpha_\pm))}{(n^2-\sin^2(\alpha_\pi))^3} \cdot \Delta \alpha_\pi^2\right)^\frac{1}{2}
 \end{align}
 
 \begin{table}[h]
@@ -479,12 +479,25 @@ Der Fehler berechnet sich mit Gaußscher Fehlerfortpflanzung zu:
 	\caption{Wellenlängenverschiebung}
 	\label{tab:verschiebung_wellenlaenge}
 \end{table}
-
-Nun schätzen wir die Beugungsordnung durch:
+Mit der Wellenlänge der $\pi$-Linie $\lambda_\pi = \SI{643,8470}{\nano\metre}$ \footnote{National Institute of Standards and Technology (NIST)\\ \url{http://physics.nist.gov/PhysRefData/Handbook/Tables/cadmiumtable2.htm}\\Letzter Aufruf: 22. November 2014} und der relativen Wellenlängenverschiebung kann nun die Energieaufspaltung:
 \begin{align}
-	m \approx \frac{2 d}{\lambda} = 18104
+	\Delta E = -\frac{h c}{\lambda_\pi^0}\,\frac{\Delta \lambda}{\lambda_{\sigma^\pm}} \approx -\frac{h c}{\lambda_\pi^0}\,\frac{\Delta \lambda}{\lambda_\pi^0}
 \end{align}
+\begin{align}
+	\sigma_{\Delta E} = \frac{h c}{\lambda_\pi^0} \, | \sigma_{\Delta \lambda / \lambda_\pi^0} |
+\end{align}
+berechnet werden.
+\begin{table}[h]
+	\centering
+	\input{./tables/auswertung_energieaufspaltung.tex}
+	\caption{Energieaufspaltung}
+	\label{tab:energieaufspaltung}
+\end{table}
 
+Da die Energieaufspaltung gegeben ist durch:
+\begin{align}
+	\Delta E = \mu_\mathrm{B} \Delta m_\ell B
+\end{align}
 
 \begin{figure}[h]
 	\centering

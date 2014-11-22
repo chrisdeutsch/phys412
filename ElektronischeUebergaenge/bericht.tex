@@ -501,11 +501,9 @@ Da die Energieaufspaltung gegeben ist durch:
 Wenn man $\Delta E$ gegen $B$ aufträgt so erhält man eine Gerade mit Steigung $\pm \mu_\mathrm{B}$.
 
 Dazu muss zunächst das Magnetfeld $B$ berechnet werden.
-Da unsere beiden Magnetfeldkalibrierungen eine kleine Abweichung im Bereich hoher Ströme aufweisen, entscheiden wir uns dafür die die beiden Kalibrationen varianzgewichtet zu Mitteln.
-\begin{align*}
-	\bar{x} &= \frac{\sum_i \frac{x_i}{\sigma_i^2}}{\sum_i \frac{1}{\sigma_i^2}}\\
-	\sigma_{\bar{x}} &= \sqrt{\frac{1}{\sum_i \frac{1}{\sigma_i^2}}}
-\end{align*}
+Da unsere beiden Magnetfeldkalibrierungen eine kleine Abweichung im Bereich hoher Ströme aufweisen, entscheiden wir uns dafür die die beiden Kalibrationen zu mitteln.
+Dazu verwenden wir das ungewichtete arithmetische Mittel, da die zugehörigen Fehler fast gleich sind.
+Dann ergibt sich der Fehler des Mittelwerts von $N$ Werten mit Fehler $\sigma$ zu $\sigma/\sqrt{N}$ dabei wählen wir für $\sigma$ immer den größten der beiden Fehler.
 
 \begin{itemize}
 	\item \textbf{Kalibration 1:}

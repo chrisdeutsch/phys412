@@ -51,7 +51,7 @@
 
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{3}
 
 % FANCYHDR SETUP
 \pagestyle{fancy}
@@ -60,7 +60,7 @@
 \fancyhead[OL]{\rightmark}
 
 \renewcommand{\sectionmark}[1]{
-\markboth{\thesection{} #1}{\thesection{} #1}
+\markboth{Abschnitt \thesection{}: #1}{\thesection{} #1}
 }
 \renewcommand{\subsectionmark}[1]{
 \markright{\thesubsection{} #1}
@@ -645,7 +645,7 @@ Diese liegt knapp über dem Wert von \SI{4.89}{\electronvolt}, da nebem diesem �
 
 EVTL BERECHNNG WIE HAUER feat. DIETER
 
-\subsubsection{Abhängigkeit des Anodenstroms von der Gegenspannung bzw. Temperatur}
+\subsubsection{Abhängigkeit des Anodenstroms von der Gegenspannung}
 
 Zur Abhängigkeit des Anodenstroms von der Röhrentemperatur bzw. der angelegten Gegenspannung zwischen Gitter und Anode betrachten wir zunächst die Abbildung \ref{fig:fh_varvolt}, bei der die Temperatur für alle Messungen \SI{160}{\degreeCelsius} betrug.
 Man sieht in dieser Darstellungsform deutlich, dass die Maxima für höhere Gegenspannungen kleiner werden, was daran liegt, dass die Elektronen nach dem Stoß nicht mehr genügend Energie haben, um die Gegenspannung zu durchlaufen.
@@ -656,6 +656,7 @@ Ein Elektron dieser Energie kann bei \SI{2}{\volt} Gegenspannung noch registrier
 Als letztes bemerkt man, dass sich die Extrema für höhere Gegenspannungen nach rechts verschieben, was sich mit dem Beschleunigungsprozess der Elektronen erklären lässt.
 Diese müssen eine höhere Beschleunigungsspannung durchlaufen, um nach dem Stoß noch genügend Energie zu haben, damit sie die Anode erreichen.
 
+\subsubsection{Abhängigkeit des Anodenstroms von der Temperatur}
 Zur Abhängigkeit des Anodenstroms von der Temperatur schauen wir uns Abbildung \ref{fig:fh_vartemp} an, in der die Temperatur bei den Messungen variiert und die Gegenspannung konstant bei \SI{2}{\volt} gehalten wurde.
 In dem Diagramm sind ebenfalls alle Messreihen gleichzeitig dargestellt, um optimal vergleichen zu können.
 Man erkennt, dass der Anodenstrom für höhere Temperaturen kleiner ist als für niedrige Temperaturen, besonders die Kurve für $T=\SI{155}{\degreeCelsius}$ ist dabei deutlich höher und bei gleichen Temperaturabständen deutlich weiter entfernt von den anderen Messungen.
@@ -667,18 +668,21 @@ Wir benötigen die in der Praktikumsanleitung gegebene Formel zum Dampfdruck von
 Man erkennt daran, dass der Dampfdruck mit der Temperatur steigt und somit bei höheren Temperaturen mehr gasförmige Quecksilberatome vorhanden sind.
 Dies erhöht die Stoßwahrscheinlichkeit der Elektronen und es werden weniger gestoßene Elektronen die Gegenspannung durchlaufen und die Anode erreichen, weswegen der Strom sinkt.
 Eine Verschiebung der Extrema wie bei der Abhängigkeit von der Gegenspannung ist für die Temperaturabhängigkeit des Anodenstroms nicht festzustellen.
-
+\\
+\\
 Die starke Abweichung der Kurve für $T=\SI{155}{\degreeCelsius}$ kann dabei gleichzeitig mit der Frage beantwortet werden, warum die Durchführung des Franck-Hertz-Versuches mit Quecksilber auf ein kleines Temperaturintervall beschränkt ist.
 Der Grund dafür ist das Zwei-Phasen-System in dem sich das Quecksilber befindet.
 Dabei bewegt es sich ständig am Phasenübergang zwischen gasförmig und flüssig und ist dadurch nur auf einen schmalen Temperatur- bzw. Druckbereich begrenzt, wobei der Druck mit (\ref{eq:dampfdruck}) in Abhängigkeit von der Temperatur gegeben ist.
 Bei zu hohen Temperaturen bzw. entsprechend zu hoher Teilchendichte steigt außerdem die Zündspannung der Röhre, was den Temperaturbereich nach oben hin begrenzt, da ein Durchzünden vermieden werden sollte. 
 Um sinnvolle Messungen durchzuführen darf die Temperatur daher nur wenig um einen geeigneten Wert variiert werden und die Versuchsdurchführung ist auf ein kleines Temperaturintervall begrenzt, welches wir für $T=\SI{155}{\degreeCelsius}$ möglicherweise unterschritten haben und so einen vergleichsweise sehr hohen Anodenstrom gemessen haben.
-
+\\
+\\
 Ferner ist zu erklären, wieso die Einbrüche des Anodenstroms nicht scharf sind.
 Die Ursache dafür liegt an dem glühelektrischen Effekt und der Erzeugung der freien Elektronen.
 Ihr Geschwindigkeitsprofil folgt der Maxwell-Boltzmann-Verteilung, weswegen Elektronen mit höherer Geschwindigkeit ($\widehat{=}$ höherer Energie) früher mit Quecksilberatomen stoßen können als Elektronen, die mit niedrigerer Geschwindigkeit aus der Kathode austreten.
 Weiterhin stoßen die Elektronen nicht sobald sie eine bestimmte Schwellenenergie erreicht haben, sondern durchlaufen die Beschleunigungsspannung weiter, auch wenn sie bereits die theoretisch benötigte Energie für einen Stoß haben und stoßen erst später mit einem Quecksilberatom, weswegen die Einbrüche des Anodenstroms nicht scharf sind.
 Dass der Anodenstrom nicht bei jedem Einbruch auf \SI{0}{\ampere} abfällt ist darin begründet, dass nicht alle Elektronen einen Stoßpartner finden und manche ohne zu stoßen die Anode erreichen. 
+
 \subsection{Diskussion}
 
 \FloatBarrier

@@ -627,6 +627,56 @@ Mit diesen Überlegungen ist die transversale Auflösung ($\Delta m = 1$, da $\s
 	\mathcal{R}_\mathrm{long.} =\num{164000 +- 5200}
 \end{align}
 
+Zur Berechnung der Finesse $\mathcal{F}$ nutzen wir den Zusammenhang mit dem Auflösungsvermögen $\mathcal{R}$:
+\begin{align}
+	\mathcal{R} = \mathcal{F} \cdot m \quad \rightarrow \quad \mathcal{F} = \frac{\mathcal{R}}{m}
+\end{align}
+Dazu schätzen wir die Beugungsordnung $m$ mit der Interferenzbedingung des Fabry-Pérot-Etalons ab:
+\begin{align}
+	m = \frac{2 d}{\lambda} \sqrt{n^2 - \sin^2(\alpha)} \approx \frac{2 d n}{\lambda} \approx 18104
+\end{align}
+Damit erhalten wir:
+\begin{align}
+	\mathcal{F}_\mathrm{trans.} = \num{9.39 +- 0.17} \\
+	\mathcal{F}_\mathrm{long.} = \num{9.06  +- 0.29}
+\end{align}
+
+Nun wollen wir die Finesse mithilfe der CCD-Kamera Messung bestimmen.
+Dazu passen wir zunächst eine Gaußkurve $\mathcal{G}$ (mit konstantem Versatz) an die Daten ohne Magnetfeld an.
+\begin{figure}[h]
+	\centering
+	\input{./plots/b0.tex}
+	\caption{0A}
+	\label{fig:gauss0}
+\end{figure}
+Wir erhalten:
+\begin{align}
+	\alpha &= \SI{1.01413 +- 0.00045}{\degree}\\
+	\sigma &= \SI{0.02800 +- 0.00054}{\degree}
+\end{align}
+Die Halbwertsbreite $\mathrm{HBW}$ der Gaußfunktion mit Standardabweichung $\sigma$ gilt:
+\begin{align}
+\mathrm{HWB} &= 2 \sqrt{2\log(2)} \cdot \sigma\\
+ &= \SI{0.0659 +- 0.0013}{\degree}
+\end{align}
+Um diese in die Halbwertsbreite in Einheiten der Wellenlänge $\delta \lambda$ umzurechnen, verwenden wir die Näherung:
+\begin{align}
+	\delta \lambda &= \left| \frac{\mathrm{d}\lambda}{\mathrm{d}\alpha} \right| \cdot \mathrm{HWB} \\
+	 &= \frac{2d}{m} \, \frac{\sin(\alpha) \cos(\alpha)}{\sqrt{n^2-\sin^2(\alpha)}} \cdot \mathrm{HWB}
+\end{align}
+damit erhalten wir:
+\begin{align}
+	\delta \lambda = \SI{6.18 +- 0.13}{\pico\metre}
+\end{align}
+Der Fehler wurde mit Gaußscher Fehlerfortpflanzung ($\alpha$, $\mathrm{HWB}$) berechnet.
+Nun lässt sich Auflösung und Finesse berechnen:
+\begin{align}
+	\mathcal{R} &= \frac{\lambda}{\delta \lambda} = \num{104200 +- 2200} \\
+	\mathcal{F} &= \frac{\mathcal{R}}{m} = \num{5.76 +- 0.13}
+\end{align}
+
+Dopper-Verbreiterung: bla
+
 
 \subsection{Diskussion}
 

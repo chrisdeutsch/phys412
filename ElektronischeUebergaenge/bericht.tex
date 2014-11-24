@@ -116,6 +116,7 @@ Der Zeeman-Effekt beschreibt die Aufspaltung entarteter Energieniveaus unter Ein
 In diesem Versuch wollen wir uns dabei auf den normalen Zeeman-Effekt beschränken; dieser gilt für Atome, deren Gesamtspin gleich $0$ ist und so nur Drehimpulse $\vec{L}$ zum Gesamtdrehimpuls $\vec{J}=\vec{L}+\vec{S}$ beitragen.
 
 \subsubsection{Verhalten von Atomen in äußeren Feldern}
+\label{sec:zeemaneffekt}
 
 Aus der Lösung der Schrödingergleichung für ein Elektron im Coulombpotenzial eines Kerns folgt, dass es nur diskrete Energiewerte annehmen kann.
 Diese werden über die so genannte Hauptquantenzahl $n$ bestimmt.
@@ -163,6 +164,7 @@ Im Gegensatz dazu wird beim anomalen Zeeman-Effekt das magnetische Moment aufgru
 Dies führt dazu, dass das magnetische Moment des Elektrons gegeben ist durch:
 \begin{align}
 \vec{\mu} = -\frac{\mu_\mathrm{B}}{\hbar} \left( \vec{l} + g_s \vec{s} \right)
+\label{eq:magmom_spin}
 \end{align}
 Zur Beschreibung der Energieverschiebung ist hier die Kopplung von Spin und Bahndrehimpuls $\vec{j} = \vec{\ell} + \vec{s}$ nötig.
 Da $g_s \approx 2$ ist, ist das magnetische Moment des Elektrons nicht parallel zum Gesamtdrehimpuls $\vec{j}$ und präzediert um diesen.
@@ -338,6 +340,7 @@ Der Aufbau ähnelt stark einem gewöhnlichen \textbf{Triodensystem}, wobei hier 
 \end{figure}
 Die durch den glühelektrischen Effekt (Erklärung s. \ref{sec:roehrenelektronik}) ausgetretenen Elektronen werden von dem äußeren anliegenden Feld durch die Beschleunigungsspannung zum Gitter hin beschleunigt und erreichen dabei die Energie $eU$.
 Durch die zwischen Gitter und Anode anliegende Gegenspannung werden die Elektronen nach Passieren des Gitters abgebremst und nur solche mit Energien größer als $e\Delta U$ erreichen die Anode.
+Dieses Messverfahren wird als \textbf{Gegenfeldmethode} bezeichnet.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{./figures/franck-hertz_ergebnis.pdf}
@@ -370,16 +373,29 @@ mit der \emph{Perveanz} bzw. Raumladungskonstante $P$, die die Fläche der Katho
 
 \subsubsection{Thermodynamik und Stoßprozesse}
 
+Zur Beschreibung des Gases in der Röhre verwenden wir in dem Versuch die kinetische Gastheorie.
+Das Gas wird dabei als Menge von Teilchen vernachlässigbarer Größe aufgefasst, die sich zwischen den Stößen mit anderen Teilchen oder der Gefäßwand gleichförmig bewegen.
+Außer bei den Stößen, die grundsätzlich elastisch stattfinden, wirken zwischen den Teilchen keine Kräfte.
+Wir können darauf aufbauend Eigenschaften definieren wie die \textbf{mittlere freie Weglänge}, die die durchschnittliche Weglänge angibt, die ein Teilchen zurücklegt, ohne Stöße mit anderen Teilchen auszuführen.
+Sie ist definiert als
+\begin{align}
+\lambda=\frac{1}{n\sigma}
+\end{align}
+mit $n$ der Teilchendichte und $\sigma$ dem totalen \textbf{Wirkungsquerschnitt}.
+Dieser ist ebenfalls eine wichtige Eigenschaft des Gases, denn er gibt die Wahrscheinlichkeit an, dass ein Teilchen mit einem anderen wechselwirkt, wobei wir die Wechselwirkung in der kinetischen Gastheorie wie angesprochen auf elastische Stöße beschränken.
+
 \begin{itemize}
 \item Gaskinetik
 \item Zwei-Phasen-System
 \item (in-)elastische Stöße
-\item mittlere freie Weglänge
-\item Stoßquerschnitt
-\item Gegenfeldmethode
 \end{itemize}
 
 \subsubsection{Quecksilberatom}
+
+\subsubsection{LS- und jj-Kopplung}
+Wie in Abschnitt \ref{sec:zeemaneffekt} bereits angedeutet, erweitert sich der Gesamtdrehimpuls $\vec{L}=\sum_i\vec{\ell}_i$ des Atoms unter Berücksichtigung des Spins $\vec{S}$ zu $\vec{J}=\vec{L}+\vec{S}$.
+Der Spin wird dabei als intrinsische Eigenschaft des Elektrons verstanden und liefert die Quantenzahl $s=\pm1/2$.
+Die daraus folgende Energieverschiebung für die Energieniveaus 
 
 \begin{itemize}
 \item LS- / jj-Kopplung
@@ -567,14 +583,14 @@ Gemäß der Gleichung entspricht die Steigung dem Bohrschen Magneton. Wir bilden
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./figures/zeeman_transversal.pdf}
+	\includegraphics[width=0.8\textwidth]{./figures/zeeman_transversal.pdf}
 	\caption{transversal}
 	\label{fig:zeeman_transversal}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./figures/zeeman_longitudinal.pdf}
+	\includegraphics[width=0.8\textwidth]{./figures/zeeman_longitudinal.pdf}
 	\caption{longitudinal}
 	\label{fig:zeeman_longitudinal}
 \end{figure}

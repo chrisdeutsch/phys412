@@ -331,16 +331,8 @@ Zwischen diesem und der Anode wird eine konstante Gegenspannung $\Delta U$ angel
 \caption{Aufbau des Franck-Hertz-Versuches}
 \label{fig:franck-hertz_aufbau}
 \end{figure}
-Durch den glühlektrischen Effekt treten an der Kathode bei Anlegen einer hohen Spannung Elektronen aus.
-Dies geschieht dadurch, dass die Elektronen im Draht durch die hohe Spannung angeregt werden und die (vom Material abhängige) Austrittsarbeit überwinden.
-Die Stromdichte der aus einem Metall austretenden Elektronen wird beschrieben durch die \textbf{Richardson-Gleichung} \cite{np_richardson}:
-\begin{align*}
-j=AT^2\cdot \exp\left({-\dfrac{\omega}{\mathrm{k_B}T}}\right)
-\end{align*}
-Dabei ist $T$ die absolute Temperatur, $\mathrm{k_B}$ die Boltzmann-Konstante und $A$ und $\omega$ materialabhängige Konstanten.
-Die so ausgetretenen Elektronen werden von dem äußeren anliegenden Feld durch die Beschleunigungsspannung zum Gitter hin beschleunigt und erreichen dabei die Energie $eU$.
+Die durch den glühelektrischen Effekt (Erklärung s. \ref{sec:roehrenelektronik}) ausgetretenen Elektronen werden von dem äußeren anliegenden Feld durch die Beschleunigungsspannung zum Gitter hin beschleunigt und erreichen dabei die Energie $eU$.
 Durch die zwischen Gitter und Anode anliegende Gegenspannung werden die Elektronen nach Passieren des Gitters abgebremst und nur solche mit Energien größer als $e\Delta U$ erreichen die Anode.
-Der Aufbau bildet so ein Triodensystem.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.5\textwidth]{./figures/franck-hertz_ergebnis.pdf}
@@ -348,17 +340,30 @@ Der Aufbau bildet so ein Triodensystem.
 \label{fig:franck-hertz_ergebnis}
 \end{figure}
 Bei der Durchführung des Versuches stellte man fest, dass der Anodenstrom sich wie in Abbildung \ref{fig:franck-hertz_ergebnis} verhält.
-Man sieht dabei, dass in Abständen von \SI{4.9}{\volt} (der Wert gilt nur für Quecksilber) der Strom stark einbricht und ab den Minima jeweils einer Diodencharakteristik folgt \cite{demtroeder3}.
+Man sieht dabei, dass in Abständen von \SI{4.9}{\volt} (der Wert gilt nur für Quecksilber) der Strom stark einbricht.
 Der Grund dafür ist, dass die Elektronen auf der Beschleunigungsstrecke inelastische Stöße mit den Quecksilberatomen ausführen und diese dadurch anregen.
 Die dabei an das Quecksilber abgegebene Energie steht den Elektronen nicht mehr zur Verfügung, um die Anode zu erreichen, der Strom bricht ein. 
-Der Abstand der Maxima entspricht dabei genau der Anregungsenergie der Quecksilberatome.
-In diesem Versuch soll die Übergangsenergie der Resonanzlinien von Quecksilber bestimmt werden. (ist das gleich der Anregungsenergie?)
+Der Abstand der Maxima entspricht dabei genau der Anregungsenergie der Quecksilberatome, die in diesem Versuch bestimmt werden soll.
 
 \subsubsection{Röhrenelektronik}
+\label{sec:roehrenelektronik}
+Wir nutzen zur Erzeugung der Elektronen in der Röhre den glühlektrischen Effekt durch den an der Kathode bei Anlegen einer hohen Spannung Elektronen austreten.
+Dies geschieht dadurch, dass die Elektronen im Draht durch die hohe Spannung angeregt werden und die (vom Material abhängige) Austrittsarbeit überwinden.
+Die Stromdichte der aus einem Metall austretenden Elektronen wird beschrieben durch die \textbf{Richardson-Gleichung} \cite{np_richardson}:
+\begin{align*}
+j=A\,T^2\cdot\exp\left({-\dfrac{\omega}{\mathrm{k_B}T}}\right)
+\end{align*}
+Dabei ist $T$ die absolute Temperatur, $\mathrm{k_B}$ die Boltzmann-Konstante und $A$ und $\omega$ materialabhängige Konstanten.
+
+Die Erzeugung von Elektronen ist dabei jedoch nicht unbegrenzt möglich.
+Bei vielen austretenden Elektronen kann es passieren, dass diese durch die Beschleunigungsspannung selber ein elektrisches Feld erzeugen, was dafür sorgt, dass die Elektronen, die an der Kathode entstehen, das äußere Beschleunigungsfeld nicht wahrnehmen und diese \textbf{Raumladung} den gemessenen Anodenstrom limitiert.
+Für diesen gilt\footnote{Quelle: Vorlesung Accelerator Physics bei PD Dr. W. Hillert}:
+\begin{align}
+I_0=P\,U_0^{\,\frac{3}{2}}
+\end{align}
+mit der \emph{Perveanz} bzw. Raumladungskonstante $P$, die die Fläche der Kathode, den Abstand Kathode-Anode und die Bauart berücksichtigt.
 
 \begin{itemize}
-\item Glühemission
-\item Raumladung
 \item Elektronenbewegung in Triodensystem
 \end{itemize}
 

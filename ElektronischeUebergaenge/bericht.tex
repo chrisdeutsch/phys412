@@ -49,6 +49,11 @@
 % Float Barriers
 \usepackage{placeins}
 
+% Pakete für gedrehte Subfigures
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
 \setcounter{tocdepth}{3}
@@ -209,7 +214,7 @@ Dies führt dazu, dass die Welle innerhalb des Etalons sehr oft hin- und her ref
 Da in diesem Versuch das Fabry-Pérot-Etalon in Transmission betrieben wird, wollen wir uns auf diesen Fall beschränken.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{./figures/fabry_perot.pdf}
+	\includegraphics[width=0.5\textwidth]{./figures/fabry_perot.pdf}
 	\caption{Berechnung der optischen Weglänge des Fabry-Pérot-Etalons}
 	\label{fig:fabry_perot}
 \end{figure}
@@ -293,15 +298,14 @@ Diese Phasenverschiebung führt dazu, dass um $\pm\SI{45}{\degree}$ (andere Wink
 Umgekehrt wird zirkular polarisiertes Licht durch die Platte in zwei ebenfalls um $\pm\SI{45}{\degree}$ gegen die optische Achse verkippte linear polarisierte Wellen aufgespalten.
 Diese Eigenschaften der $\lambda/4$-Platte ermöglichen es unter Zunahme eines Polarisationsfilters Licht auf zirkulare Polarisation zu untersuchen.
 
-
 \subsubsection{Hall-Sonde}
-\begin{figure}
+In Hall-Sonden wird der Hall-Effekt ausgenutzt, welcher besagt, dass an einem stromdurchflossenen Leiter im Magnetfeld $B_y$ eine Spannung $U_\mathrm{Hall}$ über den Seitenflächen des Leitermaterials entsteht, die aufgrund der Lorentzkraft auf die bewegten Ladungsträger entsteht.
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./figures/hall_effekt.pdf}
 	\caption{Zur Herleitung des Hall-Effekts}
 	\label{fig:hall_effekt}
 \end{figure}
-In Hall-Sonden wird der Hall-Effekt ausgenutzt, welcher besagt, dass an einem stromdurchflossenen Leiter im Magnetfeld $B_y$ eine Spannung $U_\mathrm{Hall}$ über den Seitenflächen des Leitermaterials entsteht, die aufgrund der Lorentzkraft auf die bewegten Ladungsträger entsteht.
 Die Ladungsträger werden durch die Lorentzkraft soweit ausgelenkt, bis das durch die Auslenkung entstandene elektrische Feld $E_\mathrm{Hall}$ die Lorentzkraft kompensiert:
 \begin{align}
 	e E_\mathrm{Hall} = e v_x B_y
@@ -324,7 +328,7 @@ Praktisch werden, um bei kleinem Strom $I$ große Spannung zu erzielen, Halbleit
 
 Der Franck-Hertz-Versuch wurde um 1914 von James Franck und Gustav Hertz \cite{demtroeder3} durchgeführt und demonstrierte die Wichtigkeit der Energiequantelung bei Stoßprozessen.
 In dem Versuch wird eine mit Quecksilberdampf bei Unterdruck (ca. \SI{e-2}{\milli\bar}) gefüllte Elektronenröhre genutzt, bei der zwischen Kathode und Anode ein Gitter eingebaut ist, und die variable Beschleunigungsspannung $U$ zwischen Kathode und Gitter anliegt.
-Zwischen diesem und der Anode wird eine konstante Gegenspannung $\Delta U$ angelegt.
+Der Aufbau ähnelt stark einem gewöhnlichen \textbf{Triodensystem}, wobei hier die Strecke Kathode-Gitter als Beschleunigungsstrecke genutzt wird und zwischen Gitter und Anode eine Gegenspannung $\Delta U$ angelegt wird.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{./figures/franck-hertz_aufbau.pdf}
@@ -363,10 +367,6 @@ I_0=P\,U_0^{\,\frac{3}{2}}
 \end{align}
 mit der \emph{Perveanz} bzw. Raumladungskonstante $P$, die die Fläche der Kathode, den Abstand Kathode-Anode und die Bauart berücksichtigt.
 
-\begin{itemize}
-\item Elektronenbewegung in Triodensystem
-\end{itemize}
-
 \subsubsection{Thermodynamik und Stoßprozesse}
 
 \begin{itemize}
@@ -387,7 +387,9 @@ mit der \emph{Perveanz} bzw. Raumladungskonstante $P$, die die Fläche der Katho
 \item Resonanzabsorption
 \end{itemize}
 
-\section{Zeemann-Effekt}
+\clearpage
+
+\section{Zeeman-Effekt}
 Hier kurze Einführung (was wird gemacht)
 
 \subsection{Versuchsdurchführung}
@@ -735,83 +737,89 @@ Dass der Anodenstrom nicht bei jedem Einbruch auf \SI{0}{\ampere} abfällt ist d
 \begin{appendix}
 \section{Darstellung der Aufspaltung beim Zeeman-Effekt}
 
-
-\begin{figure}[h]
-	\centering
+\begin{sidewaysfigure}[!h]
+\begin{subfigure}[c]{0.5\textwidth}
+\scalebox{0.75}{
 	\input{./plots/zeemann_aufspaltung/b4.tex}
-	\caption{4 A}
-	\label{fig:gauss1}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
+	}
+	\subcaption{}
+\end{subfigure}
+\begin{subfigure}[c]{0.5\textwidth}
+\scalebox{0.75}{
 	\input{./plots/zeemann_aufspaltung/b4-5.tex}
-	\caption{4.5 A}
-	\label{fig:gauss2}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
+	}
+	\subcaption{}
+\end{subfigure}
+\\
+\begin{subfigure}[c]{0.5\textwidth}
+	\scalebox{0.75}{
 	\input{./plots/zeemann_aufspaltung/b5.tex}
-	\caption{5A}
-	\label{fig:gauss3}
-\end{figure}
+	}
+	\subcaption{}
 
-\begin{figure}[h]
-	\centering
+\end{subfigure}
+\begin{subfigure}[c]{0.5\textwidth}
+\scalebox{0.75}{
 	\input{./plots/zeemann_aufspaltung/b5-5.tex}
-	\caption{5.5A}
-	\label{fig:gauss4}
-\end{figure}
+	}
+	\subcaption{}
+\end{subfigure}
+\caption{Magnetfeldaufspaltung Fits für \textbf{(a)} \SI{4}{\ampere}, \textbf{(b)} \SI{4.5}{\ampere}, \textbf{(c)}) \SI{5}{\ampere}, \textbf{(d)} \SI{5.5}{\ampere}}
+\end{sidewaysfigure}
 
-\begin{figure}[h]
-	\centering
+\begin{sidewaysfigure}[!h]
+\begin{subfigure}[c]{0.5\textwidth}
+\scalebox{0.75}{
 	\input{./plots/zeemann_aufspaltung/b6.tex}
-	\caption{6A}
-	\label{fig:gauss5}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
+	}
+	\subcaption{}
+\end{subfigure}
+\begin{subfigure}[c]{0.5\textwidth}
+\scalebox{0.75}{
 	\input{./plots/zeemann_aufspaltung/b6-5.tex}
-	\caption{6.5A}
-	\label{fig:gauss6}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
+	}
+	\subcaption{}
+\end{subfigure}
+\\
+\begin{subfigure}[c]{0.5\textwidth}
+	\scalebox{0.75}{
 	\input{./plots/zeemann_aufspaltung/b7.tex}
-	\caption{7 A}
-	\label{fig:gauss7}
-\end{figure}
+	}
+	\subcaption{}
 
-\begin{figure}[h]
-	\centering
+\end{subfigure}
+\begin{subfigure}[c]{0.5\textwidth}
+\scalebox{0.75}{
 	\input{./plots/zeemann_aufspaltung/b7-5.tex}
-	\caption{7.5A}
-	\label{fig:gauss8}
-\end{figure}
+	}
+	\subcaption{}
+\end{subfigure}
+\caption{Magnetfeldaufspaltung Fits für \textbf{(a)} \SI{6}{\ampere}, \textbf{(b)} \SI{6.5}{\ampere}, \textbf{(c)}) \SI{7}{\ampere}, \textbf{(d)} \SI{7.5}{\ampere}}
+\end{sidewaysfigure}
 
-\begin{figure}[h]
-	\centering
+\begin{sidewaysfigure}[!h]
+\begin{subfigure}[c]{0.5\textwidth}
+\scalebox{0.75}{
 	\input{./plots/zeemann_aufspaltung/b8.tex}
-	\caption{8A}
-	\label{fig:gauss9}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
+	}
+	\subcaption{}
+\end{subfigure}
+\begin{subfigure}[c]{0.5\textwidth}
+\scalebox{0.75}{
 	\input{./plots/zeemann_aufspaltung/b8-5.tex}
-	\caption{8.5A}
-	\label{fig:gauss10}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
+	}
+	\subcaption{}
+\end{subfigure}
+\\
+\begin{subfigure}[l]{0.5\textwidth}
+	\scalebox{0.75}{
 	\input{./plots/zeemann_aufspaltung/b8-9.tex}
-	\caption{8.9A}
-	\label{fig:gauss11}
-\end{figure}
+	}
+	\subcaption{}
+
+\end{subfigure}
+\caption{Magnetfeldaufspaltung Fits für \textbf{(a)} \SI{8}{\ampere}, \textbf{(b)} \SI{8.5}{\ampere}, \textbf{(c)}) \SI{8.9}{\ampere}}
+\end{sidewaysfigure}
 
 \FloatBarrier
 

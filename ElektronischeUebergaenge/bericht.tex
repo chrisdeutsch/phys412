@@ -264,6 +264,7 @@ Gerade noch auflösbar heißt dabei, dass das Rayleigh-Kriterium erfüllt ist, w
 Damit folgt mit der Halbwertsbreite $\delta \lambda$ der Maxima des Fabry-Pérot-Etalons:\footnote{Quelle: Hecht}
 \begin{align}
 	\mathcal{R} = \frac{\lambda}{\delta \lambda} = \mathcal{F} \cdot m
+	\label{eq:aufloesung}
 \end{align}
 
 \subsubsection{Natürliche Linienbreite und Linienverbreiterung}
@@ -542,6 +543,10 @@ Gemäß der Gleichung entspricht die Steigung dem Bohrschen Magneton. Wir bilden
 \begin{align}
 	\mu_\mathrm{B} = \SI{5.498 +- 0.017e-5}{\electronvolt\per\tesla}
 \end{align}
+\begin{align}
+	\mu_\mathrm{B}^{\mathrm{Lit.}} = \SI{5.7883818066 +- 0.0000000038e-5}{\electronvolt\per\tesla}
+\end{align}
+\footnote{2010 CODATA recommended values\\ \url{http://physics.nist.gov/cgi-bin/cuu/Value?mubev}\\ Letzter Abruf: 24. November 2014}
 
 
 \begin{table}[h]
@@ -574,19 +579,56 @@ Gemäß der Gleichung entspricht die Steigung dem Bohrschen Magneton. Wir bilden
 	\label{fig:zeeman_longitudinal}
 \end{figure}
 
+\subsubsection{Weitergehende Überlegungen}
 \begin{table}[h]
 	\centering
-	\input{./tables/aufloesung_transversal.tex}
-	\caption{Messdaten zur Bestimmung der Auflösung in transversalem Aufbau}
-	\label{tab:aufloesung_transversal}
+	\input{./tables/aufloesung.tex}
+	\caption{Messdaten zur Bestimmung der Auflösung}
+	\label{tab:aufloesung}
 \end{table}
+Wir berechnen den jeweiligen Mittelwert des Stroms und den zugehörigen Fehler durch:
+\begin{align}
+	\sigma_{\bar{I}} = \frac{\sigma_I}{\sqrt{N}} = \frac{\SI{0,1}{\ampere}}{\sqrt{5}} \approx \SI{0,045}{\ampere}
+\end{align}
+Damit erhalten wir:
+\begin{align}
+	\bar{I}_\mathrm{trans.} = \SI{2.040 +- 0.045}{\ampere} \\
+	\bar{I}_\mathrm{long.} = \SI{1.060 +- 0.045}{\ampere}
+\end{align}
+Mit den beiden Magnetfeldkalibrierungen (Mittelwert) erhalten wir:
+\begin{align}
+	B_\mathrm{trans.} = \SI{195.6 +- 3.3}{\milli\tesla} \\
+	B_\mathrm{long.} = \SI{101.6 +- 3.2}{\milli\tesla}
+\end{align}
+Die Auflösung ist nun gegeben durch Gleichung \ref{eq:aufloesung}, wobei $\delta \lambda$ (Halbwertsbreite der Linien, Rayleigh-Kriterium).
+Wenn zwei Linien $(\lambda_1, \lambda_2)$ gerade noch aufgelöst werden, so ist deren Abstand gerade gleich der Halbwertsbreite $\delta \lambda$.
+\begin{align}
+	\delta \lambda = \lambda_2 - \lambda_1 = h c \left( \frac{1}{E_2} - \frac{1}{E_1} \right) = \frac{h c}{E_1 E_2} \left(E_1 - E_2\right) \approx \frac{\lambda^2 \cdot \Delta E}{h c}
+\end{align}
+wobei $\lambda \approx \lambda_1 \approx \lambda_2$.
+Dann ist die Auflösung gegeben durch:
+\begin{align}
+	\mathcal{R} = \frac{\lambda}{\delta \lambda} = \frac{h c}{\lambda \cdot \Delta E}
+\end{align}
+wobei die Energieaufspaltung durch den normalen Zeemaneffekt:
+\begin{align}
+	\Delta E = \mu_\mathrm{B} \Delta m B
+\end{align}
+gegeben ist.
+Also
+\begin{align}
+	\mathcal{R} = \frac{h c}{ \mu_\mathrm{B} \Delta m \lambda} \cdot \frac{1}{B} 
+\end{align}
+Der Fehler ist gegeben durch:
+\begin{align}
+	\Delta \mathcal{R} = \frac{h c}{ \mu_\mathrm{B} \Delta m \lambda} \cdot \frac{\Delta B}{B^2}
+\end{align}
+Mit diesen Überlegungen ist die transversale Auflösung ($\Delta m = 1$, da $\sigma_{\pm} - \pi$) und longitudinale Auflösung ($\Delta m = 2$, da $\sigma_{-} - \sigma_{+}$ $\pi$-Linie nicht sichtbar)
+\begin{align}
+	\mathcal{R}_\mathrm{trans.} = \num{170000 +- 2900} \\
+	\mathcal{R}_\mathrm{long.} =\num{164000 +- 5200}
+\end{align}
 
-\begin{table}[h]
-	\centering
-	\input{./tables/aufloesung_longitudinal.tex}
-	\caption{Messdaten zur Bestimmung der Auflösung in longitudinalem Aufbau}
-	\label{tab:aufloesung_longitudinal}
-\end{table}
 
 \subsection{Diskussion}
 

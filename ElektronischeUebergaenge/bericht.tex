@@ -520,6 +520,23 @@ Dann ergibt sich der Fehler des Mittelwerts von $N$ Werten mit Fehler $\sigma$ z
 	\end{align}
 \end{itemize}
 
+Wir tragen nun den $|\Delta E|$ gegen das anliegende Magnetfeld $\bar{B}$ auf und fitten Ursprungsgeraden an die Messpunkte.
+Die Fits ergeben:
+\begin{align}
+	|\Delta E_{-}| = \SI{5.502 +- 0.031e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi^2 = 8.94\\
+	|\Delta E_{+}| = \SI{5.497 +- 0.019e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi^2 = 1.62
+\end{align}
+
+Gemäß der Gleichung entspricht die Steigung dem Bohrschen Magneton. Wir bilden den varianzgewichteten Mittelwert der Steigungen und erhalten:
+\begin{align}
+	\bar{x} = \frac{\sum_i \frac{x_i}{\sigma_i^2}}{\sum_i \frac{1}{\sigma_i^2}} \\
+	\sigma_{\bar{x}} = \frac{1}{\sqrt{\sum_i \frac{1}{\sigma_i^2}}}
+\end{align}
+\begin{align}
+	\mu_\mathrm{B} = \SI{5.498 +- 0.017e-5}{\electronvolt\per\tesla}
+\end{align}
+
+
 \begin{table}[h]
 	\centering
 	\input{./tables/auswertung_magnetfeld_strom.tex}

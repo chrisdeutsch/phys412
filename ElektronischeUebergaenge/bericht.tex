@@ -388,7 +388,7 @@ Dieser ist ebenfalls eine wichtige Eigenschaft des Gases, denn er gibt die Wahrs
 
 \subsubsection{Quecksilberatom: LS- und jj-Kopplung}
 Zur Erklärung des Franck-Hertz-Versuches müssen wir die Kopplung mehrerer Drehimpulskomponenten beachten.
-Grundsätzlich können in Systemen mit mehreren Drehimpulskomponenten diese untereinander koppeln, wobei wir uns hier auf den Bahndrehimpuls $\ell$ und den Elektronenspin $\vec{s}$ mit Quantenzahl $\pm1/2$, der als Eigendrehimpuls interpretiert werden kann, beschränken.
+Grundsätzlich können in Systemen mit mehreren Drehimpulskomponenten diese untereinander koppeln, wobei wir uns hier auf den Bahndrehimpuls $\ell$ und den Elektronenspin $s$ mit Quantenzahl $\pm1/2$, der als Eigendrehimpuls interpretiert werden kann, beschränken.
 Der Hamiltonoperator für die Kopplung dieser beiden Drehimpulse ist gegeben durch
 \begin{align*}
 \hat{H}=\frac{a}{\hbar^2}\hat{\vec{\ell}}\cdot\hat{\vec{s}}\qquad a=\frac{Ze^2\mu_0\hbar^2}{8\pi m_e^2 r^3}
@@ -404,9 +404,15 @@ Im Vektormodell lässt sich somit schreiben:
 Für große $Z$ ist die Kopplung zwischen $\ell$ und $s$ größer als die Kopplung zweier Bahndrehimpulse bzw. Spins untereinander und es werden eher die $\ell_i$ und $s_i$ zu einem $j_i=\ell_i+s_i$ koppeln.
 Man erhält im Vektormodell für die \textbf{jj-Kopplung}:
 \begin{align*}
-\vec{J}=\sum_i\vec{j}_i
+\vec{J}=\sum_i\vec{j}_i=\sum_i\left(\vec{\ell}_i+\vec{s}_i\right)
 \end{align*}
-Dadurch ergeben sich außerdem neue \textbf{Auswahlregeln}, die die in \ref{sec:auswahlregeln} genannten (dort wurde nur LS-Kopplung berücksichtigt) vor allem um $\Delta S=\pm1$ erweitern, wodurch Übergänge zwischen verschiedenen Multiplettsystemen möglich werden.
+Dadurch ergeben sich außerdem neue \textbf{Auswahlregeln}, die die in \ref{sec:auswahlregeln} genannten (dort wurde nur LS-Kopplung berücksichtigt) vor allem um $\Delta S=\pm1$ erweitern, wodurch Übergänge zwischen verschiedenen Multiplettsystemen möglich werden, wie man im in Abbildung \ref{fig:termschema_hg} dargestellten Termschema sehen kann.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.9\textwidth]{./figures/termschema_hg.pdf}
+\caption{Vereinfachtes Termschema von Quecksilber. Quelle: Kuhn, Atomic Spectra, S. 192, 1962}
+\label{fig:termschema_hg}
+\end{figure}
 
 \clearpage
 
@@ -423,22 +429,22 @@ In diesem Versuchsteil soll die Energieaufspaltung der $\SI{643,8470}{\nano\metr
 	\label{fig:aufbau_zeeman}
 \end{figure}
 
-Zur Beobachtung der Energieaufspaltung des Zeeman-Effekts bauen wir die Apperatur wie in Abbildung \ref{fig:aufbau_zeeman} auf.
-Dazu führen wir zunächst die Cadmium-Lampe zwischen die Polschuhe, welche mit dem Kern der beiden Magnetspulen verbunden sind.
+Zur Beobachtung der Energieaufspaltung des Zeeman-Effekts bauen wir die Apparatur wie in Abbildung \ref{fig:aufbau_zeeman} auf.
+Dazu führen wir zunächst die Cadmium-Lampe zwischen die Polschuhe, welche mit dem Kern der beiden Magnetspulen verbunden ist.
 Dabei achten wir darauf, dass die Verbindung der Lampe mit dem Netzgerät, sowie die Abschmelzstelle des Lampenkolbens nicht im Strahlengang liegt.
 Nun bauen wir die optischen Elemente (\textbf{d} -- \textbf{h}) ein.
 Zur Justage der Apperatur halten wir vor das Fabry-Pérot-Etalon ein Blatt Papier und stellen die Kondensorlinse so ein, dass das Etalon komplett ausgeleuchtet wird.
-Direkt vor das Okular mit scharf eingestellter Strichskala stellen wir den Interferenzfilter mit Mittelwellenlänge $\lambda = \SI{643,8 +- 2}{\nano\metre}$ um das sichtbare Raumlicht zu minimieren.
+Direkt vor das Okular mit scharf gestellter Strichskala stellen wir den Interferenzfilter mit Mittelwellenlänge $\lambda = \SI{643,8 +- 2}{\nano\metre}$ um das sichtbare Raumlicht zu minimieren.
 Anschließend stellen wir die Abbildungslinse (\textbf{f}) so ein, dass das Etalon scharf durch das Okular abgebildet wird.
 Da das Zentrum des Ringsystems nicht mit der Strichskala des Okulars übereinstimmt, kippen wir das Fabry-Pérot-Etalon mit den daran angebrachten Stellschrauben bis dies der Fall ist.
 
 \subsubsection{Beobachtung der Aufspaltung}
-Zunächst beobachten wir die Aufspaltung der Linie in \textbf{transversalem Aufbau} das heißt, dass das Magnetfeld senkrecht zur Beobachtungsrichtung steht.
-Zunächst beobachten wir das Interferenzmuster des Fabry-Pérot-Etalons, welches aus konzentrischen Kreisen bestehen, die dadurch entstehen, dass das Etalon mit einer ausgedehnten Lichtquelle beleuchtet wird.
-Um eine Linienaufspaltung zu beobachten, lassen wir nun mithilfe des Netzgerätes einen Strom $I$ durch die Spulen fließen.
+Als erstes beobachten wir die Aufspaltung der Linie in \textbf{transversalem Aufbau} - das heißt, dass das Magnetfeld senkrecht zur Beobachtungsrichtung steht.
+Zunächst beobachten wir das Interferenzmuster des Fabry-Pérot-Etalons, welches aus konzentrischen Kreisen besteht, die dadurch entstehen, dass das Etalon mit einer ausgedehnten Lichtquelle beleuchtet wird.
+Um eine Linienaufspaltung zu beobachten, lassen wir nun mithilfe des Netzgeräts einen Strom $I$ durch die Spulen fließen.
 Dadurch entsteht im Bereich des Lampenkolbens ein näherungsweise homogenes Magnetfeld.
 Wir wählen den Strom so, dass wir eine deutliche Aufspaltung der Kreise des Interferenzmusters erkennen können.
-Um die Polarisation zu untersuchen stellen wir einen Polarisationsfilter in den Strahlengang und skizzieren das am Okular sichtbare Interferenzmuster bei verschiedenen Filterausrichtungen.
+Um die Polarisation zu untersuchen, stellen wir einen Polarisationsfilter in den Strahlengang und skizzieren das am Okular sichtbare Interferenzmuster bei verschiedenen Filterausrichtungen.
 Wir entfernen den Filter und beobachten nun die Aufspaltung der Linien im Okular während wir langsam den Spulenstrom verringern.
 Dabei bestimmen wir den Spulenstrom, bei dem die Aufspaltung der Ringe gerade noch zu erkennen ist.
 Diese Messung führen wir insgesamt fünf mal durch, um den Messfehler besser abschätzen zu können.
@@ -450,7 +456,7 @@ Eine Messung mit zugeschaltetem Magnetfeld führt hier jedoch zur Aufspaltung in
 Alle Skizzen in Abbildung \ref{fig:zeeman_transversal}.
 Im Gegensatz zur transversalen Beobachtung verwenden wir hier eine Kombination von Polarisationsfilter und $\frac{\lambda}{4}$-Platte zur Bestimmung der Polarisation.
 Dazu stellen wir die Viertel-Wellenlängen-Platte unter festem Winkel $\SI{0}{\degree}$ vor den Polarisationsfilter (in Strahlrichtung), dessen Ausrichtung $\alpha$ wir variieren und skizzieren das sichtbare Interferenzbild.
-Analog zum Vorteil bestimmen wir, nach dem Entfernen von Filter und $\frac{\lambda}{4}$-Platte, den minimalen Strom, bei dem die Aufspaltung gerade noch erkannt werden kann.
+Wie bei der transversalen Beobachtung bestimmen wir auch hier, nach dem Entfernen von Filter und $\frac{\lambda}{4}$-Platte, den minimalen Strom, bei dem die Aufspaltung gerade noch erkannt werden kann.
 Alle Skizzen in Abbildung \ref{fig:zeeman_longitudinal}.
 
 \subsubsection{Messung des Zeeman-Effekts}
@@ -780,7 +786,14 @@ Wir finden so:
 \caption{Messwerte der Peakschwerpunkte für variable $\Delta U$ bei \SI{160}{\degreeCelsius} bzw. variable Temperatur bei $\Delta U=\SI{2}{\volt}$}
 \label{tab:fh_schwerpunkte}
 \end{table}
-Um diesen Wert zu verstehen, muss man das Termschema und den Wirkungsquerschnitt bei Elektronenstoßanregung von Quecksilber betrachten.
+Um diesen Wert zu verstehen, muss man das Termschema (Abb. \ref{fig:termschema_hg}) und den Wirkungsquerschnitt bei Elektronenstoßanregung von Quecksilber (Abb. \ref{fig:wirkungsquerschnitt_hg}) betrachten.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{./figures/wirkungsquerschnitt_hg.pdf}
+\caption{Totaler Wirkungsquerschnitt von Quecksilber bei Elektronenstoßanregung. Die Linien entsprechen \textbf{1}: 6$^1$S$_0 \rightarrow$ 6$^3$P$_0$; \textbf{2}: 6$^1$S$_0 \rightarrow$ 6$^3$P$_1$; \textbf{3}: 6$^1$S$_0 \rightarrow$ 6$^3$P$_2$; \textbf{4}: 6$^1$S$_0 \rightarrow$ 6$^1$P$_1$. Quelle: Moiseiwitsch,
+"`Electron Impact Excitation of Atoms"', Rev. Mod. Phys. 40, S. 267, 1968}
+\label{fig:wirkungsquerschnitt_hg}
+\end{figure}
 In der Grafik zu letzterem sieht man vier Wirkungsquerschnitte für verschiedene Übergänge im Quecksilber in Abhängigkeit von den stoßenden Elektronen.
 Da Linie 4 erst knapp unter \SI{20}{\electronvolt} ihr Maximum hat, Stöße offensichtlich aber auch schon bei geringen Energien stattfinden, werden wir diese nicht weiter beachten.
 Genauso ignorieren wir Linie 1, da der maximale Wirkungsquerschnitt hier sehr gering ist im Vergleich zu den anderen in Betracht kommenden Linien 2 und 3.
@@ -811,7 +824,7 @@ Diese müssen eine höhere Beschleunigungsspannung durchlaufen, um nach dem Sto�
 Zur Abhängigkeit des Anodenstroms von der Temperatur schauen wir uns Abbildung \ref{fig:fh_vartemp} an, in der die Temperatur bei den Messungen variiert und die Gegenspannung konstant bei \SI{2}{\volt} gehalten wurde.
 In dem Diagramm sind ebenfalls alle Messreihen gleichzeitig dargestellt, um optimal vergleichen zu können.
 Man erkennt, dass der Anodenstrom für höhere Temperaturen kleiner ist als für niedrige Temperaturen, besonders die Kurve für $T=\SI{155}{\degreeCelsius}$ ist dabei deutlich höher und bei gleichen Temperaturabständen deutlich weiter entfernt von den anderen Messungen.
-Wir benötigen die in der Praktikumsanleitung gegebene Formel zum Dampfdruck von Quecksilber zur Erklärung der Beobachtung:
+Wir benötigen die in der Praktikumsanleitung angegebene Formel zum Dampfdruck von Quecksilber zur Erklärung der Beobachtung:
 \begin{align}
 \log p = 10,55-3333/T-0,85\log T \quad \text{($p$ in Torr und $T$ in K)}
 \label{eq:dampfdruck}

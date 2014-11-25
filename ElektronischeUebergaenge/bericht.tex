@@ -417,7 +417,7 @@ Dadurch ergeben sich außerdem neue \textbf{Auswahlregeln}, die die in \ref{sec:
 \clearpage
 
 \section{Zeeman-Effekt}
-Hier kurze Einführung (was wird gemacht)
+In diesem Versuchsteil soll die Energieaufspaltung der $\SI{643,8470}{\nano\metre}$-Linie von Cadmium im externen Magnetfeld untersucht werden.
 
 \subsection{Versuchsdurchführung}
 
@@ -425,27 +425,39 @@ Hier kurze Einführung (was wird gemacht)
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.0\textwidth]{./figures/aufbau_zeeman.pdf}
-	\caption{Aufbau Zeeman transversal. LD Didactic. \textbf{a}) Cadmiumlampe \textbf{b}) Klammern \textbf{c}) Polschuhe \textbf{d}) Kondensor $f=\SI{150}{\milli\metre}$ \textbf{e}) Fabry-Pérot-Etalon \textbf{f}) Abbildungslinse $f=\SI{150}{\milli\metre}$ \textbf{g}) Interferenzfilter \textbf{h}) Okular }
+	\caption{transversaler Aufbau zur Beobachtung des Zeeman-Effekts. \textbf{a}) Cadmiumlampe \textbf{b}) Klammern \textbf{c}) Polschuhe \textbf{d}) Kondensorlinse $f=\SI{150}{\milli\metre}$ \textbf{e}) Fabry-Pérot-Etalon \textbf{f}) Abbildungslinse $f=\SI{150}{\milli\metre}$ \textbf{g}) Interferenzfilter \textbf{h}) Okular. Quelle: LD Didactic}
 	\label{fig:aufbau_zeeman}
 \end{figure}
 
 Zur Beobachtung der Energieaufspaltung des Zeeman-Effekts bauen wir die Apperatur wie in Abbildung \ref{fig:aufbau_zeeman} auf.
 Dazu führen wir zunächst die Cadmium-Lampe zwischen die Polschuhe, welche mit dem Kern der beiden Magnetspulen verbunden sind.
 Dabei achten wir darauf, dass die Verbindung der Lampe mit dem Netzgerät, sowie die Abschmelzstelle des Lampenkolbens nicht im Strahlengang liegt.
-(Knebelschrauben erwähnen?)
-
 Nun bauen wir die optischen Elemente (\textbf{d} -- \textbf{h}) ein.
 Zur Justage der Apperatur halten wir vor das Fabry-Pérot-Etalon ein Blatt Papier und stellen die Kondensorlinse so ein, dass das Etalon komplett ausgeleuchtet wird.
-Direkt vor das Okular mit Strichskala stellen wir den Interferenzfilter mit Mittelwellenlänge $\lambda = \SI{643,8 +- 2}{\nano\metre}$ um das sichtbare Raumlicht zu minimieren.
+Direkt vor das Okular mit scharf eingestellter Strichskala stellen wir den Interferenzfilter mit Mittelwellenlänge $\lambda = \SI{643,8 +- 2}{\nano\metre}$ um das sichtbare Raumlicht zu minimieren.
 Anschließend stellen wir die Abbildungslinse (\textbf{f}) so ein, dass das Etalon scharf durch das Okular abgebildet wird.
 Da das Zentrum des Ringsystems nicht mit der Strichskala des Okulars übereinstimmt, kippen wir das Fabry-Pérot-Etalon mit den daran angebrachten Stellschrauben bis dies der Fall ist.
 
-\subsubsection{Beobachtung der Aufspaltung in transversaler Konfiguration}
+\subsubsection{Beobachtung der Aufspaltung}
+Zunächst beobachten wir die Aufspaltung der Linie in \textbf{transversalem Aufbau} das heißt, dass das Magnetfeld senkrecht zur Beobachtungsrichtung steht.
+Zunächst beobachten wir das Interferenzmuster des Fabry-Pérot-Etalons, welches aus konzentrischen Kreisen bestehen, die dadurch entstehen, dass das Etalon mit einer ausgedehnten Lichtquelle beleuchtet wird.
+Um eine Linienaufspaltung zu beobachten, lassen wir nun mithilfe des Netzgerätes einen Strom $I$ durch die Spulen fließen.
+Dadurch entsteht im Bereich des Lampenkolbens ein näherungsweise homogenes Magnetfeld.
+Wir wählen den Strom so, dass wir eine deutliche Aufspaltung der Kreise des Interferenzmusters erkennen können.
+Um die Polarisation zu untersuchen stellen wir einen Polarisationsfilter in den Strahlengang und skizzieren das am Okular sichtbare Interferenzmuster bei verschiedenen Filterausrichtungen.
+Wir entfernen den Filter und beobachten nun die Aufspaltung der Linien im Okular während wir langsam den Spulenstrom verringern.
+Dabei bestimmen wir den Spulenstrom, bei dem die Aufspaltung der Ringe gerade noch zu erkennen ist.
+Diese Messung führen wir insgesamt fünf mal durch, um den Messfehler besser abschätzen zu können.
 
-\subsubsection{Beobachtung der Aufspaltung in longitudinaler Konfiguration}
-
-
-
+Nun drehen wir die Polschuhe mitsamt Spulen so, dass wir in \text{longitudinalem Aufbau} beobachten können (das Magnetfeld zeigt in Beobachtungsrichtung).
+Die Cadmiumlampe beleuchtet dabei die Kondensorlinse durch ein Loch im Polschuh.
+Wir beobachten ohne Magnetfeld das Interferenzmuster des transversalen Aufbaus.
+Eine Messung mit zugeschaltetem Magnetfeld führt hier jedoch zur Aufspaltung in zwei konzentrische Kreise (eigentlich drei $\pi$-Linie war schwach zu sehen).
+Alle Skizzen in Abbildung \ref{fig:zeeman_transversal}.
+Im Gegensatz zur transversalen Beobachtung verwenden wir hier eine Kombination von Polarisationsfilter und $\frac{\lambda}{4}$-Platte zur Bestimmung der Polarisation.
+Dazu stellen wir die Viertel-Wellenlängen-Platte unter festem Winkel $\SI{0}{\degree}$ vor den Polarisationsfilter (in Strahlrichtung), dessen Ausrichtung $\alpha$ wir variieren und skizzieren das sichtbare Interferenzbild.
+Analog zum Vorteil bestimmen wir, nach dem Entfernen von Filter und $\frac{\lambda}{4}$-Platte, den minimalen Strom, bei dem die Aufspaltung gerade noch erkannt werden kann.
+Alle Skizzen in Abbildung \ref{fig:zeeman_longitudinal}.
 
 \subsubsection{Messung des Zeeman-Effekts}
 

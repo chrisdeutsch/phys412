@@ -457,24 +457,9 @@ Alle Skizzen in Abbildung \ref{fig:zeeman_longitudinal}.
 
 
 \FloatBarrier
-
-\begin{figure}[h]
-\centering
-\input{./plots/kalibrierung1.tex}
-\caption{Erster Durchgang kalibrierung}
-\label{fig:kalibrierung1}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\input{./plots/kalibrierung2.tex}
-\caption{Zweiter Durchgang kalibrierung}
-\label{fig:kalibrierung2}
-\end{figure}
-
-
-
 \FloatBarrier
+
+
 \subsection{Auswertung}
 \subsubsection{Beobachtung des Zeeman-Effektes}
 In der transversalen Konfiguration wird eine Aufspaltung der Ringe in drei Komponenten festgestellt.
@@ -519,7 +504,38 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 \end{figure}
 
 \subsubsection{Magnetfeldkalibrierung}
+\begin{figure}[h]
+	\centering
+	\input{./plots/kalibrierung1.tex}
+	\caption{Erster Durchgang kalibrierung}
+	\label{fig:kalibrierung1}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\input{./plots/kalibrierung2.tex}
+	\caption{Zweiter Durchgang kalibrierung}
+	\label{fig:kalibrierung2}
+\end{figure}
 
+Dazu muss zunächst das Magnetfeld $B$ berechnet werden.
+Da unsere beiden Magnetfeldkalibrierungen eine kleine Abweichung im Bereich hoher Ströme aufweisen, entscheiden wir uns dafür die die beiden Kalibrationen zu mitteln.
+Dazu verwenden wir das ungewichtete arithmetische Mittel, da die zugehörigen Fehler fast gleich sind.
+Dann ergibt sich der Fehler des Mittelwerts von $N$ Werten mit Fehler $\sigma$ zu $\sigma/\sqrt{N}$ dabei wählen wir für $\sigma$ immer den größten der beiden Fehler.
+
+\begin{itemize}
+	\item \textbf{Kalibration 1:}
+	\begin{align}
+	B_1(I) = \SI{-0.389 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
+	+\SI{0.747+-0.182}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
+	+ \SI{96.606 +- 0.602}{\milli\tesla\per\ampere} &\cdot I
+	\end{align}
+	\item \textbf{Kalibration 2:}
+	\begin{align}
+	B_2(I) = \SI{-0.518 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
+	+\SI{2.153+-0.183}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
+	+ \SI{93.086 +- 0.566}{\milli\tesla\per\ampere} &\cdot I
+	\end{align}
+\end{itemize}
 
 \subsubsection{Bestimmung des Bohrschen Magnetons}
 Auswahl des untersuchten Peaks hier!
@@ -584,25 +600,7 @@ Da die Energieaufspaltung gegeben ist durch:
 \end{align}
 Wenn man $\Delta E$ gegen $B$ aufträgt so erhält man eine Gerade mit Steigung $\pm \mu_\mathrm{B}$.
 
-Dazu muss zunächst das Magnetfeld $B$ berechnet werden.
-Da unsere beiden Magnetfeldkalibrierungen eine kleine Abweichung im Bereich hoher Ströme aufweisen, entscheiden wir uns dafür die die beiden Kalibrationen zu mitteln.
-Dazu verwenden wir das ungewichtete arithmetische Mittel, da die zugehörigen Fehler fast gleich sind.
-Dann ergibt sich der Fehler des Mittelwerts von $N$ Werten mit Fehler $\sigma$ zu $\sigma/\sqrt{N}$ dabei wählen wir für $\sigma$ immer den größten der beiden Fehler.
-
-\begin{itemize}
-	\item \textbf{Kalibration 1:}
-	\begin{align}
-	B_1(I) = \SI{-0.389 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
-	       +\SI{0.747+-0.182}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
-	       + \SI{96.606 +- 0.602}{\milli\tesla\per\ampere} &\cdot I
-	\end{align}
-	\item \textbf{Kalibration 2:}
-	\begin{align}
-	B_2(I) = \SI{-0.518 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
-	+\SI{2.153+-0.183}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
-	+ \SI{93.086 +- 0.566}{\milli\tesla\per\ampere} &\cdot I
-	\end{align}
-\end{itemize}
+MAGNETFELDKALIBRATION!
 
 Wir tragen nun den $|\Delta E|$ gegen das anliegende Magnetfeld $\bar{B}$ auf und fitten Ursprungsgeraden an die Messpunkte.
 Die Fits ergeben:

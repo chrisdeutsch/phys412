@@ -142,7 +142,7 @@ Dieser führt zu einem magnetischen Dipolmoment, welches gegeben ist durch:
 \begin{align}
 	\vec{\mu}_\ell = - \frac{\mu_\mathrm{B}}{\hbar} \vec{\ell}
 \end{align}
-wobei das Bohr'sche Magneton definiert ist als:
+Wobei das Bohr'sche Magneton definiert ist als:
 \begin{align}
 	\mu_\mathrm{B} = \frac{e \hbar}{2 m_e}
 \end{align}
@@ -179,8 +179,8 @@ Damit folgt analog zum normalen Zeeman-Effekt:
 	\Delta E = \mu_\mathrm{B} g_j m_j B_z
 \end{align}
 
-
 \subsubsection{Auswahlregeln}
+\label{sec:auswahlregeln}
 Die Auswahlregeln für elektrische Dipolübergänge erhält man durch Berechnung der Übergangswahrscheinlichkeit vom Zustand $|i\rangle$ in den Endzustand $|f\rangle$ durch Fermi's Goldene Regel:
 \begin{align}
 	\lambda_{i\rightarrow f} = \frac{2 \pi}{\hbar} | \braket{f|H^\prime|i} |^2 \rho(E_\mathrm{f})
@@ -250,7 +250,8 @@ definiert.\footnote{Quelle: Vorlesung Linden}
 
 \begin{figure}[h]
 	\centering
-	\input{./plots/fabry_perot_transmission.tex}
+	\scalebox{0.9}{
+	\input{./plots/fabry_perot_transmission.tex}}
 	\caption{UNTERSCHRIFT}
 	\label{fig:fabry_transmission}
 \end{figure}
@@ -276,10 +277,8 @@ Die Energieunschärfe ist gegeben durch:
 	\Gamma = \frac{\hbar}{\tau}
 \end{align}
 Diese Energieunschärfe hat ein Lorentz-Profil.
-
 Darüber hinaus kommt es zur Dopplerverbreiterung aufgrund der thermischen Bewegung der angeregten Atome.
 Die Geschwindigkeitsverteilung der Atome in Beobachtungsrichtung ist gaußförmig um Null, sodass auch die Dopplerverbreitung ein gaußförmiges Profil hat.
-
 Die Kombination von natürlicher Linienbreite (Lorentz) und Dopplerverbreiterung (Gauß) führt (Faltung) zu einem sogenannten Voigt-Profil.
 \begin{align}
 	\delta \lambda = \frac{\lambda_0}{c} \sqrt{\frac{8 k_\mathrm{B} T \ln(2)}{m}}
@@ -287,8 +286,8 @@ Die Kombination von natürlicher Linienbreite (Lorentz) und Dopplerverbreiterung
 \footnote{Quelle: wiki-Dopplerverbreiterung}
 \subsubsection{$\frac{\lambda}{4}$-Platte}
 Eine $\lambda/4$-Platte besteht aus doppelbrechendem Material dessen optische Achse parallel zu den Grenzflächen ausgerichtet ist.
-Im Zuge dieser Erklärung wollen wir davon ausgehen, dass die optische Achse mit der y-Achse übereinstimmt.
-Dann unterscheidet sich der Brechungsindex in x-Richtung $n_x$ von dem in y-Richtung $n_y$, was dazu führt, dass Phasendifferenzen zwischen den x- und y-polarisierten Anteilen des Lichts entstehen.
+Im Zuge dieser Erklärung wollen wir davon ausgehen, dass die optische Achse mit der $y$-Achse übereinstimmt.
+Dann unterscheidet sich der Brechungsindex in $x$-Richtung $n_x$ von dem in $y$-Richtung $n_y$, was dazu führt, dass Phasendifferenzen zwischen den $x$- und $y$-polarisierten Anteilen des Lichts entstehen.
 Die Phasendifferenz ist gegeben durch:
 \begin{align}
 	\Delta \varphi = \frac{2 \pi}{\lambda} d (n_y - n_x)
@@ -308,7 +307,7 @@ Diese Eigenschaften der $\lambda/4$-Platte ermöglichen es unter Zunahme eines P
 In Hall-Sonden wird der Hall-Effekt ausgenutzt, welcher besagt, dass an einem stromdurchflossenen Leiter im Magnetfeld $B_y$ eine Spannung $U_\mathrm{Hall}$ über den Seitenflächen des Leitermaterials entsteht, die aufgrund der Lorentzkraft auf die bewegten Ladungsträger entsteht.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./figures/hall_effekt.pdf}
+	\includegraphics[width=0.65\textwidth]{./figures/hall_effekt.pdf}
 	\caption{Zur Herleitung des Hall-Effekts}
 	\label{fig:hall_effekt}
 \end{figure}
@@ -367,7 +366,7 @@ j=A\,T^2\cdot\exp\left({-\dfrac{\phi}{\mathrm{k_B}T}}\right)
 Dabei ist $T$ die absolute Temperatur, $\mathrm{k_B}$ die Boltzmann-Konstante und $A$ und $\phi$ (Austrittsarbeit) materialabhängige Konstanten.
 
 Die Erzeugung von Elektronen ist dabei jedoch nicht unbegrenzt möglich.
-Bei vielen austretenden Elektronen kann es passieren, dass diese durch die Beschleunigungsspannung selber ein elektrisches Feld erzeugen, was dafür sorgt, dass die Elektronen, die an der Kathode entstehen, das äußere Beschleunigungsfeld nicht wahrnehmen und diese \textbf{Raumladung} den gemessenen Anodenstrom limitiert.
+Bei vielen austretenden Elektronen kann es passieren, dass diese durch die Beschleunigungsspannung bewegten Ladungsträger selber ein elektrisches Feld erzeugen, was dafür sorgt, dass die Elektronen, die an der Kathode entstehen, das äußere Beschleunigungsfeld nicht wahrnehmen und diese \textbf{Raumladung} um die Kathode den gemessenen Anodenstrom limitiert.
 Für diesen gilt\footnote{Quelle: Vorlesung Accelerator Physics bei PD Dr. W. Hillert}:
 \begin{align}
 I_0=P\,U_0^{\,\frac{3}{2}}
@@ -387,25 +386,27 @@ Sie ist definiert als
 mit $n$ der Teilchendichte und $\sigma$ dem totalen \textbf{Wirkungsquerschnitt}.
 Dieser ist ebenfalls eine wichtige Eigenschaft des Gases, denn er gibt die Wahrscheinlichkeit an, dass ein Teilchen mit einem anderen wechselwirkt, wobei wir die Wechselwirkung in der kinetischen Gastheorie wie angesprochen auf elastische Stöße beschränken.
 
-\begin{itemize}
-\item Gaskinetik
-\item Zwei-Phasen-System
-\item (in-)elastische Stöße
-\end{itemize}
-
-\subsubsection{Quecksilberatom}
-
-\subsubsection{LS- und jj-Kopplung}
-Wie in Abschnitt \ref{sec:zeemaneffekt} bereits angedeutet, erweitert sich der Gesamtdrehimpuls $\vec{L}=\sum_i\vec{\ell}_i$ des Atoms unter Berücksichtigung des Spins $\vec{S}$ zu $\vec{J}=\vec{L}+\vec{S}$.
-Der Spin wird dabei als intrinsische Eigenschaft des Elektrons verstanden und liefert die Quantenzahl $s=\pm1/2$.
-Die daraus folgende Energieverschiebung für die Energieniveaus 
-
-\begin{itemize}
-\item LS- / jj-Kopplung
-\item Termschema
-\item Auswahlregeln
-\item Resonanzabsorption
-\end{itemize}
+\subsubsection{Quecksilberatom: LS- und jj-Kopplung}
+Zur Erklärung des Franck-Hertz-Versuches müssen wir die Kopplung mehrerer Drehimpulskomponenten beachten.
+Grundsätzlich können in Systemen mit mehreren Drehimpulskomponenten diese untereinander koppeln, wobei wir uns hier auf den Bahndrehimpuls $\ell$ und den Elektronenspin $\vec{s}$ mit Quantenzahl $\pm1/2$, der als Eigendrehimpuls interpretiert werden kann, beschränken.
+Der Hamiltonoperator für die Kopplung dieser beiden Drehimpulse ist gegeben durch
+\begin{align*}
+\hat{H}=\frac{a}{\hbar^2}\hat{\vec{\ell}}\cdot\hat{\vec{s}}\qquad a=\frac{Ze^2\mu_0\hbar^2}{8\pi m_e^2 r^3}
+\end{align*}
+mit der Kopplungskonstanten $a$, die von der Kernladungszahl $Z$ abhängt.
+Diese Abhängigkeit von $Z$ sorgt dafür, dass die Kopplung von Spin und Bahndrehimpuls für unterschiedliche $Z$ betrachtet werden muss.
+Für kleine Kernladungszahlen ist die Kopplungsenergie zwischen Elektronenspin und Bahndrehimpuls gering und kleiner als die Kopplung zwischen zwei Drehimpulsen $\ell_i$ und $\ell_j$ sowie zwischen zwei Spins $s_i$ und $s_j$, weswegen eher die Bahndrehimpulse bzw. die Spins untereinander koppeln werden.
+Dann spricht man von \textbf{LS-Kopplung}.
+Im Vektormodell lässt sich somit schreiben:
+\begin{align*}
+\vec{J}=\vec{L}+\vec{S}=\sum_i\vec{\ell}_i+\sum_i\vec{s}_i
+\end{align*}
+Für große $Z$ ist die Kopplung zwischen $\ell$ und $s$ größer als die Kopplung zweier Bahndrehimpulse bzw. Spins untereinander und es werden eher die $\ell_i$ und $s_i$ zu einem $j_i=\ell_i+s_i$ koppeln.
+Man erhält im Vektormodell für die \textbf{jj-Kopplung}:
+\begin{align*}
+\vec{J}=\sum_i\vec{j}_i
+\end{align*}
+Dadurch ergeben sich außerdem neue \textbf{Auswahlregeln}, die die in \ref{sec:auswahlregeln} genannten (dort wurde nur LS-Kopplung berücksichtigt) vor allem um $\Delta S=\pm1$ erweitern, wodurch Übergänge zwischen verschiedenen Multiplettsystemen möglich werden.
 
 \clearpage
 
@@ -769,7 +770,7 @@ Zunächst führen wir die Messung für verschiedene Gegenspannungen bei konstant
 Für diese wählen wir \SI{160}{\degreeCelsius} und überprüfen vor den Messungen, wie oben angesprochen, dass kein Durchzünden stattfinden kann.
 Darum wählen wir als Maximalwert der positiven Rampe \SI{42}{\kilo\volt} und messen für vier Gegenspannungen zwischen \SI{2}{\volt} und \SI{3.5}{\volt} den Anodenstrom.
 Die Messwerte sind in Abbildung \ref{fig:fh_varvolt} dargestellt.
-Für die Diagramme wählen wir zur Skalierung der y-Achse willkürliche Einheiten, da diese nicht zur Auswertung benötigt werden und durch die im Steuergerät durchgeführte Umwandlung des Stroms in eine von Cassy messbare Spannung der Umrechnungsfaktor nicht bekannt ist.
+Für die Diagramme wählen wir zur Skalierung der $y$-Achse willkürliche Einheiten, da diese nicht zur Auswertung benötigt werden und durch die im Steuergerät durchgeführte Umwandlung des Stroms in eine von Cassy messbare Spannung der Umrechnungsfaktor nicht bekannt ist.
 \begin{figure}[!h]
 \centering
 \input{./plots/fh_varvolt.tex}
@@ -797,7 +798,7 @@ Als Fithypothese wählen wir dabei
 mit dem Peakschwerpunkt $S_i$, den wir zur Auswertung benötigen.
 Wir lassen die Parameter nun an jeweils 4 Maxima pro Datensatz anpassen, wobei wir die Maxima mit $i$ von links nach rechts durchnummerieren, beginnend bei dem Maximum zwischen \SI{15}{\kilo\volt} und \SI{20}{\kilo\volt}, da das davor liegende Maximum besonders für hohe Gegenspannungen und hohe Temperaturen nicht gut gefittet werden kann.
 Die Ergebnisse für die Schwerpunkte $S_i$ sind in Tabelle \ref{tab:fh_schwerpunkte} dargestellt, sowie bereits die Mittelwerte und deren (über die Standardabweichung bestimmten) Fehler für jeden Datensatz.
-Nun mitteln wir diese Werte erneut, um einen Gesamtwert für den Energieabstand $\Delta E$ zu erhalten.
+Nun mitteln wir die so gefundenen Werte, um einen Gesamtwert für den Energieabstand $\Delta E$ zu erhalten.
 Wir finden so:
 \begin{align*}
 \Delta E = \SI{4.922+-0.021}{\electronvolt}

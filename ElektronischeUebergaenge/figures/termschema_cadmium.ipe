@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.5">
-<info created="D:20141116103632" modified="D:20141116104047"/>
+<info created="D:20141116103632" modified="D:20141125180803"/>
 <preamble>\usepackage{siunitx}
 \sisetup{
   output-decimal-marker={,},
@@ -364,12 +364,12 @@ h
 304 360 m
 304 312 l
 </path>
-<text matrix="1 0 0 1 -16 -4" transformations="translations" pos="224 368" stroke="black" type="label" width="28.583" height="9.802" depth="4.09" valign="baseline" size="Large">$\Delta$m$_j$</text>
-<text matrix="1 0 0 1 -4 0" transformations="translations" pos="252 364" stroke="black" type="label" width="18.182" height="9.251" depth="1.19" valign="baseline" size="Large">$-1$</text>
-<text transformations="translations" pos="300 364" stroke="black" type="label" width="7.024" height="9.245" depth="0" valign="baseline" size="Large">$0$</text>
-<text matrix="1 0 0 1 -4 0" transformations="translations" pos="340 364" stroke="black" type="label" width="17.949" height="9.251" depth="1.09" valign="baseline" size="Large">$+1$</text>
-<text transformations="translations" pos="300 300" stroke="black" type="label" width="8.483" height="6.177" depth="0" valign="baseline" size="Large">$\pi$</text>
-<text matrix="1 0 0 1 -4 0" transformations="translations" pos="252 300" stroke="black" type="label" width="16.746" height="11.018" depth="0" valign="baseline" size="Large">$\sigma^-$</text>
-<text transformations="translations" pos="336 300" stroke="black" type="label" width="16.746" height="11.018" depth="0" valign="baseline" size="Large">$\sigma^+$</text>
+<text matrix="1 0 0 1 -16 -4" transformations="translations" pos="224 368" stroke="black" type="label" width="32.597" height="11.758" depth="4.91" valign="baseline" size="LARGE">$\Delta$m$_j$</text>
+<text matrix="1 0 0 1 -4 0" transformations="translations" pos="252 364" stroke="black" type="label" width="21.285" height="11.102" depth="1.43" valign="baseline" size="LARGE">$-1$</text>
+<text transformations="translations" pos="300 364" stroke="black" type="label" width="7.895" height="11.097" depth="0" valign="baseline" size="LARGE">$0$</text>
+<text matrix="1 0 0 1 -4 0" transformations="translations" pos="340 364" stroke="black" type="label" width="20.288" height="11.1" depth="1.09" valign="baseline" size="LARGE">$+1$</text>
+<text transformations="translations" pos="300 300" stroke="black" type="label" width="10.18" height="7.412" depth="0" valign="baseline" size="LARGE">$\pi$</text>
+<text matrix="1 0 0 1 -4 0" transformations="translations" pos="252 300" stroke="black" type="label" width="19.995" height="13.221" depth="0" valign="baseline" size="LARGE">$\sigma^-$</text>
+<text transformations="translations" pos="336 300" stroke="black" type="label" width="19.801" height="13.138" depth="0" valign="baseline" size="LARGE">$\sigma^+$</text>
 </page>
 </ipe>

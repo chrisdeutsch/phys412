@@ -397,20 +397,29 @@ Dieser ist ebenfalls eine wichtige Eigenschaft des Gases, denn er gibt die Wahrs
 \subsection{Quecksilberatom}
 
 \subsubsection{LS- und jj-Kopplung}
-Wie in Abschnitt \ref{sec:zeemaneffekt} bereits angedeutet, erweitert sich der Gesamtdrehimpuls $\vec{L}=\sum_i\vec{\ell}_i$ des Atoms unter Berücksichtigung des Spins $\vec{S}$ zu $\vec{J}=\vec{L}+\vec{S}$.
-Der Spin wird dabei als intrinsische Eigenschaft des Elektrons verstanden und liefert die Quantenzahl $s=\pm1/2$.
-Der Hamiltonoperator für diese Kopplung ist gegeben durch
+Zur Erklärung des Franck-Hertz-Versuches müssen wir die Kopplung mehrerer Drehimpulskomponenten beachten.
+Grundsätzlich können in Systemen mit mehreren Drehimpulskomponenten diese untereinander koppeln, wobei wir uns hier auf den Bahndrehimpuls $\ell$ und den Elektronenspin $\vec{s}$ mit Quantenzahl $\pm1/2$, der als Eigendrehimpuls interpretiert werden kann, beschränken.
+Der Hamiltonoperator für die Kopplung dieser beiden Drehimpulse ist gegeben durch
 \begin{align*}
 \hat{H}=\frac{a}{\hbar^2}\hat{\vec{\ell}}\cdot\hat{\vec{s}}\qquad a=\frac{Ze^2\mu_0\hbar^2}{8\pi m_e^2 r^3}
 \end{align*}
 mit der Kopplungskonstanten $a$, die von der Kernladungszahl $Z$ abhängt.
-
-Diese Abhängigkeit von $Z$ sorgt dafür, dass die Kopplung von Spin und Bahndrehimpuls für große $Z$ so stark ist, dass jedes Elektron eine Quantenzahl $j=\ell+s$ einnimmt, bei der $\ell$ und $s$ eines Elektrons koppeln und die $j_i$ untereinander zum Gesamtdrehimpuls $J$ koppeln. 
-Dadurch ergeben sich außerdem neue \textbf{Auswahlregeln}, die die in \ref{sec:auswahlregeln} genannten vor allem um $\Delta S=\pm1$ erweitern, wodurch Übergänge zwischen verschiedenen Multiplettsystemen möglich werden.
+Diese Abhängigkeit von $Z$ sorgt dafür, dass die Kopplung von Spin und Bahndrehimpuls für unterschiedliche $Z$ betrachtet werden muss.
+Für kleine Kernladungszahlen ist die Kopplungsenergie zwischen Elektronenspin und Bahndrehimpuls gering und kleiner als die Kopplung zwischen zwei Drehimpulsen $\ell_i$ und $\ell_j$ sowie zwischen zwei Spins $s_i$ und $s_j$, weswegen eher die Bahndrehimpulse bzw. die Spins untereinander koppeln werden.
+Dann spricht man von \textbf{LS-Kopplung}.
+Im Vektormodell lässt sich somit schreiben:
+\begin{align*}
+\vec{J}=\vec{L}+\vec{S}=\sum_i\vec{\ell}_i+\sum_i\vec{s}_i
+\end{align*}
+Für große $Z$ ist die Kopplung zwischen $\ell$ und $s$ größer als die Kopplung zweier Bahndrehimpulse bzw. Spins untereinander und es werden eher die $\ell_i$ und $s_i$ zu einem $j_i=\ell_i+s_i$ koppeln.
+Man erhält im Vektormodell für die \textbf{jj-Kopplung}:
+\begin{align*}
+\vec{J}=\sum_i\vec{j}_i
+\end{align*}
+Dadurch ergeben sich außerdem neue \textbf{Auswahlregeln}, die die in \ref{sec:auswahlregeln} genannten (dort wurde nur LS-Kopplung berücksichtigt) vor allem um $\Delta S=\pm1$ erweitern, wodurch Übergänge zwischen verschiedenen Multiplettsystemen möglich werden.
 
 \begin{itemize}
 \item Termschema
-\item Auswahlregeln
 \item Resonanzabsorption
 \end{itemize}
 

@@ -523,17 +523,35 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 \subsubsection{Magnetfeldkalibrierung}
 
 
+\FloatBarrier
 \subsubsection{Bestimmung des Bohrschen Magnetons}
-Auswahl des untersuchten Peaks hier!
+\begin{figure}[h]
+	\centering
+	\input{./plots/peakauswahl.tex}
+	\caption{Intensitätsverteilung des Fabry-Pérot-Etalons bei abgeschaltetem Magnetfeld. Das in schwarz markierte Maximum wird zur Bestimmung des Magnetons verwendet.}
+	\label{fig:peakauswahl}
+\end{figure}
+Zur Bestimmung des Bohrschen Magnetons müssen wir die Energieaufspaltung $\Delta E$ der Linie von Cadmium vermessen.
+Dazu betrachten wir die mit der CCD-Kamera aufgenommenen Intensitäten eines inneren Rings bei variablem Spulenstrom $I$.
+Der zur Analyse herangezogene Ring wurde in Abbildung \ref{fig:peakauswahl} markiert.
+Um die Peakschwerpunkte der Aufspaltung zu vermessen passen wir an die Intensitätsverteilung des gewählten Rings eine Summe von drei Gaußfunktionen $\mathcal{G}$ mit Verschiebung $d$ an.
+Die Anpassungshypothese lautet:
+\begin{align}
+f(x) = \mathcal{G}_1(x) + \mathcal{G}_2(x) + \mathcal{G}_3(x) + d
+\end{align}
+mit der Gaußfunktion:
+\begin{align}
+\mathcal{G}_i(x) = A_i \exp\left( -\frac{1}{2} \left( \frac{x - \mu_i}{\sigma_i} \right)^2 \right)
+\end{align}
+Wir erhalten als Anpassungsparameter die drei Höhen $A_i$, drei Peakschwerpunkte $\mu_i$, drei Standardabweichungen $\sigma_i$ und den konstanten Versatz $d$.
 
-Gaußfunktion:
-\begin{align}
-	\mathcal{G}_i(x) = A_i \exp\left( -\frac{1}{2} \left( \frac{x - \mu_i}{\sigma_i} \right)^2 \right)
-\end{align}
-Fithypothese:
-\begin{align}
-	f(x) = \mathcal{G}_1(x) + \mathcal{G}_2(x) + \mathcal{G}_3(x) + d
-\end{align}
+\begin{figure}
+	\centering
+	\input{./plots/zeemann_aufspaltung/b4.tex}
+	\caption{ABC}
+	\label{fig:zeeman_b4_bsp}
+\end{figure}
+
 $\mathcal{G}_1$ entspricht der $\sigma_-$-Linie, $\mathcal{G}_2$ entspricht $\pi$-Linie, $\mathcal{G}_3$ entspricht $\sigma_+$-Linie.
 Mit den Fits an die Messdaten erhalten wir Tabelle \ref{tab:peakschwerpunkte_magneton}.
 \begin{table}[h]
@@ -638,12 +656,7 @@ Gemäß der Gleichung entspricht die Steigung dem Bohrschen Magneton. Wir bilden
 
 
 \subsubsection{Weitergehende Überlegungen}
-\begin{figure}[h]
-\centering
-\input{./plots/peakauswahl.tex}
-\caption{Auswahl des betrachteten Peaks}
-\label{fig:peakauswahl}
-\end{figure}
+
 \begin{table}[h]
 	\centering
 	\input{./tables/aufloesung.tex}

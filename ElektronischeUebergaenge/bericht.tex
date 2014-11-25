@@ -388,7 +388,7 @@ Dieser ist ebenfalls eine wichtige Eigenschaft des Gases, denn er gibt die Wahrs
 
 \subsubsection{Quecksilberatom: LS- und jj-Kopplung}
 Zur Erklärung des Franck-Hertz-Versuches müssen wir die Kopplung mehrerer Drehimpulskomponenten beachten.
-Grundsätzlich können in Systemen mit mehreren Drehimpulskomponenten diese untereinander koppeln, wobei wir uns hier auf den Bahndrehimpuls $\ell$ und den Elektronenspin $\vec{s}$ mit Quantenzahl $\pm1/2$, der als Eigendrehimpuls interpretiert werden kann, beschränken.
+Grundsätzlich können in Systemen mit mehreren Drehimpulskomponenten diese untereinander koppeln, wobei wir uns hier auf den Bahndrehimpuls $\ell$ und den Elektronenspin $s$ mit Quantenzahl $\pm1/2$, der als Eigendrehimpuls interpretiert werden kann, beschränken.
 Der Hamiltonoperator für die Kopplung dieser beiden Drehimpulse ist gegeben durch
 \begin{align*}
 \hat{H}=\frac{a}{\hbar^2}\hat{\vec{\ell}}\cdot\hat{\vec{s}}\qquad a=\frac{Ze^2\mu_0\hbar^2}{8\pi m_e^2 r^3}
@@ -404,9 +404,15 @@ Im Vektormodell lässt sich somit schreiben:
 Für große $Z$ ist die Kopplung zwischen $\ell$ und $s$ größer als die Kopplung zweier Bahndrehimpulse bzw. Spins untereinander und es werden eher die $\ell_i$ und $s_i$ zu einem $j_i=\ell_i+s_i$ koppeln.
 Man erhält im Vektormodell für die \textbf{jj-Kopplung}:
 \begin{align*}
-\vec{J}=\sum_i\vec{j}_i
+\vec{J}=\sum_i\vec{j}_i=\sum_i\left(\vec{\ell}_i+\vec{s}_i\right)
 \end{align*}
-Dadurch ergeben sich außerdem neue \textbf{Auswahlregeln}, die die in \ref{sec:auswahlregeln} genannten (dort wurde nur LS-Kopplung berücksichtigt) vor allem um $\Delta S=\pm1$ erweitern, wodurch Übergänge zwischen verschiedenen Multiplettsystemen möglich werden.
+Dadurch ergeben sich außerdem neue \textbf{Auswahlregeln}, die die in \ref{sec:auswahlregeln} genannten (dort wurde nur LS-Kopplung berücksichtigt) vor allem um $\Delta S=\pm1$ erweitern, wodurch Übergänge zwischen verschiedenen Multiplettsystemen möglich werden, wie man im in Abbildung \ref{fig:termschema_hg} dargestellten Termschema sehen kann.
+\begin{figure}[!h]
+\centering
+\includegraphics[width=0.9\textwidth]{./figures/termschema_hg.pdf}
+\caption{Vereinfachtes Termschema von Quecksilber. Quelle: Kuhn, Atomic Spectra, S. 192, 1962}
+\label{fig:termschema_hg}
+\end{figure}
 
 \clearpage
 
@@ -423,19 +429,19 @@ In diesem Versuchsteil soll die Energieaufspaltung der $\SI{643,8470}{\nano\metr
 	\label{fig:aufbau_zeeman}
 \end{figure}
 
-Zur Beobachtung der Energieaufspaltung des Zeeman-Effekts bauen wir die Apperatur wie in Abbildung \ref{fig:aufbau_zeeman} auf.
-Dazu führen wir zunächst die Cadmium-Lampe zwischen die Polschuhe, welche mit dem Kern der beiden Magnetspulen verbunden sind.
+Zur Beobachtung der Energieaufspaltung des Zeeman-Effekts bauen wir die Apparatur wie in Abbildung \ref{fig:aufbau_zeeman} auf.
+Dazu führen wir zunächst die Cadmium-Lampe zwischen die Polschuhe, welche mit dem Kern der beiden Magnetspulen verbunden ist.
 Dabei achten wir darauf, dass die Verbindung der Lampe mit dem Netzgerät, sowie die Abschmelzstelle des Lampenkolbens nicht im Strahlengang liegt.
 Nun bauen wir die optischen Elemente (\textbf{d} -- \textbf{h}) ein.
 Zur Justage der Apperatur halten wir vor das Fabry-Pérot-Etalon ein Blatt Papier und stellen die Kondensorlinse so ein, dass das Etalon komplett ausgeleuchtet wird.
-Direkt vor das Okular mit scharf eingestellter Strichskala stellen wir den Interferenzfilter mit Mittelwellenlänge $\lambda = \SI{643,8 +- 2}{\nano\metre}$ um das sichtbare Raumlicht zu minimieren.
+Direkt vor das Okular mit scharf gestellter Strichskala stellen wir den Interferenzfilter mit Mittelwellenlänge $\lambda = \SI{643,8 +- 2}{\nano\metre}$ um das sichtbare Raumlicht zu minimieren.
 Anschließend stellen wir die Abbildungslinse (\textbf{f}) so ein, dass das Etalon scharf durch das Okular abgebildet wird.
 Da das Zentrum des Ringsystems nicht mit der Strichskala des Okulars übereinstimmt, kippen wir das Fabry-Pérot-Etalon mit den daran angebrachten Stellschrauben bis dies der Fall ist.
 
 \subsubsection{Beobachtung der Aufspaltung}
-Zunächst beobachten wir die Aufspaltung der Linie in \textbf{transversalem Aufbau} - das heißt, dass das Magnetfeld senkrecht zur Beobachtungsrichtung steht.
-Zunächst beobachten wir das Interferenzmuster des Fabry-Pérot-Etalons, welches aus konzentrischen Kreisen bestehent, die dadurch entstehen, dass das Etalon mit einer ausgedehnten Lichtquelle beleuchtet wird.
-Um eine Linienaufspaltung zu beobachten, lassen wir nun mithilfe des Netzgerätes einen Strom $I$ durch die Spulen fließen.
+Als erstes beobachten wir die Aufspaltung der Linie in \textbf{transversalem Aufbau} - das heißt, dass das Magnetfeld senkrecht zur Beobachtungsrichtung steht.
+Zunächst beobachten wir das Interferenzmuster des Fabry-Pérot-Etalons, welches aus konzentrischen Kreisen besteht, die dadurch entstehen, dass das Etalon mit einer ausgedehnten Lichtquelle beleuchtet wird.
+Um eine Linienaufspaltung zu beobachten, lassen wir nun mithilfe des Netzgeräts einen Strom $I$ durch die Spulen fließen.
 Dadurch entsteht im Bereich des Lampenkolbens ein näherungsweise homogenes Magnetfeld.
 Wir wählen den Strom so, dass wir eine deutliche Aufspaltung der Kreise des Interferenzmusters erkennen können.
 Um die Polarisation zu untersuchen, stellen wir einen Polarisationsfilter in den Strahlengang und skizzieren das am Okular sichtbare Interferenzmuster bei verschiedenen Filterausrichtungen.
@@ -450,17 +456,33 @@ Eine Messung mit zugeschaltetem Magnetfeld führt hier jedoch zur Aufspaltung in
 Alle Skizzen in Abbildung \ref{fig:zeeman_transversal}.
 Im Gegensatz zur transversalen Beobachtung verwenden wir hier eine Kombination von Polarisationsfilter und $\frac{\lambda}{4}$-Platte zur Bestimmung der Polarisation.
 Dazu stellen wir die Viertel-Wellenlängen-Platte unter festem Winkel $\SI{0}{\degree}$ vor den Polarisationsfilter (in Strahlrichtung), dessen Ausrichtung $\alpha$ wir variieren und skizzieren das sichtbare Interferenzbild.
-Analog zum VorteilWie bei der transversalen Beobachtung bestimmen wir auch hier, nach dem Entfernen von Filter und $\frac{\lambda}{4}$-Platte, den minimalen Strom, bei dem die Aufspaltung gerade noch erkannt werden kann.
+Wie bei der transversalen Beobachtung bestimmen wir auch hier, nach dem Entfernen von Filter und $\frac{\lambda}{4}$-Platte, den minimalen Strom, bei dem die Aufspaltung gerade noch erkannt werden kann.
 Alle Skizzen in Abbildung \ref{fig:zeeman_longitudinal}.
 
 \subsubsection{Messung des Zeeman-Effekts}
 
+\begin{figure}[h]
+\centering
+\input{./plots/kalibrierung1.tex}
+\caption{Erster Durchgang kalibrierung}
+\label{fig:kalibrierung1}
+\end{figure}
+\begin{figure}[h]
+\centering
+\input{./plots/kalibrierung2.tex}
+\caption{Zweiter Durchgang kalibrierung}
+\label{fig:kalibrierung2}
+\end{figure}
+
+\FloatBarrier
+
 \subsection{Auswertung}
+
 \subsubsection{Beobachtung des Zeeman-Effektes}
 In der transversalen Konfiguration wird eine Aufspaltung der Ringe in drei Komponenten festgestellt.
 Diese Aufspaltung entspricht allen drei möglichen Dipolübergängen $\Delta m_j = 0, \pm 1$ von $^1D_2$ nach $^1P_1$ wie in Abbildung \ref{fig:termschema_cadmium} zu sehen ist.
 Dabei entsprechen die äußeren Linien den Übergängen mit $\Delta m_j = \pm 1$ und die Innere $\Delta m_j = 0$.
-Um dies zu verstehen, muss die Polarisation der Linien betrachtet werden, welche wir anhand eines Polarisationsfilters gilt, analysiert haben.
+Um dies zu verstehen, muss die Polarisation der Linien betrachtet werden, welche wir anhand eines Polarisationsfilters analysiert haben.
 In Abbildung $\ref{fig:zeeman_transversal}$ sehen wir, dass nur die mittlere Linie durch den Filter bei $\alpha_\mathrm{Pol.} = \SI{90 +- 2,5}{\degree}$ (Polarisationsebene parallel zum Magnetfeld) transmittiert wird,  das Photon ist demnach linear in der Magnetfeldrichtung polarisiert.
 Im Gegensatz dazu, verschwindet die mittlere Linie bei Drehung des Filters auf $\alpha_\mathrm{Pol.} = \SI{0 +- 2,5}{\degree}$ und die beiden äußeren Linien werden transmittiert, sodass diese senkrecht auf der Magnetfeldrichtung polarisiert sind.
 
@@ -478,7 +500,7 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 	Damit folgt aus der Drehimpulserhaltung, dass das Photon parallel zur Magnetfeldachse polarisiert sein muss, um $\Delta m_\ell = 0$ zu gewährleisten.
 	
 	\item $\Delta m = \pm 1$: Diese Übergänge weisen keine dipolartige Abstrahlcharakteristik auf, sodass Emission auch in Richtung des Magnetfeldes stattfindet.
-	Da auch hier Drehimpulserhaltung gilt, muss der Spin des emittierten Photons so ausgerichtet sein, dass $m_s = \mp 1$ um $\Delta m = \pm 1$ zu gewährleisten.
+	Da auch hier Drehimpulserhaltung gilt, muss der Spin des emittierten Photons so ausgerichtet sein, dass $m_s = \mp 1$ gilt, um $\Delta m = \pm 1$ zu gewährleisten.
 	Diese Photonenspins entsprechen in longitudinaler Beobachtungsrichtung zirkular polarisiertem Licht und in Transversaler linear polarisiertem Licht mit Polarisationsebene senkrecht auf der Spinquantisierungsachse welche mit der Magnetfeldachse übereinstimmt.
 \end{itemize}
 
@@ -499,38 +521,7 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 \end{figure}
 
 \subsubsection{Magnetfeldkalibrierung}
-\begin{figure}[h]
-	\centering
-	\input{./plots/kalibrierung1.tex}
-	\caption{Erster Durchgang kalibrierung}
-	\label{fig:kalibrierung1}
-\end{figure}
-\begin{figure}[h]
-	\centering
-	\input{./plots/kalibrierung2.tex}
-	\caption{Zweiter Durchgang kalibrierung}
-	\label{fig:kalibrierung2}
-\end{figure}
-Zur 
-Dazu muss zunächst das Magnetfeld $B$ berechnet werden.
-Da unsere beiden Magnetfeldkalibrierungen eine kleine Abweichung im Bereich hoher Ströme aufweisen, entscheiden wir uns dafür die die beiden Kalibrationen zu mitteln.
-Dazu verwenden wir das ungewichtete arithmetische Mittel, da die zugehörigen Fehler fast gleich sind.
-Dann ergibt sich der Fehler des Mittelwerts von $N$ Werten mit Fehler $\sigma$ zu $\sigma/\sqrt{N}$ dabei wählen wir für $\sigma$ immer den größten der beiden Fehler.
 
-\begin{itemize}
-	\item \textbf{Kalibration 1:}
-	\begin{align}
-	B_1(I) = \SI{-0.389 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
-	+\SI{0.747+-0.182}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
-	+ \SI{96.606 +- 0.602}{\milli\tesla\per\ampere} &\cdot I
-	\end{align}
-	\item \textbf{Kalibration 2:}
-	\begin{align}
-	B_2(I) = \SI{-0.518 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
-	+\SI{2.153+-0.183}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
-	+ \SI{93.086 +- 0.566}{\milli\tesla\per\ampere} &\cdot I
-	\end{align}
-\end{itemize}
 
 \subsubsection{Bestimmung des Bohrschen Magnetons}
 Auswahl des untersuchten Peaks hier!
@@ -539,16 +530,12 @@ Gaußfunktion:
 \begin{align}
 	\mathcal{G}_i(x) = A_i \exp\left( -\frac{1}{2} \left( \frac{x - \mu_i}{\sigma_i} \right)^2 \right)
 \end{align}
-
 Fithypothese:
 \begin{align}
 	f(x) = \mathcal{G}_1(x) + \mathcal{G}_2(x) + \mathcal{G}_3(x) + d
 \end{align}
-
 $\mathcal{G}_1$ entspricht der $\sigma_-$-Linie, $\mathcal{G}_2$ entspricht $\pi$-Linie, $\mathcal{G}_3$ entspricht $\sigma_+$-Linie.
-
 Mit den Fits an die Messdaten erhalten wir Tabelle \ref{tab:peakschwerpunkte_magneton}.
-
 \begin{table}[h]
 	\centering
 	\resizebox{\columnwidth}{!}{%
@@ -556,12 +543,10 @@ Mit den Fits an die Messdaten erhalten wir Tabelle \ref{tab:peakschwerpunkte_mag
 	\caption{Gefittete Werte für die Schwerpunkte $\alpha_i$ der drei Linien. Angaben in Milligrad.}
 	\label{tab:peakschwerpunkte_magneton}
 \end{table}
-
 Berechnung der relativen Abweichung von der $\pi$-Linie mit der Interferenzbedingung \ref{eq:interferenzbedingung}:
 \begin{align}
 	\frac{\Delta \lambda_\pm}{\lambda_\pi^0} = \frac{\lambda_{\sigma^\pm} - \lambda_\pi^0}{\lambda_\pi^0} = \frac{\sqrt{n^2 - \sin^2(\alpha_{\pm})}}{\sqrt{n^2 - \sin^2(\alpha_\pi)}} - 1
 \end{align}
-
 Der Fehler berechnet sich mit Gaußscher Fehlerfortpflanzung zu:
 \begin{align}
 	\Delta \left( \frac{\Delta \lambda_\pm}{\lambda_\pi^0} \right) = & \left( \frac{\sin^2(\alpha_\pm) \cos^2(\alpha_\pm)}{(n^2-\sin^2(\alpha_\pm))(n^2-\sin^2(\alpha_\pi))} \cdot \Delta \alpha_\pm^2 \right. \nonumber\\
@@ -595,7 +580,25 @@ Da die Energieaufspaltung gegeben ist durch:
 \end{align}
 Wenn man $\Delta E$ gegen $B$ aufträgt so erhält man eine Gerade mit Steigung $\pm \mu_\mathrm{B}$.
 
-MAGNETFELDKALIBRATION!
+Dazu muss zunächst das Magnetfeld $B$ berechnet werden.
+Da unsere beiden Magnetfeldkalibrierungen eine kleine Abweichung im Bereich hoher Ströme aufweisen, entscheiden wir uns dafür die die beiden Kalibrationen zu mitteln.
+Dazu verwenden wir das ungewichtete arithmetische Mittel, da die zugehörigen Fehler fast gleich sind.
+Dann ergibt sich der Fehler des Mittelwerts von $N$ Werten mit Fehler $\sigma$ zu $\sigma/\sqrt{N}$ dabei wählen wir für $\sigma$ immer den größten der beiden Fehler.
+
+\begin{itemize}
+	\item \textbf{Kalibration 1:}
+	\begin{align}
+	B_1(I) = \SI{-0.389 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
+	       +\SI{0.747+-0.182}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
+	       + \SI{96.606 +- 0.602}{\milli\tesla\per\ampere} &\cdot I
+	\end{align}
+	\item \textbf{Kalibration 2:}
+	\begin{align}
+	B_2(I) = \SI{-0.518 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
+	+\SI{2.153+-0.183}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
+	+ \SI{93.086 +- 0.566}{\milli\tesla\per\ampere} &\cdot I
+	\end{align}
+\end{itemize}
 
 Wir tragen nun den $|\Delta E|$ gegen das anliegende Magnetfeld $\bar{B}$ auf und fitten Ursprungsgeraden an die Messpunkte.
 Die Fits ergeben:
@@ -617,18 +620,6 @@ Gemäß der Gleichung entspricht die Steigung dem Bohrschen Magneton. Wir bilden
 \end{align}
 \footnote{2010 CODATA recommended values\\ \url{http://physics.nist.gov/cgi-bin/cuu/Value?mubev}\\ Letzter Abruf: 24. November 2014}
 
-\begin{figure}[h]
-
-\centering
-
-\input{./plots/peakauswahl.tex}
-
-\caption{Auswahl des betrachteten Peaks}
-
-\label{fig:peakauswahl}
-
-\end{figure}
-
 
 \begin{table}[h]
 	\centering
@@ -647,6 +638,12 @@ Gemäß der Gleichung entspricht die Steigung dem Bohrschen Magneton. Wir bilden
 
 
 \subsubsection{Weitergehende Überlegungen}
+\begin{figure}[h]
+\centering
+\input{./plots/peakauswahl.tex}
+\caption{Auswahl des betrachteten Peaks}
+\label{fig:peakauswahl}
+\end{figure}
 \begin{table}[h]
 	\centering
 	\input{./tables/aufloesung.tex}
@@ -791,7 +788,7 @@ Dabei wählten wir als konstante Gegenspannung \SI{2}{\volt} und nutzen abermals
 \label{fig:fh_vartemp}
 \end{figure}
 
-\subsection{Auswertung}                              (Abb. \ref{fig:termschema_hg}) 
+\subsection{Auswertung}
 
 \subsubsection{Energiedifferenz zwischen 6S- und 6P-Niveau in Quecksilber}
 
@@ -815,14 +812,21 @@ Wir finden so:
 \caption{Messwerte der Peakschwerpunkte für variable $\Delta U$ bei \SI{160}{\degreeCelsius} bzw. variable Temperatur bei $\Delta U=\SI{2}{\volt}$}
 \label{tab:fh_schwerpunkte}
 \end{table}
-Um diesen Wert zu verstehen, muss man das Termschema und den Wirkungsquerschnitt bei Elektronenstoßanregung von Quecksilber betrachten.
+Um diesen Wert zu verstehen, muss man das Termschema (Abb. \ref{fig:termschema_hg}) und den Wirkungsquerschnitt bei Elektronenstoßanregung von Quecksilber (Abb. \ref{fig:wirkungsquerschnitt_hg}) betrachten.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\textwidth]{./figures/wirkungsquerschnitt_hg.pdf}
+\caption{Totaler Wirkungsquerschnitt von Quecksilber bei Elektronenstoßanregung. Die Linien entsprechen \textbf{1}: 6$^1$S$_0 \rightarrow$ 6$^3$P$_0$; \textbf{2}: 6$^1$S$_0 \rightarrow$ 6$^3$P$_1$; \textbf{3}: 6$^1$S$_0 \rightarrow$ 6$^3$P$_2$; \textbf{4}: 6$^1$S$_0 \rightarrow$ 6$^1$P$_1$. Quelle: Moiseiwitsch,
+"`Electron Impact Excitation of Atoms"', Rev. Mod. Phys. 40, S. 267, 1968}
+\label{fig:wirkungsquerschnitt_hg}
+\end{figure}
 In der Grafik zu letzterem sieht man vier Wirkungsquerschnitte für verschiedene Übergänge im Quecksilber in Abhängigkeit von den stoßenden Elektronen.
 Da Linie 4 erst knapp unter \SI{20}{\electronvolt} ihr Maximum hat, Stöße offensichtlich aber auch schon bei geringen Energien stattfinden, werden wir diese nicht weiter beachten.
 Genauso ignorieren wir Linie 1, da der maximale Wirkungsquerschnitt hier sehr gering ist im Vergleich zu den anderen in Betracht kommenden Linien 2 und 3.
 
 Wir betrachten zur weiteren Auswertung darum nur noch die Linien 2 und 3, wobei wir davon ausgehen können, dass der Wirkungsquerschnitt von Linie 2 ausreicht, um Stöße der Elektronen mit den Quecksilberatomen auszulösen.
 Ein Argument für diese Annahme ist, dass die Linie bei geringeren Energien als Linie 3 sowohl beginnt, als auch ihr Maximum erreicht.
-Die Linie 2 korrespondiert mit dem Übergang $an6^1$S$_0\rightarrow6^3$P$_1$, so dass dieser am häufigsten stattfinden wird.
+Die Linie 2 korrespondiert mit dem Übergang $6^1$S$_0\rightarrow6^3$P$_1$, so dass dieser am häufigsten stattfinden wird.
 Dennoch können einige Elektronen bei dieser Energie keine Stöße ausführen und werden weiter beschleunigt, so dass diese gemäß Linie 3 stoßen werden.
 Darum wird der Übergang $6^1$S$_0\rightarrow6^3$P$_2$ in den Messwerten auch zu finden sein.
 
@@ -846,7 +850,7 @@ Diese müssen eine höhere Beschleunigungsspannung durchlaufen, um nach dem Sto�
 Zur Abhängigkeit des Anodenstroms von der Temperatur schauen wir uns Abbildung \ref{fig:fh_vartemp} an, in der die Temperatur bei den Messungen variiert und die Gegenspannung konstant bei \SI{2}{\volt} gehalten wurde.
 In dem Diagramm sind ebenfalls alle Messreihen gleichzeitig dargestellt, um optimal vergleichen zu können.
 Man erkennt, dass der Anodenstrom für höhere Temperaturen kleiner ist als für niedrige Temperaturen, besonders die Kurve für $T=\SI{155}{\degreeCelsius}$ ist dabei deutlich höher und bei gleichen Temperaturabständen deutlich weiter entfernt von den anderen Messungen.
-Wir benötigen die in der Praktikumsanleitung gegebene Formel zum Dampfdruck von Quecksilber zur Erklärung der Beobachtung:
+Wir benötigen die in der Praktikumsanleitung angegebene Formel zum Dampfdruck von Quecksilber zur Erklärung der Beobachtung:
 \begin{align}
 \log p = 10,55-3333/T-0,85\log T \quad \text{($p$ in Torr und $T$ in K)}
 \label{eq:dampfdruck}

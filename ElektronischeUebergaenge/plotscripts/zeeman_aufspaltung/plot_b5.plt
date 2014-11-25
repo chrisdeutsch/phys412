@@ -48,6 +48,6 @@ plot 	'./messwerte/b5.txt' using 1:2:(0.0025):(0.4) with xyerrorbars t'Messwerte
 		g1(x) t'$\mathcal{G}_1$' ls 2 lw 2,\
 		g2(x) t'$\mathcal{G}_2$' ls 3 lw 2,\
 		g3(x) t'$\mathcal{G}_3$' ls 4 lw 2,\
-		u(x) t'Untergrund' ls 5 lw 2
+		u(x) t'$d$' ls 5 lw 2
 
 unset output

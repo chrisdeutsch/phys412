@@ -543,15 +543,16 @@ mit der Gaußfunktion:
 \mathcal{G}_i(x) = A_i \exp\left( -\frac{1}{2} \left( \frac{x - \mu_i}{\sigma_i} \right)^2 \right)
 \end{align}
 Wir erhalten als Anpassungsparameter die drei Höhen $A_i$, drei Peakschwerpunkte $\mu_i$, drei Standardabweichungen $\sigma_i$ und den konstanten Versatz $d$.
-
-\begin{figure}
+Zur Anpassung verwenden wir die Methode der kleinsten Quadrate (\texttt{GNUPlot}) und erhalten so beispielsweise für $B = \SI{4}{\tesla}$ Abbildung \ref{fig:zeeman_b4_bsp}.
+\begin{figure}[h]
 	\centering
 	\input{./plots/zeemann_aufspaltung/b4.tex}
-	\caption{ABC}
+	\caption{Beispiel zur Anpassung der Gaußfunktionen an die Aufspaltung (hier $B = \SI{4}{\tesla}$). $\mathcal{G}_1$: $\sigma_-$-Linie;\, $\mathcal{G}_2$: $\pi$-Linie;\, $\mathcal{G}_3$: $\sigma_+$-Linie; $d$: Verschiebung;\, $\Sigma$: Summe von Gaußfunktionen und Verschiebung}
 	\label{fig:zeeman_b4_bsp}
 \end{figure}
+Die restlichen Anpassungen finden sich in Anhang \ref{app:penis}.
 
-$\mathcal{G}_1$ entspricht der $\sigma_-$-Linie, $\mathcal{G}_2$ entspricht $\pi$-Linie, $\mathcal{G}_3$ entspricht $\sigma_+$-Linie.
+
 Mit den Fits an die Messdaten erhalten wir Tabelle \ref{tab:peakschwerpunkte_magneton}.
 \begin{table}[h]
 	\centering
@@ -914,6 +915,7 @@ Dass der Anodenstrom nicht bei jedem Einbruch auf \SI{0}{\ampere} abfällt ist d
 % APPENDIX
 \begin{appendix}
 \section{Darstellung der Aufspaltung beim Zeeman-Effekt}
+\label{app:penis}
 
 \begin{sidewaysfigure}[!h]
 \begin{subfigure}[c]{0.5\textwidth}

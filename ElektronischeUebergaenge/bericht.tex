@@ -455,8 +455,6 @@ Alle Skizzen in Abbildung \ref{fig:zeeman_longitudinal}.
 \subsubsection{Messung des Zeeman-Effekts}
 
 
-
-\subsection{Messdaten}
 \FloatBarrier
 
 \begin{figure}[h]
@@ -477,6 +475,52 @@ Alle Skizzen in Abbildung \ref{fig:zeeman_longitudinal}.
 
 \FloatBarrier
 \subsection{Auswertung}
+\subsubsection{Beobachtung des Zeeman-Effektes}
+In der transversalen Konfiguration wird eine Aufspaltung der Ringe in drei Komponenten festgestellt.
+Diese Aufspaltung entspricht allen drei möglichen Dipolübergängen $\Delta m_j = 0, \pm 1$ von $^1D_2$ nach $^1P_1$ wie in Abbildung \ref{fig:termschema_cadmium} zu sehen ist.
+Dabei entsprechen die äußeren Linien den Übergängen mit $\Delta m_j = \pm 1$ und die Innere $\Delta m_j = 0$.
+Um dies zu verstehen, muss die Polarisation der Linien betrachtet werden, welche wir anhand eines Polarisationsfilters analysiert haben.
+In Abbildung $\ref{fig:zeeman_transversal}$ sehen wir, dass nur die mittlere Linie durch den Filter bei $\alpha_\mathrm{Pol.} = \SI{90 +- 2,5}{\degree}$ (Polarisationsebene parallel zum Magnetfeld) transmittiert wird,  das Photon ist demnach linear in der Magnetfeldrichtung polarisiert.
+Im Gegensatz dazu, verschwindet die mittlere Linie bei Drehung des Filters auf $\alpha_\mathrm{Pol.} = \SI{0 +- 2,5}{\degree}$ und die beiden äußeren Linien werden transmittiert, sodass diese senkrecht auf der Magnetfeldrichtung polarisiert sind.
+
+In der longitudinalen Konfiguration sehen wir im Wesentlichen\footnote{Die $\pi$-Linie (im Bild gepunktet) ist mit sehr geringer Intensität zu erkennen, was an Inhomogenitäten des Magnetfeldes und einer kleinen Abweichung der Beobachtungsrichtung von der Magnetfeldachse liegen kann.} eine Aufspaltung in zwei konzentrische Ringe, welche den beiden äußeren der transversalen Beobachtung entsprechen ($\Delta m = \pm 1$).
+Zur Untersuchung der Polarisation nutzten wir aus, dass eine $\frac{\lambda}{4}$-Platte entgegengesetzt zirkular polarisierte Wellen in zwei senkrecht aufeinander stehende linear polarisierte Wellen zerlegt.
+So kann mit einem, hinter der Viertel-Wellenlängen-Platte befindlichem, Polarisationsfilter das Licht auf zirkulare Polarisation untersucht werden.
+Wir stellen fest, dass eine Einstellung des Filters auf $\alpha_\mathrm{Pol.} = \SI{-45 +- 2,5}{\degree}$ den I und $\alpha_\mathrm{Pol.} = \SI{+45 +- 2,5}{\degree}$ den äußeren Ring verschwinden lässt.
+Dadurch schließen wir, dass die äußeren Ringe entgegengesetzt zirkular polarisiert sind.
+
+Die sichtbaren Polarisationen erklären sich wie folgt:
+\begin{itemize}
+	\item $\Delta m_\ell = 0$: Solche Übergänge weisen eine dipolartige Abstrahlcharakteristik in Richtung der Quantisierungsachse des Drehimpulses auf.
+	Da diese Achse durch das Anlegen eines Magnetfeldes auf die Feldrichtung festgelegt ist, folgt aus der Dipolcharakteristik, dass keine Abstrahlung in Richtung der Magnetfeldachse erfolgt und somit diese Linien in longitudinaler Konfiguration nicht sichtbar sind.
+	Bei jedem Dipolübergang findet eine Drehimpulsänderung $\Delta \ell = \pm 1$ statt, da das emittierte Photon ein Spin-1 Teilchen ist.
+	Damit folgt aus der Drehimpulserhaltung, dass das Photon parallel zur Magnetfeldachse polarisiert sein muss, um $\Delta m_\ell = 0$ zu gewährleisten.
+	
+	\item $\Delta m = \pm 1$: Diese Übergänge weisen keine dipolartige Abstrahlcharakteristik auf, sodass Emission auch in Richtung des Magnetfeldes stattfindet.
+	Da auch hier Drehimpulserhaltung gilt, muss der Spin des emittierten Photons so ausgerichtet sein, dass $m_s = \mp 1$ um $\Delta m = \pm 1$ zu gewährleisten.
+	Diese Photonenspins entsprechen in longitudinaler Beobachtungsrichtung zirkular polarisiertem Licht und in Transversaler linear polarisiertem Licht mit Polarisationsebene senkrecht auf der Spinquantisierungsachse welche mit der Magnetfeldachse übereinstimmt.
+\end{itemize}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figures/zeeman_transversal.pdf}
+	\caption{Interferenzmuster des Fabry-Pérot-Etalons in transversaler Konfiguration}
+	\label{fig:zeeman_transversal}
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figures/zeeman_longitudinal.pdf}
+	\caption{Interferenzmuster des Fabry-Pérot-Etalons in longitudinaler Konfiguration}
+	\label{fig:zeeman_longitudinal}
+\end{figure}
+
+\subsubsection{Magnetfeldkalibrierung}
+
+
+\subsubsection{Bestimmung des Bohrschen Magnetons}
 Auswahl des untersuchten Peaks hier!
 
 Gaußfunktion:
@@ -595,20 +639,6 @@ Gemäß der Gleichung entspricht die Steigung dem Bohrschen Magneton. Wir bilden
 	\label{fig:magneton_fit}
 \end{figure}
 
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{./figures/zeeman_transversal.pdf}
-	\caption{transversal}
-	\label{fig:zeeman_transversal}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{./figures/zeeman_longitudinal.pdf}
-	\caption{longitudinal}
-	\label{fig:zeeman_longitudinal}
-\end{figure}
 
 \subsubsection{Weitergehende Überlegungen}
 \begin{table}[h]

@@ -433,12 +433,12 @@ Anschließend stellen wir die Abbildungslinse (\textbf{f}) so ein, dass das Etal
 Da das Zentrum des Ringsystems nicht mit der Strichskala des Okulars übereinstimmt, kippen wir das Fabry-Pérot-Etalon mit den daran angebrachten Stellschrauben bis dies der Fall ist.
 
 \subsubsection{Beobachtung der Aufspaltung}
-Zunächst beobachten wir die Aufspaltung der Linie in \textbf{transversalem Aufbau} das heißt, dass das Magnetfeld senkrecht zur Beobachtungsrichtung steht.
-Zunächst beobachten wir das Interferenzmuster des Fabry-Pérot-Etalons, welches aus konzentrischen Kreisen bestehen, die dadurch entstehen, dass das Etalon mit einer ausgedehnten Lichtquelle beleuchtet wird.
+Zunächst beobachten wir die Aufspaltung der Linie in \textbf{transversalem Aufbau} - das heißt, dass das Magnetfeld senkrecht zur Beobachtungsrichtung steht.
+Zunächst beobachten wir das Interferenzmuster des Fabry-Pérot-Etalons, welches aus konzentrischen Kreisen bestehent, die dadurch entstehen, dass das Etalon mit einer ausgedehnten Lichtquelle beleuchtet wird.
 Um eine Linienaufspaltung zu beobachten, lassen wir nun mithilfe des Netzgerätes einen Strom $I$ durch die Spulen fließen.
 Dadurch entsteht im Bereich des Lampenkolbens ein näherungsweise homogenes Magnetfeld.
 Wir wählen den Strom so, dass wir eine deutliche Aufspaltung der Kreise des Interferenzmusters erkennen können.
-Um die Polarisation zu untersuchen stellen wir einen Polarisationsfilter in den Strahlengang und skizzieren das am Okular sichtbare Interferenzmuster bei verschiedenen Filterausrichtungen.
+Um die Polarisation zu untersuchen, stellen wir einen Polarisationsfilter in den Strahlengang und skizzieren das am Okular sichtbare Interferenzmuster bei verschiedenen Filterausrichtungen.
 Wir entfernen den Filter und beobachten nun die Aufspaltung der Linien im Okular während wir langsam den Spulenstrom verringern.
 Dabei bestimmen wir den Spulenstrom, bei dem die Aufspaltung der Ringe gerade noch zu erkennen ist.
 Diese Messung führen wir insgesamt fünf mal durch, um den Messfehler besser abschätzen zu können.
@@ -450,22 +450,17 @@ Eine Messung mit zugeschaltetem Magnetfeld führt hier jedoch zur Aufspaltung in
 Alle Skizzen in Abbildung \ref{fig:zeeman_transversal}.
 Im Gegensatz zur transversalen Beobachtung verwenden wir hier eine Kombination von Polarisationsfilter und $\frac{\lambda}{4}$-Platte zur Bestimmung der Polarisation.
 Dazu stellen wir die Viertel-Wellenlängen-Platte unter festem Winkel $\SI{0}{\degree}$ vor den Polarisationsfilter (in Strahlrichtung), dessen Ausrichtung $\alpha$ wir variieren und skizzieren das sichtbare Interferenzbild.
-Analog zum Vorteil bestimmen wir, nach dem Entfernen von Filter und $\frac{\lambda}{4}$-Platte, den minimalen Strom, bei dem die Aufspaltung gerade noch erkannt werden kann.
+Analog zum VorteilWie bei der transversalen Beobachtung bestimmen wir auch hier, nach dem Entfernen von Filter und $\frac{\lambda}{4}$-Platte, den minimalen Strom, bei dem die Aufspaltung gerade noch erkannt werden kann.
 Alle Skizzen in Abbildung \ref{fig:zeeman_longitudinal}.
 
 \subsubsection{Messung des Zeeman-Effekts}
-
-
-\FloatBarrier
-\FloatBarrier
-
 
 \subsection{Auswertung}
 \subsubsection{Beobachtung des Zeeman-Effektes}
 In der transversalen Konfiguration wird eine Aufspaltung der Ringe in drei Komponenten festgestellt.
 Diese Aufspaltung entspricht allen drei möglichen Dipolübergängen $\Delta m_j = 0, \pm 1$ von $^1D_2$ nach $^1P_1$ wie in Abbildung \ref{fig:termschema_cadmium} zu sehen ist.
 Dabei entsprechen die äußeren Linien den Übergängen mit $\Delta m_j = \pm 1$ und die Innere $\Delta m_j = 0$.
-Um dies zu verstehen, muss die Polarisation der Linien betrachtet werden, welche wir anhand eines Polarisationsfilters analysiert haben.
+Um dies zu verstehen, muss die Polarisation der Linien betrachtet werden, welche wir anhand eines Polarisationsfilters gilt, analysiert haben.
 In Abbildung $\ref{fig:zeeman_transversal}$ sehen wir, dass nur die mittlere Linie durch den Filter bei $\alpha_\mathrm{Pol.} = \SI{90 +- 2,5}{\degree}$ (Polarisationsebene parallel zum Magnetfeld) transmittiert wird,  das Photon ist demnach linear in der Magnetfeldrichtung polarisiert.
 Im Gegensatz dazu, verschwindet die mittlere Linie bei Drehung des Filters auf $\alpha_\mathrm{Pol.} = \SI{0 +- 2,5}{\degree}$ und die beiden äußeren Linien werden transmittiert, sodass diese senkrecht auf der Magnetfeldrichtung polarisiert sind.
 
@@ -516,7 +511,7 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 	\caption{Zweiter Durchgang kalibrierung}
 	\label{fig:kalibrierung2}
 \end{figure}
-
+Zur 
 Dazu muss zunächst das Magnetfeld $B$ berechnet werden.
 Da unsere beiden Magnetfeldkalibrierungen eine kleine Abweichung im Bereich hoher Ströme aufweisen, entscheiden wir uns dafür die die beiden Kalibrationen zu mitteln.
 Dazu verwenden wir das ungewichtete arithmetische Mittel, da die zugehörigen Fehler fast gleich sind.
@@ -621,6 +616,18 @@ Gemäß der Gleichung entspricht die Steigung dem Bohrschen Magneton. Wir bilden
 	\mu_\mathrm{B}^{\mathrm{Lit.}} = \SI{5.7883818066 +- 0.0000000038e-5}{\electronvolt\per\tesla}
 \end{align}
 \footnote{2010 CODATA recommended values\\ \url{http://physics.nist.gov/cgi-bin/cuu/Value?mubev}\\ Letzter Abruf: 24. November 2014}
+
+\begin{figure}[h]
+
+\centering
+
+\input{./plots/peakauswahl.tex}
+
+\caption{Auswahl des betrachteten Peaks}
+
+\label{fig:peakauswahl}
+
+\end{figure}
 
 
 \begin{table}[h]
@@ -784,7 +791,7 @@ Dabei wählten wir als konstante Gegenspannung \SI{2}{\volt} und nutzen abermals
 \label{fig:fh_vartemp}
 \end{figure}
 
-\subsection{Auswertung}
+\subsection{Auswertung}                              (Abb. \ref{fig:termschema_hg}) 
 
 \subsubsection{Energiedifferenz zwischen 6S- und 6P-Niveau in Quecksilber}
 
@@ -815,7 +822,7 @@ Genauso ignorieren wir Linie 1, da der maximale Wirkungsquerschnitt hier sehr ge
 
 Wir betrachten zur weiteren Auswertung darum nur noch die Linien 2 und 3, wobei wir davon ausgehen können, dass der Wirkungsquerschnitt von Linie 2 ausreicht, um Stöße der Elektronen mit den Quecksilberatomen auszulösen.
 Ein Argument für diese Annahme ist, dass die Linie bei geringeren Energien als Linie 3 sowohl beginnt, als auch ihr Maximum erreicht.
-Die Linie 2 korrespondiert mit dem Übergang $6^1$S$_0\rightarrow6^3$P$_1$, so dass dieser am häufigsten stattfinden wird.
+Die Linie 2 korrespondiert mit dem Übergang $an6^1$S$_0\rightarrow6^3$P$_1$, so dass dieser am häufigsten stattfinden wird.
 Dennoch können einige Elektronen bei dieser Energie keine Stöße ausführen und werden weiter beschleunigt, so dass diese gemäß Linie 3 stoßen werden.
 Darum wird der Übergang $6^1$S$_0\rightarrow6^3$P$_2$ in den Messwerten auch zu finden sein.
 

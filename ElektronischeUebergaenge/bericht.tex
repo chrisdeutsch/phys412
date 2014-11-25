@@ -461,16 +461,12 @@ Alle Skizzen in Abbildung \ref{fig:zeeman_longitudinal}.
 
 \subsubsection{Messung des Zeeman-Effekts}
 
-
-\FloatBarrier
-
 \begin{figure}[h]
 \centering
 \input{./plots/kalibrierung1.tex}
 \caption{Erster Durchgang kalibrierung}
 \label{fig:kalibrierung1}
 \end{figure}
-
 \begin{figure}[h]
 \centering
 \input{./plots/kalibrierung2.tex}
@@ -478,10 +474,10 @@ Alle Skizzen in Abbildung \ref{fig:zeeman_longitudinal}.
 \label{fig:kalibrierung2}
 \end{figure}
 
-
-
 \FloatBarrier
+
 \subsection{Auswertung}
+
 \subsubsection{Beobachtung des Zeeman-Effektes}
 In der transversalen Konfiguration wird eine Aufspaltung der Ringe in drei Komponenten festgestellt.
 Diese Aufspaltung entspricht allen drei möglichen Dipolübergängen $\Delta m_j = 0, \pm 1$ von $^1D_2$ nach $^1P_1$ wie in Abbildung \ref{fig:termschema_cadmium} zu sehen ist.
@@ -504,7 +500,7 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 	Damit folgt aus der Drehimpulserhaltung, dass das Photon parallel zur Magnetfeldachse polarisiert sein muss, um $\Delta m_\ell = 0$ zu gewährleisten.
 	
 	\item $\Delta m = \pm 1$: Diese Übergänge weisen keine dipolartige Abstrahlcharakteristik auf, sodass Emission auch in Richtung des Magnetfeldes stattfindet.
-	Da auch hier Drehimpulserhaltung gilt, muss der Spin des emittierten Photons so ausgerichtet sein, dass $m_s = \mp 1$ um $\Delta m = \pm 1$ zu gewährleisten.
+	Da auch hier Drehimpulserhaltung gilt, muss der Spin des emittierten Photons so ausgerichtet sein, dass $m_s = \mp 1$ gilt, um $\Delta m = \pm 1$ zu gewährleisten.
 	Diese Photonenspins entsprechen in longitudinaler Beobachtungsrichtung zirkular polarisiertem Licht und in Transversaler linear polarisiertem Licht mit Polarisationsebene senkrecht auf der Spinquantisierungsachse welche mit der Magnetfeldachse übereinstimmt.
 \end{itemize}
 
@@ -534,16 +530,12 @@ Gaußfunktion:
 \begin{align}
 	\mathcal{G}_i(x) = A_i \exp\left( -\frac{1}{2} \left( \frac{x - \mu_i}{\sigma_i} \right)^2 \right)
 \end{align}
-
 Fithypothese:
 \begin{align}
 	f(x) = \mathcal{G}_1(x) + \mathcal{G}_2(x) + \mathcal{G}_3(x) + d
 \end{align}
-
 $\mathcal{G}_1$ entspricht der $\sigma_-$-Linie, $\mathcal{G}_2$ entspricht $\pi$-Linie, $\mathcal{G}_3$ entspricht $\sigma_+$-Linie.
-
 Mit den Fits an die Messdaten erhalten wir Tabelle \ref{tab:peakschwerpunkte_magneton}.
-
 \begin{table}[h]
 	\centering
 	\resizebox{\columnwidth}{!}{%
@@ -551,12 +543,10 @@ Mit den Fits an die Messdaten erhalten wir Tabelle \ref{tab:peakschwerpunkte_mag
 	\caption{Gefittete Werte für die Schwerpunkte $\alpha_i$ der drei Linien. Angaben in Milligrad.}
 	\label{tab:peakschwerpunkte_magneton}
 \end{table}
-
 Berechnung der relativen Abweichung von der $\pi$-Linie mit der Interferenzbedingung \ref{eq:interferenzbedingung}:
 \begin{align}
 	\frac{\Delta \lambda_\pm}{\lambda_\pi^0} = \frac{\lambda_{\sigma^\pm} - \lambda_\pi^0}{\lambda_\pi^0} = \frac{\sqrt{n^2 - \sin^2(\alpha_{\pm})}}{\sqrt{n^2 - \sin^2(\alpha_\pi)}} - 1
 \end{align}
-
 Der Fehler berechnet sich mit Gaußscher Fehlerfortpflanzung zu:
 \begin{align}
 	\Delta \left( \frac{\Delta \lambda_\pm}{\lambda_\pi^0} \right) = & \left( \frac{\sin^2(\alpha_\pm) \cos^2(\alpha_\pm)}{(n^2-\sin^2(\alpha_\pm))(n^2-\sin^2(\alpha_\pi))} \cdot \Delta \alpha_\pm^2 \right. \nonumber\\
@@ -648,6 +638,12 @@ Gemäß der Gleichung entspricht die Steigung dem Bohrschen Magneton. Wir bilden
 
 
 \subsubsection{Weitergehende Überlegungen}
+\begin{figure}[h]
+\centering
+\input{./plots/peakauswahl.tex}
+\caption{Auswahl des betrachteten Peaks}
+\label{fig:peakauswahl}
+\end{figure}
 \begin{table}[h]
 	\centering
 	\input{./tables/aufloesung.tex}

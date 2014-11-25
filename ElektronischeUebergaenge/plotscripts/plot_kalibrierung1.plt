@@ -6,7 +6,7 @@ set output './plots/kalibrierung1.tex'
 
 set title ''
 
-set nokey
+set key top left
 
 set xrange [0:*]
 set yrange [0:*]
@@ -18,6 +18,8 @@ set grid
 f(x)= a*x**3 + b*x**2 + c*x
 fit f(x) './messwerte/kalibrierung1.txt' using 1:2:(5) via a, b, c
 
-plot './messwerte/kalibrierung1.txt' using 1:2:(0.01):(5) with xyerrorbars t'Messwerte', f(x) t'Fitfunktion'
+load './../gnuplot_linestyles.plt'
+
+plot './messwerte/kalibrierung1.txt' using 1:2:(0.01):(5) with xyerrorbars t'Messwerte', f(x) t'Fitfunktion' ls 2 lw 2
 
 unset output

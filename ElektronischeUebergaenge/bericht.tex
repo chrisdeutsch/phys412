@@ -519,7 +519,7 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 
 
 \subsubsection{Magnetfeldkalibrierung}
-Zur Bestimmung des Magnetfeldes in der Cadmium-Lampe wurden von uns zweimal die Magnetfeld-Strom-Kennlinie zwischen den Polschuhen vermessen.
+Zur Bestimmung des Magnetfeldes in der Cadmium-Lampe wurde die Magnetfeld-Strom-Kennlinie zwischen den Polschuhen zweimal vermessen.
 An diese soll nun ein Polynom angepasst werden, um die Magnetfelder zu beliebigen Spulenströmen interpolieren zu können.
 Dabei entscheiden wir uns nach einigen Überprüfungen für ein Polynom 3. Grades ohne Absolutglied.
 Wir verzichten dabei auf das Absolutglied, da dieses sehr nah bei Null liegt und einen großen relativen Fehler hat.
@@ -587,7 +587,7 @@ Zur Anpassung verwenden wir die Methode der kleinsten Quadrate (\texttt{GNUPlot}
 \end{figure}
 Die restlichen Anpassungen finden sich in Anhang \ref{app:penis}.
 Die Ergebnisse für die Schwerpunkte der einzelnen Linien finden sich in Tabelle \ref{tab:peakschwerpunkte_magneton}.
-Die in den Diagrammen eingetragenen Fehler für den Winkel $\alpha$ folgt aus der Messung eines Winkelbereichs von etwa \SI{10}{\degree} auf den \num{2048} Pixeln der CCD-Kamera zu $\sigma_\alpha = \SI{0.0025}{\degree}$, sowie für die Intensität $I$ wurde geschätzt auf $\sigma_I = \SI{0.4}{\percent}$.
+Die in den Diagrammen eingetragenen Fehler für den Winkel $\alpha$ folgen aus der Messung eines Winkelbereichs von etwa \SI{10}{\degree} auf den \num{2048} Pixeln der CCD-Kamera zu $\sigma_\alpha = \SI{0.0025}{\degree}$, für die Intensität $I$ wurde der Fehler auf $\sigma_I = \SI{0.4}{\percent}$ geschätzt.
 
 \begin{table}[h]
 	\centering
@@ -596,13 +596,12 @@ Die in den Diagrammen eingetragenen Fehler für den Winkel $\alpha$ folgt aus de
 	\caption{Durch Kurvenanpassung bestimmte Schwerpunkte $\alpha_i$ (in Milligrad) der drei Linien. Der Fehler des Spulenstroms $I$ ist gegeben durch $\sigma_I = \SI{0.1}{\ampere}$.}
 	\label{tab:peakschwerpunkte_magneton}
 \end{table}
-
 Mithilfe der so berechneten Peakschwerpunkte können wir die relative Abweichung von der $\pi$-Linie berechnen.
 Dazu nutzen wir die Interferenzbedingung für das Fabry-Pérot-Etalon aus Gleichung (\ref{eq:interferenzbedingung}) und erhalten:
 \begin{align}
 	\frac{\Delta \lambda_\pm}{\lambda_\pi^0} = \frac{\lambda_{\sigma^\pm} - \lambda_\pi^0}{\lambda_\pi^0} = \frac{\sqrt{n^2 - \sin^2(\alpha_{\pm})}}{\sqrt{n^2 - \sin^2(\alpha_\pi)}} - 1
 \end{align}
-Dabei berechnet sich der  Fehler über Gaußscher Fehlerfortpflanzung zu:
+Dabei berechnet sich der  Fehler über Gaußsche Fehlerfortpflanzung zu:
 \begin{align}
 	\Delta \left( \frac{\Delta \lambda_\pm}{\lambda_\pi^0} \right) = & \left( \frac{\sin^2(\alpha_\pm) \cos^2(\alpha_\pm)}{(n^2-\sin^2(\alpha_\pm))(n^2-\sin^2(\alpha_\pi))} \cdot \Delta \alpha_\pm^2 \right. \nonumber\\
 	& \left. + \frac{\sin^2(\alpha_\pi) \cos^2(\alpha_\pi) (n^2 - \sin^2(\alpha_\pm))}{(n^2-\sin^2(\alpha_\pi))^3} \cdot \Delta \alpha_\pi^2\right)^\frac{1}{2}
@@ -647,7 +646,7 @@ Die zu den gemessenen Spulenströmen korrespondierenden Magnetfelder wurden in T
 	\label{tab:mittelwert_kalibration}
 \end{table}
 
-Wir tragen nun den Betrag der Energieaufspaltung $|\Delta E|$ für die $\sigma_-$- und $\sigma_+$-Linien gegen das anliegende Magnetfeld $\bar{B}$ auf und passen eine Ursprungsgeraden an (Abbildung \ref{fig:magneton_fit}).
+Wir tragen nun den Betrag der Energieaufspaltung $|\Delta E|$ für die $\sigma_-$- und $\sigma_+$-Linien gegen das anliegende Magnetfeld $\bar{B}$ auf und passen eine Ursprungsgerade an (Abbildung \ref{fig:magneton_fit}).
 Wir erhalten für die Ursprungsgeraden:
 \begin{align}
 	|\Delta E_{-}| = \SI{5.502 +- 0.031e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 8.94\\
@@ -685,7 +684,7 @@ Wir haben versucht durch eine individuelle Gewichtung der Messpunkt eine bessere
 
 \subsection{Weitergehende Überlegungen}
 \subsubsection{Abschätzung des Auflösungsvermögens $\mathcal{R}$ und der Finesse $\mathcal{F}$ des Fabry-Pérot-Etalons}
-Zunächst wollen wir das theoretische Auflösungsvermögen und Finesse des Etalons berechnen.
+Zunächst wollen wir das theoretische Auflösungsvermögen und die Finesse des Etalons berechnen.
 Diese lassen sich mit Gleichung (\ref{eq:finesse}) und (\ref{eq:aufloesung}) des Grundlagenteils aus dem Reflektionskoeffizienten $r$ und der Ordnung $m$ des Interferenzrings berechnen.
 Mit dem gegebenen Wert $r = \num{0,85}$ folgt unmittelbar für die Finesse:
 \begin{align*}
@@ -703,14 +702,13 @@ Es folgt für das theoretische Auflösungsvermögen:
 \begin{align*}
 	\mathcal{R}_\mathrm{theo.} = \mathcal{F}_\mathrm{theo.} \cdot m  \approx \num{174000}
 \end{align*}
-
 \begin{table}[h]
 	\centering
 	\input{./tables/aufloesung.tex}
 	\caption{Grenzströme in transversaler und longitudinaler Konfiguration bei denen die Aufspaltung der Interferenzringe im Okular gerade noch erkennbar ist.}
 	\label{tab:aufloesung}
 \end{table}
-Nun wollen wir aus den Spulenströmen bei denen aufgespaltene Ringe im Okular gerade noch zu unterscheiden waren (Tabelle \ref{tab:aufloesung}) die Finesse und das Auflösungsvermögen berechnen.
+Nun wollen wir aus den Spulenströmen bei denen die aufgespaltenen Ringe im Okular gerade noch zu unterscheiden waren (Tabelle \ref{tab:aufloesung}) die Finesse und das Auflösungsvermögen berechnen.
 Um den Messfehler besser einschätzen zu können, wurde in jeder Konfiguration fünf mal gemessen.
 Es wurde jeweils ein Fehler von $\SI{0.1}{\ampere}$ auf den am Netzgerät abgelesenen Spulenstrom angenommen, da dies der niedrigstwertigen Stelle an der digitalen Anzeige entspricht.
 Da der Fehler für alle fünf Messungen gleich ist ergibt sich der Fehler des Mittelwerts aus: 
@@ -723,7 +721,7 @@ Damit erhalten wir nach der Mittelwertbildung:
 	\bar{I}_\mathrm{long.} = \SI{1.060 +- 0.045}{\ampere}\text{.}
 \end{align*}
 Zur Bestimmung der Auflösung muss zunächst das aus dem Spulenstrom $\bar{I}$ resultierende Magnetfeld aus der Kalibrierung berechnet werden.
-Dazu gehen wir analog zum vorigen Teil vor und berechnen mit die Feldstärke mit beiden Kalibrierungen und mitteln deren Werte.
+Dazu gehen wir analog zum vorigen Teil vor und berechnen die Feldstärke mit beiden Kalibrierungen und mitteln deren Werte.
 Wir beachten die Fehler in $\bar{I}$ und in den Anpassungsparametern des Polynoms durch Gaußsche Fehlerfortpflanzung und erhalten:
 \begin{align*}
 	B_\mathrm{trans.} = \SI{195.6 +- 3.3}{\milli\tesla} \\
@@ -735,12 +733,12 @@ Damit können wir die Halbwertsbreite $\delta \lambda$ der Intensitätsspitzen d
 \begin{align}
 	\delta \lambda = \lambda_2 - \lambda_1 = h c \left( \frac{1}{E_2} - \frac{1}{E_1} \right) = \frac{h c}{E_1 E_2} \left(E_1 - E_2\right) \approx \frac{\lambda^2 \cdot \Delta E}{h c}
 \end{align}
-wobei im letzten Schritt die Näherung $\lambda \approx \lambda_1 \approx \lambda_2$ verwendet wurde.
+Im letzten Schritt wurde dabei die Näherung $\lambda \approx \lambda_1 \approx \lambda_2$ verwendet.
 Dann ist die Auflösung gegeben durch:
 \begin{align}
 	\mathcal{R} = \frac{\lambda}{\delta \lambda} = \frac{h c}{\lambda \cdot \Delta E}\text{,}
 \end{align}
-wobei die Energieaufspaltung durch den normalen Zeemaneffekt in Abhängigkeit vom anliegenden Magnetfeld $B$:
+wobei die Energieaufspaltung durch den normalen Zeemaneffekt in Abhängigkeit vom anliegenden Magnetfeld $B$ mit
 \begin{align}
 	\Delta E = \mu_\mathrm{B} \Delta m B
 \end{align}
@@ -749,11 +747,11 @@ Also folgt für das Auflösungsvermögen
 \begin{align}
 	\mathcal{R} = \frac{h c}{ \mu_\mathrm{B} \Delta m \lambda} \cdot \frac{1}{B} 
 \end{align}
-und für den Fehler nach Gaußscher Fehlerfortpflanzung::
+und für den Fehler nach Gaußscher Fehlerfortpflanzung:
 \begin{align}
 	\Delta \mathcal{R} = \frac{h c}{ \mu_\mathrm{B} \Delta m \lambda} \cdot \frac{\Delta B}{B^2} \text{.}
 \end{align}
-Mit diesen Überlegungen ergibt sich für die transversale Auflösung mit $\Delta m = 1$, da die Aufspaltung zwischen $\sigma_\pm$-Linie und $\pi$-Linie beobachtet wird und für die longitudinale Auflösung mit $\Delta m = 2$, da hier die Aufspaltung zwischen $\sigma_-$- und $\sigma_+$-Linie beobachtet wird ($\pi$-Linie ist in longitudinaler Konfiguration nicht sichtbar), gegeben durch:
+Mit diesen Überlegungen ergibt sich für die transversale Auflösung mit $\Delta m = 1$, da die Aufspaltung zwischen $\sigma_\pm$-Linie und $\pi$-Linie beobachtet wird, und für die longitudinale Auflösung mit $\Delta m = 2$, da hier die Aufspaltung zwischen $\sigma_-$- und $\sigma_+$-Linie beobachtet wird ($\pi$-Linie ist in longitudinaler Konfiguration nicht sichtbar):
 \begin{align*}
 	\mathcal{R}_\mathrm{trans.} = \num{170000 +- 2900} \\
 	\mathcal{R}_\mathrm{long.} =\num{164000 +- 5200}
@@ -772,9 +770,9 @@ wobei wir die Ordnung $m$ wieder durch $m \approx \num{18104}$ abschätzen und e
 \end{align*}
 was ebenfalls in Anbetracht der theoretischen Werte plausibel ist.
 
-Schließlich soll Auflösungsvermögen und Finesse mithilfe der CCD-Kamera bestimmt werden.
+Schließlich sollen Auflösungsvermögen und Finesse mithilfe der CCD-Kamera bestimmt werden.
 Dazu muss im Wesentlichen die Breite eines Intensitätsmaximums des Fabry-Pérot-Etalons in der CCD-Aufnahme bestimmt werden.
-Um diese zu bestimmen passen wir, ähnlich zu Abschnitt \ref{sssec:magneton}, eine Summe von Gaußfunktion $\mathcal{G}$ und konstanter Verschiebung $d$ an die Intensitätsdaten ohne externes Magnetfeld an.
+Um diese zu bestimmen, passen wir, ähnlich zu Abschnitt \ref{sssec:magneton}, eine Summe von Gaußfunktion $\mathcal{G}$ und konstanter Verschiebung $d$ an die Intensitätsdaten ohne externes Magnetfeld an.
 Wir betrachten wieder das in Abbildung \ref{fig:peakauswahl} markierte Maximum und erhalten nach Anpassung die Abbildung \ref{fig:gauss0}.
 \begin{figure}[h]
 	\centering
@@ -804,14 +802,14 @@ womit wir eine Linienbreite von:
 	\delta \lambda = \SI{6.18 +- 0.13}{\pico\metre}
 \end{align*}
 erhalten.
-Dabei wurde der Fehler über Gaußsche Fehlerfortpflanzung unter Beachtung der Fehler für die Halbwertsbreite $\mathrm{HWB}$ und den Peakschwerpunkt $\alpha$ beachtet.
+Dabei wurde der Fehler über Gaußsche Fehlerfortpflanzung unter Beachtung der Fehler für die Halbwertsbreite $\mathrm{HWB}$ und den Peakschwerpunkt $\alpha$ berechnet.
 Wie zuvor kann nun das Auflösungsvermögen und daraus die Finesse berechnet werden:
 \begin{align}
 	\mathcal{R} &= \frac{\lambda}{\delta \lambda} = \num{104200 +- 2200} \\
 	\mathcal{F} &= \frac{\mathcal{R}}{m} = \num{5.76 +- 0.13}\text{.}
 \end{align}
-Die Bestimmung mit der CCD-Kamera war nicht erfolgreich, da die berechneten Werte für Auflösungsvermögen und Finesse stark von den Theoretischen abweichen.
-Auf die möglichen Ursachen soll im Abschnitt \ref{ssec:diskussion_zeeman} eingegangen werden.
+Die Bestimmung mit der CCD-Kamera war nicht erfolgreich, da die berechneten Werte für Auflösungsvermögen und Finesse stark von den theoretischen abweichen.
+Auf die möglichen Ursachen wird im Abschnitt \ref{ssec:diskussion_zeeman} eingegangen.
 
 \subsubsection{Dopper-Verbreiterung der Linie}
 Die Halbwertsbreite der gaußförmigen Doppler-Verbreiterung ist gegeben durch Gleichung (\ref{eq:doppler}) aus dem Grundlagenteil.
@@ -824,8 +822,8 @@ Dennoch ist die Verbreiterung aufgrund des Doppler-Effekts von untergeordneter B
 
 \subsection{Diskussion}
 \label{ssec:diskussion_zeeman}
-Sowohl die Bestimmung des Bohr'schen Magnetons als auch die Bestimmung der Finesse anhand der Aufnahme mit dem CCD-Sensor sind schlecht geglückt.
-Zum einen gab es mitunter starke Abweichungen der Intensitätsprofile von den Anpassungshypothesen.
+Sowohl die Bestimmung des Bohr'schen Magnetons als auch die Bestimmung der Finesse anhand der Aufnahme mit dem CCD-Sensor sind nicht gut gelungen.
+Es gab mitunter starke Abweichungen der Intensitätsprofile von den Anpassungshypothesen.
 Insbesondere bei der Bestimmung des Magnetons führte dies zu einer Verschiebung der Peakschwerpunkte.
 Die zur Bestimmung der Finesse gemessene Halbwertsbreite des Intensitätsprofils scheint in Anbetracht der theoretischen Finesse zu groß zu sein.
 Wir gehen davon aus, dass wir das auf die Kamera abbildende System nicht optimal scharfgestellt haben und damit eine zusätzliche Verbreiterung der Linie auftrat.

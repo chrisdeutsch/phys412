@@ -56,7 +56,7 @@
 \usepackage{rotating}
 
 % Manuelle Silbentrennung
-\hyphenation{Halb-werts-brei-te Fa-bry-Pé-rot-E-ta-lon Zee-man-E-ffekt}
+\hyphenation{Halb-werts-brei-te Fa-bry-Pé-rot-E-ta-lon Zee-man-E-ffekt Cad-mi-um-Lam-pe Kon-den-sor-lin-se}
 
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
@@ -321,7 +321,7 @@ Die Ladungsträger werden durch die Lorentzkraft soweit ausgelenkt, bis das durc
 	e E_\mathrm{Hall} = e v_x B_y
 	\label{eq:kompensation}
 \end{align*}
-Dabei ist die an den Stirnflächen mit Abstand $d$ anliegende Spannung gegeben durch $E_\mathrm{Hall} = U_\mathrm{Hall} / d$, womit aus Gleichung \ref{eq:kompensation} folgt:
+Dabei ist die an den Stirnflächen mit Abstand $d$ anliegende Spannung gegeben durch $E_\mathrm{Hall} = U_\mathrm{Hall} / d$, womit aus Gleichung (\ref{eq:kompensation}) folgt:
 \begin{align*}
 	U_\mathrm{Hall} = d v_x B_y
 \end{align*}
@@ -453,23 +453,23 @@ Um die Polarisation zu untersuchen, stellen wir einen Polarisationsfilter in den
 Wir entfernen den Filter und beobachten nun die Aufspaltung der Linien im Okular während wir langsam den Spulenstrom verringern.
 Dabei bestimmen wir den Spulenstrom, bei dem die Aufspaltung der Ringe gerade noch zu erkennen ist.
 Diese Messung führen wir insgesamt fünf mal durch, um den Messfehler besser abschätzen zu können.
+Die Skizzen dazu finden sich in Abbildung \ref{fig:zeeman_transversal}.
 
-Nun drehen wir die Polschuhe mitsamt Spulen so, dass wir in \text{longitudinalem Aufbau} beobachten können (das Magnetfeld zeigt in Beobachtungsrichtung).
+Nun drehen wir die Polschuhe mitsamt Spulen so, dass wir in \textbf{longitudinalem Aufbau} beobachten können (das Magnetfeld zeigt in Beobachtungsrichtung).
 Die Cadmiumlampe beleuchtet dabei die Kondensorlinse durch ein Loch im Polschuh.
 Wir beobachten ohne Magnetfeld das Interferenzmuster des transversalen Aufbaus.
-Eine Messung mit zugeschaltetem Magnetfeld führt hier jedoch zur Aufspaltung in zwei konzentrische Kreise (eigentlich drei $\pi$-Linie war schwach zu sehen).
-Alle Skizzen in Abbildung \ref{fig:zeeman_transversal}.
-Im Gegensatz zur transversalen Beobachtung verwenden wir hier eine Kombination von Polarisationsfilter und $\frac{\lambda}{4}$-Platte zur Bestimmung der Polarisation.
+Eine Messung mit zugeschaltetem Magnetfeld führt hier jedoch zur Aufspaltung in zwei konzentrische Kreise (tatsächlich in drei, wobei die $\pi$-Linie nur sehr schwach zu sehen war).
+Im Gegensatz zur transversalen Beobachtung verwenden wir hier eine Kombination von Polarisationsfilter und $\lambda/4$-Platte zur Bestimmung der Polarisation.
 Dazu stellen wir die Viertel-Wellenlängen-Platte unter festem Winkel $\SI{0}{\degree}$ vor den Polarisationsfilter (in Strahlrichtung), dessen Ausrichtung $\alpha$ wir variieren und skizzieren das sichtbare Interferenzbild.
-Wie bei der transversalen Beobachtung bestimmen wir auch hier, nach dem Entfernen von Filter und $\frac{\lambda}{4}$-Platte, den minimalen Strom, bei dem die Aufspaltung gerade noch erkannt werden kann.
-Alle Skizzen in Abbildung \ref{fig:zeeman_longitudinal}.
+Wie bei der transversalen Beobachtung, bestimmen wir auch hier, nach dem Entfernen von Filter und $\lambda/4$-Platte, den minimalen Strom, bei dem die Aufspaltung gerade noch erkannt werden kann.
+Die zugehörigen Skizzen sind in Abbildung \ref{fig:zeeman_longitudinal} festgehalten worden.
 
 \subsubsection{Messung des Zeeman-Effekts}
 
 Zur quantitativen Messung nutzen wir den gleichen Versuchsaufbau wie zu Anfang, ersetzen jedoch das Okular durch eine Ein-Zeilen-CCD-Kamera mit 2048 Pixeln, die wir nach einigen Versuchen erfolgreich mit dem Computer verbinden und ein Bild sehen konnten.
-Der Aufbau musste nun so verändert werden, dass die Abbildungslinse auf die CCD-Zeile scharf abbildet, weswegen wir die Kamera an einer anderen Position als das Okular platzieren mussten.
-Außerdem musste das Etalon durch die Stellschrauben noch einmal so angepasst werden, dass das Bild in der Mitte der Kamera zentriert war.
-Unter kontinuierlicher Beobachtung des Bildes konnten wir die Kamera nach einiger Zeit auf eine optimale Position einstellen, wobei sich die linke Bildhälfte nicht gleichzeitig mit der rechten scharf stellen ließ.
+Der Aufbau muss nun so verändert werden, dass die Abbildungslinse auf die CCD-Zeile scharf abbildet, weswegen wir die Kamera an einer anderen Position als das Okular platziert haben.
+Außerdem muss das Etalon durch die Stellschrauben noch einmal so angepasst werden, dass das Bild in der Mitte der Kamera zentriert war.
+Unter kontinuierlicher Beobachtung des Bildes können wir die Kamera nach einiger Zeit auf eine optimale Position einstellen, wobei sich die linke Bildhälfte nicht gleichzeitig mit der rechten scharf stellen ließ, weswegen wir uns für eine Messung auf der rechten Seite entschieden haben und diese entsprechend möglichst scharf darstellen.
 
 Nun können wir für verschiedene Spulenströme die Aufspaltung sichtbar machen.
 Da das Bild sehr unruhig ist, mitteln wir in dem Computerprogramm für jede Messung über einige Sekunden, um den Fehler zu minimieren.
@@ -479,7 +479,7 @@ Zur späteren Zuordnung der Spulenströme zu den Magnetfeldern führen wir vor u
 
 \subsubsection{Beobachtung des Zeeman-Effektes}
 In der transversalen Konfiguration wird eine Aufspaltung der Ringe in drei Komponenten festgestellt.
-Diese Aufspaltung entspricht allen drei möglichen Dipolübergängen $\Delta m_j = 0, \pm 1$ von $^1D_2$ nach $^1P_1$ wie in Abbildung \ref{fig:termschema_cadmium} zu sehen ist.
+Diese Aufspaltung entspricht allen drei möglichen Dipolübergängen $\Delta m_j = 0, \pm 1$ von $^1$D$_2$ nach $^1$P$_1$ wie in Abbildung \ref{fig:termschema_cadmium} zu sehen ist.
 Dabei entsprechen die äußeren Linien den Übergängen mit $\Delta m_j = \pm 1$ und die Innere $\Delta m_j = 0$.
 Um dies zu verstehen, muss die Polarisation der Linien betrachtet werden, welche wir anhand eines Polarisationsfilters analysiert haben.
 In Abbildung $\ref{fig:zeeman_transversal}$ sehen wir, dass nur die mittlere Linie durch den Filter bei $\alpha_\mathrm{Pol.} = \SI{90 +- 2,5}{\degree}$ (Polarisationsebene parallel zum Magnetfeld) transmittiert wird,  das Photon ist demnach linear in der Magnetfeldrichtung polarisiert.
@@ -491,10 +491,11 @@ Im Gegensatz dazu, verschwindet die mittlere Linie bei Drehung des Filters auf $
 	\label{fig:zeeman_transversal}
 \end{figure}
 
-In der longitudinalen Konfiguration sehen wir im Wesentlichen\footnote{Die $\pi$-Linie (im Bild gepunktet) ist mit sehr geringer Intensität zu erkennen, was an Inhomogenitäten des Magnetfeldes und einer kleinen Abweichung der Beobachtungsrichtung von der Magnetfeldachse liegen kann.} eine Aufspaltung in zwei konzentrische Ringe, welche den beiden äußeren der transversalen Beobachtung entsprechen ($\Delta m = \pm 1$).
-Zur Untersuchung der Polarisation nutzten wir aus, dass eine $\frac{\lambda}{4}$-Platte entgegengesetzt zirkular polarisierte Wellen in zwei senkrecht aufeinander stehende linear polarisierte Wellen zerlegt.
-So kann mit einem, hinter der Viertel-Wellenlängen-Platte befindlichem, Polarisationsfilter das Licht auf zirkulare Polarisation untersucht werden.
-Wir stellen fest, dass eine Einstellung des Filters auf $\alpha_\mathrm{Pol.} = \SI{-45 +- 2,5}{\degree}$ den I und $\alpha_\mathrm{Pol.} = \SI{+45 +- 2,5}{\degree}$ den äußeren Ring verschwinden lässt.
+In der longitudinalen Konfiguration sehen wir im Wesentlichen eine Aufspaltung in zwei konzentrische Ringe, welche den beiden äußeren der transversalen Beobachtung entsprechen ($\Delta m = \pm 1$).
+Die $\pi$-Linie (im Bild gepunktet) ist mit sehr geringer Intensität zu erkennen, was an Inhomogenitäten des Magnetfeldes und einer kleinen Abweichung der Beobachtungsrichtung von der Magnetfeldachse liegen kann.
+Zur Untersuchung der Polarisation nutzten wir aus, dass eine $\lambda/4$-Platte entgegengesetzt zirkular polarisierte Wellen in zwei senkrecht aufeinander stehende linear polarisierte Wellen zerlegt.
+So kann mit einem hinter der Viertel-Wellenlängen-Platte befindlichem Polarisationsfilter das Licht auf zirkulare Polarisation untersucht werden.
+Wir stellen fest, dass eine Einstellung des Filters auf $\alpha_\mathrm{Pol.} = \SI{-45 +- 2,5}{\degree}$ den inneren und $\alpha_\mathrm{Pol.} = \SI{+45 +- 2,5}{\degree}$ den äußeren Ring verschwinden lässt.
 Dadurch schließen wir, dass die äußeren Ringe entgegengesetzt zirkular polarisiert sind.
 \begin{figure}[h]
 	\centering
@@ -503,6 +504,7 @@ Dadurch schließen wir, dass die äußeren Ringe entgegengesetzt zirkular polari
 	\label{fig:zeeman_longitudinal}
 \end{figure}
 
+\noindent
 Die sichtbaren Polarisationen erklären sich wie folgt:
 \begin{itemize}
 	\item $\Delta m_\ell = 0$: Solche Übergänge weisen eine dipolartige Abstrahlcharakteristik in Richtung der Quantisierungsachse des Drehimpulses auf.
@@ -512,7 +514,7 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 	
 	\item $\Delta m_\ell = \pm 1$: Diese Übergänge weisen keine dipolartige Abstrahlcharakteristik auf, sodass Emission auch in Richtung des Magnetfeldes stattfindet.
 	Da auch hier Drehimpulserhaltung gilt, muss der Spin des emittierten Photons so ausgerichtet sein, dass $m_s = \mp 1$ gilt, um $\Delta m = \pm 1$ zu gewährleisten.
-	Diese Photonenspins entsprechen in longitudinaler Beobachtungsrichtung zirkular polarisiertem Licht und in Transversaler linear polarisiertem Licht mit Polarisationsebene senkrecht auf der Spinquantisierungsachse welche mit der Magnetfeldachse übereinstimmt.
+	Diese Photonenspins entsprechen in longitudinaler Beobachtungsrichtung zirkular polarisiertem Licht und in transversaler linear polarisiertem Licht mit Polarisationsebene senkrecht auf der Spinquantisierungsachse, welche mit der Magnetfeldachse übereinstimmt.
 \end{itemize}
 
 
@@ -591,7 +593,7 @@ Die in den Diagrammen eingetragenen Fehler für den Winkel $\alpha$ folgt aus de
 \end{table}
 
 Mithilfe der so berechneten Peakschwerpunkte können wir die relative Abweichung von der $\pi$-Linie berechnen.
-Dazu nutzen wir die Interferenzbedingung für das Fabry-Pérot-Etalon aus Gleichung \ref{eq:interferenzbedingung} und erhalten:
+Dazu nutzen wir die Interferenzbedingung für das Fabry-Pérot-Etalon aus Gleichung (\ref{eq:interferenzbedingung}) und erhalten:
 \begin{align}
 	\frac{\Delta \lambda_\pm}{\lambda_\pi^0} = \frac{\lambda_{\sigma^\pm} - \lambda_\pi^0}{\lambda_\pi^0} = \frac{\sqrt{n^2 - \sin^2(\alpha_{\pm})}}{\sqrt{n^2 - \sin^2(\alpha_\pi)}} - 1
 \end{align}
@@ -622,7 +624,7 @@ Die Energieaufspaltung wurde für die verschiedenen Spulenströme in Tabelle \re
 	\caption{Energieaufspaltung der $\sigma_\pm$-Linien bei anliegendem Spulenstrom $I$ ($\sigma_I = \SI{0.1}{\ampere}$).}
 	\label{tab:energieaufspaltung}
 \end{table}
-Diese ist gemäß des normalen Zeeman-Effektes (Gleichung \ref{eq:normaler_zeeman}) gegeben durch:
+Diese ist gemäß des normalen Zeeman-Effektes (Gleichung (\ref{eq:normaler_zeeman})) gegeben durch:
 \begin{align}
 	\Delta E = \mu_\mathrm{B} \Delta m_\ell B
 	\label{eq:normaler_zeeman_auswertung}
@@ -654,7 +656,7 @@ Betrachtet man jedoch den Graphen in Abbildung \ref{fig:magneton_fit} so stellt 
 	\caption{magneton fit}
 	\label{fig:magneton_fit}
 \end{figure}
-Gemäß Gleichung \ref{eq:normaler_zeeman_auswertung} entspricht die Steigung der Ursprungsgeraden im $|\Delta E|$-$\bar{B}$-Graph dem Bohrschen Magneton. Zur Bestimmung des Bohrschen Magnetons berechnen wir das varianzgewichtete Mittel der beiden Steigungen:
+Gemäß Gleichung (\ref{eq:normaler_zeeman_auswertung}) entspricht die Steigung der Ursprungsgeraden im $|\Delta E|$-$\bar{B}$-Graph dem Bohrschen Magneton. Zur Bestimmung des Bohrschen Magnetons berechnen wir das varianzgewichtete Mittel der beiden Steigungen:
 \begin{align}
 	\bar{x} = \frac{\sum_i \frac{x_i}{\sigma_i^2}}{\sum_i \frac{1}{\sigma_i^2}}\text{,}
 \end{align}
@@ -676,10 +678,10 @@ Dort beobachten wir, dass die Peakschwerpunkte der $\sigma$-Linien nicht gut mit
 Wir haben versucht durch eine individuelle Gewichtung der Messpunkt eine bessere Anpassung zu erzielen, was jedoch nicht geglückt ist.
 
 
-\subsubsection{Weitergehende Überlegungen}
-\textbf{Abschätzung des Auflösungsvermögens $\mathcal{R}$ und der Finesse $\mathcal{F}$ des Fabry-Pérot-Etalons}:
+\subsection{Weitergehende Überlegungen}
+\subsubsection{Abschätzung des Auflösungsvermögens $\mathcal{R}$ und der Finesse $\mathcal{F}$ des Fabry-Pérot-Etalons}
 Zunächst wollen wir das theoretische Auflösungsvermögen und Finesse des Etalons berechnen.
-Diese lassen sich mit Gleichung \ref{eq:finesse} und \ref{eq:aufloesung} des Grundlagenteils aus dem Reflektionskoeffizienten $r$ und der Ordnung $m$ des Interferenzrings berechnen.
+Diese lassen sich mit Gleichung (\ref{eq:finesse}) und (\ref{eq:aufloesung}) des Grundlagenteils aus dem Reflektionskoeffizienten $r$ und der Ordnung $m$ des Interferenzrings berechnen.
 Mit dem gegebenen Wert $r = \num{0,85}$ folgt unmittelbar für die Finesse:
 \begin{align*}
 	\mathcal{F_\mathrm{theo.}} = \frac{\pi r}{1 - r^2} \approx \num{9.62}
@@ -722,7 +724,7 @@ Wir beachten die Fehler in $\bar{I}$ und in den Anpassungsparametern des Polynom
 	B_\mathrm{trans.} = \SI{195.6 +- 3.3}{\milli\tesla} \\
 	B_\mathrm{long.} = \SI{101.6 +- 3.2}{\milli\tesla}
 \end{align*}
-Die Auflösung ist nun gegeben durch Gleichung \ref{eq:aufloesung}, wobei $\delta \lambda$ die Halbwertsbreite der Intensitätsmaxima des Fabry-Pérot-Etalon ist.
+Die Auflösung ist nun gegeben durch Gleichung (\ref{eq:aufloesung}), wobei $\delta \lambda$ die Halbwertsbreite der Intensitätsmaxima des Fabry-Pérot-Etalon ist.
 Gemäß des Rayleigh-Kriteriums sind zwei Linien $(\lambda_1, \lambda_2)$ gerade noch aufgelöst, wenn deren Wellenlängenunterschied $\lambda_2 - \lambda_1$ gleich der Halbwertsbreite $\delta \lambda$ des Intensitätsprofils einer einzigen Linie ist.
 Damit können wir die Halbwertsbreite $\delta \lambda$ der Intensitätsspitzen des Etalons durch die Wellenlängendifferenz zweier gerade noch aufgelösten Linien bestimmen, welche durch die Energieaufspaltung $\Delta E$ aufgrund des normalen Zeeman-Effekts entsteht:
 \begin{align}
@@ -806,9 +808,8 @@ Wie zuvor kann nun das Auflösungsvermögen und daraus die Finesse berechnet wer
 Die Bestimmung mit der CCD-Kamera war nicht erfolgreich, da die berechneten Werte für Auflösungsvermögen und Finesse stark von den Theoretischen abweichen.
 Auf die möglichen Ursachen soll im Abschnitt \ref{ssec:diskussion_zeeman} eingegangen werden.
 
-\noindent
-\textbf{Dopper-Verbreiterung der Linie:}
-Die Halbwertsbreite der gaußförmigen Doppler-Verbreiterung ist gegeben durch Gleichung \ref{eq:doppler} aus dem Grundlagenteil.
+\subsubsection{Dopper-Verbreiterung der Linie}
+Die Halbwertsbreite der gaußförmigen Doppler-Verbreiterung ist gegeben durch Gleichung (\ref{eq:doppler}) aus dem Grundlagenteil.
 Bei der Temperatur $T = \SI{1000}{\K}$ folgt mit der Atommasse von Cadmium\footnote{CIAAW: 2013 Standard Atomic Weights\\\url{http://www.ciaaw.org/atomic-weights.htm}\\Letzer Aufruf: 26. November 2014} $m_\mathrm{Cd} = \SI{112.414 +- 0.004}{\atomicmassunit} $ die Doppler-Verbreiterung:
 \begin{align}
 	\delta \lambda_\mathrm{Doppler} = \SI{1.38}{\pico\metre}
@@ -1015,6 +1016,8 @@ Die Anregungsenergie von Quecksilber ließ sich gut bestimmen und wir konnten mi
 \begin{appendix}
 \section{Darstellung der Aufspaltung beim Zeeman-Effekt}
 \label{app:penis}
+
+Auf den folgenden Seiten sind der Vollständigkeit halber die Darstellungen der Messwerte und Anpassungen der Zeeman-Aufspaltung für alle gemessenen Ströme zu finden.
 
 \begin{sidewaysfigure}[!h]
 \begin{subfigure}[c]{0.5\textwidth}

@@ -518,12 +518,18 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 
 
 \subsubsection{Magnetfeldkalibrierung}
-Höhere Ordnungen verursachen extrem hohen Parameterfehler was dazu führt, dass der Magnetfeldfehler um eine größenordnung wächst
-
+Zur Bestimmung des Magnetfeldes in der Cadmium-Lampe wurden von uns zweimal die Magnetfeld-Strom-Kennlinie zwischen den Polschuhen vermessen.
+An diese soll nun ein Polynom angepasst werden, um die Magnetfelder zu beliebigen Spulenströmen interpolieren zu können.
+Dabei entscheiden wir uns nach einigen Überprüfungen für ein Polynom 3. Grades ohne Absolutglied.
+Wir verzichten dabei auf das Absolutglied, da dieses sehr nah bei Null liegt und einen großen relativen Fehler hat.
+Unterhalb des 3. Grades sind die Polynome nur schlecht an die Datenpunkte anzupassen.
+Im Gegensatz dazu passen Polynome 4. und höherer Ordnung besser an die Datenpunkte, jedoch kommt es dabei zu großen Fehlern der Koeffizienten des Polynoms.
+Dadurch kommt es bei der Auswertung des Kalibrierung zu Fehlern, die bei dem relevanten Strombereich von \SI{0}{\ampere} bis \SI{10}{\ampere} den Fehler des angepassten Polynoms 3.Grades um Größenordnungen übersteigt.
+In den Abbildungen \ref{fig:kalibrierung1} und \ref{fig:kalibrierung2} sind die Datenpunkte mitsamt Anpassung aufgetragen.
 \begin{figure}[h]
 \centering
 \input{./plots/kalibrierung1.tex}
-\caption{Erste Magnetfeldkalibrierung mit angepasstem Polynom 3. Grades ($\chi_\mathrm{d.o.f.}^2=1,48$)}
+\caption{Erste Magnetfeldkalibrierung mit angepasstem Polynom 3. Grades ($\chi_\mathrm{d.o.f.}^2= \num{1,48}$)}
 \label{fig:kalibrierung1}
 \end{figure}
 \begin{figure}[h]
@@ -532,23 +538,22 @@ Höhere Ordnungen verursachen extrem hohen Parameterfehler was dazu führt, dass
 \caption{Zweite Magnetfeldkalibrierung mit angepasstem Polynom 3. Grades ($\chi_\mathrm{d.o.f.}^2=0,72$)}
 \label{fig:kalibrierung2}
 \end{figure}
-
-\FloatBarrier
-
+Die Anpassungsparameter der Polynome ergeben die folgenden Kalibrationen:
 \begin{itemize}
 	\item \textbf{Kalibration 1:}
-	\begin{align}
+	\begin{align*}
 	B_1(I) = \SI{-0.389 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
 	+\SI{0.747+-0.182}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
 	+ \SI{96.606 +- 0.602}{\milli\tesla\per\ampere} &\cdot I
-	\end{align}
+	\end{align*}
 	\item \textbf{Kalibration 2:}
-	\begin{align}
+	\begin{align*}
 	B_2(I) = \SI{-0.518 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
 	+\SI{2.153+-0.183}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
 	+ \SI{93.086 +- 0.566}{\milli\tesla\per\ampere} &\cdot I
-	\end{align}
+	\end{align*}
 \end{itemize}
+Die Abweichung der Kalibrationen wird im nächsten Abschnitt näher diskutiert.
 
 \FloatBarrier
 \subsubsection{Bestimmung des Bohrschen Magnetons}
@@ -652,7 +657,7 @@ Betrachtet man jedoch den Graphen in Abbildung \ref{fig:magneton_fit} so stellt 
 \begin{figure}[h]
 	\centering
 	\input{./plots/magneton_fit.tex}
-	\caption{magneton fit}
+	\caption{Anpassung einer Ursprungsgeraden an die Energieaufspaltung $\Delta E$ der $\sigma_\pm$-Linie durch den normalen Zeeman-Effekts in Abhängigkeit vom externen Magnetfeld $\bar{B}$}
 	\label{fig:magneton_fit}
 \end{figure}
 Gemäß Gleichung \ref{eq:normaler_zeeman_auswertung} entspricht die Steigung der Ursprungsgeraden im $|\Delta E|$-$\bar{B}$-Graph dem Bohrschen Magneton. Zur Bestimmung des Bohrschen Magnetons berechnen wir das varianzgewichtete Mittel der beiden Steigungen:
@@ -701,7 +706,7 @@ Es folgt für das theoretische Auflösungsvermögen:
 \begin{table}[h]
 	\centering
 	\input{./tables/aufloesung.tex}
-	\caption{Messdaten zur Bestimmung der Auflösung und Finesse mit dem Okular}
+	\caption{Grenzströme in transversaler und longitudinaler Konfiguration bei denen die Aufspaltung der Interferenzringe im Okular gerade noch erkennbar ist.}
 	\label{tab:aufloesung}
 \end{table}
 Nun wollen wir aus den Spulenströmen bei denen aufgespaltene Ringe im Okular gerade noch zu unterscheiden waren (Tabelle \ref{tab:aufloesung}) die Finesse und das Auflösungsvermögen berechnen.

@@ -157,6 +157,7 @@ Damit kommt es zu einer Energieverschiebung $\Delta E$ der Niveaus aufgrund der 
 Wählt man $\vec{B} = (0,0,B_z)$ und dementsprechend die z-Achse als Quantisierungsachse des Drehimpulses, so folgt $\ell_z = \hbar m_\ell$ aus der magnetischen Quantenzahl $m_\ell$ und die Energieverschiebung ergibt sich zu:
 \begin{align}
 	\Delta E = \mu_\mathrm{B} m_\ell B_z
+	\label{eq:normaler_zeeman}
 \end{align}
 Somit wird für feste Drehimpulsquantenzahl $\ell$ die Entartung des zugehörigen Energieniveaus aufgehoben, da sich dieses in $(2\ell + 1)$ Niveaus aufspaltet.
 
@@ -520,7 +521,22 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 \end{figure}
 
 \subsubsection{Magnetfeldkalibrierung}
+Höhere Ordnungen verursachen extrem hohen Parameterfehler was dazu führt, dass der Magnetfeldfehler um eine größenordnung wächst
 
+\begin{itemize}
+	\item \textbf{Kalibration 1:}
+	\begin{align}
+	B_1(I) = \SI{-0.389 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
+	+\SI{0.747+-0.182}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
+	+ \SI{96.606 +- 0.602}{\milli\tesla\per\ampere} &\cdot I
+	\end{align}
+	\item \textbf{Kalibration 2:}
+	\begin{align}
+	B_2(I) = \SI{-0.518 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
+	+\SI{2.153+-0.183}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
+	+ \SI{93.086 +- 0.566}{\milli\tesla\per\ampere} &\cdot I
+	\end{align}
+\end{itemize}
 
 \FloatBarrier
 \subsubsection{Bestimmung des Bohrschen Magnetons}
@@ -557,7 +573,7 @@ Die Ergebnisse für die Schwerpunkte der einzelnen Linien finden sich in Tabelle
 	\centering
 	\resizebox{\columnwidth}{!}{%
 		\input{./tables/messwerte_aufspaltung.tex}}
-	\caption{Gefittete Werte für die Schwerpunkte $\alpha_i$ der drei Linien. Angaben in Milligrad.}
+	\caption{Durch Kurvenanpassung bestimmte Schwerpunkte $\alpha_i$ (in Milligrad) der drei Linien. Der Fehler des Spulenstroms $I$ ist gegeben durch $\sigma_I = \SI{0.1}{\ampere}$.}
 	\label{tab:peakschwerpunkte_magneton}
 \end{table}
 
@@ -575,50 +591,35 @@ Mit diesen Gleichungen folgen für die relative Abweichung die Werte der Tabelle
 \begin{table}[h]
 	\centering
 	\input{./tables/auswertung_rel_wellenlaenge.tex}
-	\caption{Wellenlängenverschiebung}
+	\caption{Relative Wellenlängenverschiebung zur $\pi$-Linie aus den angepassten Schwerpunkten der Tabelle \ref{tab:peakschwerpunkte_magneton}. Fehler des Spulenstroms: $\sigma_I = \SI{0.1}{\ampere}$.}
 	\label{tab:verschiebung_wellenlaenge}
 \end{table}
-
-Mit der Wellenlänge der $\pi$-Linie $\lambda_\pi = \SI{643,8470}{\nano\metre}$ \footnote{National Institute of Standards and Technology (NIST)\\ \url{http://physics.nist.gov/PhysRefData/Handbook/Tables/cadmiumtable2.htm}\\Letzter Aufruf: 22. November 2014} und der relativen Wellenlängenverschiebung kann nun die Energieaufspaltung:
+Mit der Wellenlänge der $\pi$-Linie\footnote{National Institute of Standards and Technology (NIST)\\ \url{http://physics.nist.gov/PhysRefData/Handbook/Tables/cadmiumtable2.htm}\\Letzter Aufruf: 22. November 2014} $\lambda_\pi = \SI{643,8470}{\nano\metre}$  und der relativen Wellenlängenverschiebung kann nun die Energieaufspaltung $\Delta E$ der Ringe berechnet werden:
 \begin{align}
-	\Delta E = -\frac{h c}{\lambda_\pi^0}\,\frac{\Delta \lambda}{\lambda_{\sigma^\pm}} \approx -\frac{h c}{\lambda_\pi^0}\,\frac{\Delta \lambda}{\lambda_\pi^0}
+	\Delta E = -\frac{h c}{\lambda_\pi^0}\,\frac{\Delta \lambda}{\lambda_{\sigma^\pm}} \approx -\frac{h c}{\lambda_\pi^0}\,\frac{\Delta \lambda}{\lambda_\pi^0} \text{,}
 \end{align}
+wobei der Fehler aus Gaußscher Fehlerfortpflanzung folgt:
 \begin{align}
 	\sigma_{\Delta E} = \frac{h c}{\lambda_\pi^0} \, | \sigma_{\Delta \lambda / \lambda_\pi^0} |
 \end{align}
-berechnet werden.
+Die Energieaufspaltung wurde für die verschiedenen Spulenströme in Tabelle \ref{tab:energieaufspaltung} dargestellt.
 \begin{table}[h]
 	\centering
 	\input{./tables/auswertung_energieaufspaltung.tex}
 	\caption{Energieaufspaltung}
 	\label{tab:energieaufspaltung}
 \end{table}
-
-Da die Energieaufspaltung gegeben ist durch:
+Diese ist gemäß des normalen Zeeman-Effektes (Gleichung \ref{eq:normaler_zeeman}) gegeben durch:
 \begin{align}
 	\Delta E = \mu_\mathrm{B} \Delta m_\ell B
 \end{align}
 Wenn man $\Delta E$ gegen $B$ aufträgt so erhält man eine Gerade mit Steigung $\pm \mu_\mathrm{B}$.
+Dazu müssen wir zunächst das Magnetfeld $B$ mit der Kalibrierung aus den Spulenströmen berechnen.
+Da die beiden Kalibrierungen eine kleine Abweichung im Bereich hoher Ströme aufweisen, entscheiden wir uns dafür ein mittleres Magnetfeld durch Anwendung des ungewichteten arithmetischen Mittels auf die beiden berechneten Feldstärken zu berechnen.
+Wir verwenden dabei den ungewichteten Mittelwert, da die Fehler der beiden Feldstärken nahezu gleich sind.
+Der Fehler des Mittelwerts von zwei Größen ergibt sich dann aus: $\sigma_{\bar{B}} = \frac{\sigma_\mathrm{max.}}{\sqrt{2}}$, wobei wir für $\sigma_\mathrm{max.}$ stets den größeren ($\sigma_\mathrm{max.} = \max(\sigma_{B_1}, \sigma_{B_2}) $) der beiden Fehler verwenden.
+Die zu den gemessenen Spulenströmen korrespondierenden Magnetfelder wurden in Tabelle \ref{tab:mittelwert_kalibration} aufgetragen, wobei die Fehler der Anpassungsparameter und der Spulenströme\footnote{Für die Spulenströme wurde ein Fehler von $\sigma_I = \SI{0.1}{\ampere}$ angenommen, was der Stelle der niedrigsten Wertigkeit auf der digitalen Anzeige des Netzgerätes entspricht.} der Kalibration bei der Berechnung der Magnetfelder $B_1, B_2$ durch Gaußsche Fehlerfortpflanzung beachtet wurden.
 
-Dazu muss zunächst das Magnetfeld $B$ berechnet werden.
-Da unsere beiden Magnetfeldkalibrierungen eine kleine Abweichung im Bereich hoher Ströme aufweisen, entscheiden wir uns dafür die die beiden Kalibrationen zu mitteln.
-Dazu verwenden wir das ungewichtete arithmetische Mittel, da die zugehörigen Fehler fast gleich sind.
-Dann ergibt sich der Fehler des Mittelwerts von $N$ Werten mit Fehler $\sigma$ zu $\sigma/\sqrt{N}$ dabei wählen wir für $\sigma$ immer den größten der beiden Fehler.
-
-\begin{itemize}
-	\item \textbf{Kalibration 1:}
-	\begin{align}
-	B_1(I) = \SI{-0.389 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
-	       +\SI{0.747+-0.182}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
-	       + \SI{96.606 +- 0.602}{\milli\tesla\per\ampere} &\cdot I
-	\end{align}
-	\item \textbf{Kalibration 2:}
-	\begin{align}
-	B_2(I) = \SI{-0.518 +- 0.014}{\milli\tesla\per\ampere\cubed} &\cdot I^3 \nonumber\\
-	+\SI{2.153+-0.183}{\milli\tesla\per\ampere\squared} &\cdot I^2 \nonumber\\
-	+ \SI{93.086 +- 0.566}{\milli\tesla\per\ampere} &\cdot I
-	\end{align}
-\end{itemize}
 
 Wir tragen nun den $|\Delta E|$ gegen das anliegende Magnetfeld $\bar{B}$ auf und fitten Ursprungsgeraden an die Messpunkte.
 Die Fits ergeben:

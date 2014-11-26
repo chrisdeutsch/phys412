@@ -279,9 +279,10 @@ Die Energieunschärfe ist gegeben durch:
 Diese Energieunschärfe hat ein Lorentz-Profil.
 Darüber hinaus kommt es zur Dopplerverbreiterung aufgrund der thermischen Bewegung der angeregten Atome.
 Die Geschwindigkeitsverteilung der Atome in Beobachtungsrichtung ist gaußförmig um Null, sodass auch die Dopplerverbreitung ein gaußförmiges Profil mit der Halbwertsbreite:
-\begin{align*}
+\begin{align}
 	\delta \lambda = \frac{\lambda_0}{c} \sqrt{\frac{8 k_\mathrm{B} T \ln(2)}{m}}
-\end{align*}
+	\label{eq:doppler}
+\end{align}
 hat.
 Die Kombination von natürlicher Linienbreite (Lorentz) und Dopplerverbreiterung (Gauß) führt (durch Faltung) zu einem sogenannten Voigt-Profil \cite{siegmann}.
 Neben der Dopplerverbreiterung existiert noch die Druckverbreiterung der Linien aufgrund von Stößen mit Nachbarn eines angeregten Atoms.
@@ -793,8 +794,8 @@ Auf die möglichen Ursachen soll im Abschnitt \ref{ssec:diskussion_zeeman} einge
 
 \noindent
 \textbf{Dopper-Verbreiterung der Linie:}
-Die Halbwertsbreite der gaußförmigen Doppler-Verbreiterung ist gegeben mit Gleichung (HIER REFERENZ) aus dem Grundlagenteil.
-Bei der Temperatur $T = \SI{1000}{\K}$ folgt mit der Atommasse von Cadmium\footnote{CIAAW: 2013 Standard Atomic Weights\\http://www.ciaaw.org/atomic-weights.htm\\Letzer Aufruf: 26. November 2014} $m_\mathrm{Cd} = \SI{112.414 +- 0.004}{\atomicmassunit} $ die Doppler-Verbreiterung:
+Die Halbwertsbreite der gaußförmigen Doppler-Verbreiterung ist gegeben durch Gleichung \ref{eq:doppler} aus dem Grundlagenteil.
+Bei der Temperatur $T = \SI{1000}{\K}$ folgt mit der Atommasse von Cadmium\footnote{CIAAW: 2013 Standard Atomic Weights\\\url{http://www.ciaaw.org/atomic-weights.htm}\\Letzer Aufruf: 26. November 2014} $m_\mathrm{Cd} = \SI{112.414 +- 0.004}{\atomicmassunit} $ die Doppler-Verbreiterung:
 \begin{align}
 	\delta \lambda_\mathrm{Doppler} = \SI{1.38}{\pico\metre}
 \end{align}

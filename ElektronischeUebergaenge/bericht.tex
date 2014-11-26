@@ -581,6 +581,7 @@ Zur Anpassung verwenden wir die Methode der kleinsten Quadrate (\texttt{GNUPlot}
 \end{figure}
 Die restlichen Anpassungen finden sich in Anhang \ref{app:penis}.
 Die Ergebnisse für die Schwerpunkte der einzelnen Linien finden sich in Tabelle \ref{tab:peakschwerpunkte_magneton}.
+Die in den Diagrammen eingetragenen Fehler für den Winkel $\alpha$ folgt aus der Messung eines Winkelbereichs von etwa \SI{10}{\degree} auf den \num{2048} Pixeln der CCD-Kamera zu $\sigma_\alpha = \SI{0.0025}{\degree}$, sowie für die Intensität $I$ wurde geschätzt auf $\sigma_I = \SI{0.4}{\percent}$.
 
 \begin{table}[h]
 	\centering
@@ -613,7 +614,7 @@ Mit der Wellenlänge der $\pi$-Linie\footnote{National Institute of Standards an
 \end{align}
 wobei der Fehler aus Gaußscher Fehlerfortpflanzung folgt:
 \begin{align}
-	\sigma_{\Delta E} = \frac{h c}{\lambda_\pi^0} \, | \sigma_{\Delta \lambda / \lambda_\pi^0} |
+	\sigma_{\Delta E} = \frac{h c}{\lambda_\pi^0} \, \sigma_{\Delta \lambda / \lambda_\pi^0}
 \end{align}
 Die Energieaufspaltung wurde für die verschiedenen Spulenströme in Tabelle \ref{tab:energieaufspaltung} dargestellt.
 \begin{table}[h]
@@ -636,16 +637,18 @@ Die zu den gemessenen Spulenströmen korrespondierenden Magnetfelder wurden in T
 \begin{table}[h]
 	\centering
 	\input{./tables/auswertung_magnetfeld_strom.tex}
-	\caption{Stromkalib}
+	\caption{Auswertung der Magnetfeldkalibrierung mit den gemessenen Spulenströmen und Mittelung der beiden Kalibrationen}
 	\label{tab:mittelwert_kalibration}
 \end{table}
 
-Wir tragen nun den Betrag der Energieaufspaltung $|\Delta E|$ für die $\sigma_-$- und $\sigma_+$-Linien gegen das anliegende Magnetfeld $\bar{B}$ auf und passen eine Ursprungsgeraden an.
+Wir tragen nun den Betrag der Energieaufspaltung $|\Delta E|$ für die $\sigma_-$- und $\sigma_+$-Linien gegen das anliegende Magnetfeld $\bar{B}$ auf und passen eine Ursprungsgeraden an (Abbildung \ref{fig:magneton_fit}).
 Wir erhalten für die Ursprungsgeraden:
 \begin{align}
 	|\Delta E_{-}| = \SI{5.502 +- 0.031e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 8.94\\
 	|\Delta E_{+}| = \SI{5.497 +- 0.019e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 1.62
 \end{align}
+Obwohl die $\chi$-Quadrate wesentlich von $1$ abweichen, ist die Anpassung der Ursprungsgeraden an die Punkte passabel, da das Anpassen mit \texttt{GNUPlot} lediglich Fehler in $y$-Richtung beachtet.
+Betrachtet man jedoch den Graphen in Abbildung \ref{fig:magneton_fit} so stellt man fest, dass unter Beachtung des Magnetfeldfehlers die Punkte gut auf der Geraden liegen.
 \begin{figure}[h]
 	\centering
 	\input{./plots/magneton_fit.tex}
@@ -664,12 +667,14 @@ Damit erhalten wir für das Bohrsche Magneton:
 \begin{align}
 	\mu_\mathrm{B} = \SI{5.498 +- 0.017e-5}{\electronvolt\per\tesla}
 \end{align}
-
-Vergleich mit dem Literaturwert\footnote{2010 CODATA recommended values\\ \url{http://physics.nist.gov/cgi-bin/cuu/Value?mubev}\\ Letzter Abruf: 24. November 2014}.
+Dieser Wert weicht in Anbetracht der Fehler stark vom Literaturwert\footnote{2010 CODATA recommended values\\ \url{http://physics.nist.gov/cgi-bin/cuu/Value?mubev}\\ Letzter Abruf: 24. November 2014}
 \begin{align}
 	\mu_\mathrm{B}^{\mathrm{Lit.}} = \SI{5.7883818066 +- 0.0000000038e-5}{\electronvolt\per\tesla}
 \end{align}
-
+ab.
+Diese Abweichung könnte daher stammen, dass wie im Anhang \ref{app:penis} ersichtlich, für höhere Ströme die Form der aufgespaltenen Linien nicht mehr gut mit einer Summe von Gaußfunktionen und Verschiebung übereinstimmt.
+Dort beobachten wir, dass die Peakschwerpunkte der $\sigma$-Linien nicht gut mit den Messdaten übereinstimmen.
+Wir haben versucht durch eine individuelle Gewichtung der Messpunkt eine bessere Anpassung zu erzielen, was jedoch nicht geglückt ist.
 
 
 \subsubsection{Weitergehende Überlegungen}

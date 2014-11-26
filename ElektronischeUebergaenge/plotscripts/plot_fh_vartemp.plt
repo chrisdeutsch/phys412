@@ -19,6 +19,13 @@ set grid
 
 load './../gnuplot_linestyles.plt'
 
-plot './messwerte/variable temperatur/155.txt' using 1:2 with lines t' $T=\SI{155}{\degreeCelsius}$' ls 1 lw 2, './messwerte/variable temperatur/160.txt' using 1:2 with lines t' $T=\SI{160}{\degreeCelsius}$' ls 2 lw 2, './messwerte/variable temperatur/165.txt' using 1:2 with lines t' $T=\SI{165}{\degreeCelsius}$' ls 3 lw 2, './messwerte/variable temperatur/170.txt' using 1:2 with lines t' $T=\SI{170}{\degreeCelsius}$' ls 4 lw 2
+plot 	'./messwerte/variable temperatur/155.txt' using 1:2 with lines t' $T=\SI{155}{\degreeCelsius}$' ls 1 lw 2,\
+		'./messwerte/variable temperatur/155.txt' using 1:2:(0.1):(0.1) with xyerrorbars notitle ls 1,\
+		'./messwerte/variable temperatur/160.txt' using 1:2 with lines t' $T=\SI{160}{\degreeCelsius}$' ls 2 lw 2,\
+		'./messwerte/variable temperatur/160.txt' using 1:2:(0.1):(0.1) with xyerrorbars notitle ls 2,\
+		'./messwerte/variable temperatur/165.txt' using 1:2 with lines t' $T=\SI{165}{\degreeCelsius}$' ls 3 lw 2,\
+		'./messwerte/variable temperatur/165.txt' using 1:2:(0.1):(0.1) with xyerrorbars notitle ls 3,\
+		'./messwerte/variable temperatur/170.txt' using 1:2 with lines t' $T=\SI{170}{\degreeCelsius}$' ls 4 lw 2,\
+		'./messwerte/variable temperatur/170.txt' using 1:2:(0.1):(0.1) with xyerrorbars notitle ls 4
 
 unset output

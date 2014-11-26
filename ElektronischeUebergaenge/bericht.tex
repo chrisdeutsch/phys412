@@ -965,11 +965,13 @@ Um sinnvolle Messungen durchzuführen darf die Temperatur daher nur wenig um ein
 \\
 \\
 Ferner ist zu erklären, wieso die Einbrüche des Anodenstroms nicht scharf sind.
-Die Ursache dafür liegt an dem glühelektrischen Effekt und der Erzeugung der freien Elektronen.
-Ihr Geschwindigkeitsprofil folgt der Maxwell-Boltzmann-Verteilung, weswegen Elektronen mit höherer Geschwindigkeit ($\widehat{=}$ höherer Energie) früher mit Quecksilberatomen stoßen können als Elektronen, die mit niedrigerer Geschwindigkeit aus der Kathode austreten.
-Weiterhin stoßen die Elektronen nicht sobald sie eine bestimmte Schwellenenergie erreicht haben, sondern durchlaufen die Beschleunigungsspannung weiter, auch wenn sie bereits die theoretisch benötigte Energie für einen Stoß haben und stoßen erst später mit einem Quecksilberatom, weswegen die Einbrüche des Anodenstroms nicht scharf sind.
-Dass der Anodenstrom nicht bei jedem Einbruch auf \SI{0}{\ampere} abfällt ist darin begründet, dass nicht alle Elektronen einen Stoßpartner finden und manche ohne zu stoßen die Anode erreichen. 
-
+Die Elektronen führen keine inelastischen Stöße mit Quecksilber durch sobald sie eine bestimmte Schwellenenergie erreicht haben, sondern durchlaufen die Beschleunigungsspannung weiter, auch wenn sie bereits die theoretisch benötigte Energie für einen Stoß haben und stoßen erst (im Mittel) nach zurücklegen der mittleren freien Weglänge $\Lambda = \frac{1}{n \sigma}$ mit einem Quecksilberatom, weswegen die Einbrüche des Anodenstroms nicht scharf sind.
+Genauer nimmt die Anzahl der Wechselwirkungen mit dem Wirkungsquerschnitt $\sigma$ im Medium mit Targetdichte $n$ gemäß
+\begin{align*}
+N(x) \propto 1-\mathrm{e}^{-n \sigma x}
+\end{align*}
+mit der Propagationsstrecke $x$ zu.
+Dass der Anodenstrom nicht bei jedem Einbruch auf \SI{0}{\ampere} abfällt ist darin begründet, dass nicht alle Elektronen einen Stoßpartner finden und manche ohne zu stoßen die Anode erreichen.
 \subsection{Diskussion}
 
 Abschließend lässt sich sagen, dass der Versuch gut gelungen ist.

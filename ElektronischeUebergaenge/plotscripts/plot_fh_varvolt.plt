@@ -19,6 +19,13 @@ set grid
 
 load './../gnuplot_linestyles.plt'
 
-plot './messwerte/variable gegenspannung/2V.txt' using 1:2 with lines t'$\Delta U=\SI{2.0}{\volt}$' ls 1 lw 2, './messwerte/variable gegenspannung/2-5V.txt' using 1:2 with lines t'$\Delta U=\SI{2.5}{\volt}$'  ls 2 lw 2, './messwerte/variable gegenspannung/3V.txt' using 1:2 with lines t'$\Delta U=\SI{3.0}{\volt}$' ls 3 lw 2, './messwerte/variable gegenspannung/3-5V.txt' using 1:2 with lines t'$\Delta U=\SI{3.5}{\volt}$' ls 4 lw 2 #,'./messwerte/variable gegenspannung/5V.txt' using 1:2 with lines t'$\Delta U=\SI{5.0}{\volt}$' ls 5 lw 2
+plot	'./messwerte/variable gegenspannung/2V.txt' using 1:2 with lines t'$\Delta U=\SI{2.0}{\volt}$' ls 1 lw 2,\
+		'./messwerte/variable gegenspannung/2V.txt' using 1:2:(0.1):(0.1) with xyerrorbars notitle ls 1 lw 2,\
+		'./messwerte/variable gegenspannung/2-5V.txt' using 1:2 with lines t'$\Delta U=\SI{2.5}{\volt}$'  ls 2 lw 2,\
+		'./messwerte/variable gegenspannung/2-5V.txt' using 1:2:(0.1):(0.1) with xyerrorbars notitle ls 2 lw 2,\
+		'./messwerte/variable gegenspannung/3V.txt' using 1:2 with lines t'$\Delta U=\SI{3.0}{\volt}$' ls 3 lw 2,\
+		'./messwerte/variable gegenspannung/3V.txt' using 1:2:(0.1):(0.1) with xyerrorbars notitle ls 3 lw 2,\
+		'./messwerte/variable gegenspannung/3-5V.txt' using 1:2 with lines t'$\Delta U=\SI{3.5}{\volt}$' ls 4 lw 2,\
+		'./messwerte/variable gegenspannung/3-5V.txt' using 1:2:(0.1):(0.1) with xyerrorbars notitle ls 4 lw 2
 
 unset output

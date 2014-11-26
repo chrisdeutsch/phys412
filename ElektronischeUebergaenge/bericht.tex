@@ -124,32 +124,34 @@ In diesem Versuch wollen wir uns dabei auf den normalen Zeeman-Effekt beschränk
 
 Aus der Lösung der Schrödingergleichung für ein Elektron im Coulombpotenzial eines Kerns folgt, dass es nur diskrete Energiewerte annehmen kann.
 Diese werden über die so genannte Hauptquantenzahl $n$ bestimmt.
-Zusätzlich dazu kann man weitere Quantenzahlen definieren, wir beschränken uns hier auf die Quantenzahl $l$ für den Drehimpuls und $s$ für den Spin.
+Zusätzlich dazu kann man weitere Quantenzahlen definieren, wir beschränken uns hier auf die Quantenzahlen $l$ für den Drehimpuls, $s$ für den Spin und $j$ für den Gesamtdrehimpuls aus $\ell$ und $s$.
 Für $n$ und $l$ gilt $n=1, 2, 3 \dots$ und $l=0, 1, 2 \dots n-1$, wobei die Werte für $l$ häufig mit den Buchstaben s, p, d, f, g $\dots$ (ab f alphabetisch) identifiziert werden.
-Da es nicht möglich ist, zwei Komponenten $L_i, L_j$ des Drehimpulses gleichzeitig zu bestimmen (folgt aus Kommutatorrelation), erhält man bei einer Messung von $|\vec{L}|$ und $L_z$, welche durchgeführt werden kann, eine weitere Quantenzahl $m_l$. Sie beschreibt im Vektormodell anschaulich die Projektion von $\vec{L}$ auf die $z$-Achse.
-Dabei gilt:
+Die möglichen Werte von $j=\ell+s$ ergeben sich mit dem Elektronenspin $s=\pm1/2$ entsprechend.
+Da es nicht möglich ist, zwei Komponenten $L_i, L_j$ des Drehimpulses gleichzeitig zu bestimmen (folgt aus Kommutatorrelation), erhält man bei einer Messung von $|\vec{L}|$ und $L_z$, welche durchgeführt werden kann, eine weitere Quantenzahl $m_l$ (analog erhält für $|\vec{J}|$ und $J_z$ $m_j$). Sie beschreibt im Vektormodell anschaulich die Projektion von $\vec{L}$ auf die $z$-Achse.
+Dabei gilt für die Eigenwerte der Operatoren $\hat{L}^2$ und $\hat{L}_z$:
 \begin{align*}
 |\vec{L}|&=\hbar\sqrt{l(l+1)}\\
-l_z&=\hbar\mathrm{m}_l
+l_z&=\hbar m_l
 \end{align*}
-Herleitung:
-Ein Elektron im Atom habe den Bahndrehimpuls $\vec{\ell}$, welches im klassischen Bild einem Kreisstrom entspricht.
+Ausgehend hiervon betrachtet man den Einfluss der Bahndrehimpulse auf die Energieniveaus im Atom.
+Dazu verwenden wir das Vektormodell, in dem der Bahndrehimpuls als Vektor geschrieben werden kann und woraus sich Wechselwirkungen im Atom einfach beschreiben lassen.
+Ein Elektron mit Bahndrehimpuls $\vec{\ell}$ entspricht dann im klassischen Bild einem Kreisstrom.
 Dieser führt zu einem magnetischen Dipolmoment, welches gegeben ist durch:
-\begin{align}
+\begin{align*}
 	\vec{\mu}_\ell = - \frac{\mu_\mathrm{B}}{\hbar} \vec{\ell}
-\end{align}
+\end{align*}
 Wobei das Bohr'sche Magneton definiert ist als:
-\begin{align}
+\begin{align*}
 	\mu_\mathrm{B} = \frac{e \hbar}{2 m_e}
-\end{align}
+\end{align*}
 Die potentielle Energie eines magnetischen Dipols im externen magnetischen Feld $B$ ist gegeben durch:
-\begin{align}
+\begin{align*}
 	E_\mathrm{pot} = - \vec{\mu} \cdot \vec{B}
-\end{align}
+\end{align*}
 Damit kommt es zu einer Energieverschiebung $\Delta E$ der Niveaus aufgrund der potentiellen Energie des Dipols im Magnetfeld:
-\begin{align}
+\begin{align*}
 	\Delta E = \frac{\mu_\mathrm{B}}{\hbar} \left( \vec{\ell} \cdot \vec{B} \right)
-\end{align}
+\end{align*}
 Wählt man $\vec{B} = (0,0,B_z)$ und dementsprechend die z-Achse als Quantisierungsachse des Drehimpulses, so folgt $\ell_z = \hbar m_\ell$ aus der magnetischen Quantenzahl $m_\ell$ und die Energieverschiebung ergibt sich zu:
 \begin{align}
 	\Delta E = \mu_\mathrm{B} m_\ell B_z
@@ -171,9 +173,9 @@ Dies führt dazu, dass das magnetische Moment des Elektrons gegeben ist durch:
 Zur Beschreibung der Energieverschiebung ist hier die Kopplung von Spin und Bahndrehimpuls $\vec{j} = \vec{\ell} + \vec{s}$ nötig.
 Da $g_s \approx 2$ ist, ist das magnetische Moment des Elektrons nicht parallel zum Gesamtdrehimpuls $\vec{j}$ und präzediert um diesen.
 Daher muss ein effektives magnetisches Moment als Projektion von $\vec{\mu}$ auf $\vec{j}$ berechnet werden, was zu dem effektiven Moment:
-\begin{align}
+\begin{align*}
 	\vec{\mu}_\mathrm{eff} = - g_j \frac{\mu_\mathrm{B}}{\hbar} \vec{j} 
-\end{align}
+\end{align*}
 führt.
 Dabei ist der sogenannte Landé-Faktor $g_j$ abhängig von den Quantenzahlen $l,s,j$ des Zustandes.
 Damit folgt analog zum normalen Zeeman-Effekt:
@@ -184,13 +186,13 @@ Damit folgt analog zum normalen Zeeman-Effekt:
 \subsubsection{Auswahlregeln}
 \label{sec:auswahlregeln}
 Die Auswahlregeln für elektrische Dipolübergänge erhält man durch Berechnung der Übergangswahrscheinlichkeit vom Anfangszustand $|i\rangle$ in den Endzustand $|f\rangle$ durch Fermis "`Goldene Regel"':
-\begin{align}
+\begin{align*}
 	\lambda_{i\rightarrow f} = \frac{2 \pi}{\hbar} | \braket{f|H^\prime|i} |^2 \rho(E_\mathrm{f})
-\end{align}
+\end{align*}
 Dabei ist der Störhamiltonian $H^\prime$ gegeben durch die Störung der Energie aufgrund der Kopplung von einem externen elektrischen Feld $\vec{E}$ an das elektrische Dipolmoment $\vec{p}$ des Zustandes:
-\begin{align}
+\begin{align*}
 	H^\prime = - \vec{p} \cdot \vec{E}
-\end{align}
+\end{align*}
 Kennzeichnend dafür, ob ein Übergang erlaubt ist, ist das jeweilige Matrixelement des Störhamiltonians.
 Man erhält somit folgende Auswahlregeln aus den nicht verschwindenden Matrixelementen:
 \begin{itemize}
@@ -222,30 +224,30 @@ Da in diesem Versuch das Fabry-Pérot-Etalon in Transmission betrieben wird, wol
 \end{figure}
 Um die Bedingung für konstruktive Interferenz zu erhalten, muss zunächst der optische Gangunterschied zweier benachbarter Strahlen berechnet werden.
 Gemäß Abbildung \ref{fig:fabry_perot} ist dieser gegeben durch:
-\begin{align}
+\begin{align*}
 	\Delta s = \frac{2 n d}{\cos(\beta)} - 2 n d \sin(\alpha) \tan(\beta)
-\end{align}
+\end{align*}
 Mit dem Brechungsgesetz $\sin(\alpha) = n \sin(\beta)$ folgt:
-\begin{align}
+\begin{align*}
 	\Delta s = 2 d \sqrt{n^2 - \sin^2(\alpha)}
-\end{align}
+\end{align*}
 Damit zwei benachbarte Strahlen nach der Transmission in Phase sind, muss deren Phasendifferenz $\Delta \varphi$ ein ganzzahliges Vielfaches von $2\pi$ sein:
-\begin{align}
+\begin{align*}
 	\Delta \varphi = k \cdot \Delta s = \frac{2\pi}{\lambda} \Delta s = 2 \pi \cdot m \quad \text{mit } m \in \mathbb{Z}
-\end{align}
+\end{align*}
 Damit ist die Bedingung für ein Maximum der Transmission:
 \begin{align}
 	m \lambda = 2 d \sqrt{n^2 - \sin^2(\alpha)}
 	\label{eq:interferenzbedingung}
 \end{align}
 Führt man die Berechnung der Transmission unter Beachtung der Amplituden und Phasen der einzelnen Teilwellen durch, so erhält man für den Transmissionsgrad $T = I_\mathrm{T} / I_0$:
-\begin{align}
+\begin{align*}
 	T = \frac{1}{1 + F \sin^2(\Delta \varphi / 2)}
-\end{align}
+\end{align*}
 wobei man den Finesse-Koeffizienten
-\begin{align}
+\begin{align*}
 	F = \left( \frac{2 r}{1 - r^2} \right)^2
-\end{align}
+\end{align*}
 definiert.\footnote{Quelle: Vorlesung Optik und Wellenmechanik (WS 2013/2014) bei Prof. Dr. Linden}
 \begin{figure}[h]
 	\centering
@@ -255,13 +257,13 @@ definiert.\footnote{Quelle: Vorlesung Optik und Wellenmechanik (WS 2013/2014) be
 	\label{fig:fabry_transmission}
 \end{figure}
 Zwei wichtige Kenngrößen des Fabry-Pérot-Etalons sind die Halbwertsbreite des Transmissionsmaximums $\delta \lambda$, sowie der freie Spektralbereich $\Delta \lambda$, welcher als Abstand zweier Transmissionsmaxima definiert ist.
-Mit diesen zwei Größen definiert man die Finesse $\mathcal{F}$ des Etalons\footnote{Quelle!}:
+Mit diesen zwei Größen definiert man die Finesse $\mathcal{F}$ des Etalons \cite{hecht}:
 \begin{align}
 	\mathcal{F} = \frac{\Delta \lambda}{\delta \lambda} = \frac{\pi \sqrt{F}}{2} = \frac{\pi r}{1 - r^2}
 	\label{eq:finesse}
 \end{align}
 
-Das Auflösungsvermögen ist definiert als das Verhältnis der Wellenlänge $\lambda$ zur Wellenlängendifferenz von zwei gerade noch auflösbaren Linien.
+Das Auflösungsvermögen $\mathcal{R}$ ist definiert als das Verhältnis der Wellenlänge $\lambda$ zur Wellenlängendifferenz von zwei gerade noch auflösbaren Linien.
 Gerade noch auflösbar heißt dabei, dass das Rayleigh-Kriterium erfüllt ist, welches besagt, dass der Abstand der beiden Intensitätsmaxima genau der Halbwertsbreite des Intensitätsverlaufs entspricht.
 Damit folgt mit der Halbwertsbreite $\delta \lambda$ der Maxima des Fabry-Pérot-Etalons \cite{hecht}:
 \begin{align}
@@ -272,30 +274,30 @@ Damit folgt mit der Halbwertsbreite $\delta \lambda$ der Maxima des Fabry-Pérot
 \subsubsection{Natürliche Linienbreite und Linienverbreiterung}
 Aufgrund der Heisenberg'schen Unschärferelation führt die endlichen Lebensdauer $\tau$ angeregter Zustände zu einer Energieunschärfe $\Gamma$ bei der Relaxation des Zustandes.
 Die Energieunschärfe ist gegeben durch:
-\begin{align}
+\begin{align*}
 	\Gamma = \frac{\hbar}{\tau}
-\end{align}
+\end{align*}
 Diese Energieunschärfe hat ein Lorentz-Profil.
 Darüber hinaus kommt es zur Dopplerverbreiterung aufgrund der thermischen Bewegung der angeregten Atome.
 Die Geschwindigkeitsverteilung der Atome in Beobachtungsrichtung ist gaußförmig um Null, sodass auch die Dopplerverbreitung ein gaußförmiges Profil hat.
 Die Kombination von natürlicher Linienbreite (Lorentz) und Dopplerverbreiterung (Gauß) führt (durch Faltung) zu einem sogenannten Voigt-Profil \cite{siegmann}:
-\begin{align}
+\begin{align*}
 	\delta \lambda = \frac{\lambda_0}{c} \sqrt{\frac{8 k_\mathrm{B} T \ln(2)}{m}}
-\end{align}
+\end{align*}
 
 \subsubsection{$\frac{\lambda}{4}$-Platte}
 Eine $\lambda/4$-Platte besteht aus doppelbrechendem Material dessen optische Achse parallel zu den Grenzflächen ausgerichtet ist.
 Im Zuge dieser Erklärung wollen wir davon ausgehen, dass die optische Achse mit der $y$-Achse übereinstimmt.
 Dann unterscheidet sich der Brechungsindex in $x$-Richtung $n_x$ von dem in $y$-Richtung $n_y$, was dazu führt, dass Phasendifferenzen zwischen den $x$- und $y$-polarisierten Anteilen des Lichts entstehen.
 Die Phasendifferenz ist gegeben durch:
-\begin{align}
+\begin{align*}
 	\Delta \varphi = \frac{2 \pi}{\lambda} d \left(n_y - n_x\right)
-\end{align}
+\end{align*}
 wobei $d$ die Dicke der Platte ist.
 Bei einer $\lambda / 4$-Platte wird die Dicke $d$ so gewählt, dass:
-\begin{align}
+\begin{align*}
 	d (n_y - n_x) = \frac{\lambda}{4}
-\end{align}
+\end{align*}
 gilt, was zu einer Phasendifferenz $\Delta \varphi = \pm \pi / 2$ führt.
 
 Diese Phasenverschiebung führt dazu, dass um $\pm\SI{45}{\degree}$ gegen die optische Achse der $\lambda/4$-Platte verdrehtes, linear polarisiertes Licht hinter der Platte zirkular polarisiert ist.
@@ -312,19 +314,19 @@ In Hall-Sonden wird der Hall-Effekt ausgenutzt, welcher besagt, dass an einem st
 	\label{fig:hall_effekt}
 \end{figure}
 Die Ladungsträger werden durch die Lorentzkraft soweit ausgelenkt, bis das durch die Auslenkung entstandene elektrische Feld $E_\mathrm{Hall}$ die Lorentzkraft kompensiert:
-\begin{align}
+\begin{align*}
 	e E_\mathrm{Hall} = e v_x B_y
 	\label{eq:kompensation}
-\end{align}
+\end{align*}
 Dabei ist die an den Stirnflächen mit Abstand $d$ anliegende Spannung gegeben durch $E_\mathrm{Hall} = U_\mathrm{Hall} / d$, womit aus Gleichung \ref{eq:kompensation} folgt:
-\begin{align}
+\begin{align*}
 	U_\mathrm{Hall} = d v_x B_y
-\end{align}
+\end{align*}
 Die Geschwindigkeit der Ladungsträger $v_x$ lässt sich nun über die Stromdichte $j_x = e n v_x = I/A$ ausdrücken, wobei $A = d \cdot b$ die Querschnittsfläche des Leiters ist.
 Damit folgt die Hall-Spannung:
-\begin{align}
+\begin{align*}
 	U_\mathrm{Hall} = \frac{I B_y}{b\, n\, e}
-\end{align}
+\end{align*}
 Somit ist die Hall-Spannung proportional zum Magnetfeld $B_y$ und kann damit zur Messung desselben verwendet werden.
 In der Praxis werden, um bei einem kleinen Strom $I$ eine große Spannung zu messen, häufig Halbleitermaterialien verwendet, da diese eine kleine Ladungsträgerdichte $n$ aufweisen.
 

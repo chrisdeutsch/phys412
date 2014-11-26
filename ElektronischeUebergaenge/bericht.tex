@@ -498,7 +498,7 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 	Bei jedem Dipolübergang findet eine Drehimpulsänderung $\Delta \ell = \pm 1$ statt, da das emittierte Photon ein Spin-1 Teilchen ist.
 	Damit folgt aus der Drehimpulserhaltung, dass das Photon parallel zur Magnetfeldachse polarisiert sein muss, um $\Delta m_\ell = 0$ zu gewährleisten.
 	
-	\item $\Delta m = \pm 1$: Diese Übergänge weisen keine dipolartige Abstrahlcharakteristik auf, sodass Emission auch in Richtung des Magnetfeldes stattfindet.
+	\item $\Delta m_\ell = \pm 1$: Diese Übergänge weisen keine dipolartige Abstrahlcharakteristik auf, sodass Emission auch in Richtung des Magnetfeldes stattfindet.
 	Da auch hier Drehimpulserhaltung gilt, muss der Spin des emittierten Photons so ausgerichtet sein, dass $m_s = \mp 1$ gilt, um $\Delta m = \pm 1$ zu gewährleisten.
 	Diese Photonenspins entsprechen in longitudinaler Beobachtungsrichtung zirkular polarisiertem Licht und in Transversaler linear polarisiertem Licht mit Polarisationsebene senkrecht auf der Spinquantisierungsachse welche mit der Magnetfeldachse übereinstimmt.
 \end{itemize}
@@ -551,9 +551,8 @@ Zur Anpassung verwenden wir die Methode der kleinsten Quadrate (\texttt{GNUPlot}
 	\label{fig:zeeman_b4_bsp}
 \end{figure}
 Die restlichen Anpassungen finden sich in Anhang \ref{app:penis}.
+Die Ergebnisse für die Schwerpunkte der einzelnen Linien finden sich in Tabelle \ref{tab:peakschwerpunkte_magneton}.
 
-
-Mit den Fits an die Messdaten erhalten wir Tabelle \ref{tab:peakschwerpunkte_magneton}.
 \begin{table}[h]
 	\centering
 	\resizebox{\columnwidth}{!}{%
@@ -561,11 +560,13 @@ Mit den Fits an die Messdaten erhalten wir Tabelle \ref{tab:peakschwerpunkte_mag
 	\caption{Gefittete Werte für die Schwerpunkte $\alpha_i$ der drei Linien. Angaben in Milligrad.}
 	\label{tab:peakschwerpunkte_magneton}
 \end{table}
-Berechnung der relativen Abweichung von der $\pi$-Linie mit der Interferenzbedingung \ref{eq:interferenzbedingung}:
+
+Mithilfe der so berechneten Peakschwerpunkte können wir die relative Abweichung von der $\pi$-Linie berechnen.
+Dazu nutzen wir die Interferenzbedingung für das Fabry-Pérot-Etalon aus Gleichung \ref{eq:interferenzbedingung} und erhalten:
 \begin{align}
 	\frac{\Delta \lambda_\pm}{\lambda_\pi^0} = \frac{\lambda_{\sigma^\pm} - \lambda_\pi^0}{\lambda_\pi^0} = \frac{\sqrt{n^2 - \sin^2(\alpha_{\pm})}}{\sqrt{n^2 - \sin^2(\alpha_\pi)}} - 1
 \end{align}
-Der Fehler berechnet sich mit Gaußscher Fehlerfortpflanzung zu:
+Dabei berechnet sich der  Fehler über Gaußscher Fehlerfortpflanzung zu:
 \begin{align}
 	\Delta \left( \frac{\Delta \lambda_\pm}{\lambda_\pi^0} \right) = & \left( \frac{\sin^2(\alpha_\pm) \cos^2(\alpha_\pm)}{(n^2-\sin^2(\alpha_\pm))(n^2-\sin^2(\alpha_\pi))} \cdot \Delta \alpha_\pm^2 \right. \nonumber\\
 	& \left. + \frac{\sin^2(\alpha_\pi) \cos^2(\alpha_\pi) (n^2 - \sin^2(\alpha_\pm))}{(n^2-\sin^2(\alpha_\pi))^3} \cdot \Delta \alpha_\pi^2\right)^\frac{1}{2}

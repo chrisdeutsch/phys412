@@ -260,6 +260,7 @@ Zwei wichtige Kenngrößen des Fabry-Pérot-Etalons sind die Halbwertsbreite des
 Mit diesen zwei Größen definiert man die Finesse $\mathcal{F}$ des Etalons\footnote{Quelle!}:
 \begin{align}
 	\mathcal{F} = \frac{\Delta \lambda}{\delta \lambda} = \frac{\pi \sqrt{F}}{2} = \frac{\pi r}{1 - r^2}
+	\label{eq:finesse}
 \end{align}
 
 Das Auflösungsvermögen ist definiert als das Verhältnis der Wellenlänge $\lambda$ zur Wellenlängendifferenz von zwei gerade noch auflösbaren Linien.
@@ -649,19 +650,33 @@ Damit erhalten wir für das Bohrsche Magneton:
 	\mu_\mathrm{B} = \SI{5.498 +- 0.017e-5}{\electronvolt\per\tesla}
 \end{align}
 
-Vergleich mit dem Literaturwert.
+Vergleich mit dem Literaturwert\footnote{2010 CODATA recommended values\\ \url{http://physics.nist.gov/cgi-bin/cuu/Value?mubev}\\ Letzter Abruf: 24. November 2014}.
 \begin{align}
 	\mu_\mathrm{B}^{\mathrm{Lit.}} = \SI{5.7883818066 +- 0.0000000038e-5}{\electronvolt\per\tesla}
 \end{align}
-\footnote{2010 CODATA recommended values\\ \url{http://physics.nist.gov/cgi-bin/cuu/Value?mubev}\\ Letzter Abruf: 24. November 2014}
-
-
-
-
 
 
 
 \subsubsection{Weitergehende Überlegungen}
+\textbf{Abschätzung des Auflösungsvermögens $\mathcal{R}$ und der Finesse $\mathcal{F}$ des Fabry-Pérot-Etalons}:
+Zunächst wollen wir das theoretische Auflösungsvermögen und Finesse des Etalons berechnen.
+Diese lassen sich mit Gleichung \ref{eq:finesse} und \ref{eq:aufloesung} des Grundlagenteils aus dem Reflektionskoeffizienten $r$ und der Ordnung $m$ des Interferenzrings berechnen.
+Mit dem gegebenen Wert $r = \num{0,85}$ folgt unmittelbar für die Finesse:
+\begin{align*}
+	\mathcal{F_\mathrm{theo.}} = \frac{\pi r}{1 - r^2} \approx \num{9.62}
+\end{align*}
+Zur Berechnung des Auflösungsvermögen $\mathcal{R}$ nutzen wir den Zusammenhang mit der Finesse $\mathcal{F}$:
+\begin{align}
+\mathcal{R} = \mathcal{F} \cdot m
+\end{align}
+Dazu schätzen wir die Ordnung $m$ mit der Interferenzbedingung des Fabry-Pérot-Etalons ab:
+\begin{align*}
+m = \frac{2 d}{\lambda} \sqrt{n^2 - \sin^2(\alpha)} \approx \frac{2 d n}{\lambda} \approx 18104
+\end{align*}
+Es folgt für das theoretische Auflösungsvermögen:
+\begin{align*}
+	\mathcal{R}_\mathrm{theo.} = \mathcal{F}_\mathrm{theo.} \cdot m  \approx \num{174000}
+\end{align*}
 
 \begin{table}[h]
 	\centering
@@ -669,11 +684,14 @@ Vergleich mit dem Literaturwert.
 	\caption{Messdaten zur Bestimmung der Auflösung}
 	\label{tab:aufloesung}
 \end{table}
-Wir berechnen den jeweiligen Mittelwert des Stroms und den zugehörigen Fehler durch:
+Nun wollen wir aus den Spulenströmen bei denen aufgespaltene Ringe im Okular gerade noch zu unterscheiden waren (Tabelle \ref{tab:aufloesung}) die Finesse und das Auflösungsvermögen berechnen.
+Um den Messfehler besser einschätzen zu können, wurde in jeder Konfiguration fünf mal gemessen.
+Es wurde jeweils ein Fehler von $\SI{0.1}{\ampere}$ auf den am Netzgerät abgelesenen Spulenstrom angenommen, da dies der niedrigstwertigen Stelle an der digitalen Anzeige entspricht.
+Da der Fehler für alle fünf Messungen gleich ist ergibt sich der Fehler des Mittelwerts aus: 
 \begin{align}
-	\sigma_{\bar{I}} = \frac{\sigma_I}{\sqrt{N}} = \frac{\SI{0,1}{\ampere}}{\sqrt{5}} \approx \SI{0,045}{\ampere}
+	\sigma_{\bar{I}} = \frac{\sigma_I}{\sqrt{N}} = \frac{\SI{0,1}{\ampere}}{\sqrt{5}} \approx \SI{0,045}{\ampere}\text{.}
 \end{align}
-Damit erhalten wir:
+Damit erhalten wir nach der Mittelwertbildung:
 \begin{align}
 	\bar{I}_\mathrm{trans.} = \SI{2.040 +- 0.045}{\ampere} \\
 	\bar{I}_\mathrm{long.} = \SI{1.060 +- 0.045}{\ampere}
@@ -714,11 +732,11 @@ Mit diesen Überlegungen ist die transversale Auflösung ($\Delta m = 1$, da $\s
 
 Zur Berechnung der Finesse $\mathcal{F}$ nutzen wir den Zusammenhang mit dem Auflösungsvermögen $\mathcal{R}$:
 \begin{align}
-	\mathcal{R} = \mathcal{F} \cdot m \quad \rightarrow \quad \mathcal{F} = \frac{\mathcal{R}}{m}
+\mathcal{R} = \mathcal{F} \cdot m \quad \rightarrow \quad \mathcal{F} = \frac{\mathcal{R}}{m}
 \end{align}
 Dazu schätzen wir die Beugungsordnung $m$ mit der Interferenzbedingung des Fabry-Pérot-Etalons ab:
 \begin{align}
-	m = \frac{2 d}{\lambda} \sqrt{n^2 - \sin^2(\alpha)} \approx \frac{2 d n}{\lambda} \approx 18104
+m = \frac{2 d}{\lambda} \sqrt{n^2 - \sin^2(\alpha)} \approx \frac{2 d n}{\lambda} \approx 18104
 \end{align}
 Damit erhalten wir:
 \begin{align}

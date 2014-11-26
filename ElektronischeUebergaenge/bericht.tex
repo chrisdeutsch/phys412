@@ -578,7 +578,7 @@ mit der Gaußfunktion:
 \mathcal{G}_i(x) = A_i \exp\left( -\frac{1}{2} \left( \frac{x - \mu_i}{\sigma_i} \right)^2 \right)
 \end{align}
 Wir erhalten als Anpassungsparameter die drei Höhen $A_i$, drei Peakschwerpunkte $\mu_i$, drei Standardabweichungen $\sigma_i$ und den konstanten Versatz $d$.
-Zur Anpassung verwenden wir die Methode der kleinsten Quadrate (\texttt{GNUPlot}) und erhalten so beispielsweise für $B = \SI{4}{\tesla}$ Abbildung \ref{fig:zeeman_b4_bsp}.
+Zur Anpassung verwenden wir die Methode der kleinsten Quadrate (\texttt{Gnuplot}) und erhalten so beispielsweise für $B = \SI{4}{\tesla}$ Abbildung \ref{fig:zeeman_b4_bsp}.
 \begin{figure}[h]
 	\centering
 	\input{./plots/zeemann_aufspaltung/b4.tex}
@@ -652,7 +652,7 @@ Wir erhalten für die Ursprungsgeraden:
 	|\Delta E_{-}| = \SI{5.502 +- 0.031e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 8.94\\
 	|\Delta E_{+}| = \SI{5.497 +- 0.019e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 1.62
 \end{align}
-Obwohl die $\chi$-Quadrate wesentlich von $1$ abweichen, ist die Anpassung der Ursprungsgeraden an die Punkte passabel, da das Anpassen mit \texttt{GNUPlot} lediglich Fehler in $y$-Richtung beachtet.
+Obwohl die $\chi$-Quadrate wesentlich von $1$ abweichen, ist die Anpassung der Ursprungsgeraden an die Punkte passabel, da das Anpassen mit \texttt{Gnuplot} lediglich Fehler in $y$-Richtung beachtet.
 Betrachtet man jedoch den Graphen in Abbildung \ref{fig:magneton_fit} so stellt man fest, dass unter Beachtung des Magnetfeldfehlers die Punkte gut auf der Geraden liegen.
 \begin{figure}[h]
 	\centering
@@ -839,11 +839,11 @@ Dabei soll die Temperatur- und Gegenspannungsabhängigkeit des zu messenden Anod
 \subsection{Durchführung}
 
 Der Versuch war bereits  wie in Abbildung \ref{fig:franck-hertz_aufbau} dargestellt aufgebaut, so dass lediglich das Cassy-Instrument in Betrieb genommen werden musste.
-Dieses misst einmal die vom Steuergerät der Röhre ausgegebene Beschleunigungsspannung und digitalisiert die am anderen Ausgang liegende Spannung, die intern über einen Widerstand aus dem Anodenstrom gewonnen wird.
-Da $U=R\,I$ gilt und konkrete Werte des Anodenstroms für die Auswertung irrelevant sind, braucht diese Umwandlung nicht weiter berücksichtigt werden.
+Dieses misst einmal die vom Steuergerät der Röhre ausgegebene Beschleunigungsspannung und eine zum Anodenstrom proportionale Ausgangsspannung, welche beispielsweise über das Ohm'sche Gesetz oder einen Strom-Spannungswandler erzeugt werden kann.
+Da die Proportionalität des Anodenstroms nicht bekannt ist und konkrete Werte für die Auswertung irrelevant sind, braucht diese Umwandlung nicht weiter berücksichtigt werden.
 
 An dem Gerät, das mit dem Ofen verbunden ist, können diverse Parameter eingestellt werden, unter anderem die für uns relevante Signalform der Beschleunigungsspannung (wir wählen gemäß der Anleitung eine positive Rampe), sowie deren Maximalwert und die Temperatur der Röhre.
-Diese stellen wir auf \SI{160}{\degreeCelsius} ein, bei der das Quecksilber im geforderten Zwei-Phasen-System (am Phasenübergang zwischen gasförmig und flüssig) vorliegt.
+Diese stellen wir auf \SI{160}{\degreeCelsius} ein, bei der das Quecksilber im geforderten Zwei-Phasen-System (Gleichgewicht von Druck und Temperatur am Phasenübergang zwischen gasförmig und flüssig) vorliegt und somit der Druck in der Röhre über die Dampfdruckkurve (diese entspricht im $p$-$T$-Phasendiagramm der Grenzlinie zwischen flüssiger und gasförmiger Phase) gegeben ist.
 Weiterhin können Temperatur der Röhre eingestellt und aktuelle Temperaturwerte überprüft werden, sowie einige weitere Optionen, die für den Versuch nicht benötigt wurden.
 Vor jeder Messung haben wir mit der Option, manuell die Beschleunigungsspannung einzustellen, diese langsam erhöht bis der Effekt des Durchzündens erkennbar war und haben für den Maximalwert der Beschleunigungsspannung einen leicht darunter liegenden Wert gewählt, um den Aufbau nicht zu beschädigen.
 Wir nutzen in der Auswertung die Bezeichnungen, wie sie auch in Abbildung \ref{fig:franck-hertz_aufbau} verwendet wurden.
@@ -875,8 +875,8 @@ Dabei wählten wir als konstante Gegenspannung \SI{2}{\volt} und nutzen abermals
 
 \subsubsection{Energiedifferenz zwischen 6S- und 6P-Niveau in Quecksilber}
 
-Zur Bestimmung der Energiedifferenz $\Delta E$ fitten wir mit gnuplot Gaußkurven an die Daten.
-Als Fithypothese wählen wir dabei
+Zur Bestimmung der Energiedifferenz $\Delta E$ passen wir mit \texttt{Gnuplot} Gaußkurven an die Daten an.
+Als Anpassungshypothese wählen wir dabei
 \begin{align}
 \mathcal{G}_i(x)=A\,\exp\left[-\frac{1}{2}\left(\frac{x-S_i}{\sigma_i}\right)^2\right] + c
 \label{eq:fh_fithypothese}
@@ -906,7 +906,7 @@ Um diesen Wert zu verstehen, muss man das Termschema (Abb. \ref{fig:termschema_h
 "`Electron Impact Excitation of Atoms"', Rev. Mod. Phys. 40, S. 267, 1968}
 \label{fig:wirkungsquerschnitt_hg}
 \end{figure}
-In der Grafik zu letzterem sieht man vier Wirkungsquerschnitte für verschiedene Übergänge im Quecksilber in Abhängigkeit von den stoßenden Elektronen.
+In der Grafik zu Letzterem sieht man vier Wirkungsquerschnitte für verschiedene Übergänge im Quecksilber in Abhängigkeit von den stoßenden Elektronen.
 Da Linie 4 erst knapp unter \SI{20}{\electronvolt} ihr Maximum hat, Stöße offensichtlich aber auch schon bei geringen Energien stattfinden, werden wir diese nicht weiter beachten.
 Genauso ignorieren wir Linie 1, da der maximale Wirkungsquerschnitt hier sehr gering ist im Vergleich zu den anderen in Betracht kommenden Linien 2 und 3.
 
@@ -926,7 +926,7 @@ Diese liegt knapp über dem Wert von \SI{4.89}{\electronvolt}, da nebem diesem �
 \label{tab:fh_breite}
 \end{table}
 Ferner sind in Tabelle \ref{tab:fh_breite} für jede Kurve die Schwankungsbreiten dargestellt, die bestimmt werden sollen.
-Wir lesen sie direkt aus den von gnuplot angepassten Parametern an unsere Fithypothese (\ref{eq:fh_fithypothese}) ab.
+Wir lesen sie direkt aus den von \texttt{Gnuplot} angepassten Parametern an unsere Fithypothese (\ref{eq:fh_fithypothese}) ab.
 Dabei fällt auf, dass die Breite der Kurven für die Messwerte bei konstanter Temperatur, sowie bei den Temperaturen \SI{155}{\degreeCelsius} und \SI{160}{\degreeCelsius}, mit steigender Beschleunigungsspannung zunimmt.
 Für die beiden höchsten Temperaturen ist keine eindeutige Änderung der Schwankungsbreite erkennbar.
 
@@ -938,7 +938,7 @@ Sie werden demzufolge nicht an der Anode registriert und der Anodenstrom sinkt i
 Weiterhin fällt auf, dass die Minima für höhere Gegenspannungen ebenfalls niedriger liegen.
 Die Ursache dafür liegt an Elektronen geringer Energien nach dem Stoß, beispielsweise \SI{2.5}{\electronvolt}.
 Ein Elektron dieser Energie kann bei \SI{2}{\volt} Gegenspannung noch registriert werden, bei \SI{3}{\volt} nicht mehr, weswegen der Anodenstrom im zweiten Fall kleiner ist.
-Als letztes bemerkt man, dass sich die Extrema für höhere Gegenspannungen nach rechts verschieben, was sich mit dem Beschleunigungsprozess der Elektronen erklären lässt.
+Als Letztes bemerkt man, dass sich die Extrema für höhere Gegenspannungen nach rechts verschieben, was sich mit dem Beschleunigungsprozess der Elektronen erklären lässt.
 Diese müssen eine höhere Beschleunigungsspannung durchlaufen, um nach dem Stoß noch genügend Energie zu haben, damit sie die Anode erreichen.
 
 \subsubsection{Abhängigkeit des Anodenstroms von der Temperatur}
@@ -958,7 +958,7 @@ Eine Verschiebung der Extrema wie bei der Abhängigkeit von der Gegenspannung is
 Die starke Abweichung der Kurve für $T=\SI{155}{\degreeCelsius}$ kann dabei gleichzeitig mit der Frage beantwortet werden, warum die Durchführung des Franck-Hertz-Versuches mit Quecksilber auf ein kleines Temperaturintervall beschränkt ist.
 Der Grund dafür ist das Zwei-Phasen-System in dem sich das Quecksilber befindet.
 Dabei bewegt es sich ständig am Phasenübergang zwischen gasförmig und flüssig und ist dadurch nur auf einen schmalen Temperatur- bzw. Druckbereich begrenzt, wobei der Druck mit (\ref{eq:dampfdruck}) in Abhängigkeit von der Temperatur gegeben ist.
-Bei zu hohen Temperaturen bzw. entsprechend zu hoher Teilchendichte steigt außerdem die Zündspannung der Röhre, was den Temperaturbereich nach oben hin begrenzt, da ein Durchzünden vermieden werden sollte. 
+Bei zu hohen Temperaturen bzw. entsprechend zu hoher Teilchendichte sinkt außerdem die Zündspannung der Röhre, was den Temperaturbereich nach oben hin begrenzt, da ein Durchzünden vermieden werden sollte. 
 Um sinnvolle Messungen durchzuführen darf die Temperatur daher nur wenig um einen geeigneten Wert variiert werden und die Versuchsdurchführung ist auf ein kleines Temperaturintervall begrenzt, welches wir für $T=\SI{155}{\degreeCelsius}$ möglicherweise unterschritten haben und so einen vergleichsweise sehr hohen Anodenstrom gemessen haben.
 \\
 \\

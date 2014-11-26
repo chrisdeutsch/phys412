@@ -464,13 +464,13 @@ Alle Skizzen in Abbildung \ref{fig:zeeman_longitudinal}.
 \begin{figure}[h]
 \centering
 \input{./plots/kalibrierung1.tex}
-\caption{Erster Durchgang kalibrierung $\chi^2=1,48$}
+\caption{Erste Magnetfeldkalibrierung mit angepasstem Polynom 3. Grades ($\chi_\mathrm{d.o.f.}^2=1,48$)}
 \label{fig:kalibrierung1}
 \end{figure}
 \begin{figure}[h]
 \centering
 \input{./plots/kalibrierung2.tex}
-\caption{Zweiter Durchgang kalibrierung $\chi^2=0,72$}
+\caption{Zweite Magnetfeldkalibrierung mit angepasstem Polynom 3. Grades ($\chi_\mathrm{d.o.f.}^2=0,72$)}
 \label{fig:kalibrierung2}
 \end{figure}
 
@@ -485,12 +485,24 @@ Dabei entsprechen die äußeren Linien den Übergängen mit $\Delta m_j = \pm 1$
 Um dies zu verstehen, muss die Polarisation der Linien betrachtet werden, welche wir anhand eines Polarisationsfilters analysiert haben.
 In Abbildung $\ref{fig:zeeman_transversal}$ sehen wir, dass nur die mittlere Linie durch den Filter bei $\alpha_\mathrm{Pol.} = \SI{90 +- 2,5}{\degree}$ (Polarisationsebene parallel zum Magnetfeld) transmittiert wird,  das Photon ist demnach linear in der Magnetfeldrichtung polarisiert.
 Im Gegensatz dazu, verschwindet die mittlere Linie bei Drehung des Filters auf $\alpha_\mathrm{Pol.} = \SI{0 +- 2,5}{\degree}$ und die beiden äußeren Linien werden transmittiert, sodass diese senkrecht auf der Magnetfeldrichtung polarisiert sind.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figures/zeeman_transversal.pdf}
+	\caption{Interferenzmuster des Fabry-Pérot-Etalons in transversaler Konfiguration}
+	\label{fig:zeeman_transversal}
+\end{figure}
 
 In der longitudinalen Konfiguration sehen wir im Wesentlichen\footnote{Die $\pi$-Linie (im Bild gepunktet) ist mit sehr geringer Intensität zu erkennen, was an Inhomogenitäten des Magnetfeldes und einer kleinen Abweichung der Beobachtungsrichtung von der Magnetfeldachse liegen kann.} eine Aufspaltung in zwei konzentrische Ringe, welche den beiden äußeren der transversalen Beobachtung entsprechen ($\Delta m = \pm 1$).
 Zur Untersuchung der Polarisation nutzten wir aus, dass eine $\frac{\lambda}{4}$-Platte entgegengesetzt zirkular polarisierte Wellen in zwei senkrecht aufeinander stehende linear polarisierte Wellen zerlegt.
 So kann mit einem, hinter der Viertel-Wellenlängen-Platte befindlichem, Polarisationsfilter das Licht auf zirkulare Polarisation untersucht werden.
 Wir stellen fest, dass eine Einstellung des Filters auf $\alpha_\mathrm{Pol.} = \SI{-45 +- 2,5}{\degree}$ den I und $\alpha_\mathrm{Pol.} = \SI{+45 +- 2,5}{\degree}$ den äußeren Ring verschwinden lässt.
 Dadurch schließen wir, dass die äußeren Ringe entgegengesetzt zirkular polarisiert sind.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figures/zeeman_longitudinal.pdf}
+	\caption{Interferenzmuster des Fabry-Pérot-Etalons in longitudinaler Konfiguration}
+	\label{fig:zeeman_longitudinal}
+\end{figure}
 
 Die sichtbaren Polarisationen erklären sich wie folgt:
 \begin{itemize}
@@ -504,21 +516,6 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 	Diese Photonenspins entsprechen in longitudinaler Beobachtungsrichtung zirkular polarisiertem Licht und in Transversaler linear polarisiertem Licht mit Polarisationsebene senkrecht auf der Spinquantisierungsachse welche mit der Magnetfeldachse übereinstimmt.
 \end{itemize}
 
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{./figures/zeeman_transversal.pdf}
-	\caption{Interferenzmuster des Fabry-Pérot-Etalons in transversaler Konfiguration}
-	\label{fig:zeeman_transversal}
-\end{figure}
-
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{./figures/zeeman_longitudinal.pdf}
-	\caption{Interferenzmuster des Fabry-Pérot-Etalons in longitudinaler Konfiguration}
-	\label{fig:zeeman_longitudinal}
-\end{figure}
 
 \subsubsection{Magnetfeldkalibrierung}
 Höhere Ordnungen verursachen extrem hohen Parameterfehler was dazu führt, dass der Magnetfeldfehler um eine größenordnung wächst
@@ -606,12 +603,13 @@ Die Energieaufspaltung wurde für die verschiedenen Spulenströme in Tabelle \re
 \begin{table}[h]
 	\centering
 	\input{./tables/auswertung_energieaufspaltung.tex}
-	\caption{Energieaufspaltung}
+	\caption{Energieaufspaltung der $\sigma_\pm$-Linien bei anliegendem Spulenstrom $I$ ($\sigma_I = \SI{0.1}{\ampere}$).}
 	\label{tab:energieaufspaltung}
 \end{table}
 Diese ist gemäß des normalen Zeeman-Effektes (Gleichung \ref{eq:normaler_zeeman}) gegeben durch:
 \begin{align}
 	\Delta E = \mu_\mathrm{B} \Delta m_\ell B
+	\label{eq:normaler_zeeman_auswertung}
 \end{align}
 Wenn man $\Delta E$ gegen $B$ aufträgt so erhält man eine Gerade mit Steigung $\pm \mu_\mathrm{B}$.
 Dazu müssen wir zunächst das Magnetfeld $B$ mit der Kalibrierung aus den Spulenströmen berechnen.
@@ -620,15 +618,13 @@ Wir verwenden dabei den ungewichteten Mittelwert, da die Fehler der beiden Felds
 Der Fehler des Mittelwerts von zwei Größen ergibt sich dann aus: $\sigma_{\bar{B}} = \frac{\sigma_\mathrm{max.}}{\sqrt{2}}$, wobei wir für $\sigma_\mathrm{max.}$ stets den größeren ($\sigma_\mathrm{max.} = \max(\sigma_{B_1}, \sigma_{B_2}) $) der beiden Fehler verwenden.
 Die zu den gemessenen Spulenströmen korrespondierenden Magnetfelder wurden in Tabelle \ref{tab:mittelwert_kalibration} aufgetragen, wobei die Fehler der Anpassungsparameter und der Spulenströme\footnote{Für die Spulenströme wurde ein Fehler von $\sigma_I = \SI{0.1}{\ampere}$ angenommen, was der Stelle der niedrigsten Wertigkeit auf der digitalen Anzeige des Netzgerätes entspricht.} der Kalibration bei der Berechnung der Magnetfelder $B_1, B_2$ durch Gaußsche Fehlerfortpflanzung beachtet wurden.
 
-
-Wir tragen nun den $|\Delta E|$ gegen das anliegende Magnetfeld $\bar{B}$ auf und fitten Ursprungsgeraden an die Messpunkte.
-Die Fits ergeben:
+Wir tragen nun den Betrag der Energieaufspaltung $|\Delta E|$ für die $\sigma_-$- und $\sigma_+$-Linien gegen das anliegende Magnetfeld $\bar{B}$ auf und passen eine Ursprungsgeraden an.
+Wir erhalten für die Ursprungsgeraden:
 \begin{align}
-	|\Delta E_{-}| = \SI{5.502 +- 0.031e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi^2 = 8.94\\
-	|\Delta E_{+}| = \SI{5.497 +- 0.019e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi^2 = 1.62
+	|\Delta E_{-}| = \SI{5.502 +- 0.031e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 8.94\\
+	|\Delta E_{+}| = \SI{5.497 +- 0.019e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 1.62
 \end{align}
-
-Gemäß der Gleichung entspricht die Steigung dem Bohrschen Magneton. Wir bilden den varianzgewichteten Mittelwert der Steigungen und erhalten:
+Gemäß Gleichung \ref{eq:normaler_zeeman_auswertung} entspricht die Steigung der Ursprungsgeraden im $|\Delta E|$ -- $\bar{B}$-Graph dem Bohrschen Magneton. Wir bilden den varianzgewichteten Mittelwert der Steigungen und erhalten:
 \begin{align}
 	\bar{x} = \frac{\sum_i \frac{x_i}{\sigma_i^2}}{\sum_i \frac{1}{\sigma_i^2}} \\
 	\sigma_{\bar{x}} = \frac{1}{\sqrt{\sum_i \frac{1}{\sigma_i^2}}}

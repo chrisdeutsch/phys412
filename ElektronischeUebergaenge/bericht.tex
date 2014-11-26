@@ -384,7 +384,7 @@ Zur Beschreibung des Gases in der Röhre verwenden wir in dem Versuch die kineti
 Das Gas wird dabei als Menge von gleichen Teilchen vernachlässigbarer Größe aufgefasst, die sich zwischen den Stößen mit anderen Teilchen oder der Gefäßwand gleichförmig bewegen.
 Außer bei den Stößen, die grundsätzlich elastisch stattfinden, wirken zwischen den Teilchen keine Kräfte.
 Wir können darauf aufbauend Eigenschaften definieren wie die \textbf{mittlere freie Weglänge}, die die durchschnittliche Strecke angibt, die ein Teilchen zurücklegt, ohne Stöße mit anderen Teilchen auszuführen.
-Sie ist definiert als
+Sie ist gegeben durch
 \begin{align*}
 \lambda=\frac{1}{n\sigma}
 \end{align*}
@@ -885,7 +885,7 @@ mit dem Peakschwerpunkt $S_i$ und der Schwankungsbreite $\sigma_i$ , die wir bei
 Wir lassen die Parameter nun an jeweils 4 Maxima pro Datensatz anpassen, wobei wir die Maxima mit $i$ von links nach rechts durchnummerieren, beginnend bei dem Maximum zwischen \SI{15}{\volt} und \SI{20}{\volt}, da das davor liegende besonders für hohe Gegenspannungen und hohe Temperaturen nicht gut angepasst werden kann.
 Die Ergebnisse für die Schwerpunkte $S_i$ sind in Tabelle \ref{tab:fh_schwerpunkte} dargestellt.
 Für den Fehler der zugrundeliegenden Messwerte schätzen wir \SI{0.1}{\volt} für die Beschleunigungsspannung und \num{0.1} für den Anodenstrom ab.
-Zur Bestimmung des Energieabstands $\left(\Delta E\right)'$ berechnen wir die Differenz der Schwerpunkte $S_i-S_{i-1}$ und mitteln über diese Werte, die zusammen mit dem (über die Standardabweichung bestimmten) Fehler bereits in die Tabelle eingetragen sind.
+Zur Bestimmung des Energieabstands $\left(\Delta E\right)'=\text{e}\Delta U=\text{e}(S_i-S_{i-1})$ berechnen wir die Differenz der Schwerpunkte $S_i-S_{i-1}$ und mitteln über diese Werte, die zusammen mit dem (über die Standardabweichung bestimmten) Fehler bereits in die Tabelle eingetragen sind.
 Nun mitteln wir die so gefundenen Werte, um einen Gesamtwert für den Energieabstand $\Delta E$ zu erhalten.
 Wir finden so:
 \begin{align*}
@@ -963,7 +963,7 @@ Um sinnvolle Messungen durchzuführen darf die Temperatur daher nur wenig um ein
 \\
 \\
 Ferner ist zu erklären, wieso die Einbrüche des Anodenstroms nicht scharf sind.
-Die Elektronen führen keine inelastischen Stöße mit Quecksilber durch sobald sie eine bestimmte Schwellenenergie erreicht haben, sondern durchlaufen die Beschleunigungsspannung weiter, auch wenn sie bereits die theoretisch benötigte Energie für einen Stoß haben und stoßen erst (im Mittel) nach zurücklegen der mittleren freien Weglänge $\Lambda = \frac{1}{n \sigma}$ mit einem Quecksilberatom, weswegen die Einbrüche des Anodenstroms nicht scharf sind.
+Die Elektronen führen keine inelastischen Stöße mit Quecksilber durch sobald sie eine bestimmte Schwellenenergie erreicht haben, sondern durchlaufen die Beschleunigungsspannung weiter, auch wenn sie bereits die theoretisch benötigte Energie für einen Stoß haben. Sie stoßen erst (im Mittel) nach Zurücklegen der mittleren freien Weglänge $\Lambda = \frac{1}{n \sigma}$ mit einem Quecksilberatom, weswegen die Einbrüche des Anodenstroms nicht scharf sind.
 Genauer nimmt die Anzahl der Wechselwirkungen mit dem Wirkungsquerschnitt $\sigma$ im Medium mit Targetdichte $n$ gemäß
 \begin{align*}
 N(x) \propto 1-\mathrm{e}^{-n \sigma x}
@@ -977,7 +977,7 @@ Der Aufbau bereitete keine Probleme, so dass wir auch ohne Schwierigkeiten die M
 Die dabei gemessenen Werte entsprechen den Erwartungen und wir konnten die Energiequantelung bei Stoßprozessen anschaulich verstehen.
 Die Anregungsenergie von Quecksilber ließ sich gut bestimmen und wir konnten mit den gegebenen Informationen zum Wirkungsquerschnitt die beobachteten Übergänge bestimmen.
 
-\FloatBarrier
+\clearpage
 
 % BIBLIOGRAPHIE
 

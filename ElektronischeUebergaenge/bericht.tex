@@ -332,7 +332,7 @@ Praktisch werden, um bei kleinem Strom $I$ große Spannung zu erzielen, Halbleit
 \subsection{Franck-Hertz-Versuch}
 
 Der Franck-Hertz-Versuch wurde um 1914 von James Franck und Gustav Hertz \cite{demtroeder3} durchgeführt und demonstrierte die Wichtigkeit der Energiequantelung bei Stoßprozessen.
-In dem Versuch wird eine mit Quecksilberdampf bei Unterdruck (ca. \SI{e-2}{\milli\bar}) gefüllte Elektronenröhre genutzt, bei der zwischen Kathode und Anode ein Gitter eingebaut ist, und die variable Beschleunigungsspannung $U$ zwischen Kathode und Gitter anliegt.
+In dem Versuch wird eine mit Quecksilber bei Unterdruck (ca. \SI{e-2}{\milli\bar}, Quecksilber im Zwei-Phasen-System gasförmig $\rightleftarrows$ flüssig) gefüllte Elektronenröhre genutzt, bei der zwischen Kathode und Anode ein Gitter eingebaut ist, und die variable Beschleunigungsspannung $U$ zwischen Kathode und Gitter anliegt.
 Der Aufbau ähnelt stark einem gewöhnlichen \textbf{Triodensystem}, wobei hier die Strecke Kathode-Gitter als Beschleunigungsstrecke genutzt wird und zwischen Gitter und Anode eine Gegenspannung $\Delta U$ angelegt wird.
 \begin{figure}[h]
 \centering
@@ -772,18 +772,21 @@ Dopper-Verbreiterung: Halbwertsbreite durch Doppler-Verbreiterung:
 \FloatBarrier
 
 \section{Franck-Hertz-Versuch}
-Hier kurze Einführung (was wird gemacht)
+
+Wir wollen mit dem Franck-Hertz-Versuch den gequantelten Energieübertrag bei Stößen zwischen Elektronen und Quecksilberatomen beobachten und aus den Messwerten die Anregungsenergie von Quecksilber bestimmen.
+Dabei soll die Temperatur- und Gegenspannungsabhängigkeit des zu messenden Anodenstroms beobachtet werden.
 
 \subsection{Durchführung}
 
-Der Versuch war bereits fertig aufgebaut, so dass lediglich das Cassy-Instrument in Betrieb genommen werden musste.
+Der Versuch war bereits  wie in Abbildung \ref{fig:franck-hertz_aufbau} dargestellt aufgebaut, so dass lediglich das Cassy-Instrument in Betrieb genommen werden musste.
 Dieses misst einmal die vom Steuergerät der Röhre ausgegebene Beschleunigungsspannung und digitalisiert die am anderen Ausgang liegende Spannung, die intern über einen Widerstand aus dem Anodenstrom gewonnen wird.
 Da $U=R\,I$ gilt und konkrete Werte des Anodenstroms für die Auswertung irrelevant sind, braucht diese Umwandlung nicht weiter berücksichtigt werden.
 
-An dem Gerät, das mit dem Ofen verbunden ist, können diverse Parameter eingestellt werden, unter anderem die für uns relevante Signalform der Beschleunigungsspannung (wir wählen gemäß der Anleitung eine positive Rampe), sowie deren Maximalwert.
+An dem Gerät, das mit dem Ofen verbunden ist, können diverse Parameter eingestellt werden, unter anderem die für uns relevante Signalform der Beschleunigungsspannung (wir wählen gemäß der Anleitung eine positive Rampe), sowie deren Maximalwert und die Temperatur der Röhre.
+Diese stellen wir auf \SI{160}{\degreeCelsius} ein, bei der das Quecksilber im geforderten Zwei-Phasen-System (am Phasenübergang zwischen gasförmig und flüssig) vorliegt.
 Weiterhin können Temperatur der Röhre eingestellt und aktuelle Temperaturwerte überprüft werden, sowie einige weitere Optionen, die für den Versuch nicht benötigt wurden.
-
 Vor jeder Messung haben wir mit der Option, manuell die Beschleunigungsspannung einzustellen, diese langsam erhöht bis der Effekt des Durchzündens erkennbar war und haben für den Maximalwert der Beschleunigungsspannung einen leicht darunter liegenden Wert gewählt, um den Aufbau nicht zu beschädigen.
+Wir nutzen in der Auswertung die Bezeichnungen, wie sie auch in Abbildung \ref{fig:franck-hertz_aufbau} verwendet wurden.
 
 \subsection{Messdaten}
 
@@ -813,12 +816,14 @@ Dabei wählten wir als konstante Gegenspannung \SI{2}{\volt} und nutzen abermals
 
 Zur Bestimmung der Energiedifferenz $\Delta E$ fitten wir mit gnuplot Gaußkurven an die Daten.
 Als Fithypothese wählen wir dabei
-\begin{align*}
-\mathcal{G}_i(x)=A\,\exp\left[-\frac{1}{2}\left(\frac{x-S_i}{b}\right)^2\right] + c
-\end{align*}
-mit dem Peakschwerpunkt $S_i$, den wir zur Auswertung benötigen.
-Wir lassen die Parameter nun an jeweils 4 Maxima pro Datensatz anpassen, wobei wir die Maxima mit $i$ von links nach rechts durchnummerieren, beginnend bei dem Maximum zwischen \SI{15}{\kilo\volt} und \SI{20}{\kilo\volt}, da das davor liegende Maximum besonders für hohe Gegenspannungen und hohe Temperaturen nicht gut gefittet werden kann.
-Die Ergebnisse für die Schwerpunkte $S_i$ sind in Tabelle \ref{tab:fh_schwerpunkte} dargestellt, sowie bereits die Mittelwerte und deren (über die Standardabweichung bestimmten) Fehler für jeden Datensatz.
+\begin{align}
+\mathcal{G}_i(x)=A\,\exp\left[-\frac{1}{2}\left(\frac{x-S_i}{\sigma_i}\right)^2\right] + c
+\label{eq:fh_fithypothese}
+\end{align}
+mit dem Peakschwerpunkt $S_i$ und der Schwankungsbreite $\sigma_i$ , die wir beide zur Auswertung benötigen.
+Wir lassen die Parameter nun an jeweils 4 Maxima pro Datensatz anpassen, wobei wir die Maxima mit $i$ von links nach rechts durchnummerieren, beginnend bei dem Maximum zwischen \SI{15}{\kilo\volt} und \SI{20}{\kilo\volt}, da das davor liegende besonders für hohe Gegenspannungen und hohe Temperaturen nicht gut angepasst werden kann.
+Die Ergebnisse für die Schwerpunkte $S_i$ sind in Tabelle \ref{tab:fh_schwerpunkte} dargestellt.
+Zur Bestimmung des Energieabstands $\left(\Delta E\right)'$ berechnen wir die Differenz der Schwerpunkte $S_i-S_{i-1}$ und mitteln über diese Werte, die zusammen mit dem (über die Standardabweichung bestimmten) Fehler bereits in die Tabelle eingetragen sind.
 Nun mitteln wir die so gefundenen Werte, um einen Gesamtwert für den Energieabstand $\Delta E$ zu erhalten.
 Wir finden so:
 \begin{align*}
@@ -852,7 +857,16 @@ Darum wird der Übergang $6^1$S$_0\rightarrow6^3$P$_2$ in den Messwerten auch zu
 Zusammen mit dem Termschema, mit dem der Linie 2 die Energie \SI{4.89}{\electronvolt} und Linie 3 die Energie \SI{5.46}{\electronvolt} zugeordnet werden kann, erklärt sich damit die gefundene Energiedifferenz von $\Delta E = \SI{4.922+-0.021}{\electronvolt}$.
 Diese liegt knapp über dem Wert von \SI{4.89}{\electronvolt}, da nebem diesem Übergang in Quecksilber auch einer mit \SI{5.46}{\electronvolt} stattfindet, allerdings deutlich seltener.
 
-EVTL BERECHNNG WIE HAUER feat. DIETER
+\begin{table}[h]
+\centering
+\input{./tables/messwerte_fh_breite.tex}
+\caption{Messwerte der Schwankungsbreite für variable $\Delta U$ bei \SI{160}{\degreeCelsius} bzw. variable Temperatur bei $\Delta U=\SI{2}{\volt}$}
+\label{tab:fh_breite}
+\end{table}
+Ferner sind in Tabelle \ref{tab:fh_breite} für jede Kurve die Schwankungsbreiten dargestellt, die bestimmt werden sollen.
+Wir lesen sie direkt aus den von gnuplot angepassten Parametern an unsere Fithypothese (\ref{eq:fh_fithypothese}) ab.
+Dabei fällt auf, dass die Breite der Kurven für die Messwerte bei konstanter Temperatur, sowie bei den Temperaturen \SI{155}{\degreeCelsius} und \SI{160}{\degreeCelsius}, mit steigender Beschleunigungsspannung zunimmt.
+Für die beiden höchsten Temperaturen ist keine eindeutige Änderung der Schwankungsbreite erkennbar.
 
 \subsubsection{Abhängigkeit des Anodenstroms von der Gegenspannung}
 

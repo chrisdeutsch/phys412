@@ -3,6 +3,7 @@
 
 % Encoding für Umlaute
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 % Silbentrennung
 \usepackage[ngerman]{babel}
@@ -53,6 +54,9 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{rotating}
+
+% Manuelle Silbentrennung
+\hyphenation{Halb-werts-brei-te Fa-bry-Pé-rot-E-ta-lon Zee-man-E-ffekt}
 
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
@@ -121,21 +125,13 @@ In diesem Versuch wollen wir uns dabei auf den normalen Zeeman-Effekt beschränk
 Aus der Lösung der Schrödingergleichung für ein Elektron im Coulombpotenzial eines Kerns folgt, dass es nur diskrete Energiewerte annehmen kann.
 Diese werden über die so genannte Hauptquantenzahl $n$ bestimmt.
 Zusätzlich dazu kann man weitere Quantenzahlen definieren, wir beschränken uns hier auf die Quantenzahl $l$ für den Drehimpuls und $s$ für den Spin.
-Für $n$ und $l$ gilt $n=1, 2, 3 \dots$ und $l=0, 1, 2 \dots n-1$, wobei die Werte für $l$ häufig mit den Buchstaben s, p, d, f, g $\dots$ (ab f wie im Alphabet) identifiziert werden.
+Für $n$ und $l$ gilt $n=1, 2, 3 \dots$ und $l=0, 1, 2 \dots n-1$, wobei die Werte für $l$ häufig mit den Buchstaben s, p, d, f, g $\dots$ (ab f alphabetisch) identifiziert werden.
 Da es nicht möglich ist, zwei Komponenten $L_i, L_j$ des Drehimpulses gleichzeitig zu bestimmen (folgt aus Kommutatorrelation), erhält man bei einer Messung von $|\vec{L}|$ und $L_z$, welche durchgeführt werden kann, eine weitere Quantenzahl $m_l$. Sie beschreibt im Vektormodell anschaulich die Projektion von $\vec{L}$ auf die $z$-Achse.
 Dabei gilt:
 \begin{align*}
 |\vec{L}|&=\hbar\sqrt{l(l+1)}\\
 l_z&=\hbar\mathrm{m}_l
 \end{align*}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.4\textwidth]{./figures/termschema_cadmium.pdf}
-\caption{Übergang von $^1$D$_2$ nach $^1$P$_1$ in der fünften Schale in Cadmium}
-\label{fig:termschema_cadmium}
-\end{figure}
-
 Herleitung:
 Ein Elektron im Atom habe den Bahndrehimpuls $\vec{\ell}$, welches im klassischen Bild einem Kreisstrom entspricht.
 Dieser führt zu einem magnetischen Dipolmoment, welches gegeben ist durch:
@@ -160,8 +156,13 @@ Wählt man $\vec{B} = (0,0,B_z)$ und dementsprechend die z-Achse als Quantisieru
 	\label{eq:normaler_zeeman}
 \end{align}
 Somit wird für feste Drehimpulsquantenzahl $\ell$ die Entartung des zugehörigen Energieniveaus aufgehoben, da sich dieses in $(2\ell + 1)$ Niveaus aufspaltet.
-
-Im Gegensatz dazu wird beim anomalen Zeeman-Effekt das magnetische Moment aufgrund des Elektronenspins beachtet.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\textwidth]{./figures/termschema_cadmium.pdf}
+\caption{Übergang von $^1$D$_2$ nach $^1$P$_1$ in der fünften Schale in Cadmium}
+\label{fig:termschema_cadmium}
+\end{figure}
+Im Gegensatz dazu wird beim anormalen Zeeman-Effekt das magnetische Moment aufgrund des Elektronenspins beachtet.
 Dies führt dazu, dass das magnetische Moment des Elektrons gegeben ist durch:
 \begin{align}
 \vec{\mu} = -\frac{\mu_\mathrm{B}}{\hbar} \left( \vec{l} + g_s \vec{s} \right)
@@ -182,7 +183,7 @@ Damit folgt analog zum normalen Zeeman-Effekt:
 
 \subsubsection{Auswahlregeln}
 \label{sec:auswahlregeln}
-Die Auswahlregeln für elektrische Dipolübergänge erhält man durch Berechnung der Übergangswahrscheinlichkeit vom Zustand $|i\rangle$ in den Endzustand $|f\rangle$ durch Fermi's Goldene Regel:
+Die Auswahlregeln für elektrische Dipolübergänge erhält man durch Berechnung der Übergangswahrscheinlichkeit vom Anfangszustand $|i\rangle$ in den Endzustand $|f\rangle$ durch Fermis "`Goldene Regel"':
 \begin{align}
 	\lambda_{i\rightarrow f} = \frac{2 \pi}{\hbar} | \braket{f|H^\prime|i} |^2 \rho(E_\mathrm{f})
 \end{align}
@@ -191,7 +192,7 @@ Dabei ist der Störhamiltonian $H^\prime$ gegeben durch die Störung der Energie
 	H^\prime = - \vec{p} \cdot \vec{E}
 \end{align}
 Kennzeichnend dafür, ob ein Übergang erlaubt ist, ist das jeweilige Matrixelement des Störhamiltonians.
-Somit erhält man die Auswahlregeln aus den nicht verschwindenden Matrixelementen:
+Man erhält somit folgende Auswahlregeln aus den nicht verschwindenden Matrixelementen:
 \begin{itemize}
 	\item $\Delta n$ beliebig
 	\item $\Delta \ell = \pm 1$ \quad (Drehimpulserhaltung mit $s_\mathrm{Photon} = \pm \hbar$)
@@ -204,14 +205,13 @@ Somit erhält man die Auswahlregeln aus den nicht verschwindenden Matrixelemente
 Mit diesen Auswahlregeln folgen die Übergänge für Cadmium aus Abbildung \ref{fig:termschema_cadmium}.
 Anzumerken ist, dass es sich dabei um den normalen Zeeman-Effekt handelt und dadurch die Aufspaltung der P-Schale ($\ell = 1$) den gleichen Abstand hat, wie die der D-Schale ($\ell = 2$).
 Dadurch kommt es hier zu insgesamt drei Übergängen, mit unterschiedlichen Energien.
-Im Vergleich dazu, liefert der anormaler Zeeman-Effekt mehrere Übergänge mit unterschiedlicher Energie, da sich die Energie aufgrund der Abhängigkeit vom Landé-Faktor in den jeweiligen Schalen nicht äquidistant aufspalten.
+Im Vergleich dazu liefert der anormaler Zeeman-Effekt mehrere Übergänge mit unterschiedlicher Energie, da sich die Energieniveaus aufgrund der Abhängigkeit vom Landé-Faktor in den jeweiligen Schalen nicht äquidistant aufspalten.
 
 Die Elektronenkonfiguration des in diesem Versuch verwendeten Cadmiums ist [Kr] $4$d$^{10} 5$s$^2$, was nur abgeschlossene Schalen entspricht und daher hat das Atom einen Gesamtspin $S=0$, weswegen wir nur den normalen Zeeman-Effekt beobachten.
-Abhängigkeit der Polarisation von der $m$-Quantenzahl und Einfluss auf die Linien des Zeeman-Effekts. Larmor-Frequenz $\Omega_\mathrm{L} = \frac{e B}{2 m_e}$
 
 \subsubsection{Fabry-Pérot-Etalon}
 Das Fabry-Pérot-Etalon besteht aus einer transparenten Platte, welche beidseitig von Luft umgeben ist.
-Trifft elektromagnetische Welle unter dem Winkel $\alpha$ auf das Etalon, so wird diese an beiden Grenzfläche gemäß des Reflektionskoeffizienten\footnote{Der Reflektionskoeffizient beschreibt die Änderung der Amplitude der elektromagnetischen Welle bei Reflektion an der Grenzfläche. Das Verhältnis der Intensitäten ist durch den Reflektionsgrad $R = r^2$ gegeben.} $r$ reflektiert und zum Teil transmittiert.
+Trifft eine elektromagnetische Welle unter dem Winkel $\alpha$ auf das Etalon, so wird diese an beiden Grenzfläche gemäß des Reflexionskoeffizienten\footnote{Der Reflexionskoeffizient beschreibt die Änderung der Amplitude der elektromagnetischen Welle bei Reflexion an der Grenzfläche. Das Verhältnis der Intensitäten ist durch den Reflexionsgrad $R = r^2$ gegeben.} $r$ reflektiert und zum Teil transmittiert.
 Dies führt dazu, dass die Welle innerhalb des Etalons sehr oft hin- und her reflektiert wird und es somit auf Transmissionsseite der Platte zur Vielstrahlinterferenz der transmittierten Strahlen kommt.
 Da in diesem Versuch das Fabry-Pérot-Etalon in Transmission betrieben wird, wollen wir uns auf diesen Fall beschränken.
 \begin{figure}[h]
@@ -220,7 +220,7 @@ Da in diesem Versuch das Fabry-Pérot-Etalon in Transmission betrieben wird, wol
 	\caption{Berechnung der optischen Weglänge des Fabry-Pérot-Etalons}
 	\label{fig:fabry_perot}
 \end{figure}
-Um die Bedingung für konstruktive Interferenz zu erhalten, muss zunächst der optische Gangunterschied zwei benachbarter Strahlen berechnet werden.
+Um die Bedingung für konstruktive Interferenz zu erhalten, muss zunächst der optische Gangunterschied zweier benachbarter Strahlen berechnet werden.
 Gemäß Abbildung \ref{fig:fabry_perot} ist dieser gegeben durch:
 \begin{align}
 	\Delta s = \frac{2 n d}{\cos(\beta)} - 2 n d \sin(\alpha) \tan(\beta)
@@ -231,7 +231,7 @@ Mit dem Brechungsgesetz $\sin(\alpha) = n \sin(\beta)$ folgt:
 \end{align}
 Damit zwei benachbarte Strahlen nach der Transmission in Phase sind, muss deren Phasendifferenz $\Delta \varphi$ ein ganzzahliges Vielfaches von $2\pi$ sein:
 \begin{align}
-	\Delta \varphi = k \cdot \Delta s = \frac{2\pi}{\lambda} \Delta s = 2 \pi \cdot m \quad \text{für } m \in \mathbb{Z}
+	\Delta \varphi = k \cdot \Delta s = \frac{2\pi}{\lambda} \Delta s = 2 \pi \cdot m \quad \text{mit } m \in \mathbb{Z}
 \end{align}
 Damit ist die Bedingung für ein Maximum der Transmission:
 \begin{align}
@@ -246,16 +246,14 @@ wobei man den Finesse-Koeffizienten
 \begin{align}
 	F = \left( \frac{2 r}{1 - r^2} \right)^2
 \end{align}
-definiert.\footnote{Quelle: Vorlesung Linden}
-
+definiert.\footnote{Quelle: Vorlesung Optik und Wellenmechanik (WS 2013/2014) bei Prof. Dr. Linden}
 \begin{figure}[h]
 	\centering
 	\scalebox{0.9}{
 	\input{./plots/fabry_perot_transmission.tex}}
-	\caption{UNTERSCHRIFT}
+	\caption{Transmission am Fabry-Pérot-Etalon in Abhängigkeit der Wellenlänge und Erklärung zur Halbwertsbreite $\delta\lambda$ und freiem Spektralbereich $\Delta\lambda$}
 	\label{fig:fabry_transmission}
 \end{figure}
-
 Zwei wichtige Kenngrößen des Fabry-Pérot-Etalons sind die Halbwertsbreite des Transmissionsmaximums $\delta \lambda$, sowie der freie Spektralbereich $\Delta \lambda$, welcher als Abstand zweier Transmissionsmaxima definiert ist.
 Mit diesen zwei Größen definiert man die Finesse $\mathcal{F}$ des Etalons\footnote{Quelle!}:
 \begin{align}
@@ -265,7 +263,7 @@ Mit diesen zwei Größen definiert man die Finesse $\mathcal{F}$ des Etalons\foo
 
 Das Auflösungsvermögen ist definiert als das Verhältnis der Wellenlänge $\lambda$ zur Wellenlängendifferenz von zwei gerade noch auflösbaren Linien.
 Gerade noch auflösbar heißt dabei, dass das Rayleigh-Kriterium erfüllt ist, welches besagt, dass der Abstand der beiden Intensitätsmaxima genau der Halbwertsbreite des Intensitätsverlaufs entspricht.
-Damit folgt mit der Halbwertsbreite $\delta \lambda$ der Maxima des Fabry-Pérot-Etalons:\footnote{Quelle: Hecht}
+Damit folgt mit der Halbwertsbreite $\delta \lambda$ der Maxima des Fabry-Pérot-Etalons\cite{hecht}:
 \begin{align}
 	\mathcal{R} = \frac{\lambda}{\delta \lambda} = \mathcal{F} \cdot m
 	\label{eq:aufloesung}
@@ -280,32 +278,33 @@ Die Energieunschärfe ist gegeben durch:
 Diese Energieunschärfe hat ein Lorentz-Profil.
 Darüber hinaus kommt es zur Dopplerverbreiterung aufgrund der thermischen Bewegung der angeregten Atome.
 Die Geschwindigkeitsverteilung der Atome in Beobachtungsrichtung ist gaußförmig um Null, sodass auch die Dopplerverbreitung ein gaußförmiges Profil hat.
-Die Kombination von natürlicher Linienbreite (Lorentz) und Dopplerverbreiterung (Gauß) führt (Faltung) zu einem sogenannten Voigt-Profil.
+Die Kombination von natürlicher Linienbreite (Lorentz) und Dopplerverbreiterung (Gauß) führt (durch Faltung) zu einem sogenannten Voigt-Profil\cite{siegmann}:
 \begin{align}
 	\delta \lambda = \frac{\lambda_0}{c} \sqrt{\frac{8 k_\mathrm{B} T \ln(2)}{m}}
 \end{align}
-\footnote{Quelle: wiki-Dopplerverbreiterung}
+
 \subsubsection{$\frac{\lambda}{4}$-Platte}
 Eine $\lambda/4$-Platte besteht aus doppelbrechendem Material dessen optische Achse parallel zu den Grenzflächen ausgerichtet ist.
 Im Zuge dieser Erklärung wollen wir davon ausgehen, dass die optische Achse mit der $y$-Achse übereinstimmt.
 Dann unterscheidet sich der Brechungsindex in $x$-Richtung $n_x$ von dem in $y$-Richtung $n_y$, was dazu führt, dass Phasendifferenzen zwischen den $x$- und $y$-polarisierten Anteilen des Lichts entstehen.
 Die Phasendifferenz ist gegeben durch:
 \begin{align}
-	\Delta \varphi = \frac{2 \pi}{\lambda} d (n_y - n_x)
+	\Delta \varphi = \frac{2 \pi}{\lambda} d \left(n_y - n_x\right)
 \end{align}
 wobei $d$ die Dicke der Platte ist.
 Bei einer $\lambda / 4$-Platte wird die Dicke $d$ so gewählt, dass:
 \begin{align}
 	d (n_y - n_x) = \frac{\lambda}{4}
 \end{align}
-ist, was zu einer Phasendifferenz $\Delta \varphi = \pm \pi / 2$ führt.
+gilt, was zu einer Phasendifferenz $\Delta \varphi = \pm \pi / 2$ führt.
 
-Diese Phasenverschiebung führt dazu, dass um $\pm\SI{45}{\degree}$ (andere Winkel führen zu elliptischer Polarisation) gegen die optische Achse der $\lambda/4$-Platte verdrehtes linear polarisiertes Licht hinter der Platte zirkular polarisiert ist.
+Diese Phasenverschiebung führt dazu, dass um $\pm\SI{45}{\degree}$ gegen die optische Achse der $\lambda/4$-Platte verdrehtes, linear polarisiertes Licht hinter der Platte zirkular polarisiert ist.
+Für andere Winkel, unter denen das linear polarisierte Licht auf die Platte trifft, entsteht elliptisch polarisiertes Licht.
 Umgekehrt wird zirkular polarisiertes Licht durch die Platte in zwei ebenfalls um $\pm\SI{45}{\degree}$ gegen die optische Achse verkippte linear polarisierte Wellen aufgespalten.
 Diese Eigenschaften der $\lambda/4$-Platte ermöglichen es unter Zunahme eines Polarisationsfilters Licht auf zirkulare Polarisation zu untersuchen.
 
 \subsubsection{Hall-Sonde}
-In Hall-Sonden wird der Hall-Effekt ausgenutzt, welcher besagt, dass an einem stromdurchflossenen Leiter im Magnetfeld $B_y$ eine Spannung $U_\mathrm{Hall}$ über den Seitenflächen des Leitermaterials entsteht, die aufgrund der Lorentzkraft auf die bewegten Ladungsträger entsteht.
+In Hall-Sonden wird der Hall-Effekt ausgenutzt, welcher besagt, dass an einem stromdurchflossenen Leiter im Magnetfeld $B_y$ eine Spannung $U_\mathrm{Hall}$ über den Seitenflächen des Leitermaterials - aufgrund der Lorentzkraft auf die bewegten Ladungsträger - entsteht.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.65\textwidth]{./figures/hall_effekt.pdf}
@@ -327,7 +326,7 @@ Damit folgt die Hall-Spannung:
 	U_\mathrm{Hall} = \frac{I B_y}{b\, n\, e}
 \end{align}
 Somit ist die Hall-Spannung proportional zum Magnetfeld $B_y$ und kann damit zur Messung desselben verwendet werden.
-Praktisch werden, um bei kleinem Strom $I$ große Spannung zu erzielen, Halbleitermaterialien verwendet, da diese eine kleine Ladungsträgerdichte $n$ aufweisen.
+In der Praxis werden, um bei einem kleinen Strom $I$ eine große Spannung zu messen, häufig Halbleitermaterialien verwendet, da diese eine kleine Ladungsträgerdichte $n$ aufweisen.
 
 
 \subsection{Franck-Hertz-Versuch}
@@ -368,7 +367,7 @@ Dabei ist $T$ die absolute Temperatur, $\mathrm{k_B}$ die Boltzmann-Konstante un
 
 Die Erzeugung von Elektronen ist dabei jedoch nicht unbegrenzt möglich.
 Bei vielen austretenden Elektronen kann es passieren, dass diese durch die Beschleunigungsspannung bewegten Ladungsträger selber ein elektrisches Feld erzeugen, was dafür sorgt, dass die Elektronen, die an der Kathode entstehen, das äußere Beschleunigungsfeld nicht wahrnehmen und diese \textbf{Raumladung} um die Kathode den gemessenen Anodenstrom limitiert.
-Für diesen gilt\footnote{Quelle: Vorlesung Accelerator Physics bei PD Dr. W. Hillert}:
+Für diesen gilt\footnote{Quelle: Vorlesung Accelerator Physics (WS 2014/2015) bei PD Dr. Hillert}:
 \begin{align}
 I_0=P\,U_0^{\,\frac{3}{2}}
 \end{align}
@@ -936,21 +935,30 @@ Dass der Anodenstrom nicht bei jedem Einbruch auf \SI{0}{\ampere} abfällt ist d
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{9}
 
-% Beispiel
-\bibitem{np_richardson}
- Nobelprize.org,
- \emph{"The Nobel Prize in Physics 1928"}.
- Nobel Media AB 2014. Web. 15\\
- (\url{http://www.nobelprize.org/nobel_prizes/physics/laureates/1928/richardson-lecture.pdf} abgerufen am 15.11.2014)
-  
+\bibitem{hecht}
+	Eugene Hecht,
+	\emph{Optik}.
+	Oldenbourg,
+	5. Auflage
+	
+\bibitem{siegmann}
+	Anthony E. Siegmann,
+	\emph{Lasers}.
+	University Science Books,
+	1986
+	
 \bibitem{demtroeder3}
 	Wolfgang Demtröder,
 	\emph{Experimentalphysik 3}.
 	Springer Verlag,
 	3. Auflage
-\end{thebibliography}
 
-\newpage
+\bibitem{np_richardson}
+ Nobelprize.org,
+ \emph{"The Nobel Prize in Physics 1928"}.
+ Nobel Media AB 2014. Web. 15\\
+ (\url{http://www.nobelprize.org/nobel_prizes/physics/laureates/1928/richardson-lecture.pdf} abgerufen am 15.11.2014)
+\end{thebibliography}
 
 % APPENDIX
 \begin{appendix}

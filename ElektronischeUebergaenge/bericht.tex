@@ -617,27 +617,6 @@ Da die beiden Kalibrierungen eine kleine Abweichung im Bereich hoher Ströme auf
 Wir verwenden dabei den ungewichteten Mittelwert, da die Fehler der beiden Feldstärken nahezu gleich sind.
 Der Fehler des Mittelwerts von zwei Größen ergibt sich dann aus: $\sigma_{\bar{B}} = \frac{\sigma_\mathrm{max.}}{\sqrt{2}}$, wobei wir für $\sigma_\mathrm{max.}$ stets den größeren ($\sigma_\mathrm{max.} = \max(\sigma_{B_1}, \sigma_{B_2}) $) der beiden Fehler verwenden.
 Die zu den gemessenen Spulenströmen korrespondierenden Magnetfelder wurden in Tabelle \ref{tab:mittelwert_kalibration} aufgetragen, wobei die Fehler der Anpassungsparameter und der Spulenströme\footnote{Für die Spulenströme wurde ein Fehler von $\sigma_I = \SI{0.1}{\ampere}$ angenommen, was der Stelle der niedrigsten Wertigkeit auf der digitalen Anzeige des Netzgerätes entspricht.} der Kalibration bei der Berechnung der Magnetfelder $B_1, B_2$ durch Gaußsche Fehlerfortpflanzung beachtet wurden.
-
-Wir tragen nun den Betrag der Energieaufspaltung $|\Delta E|$ für die $\sigma_-$- und $\sigma_+$-Linien gegen das anliegende Magnetfeld $\bar{B}$ auf und passen eine Ursprungsgeraden an.
-Wir erhalten für die Ursprungsgeraden:
-\begin{align}
-	|\Delta E_{-}| = \SI{5.502 +- 0.031e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 8.94\\
-	|\Delta E_{+}| = \SI{5.497 +- 0.019e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 1.62
-\end{align}
-Gemäß Gleichung \ref{eq:normaler_zeeman_auswertung} entspricht die Steigung der Ursprungsgeraden im $|\Delta E|$ -- $\bar{B}$-Graph dem Bohrschen Magneton. Wir bilden den varianzgewichteten Mittelwert der Steigungen und erhalten:
-\begin{align}
-	\bar{x} = \frac{\sum_i \frac{x_i}{\sigma_i^2}}{\sum_i \frac{1}{\sigma_i^2}} \\
-	\sigma_{\bar{x}} = \frac{1}{\sqrt{\sum_i \frac{1}{\sigma_i^2}}}
-\end{align}
-\begin{align}
-	\mu_\mathrm{B} = \SI{5.498 +- 0.017e-5}{\electronvolt\per\tesla}
-\end{align}
-\begin{align}
-	\mu_\mathrm{B}^{\mathrm{Lit.}} = \SI{5.7883818066 +- 0.0000000038e-5}{\electronvolt\per\tesla}
-\end{align}
-\footnote{2010 CODATA recommended values\\ \url{http://physics.nist.gov/cgi-bin/cuu/Value?mubev}\\ Letzter Abruf: 24. November 2014}
-
-
 \begin{table}[h]
 	\centering
 	\input{./tables/auswertung_magnetfeld_strom.tex}
@@ -645,13 +624,41 @@ Gemäß Gleichung \ref{eq:normaler_zeeman_auswertung} entspricht die Steigung de
 	\label{tab:mittelwert_kalibration}
 \end{table}
 
-
+Wir tragen nun den Betrag der Energieaufspaltung $|\Delta E|$ für die $\sigma_-$- und $\sigma_+$-Linien gegen das anliegende Magnetfeld $\bar{B}$ auf und passen eine Ursprungsgeraden an.
+Wir erhalten für die Ursprungsgeraden:
+\begin{align}
+	|\Delta E_{-}| = \SI{5.502 +- 0.031e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 8.94\\
+	|\Delta E_{+}| = \SI{5.497 +- 0.019e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 1.62
+\end{align}
 \begin{figure}[h]
 	\centering
 	\input{./plots/magneton_fit.tex}
 	\caption{magneton fit}
 	\label{fig:magneton_fit}
 \end{figure}
+Gemäß Gleichung \ref{eq:normaler_zeeman_auswertung} entspricht die Steigung der Ursprungsgeraden im $|\Delta E|$-$\bar{B}$-Graph dem Bohrschen Magneton. Zur Bestimmung des Bohrschen Magnetons berechnen wir das varianzgewichtete Mittel der beiden Steigungen:
+\begin{align}
+	\bar{x} = \frac{\sum_i \frac{x_i}{\sigma_i^2}}{\sum_i \frac{1}{\sigma_i^2}}\text{,}
+\end{align}
+wobei der Fehler des gewichteten Mittelwerts gegeben ist durch:
+\begin{align}
+	\sigma_{\bar{x}} = \frac{1}{\sqrt{\sum_i \frac{1}{\sigma_i^2}}}\text{.}
+\end{align}
+Damit erhalten wir für das Bohrsche Magneton:
+\begin{align}
+	\mu_\mathrm{B} = \SI{5.498 +- 0.017e-5}{\electronvolt\per\tesla}
+\end{align}
+
+Vergleich mit dem Literaturwert.
+\begin{align}
+	\mu_\mathrm{B}^{\mathrm{Lit.}} = \SI{5.7883818066 +- 0.0000000038e-5}{\electronvolt\per\tesla}
+\end{align}
+\footnote{2010 CODATA recommended values\\ \url{http://physics.nist.gov/cgi-bin/cuu/Value?mubev}\\ Letzter Abruf: 24. November 2014}
+
+
+
+
+
 
 
 \subsubsection{Weitergehende Überlegungen}

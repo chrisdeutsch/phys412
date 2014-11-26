@@ -681,32 +681,35 @@ Es folgt für das theoretische Auflösungsvermögen:
 \begin{table}[h]
 	\centering
 	\input{./tables/aufloesung.tex}
-	\caption{Messdaten zur Bestimmung der Auflösung}
+	\caption{Messdaten zur Bestimmung der Auflösung und Finesse mit dem Okular}
 	\label{tab:aufloesung}
 \end{table}
 Nun wollen wir aus den Spulenströmen bei denen aufgespaltene Ringe im Okular gerade noch zu unterscheiden waren (Tabelle \ref{tab:aufloesung}) die Finesse und das Auflösungsvermögen berechnen.
 Um den Messfehler besser einschätzen zu können, wurde in jeder Konfiguration fünf mal gemessen.
 Es wurde jeweils ein Fehler von $\SI{0.1}{\ampere}$ auf den am Netzgerät abgelesenen Spulenstrom angenommen, da dies der niedrigstwertigen Stelle an der digitalen Anzeige entspricht.
 Da der Fehler für alle fünf Messungen gleich ist ergibt sich der Fehler des Mittelwerts aus: 
-\begin{align}
+\begin{align*}
 	\sigma_{\bar{I}} = \frac{\sigma_I}{\sqrt{N}} = \frac{\SI{0,1}{\ampere}}{\sqrt{5}} \approx \SI{0,045}{\ampere}\text{.}
-\end{align}
+\end{align*}
 Damit erhalten wir nach der Mittelwertbildung:
-\begin{align}
+\begin{align*}
 	\bar{I}_\mathrm{trans.} = \SI{2.040 +- 0.045}{\ampere} \\
-	\bar{I}_\mathrm{long.} = \SI{1.060 +- 0.045}{\ampere}
-\end{align}
-Mit den beiden Magnetfeldkalibrierungen (Mittelwert) erhalten wir:
-\begin{align}
+	\bar{I}_\mathrm{long.} = \SI{1.060 +- 0.045}{\ampere}\text{.}
+\end{align*}
+Zur Bestimmung der Auflösung muss zunächst das aus dem Spulenstrom $\bar{I}$ resultierende Magnetfeld aus der Kalibrierung berechnet werden.
+Dazu gehen wir analog zum vorigen Teil vor und berechnen mit die Feldstärke mit beiden Kalibrierungen und mitteln deren Werte.
+Wir beachten die Fehler in $\bar{I}$ und in den Anpassungsparametern des Polynoms durch Gaußsche Fehlerfortpflanzung und erhalten:
+\begin{align*}
 	B_\mathrm{trans.} = \SI{195.6 +- 3.3}{\milli\tesla} \\
 	B_\mathrm{long.} = \SI{101.6 +- 3.2}{\milli\tesla}
-\end{align}
-Die Auflösung ist nun gegeben durch Gleichung \ref{eq:aufloesung}, wobei $\delta \lambda$ (Halbwertsbreite der Linien, Rayleigh-Kriterium).
-Wenn zwei Linien $(\lambda_1, \lambda_2)$ gerade noch aufgelöst werden, so ist deren Abstand gerade gleich der Halbwertsbreite $\delta \lambda$.
+\end{align*}
+Die Auflösung ist nun gegeben durch Gleichung \ref{eq:aufloesung}, wobei $\delta \lambda$ die Halbwertsbreite der Intensitätsmaxima des Fabry-Pérot-Etalon ist.
+Gemäß des Rayleigh-Kriteriums sind zwei Linien $(\lambda_1, \lambda_2)$ gerade noch aufgelöst, wenn deren Wellenlängenunterschied $\lambda_2 - \lambda_1$ gleich der Halbwertsbreite $\delta \lambda$ des Intensitätsprofils einer einzigen Linie ist.
+Damit können wir die Halbwertsbreite $\delta \lambda$ der Intensitätsspitzen des Etalons durch die Wellenlängendifferenz zweier gerade noch aufgelösten Linien bestimmen, welche durch die Energieaufspaltung $\Delta E$ aufgrund des normalen Zeeman-Effekts entsteht:
 \begin{align}
 	\delta \lambda = \lambda_2 - \lambda_1 = h c \left( \frac{1}{E_2} - \frac{1}{E_1} \right) = \frac{h c}{E_1 E_2} \left(E_1 - E_2\right) \approx \frac{\lambda^2 \cdot \Delta E}{h c}
 \end{align}
-wobei $\lambda \approx \lambda_1 \approx \lambda_2$.
+wobei im letzten Schritt die Näherung $\lambda \approx \lambda_1 \approx \lambda_2$ verwendet wurde.
 Dann ist die Auflösung gegeben durch:
 \begin{align}
 	\mathcal{R} = \frac{\lambda}{\delta \lambda} = \frac{h c}{\lambda \cdot \Delta E}

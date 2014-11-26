@@ -769,29 +769,38 @@ Die Halbwertsbreite $\mathrm{HBW}$ der Gaußfunktion mit Standardabweichung $\si
 \mathrm{HWB} &= 2 \sqrt{2\log(2)} \cdot \sigma\\
  &= \SI{0.0659 +- 0.0013}{\degree}
 \end{align*}
-Um diese in die Halbwertsbreite in Einheiten der Wellenlänge $\delta \lambda$ umzurechnen, verwenden wir die Näherung:
-\begin{align}
+Um diese in die Halbwertsbreite in Einheiten der Wellenlänge $\delta \lambda$ umzurechnen, verwenden wir die lineare Näherung aus der Interferenzbedingung des Etalons:
+\begin{align*}
 	\delta \lambda &= \left| \frac{\mathrm{d}\lambda}{\mathrm{d}\alpha} \right| \cdot \mathrm{HWB} \\
-	 &= \frac{2d}{m} \, \frac{\sin(\alpha) \cos(\alpha)}{\sqrt{n^2-\sin^2(\alpha)}} \cdot \mathrm{HWB}
-\end{align}
-damit erhalten wir:
-\begin{align}
+	 &= \frac{2d}{m} \, \frac{\sin(\alpha) \cos(\alpha)}{\sqrt{n^2-\sin^2(\alpha)}} \cdot \mathrm{HWB}\text{,}
+\end{align*}
+womit wir eine Linienbreite von:
+\begin{align*}
 	\delta \lambda = \SI{6.18 +- 0.13}{\pico\metre}
-\end{align}
-Der Fehler wurde mit Gaußscher Fehlerfortpflanzung ($\alpha$, $\mathrm{HWB}$) berechnet.
-Nun lässt sich Auflösung und Finesse berechnen:
+\end{align*}
+erhalten.
+Dabei wurde der Fehler über Gaußsche Fehlerfortpflanzung unter Beachtung der Fehler für die Halbwertsbreite $\mathrm{HWB}$ und den Peakschwerpunkt $\alpha$ beachtet.
+Wie zuvor kann nun das Auflösungsvermögen und daraus die Finesse berechnet werden:
 \begin{align}
 	\mathcal{R} &= \frac{\lambda}{\delta \lambda} = \num{104200 +- 2200} \\
-	\mathcal{F} &= \frac{\mathcal{R}}{m} = \num{5.76 +- 0.13}
+	\mathcal{F} &= \frac{\mathcal{R}}{m} = \num{5.76 +- 0.13}\text{.}
 \end{align}
+Die Bestimmung mit der CCD-Kamera war nicht erfolgreich, da die berechneten Werte für Auflösungsvermögen und Finesse etwa um einen Faktor $2$ von den Theoretischen abweichen.
+Auf die möglichen Ursachen soll im Abschnitt \ref{ssec:diskussion_zeeman} eingegangen werden.
 
-Dopper-Verbreiterung: Halbwertsbreite durch Doppler-Verbreiterung:
+\noindent
+\textbf{Dopper-Verbreiterung der Linie:}
+Die Halbwertsbreite der gaußförmigen Doppler-Verbreiterung ist gegeben mit Gleichung (HIER REFERENZ) aus dem Grundlagenteil.
+Bei der Temperatur $T = \SI{1000}{\K}$ folgt mit der Atommasse von Cadmium\footnote{CIAAW: 2013 Standard Atomic Weights\\http://www.ciaaw.org/atomic-weights.htm\\Letzer Aufruf: 26. November 2014} $m_\mathrm{Cd} = \SI{112.414 +- 0.004}{\atomicmassunit} $ die Doppler-Verbreiterung:
 \begin{align}
 	\delta \lambda_\mathrm{Doppler} = \SI{1.38}{\pico\metre}
 \end{align}
-
+Somit liegt die Doppler-Verbreiterung in derselben Größenordnung wie die mit der CCD-Kamera gemessene Breite von $\delta \lambda = \SI{6.18 +- 0.13}{\pico\metre}$.
+Dennoch ist die Verbreiterung aufgrund des Doppler-Effekts von untergeordneter Bedeutung, da diese etwa einen Faktor \num{4.5} kleiner ist, als die tatsächlich beobachtete Breite.
 
 \subsection{Diskussion}
+\label{ssec:diskussion_zeeman}
+Hier die Fehler mit der CCD-Kamera erklären!!!
 
 % damit ich nicht wahnsinnig werde
 \FloatBarrier

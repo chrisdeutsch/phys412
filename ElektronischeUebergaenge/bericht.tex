@@ -817,9 +817,10 @@ Wir nutzen in der Auswertung die Bezeichnungen, wie sie auch in Abbildung \ref{f
 
 Zunächst führen wir die Messung für verschiedene Gegenspannungen bei konstanter Temperatur durch.
 Für diese wählen wir \SI{160}{\degreeCelsius} und überprüfen vor den Messungen, wie oben angesprochen, dass kein Durchzünden stattfinden kann.
-Darum wählen wir als Maximalwert der positiven Rampe \SI{42}{\kilo\volt} und messen für vier Gegenspannungen zwischen \SI{2}{\volt} und \SI{3.5}{\volt} den Anodenstrom.
+Darum wählen wir als Maximalwert der positiven Rampe \SI{42}{\volt} und messen für vier Gegenspannungen zwischen \SI{2}{\volt} und \SI{3.5}{\volt} den Anodenstrom.
 Die Messwerte sind in Abbildung \ref{fig:fh_varvolt} dargestellt.
 Für die Diagramme wählen wir zur Skalierung der $y$-Achse willkürliche Einheiten, da diese nicht zur Auswertung benötigt werden und durch die im Steuergerät durchgeführte Umwandlung des Stroms in eine von Cassy messbare Spannung der Umrechnungsfaktor nicht bekannt ist.
+Die geschätzten Fehler von \SI{0.1}{\volt} für die Beschleunigungsspannung und \num{0.1} willkürliche Einheiten für den Anodenstrom (in gleicher Skalierung wie die Werte von $I$) sind in dieser Darstellung sehr klein und wurden aus Gründen der Übersichtlichkeit nicht dargestellt.
 \begin{figure}[!h]
 \centering
 \input{./plots/fh_varvolt.tex}
@@ -846,8 +847,9 @@ Als Fithypothese wählen wir dabei
 \label{eq:fh_fithypothese}
 \end{align}
 mit dem Peakschwerpunkt $S_i$ und der Schwankungsbreite $\sigma_i$ , die wir beide zur Auswertung benötigen.
-Wir lassen die Parameter nun an jeweils 4 Maxima pro Datensatz anpassen, wobei wir die Maxima mit $i$ von links nach rechts durchnummerieren, beginnend bei dem Maximum zwischen \SI{15}{\kilo\volt} und \SI{20}{\kilo\volt}, da das davor liegende besonders für hohe Gegenspannungen und hohe Temperaturen nicht gut angepasst werden kann.
+Wir lassen die Parameter nun an jeweils 4 Maxima pro Datensatz anpassen, wobei wir die Maxima mit $i$ von links nach rechts durchnummerieren, beginnend bei dem Maximum zwischen \SI{15}{\volt} und \SI{20}{\volt}, da das davor liegende besonders für hohe Gegenspannungen und hohe Temperaturen nicht gut angepasst werden kann.
 Die Ergebnisse für die Schwerpunkte $S_i$ sind in Tabelle \ref{tab:fh_schwerpunkte} dargestellt.
+Für den Fehler der zugrundeliegenden Messwerte schätzen wir \SI{0.1}{\volt} für die Beschleunigungsspannung und \num{0.1} für den Anodenstrom ab.
 Zur Bestimmung des Energieabstands $\left(\Delta E\right)'$ berechnen wir die Differenz der Schwerpunkte $S_i-S_{i-1}$ und mitteln über diese Werte, die zusammen mit dem (über die Standardabweichung bestimmten) Fehler bereits in die Tabelle eingetragen sind.
 Nun mitteln wir die so gefundenen Werte, um einen Gesamtwert für den Energieabstand $\Delta E$ zu erhalten.
 Wir finden so:

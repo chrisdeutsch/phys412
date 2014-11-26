@@ -317,10 +317,10 @@ In Hall-Sonden wird der Hall-Effekt ausgenutzt, welcher besagt, dass an einem st
 	\label{fig:hall_effekt}
 \end{figure}
 Die Ladungsträger werden durch die Lorentzkraft soweit ausgelenkt, bis das durch die Auslenkung entstandene elektrische Feld $E_\mathrm{Hall}$ die Lorentzkraft kompensiert:
-\begin{align*}
+\begin{align}
 	e E_\mathrm{Hall} = e v_x B_y
 	\label{eq:kompensation}
-\end{align*}
+\end{align}
 Dabei ist die an den Stirnflächen mit Abstand $d$ anliegende Spannung gegeben durch $E_\mathrm{Hall} = U_\mathrm{Hall} / d$, womit aus Gleichung (\ref{eq:kompensation}) folgt:
 \begin{align*}
 	U_\mathrm{Hall} = d v_x B_y
@@ -385,9 +385,9 @@ Das Gas wird dabei als Menge von gleichen Teilchen vernachlässigbarer Größe a
 Außer bei den Stößen, die grundsätzlich elastisch stattfinden, wirken zwischen den Teilchen keine Kräfte.
 Wir können darauf aufbauend Eigenschaften definieren wie die \textbf{mittlere freie Weglänge}, die die durchschnittliche Strecke angibt, die ein Teilchen zurücklegt, ohne Stöße mit anderen Teilchen auszuführen.
 Sie ist definiert als
-\begin{align}
+\begin{align*}
 \lambda=\frac{1}{n\sigma}
-\end{align}
+\end{align*}
 mit $n$ der Teilchendichte und $\sigma$ dem totalen \textbf{Wirkungsquerschnitt}.
 Dieser ist ebenfalls eine wichtige Eigenschaft des Gases, denn er gibt die Wahrscheinlichkeit an, dass ein Teilchen mit einem anderen wechselwirkt, wobei wir die Wechselwirkung in der kinetischen Gastheorie wie angesprochen auf elastische Stöße beschränken.
 
@@ -513,7 +513,7 @@ Die sichtbaren Polarisationen erklären sich wie folgt:
 	Damit folgt aus der Drehimpulserhaltung, dass das Photon parallel zur Magnetfeldachse polarisiert sein muss, um $\Delta m_\ell = 0$ zu gewährleisten.
 	
 	\item $\Delta m_\ell = \pm 1$: Diese Übergänge weisen keine dipolartige Abstrahlcharakteristik auf, sodass Emission auch in Richtung des Magnetfeldes stattfindet.
-	Da auch hier Drehimpulserhaltung gilt, muss der Spin des emittierten Photons so ausgerichtet sein, dass $m_s = \mp 1$ gilt, um $\Delta m = \pm 1$ zu gewährleisten.
+	Da auch hier Drehimpulserhaltung gilt, muss der Spin des emittierten Photons so ausgerichtet sein, dass dieser gemäß $m_s^\mathrm{Photon} = \mp 1$ in Magnetfeldrichtung zeigt, um $\Delta m = \pm 1$ zu gewährleisten.
 	Diese Photonenspins entsprechen in longitudinaler Beobachtungsrichtung zirkular polarisiertem Licht und in transversaler linear polarisiertem Licht mit Polarisationsebene senkrecht auf der Spinquantisierungsachse, welche mit der Magnetfeldachse übereinstimmt.
 \end{itemize}
 
@@ -570,13 +570,13 @@ Dazu betrachten wir die mit der CCD-Kamera aufgenommenen Intensitäten eines inn
 Der zur Analyse herangezogene Ring wurde in Abbildung \ref{fig:peakauswahl} markiert.
 Um die Peakschwerpunkte der Aufspaltung zu vermessen passen wir an die Intensitätsverteilung des gewählten Rings eine Summe von drei Gaußfunktionen $\mathcal{G}$ mit Verschiebung $d$ an.
 Die Anpassungshypothese lautet:
-\begin{align}
+\begin{align*}
 f(x) = \mathcal{G}_1(x) + \mathcal{G}_2(x) + \mathcal{G}_3(x) + d
-\end{align}
+\end{align*}
 mit der Gaußfunktion:
-\begin{align}
+\begin{align*}
 \mathcal{G}_i(x) = A_i \exp\left( -\frac{1}{2} \left( \frac{x - \mu_i}{\sigma_i} \right)^2 \right)
-\end{align}
+\end{align*}
 Wir erhalten als Anpassungsparameter die drei Höhen $A_i$, drei Peakschwerpunkte $\mu_i$, drei Standardabweichungen $\sigma_i$ und den konstanten Versatz $d$.
 Zur Anpassung verwenden wir die Methode der kleinsten Quadrate (\texttt{Gnuplot}) und erhalten so beispielsweise für $B = \SI{4}{\tesla}$ Abbildung \ref{fig:zeeman_b4_bsp}.
 \begin{figure}[h]
@@ -598,14 +598,14 @@ Die in den Diagrammen eingetragenen Fehler für den Winkel $\alpha$ folgen aus d
 \end{table}
 Mithilfe der so berechneten Peakschwerpunkte können wir die relative Abweichung von der $\pi$-Linie berechnen.
 Dazu nutzen wir die Interferenzbedingung für das Fabry-Pérot-Etalon aus Gleichung (\ref{eq:interferenzbedingung}) und erhalten:
-\begin{align}
+\begin{align*}
 	\frac{\Delta \lambda_\pm}{\lambda_\pi^0} = \frac{\lambda_{\sigma^\pm} - \lambda_\pi^0}{\lambda_\pi^0} = \frac{\sqrt{n^2 - \sin^2(\alpha_{\pm})}}{\sqrt{n^2 - \sin^2(\alpha_\pi)}} - 1
-\end{align}
+\end{align*}
 Dabei berechnet sich der  Fehler über Gaußsche Fehlerfortpflanzung zu:
-\begin{align}
+\begin{align*}
 	\Delta \left( \frac{\Delta \lambda_\pm}{\lambda_\pi^0} \right) = & \left( \frac{\sin^2(\alpha_\pm) \cos^2(\alpha_\pm)}{(n^2-\sin^2(\alpha_\pm))(n^2-\sin^2(\alpha_\pi))} \cdot \Delta \alpha_\pm^2 \right. \nonumber\\
 	& \left. + \frac{\sin^2(\alpha_\pi) \cos^2(\alpha_\pi) (n^2 - \sin^2(\alpha_\pm))}{(n^2-\sin^2(\alpha_\pi))^3} \cdot \Delta \alpha_\pi^2\right)^\frac{1}{2}
-\end{align}
+\end{align*}
 Mit diesen Gleichungen folgen für die relative Abweichung die Werte der Tabelle \ref{tab:verschiebung_wellenlaenge}. 
 \begin{table}[h]
 	\centering
@@ -614,13 +614,13 @@ Mit diesen Gleichungen folgen für die relative Abweichung die Werte der Tabelle
 	\label{tab:verschiebung_wellenlaenge}
 \end{table}
 Mit der Wellenlänge der $\pi$-Linie\footnote{National Institute of Standards and Technology (NIST)\\ \url{http://physics.nist.gov/PhysRefData/Handbook/Tables/cadmiumtable2.htm}\\Letzter Aufruf: 22. November 2014} $\lambda_\pi = \SI{643,8470}{\nano\metre}$  und der relativen Wellenlängenverschiebung kann nun die Energieaufspaltung $\Delta E$ der Ringe berechnet werden:
-\begin{align}
+\begin{align*}
 	\Delta E = -\frac{h c}{\lambda_\pi^0}\,\frac{\Delta \lambda}{\lambda_{\sigma^\pm}} \approx -\frac{h c}{\lambda_\pi^0}\,\frac{\Delta \lambda}{\lambda_\pi^0} \text{,}
-\end{align}
+\end{align*}
 wobei der Fehler aus Gaußscher Fehlerfortpflanzung folgt:
-\begin{align}
+\begin{align*}
 	\sigma_{\Delta E} = \frac{h c}{\lambda_\pi^0} \, \sigma_{\Delta \lambda / \lambda_\pi^0}
-\end{align}
+\end{align*}
 Die Energieaufspaltung wurde für die verschiedenen Spulenströme in Tabelle \ref{tab:energieaufspaltung} dargestellt.
 \begin{table}[h]
 	\centering
@@ -648,10 +648,10 @@ Die zu den gemessenen Spulenströmen korrespondierenden Magnetfelder wurden in T
 
 Wir tragen nun den Betrag der Energieaufspaltung $|\Delta E|$ für die $\sigma_-$- und $\sigma_+$-Linien gegen das anliegende Magnetfeld $\bar{B}$ auf und passen eine Ursprungsgerade an (Abbildung \ref{fig:magneton_fit}).
 Wir erhalten für die Ursprungsgeraden:
-\begin{align}
+\begin{align*}
 	|\Delta E_{-}| = \SI{5.502 +- 0.031e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 8.94\\
 	|\Delta E_{+}| = \SI{5.497 +- 0.019e-5}{\electronvolt\per\tesla} \cdot \bar{B} \qquad \chi_\mathrm{d.o.f.}^2 = 1.62
-\end{align}
+\end{align*}
 Obwohl die $\chi$-Quadrate wesentlich von $1$ abweichen, ist die Anpassung der Ursprungsgeraden an die Punkte passabel, da das Anpassen mit \texttt{Gnuplot} lediglich Fehler in $y$-Richtung beachtet.
 Betrachtet man jedoch den Graphen in Abbildung \ref{fig:magneton_fit} so stellt man fest, dass unter Beachtung des Magnetfeldfehlers die Punkte gut auf der Geraden liegen.
 \begin{figure}[h]
@@ -661,21 +661,21 @@ Betrachtet man jedoch den Graphen in Abbildung \ref{fig:magneton_fit} so stellt 
 	\label{fig:magneton_fit}
 \end{figure}
 Gemäß Gleichung (\ref{eq:normaler_zeeman_auswertung}) entspricht die Steigung der Ursprungsgeraden im $|\Delta E|$-$\bar{B}$-Graph dem Bohrschen Magneton. Zur Bestimmung des Bohrschen Magnetons berechnen wir das varianzgewichtete Mittel der beiden Steigungen:
-\begin{align}
+\begin{align*}
 	\bar{x} = \frac{\sum_i \frac{x_i}{\sigma_i^2}}{\sum_i \frac{1}{\sigma_i^2}}\text{,}
-\end{align}
+\end{align*}
 wobei der Fehler des gewichteten Mittelwerts gegeben ist durch:
-\begin{align}
+\begin{align*}
 	\sigma_{\bar{x}} = \frac{1}{\sqrt{\sum_i \frac{1}{\sigma_i^2}}}\text{.}
-\end{align}
+\end{align*}
 Damit erhalten wir für das Bohrsche Magneton:
-\begin{align}
+\begin{align*}
 	\mu_\mathrm{B} = \SI{5.498 +- 0.017e-5}{\electronvolt\per\tesla}
-\end{align}
+\end{align*}
 Dieser Wert weicht in Anbetracht der Fehler stark vom Literaturwert\footnote{2010 CODATA recommended values\\ \url{http://physics.nist.gov/cgi-bin/cuu/Value?mubev}\\ Letzter Abruf: 24. November 2014}
-\begin{align}
+\begin{align*}
 	\mu_\mathrm{B}^{\mathrm{Lit.}} = \SI{5.7883818066 +- 0.0000000038e-5}{\electronvolt\per\tesla}
-\end{align}
+\end{align*}
 ab.
 Diese Abweichung könnte daher stammen, dass wie im Anhang \ref{app:penis} ersichtlich, für höhere Ströme die Form der aufgespaltenen Linien nicht mehr gut mit einer Summe von Gaußfunktionen und Verschiebung übereinstimmt.
 Dort beobachten wir, dass die Peakschwerpunkte der $\sigma$-Linien nicht gut mit den Messdaten übereinstimmen.
@@ -691,9 +691,9 @@ Mit dem gegebenen Wert $r = \num{0,85}$ folgt unmittelbar für die Finesse:
 	\mathcal{F_\mathrm{theo.}} = \frac{\pi r}{1 - r^2} \approx \num{9.62}
 \end{align*}
 Zur Berechnung des Auflösungsvermögen $\mathcal{R}$ nutzen wir den Zusammenhang mit der Finesse $\mathcal{F}$:
-\begin{align}
+\begin{align*}
 \mathcal{R} = \mathcal{F} \cdot m
-\end{align}
+\end{align*}
 Dazu schätzen wir die Ordnung $m$ mit der Interferenzbedingung des Fabry-Pérot-Etalons ab:
 \begin{align*}
 m = \frac{2 d}{\lambda} \sqrt{n^2 - \sin^2(\alpha)} \approx \frac{2 d n}{\lambda} \approx 18104
@@ -730,27 +730,27 @@ Wir beachten die Fehler in $\bar{I}$ und in den Anpassungsparametern des Polynom
 Die Auflösung ist nun gegeben durch Gleichung (\ref{eq:aufloesung}), wobei $\delta \lambda$ die Halbwertsbreite der Intensitätsmaxima des Fabry-Pérot-Etalon ist.
 Gemäß des Rayleigh-Kriteriums sind zwei Linien $(\lambda_1, \lambda_2)$ gerade noch aufgelöst, wenn deren Wellenlängenunterschied $\lambda_2 - \lambda_1$ gleich der Halbwertsbreite $\delta \lambda$ des Intensitätsprofils einer einzigen Linie ist.
 Damit können wir die Halbwertsbreite $\delta \lambda$ der Intensitätsspitzen des Etalons durch die Wellenlängendifferenz zweier gerade noch aufgelösten Linien bestimmen, welche durch die Energieaufspaltung $\Delta E$ aufgrund des normalen Zeeman-Effekts entsteht:
-\begin{align}
+\begin{align*}
 	\delta \lambda = \lambda_2 - \lambda_1 = h c \left( \frac{1}{E_2} - \frac{1}{E_1} \right) = \frac{h c}{E_1 E_2} \left(E_1 - E_2\right) \approx \frac{\lambda^2 \cdot \Delta E}{h c}
-\end{align}
+\end{align*}
 Im letzten Schritt wurde dabei die Näherung $\lambda \approx \lambda_1 \approx \lambda_2$ verwendet.
 Dann ist die Auflösung gegeben durch:
-\begin{align}
+\begin{align*}
 	\mathcal{R} = \frac{\lambda}{\delta \lambda} = \frac{h c}{\lambda \cdot \Delta E}\text{,}
-\end{align}
+\end{align*}
 wobei die Energieaufspaltung durch den normalen Zeemaneffekt in Abhängigkeit vom anliegenden Magnetfeld $B$ mit
-\begin{align}
+\begin{align*}
 	\Delta E = \mu_\mathrm{B} \Delta m B
-\end{align}
+\end{align*}
 gegeben ist.
 Also folgt für das Auflösungsvermögen
-\begin{align}
+\begin{align*}
 	\mathcal{R} = \frac{h c}{ \mu_\mathrm{B} \Delta m \lambda} \cdot \frac{1}{B} 
-\end{align}
+\end{align*}
 und für den Fehler nach Gaußscher Fehlerfortpflanzung:
-\begin{align}
+\begin{align*}
 	\Delta \mathcal{R} = \frac{h c}{ \mu_\mathrm{B} \Delta m \lambda} \cdot \frac{\Delta B}{B^2} \text{.}
-\end{align}
+\end{align*}
 Mit diesen Überlegungen ergibt sich für die transversale Auflösung mit $\Delta m = 1$, da die Aufspaltung zwischen $\sigma_\pm$-Linie und $\pi$-Linie beobachtet wird, und für die longitudinale Auflösung mit $\Delta m = 2$, da hier die Aufspaltung zwischen $\sigma_-$- und $\sigma_+$-Linie beobachtet wird ($\pi$-Linie ist in longitudinaler Konfiguration nicht sichtbar):
 \begin{align*}
 	\mathcal{R}_\mathrm{trans.} = \num{170000 +- 2900} \\
@@ -804,19 +804,19 @@ womit wir eine Linienbreite von:
 erhalten.
 Dabei wurde der Fehler über Gaußsche Fehlerfortpflanzung unter Beachtung der Fehler für die Halbwertsbreite $\mathrm{HWB}$ und den Peakschwerpunkt $\alpha$ berechnet.
 Wie zuvor kann nun das Auflösungsvermögen und daraus die Finesse berechnet werden:
-\begin{align}
+\begin{align*}
 	\mathcal{R} &= \frac{\lambda}{\delta \lambda} = \num{104200 +- 2200} \\
 	\mathcal{F} &= \frac{\mathcal{R}}{m} = \num{5.76 +- 0.13}\text{.}
-\end{align}
+\end{align*}
 Die Bestimmung mit der CCD-Kamera war nicht erfolgreich, da die berechneten Werte für Auflösungsvermögen und Finesse stark von den theoretischen abweichen.
 Auf die möglichen Ursachen wird im Abschnitt \ref{ssec:diskussion_zeeman} eingegangen.
 
-\subsubsection{Dopper-Verbreiterung der Linie}
+\subsubsection{Doppler-Verbreiterung der Linie}
 Die Halbwertsbreite der gaußförmigen Doppler-Verbreiterung ist gegeben durch Gleichung (\ref{eq:doppler}) aus dem Grundlagenteil.
 Bei der Temperatur $T = \SI{1000}{\K}$ folgt mit der Atommasse von Cadmium\footnote{CIAAW: 2013 Standard Atomic Weights\\\url{http://www.ciaaw.org/atomic-weights.htm}\\Letzer Aufruf: 26. November 2014} $m_\mathrm{Cd} = \SI{112.414 +- 0.004}{\atomicmassunit} $ die Doppler-Verbreiterung:
-\begin{align}
+\begin{align*}
 	\delta \lambda_\mathrm{Doppler} = \SI{1.38}{\pico\metre}
-\end{align}
+\end{align*}
 Somit liegt die Doppler-Verbreiterung in derselben Größenordnung wie die mit der CCD-Kamera gemessene Breite von $\delta \lambda = \SI{6.18 +- 0.13}{\pico\metre}$.
 Dennoch ist die Verbreiterung aufgrund des Doppler-Effekts von untergeordneter Bedeutung, da diese etwa einen Faktor \num{4.5} kleiner ist, als die tatsächlich beobachtete Breite.
 
@@ -1050,7 +1050,7 @@ Auf den folgenden Seiten sind der Vollständigkeit halber die Darstellungen der 
 	}
 	\subcaption{}
 \end{subfigure}
-\caption{Magnetfeldaufspaltung Fits für \textbf{(a)} \SI{4}{\ampere}, \textbf{(b)} \SI{4.5}{\ampere}, \textbf{(c)}) \SI{5}{\ampere}, \textbf{(d)} \SI{5.5}{\ampere}}
+\caption{Anpassung an die aufgespaltete Cadmium-Linie im Magnetfeld für \textbf{(a)} \SI{4}{\ampere}, \textbf{(b)} \SI{4.5}{\ampere}, \textbf{(c)}) \SI{5}{\ampere}, \textbf{(d)} \SI{5.5}{\ampere}}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}[!h]
@@ -1079,7 +1079,7 @@ Auf den folgenden Seiten sind der Vollständigkeit halber die Darstellungen der 
 	}
 	\subcaption{}
 \end{subfigure}
-\caption{Magnetfeldaufspaltung Fits für \textbf{(a)} \SI{6}{\ampere}, \textbf{(b)} \SI{6.5}{\ampere}, \textbf{(c)}) \SI{7}{\ampere}, \textbf{(d)} \SI{7.5}{\ampere}}
+\caption{Anpassung an die aufgespaltete Cadmium-Linie im Magnetfeld für \textbf{(a)} \SI{6}{\ampere}, \textbf{(b)} \SI{6.5}{\ampere}, \textbf{(c)}) \SI{7}{\ampere}, \textbf{(d)} \SI{7.5}{\ampere}}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}[!h]
@@ -1102,7 +1102,7 @@ Auf den folgenden Seiten sind der Vollständigkeit halber die Darstellungen der 
 	}
 	\subcaption{}
 \end{subfigure}
-\caption{Magnetfeldaufspaltung Fits für \textbf{(a)} \SI{8}{\ampere}, \textbf{(b)} \SI{8.5}{\ampere}, \textbf{(c)}) \SI{8.9}{\ampere}}
+\caption{Anpassung an die aufgespaltete Cadmium-Linie im Magnetfeld für \textbf{(a)} \SI{8}{\ampere}, \textbf{(b)} \SI{8.5}{\ampere}, \textbf{(c)}) \SI{8.9}{\ampere}}
 \end{sidewaysfigure}
 
 \end{appendix}

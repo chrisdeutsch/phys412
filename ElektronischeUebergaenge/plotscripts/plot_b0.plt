@@ -38,6 +38,6 @@ load './../gnuplot_linestyles.plt'
 plot 	'./messwerte/b0.txt' using 1:2:(0.0025):(0.4) with xyerrorbars t'Messwerte' ls 1,\
 		t(x) t'$\Sigma$' ls 1 lw 2,\
 		g1(x) t'$\mathcal{G}$' ls 2 lw 2,\
-		u(x) t'Untergrund' ls 5 lw 2
+		u(x) t'$d$' ls 5 lw 2
 
 unset output

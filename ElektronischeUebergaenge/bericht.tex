@@ -538,6 +538,7 @@ Höhere Ordnungen verursachen extrem hohen Parameterfehler was dazu führt, dass
 
 \FloatBarrier
 \subsubsection{Bestimmung des Bohrschen Magnetons}
+\label{sssec:magneton}
 \begin{figure}[h]
 	\centering
 	\input{./plots/peakauswahl.tex}
@@ -712,59 +713,62 @@ Damit können wir die Halbwertsbreite $\delta \lambda$ der Intensitätsspitzen d
 wobei im letzten Schritt die Näherung $\lambda \approx \lambda_1 \approx \lambda_2$ verwendet wurde.
 Dann ist die Auflösung gegeben durch:
 \begin{align}
-	\mathcal{R} = \frac{\lambda}{\delta \lambda} = \frac{h c}{\lambda \cdot \Delta E}
+	\mathcal{R} = \frac{\lambda}{\delta \lambda} = \frac{h c}{\lambda \cdot \Delta E}\text{,}
 \end{align}
-wobei die Energieaufspaltung durch den normalen Zeemaneffekt:
+wobei die Energieaufspaltung durch den normalen Zeemaneffekt in Abhängigkeit vom anliegenden Magnetfeld $B$:
 \begin{align}
 	\Delta E = \mu_\mathrm{B} \Delta m B
 \end{align}
 gegeben ist.
-Also
+Also folgt für das Auflösungsvermögen
 \begin{align}
 	\mathcal{R} = \frac{h c}{ \mu_\mathrm{B} \Delta m \lambda} \cdot \frac{1}{B} 
 \end{align}
-Der Fehler ist gegeben durch:
+und für den Fehler nach Gaußscher Fehlerfortpflanzung::
 \begin{align}
-	\Delta \mathcal{R} = \frac{h c}{ \mu_\mathrm{B} \Delta m \lambda} \cdot \frac{\Delta B}{B^2}
+	\Delta \mathcal{R} = \frac{h c}{ \mu_\mathrm{B} \Delta m \lambda} \cdot \frac{\Delta B}{B^2} \text{.}
 \end{align}
-Mit diesen Überlegungen ist die transversale Auflösung ($\Delta m = 1$, da $\sigma_{\pm} - \pi$) und longitudinale Auflösung ($\Delta m = 2$, da $\sigma_{-} - \sigma_{+}$ $\pi$-Linie nicht sichtbar)
-\begin{align}
+Mit diesen Überlegungen ergibt sich für die transversale Auflösung mit $\Delta m = 1$, da die Aufspaltung zwischen $\sigma_\pm$-Linie und $\pi$-Linie beobachtet wird und für die longitudinale Auflösung mit $\Delta m = 2$, da hier die Aufspaltung zwischen $\sigma_-$- und $\sigma_+$-Linie beobachtet wird ($\pi$-Linie ist in longitudinaler Konfiguration nicht sichtbar), gegeben durch:
+\begin{align*}
 	\mathcal{R}_\mathrm{trans.} = \num{170000 +- 2900} \\
 	\mathcal{R}_\mathrm{long.} =\num{164000 +- 5200}
-\end{align}
+\end{align*}
+Diese Werte stimmen gut mit dem theoretischen Wert überein.
+Die Unterschätzung bei der longitudinalen Konfiguration lässt sich dadurch erklären, dass die $\pi$-Linie im Okular noch leicht sichtbar war und dadurch eine Unterscheidung der $\sigma$-Linien aufgrund der dazwischenliegenden $\pi$-Linie schon bei größeren Spulenströmen nicht mehr möglich war.
 
-Zur Berechnung der Finesse $\mathcal{F}$ nutzen wir den Zusammenhang mit dem Auflösungsvermögen $\mathcal{R}$:
-\begin{align}
-\mathcal{R} = \mathcal{F} \cdot m \quad \rightarrow \quad \mathcal{F} = \frac{\mathcal{R}}{m}
-\end{align}
-Dazu schätzen wir die Beugungsordnung $m$ mit der Interferenzbedingung des Fabry-Pérot-Etalons ab:
-\begin{align}
-m = \frac{2 d}{\lambda} \sqrt{n^2 - \sin^2(\alpha)} \approx \frac{2 d n}{\lambda} \approx 18104
-\end{align}
-Damit erhalten wir:
-\begin{align}
+Anschließend bestimmen wir die Finesse aus deren Zusammenhang mit dem Auflösungsvermögen:
+\begin{align*}
+\mathcal{R} = \mathcal{F} \cdot m \quad \rightarrow \quad \mathcal{F} = \frac{\mathcal{R}}{m}\text{,}                    
+\end{align*}
+wobei wir die Ordnung $m$ wieder durch $m \approx \num{18104}$ abschätzen und erhalten:
+\begin{align*}
 	\mathcal{F}_\mathrm{trans.} = \num{9.39 +- 0.17} \\
-	\mathcal{F}_\mathrm{long.} = \num{9.06  +- 0.29}
-\end{align}
+	\mathcal{F}_\mathrm{long.} = \num{9.06  +- 0.29}\text{,}
+\end{align*}
+was ebenfalls in Anbetracht der theoretischen Werte plausibel ist.
 
-Nun wollen wir die Finesse mithilfe der CCD-Kamera Messung bestimmen.
-Dazu passen wir zunächst eine Gaußkurve $\mathcal{G}$ (mit konstantem Versatz) an die Daten ohne Magnetfeld an.
+Schließlich soll Auflösungsvermögen und Finesse mithilfe der CCD-Kamera bestimmt werden.
+Dazu muss im Wesentlichen die Breite eines Intensitätsmaximums des Fabry-Pérot-Etalons in der CCD-Aufnahme bestimmt werden.
+Um diese zu bestimmen passen wir, ähnlich zu Abschnitt \ref{sssec:magneton}, eine Summe von Gaußfunktion $\mathcal{G}$ und konstanter Verschiebung $d$ an die Intensitätsdaten ohne externes Magnetfeld an.
+Wir betrachten wieder das in Abbildung \ref{fig:peakauswahl} markierte Maximum und erhalten nach Anpassung die Abbildung \ref{fig:gauss0}.
 \begin{figure}[h]
 	\centering
 	\input{./plots/b0.tex}
-	\caption{0A}
+	\caption{Intensitätsverteilung eines inneren Rings bei abgeschaltetem Magnetfeld zur Bestimmung des Auflösungsvermögens über die Halbwertsbreite des Maximums.}
 	\label{fig:gauss0}
 \end{figure}
-Wir erhalten:
-\begin{align}
+Die Anpassung der Gaußfunktion liefert für den Peakschwerpunkt $\alpha$ und die Standardabweichung $\sigma$:
+\begin{align*}
 	\alpha &= \SI{1.01413 +- 0.00045}{\degree}\\
 	\sigma &= \SI{0.02800 +- 0.00054}{\degree}
-\end{align}
-Die Halbwertsbreite $\mathrm{HBW}$ der Gaußfunktion mit Standardabweichung $\sigma$ gilt:
-\begin{align}
+\end{align*}
+Man sieht, dass die Anpassung nicht gut ist ($\chi^2_\mathrm{d.o.f.} = 9.8$), da die Kurve maßgeblich von der Gaußform abweicht.
+Dennoch sollte die somit ermittelbare Halbwertsbreite für eine Abschätzung des Auflösungsvermögens ausreichend sein.
+Die Halbwertsbreite $\mathrm{HBW}$ der Gaußfunktion mit Standardabweichung $\sigma$ berechnet sich aus:
+\begin{align*}
 \mathrm{HWB} &= 2 \sqrt{2\log(2)} \cdot \sigma\\
  &= \SI{0.0659 +- 0.0013}{\degree}
-\end{align}
+\end{align*}
 Um diese in die Halbwertsbreite in Einheiten der Wellenlänge $\delta \lambda$ umzurechnen, verwenden wir die Näherung:
 \begin{align}
 	\delta \lambda &= \left| \frac{\mathrm{d}\lambda}{\mathrm{d}\alpha} \right| \cdot \mathrm{HWB} \\

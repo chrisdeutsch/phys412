@@ -164,7 +164,7 @@ Somit wird für feste Drehimpulsquantenzahl $\ell$ die Entartung des zugehörige
 \caption{Übergang von $^1$D$_2$ nach $^1$P$_1$ in der fünften Schale in Cadmium}
 \label{fig:termschema_cadmium}
 \end{figure}
-Im Gegensatz dazu wird beim anormalen Zeeman-Effekt das magnetische Moment aufgrund des Elektronenspins beachtet.
+Im Gegensatz dazu wird beim anomalen Zeeman-Effekt das magnetische Moment aufgrund des Elektronenspins beachtet.
 Dies führt dazu, dass das magnetische Moment des Elektrons gegeben ist durch:
 \begin{align}
 \vec{\mu} = -\frac{\mu_\mathrm{B}}{\hbar} \left( \vec{l} + g_s \vec{s} \right)
@@ -207,7 +207,7 @@ Man erhält somit folgende Auswahlregeln aus den nicht verschwindenden Matrixele
 Mit diesen Auswahlregeln folgen die Übergänge für Cadmium aus Abbildung \ref{fig:termschema_cadmium}.
 Anzumerken ist, dass es sich dabei um den normalen Zeeman-Effekt handelt und dadurch die Aufspaltung der P-Schale ($\ell = 1$) den gleichen Abstand hat, wie die der D-Schale ($\ell = 2$).
 Dadurch kommt es hier zu insgesamt drei Übergängen, mit unterschiedlichen Energien.
-Im Vergleich dazu liefert der anormaler Zeeman-Effekt mehrere Übergänge mit unterschiedlicher Energie, da sich die Energieniveaus aufgrund der Abhängigkeit vom Landé-Faktor in den jeweiligen Schalen nicht äquidistant aufspalten.
+Im Vergleich dazu liefert der anomale Zeeman-Effekt mehrere Übergänge mit unterschiedlicher Energie, da sich die Energieniveaus aufgrund der Abhängigkeit vom Landé-Faktor in den jeweiligen Schalen nicht äquidistant aufspalten.
 
 Die Elektronenkonfiguration des in diesem Versuch verwendeten Cadmiums ist [Kr] $4$d$^{10} 5$s$^2$, was nur abgeschlossene Schalen entspricht und daher hat das Atom einen Gesamtspin $S=0$, weswegen wir nur den normalen Zeeman-Effekt beobachten.
 
@@ -394,9 +394,9 @@ Dieser ist ebenfalls eine wichtige Eigenschaft des Gases, denn er gibt die Wahrs
 \subsubsection{Quecksilberatom: LS- und jj-Kopplung}
 Zur Erklärung des Franck-Hertz-Versuches müssen wir die Kopplung mehrerer Drehimpulskomponenten beachten.
 Grundsätzlich können in Systemen mit mehreren Drehimpulskomponenten diese untereinander koppeln, wobei wir uns hier auf den Bahndrehimpuls $\ell$ und den Elektronenspin $s$ mit Quantenzahl $\pm1/2$, der als Eigendrehimpuls interpretiert werden kann, beschränken.
-Der Hamiltonoperator für die Kopplung dieser beiden Drehimpulse ist gegeben durch
+Der Hamiltonoperator für die Kopplung dieser beiden Drehimpulse ist gegeben durch \cite{haken_wolf}:
 \begin{align*}
-\hat{H}=\frac{a}{\hbar^2}\hat{\vec{\ell}}\cdot\hat{\vec{s}}\qquad a=\frac{Ze^2\mu_0\hbar^2}{8\pi m_e^2 r^3}
+\hat{H}=\frac{a}{\hbar^2}\hat{\vec{\ell}}\cdot\hat{\vec{s}}\qquad a=\frac{Z\mu_0 e^2}{8\pi m_e^2 r^3}
 \end{align*}
 mit der Kopplungskonstanten $a$, die von der Kernladungszahl $Z$ abhängt.
 Diese Abhängigkeit von $Z$ sorgt dafür, dass die Kopplung von Spin und Bahndrehimpuls für unterschiedliche $Z$ betrachtet werden muss.
@@ -953,6 +953,11 @@ Dass der Anodenstrom nicht bei jedem Einbruch auf \SI{0}{\ampere} abfällt ist d
 
 \subsection{Diskussion}
 
+Abschließend lässt sich sagen, dass der Versuch gut gelungen ist.
+Der Aufbau bereitete keine Probleme, so dass wir auch ohne Schwierigkeiten die Messungen durchführen konnten.
+Die dabei gemessenen Werte entsprechen den Erwartungen und wir konnten die Energiequantelung bei Stoßprozessen anschaulich verstehen.
+Die Anregungsenergie von Quecksilber ließ sich gut bestimmen und wir konnten mit den gegebenen Informationen zum Wirkungsquerschnitt die beobachteten Übergänge bestimmen.
+
 \FloatBarrier
 
 % BIBLIOGRAPHIE
@@ -984,6 +989,13 @@ Dass der Anodenstrom nicht bei jedem Einbruch auf \SI{0}{\ampere} abfällt ist d
  \emph{"The Nobel Prize in Physics 1928"}.
  Nobel Media AB 2014. Web. 15\\
  (\url{http://www.nobelprize.org/nobel_prizes/physics/laureates/1928/richardson-lecture.pdf} abgerufen am 15.11.2014)
+ 
+\bibitem{haken_wolf}
+	Hermann Haken,Hans Christoph Wolf,
+	\emph{Atom- und Quantenphysik}.
+	Springer Verlag,
+	7. Auflage
+ 
 \end{thebibliography}
 
 % APPENDIX

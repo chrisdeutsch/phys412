@@ -1,0 +1,167 @@
+% PAKETE UND DOKUMENTKONFIGURATION
+\documentclass[11pt, a4paper]{article}
+
+% Encoding für Umlaute
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Silbentrennung
+\usepackage[ngerman]{babel}
+
+% erweiterte Matheumgebungen
+\usepackage{amsmath}
+
+% Braket Notation
+\usepackage{braket}
+
+% zusätzliche mathematische Schriftarten
+\usepackage{amsfonts}
+
+% verschiedene mathematische Symbole
+\usepackage{amssymb}
+
+% Einheiten setzen z.B. \SI{10}{\kilo\gram\meter\per\second\squared}
+% Fehler: \SI{10 +- 0,2e-4}{\metre}
+\usepackage{siunitx}
+\sisetup{
+  output-decimal-marker={,},
+  separate-uncertainty
+}
+
+% Randbreiten
+\usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
+
+% Bilder einfügen
+\usepackage{graphicx}
+
+% Verweise innerhalb des Dokuments
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,
+	allcolors = {black}
+}
+
+% bessere Tabellenlayouts
+\usepackage{booktabs}
+
+% Seitenlayout (Kopfzeile)
+\usepackage{fancyhdr}
+
+% Float Barriers
+\usepackage{placeins}
+
+% Pakete für gedrehte Subfigures
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+
+% Manuelle Silbentrennung
+\hyphenation{Halb-werts-brei-te Fa-bry-Pé-rot-E-ta-lon Zee-man-E-ffekt Cad-mi-um-Lam-pe Kon-den-sor-lin-se}
+
+% Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
+% 3 subsubsections)
+\setcounter{tocdepth}{3}
+
+% FANCYHDR SETUP
+\pagestyle{fancy}
+\fancyhead[EL,OR]{\thepage}
+\fancyhead[ER]{\leftmark}
+\fancyhead[OL]{\rightmark}
+
+\renewcommand{\sectionmark}[1]{
+\markboth{Abschnitt \thesection{}: #1}{\thesection{} #1}
+}
+\renewcommand{\subsectionmark}[1]{
+\markright{\thesubsection{} #1}
+}
+
+% DOKUMENTINFORMATIONEN
+\title{P402 \\ Quantelung von Energie}
+
+\author{Christopher Deutsch\footnote{christopher.deutsch@uni-bonn.de} \and Christian Bespin\footnote{christian.bespin@uni-bonn.de}}
+
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+
+\maketitle
+
+% DURCHFÜHRUNGSDATUM UND ASSISTENT
+\begin{center}
+\begin{tabular}{l r}
+Durchführung: & 1./2. Dezember 2014 \\
+Gruppe: & $\alpha$ 2 \\
+Assistent: & Dennis Proft
+\end{tabular}
+\end{center}
+
+% ZUSAMMENFASSUNG
+\begin{abstract}
+\noindent
+
+\end{abstract}
+
+\end{titlepage}
+
+% INHALTSVERZEICHNIS
+\tableofcontents
+% Neue Seite nach TOC
+\newpage
+
+% INHALT VERSUCHSPROTOKOLL
+
+\section{Grundlagen / Theorie}
+
+
+
+
+
+
+\clearpage
+
+% BIBLIOGRAPHIE
+
+% Maximale Anzahl der Einträge in Klammer
+% Zitieren mit \cite{lamport94}
+\begin{thebibliography}{9}
+
+\bibitem{hecht}
+	Eugene Hecht,
+	\emph{Optik}.
+	Oldenbourg,
+	5. Auflage
+	
+\bibitem{siegmann}
+	Anthony E. Siegmann,
+	\emph{Lasers}.
+	University Science Books,
+	1986
+	
+\bibitem{demtroeder3}
+	Wolfgang Demtröder,
+	\emph{Experimentalphysik 3}.
+	Springer Verlag,
+	3. Auflage
+
+\bibitem{np_richardson}
+ Nobelprize.org,
+ \emph{"The Nobel Prize in Physics 1928"}.
+ Nobel Media AB 2014. Web. 15\\
+ (\url{http://www.nobelprize.org/nobel_prizes/physics/laureates/1928/richardson-lecture.pdf} abgerufen am 15.11.2014)
+ 
+\bibitem{haken_wolf}
+	Hermann Haken, Hans Christoph Wolf,
+	\emph{Atom- und Quantenphysik}.
+	Springer Verlag,
+	7. Auflage
+ 
+\end{thebibliography}
+
+% APPENDIX
+\begin{appendix}
+
+\end{appendix}
+
+\end{document}

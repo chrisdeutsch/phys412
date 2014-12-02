@@ -6,7 +6,7 @@ set output './plots/template.tex'
 
 set title ''
 
-set key bottom right
+set key top right
 
 set xrange [*:*]
 set yrange [*:*]

@@ -10,7 +10,7 @@ set key bottom right
 
 set xrange [*:*]
 set yrange [*:*]
-set xlabel '$\sin(\alpha)+\sin(\beta)$''
+set xlabel '$\sin(\alpha)+\sin(\beta)$'
 set ylabel 'Wellenlänge $\lambda$ / \si{\nano\meter}'
 
 set grid

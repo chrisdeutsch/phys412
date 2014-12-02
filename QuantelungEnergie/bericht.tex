@@ -55,6 +55,13 @@
 \usepackage{subcaption}
 \usepackage{rotating}
 
+% Caption-Setup
+\captionsetup{font={small}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+\renewcommand{\thefigure}{\thesection.\arabic{table}}
+\renewcommand{\thesubfigure}{\alph{subtable}}
+
 % Manuelle Silbentrennung
 \hyphenation{Halb-werts-brei-te Fa-bry-Pé-rot-E-ta-lon Zee-man-E-ffekt Cad-mi-um-Lam-pe Kon-den-sor-lin-se}
 
@@ -163,6 +170,22 @@ Bringt man zwei unterschiedliche Leiter mit verschiedenen Austrittsarbeiten in K
 
 
 \clearpage
+
+\section{Grafikstorage}
+
+\begin{figure}
+\centering
+\input{./plots/gitterkonstante.tex}
+\caption{Gitterkonstante}
+\label{fig:gitterkonstante}
+\end{figure}
+
+\begin{figure}
+\centering
+\input{./plots/aufspaltung/rot3.tex}
+\caption{Isotopieaufspaltung rot}
+\label{fig:aufspaltung_rot3}
+\end{figure}
 
 % BIBLIOGRAPHIE
 

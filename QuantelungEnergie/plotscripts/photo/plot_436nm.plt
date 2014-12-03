@@ -22,8 +22,8 @@ f(x) = m1 * x + n1
 g(x) = m2 * x + n2
 
 # Range auf den quadratischen Bereich einstellen
-fit[x=0.0:0.83] f(x) './messwerte/Photoeffekt/photo_436nm_1.txt' using 1:3:4 via m1, n1
-fit[x=0.0:0.83] g(x) './messwerte/Photoeffekt/photo_436nm_2.txt' using 1:3:4 via m2, n2
+fit[x=0.0:0.95] f(x) './messwerte/Photoeffekt/photo_436nm_1.txt' using 1:3:4 via m1, n1
+fit[x=0.0:0.95] g(x) './messwerte/Photoeffekt/photo_436nm_2.txt' using 1:3:4 via m2, n2
 
 load './../gnuplot_linestyles.plt'
 

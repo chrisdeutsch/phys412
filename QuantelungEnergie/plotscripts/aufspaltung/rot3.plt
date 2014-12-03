@@ -10,7 +10,7 @@ set key top right
 
 set samples 10000
 
-set xrange [0.15:0.24]
+set xrange [0.15:0.23]
 set yrange [0:*]
 set xlabel 'Winkel $\alpha$ / \si{\degree}'
 set ylabel 'Intensität $I$ / \si{\percent}'
@@ -33,7 +33,7 @@ c2 = 0.01
 d = 0.6
 
 t(x)= a1*exp(-0.5*((x-b1)/c1)**2) + a2*exp(-0.5*((x-b2)/c2)**2)  + d
-fit[x=0.15:0.24] t(x) './messwerte/CCd/rot3.txt' using 1:2:(0.5) via a1, a2, b1, b2, c1, c2, d
+fit[x=0.15:0.23] t(x) './messwerte/CCd/rot3.txt' using 1:2:(0.5) via a1, a2, b1, b2, c1, c2, d
 
 g1(x) = a1*exp(-0.5*((x-b1)/c1)**2) # Gaußfit 1
 g2(x) = a2*exp(-0.5*((x-b2)/c2)**2) # Gaußfit 2

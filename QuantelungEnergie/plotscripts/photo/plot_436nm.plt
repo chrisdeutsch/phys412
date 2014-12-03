@@ -2,6 +2,8 @@ reset
 
 set term epslatex color size 5,3.5
 
+set decimalsign ","
+
 set output './plots/photo/kennlinien_436nm.tex'
 
 set title ''

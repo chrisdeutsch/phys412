@@ -2,6 +2,8 @@ reset
 
 set term epslatex color size 5.2,3.5
 
+set decimalsign ","
+
 set output './plots/aufspaltung/rot3.tex'
 
 set title ''

@@ -8,7 +8,7 @@ set title ''
 
 set key bottom right
 
-set xrange [*:*]
+set xrange [500:850]
 set yrange [*:*]
 set xlabel '$\nu \, / \, \si{\tera\hertz}$'
 set ylabel '$U_G \, / \, \si{\volt}$'

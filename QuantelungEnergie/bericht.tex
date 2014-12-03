@@ -167,19 +167,57 @@ Bringt man zwei unterschiedliche Leiter mit verschiedenen Austrittsarbeiten in K
 	U_\mathrm{K} = \frac{\phi_1 - \phi_2}{e}
 \end{align}
 
-\section{Auswertung}
+\section{Bestimmung des Planckschen Wirkungsquantums}
 
-$\beta$ aus $\omega_G$ und auf dem Okular gemessenem $d$ durch:
-\subsection{Bestimmung der Gitterkonstanten}
-\begin{align}
-	\Delta \beta = \frac{d}{f} \text{ in KWN}
-\end{align}
+
+\section{Balmer-Serie}
+
+\subsection{Auswertung}
+\subsubsection{Bestimmung der Gitterkonstanten}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.65\textwidth]{./figures/winkelverhaeltniss.pdf}
+	\caption{Winkelverhältnis zwischen Gitter und optischer Bank}
+	\label{fig:winkelverhaeltnis}
+\end{figure}
+Aus Abbildung \ref{fig:winkelverhaeltnis} folgt der Zusammenhang zwischen gemessenen Winkeln und Ein-/Ausfallswinkel des Strahls auf das Gitter: 
+\begin{align*}
+	\alpha &= \omega_\text{G} \\
+	\beta &= \omega_\text{G} + \omega_\text{B} - \SI{180}{\degree}
+\end{align*}
+Korrektur des Ausfallswinkels aufgrund der Messung von $d$ mit dem Objektiv:
+\begin{align*}
+\Delta \beta = -\frac{d}{f} \text{ in KWN}
+\end{align*}
 $f$ Brennweite des Fernrohrobjektivs ($\SI{300}{\milli\metre}$).
-Grafik zu den Winkeln (siehe Prak-Anleitung):
+So folgt der tatsächliche Ausfallswinkel gemäß:
+\begin{align*}
+	\beta^\prime = \beta + \Delta \beta
+\end{align*}
+Zur Bestimmung der Gitterkonstanten tragen wir $\sin(\alpha) + \sin(\beta)$ gegen $\lambda$ auf, um mit der Gittergleichung
+\begin{align*}
+	\sin(\alpha) + \sin(\beta) = \frac{1}{g} \cdot \lambda
+\end{align*}
+zu erhalten.
+Wir wählen diese Form der Gleichung, da bei einer Anpassung mit üblichen Least-Squares-Verfahren nur Fehler in $y$-Richtung beachtet werden.
+Da der Fehler der Wellenlänge $\lambda$ gegen den der Sinus-Summe vernachlässigbar ist, wurde diese Form gewählt (\#machmalrichtig).
+Wir erhalten für die Anpassung:
 \begin{align}
-	\alpha = \omega_\text{G} \\
-	\beta = \omega_\text{G} + \omega_\text{B} - \SI{180}{\degree}
+	\sin(\alpha) + \sin(\beta) = \SI{2439.6 +- 2.1}{\per\milli\metre} \cdot \lambda \text{,}
 \end{align}
+was einer Gitterkonstanten in reziproken Einheiten von:
+\begin{align*}
+	\frac{1}{g} = (\num{2439.6 +- 2.1}) \, \frac{\mathrm{Linien}}{\si{\milli\metre}}
+\end{align*}
+entspricht.
+Nach Kehrwertbildung ergibt sich:
+\begin{align*}
+	g = \SI{409.90 +- 0.36}{\nano\metre} \text{.}
+\end{align*}
+
+
+
+
 \begin{table}[h]
 	\centering
 	\input{./tables/photoeffekt_fit_ergebnisse.tex}

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.5">
-<info created="D:20141204201241" modified="D:20141204203836"/>
+<info created="D:20141204201241" modified="D:20141204214010"/>
 <preamble>
 % Encoding für Umlaute
 \usepackage[utf8]{inputenc}
@@ -293,7 +293,7 @@ h
 288 624 l
 </path>
 <path matrix="1 0 0 1 -88 0" stroke="black" pen="heavier">
-0 32 -4 -0 352 656 e
+0 32 -4 0 352 656 e
 </path>
 <text matrix="1 0 0 1 0 8" transformations="translations" pos="224 608" stroke="black" type="label" width="42.414" height="6.861" depth="0" halign="center" valign="center">Irisblende</text>
 <text matrix="1 0 0 1 0 -20" transformations="translations" pos="232 720" stroke="black" type="minipage" width="64" height="12.864" depth="7.89" valign="center" style="center">Linse\\
@@ -370,87 +370,34 @@ $f=\SI{100}{\milli\metre}$</text>
 464 608 m
 464 600 l
 </path>
-<path matrix="1 0 0 1 -12.0352 -13.9542" stroke="black">
+<path matrix="1 0 0 1 35.9655 -1.76792" stroke="black">
 336 592 m
 344 592 l
 </path>
-<path matrix="1 0 0 1 -12.0352 -13.9542" stroke="black">
+<path matrix="1 0 0 1 35.9655 -1.76792" stroke="black">
 332 588 m
 348 588 l
 </path>
-<path matrix="1 0 0 1 -24 0" stroke="black">
+<path matrix="1 0 0 1 24.0007 12.1863" stroke="black">
 351.965 578.046 m
 352 588 l
 </path>
-<path matrix="1 0 0 1 -24 0" stroke="black">
+<path matrix="1 0 0 1 24.0007 12.1863" stroke="black">
 351.965 574.046 m
 352 564 l
 </path>
-<path matrix="1 0 0 1 0 -4" stroke="black">
-372 604 m
-380 604 l
-380 588 l
-372 588 l
-372 604 l
-</path>
-<path matrix="1 0 0 1 0 -12" stroke="black">
-372 580 m
-380 580 l
-380 564 l
-372 564 l
-372 580 l
-</path>
-<path stroke="black">
-376 584 m
-376 568 l
-</path>
-<path stroke="black">
-376 608 m
-376 600 l
-</path>
-<path stroke="black">
-376 608 m
-328 608 l
-</path>
-<path matrix="1 0 0 1 -24 0" stroke="black">
-352 608 m
-352 588 l
-</path>
-<path stroke="black">
-376 552 m
-376 544 l
-328 544 l
-328 564 l
-</path>
-<path matrix="1 0 0 1 -24 0" stroke="black" arrow="normal/tiny">
+<path matrix="1 0 0 1 24.0007 12.1863" stroke="black" arrow="normal/tiny">
 344 568 m
 360 584 l
 </path>
-<path stroke="black">
-376 576 m
-464 576 l
-464 600 l
-</path>
-<use name="mark/disk(sx)" pos="376 608" size="tiny" stroke="black"/>
-<use name="mark/disk(sx)" pos="376 576" size="tiny" stroke="black"/>
-<path matrix="1 0 0 1 -92 -16" stroke="black">
+<path matrix="1 0 0 1 -92 -20" stroke="black">
 6.03704 0 0 6.03704 444 608 e
 </path>
-<path matrix="1 0 0 1 -92 -16" stroke="black" arrow="normal/tiny">
+<path matrix="1 0 0 1 -92 -20" stroke="black" arrow="normal/tiny">
 436 600 m
 452 616 l
 </path>
-<path stroke="black">
-376 576 m
-352 576 l
-352 585.963 l
-</path>
-<path stroke="black">
-352 608 m
-352 598.037 l
-</path>
-<use name="mark/disk(sx)" pos="352 608" size="tiny" stroke="black"/>
-<text matrix="1 0 0 1 -24 0" transformations="translations" pos="360 592" stroke="black" type="label" width="7.888" height="6.808" depth="0" valign="center">$U$</text>
+<text matrix="1 0 0 1 -24 -4" transformations="translations" pos="360 592" stroke="black" type="label" width="7.888" height="6.808" depth="0" valign="center">$U$</text>
 <path stroke="black" dash="dotted">
 412 628 m
 412 592 l
@@ -458,10 +405,7 @@ $f=\SI{100}{\milli\metre}$</text>
 456 628 l
 h
 </path>
-<text matrix="1 0 0 1 12 0" transformations="translations" pos="420 632" stroke="black" type="label" width="64.714" height="6.861" depth="0" halign="center" valign="baseline">Messverstärker</text>
-<text transformations="translations" pos="384 592" stroke="black" type="label" width="12.034" height="6.812" depth="1.49" valign="center">$R_1$</text>
-<text transformations="translations" pos="384 560" stroke="black" type="label" width="12.034" height="6.812" depth="1.49" valign="center">$R_2$</text>
-<text transformations="translations" pos="308 576" stroke="black" type="label" width="10.684" height="7.49" depth="0" valign="center">$U^\prime$</text>
+<text matrix="1 0 0 1 13.4343 0.159366" transformations="translations" pos="420 632" stroke="black" type="label" width="64.714" height="6.861" depth="0" halign="center" valign="baseline">Messverstärker</text>
 <path stroke="black" arrow="normal/small">
 407.524 716.402 m
 378.519 666.058 l
@@ -472,5 +416,31 @@ h
 </path>
 <text matrix="1 0 0 1 -24 0" transformations="translations" pos="396.022 718.669" stroke="black" type="label" width="76.5" height="6.868" depth="1.93" valign="baseline">Pt-Rh Ringanode</text>
 <text matrix="1 0 0 1 -20.4306 -3.02796" transformations="translations" pos="429.967 693.808" stroke="black" type="label" width="48.418" height="6.861" depth="0" valign="baseline">K-Kathode</text>
+<path stroke="black">
+376 600 m
+376 608 l
+</path>
+<path matrix="1 0 0 1 0 8" stroke="black">
+376 568 m
+376 560 l
+</path>
+<path matrix="1 0 0 1 0 8" stroke="black">
+372 560 m
+380 560 l
+</path>
+<path matrix="1 0 0 1 0 8" stroke="black">
+376 568 m
+352 568 l
+352 573.963 l
+</path>
+<path matrix="1 0 0 1 0 8" stroke="black">
+352 586.037 m
+352 592 l
+376 592 l
+</path>
+<path stroke="black">
+460 600 m
+468 600 l
+</path>
 </page>
 </ipe>

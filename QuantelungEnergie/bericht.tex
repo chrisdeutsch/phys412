@@ -8,8 +8,9 @@
 % Silbentrennung
 \usepackage[ngerman]{babel}
 
-% erweiterte Matheumgebungen
+% erweiterte Matheumgebungen und Formelnummer mit Secitonnummer
 \usepackage{amsmath}
+\numberwithin{equation}{section}
 
 % Braket Notation
 \usepackage{braket}
@@ -173,8 +174,7 @@ Bringt man zwei unterschiedliche Leiter mit verschiedenen Austrittsarbeiten in K
 
 \section{Balmer-Serie}
 
-\subsection{Auswertung}
-\subsubsection{Bestimmung der Gitterkonstanten}
+\subsection{Bestimmung der Gitterkonstanten}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.65\textwidth]{./figures/winkelverhaeltniss.pdf}
@@ -242,6 +242,42 @@ Wir vergrößern nun den Bildausschnitt, um den Bereich der Linie besser betrach
 Da dies nicht immer eindeutig gelang haben wir zu jeder Linie mehrere Messungen durchgeführt und zur Auswertung jeweils die Messung gewählt, bei der die Aufspaltung gut zu erkennen war.
 Wegen der teilweise hohen Schwankungen der Intensität haben wir die Messwerte im Programm über eine gewisse Zeit mitteln lassen, bis mit dem Auge beinahe keine Schwankungen mehr zu erkennen waren.
 
+\subsubsection{Auswertung}
+
+Wir wählen wie bereits erwähnt die jeweils beste Messung aus den vorliegenden Daten aus und stellen die Aufspaltung grafisch dar.
+Dabei passen wir mit gnuplot (least-squares-fit) zwei Gaußfunktionen an die Maxima mit folgender Fithypothese an:
+\begin{align}
+f(x)&=\mathcal{G}_1(x)+\mathcal{G}_2(x) + d\qquad\text{mit}\\
+\mathcal{G}_i(x)&=A\,\exp\left[-\frac{1}{2}\left(\frac{x-S_i}{\sigma_i}\right)^2\right]
+\end{align}
+Diese sind zusammen mit den Messdaten in den Abbildungen \ref{fig:aufspaltung_rot}, \ref{fig:aufspaltung_tuerkis} und \ref{fig:aufspaltung_blau} dargestellt.
+Für den Intensitätsfehler haben wir mit Berücksichtigung der Mittelung der Messwerte über einen Zeitraum (die genommenen Daten unterliegen deswegen sehr kleinen Schwankungen) \SI{0.2}{\percent} für die Daten zur roten und türkisen Linie angenommen.
+Für die blaue Linie haben wir aufgrund der geringen Intensität sehr lange im Programm VideoCom mitteln lassen und wählen deswegen \SI{0.1}{\percent} als Fehler für die Intensität.
+Den Fehler des Winkels schätzen wir zu \SI{0.003}{\degree} ab; dies folgt aus der Überlegung, dass wir einen Winkelbereich von ca. \SI{5.5}{\degree} auf \num{2048} Pixeln messen.
+\begin{figure}[h]
+\centering
+\input{./plots/aufspaltung/rot2.tex}
+\caption{Isotopieaufspaltung rot}
+\label{fig:aufspaltung_rot}
+\end{figure}
+\begin{figure}[h]
+\centering
+\input{./plots/aufspaltung/tuerkis1.tex}
+\caption{Isotopieaufspaltung tuerkis}
+\label{fig:aufspaltung_tuerkis}
+\end{figure}
+\begin{figure}[h]
+\centering
+\input{./plots/aufspaltung/blau1.tex}
+\caption{Isotopieaufspaltung blau}
+\label{fig:aufspaltung_blau}
+\end{figure}
+In Abbildung \ref{fig:aufspaltung_blau} ist offensichtlich, dass die Amplitude der Maxima nicht korrekt angepasst wurde.
+Da die Linien sehr schmal und die Aufspaltung sehr gering ist, liegen hier wenige Messdaten vor, an die die Funktion angepasst werden kann.
+Dabei ist die Anpassung auch noch sehr stark von der Wahl der Anfangsbedingungen abhängig.
+Einzig die für diese Anpassung gewählten Anfangsbedingungen (der Anfangswert der Amplitude des Hauptmaximas wurde bei der Anpassung übernommen) liefert ein halbwegs sinnvolles Ergebnis.
+Da die Amplitude zur Auswertung nicht benötigt wird und die Schwerpunkte der Gaußkurven sinnvoll erscheinen, ist dies die unserer Meinung nach beste Möglichkeit, auswertbare Daten zu erhalten und wir werden diese Anpassung zur Auswertung nutzen.
+
 \clearpage
 
 \begin{table}[h]
@@ -293,28 +329,6 @@ Wegen der teilweise hohen Schwankungen der Intensität haben wir die Messwerte i
 \input{./plots/gitterkonstante.tex}
 \caption{Gitterkonstante}
 \label{fig:gitterkonstante}
-\end{figure}
-
-\begin{figure}
-\centering
-\input{./plots/aufspaltung/rot2.tex}
-\caption{Isotopieaufspaltung rot}
-\label{fig:aufspaltung_rot}
-\end{figure}
-
-\begin{figure}
-\centering
-\input{./plots/aufspaltung/tuerkis1.tex}
-\caption{Isotopieaufspaltung tuerkis}
-\label{fig:aufspaltung_tuerkis}
-\end{figure}
-
-
-\begin{figure}
-\centering
-\input{./plots/aufspaltung/blau1.tex}
-\caption{Isotopieaufspaltung blau}
-\label{fig:aufspaltung_blau}
 \end{figure}
 
 \clearpage

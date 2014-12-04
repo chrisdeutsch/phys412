@@ -43,7 +43,7 @@ g2(x) = a2*exp(-0.5*((x-b2)/c2)**2) # Gaußfit 2
 
 load './../gnuplot_linestyles.plt'
 
-plot 	'./messwerte/CCD/blau2.txt' using 1:2:(0.2) with yerrorbars t'Messwerte' ls 1,\
+plot 	'./messwerte/CCD/blau2.txt' using 1:2:(0.003):(0.1) with xyerrorbars t'Messwerte' ls 1,\
 		t(x) t'$\Sigma$' ls 1 lw 2,\
 		g1(x) t'$\mathcal{G}_1$' ls 2 lw 2,\
 		g2(x) t'$\mathcal{G}_2$' ls 3 lw 2\

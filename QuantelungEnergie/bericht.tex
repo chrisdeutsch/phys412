@@ -198,7 +198,20 @@ Zur Messung des Photostroms erfolgt über einen Messverstärker, welcher eine zu
 Die Messung von Gegenspannung und Photostrom erfolgt dann über zwei Voltmeter, welche die Spannung an Messverstärker beziehungsweise Spannungsteiler messen.
 
 \subsubsection{Messung der Kennlinien}
-Widerstandsauswahl: \SI{220}{\ohm} und \SI{100}{\ohm}
+Zunächst wählen wir den Interferenzfilter mit Mittenwellenlänge $\lambda = \SI{365}{\nano\metre}$ und überprüfen, in welcher Größenordnung sich die Grenzspannung $U_0$, bei der kein Photostrom mehr fließt, befindet.
+Diese liegt in der Größenordnung von \SI{2}{\volt}, daher wählen wir einen Spannungsteiler aus \SI{100}{\ohm} und \SI{222}{\ohm}.
+(Warum kein \SI{333}{\ohm ?})
+
+Nun wird mit der Messung der Kennlinien für die Wellenlängen $\lambda = \num{365}, \num{405} , \num{436}, \num{546}, \SI{578}{\nano\metre}$ begonnen.
+Es wird für jeden Filter wie folgt vorgegangen:
+\begin{itemize}
+  \item Messung des Anodenphotostroms $I_0$: Es wird der Strom bei maximaler Gegenspannung gemessen, da bei dieser kein Kathodenphotostrom mehr stattfindet.
+  Der gemessene Strom entspricht dabei nicht dem Anodenphotostroms, sondern der Summe von Anodenphotostrom und Offset des Verstärkers.
+  Der Offset wurde nicht konkret bestimmt, da die gemessenen Kennlinien $I-I_0$ als Differenz zweier offsetbehafteter Größen aufgetragen werden und ein konstanter Versatz somit keinen Einfluss auf die Differenz hat. 
+  \item Abschätzung der Grenzspannung $U_0$: Es wird die Gegenspannung langsam verringert bis ein signifikanter Anstieg des Photostroms beobachtet werden kann.
+  Die Gegenspannung bei der dies einsetzt, dient als erste Abschätzung der Grenzspannung, sodass der Messbereich entsprechend gewählt werden kann.
+  \item Messung der Kennlinie: Es wird bei der Messung bei einer Gegenspannung von $U = \SI{0}{\volt}$ begonnen, welche (hochgeregelt wird s.d. etwas mehr als 10 Werte im quadratischen Bereich liegen).
+\end{itemize}
 
 \subsection{Auswertung}
 

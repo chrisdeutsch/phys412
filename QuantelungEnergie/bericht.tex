@@ -202,7 +202,7 @@ Zunächst wählen wir den Interferenzfilter mit Mittenwellenlänge $\lambda = \S
 Diese liegt in der Größenordnung von \SI{2}{\volt}, daher wählen wir einen Spannungsteiler aus \SI{100}{\ohm} und \SI{222}{\ohm}.
 (Warum kein \SI{333}{\ohm ?})
 
-Nun wird mit der Messung der Kennlinien für die Wellenlängen $\lambda = \num{365}, \num{405} , \num{436}, \num{546}, \SI{578}{\nano\metre}$ begonnen.
+Nun wird mit der Messung der Kennlinien für die Wellenlängen $\lambda = \num{365}$, \num{405} , \num{436}, \num{546}, \SI{578}{\nano\metre} begonnen.
 Es wird für jeden Filter wie folgt vorgegangen:
 \begin{itemize}
   \item Messung des Anodenphotostroms $I_0$: Es wird der Strom bei maximaler Gegenspannung gemessen, da bei dieser kein Kathodenphotostrom mehr stattfindet.
@@ -210,8 +210,40 @@ Es wird für jeden Filter wie folgt vorgegangen:
   Der Offset wurde nicht konkret bestimmt, da die gemessenen Kennlinien $I-I_0$ als Differenz zweier offsetbehafteter Größen aufgetragen werden und ein konstanter Versatz somit keinen Einfluss auf die Differenz hat. 
   \item Abschätzung der Grenzspannung $U_0$: Es wird die Gegenspannung langsam verringert bis ein signifikanter Anstieg des Photostroms beobachtet werden kann.
   Die Gegenspannung bei der dies einsetzt, dient als erste Abschätzung der Grenzspannung, sodass der Messbereich entsprechend gewählt werden kann.
-  \item Messung der Kennlinie: Es wird bei der Messung bei einer Gegenspannung von $U = \SI{0}{\volt}$ begonnen, welche (hochgeregelt wird s.d. etwas mehr als 10 Werte im quadratischen Bereich liegen).
+  \item Messung der Kennlinie: Es wird bei der Messung bei einer Gegenspannung von $U = \SI{0}{\volt}$ begonnen, welche schrittweise bis zur abgeschätzten Grenzspannung $U_0$ hochgeregelt wird. Dabei wird beachtet, dass ausreichend Messpunkte im quadratischen Bereich der Kennlinie liegen.
 \end{itemize}
+Nachdem 
+
+
+% Messung 365nm
+\begin{table}
+	\centering
+	\begin{subtable}{0.5\textwidth}
+		\centering
+		
+		\input{./tables/photoeffekt/photo_365nm_1.tex}
+		
+		\caption{<subcaption>}
+	\end{subtable}%
+	\begin{subtable}{0.5\textwidth}
+		\centering
+		
+		\input{./tables/photoeffekt/photo_365nm_2.tex}
+		
+		\caption{<subcaption>}
+	\end{subtable}
+	
+	\caption{<main caption>}
+\end{table}
+
+% Messung 405nm
+
+% Messung 436nm
+
+% Messung 546nm
+
+% Messung 578nm
+
 
 \subsection{Auswertung}
 

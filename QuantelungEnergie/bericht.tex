@@ -195,6 +195,7 @@ Nach dem Abschluss der Justage wird die Schutzkappe wieder auf die Photozelle ge
 
 Die Elektronik zur Messung der Kennlinien besteht aus einer regelbaren Spannungsquelle (\num{0}-\SI{12}{\volt}), welche über einem Spannungsteiler die Gegenspannung der Photozelle liefert.
 Zur Messung des Photostroms erfolgt über einen Messverstärker, welcher eine zum Strom proportionale Spannung ausgibt.
+Die im Versuch auftretenden Ströme wurden dabei mit einem Verstärkungsfaktor von $V = \SI{1e-8}{\ampere\per\volt}$ gemessen, wobei der Fehler auf diesen vernachlässigt wird.
 Die Messung von Gegenspannung und Photostrom erfolgt dann über zwei Voltmeter, welche die Spannung an Messverstärker beziehungsweise Spannungsteiler messen.
 
 \subsubsection{Messung der Kennlinien}
@@ -214,13 +215,79 @@ Es wird für jeden Filter wie folgt vorgegangen:
 \end{itemize}
 Nachdem die Kennlinienmessung für jeden Filter einmal durchgeführt wurde, wiederholen wir die Messungen um Intensitätsschwankungen der Quecksilberdampflampe feststellen zu können.
 
+Anschließend wird die Kennlinie der Photozelle bei höherer Intensität vermessen, dabei wird nur der Filter mit Mittelwellenlänge $\lambda = \SI{365}{\nano\metre}$ verwendet.
+Dazu wird die Öffnung der Irisblende soweit vergrößert, dass ein signifikanter Anstieg des Photostroms beobachtet werden kann, ohne dabei die Ringanode zu beleuchten.
+Analog zum vorigen Teil wird der Anodenphotostrom bei maximaler Gegenspannung gemessen, die Grenzspannung abgeschätzt und gemäß diesen der Messbereich der Kennlinie gewählt.
 
-Um den Einfluss von höherer Intensität auf die Kennlinie zu vermessen, wird zum Vergleich der Filter mit der Mittelwellenlänge $\lambda = \SI{365}{\nano\metre}$ bei vergrößerter Irisblende vermessen.
-
-
+Es wird der absolute Fehler der Gegenspannungsmessung mit dem Digitalmultimeter konservativ auf $\Delta U = \SI{2}{\milli\ampere}$ abgeschätzt.
+Im Gegensatz dazu, konnte eine starke Schwankung der Photostrom-Messung mit dem Messverstärker bei hohen Strömen festgestellt werden.
+Daher wird hier ein relativer Fehler von $\frac{\Delta I}{I} = \SI{2}{\percent}$ abgeschätzt
 
 \subsection{Auswertung}
+Zunächst wird gemäß des Verstärkerfaktors von $V = \SI{1e-8}{\ampere\per\volt}$ aus der gemessenen Spannung der Photostrom $I$ und des Anodenstroms $I_0$ berechnet.
+Es wird auf die Angabe der gemessenen Spannungen verzichtet und stattdessen direkt der Kathodenphotostrom $I-I_0$ angegeben.
+Dabei wurde der Fehler $\Delta (I - I_0)$ durch Gaußssche Fehlerfortpflanzung aus den relativen Fehlern $\frac{\Delta I}{I} = \frac{\Delta I_0}{I_0} = \SI{2}{\percent}$ berechnet.
+Die Kennlinienmessungen finden sich im Anhang \ref{app:kennlinien}.
 
+
+
+\subsubsection{Bestimmung der Grenzspannung $U_0$ für die verschiedenen Wellenlängen}
+Zur Bestimmung der Grenzspannung wird ausgenutzt, dass die Kennlinie im Anlaufgebiet quadratisch mit der Gegenspannung $U$ anwächst.
+Daher kann durch Auftragen der Wurzel des Kathodenphotostroms $\sqrt{I-I_0}$ gegen die anliegende Gegenspannung $U$ die Kennlinie linearisiert werden und durch Extrapolation des linearen Teils der Kurve die Grenzspannung $U_0$ als Schnittpunkt mit der $x$-Achse berechnet werden.
+Dabei ist zu beachten, dass bei hohen Gegenspannungen eine Abweichung vom quadratischen Zusammenhang zu beobachten ist, welche bei der Extrapolation vernachlässigt werden.
+Die Linearisierung wurde in Abbildung \ref{fig:kennlinien_exemp_365nm} exemplarisch aufgetragen, wobei der Fehler gemäß der Gaußsschen Fehlerfortpflanzung bei Bildung der Wurzel berechnet wurde.
+\begin{figure}[h]
+	\centering
+	\input{./plots/photo/kennlinien_365nm.tex}
+	\caption{Linearisierung der Kennlinie bei einer Wellenlänge von $\lambda = \SI{365}{\nano\metre}$. }
+	\label{fig:kennlinien_exemp_365nm}
+\end{figure}
+Um schließlich die Grenzspannung zu erhalten, wird an den linearen Teil der Kurve eine Gerade mithilfe eines Least-Squares-Verfahrens (\texttt{Gnuplot}) angepasst.
+Die restlichen Linearisierungen wurden im Anhang \ref{app:kennlinien} zusammengetragen und die Ergebnisse der Anpassung in Tabelle \ref{tab:photoeffekt_fit_results} zusammengefasst.
+\begin{figure}[h]
+	\centering
+	\input{./plots/photo/kennlinien_365nm.tex}
+	\caption{Linearisierung der Kennlinie bei einer Wellenlänge von $\lambda = \SI{365}{\nano\metre}$. }
+	\label{fig:kennlinien_exemp_365nm}
+\end{figure}
+
+
+\begin{table}[h]
+	\centering
+	\input{./tables/photoeffekt_fit_ergebnisse.tex}
+	\caption{Ergebnisse der Anpassung einer Geraden $f(x) = m \cdot x + b$ an die linearisierten Kennlinien bei verschiedenen Wellenlängen}
+	\label{tab:photoeffekt_fit_results}
+\end{table}
+
+\begin{table}[h]
+	\centering
+	\input{./tables/photoeffekt_grenzspannungen.tex}
+	\caption{Grenzspannungen}
+	\label{tab:photoeffekt_grenzspannungen}
+\end{table}
+
+\subsubsection{Ermittlung des Planckschen Wirkungsquantums aus den Grenzspannungen}
+\begin{table}[h]
+	\centering
+	\input{./tables/photoeffekt_planck_quantum_daten.tex}
+	\caption{Linearisierung zur Bestimmung von h}
+	\label{tab:photoeffekt_planck_fitdaten}
+\end{table}
+\begin{figure}[h]
+	\centering
+	\input{./plots/planck_quantum_linearisierung.tex}
+	\caption{Linearisierung zur Bestimmung von $h$}
+	\label{fig:lin_h}
+\end{figure}
+
+
+\subsubsection{Einfluss der Intensität auf die Kennlinien}
+\begin{figure}[h]
+	\centering
+	\input{./plots/kennlinie_intensitaet.tex}
+	\caption{Intensitätsvergleich der Kennlinien}
+	\label{fig:kennlinie_intensitaet}
+\end{figure}
 
 \section{Balmer-Serie}
 
@@ -379,25 +446,6 @@ Der Literaturwert der roten Balmer-Linie liegt nicht mehr im $1$-$\sigma$-Bereic
 Die Aufspaltung der blauen Linie ist unter Berücksichtigung der schlechten Anpassung, die der Auswertung zugrunde liegt, gut bestimmt worden.
 \clearpage
 
-\begin{table}[h]
-	\centering
-	\input{./tables/photoeffekt_fit_ergebnisse.tex}
-	\caption{Fit Resulatate}
-	\label{tab:photoeffekt_fit_results}
-\end{table}
-\begin{table}[h]
-	\centering
-	\input{./tables/photoeffekt_planck_quantum_daten.tex}
-	\caption{Linearisierung zur Bestimmung von h}
-	\label{tab:photoeffekt_planck_fitdaten}
-\end{table}
-
-\begin{table}[h]
-	\centering
-	\input{./tables/photoeffekt/photo_365nm_2.tex}
-	\caption{Messdaten 365 1}
-	\label{tab:365nm_1}
-\end{table}
 
 \clearpage
 
@@ -431,55 +479,6 @@ Die Aufspaltung der blauen Linie ist unter Berücksichtigung der schlechten Anpa
 \end{figure}
 
 \clearpage
-
-\begin{figure}
-	\centering
-	\input{./plots/photo/kennlinien_365nm.tex}
-	\caption{Kennlinien 365nm}
-	\label{fig:kennlinien_365nm}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\input{./plots/photo/kennlinien_405nm.tex}
-	\caption{Kennlinien 405nm}
-	\label{fig:kennlinien_405nm}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\input{./plots/photo/kennlinien_436nm.tex}
-	\caption{Kennlinien 436nm}
-	\label{fig:kennlinien_436nm}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\input{./plots/photo/kennlinien_546nm.tex}
-	\caption{Kennlinien 546nm}
-	\label{fig:kennlinien_546nm}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\input{./plots/photo/kennlinien_578nm.tex}
-	\caption{Kennlinien 578nm}
-	\label{fig:kennlinien_578nm}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\input{./plots/planck_quantum_linearisierung.tex}
-	\caption{Linearisierung zur Bestimmung von $h$}
-	\label{fig:lin_h}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\input{./plots/kennlinie_intensitaet.tex}
-	\caption{Intensitätsvergleich der Kennlinien}
-	\label{fig:kennlinie_intensitaet}
-\end{figure}
 
 \begin{figure}
 	\centering
@@ -524,11 +523,12 @@ Die Aufspaltung der blauen Linie ist unter Berücksichtigung der schlechten Anpa
 \clearpage
 
 % APPENDIX
-
 \begin{appendix}
 \section{Kennlinien des Photostroms}
+\label{app:kennlinien}
+\FloatBarrier
+\input{./appendix/kennlinien.tex}
 
-\input{./tables/anhang_kennlinien.tex}
 \end{appendix}
 
 \end{document}

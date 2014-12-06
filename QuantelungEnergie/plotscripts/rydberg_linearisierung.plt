@@ -1,6 +1,6 @@
 reset
 
-set term epslatex color size 4.5,3
+set term epslatex color size 5,3.5
 
 set output './plots/rydberg_linearisierung.tex'
 

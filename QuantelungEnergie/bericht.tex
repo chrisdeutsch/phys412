@@ -407,7 +407,7 @@ Wegen der teilweise hohen Schwankungen der Intensität haben wir die Messwerte i
 \subsubsection{Auswertung}
 
 Wir wählen wie bereits erwähnt die jeweils beste Messung aus den vorliegenden Daten aus und stellen die Aufspaltung grafisch dar.
-Dabei passen wir mit gnuplot (least-squares-fit) zwei Gaußfunktionen an die Maxima mit folgender Fithypothese an:
+Dabei passen wir mit \texttt{gnuplot} (least-squares-fit) zwei Gaußfunktionen an die Maxima mit folgender Fithypothese an:
 \begin{align}
 f(x)&=\mathcal{G}_1(x)+\mathcal{G}_2(x) + d\qquad\text{mit}\\
 \mathcal{G}_i(x)&=A\,\exp\left[-\frac{1}{2}\left(\frac{x-S_i}{\sigma_i}\right)^2\right]
@@ -443,7 +443,7 @@ Den Fehler des Winkels schätzen wir zu \SI{0.0015}{\degree} ab; dies folgt aus 
 \caption{nicht sichtbare Isotopieaufspaltung der violetten Balmer-Linien von Wasserstoff und Deuterium}
 \label{fig:aufspaltung_violett}
 \end{figure}
-
+\FloatBarrier
 In Abbildung \ref{fig:aufspaltung_blau} ist offensichtlich, dass die Amplitude der Maxima nicht korrekt angepasst wurde.
 Da die Linien sehr schmal und die Aufspaltung sehr gering ist, liegen hier wenige Messdaten vor, an die die Funktion angepasst werden kann.
 Dabei ist die Anpassung auch noch sehr stark von der Wahl der Anfangsbedingungen abhängig.
@@ -451,7 +451,7 @@ Einzig die für diese Anpassung gewählten Anfangsbedingungen (der Anfangswert d
 Da die Amplitude zur Auswertung nicht benötigt wird und die Schwerpunkte der Gaußkurven sinnvoll erscheinen, ist dies die unserer Meinung nach beste Möglichkeit, auswertbare Daten zu erhalten und wir werden diese Anpassung zur Auswertung nutzen.
 
 In Tabelle \ref{tab:balmer_ccd_messwerte} sind die Messwerte, die der Auswertung zugrunde liegen, dargestellt.
-Die Ergebnisse der Anpassungen durch gnuplot sind dort ebenfalls  in den Spalten "`Schwerpunkt 1"' und "`Schwerpunkt 2"' dargestellt.
+Die Ergebnisse der Anpassungen durch \texttt{gnuplot} sind dort ebenfalls  in den Spalten "`Schwerpunkt 1"' und "`Schwerpunkt 2"' dargestellt.
 Aus der Differenz der Schwerpunkte errechnen wir in \ref{tab:balmer_ccd_auswertung} die Winkelaufspaltung $\Delta\beta$ zwischen der Wasserstoff- und Deuteriumlinie.\\
 \\
 Aus der Gittergleichung \eqref{eq:gittergleichung} folgt durch Differenzieren
@@ -473,12 +473,14 @@ Die so gefundenen Werte sind ebenso wie die Fehler bereits in der Tabelle \ref{t
 \caption{Messwerte bei der Beobachtung der Balmer-Linien mit der CCD-Kamera}
 \label{tab:balmer_ccd_messwerte}
 \end{table}
+
 \begin{table}[h]
 \centering
 \input{./tables/balmer_ccd_auswertung.tex}
 \caption{Auswertung der Balmer-Linien mit der CCD-Kamera}
 \label{tab:balmer_ccd_auswertung}
 \end{table}
+\noindent
 Zum Vergleich errechnen wir mit \eqref{eq:rydberg} die folgenden theoretischen Werte:
 \begin{align}
 \Delta\lambda_\alpha=\SI{0.179}{\nano\metre}\\
@@ -564,11 +566,10 @@ Die Aufspaltung der blauen Linie ist unter Berücksichtigung der schlechten Anpa
  
 \end{thebibliography}
 
-\clearpage
-
 % APPENDIX
 \begin{appendix}
-\section{Kennlinien des Photostroms}
+\section{Anhang}
+\subsection{Kennlinien des Photostroms}
 \label{app:kennlinien}
 \FloatBarrier
 \input{./appendix/kennlinien.tex}

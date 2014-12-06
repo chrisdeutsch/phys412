@@ -265,13 +265,31 @@ Auf diese Weise wird $U_0$ für jede der zehn Anpassungen berechnet und in Tabel
 	\label{tab:photoeffekt_grenzspannungen}
 \end{table}
 
-\subsubsection{Ermittlung des Planckschen Wirkungsquantums aus den Grenzspannungen}
+\subsubsection{Berechnung des Planckschen Wirkungsquantums}
+Um das Plancksche Wirkungsquantum aus den gemessenen Grenzspannungen $U_0$ bei verschiedenen Wellenlängen $\lambda$ zu berechnen, wird die Energiebilanz (REFERENZ!) des Photons verwendet.
+Dazu wird die Grenzfrequenz gegen die Frequenz des einfallenden Lichts aufgetragen, um eine Gerade mit der Steigung $h$ zu erhalten.
+Zunächst wird der varianzgewichtete Mittelwert verwendet, um jeweils zwei Messungen zu der gleichen Wellenlänge zu mitteln.
+Dieser ist gegeben durch:
+\begin{align*}
+\bar{x} = \frac{\sum_i \frac{x_i}{\sigma_i^2}}{\sum_i \frac{1}{\sigma_i^2}}\text{,}
+\end{align*}
+wobei der Fehler des Mittelwerts
+\begin{align*}
+\sigma_{\bar{x}} = \frac{1}{\sqrt{\sum_i \frac{1}{\sigma_i^2}}}
+\end{align*}
+beträgt.
+Außerdem wird die zur Wellenlänge $\lambda$ zugehörige Frequenz $\nu$ (in Näherung) durch die Dispersionsrelation von elektromagnetischen Wellen im Vakuum berechnet:
+\begin{align*}
+	\nu = \frac{c}{\lambda}
+\end{align*}
+Nach Berechnung von Frequenz und mittlerer Grenzspannung ergeben sich die Werte aus Tabelle \ref{tab:photoeffekt_planck_fitdaten}.
 \begin{table}[h]
 	\centering
 	\input{./tables/photoeffekt_planck_quantum_daten.tex}
 	\caption{Linearisierung zur Bestimmung von h}
 	\label{tab:photoeffekt_planck_fitdaten}
 \end{table}
+Anschließend werden diese Werte in einem $U_0$-$\nu$-Diagramm aufgetragen und eine Ausgleichsgerade nach dem Least-Squares-Verfahren berechnet.
 \begin{figure}[h]
 	\centering
 	\input{./plots/planck_quantum_linearisierung.tex}

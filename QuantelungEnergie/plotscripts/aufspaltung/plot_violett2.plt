@@ -57,9 +57,7 @@ u(x) = d											# Untergrund
 load './../gnuplot_linestyles.plt'
 
 plot 	'./messwerte/CCD/violett2.txt' using 1:2:(0.0015):(0.1) with xyerrorbars t'Messwerte' ls 1,\
-		t(x) t'$\Sigma$' ls 1 lw 2,\
-		g1(x) t'$\mathcal{G}_1$' ls 2 lw 2,\
-		g2(x) t'$\mathcal{G}_2$' ls 3 lw 2,\
+		t(x) t'$\mathcal{G}$' ls 2 lw 2,\
 		u(x) t'$d$' ls 5 lw 2
 
 unset output

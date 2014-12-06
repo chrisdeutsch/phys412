@@ -235,18 +235,27 @@ Die Kennlinienmessungen finden sich im Anhang \ref{app:kennlinien}.
 Zur Bestimmung der Grenzspannung wird ausgenutzt, dass die Kennlinie im Anlaufgebiet quadratisch mit der Gegenspannung $U$ anwächst.
 Daher kann durch Auftragen der Wurzel des Kathodenphotostroms $\sqrt{I-I_0}$ gegen die anliegende Gegenspannung $U$ die Kennlinie linearisiert werden und durch Extrapolation des linearen Teils der Kurve die Grenzspannung $U_0$ als Schnittpunkt mit der $x$-Achse berechnet werden.
 Dabei ist zu beachten, dass bei hohen Gegenspannungen eine Abweichung vom quadratischen Zusammenhang zu beobachten ist, welche bei der Extrapolation vernachlässigt werden.
-
+Die Linearisierung wurde in Abbildung \ref{fig:kennlinien_exemp_365nm} exemplarisch aufgetragen, wobei der Fehler gemäß der Gaußsschen Fehlerfortpflanzung bei Bildung der Wurzel berechnet wurde.
 \begin{figure}[h]
 	\centering
 	\input{./plots/photo/kennlinien_365nm.tex}
-	\caption{Linearisierung der Kennlinie bei einer Wellenlänge von $\lambda = \SI{365}{\nano\metre}$}
+	\caption{Linearisierung der Kennlinie bei einer Wellenlänge von $\lambda = \SI{365}{\nano\metre}$. }
 	\label{fig:kennlinien_exemp_365nm}
 \end{figure}
+Um schließlich die Grenzspannung zu erhalten, wird an den linearen Teil der Kurve eine Gerade mithilfe eines Least-Squares-Verfahrens (\texttt{Gnuplot}) angepasst.
+Die restlichen Linearisierungen wurden im Anhang \ref{app:kennlinien} zusammengetragen und die Ergebnisse der Anpassung in Tabelle \ref{tab:photoeffekt_fit_results} zusammengefasst.
+\begin{figure}[h]
+	\centering
+	\input{./plots/photo/kennlinien_365nm.tex}
+	\caption{Linearisierung der Kennlinie bei einer Wellenlänge von $\lambda = \SI{365}{\nano\metre}$. }
+	\label{fig:kennlinien_exemp_365nm}
+\end{figure}
+
 
 \begin{table}[h]
 	\centering
 	\input{./tables/photoeffekt_fit_ergebnisse.tex}
-	\caption{Fit Resulatate}
+	\caption{Ergebnisse der Anpassung einer Geraden $f(x) = m \cdot x + b$ an die linearisierten Kennlinien bei verschiedenen Wellenlängen}
 	\label{tab:photoeffekt_fit_results}
 \end{table}
 

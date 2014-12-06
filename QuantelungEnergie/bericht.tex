@@ -224,13 +224,19 @@ Im Gegensatz dazu, konnte eine starke Schwankung der Photostrom-Messung mit dem 
 Daher wird hier ein relativer Fehler von $\frac{\Delta I}{I} = \SI{2}{\percent}$ abgeschätzt
 
 \subsection{Auswertung}
-Zunächst wird gemäß des Verstärkerfaktors von $V = \SI{1e-8}{\ampere\per\volt}$ aus der gemessenen Spannung der unkorregierte Photostrom $I$ und der Anodenstrom $I_0$ berechnet.
-Es wird auf eine Angabe der gemessenen Spannungen verzichtet und stattdessen 
+Zunächst wird gemäß des Verstärkerfaktors von $V = \SI{1e-8}{\ampere\per\volt}$ aus der gemessenen Spannung der Photostrom $I$ und des Anodenstroms $I_0$ berechnet.
+Es wird auf die Angabe der gemessenen Spannungen verzichtet und stattdessen direkt der Kathodenphotostrom $I-I_0$ angegeben.
+Dabei wurde der Fehler $\Delta (I - I_0)$ durch Gaußssche Fehlerfortpflanzung aus den relativen Fehlern $\frac{\Delta I}{I} = \frac{\Delta I_0}{I_0} = \SI{2}{\percent}$ berechnet.
+Die Kennlinienmessungen finden sich im Anhang \ref{app:kennlinien}.
+
 
 
 \subsubsection{Bestimmung der Grenzspannung $U_0$ für die verschiedenen Wellenlängen}
 Zur Bestimmung der Grenzspannung wird ausgenutzt, dass die Kennlinie im Anlaufgebiet quadratisch mit der Gegenspannung $U$ anwächst.
-Daher kann durch Auftragen der Kennlinie 
+Daher kann durch Auftragen der Wurzel des Kathodenphotostroms $\sqrt{I-I_0}$ gegen die anliegende Gegenspannung $U$ die Kennlinie linearisiert werden und durch Extrapolation des linearen Teils der Kurve die Grenzspannung $U_0$ als Schnittpunkt mit der $x$-Achse berechnet werden.
+Dabei ist zu beachten, dass bei hohen Gegenspannungen eine Abweichung vom quadratischen Zusammenhang zu beobachten ist, welche bei der Extrapolation vernachlässigt werden.
+
+
 
 
 \subsubsection{Ermittlung des Planckschen Wirkungsquantums aus den Grenzspannungen}
@@ -440,42 +446,6 @@ Die so gefundenen Werte sind ebenso wie die Fehler bereits in der Tabelle \ref{t
 \end{figure}
 
 \clearpage
-
-\begin{figure}
-	\centering
-	\input{./plots/photo/kennlinien_365nm.tex}
-	\caption{Kennlinien 365nm}
-	\label{fig:kennlinien_365nm}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\input{./plots/photo/kennlinien_405nm.tex}
-	\caption{Kennlinien 405nm}
-	\label{fig:kennlinien_405nm}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\input{./plots/photo/kennlinien_436nm.tex}
-	\caption{Kennlinien 436nm}
-	\label{fig:kennlinien_436nm}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\input{./plots/photo/kennlinien_546nm.tex}
-	\caption{Kennlinien 546nm}
-	\label{fig:kennlinien_546nm}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\input{./plots/photo/kennlinien_578nm.tex}
-	\caption{Kennlinien 578nm}
-	\label{fig:kennlinien_578nm}
-\end{figure}
-
 \begin{figure}
 	\centering
 	\input{./plots/planck_quantum_linearisierung.tex}
@@ -533,11 +503,11 @@ Die so gefundenen Werte sind ebenso wie die Fehler bereits in der Tabelle \ref{t
 \clearpage
 
 % APPENDIX
-
 \begin{appendix}
 \section{Kennlinien des Photostroms}
+\label{app:kennlinien}
 \FloatBarrier
-\input{./tables/anhang_kennlinien.tex}
+\input{./appendix/kennlinien.tex}
 
 \end{appendix}
 

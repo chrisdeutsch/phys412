@@ -244,21 +244,20 @@ Die Linearisierung wurde in Abbildung \ref{fig:kennlinien_exemp_365nm} exemplari
 \end{figure}
 Um schließlich die Grenzspannung zu erhalten, wird an den linearen Teil der Kurve eine Gerade mithilfe eines Least-Squares-Verfahrens (\texttt{Gnuplot}) angepasst.
 Die restlichen Linearisierungen wurden im Anhang \ref{app:kennlinien} zusammengetragen und die Ergebnisse der Anpassung in Tabelle \ref{tab:photoeffekt_fit_results} zusammengefasst.
-\begin{figure}[h]
-	\centering
-	\input{./plots/photo/kennlinien_365nm.tex}
-	\caption{Linearisierung der Kennlinie bei einer Wellenlänge von $\lambda = \SI{365}{\nano\metre}$. }
-	\label{fig:kennlinien_exemp_365nm}
-\end{figure}
-
-
 \begin{table}[h]
 	\centering
 	\input{./tables/photoeffekt_fit_ergebnisse.tex}
 	\caption{Ergebnisse der Anpassung einer Geraden $f(x) = m \cdot x + b$ an die linearisierten Kennlinien bei verschiedenen Wellenlängen}
 	\label{tab:photoeffekt_fit_results}
 \end{table}
-
+Bisschen was zum Chiquadrat HIER!!!
+Mit den Ergebnissen der Anpassung kann nun die Grenzspannung $U_0$ als Schnittpunkt der Geraden mit der $x$-Achse berechnet werden, sodass wir:
+\begin{align*}
+	U_0 &= -\frac{b}{m} \\
+	\Delta U_0 &= \sqrt{\frac{\Delta b^2}{m^2} + \frac{b^2}{m^4}\cdot \Delta m^2}
+\end{align*}
+erhalten.
+Auf diese Weise wird $U_0$ für jede der zehn Anpassungen berechnet und in Tabelle \ref{tab:photoeffekt_grenzspannungen} zusammengefasst.
 \begin{table}[h]
 	\centering
 	\input{./tables/photoeffekt_grenzspannungen.tex}

@@ -232,6 +232,7 @@ Die Kennlinienmessungen finden sich im Anhang \ref{app:kennlinien}.
 
 
 \subsubsection{Bestimmung der Grenzspannung $U_0$ für die verschiedenen Wellenlängen}
+\label{sssec:photoeffekt_grenzspannung}
 Zur Bestimmung der Grenzspannung wird ausgenutzt, dass die Kennlinie im Anlaufgebiet quadratisch mit der Gegenspannung $U$ anwächst.
 Daher kann durch Auftragen der Wurzel des Kathodenphotostroms $\sqrt{I-I_0}$ gegen die anliegende Gegenspannung $U$ die Kennlinie linearisiert werden und durch Extrapolation des linearen Teils der Kurve die Grenzspannung $U_0$ als Schnittpunkt mit der $x$-Achse berechnet werden.
 Dabei ist zu beachten, dass bei hohen Gegenspannungen eine Abweichung vom quadratischen Zusammenhang zu beobachten ist, welche bei der Extrapolation vernachlässigt werden.
@@ -267,7 +268,7 @@ Auf diese Weise wird $U_0$ für jede der zehn Anpassungen berechnet und in Tabel
 
 \subsubsection{Berechnung des Planckschen Wirkungsquantums}
 Um das Plancksche Wirkungsquantum aus den gemessenen Grenzspannungen $U_0$ bei verschiedenen Wellenlängen $\lambda$ zu berechnen, wird die Energiebilanz (REFERENZ!) des Photons verwendet.
-Dazu wird die Grenzfrequenz gegen die Frequenz des einfallenden Lichts aufgetragen, um eine Gerade mit der Steigung $h$ zu erhalten.
+Dazu wird die Grenzspannung gegen die Frequenz des einfallenden Lichts aufgetragen, um eine Gerade mit der Steigung $h/e$ zu erhalten.
 Zunächst wird der varianzgewichtete Mittelwert verwendet, um jeweils zwei Messungen zu der gleichen Wellenlänge zu mitteln.
 Dieser ist gegeben durch:
 \begin{align*}
@@ -290,21 +291,54 @@ Nach Berechnung von Frequenz und mittlerer Grenzspannung ergeben sich die Werte 
 	\label{tab:photoeffekt_planck_fitdaten}
 \end{table}
 Anschließend werden diese Werte in einem $U_0$-$\nu$-Diagramm aufgetragen und eine Ausgleichsgerade nach dem Least-Squares-Verfahren berechnet.
+Die Anpassung der Gerade ergibt:
+\begin{align*}
+	U_0 = m \cdot \nu + b
+\end{align*}
+mit den Anpassungsparametern:
+\begin{align*}
+	m &= \SI{0.00370 +- 0.00002}{\volt\per\tera\hertz} \\
+	b &= \SI{-1.326 +- 0.008}{\volt}
+\end{align*}
+Die Güte dieser Anpassung ist gegeben durch das reduzierte Chi-Quadrat $\chi_\mathrm{red.}^2 = \num{0,15}$, welches eine gute Übereinstimmung der Datenpunkte mit der Anpassungshypothese nahelegt.
+Die Datenpunkte und die angepasste Gerade wurden in Abbildung \ref{fig:lin_h} aufgetragen.
 \begin{figure}[h]
 	\centering
 	\input{./plots/planck_quantum_linearisierung.tex}
 	\caption{Linearisierung zur Bestimmung von $h$}
 	\label{fig:lin_h}
 \end{figure}
-
+Zur Berechnung des Planckschen Wirkungsquantums wird die angepasste Gerade im Hinblick auf die Energiebilanz des Elektrons betrachtet.
+Demnach ist die Steigung $m$ gegeben durch:
+\begin{align*}
+	m = \frac{h}{e}
+\end{align*}
+Das Wirkungsquantum wird durch Multiplikation der Steigung $m$ mit der Elementarladung\footnote{2010 CODATA recommended values\\\url{http://physics.nist.gov/cgi-bin/cuu/Value?e}\\Letzer Abruf: 6. Dezember 2014}:
+\begin{align}
+	e = \SI{1.602176565 +- 0.000000035e-19}{\coulomb}
+\end{align}
+berechnet, wobei der Einfluss des Fehlers der Elementarladung klein gegen den der Steigung ist und daher vernachlässigt wird.
+Somit ergibt sich:
+\begin{align*}
+	h = \SI{5.93 +- 0.04}{\joule\second}
+\end{align*}
+(FEHLERDISKUSSION!)
+Höchstwahrscheinlich systematischer Fehler bei Grenzspannungsbestimmung.
 
 \subsubsection{Einfluss der Intensität auf die Kennlinien}
 \begin{figure}[h]
 	\centering
 	\input{./plots/kennlinie_intensitaet.tex}
-	\caption{Intensitätsvergleich der Kennlinien}
+	\caption{Intensitätsvergleich der Kennlinien $\lambda = \SI{365}{\nano\metre}$}
 	\label{fig:kennlinie_intensitaet}
 \end{figure}
+Bei der Durchführung wurde die Kennlinie der Photozelle bei der Wellenlänge $\lambda = \SI{365}{\nano\metre}$ jeweils bei zwei unterschiedlichen Intensitäten gemessen.
+In Abbildung \ref{fig:kennlinie_intensitaet} wurden beide Kennlinien aufgetragen und im Folgenden soll deren Charakteristika diskutiert werden.
+\begin{itemize}
+	\item Zunächst signifikante Abweichung, mit steigender Spannung sinkt die Differenz der beiden Kennlinien.
+	\item Klar zu erkennen -- Gleiche Grenzfrequenz! -- logisch da Elektronenenergie unabhängig von Intensität
+\end{itemize}
+
 
 \section{Balmer-Serie}
 

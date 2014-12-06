@@ -195,6 +195,7 @@ Nach dem Abschluss der Justage wird die Schutzkappe wieder auf die Photozelle ge
 
 Die Elektronik zur Messung der Kennlinien besteht aus einer regelbaren Spannungsquelle (\num{0}-\SI{12}{\volt}), welche über einem Spannungsteiler die Gegenspannung der Photozelle liefert.
 Zur Messung des Photostroms erfolgt über einen Messverstärker, welcher eine zum Strom proportionale Spannung ausgibt.
+Die im Versuch auftretenden Ströme wurden dabei mit einem Verstärkungsfaktor von $V = \SI{1e-8}{\ampere\per\volt}$ gemessen, wobei der Fehler auf diesen vernachlässigt wird.
 Die Messung von Gegenspannung und Photostrom erfolgt dann über zwei Voltmeter, welche die Spannung an Messverstärker beziehungsweise Spannungsteiler messen.
 
 \subsubsection{Messung der Kennlinien}
@@ -214,12 +215,27 @@ Es wird für jeden Filter wie folgt vorgegangen:
 \end{itemize}
 Nachdem die Kennlinienmessung für jeden Filter einmal durchgeführt wurde, wiederholen wir die Messungen um Intensitätsschwankungen der Quecksilberdampflampe feststellen zu können.
 
+Anschließend wird die Kennlinie der Photozelle bei höherer Intensität vermessen, dabei wird nur der Filter mit Mittelwellenlänge $\lambda = \SI{365}{\nano\metre}$ verwendet.
+Dazu wird die Öffnung der Irisblende soweit vergrößert, dass ein signifikanter Anstieg des Photostroms beobachtet werden kann, ohne dabei die Ringanode zu beleuchten.
+Analog zum vorigen Teil wird der Anodenphotostrom bei maximaler Gegenspannung gemessen, die Grenzspannung abgeschätzt und gemäß diesen der Messbereich der Kennlinie gewählt.
 
-Um den Einfluss von höherer Intensität auf die Kennlinie zu vermessen, wird zum Vergleich der Filter mit der Mittelwellenlänge $\lambda = \SI{365}{\nano\metre}$ bei vergrößerter Irisblende vermessen.
-
-
+Es wird der absolute Fehler der Gegenspannungsmessung mit dem Digitalmultimeter konservativ auf $\Delta U = \SI{2}{\milli\ampere}$ abgeschätzt.
+Im Gegensatz dazu, konnte eine starke Schwankung der Photostrom-Messung mit dem Messverstärker bei hohen Strömen festgestellt werden.
+Daher wird hier ein relativer Fehler von $\frac{\Delta I}{I} = \SI{2}{\percent}$ abgeschätzt
 
 \subsection{Auswertung}
+Zunächst wird gemäß des Verstärkerfaktors von $V = \SI{1e-8}{\ampere\per\volt}$ aus der gemessenen Spannung der unkorregierte Photostrom $I$ und der Anodenstrom $I_0$ berechnet.
+Es wird auf eine Angabe der gemessenen Spannungen verzichtet und stattdessen 
+
+
+\subsubsection{Bestimmung der Grenzspannung $U_0$ für die verschiedenen Wellenlängen}
+Zur Bestimmung der Grenzspannung wird ausgenutzt, dass die Kennlinie im Anlaufgebiet quadratisch mit der Gegenspannung $U$ anwächst.
+Daher kann durch Auftragen der Kennlinie 
+
+
+\subsubsection{Ermittlung des Planckschen Wirkungsquantums aus den Grenzspannungen}
+
+\subsubsection{Einfluss der Intensität auf die Kennlinien}
 
 
 \section{Balmer-Serie}
@@ -524,7 +540,7 @@ Die so gefundenen Werte sind ebenso wie die Fehler bereits in der Tabelle \ref{t
 \begin{appendix}
 
 \section{Kennlinien des Photostroms}
-\input{./tables/anhang_kennlinien.tex}
+%\input{./tables/anhang_kennlinien.tex}
 
 \end{appendix}
 

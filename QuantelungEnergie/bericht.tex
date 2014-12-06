@@ -8,7 +8,7 @@
 % Silbentrennung
 \usepackage[ngerman]{babel}
 
-% erweiterte Matheumgebungen und Formelnummer mit Secitonnummer
+% erweiterte Matheumgebungen und Formelnummer mit Sectionnummer
 \usepackage{amsmath}
 \numberwithin{equation}{section}
 
@@ -340,9 +340,9 @@ Einzig die für diese Anpassung gewählten Anfangsbedingungen (der Anfangswert d
 Da die Amplitude zur Auswertung nicht benötigt wird und die Schwerpunkte der Gaußkurven sinnvoll erscheinen, ist dies die unserer Meinung nach beste Möglichkeit, auswertbare Daten zu erhalten und wir werden diese Anpassung zur Auswertung nutzen.
 
 In Tabelle \ref{tab:balmer_ccd_messwerte} sind die Messwerte, die der Auswertung zugrunde liegen, dargestellt.
-Die Ergebnisse der Anpassungen durch gnuplot sind in Tabelle \ref{tab:balmer_ccd_auswertung} in den Spalten "`Schwerpunkt 1"' und "`Schwerpunkt 2"' dargestellt.
-Aus der Differenz der Schwerpunkte können wir die Winkelaufspaltung $\Delta\beta$ zwischen der Wasserstoff- und Deuteriumlinie bestimmen.
-
+Die Ergebnisse der Anpassungen durch gnuplot sind dort ebenfalls  in den Spalten "`Schwerpunkt 1"' und "`Schwerpunkt 2"' dargestellt.
+Aus der Differenz der Schwerpunkte errechnen wir in \ref{tab:balmer_ccd_auswertung} die Winkelaufspaltung $\Delta\beta$ zwischen der Wasserstoff- und Deuteriumlinie.\\
+\\
 Aus der Gittergleichung \eqref{eq:gittergleichung} folgt durch Differenzieren
 \begin{align*}
 \frac{\text{d}\lambda}{\text{d}\beta}=g\,\cos(\beta)
@@ -352,24 +352,31 @@ und wir erhalten nach Umstellen der Gleichung:
 \Delta\lambda=g\,\cos(\beta)\Delta\beta
 \label{eq:balmer_wellenlängenaufspaltung}
 \end{align}
-
 Mit \eqref{eq:balmer_wellenlängenaufspaltung} können wir damit die Wellenlängenaufspaltung $\Delta\lambda$ der beiden Linien aus der Winkelaufspaltung und dem Reflexionswinkel ausrechnen.
 Den Reflexionswinkel $\beta$ erhalten wir gemäß Abbildung \ref{fig:winkelverhaeltnis} und Formel  \eqref{eq:reflexionswinkel} aus den in Tabelle \ref{tab:balmer_ccd_messwerte} eingetragenen Gitterwinkeln bei festem Bankwinkel $\omega_\text{B}$= \SI{150}{\degree}.
 Die so gefundenen Werte sind ebenso wie die Fehler bereits in der Tabelle \ref{tab:balmer_ccd_auswertung} eingetragen.
-
-\begin{table}
+\begin{table}[h]
 \centering
-\input{./tables/balmer_ccd_messwerte.tex}
+\resizebox{\columnwidth}{!}{%
+\input{./tables/balmer_ccd_messwerte.tex}}
 \caption{Messwerte bei der Beobachtung der Balmer-Linien mit der CCD-Kamera}
 \label{tab:balmer_ccd_messwerte}
 \end{table}
-\begin{table}
+\begin{table}[h]
 \centering
-\resizebox{\columnwidth}{!}{%
-\input{./tables/balmer_ccd_auswertung.tex}}
+\input{./tables/balmer_ccd_auswertung.tex}
 \caption{Auswertung der Balmer-Linien mit der CCD-Kamera}
 \label{tab:balmer_ccd_auswertung}
 \end{table}
+Zum Vergleich errechnen wir mit \eqref{eq:rydberg} die folgenden theoretischen Werte:
+\begin{align}
+\Delta\lambda_\alpha=\SI{0.179}{\nano\metre}\\
+\Delta\lambda_\beta=\SI{0.132}{\nano\metre}\\
+\Delta\lambda_\gamma=\SI{0.118}{\nano\metre}
+\end{align}
+Die von uns gemessenen Werte liegen alle unter den theoretischen Werten für die Wellenlängenverschiebung.
+Der Literaturwert der roten Balmer-Linie liegt nicht mehr im $1$-$\sigma$-Bereich der gemessenen Isotopieaufspaltung, die anderen beiden Aufspaltungen sind unter Berücksichtigung der Fehlergrenzen mit dem Literaturwert verträglich.
+Die Aufspaltung der blauen Linie ist unter Berücksichtigung der schlechten Anpassung, die der Auswertung zugrunde liegt, gut bestimmt worden.
 \clearpage
 
 \begin{table}[h]

@@ -43,7 +43,7 @@ u(x) = d											# Untergrund
 
 load './../gnuplot_linestyles.plt'
 
-plot 	'./messwerte/CCD/tuerkis1.txt' using 1:2:(0.003):(0.1) with xyerrorbars t'Messwerte' ls 1,\
+plot 	'./messwerte/CCD/tuerkis1.txt' using 1:2:(0.0015):(0.1) with xyerrorbars t'Messwerte' ls 1,\
 		t(x) t'$\Sigma$' ls 1 lw 2,\
 		g1(x) t'$\mathcal{G}_1$' ls 2 lw 2,\
 		g2(x) t'$\mathcal{G}_2$' ls 3 lw 2,\

@@ -209,7 +209,7 @@ Es wird für jeden Filter wie folgt vorgegangen:
   Der gemessene Strom entspricht dabei nicht dem Anodenphotostroms, sondern der Summe von Anodenphotostrom und Offset des Verstärkers.
   Der Offset wurde nicht konkret bestimmt, da die gemessenen Kennlinien $I-I_0$ als Differenz zweier offsetbehafteter Größen aufgetragen werden und ein konstanter Versatz somit keinen Einfluss auf die Differenz hat. 
   \item Abschätzung der Grenzspannung $U_0$: Es wird die Gegenspannung langsam verringert bis ein signifikanter Anstieg des Photostroms beobachtet werden kann.
-  Die Gegenspannung bei der dies einsetzt, dient als erste Abschätzung der Grenzspannung, sodass der Messbereich entsprechend gewählt werden kann.
+  Die Gegenspannung bei der dies einsetzt, dient als erste Abschätzung der Grenzspannung, so dass der Messbereich entsprechend gewählt werden kann.
   \item Messung der Kennlinie: Es wird bei der Messung bei einer Gegenspannung von $U = \SI{0}{\volt}$ begonnen, welche (hochgeregelt wird s.d. etwas mehr als 10 Werte im quadratischen Bereich liegen).
 \end{itemize}
 
@@ -229,6 +229,7 @@ Aus Abbildung \ref{fig:winkelverhaeltnis} folgt der Zusammenhang zwischen gemess
 \begin{align*}
 	\alpha &= \omega_\text{G} \\
 	\beta &= \omega_\text{G} + \omega_\text{B} - \SI{180}{\degree}
+	\label{eq:reflexionswinkel}
 \end{align*}
 Korrektur des Ausfallswinkels aufgrund der Messung von $d$ mit dem Objektiv:
 \begin{align*}
@@ -294,10 +295,13 @@ Dabei passen wir mit gnuplot (least-squares-fit) zwei Gaußfunktionen an die Max
 f(x)&=\mathcal{G}_1(x)+\mathcal{G}_2(x) + d\qquad\text{mit}\\
 \mathcal{G}_i(x)&=A\,\exp\left[-\frac{1}{2}\left(\frac{x-S_i}{\sigma_i}\right)^2\right]
 \end{align}
-Diese sind zusammen mit den Messdaten in den Abbildungen \ref{fig:aufspaltung_rot}, \ref{fig:aufspaltung_tuerkis} und \ref{fig:aufspaltung_blau} dargestellt.
+Diese sind zusammen mit den Messdaten in den Abbildungen \ref{fig:aufspaltung_rot} bis  \ref{fig:aufspaltung_violett} dargestellt.
+Die Isotopieaufspaltung der violetten Balmer-Linie ist dabei so klein, dass wir sie nicht messen konnten.
+Der Vollständigkeit halber haben wir die Messwerte und eine daran angepasste Gaußkurve in dieses Protokoll aufgenommen, eine Auswertung ist damit jedoch nicht möglich.\\
+\\
 Für den Intensitätsfehler haben wir mit Berücksichtigung der Mittelung der Messwerte über einen Zeitraum (die genommenen Daten unterliegen deswegen sehr kleinen Schwankungen) \SI{0.2}{\percent} für die Daten zur roten und türkisen Linie angenommen.
 Für die blaue Linie haben wir aufgrund der geringen Intensität sehr lange im Programm VideoCom mitteln lassen und wählen deswegen \SI{0.1}{\percent} als Fehler für die Intensität.
-Den Fehler des Winkels schätzen wir zu \SI{0.003}{\degree} ab; dies folgt aus der Überlegung, dass wir einen Winkelbereich von ca. \SI{5.5}{\degree} auf \num{2048} Pixeln messen.
+Den Fehler des Winkels schätzen wir zu \SI{0.0015}{\degree} ab; dies folgt aus der Überlegung, dass wir einen Winkelbereich von ca. \SI{5.5}{\degree} auf \num{2048} Pixeln messen.
 \begin{figure}[h]
 \centering
 \input{./plots/aufspaltung/rot2.tex}
@@ -316,12 +320,50 @@ Den Fehler des Winkels schätzen wir zu \SI{0.003}{\degree} ab; dies folgt aus d
 \caption{Isotopieaufspaltung blau}
 \label{fig:aufspaltung_blau}
 \end{figure}
+\begin{figure}[h]
+\centering
+\input{./plots/aufspaltung/violett2.tex}
+\caption{Isotopieaufspaltung violett}
+\label{fig:aufspaltung_violett}
+\end{figure}
+
 In Abbildung \ref{fig:aufspaltung_blau} ist offensichtlich, dass die Amplitude der Maxima nicht korrekt angepasst wurde.
 Da die Linien sehr schmal und die Aufspaltung sehr gering ist, liegen hier wenige Messdaten vor, an die die Funktion angepasst werden kann.
 Dabei ist die Anpassung auch noch sehr stark von der Wahl der Anfangsbedingungen abhängig.
 Einzig die für diese Anpassung gewählten Anfangsbedingungen (der Anfangswert der Amplitude des Hauptmaximas wurde bei der Anpassung übernommen) liefert ein halbwegs sinnvolles Ergebnis.
 Da die Amplitude zur Auswertung nicht benötigt wird und die Schwerpunkte der Gaußkurven sinnvoll erscheinen, ist dies die unserer Meinung nach beste Möglichkeit, auswertbare Daten zu erhalten und wir werden diese Anpassung zur Auswertung nutzen.
 
+In Tabelle \ref{tab:balmer_ccd_messwerte} sind die Messwerte, die der Auswertung zugrunde liegen, dargestellt.
+Die Ergebnisse der Anpassungen durch gnuplot sind in Tabelle \ref{tab:balmer_ccd_auswertung} in den Spalten "`Schwerpunkt 1"' und "`Schwerpunkt 2"' dargestellt.
+Aus der Differenz der Schwerpunkte können wir die Winkelaufspaltung $\Delta\beta$ der Wasserstoff- und Deuteriumlinie bestimmen.
+
+Aus der Gittergleichung \eqref{eq:gittergleichung} folgt durch Differenzieren
+\begin{align*}
+\frac{\text{d}\lambda}{\text{d}\beta}=g\,\cos(\beta)
+\end{align*}
+und wir erhalten nach Umstellen der Gleichung:
+\begin{align}
+\Delta\lambda=g\,\cos(\beta)\Delta\beta
+\label{eq:balmer_wellenlängenaufspaltung}
+\end{align}
+
+Mit \eqref{eq:balmer_wellenlängenaufspaltung} können wir damit die Wellenlängenaufspaltung $\Delta\lambda$ der beiden Linien aus der Winkelaufspaltung und dem Reflexionswinkel ausrechnen.
+Den Reflexionswinkel $\beta$ erhalten wir gemäß Abbildung \ref{fig:winkelverhaeltnis} und Formel  \eqref{eq:reflexionswinkel} aus den in Tabelle \ref{tab:balmer_ccd_messwerte} eingetragenen Gitterwinkeln bei festem Bankwinkel $\omega_\text{B}$= \SI{150}{\degree}.
+Die so gefundenen Werte sind ebenso wie die Fehler bereits in der Tabelle \ref{tab:balmer_ccd_auswertung} eingetragen.
+
+\begin{table}
+\centering
+\input{./tables/balmer_ccd_messwerte.tex}
+\caption{Messwerte bei der Beobachtung der Balmer-Linien mit der CCD-Kamera}
+\label{tab:balmer_ccd_messwerte}
+\end{table}
+\begin{table}
+\centering
+\resizebox{\columnwidth}{!}{%
+\input{./tables/balmer_ccd_auswertung.tex}}
+\caption{Auswertung der Balmer-Linien mit der CCD-Kamera}
+\label{tab:balmer_ccd_auswertung}
+\end{table}
 \clearpage
 
 \begin{table}[h]

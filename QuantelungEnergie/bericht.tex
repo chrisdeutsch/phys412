@@ -348,13 +348,14 @@ In Abbildung \ref{fig:kennlinie_intensitaet} wurden beide Kennlinien aufgetragen
 Wir setzen $\omega_\mathrm{B}$ konstant auf \SI{150}{\degree}.
 
 \subsubsection{Bestimmung der Gitterkonstanten}
+\label{sssec:durchfuehrung_gitterkonstante}
 \begin{table}[h]
 	\centering
 	\input{./tables/gitterkonstante_messdaten.tex}
 	\caption{Ergebnisse der $\Delta \omega_\mathrm{G} = \SI{0.5}{\degree}$ und $\Delta d = \SI{0.05}{\milli\metre}$}
 	\label{tab:gitterkonstante_messdaten}
 \end{table}
-(Erklären warum wir die \SI{690}{\nano\metre} Linie nicht gemessen haben)
+(Erklären warum wir die \SI{690}{\nano\metre} Linie nicht gemessen haben und was es mit $d$ auf sich hat. Konvention bei der Messung von $d$, rechts positiv -- kleineres $\beta$)
 
 \subsubsection{Messung der Balmer-Linien mit einem Okular}
 
@@ -370,21 +371,46 @@ Wir setzen $\omega_\mathrm{B}$ konstant auf \SI{150}{\degree}.
 	\caption{Winkelverhältnis zwischen Gitter und optischer Bank}
 	\label{fig:winkelverhaeltnis}
 \end{figure}
-Aus Abbildung \ref{fig:winkelverhaeltnis} folgt der Zusammenhang zwischen gemessenen Winkeln und Ein-/Ausfallswinkel des Strahls auf das Gitter: 
+Aus Abbildung \ref{fig:winkelverhaeltnis} folgt der Zusammenhang zwischen den gemessenen Winkeln ($\omega_\mathrm{G}$, $\omega_\mathrm{B}$) und den Ein- beziehungsweise Ausfallswinkeln des Strahls auf das Gitter ($\alpha$, $\beta$): 
 \begin{align*}
 	\alpha &= \omega_\text{G} \\
 	\beta &= \omega_\text{G} + \omega_\text{B} - \SI{180}{\degree}
 	\label{eq:reflexionswinkel}
 \end{align*}
-Korrektur des Ausfallswinkels aufgrund der Messung von $d$ mit dem Objektiv:
+Da nahe beieinanderliegende Linien nicht durch Verstellen des Gitters zu messen waren und stattdessen die Abweichung vom Zentrum des Okulars $d$ auf der darin angebrachten Skala abgelesen wurde, muss eine Korrektur des Ausfallswinkels anhand der gemessenen Abweichung $d$ erfolgen.
+Diese ist (in Kleinwinkelnäherung) gegeben durch die Brennweite $f$ des Objektivs im Fernrohraufbau:
 \begin{align*}
-\Delta \beta = -\frac{d}{f} \text{ in KWN}
+\Delta \beta = -\frac{d}{f} \text{,}
 \end{align*}
-$f$ Brennweite des Fernrohrobjektivs ($\SI{300}{\milli\metre}$).
-So folgt der tatsächliche Ausfallswinkel gemäß:
+wobei das Vorzeichen von der verwendeten Konvention bei der Messung von $d$ abhängt, welche in der Durchführung in Abschnitt \ref{sssec:durchfuehrung_gitterkonstante} beschrieben wurde.
+Mit der Brennweite des Fernrohrobjektivs $f = \SI{300}{\milli\metre}$ folgt mit der erwähnten Korrektur für den tatsächlichen Ausfallswinkel:
 \begin{align*}
 	\beta^\prime = \beta + \Delta \beta
 \end{align*}
+Die Berechnung der Winkel erfolgt nun über die gemessenen Winkel und deren Fehler aus Tabelle \ref{tab:gitterkonstante_messdaten}, wobei für den Bankwinkel $\omega_\mathrm{B} = \SI{150 +- 0.25}{\degree}$ gilt.
+Dabei überträgt sich der Fehler der Winkelmessung des Gitters direkt auf den Einfallswinkel $\alpha$ und die Fehler in $\omega_\mathrm{G}$, $\omega_\mathrm{B}$ und $\Delta \beta$ auf den Ausfallswinkel $\beta$ durch die Wurzel der quadratischen Addition der Fehler (um Verwechslung mit $\Delta \beta$ zu vermeiden werden die Fehler hier durch $\sigma$ gekennzeichnet):
+\begin{align*}
+	\sigma_\beta = \sqrt{\sigma_{\omega_\mathrm{G}}^2 + \sigma_{\omega_\mathrm{B}}^2 + \left(\frac{\sigma_d}{f}\right)^2}
+\end{align*}
+Wegen $\sigma_{\omega_\mathrm{G}} = \SI{0.25}{\degree}$, $\sigma_{\omega_\mathrm{B}} = \SI{0.5}{\degree}$ und $\sigma_d = \SI{0.05}{\milli\metre}$ folgt für die Fehler:
+\begin{align*}
+	\sigma_\alpha = \SI{8.8}{\milli\radian}\\
+	\sigma_\beta = \SI{9.8}{\milli\radian}
+\end{align*}
+und sind somit unabhängig von der Messung.
+Die berechneten Winkel wurde in Tabelle \ref{tab:gitterkonstante_umrechnung_winkel} zusammengetragen.
+\begin{table}[h]
+	\centering
+	\input{./tables/gitterkonstante_umrechnung_alpha_beta.tex}
+	\caption{Ergebnisse der $\Delta \alpha = \SI{8.8}{\milli\radian}$ und $\Delta \beta = \SI{9.8}{\milli\radian}$}
+	\label{tab:gitterkonstante_umrechnung_winkel}
+\end{table}
+
+
+
+
+
+
 Zur Bestimmung der Gitterkonstanten tragen wir $\sin(\alpha) + \sin(\beta)$ gegen $\lambda$ auf, um mit der Gittergleichung
 \begin{align*}
 	\sin(\alpha) + \sin(\beta) = \frac{1}{g} \cdot \lambda
@@ -405,13 +431,6 @@ Nach Kehrwertbildung ergibt sich:
 \begin{align*}
 	g = \SI{409.90 +- 0.36}{\nano\metre} \text{.}
 \end{align*}
-
-\begin{table}[h]
-	\centering
-	\input{./tables/gitterkonstante_umrechnung_alpha_beta.tex}
-	\caption{Ergebnisse der $\Delta \alpha = \SI{8.8}{\milli\radian}$ und $\Delta \beta = \SI{9.8}{\milli\radian}$}
-	\label{tab:gitterkonstante_umrechnung_winkel}
-\end{table}
 
 \subsection{Isotopieaufspaltung mit Okular}
 

@@ -359,6 +359,12 @@ Wir setzen $\omega_\mathrm{B}$ konstant auf \SI{150}{\degree}.
 
 \subsubsection{Messung der Balmer-Linien mit einem Okular}
 \label{sssec:balmer_okular}
+\begin{table}
+	\centering
+	\input{./tables/balmer_okular_messdaten.tex}
+	\caption{Messung der Balmer-Linien}
+	\label{tab:balmer_okular_messdaten}
+\end{table}
 
 \subsubsection{Messung der Balmer-Linien mit einer CCD-Kamera}
 Wir nutzen den Versuchsaufbau wie in \ref{sssec:balmer_okular} beschrieben, ersetzen das Okular jedoch durch eine CCD Kamera, die wir mit dem Computer verbinden.
@@ -413,35 +419,58 @@ Die berechneten Winkel wurde in Tabelle \ref{tab:gitterkonstante_umrechnung_wink
 	\label{tab:gitterkonstante_umrechnung_winkel}
 \end{table}
 
-
-
-
-
-
-Zur Bestimmung der Gitterkonstanten tragen wir $\sin(\alpha) + \sin(\beta)$ gegen $\lambda$ auf, um mit der Gittergleichung
+Nachdem die gemessenen Winkel in Ein- und Ausfallswinkel am Gitter umgerechnet wurden, kann mithilfe der Gittergleichung in erster Interferenzordnung:
+\begin{align}
+	\lambda = g \cdot (\sin(\alpha) + \sin(\beta))
+\end{align}
+die Gitterkonstante $g$ bestimmt werden.
+Dazu tragen wir $\sin(\alpha) + \sin(\beta)$ gegen die Wellenlänge $\lambda$ auf, um:
 \begin{align*}
-	\sin(\alpha) + \sin(\beta) = \frac{1}{g} \cdot \lambda
+\sin(\alpha) + \sin(\beta) = \frac{1}{g} \cdot \lambda
 \end{align*}
 zu erhalten.
-Wir wählen diese Form der Gleichung, da bei einer Anpassung mit üblichen Least-Squares-Verfahren nur Fehler in $y$-Richtung beachtet werden.
-Da der Fehler der Wellenlänge $\lambda$ gegen den der Sinus-Summe vernachlässigbar ist, wurde diese Form gewählt (\#machmalrichtig).
-Wir erhalten für die Anpassung:
+Diese Form der Linearisierung wird gewählt, da bei einer Anpassung mit üblichen Least-Squares-Verfahren nur die Fehler in $y$-Richtung in die Gewichtung der Messpunkte eingehen.
+Da der Fehler der Wellenlänge $\lambda$ gegen den der Sinus-Summe vernachlässigbar ist, wurde diese Form gewählt um eine sinnvolle Gewichtung bei der Geradenanpassung zu erzielen.
+Mithilfe von \texttt{Gnuplot} wird eine Ursprungsgerade an die linearisierten Datenpunkte angepasst.
+Dabei wird der Fehler der Sinus-Summe gemäß Gaußsscher Fehlerfortpflanzung in den Größen $\alpha$ und $\beta$ berechnet.
+Die Anpassung ergibt:
 \begin{align}
 	\sin(\alpha) + \sin(\beta) = \SI{2439.6 +- 2.1}{\per\milli\metre} \cdot \lambda \text{,}
 \end{align}
-was einer Gitterkonstanten in reziproken Einheiten von:
+bei einem reduzierten Chi-Quadrat von $\chi_\mathrm{red.}^2 = \num{1.3e-5}$.
+In Anbetracht des Chi-Quadrates liegt eine gute Anpassung vor, dennoch scheinen die Datenpunkte besser auf einer Geraden zu liegen als deren Fehler nahelegen.
+Auch die Tatsache, dass $\chi_\mathrm{red.}^2 \ll 1$ legt nahe, dass die statistischen Fehler der Winkelmessungen überschätzt wurden.
+In Abbildung \ref{fig:gitterkonstante} wurden die Datenpunkte mitsamt Regressionsgerade aufgetragen.
+\begin{figure}[h]
+	\centering
+	\input{./plots/gitterkonstante.tex}
+	\caption{Gitterkonstante}
+	\label{fig:gitterkonstante}
+\end{figure}
+An der Steigung der Geraden lässt sich sofort die Gitterkonstanten in reziproken Einheiten ablesen, sodass man:
 \begin{align*}
 	\frac{1}{g} = (\num{2439.6 +- 2.1}) \, \frac{\mathrm{Linien}}{\si{\milli\metre}}
 \end{align*}
-entspricht.
-Nach Kehrwertbildung ergibt sich:
+erhält. Nach Kehrwertbildung ergibt sich:
 \begin{align*}
-	g = \SI{409.90 +- 0.36}{\nano\metre} \text{.}
+	g = \SI{409.90 +- 0.36}{\nano\metre} \text{,}
+\end{align*}
+wobei der Fehler $\Delta g$ gegeben ist durch:
+\begin{align*}
+	\Delta g = \frac{\Delta \left( \frac{1}{g} \right)}{\left( \frac{1}{g} \right)^2} \text{.}
 \end{align*}
 
 
-\subsubsection{Isotopieaufspaltung mit Okular}
+\subsubsection{Wellenlängen und Isotopieaufspaltung der Balmer-Linien bei Beobachtung mit dem Okular}
+\begin{table}[h]
+	\centering
+	\input{./tables/balmer_wellenlaengen.tex}
+	\caption{Berechnete Wellenlängen der Balmer-Linien. Literaturwerte aus \emph{NIST Atomic Spectra Database} \cite{NISTSpectra}}
+	\label{tab:balmer_wellenlaenge}
+\end{table}
 
+
+\subsubsection{Bestimmung der Rydberg-Konstanten aus den Linien der Balmer-Serie}
 Geradenfit:
 \begin{align*}
 	\frac{1}{\lambda} = R \cdot \left( \frac{1}{4} - \frac{1}{n^2} \right) \quad \text{mit} \quad R = \SI{11.0163 +- 0.02154}{\per\micro\metre}
@@ -449,6 +478,13 @@ Geradenfit:
 \begin{align*}
 	\chi_\mathrm{red.}^2 = \num{0.263}
 \end{align*}
+\begin{figure}
+	\centering
+	\input{./plots/rydberg_linearisierung.tex}
+	\caption{Linearisierung zur Bestimmung der Rydberg-Konstanten}
+	\label{fig:rydberg_balmer}
+\end{figure}
+
 
 
 \subsubsection{Auswertung CCD}
@@ -539,18 +575,6 @@ Der Literaturwert der roten Balmer-Linie liegt nicht mehr im $1$-$\sigma$-Bereic
 Die Aufspaltung der blauen Linie ist unter Berücksichtigung der schlechten Anpassung, die der Auswertung zugrunde liegt, gut bestimmt worden.
 \clearpage
 
-\subsection{Isotopieaufspaltung mit Okular}
-
-Geradenfit:
-\begin{align*}
-	\frac{1}{\lambda} = R \cdot \left( \frac{1}{4} - \frac{1}{n^2} \right) \quad \text{mit} \quad R = \SI{11.0163 +- 0.02154}{\per\micro\metre}
-\end{align*}
-\begin{align*}
-	\chi_\mathrm{red.}^2 = \num{0.263}
-\end{align*}
-
-\clearpage
-
 \begin{table}
 \centering
 \begin{subtable}{0.5\textwidth}
@@ -573,21 +597,7 @@ Geradenfit:
 
 \section{Grafikstorage}
 
-\begin{figure}
-\centering
-\input{./plots/gitterkonstante.tex}
-\caption{Gitterkonstante}
-\label{fig:gitterkonstante}
-\end{figure}
-
 \clearpage
-
-\begin{figure}
-	\centering
-	\input{./plots/rydberg_linearisierung.tex}
-	\caption{Linearisierung zur Bestimmung der Rydberg-Konstanten}
-	\label{fig:rydberg_balmer}
-\end{figure}
 
 
 % BIBLIOGRAPHIE
@@ -596,29 +606,11 @@ Geradenfit:
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{9}
 
-\bibitem{hecht}
-	Eugene Hecht,
-	\emph{Optik}.
-	Oldenbourg,
-	5. Auflage
-	
-\bibitem{siegmann}
-	Anthony E. Siegmann,
-	\emph{Lasers}.
-	University Science Books,
-	1986
-	
-\bibitem{demtroeder3}
-	Wolfgang Demtröder,
-	\emph{Experimentalphysik 3}.
-	Springer Verlag,
-	3. Auflage
- 
-\bibitem{haken_wolf}
-	Hermann Haken, Hans Christoph Wolf,
-	\emph{Atom- und Quantenphysik}.
-	Springer Verlag,
-	7. Auflage
+\bibitem{NISTSpectra}
+	Kramida, A., Ralchenko, Yu., Reader, J., and NIST ASD Team (2014).
+	\emph{NIST Atomic Spectra Database} (ver. 5.2), [Online].
+	Available: \url{http://physics.nist.gov/asd} [2014, December 7].
+	National Institute of Standards and Technology, Gaithersburg, MD. 
  
 \end{thebibliography}
 

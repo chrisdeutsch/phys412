@@ -169,6 +169,83 @@ Bringt man zwei unterschiedliche Leiter mit verschiedenen Austrittsarbeiten in K
 	U_\mathrm{K} = \frac{\phi_1 - \phi_2}{e}
 \end{align}
 
+\subsection{Aufbau der Atomhülle}
+
+\subsubsection{Bohrsches Atommodell}
+Das Bohrsche Atommodell ist ein halbklassisches Modell zur Erklärung der diskreten Energieniveaus in Atomen mit einem Elektron.
+In diesem wird die Energie durch die Bewegung von Elektron und Kern um den gemeinsamen Schwerpunkt, aufgrund des Coulomb-Potentials, beschrieben, dabei wird oftmals in guter Näherung der Kern als stationär angenommen.
+In diesem klassischen Bild tritt das Problem auf, dass das Elektron schon nach kurzer Zeit in den Kern stürzen sollte, da die Bahn um den gemeinsamen Schwerpunkt eine beschleunigte Bewegung darstellt und Energie in Form von Bremsstrahlung emittiert wird.
+Um dieses Problem zu beheben, bediente sich Niels Bohr (1913) der folgenden drei Postulate:
+\begin{enumerate}
+	\item Es sind nur Bahnen mit Bahndrehimpulsen $L = n \hbar$ erlaubt, wobei $n$ eine natürliche Zahl ist.
+	\item Auf diesen Bahnen wird keine Energie abgestrahlt.
+	\item Bahnwechsel findet unter Emission beziehungsweise Absorption eines Photons mit der Energie $E_\gamma = E_f - E_i$ statt, wobei $E_f - E_i$ die Energiedifferenz der betrachteten Bahnen ist.
+\end{enumerate}
+Mithilfe dieser Postulate, ist es möglich die Energie der Bahnen zu bestimmen, wobei wir uns hier auf einen Kern mit Ladungszahl $Z = \num{1}$ beschränken wollen:
+\begin{align}
+	\label{eq:energieniveaus_bohr}
+	E_n = - \frac{1}{2} \, \frac{1}{n^2} \, \alpha^2 \mu c^2 \text{,}
+\end{align}
+wobei die Feinstrukturkonstante $\alpha$ definiert ist durch:
+\begin{align}
+	\alpha = \frac{e^2}{4 \pi \epsilon_0 \hbar c}
+\end{align}
+und die reduzierte Masse $\mu$ des Systems Elektron-Kern:
+\begin{align}
+	\mu = \frac{m_e \cdot m_\mathrm{K}}{m_e + m_\mathrm{K}}
+\end{align}
+Die quantenmechanische Behandlung von zwei Punktladungen im gemeinsamen Coulomb-Potential führt im Schwerpunktssystem mit der Relativkoordinate $\vec{r}$ auf den Hamiltonian:
+\begin{align}
+	\mathcal{H} = - \frac{\hbar}{2 \mu} \nabla^2 - \frac{e^2}{4 \pi \epsilon_0 |\vec{r}|} \text{.}
+\end{align}
+Die Energieniveaus ergeben sich nun aus der Lösung der stationären Schrödingergleichung:
+\begin{align}
+	\mathcal{H} \psi = E \psi
+\end{align}
+und führt auf die Quantenzahlen $n, \ell, m_\ell$ mit Energieeigenwerten wie sie vom Bohr-Modell vorhergesagt wurden (Gleichung \ref{eq:energieniveaus_bohr}).
+Bei der quantenmechanischen Lösung beschreibt die Hauptquantenzahl $n$ jedoch nicht den Bahndrehimpuls des Teilchens, sondern die Drehimpulsquantenzahl $\ell$ sowie die magnetische Quantenzahl $m_\ell$ welche die Projektion des Drehimpulses auf eine frei wählbare Quantisierungsachse beschreibt.
+
+\subsubsection{Rydberg-Formel und Balmer-Serie}
+Bereits vor der Beschreibung des Spektrums von Wasserstoff durch Bohr, wurde dieses von Rydberg empirisch durch die sogenannte Rydberg-Formel beschrieben:
+\begin{align}
+	\label{eq:rydberg_formel}
+	\frac{1}{\lambda} = R \cdot \left( \frac{1}{n_f^2} - \frac{1}{n_i^2} \right) \text{,}
+\end{align}
+wobei $R$ die Rydberg-Konstante in Einheiten einer Wellenzahl bezeichnet.
+Nach der theoretischen Beschreibung durch Bohr konnte diese berechnet werden.
+Betrachtet man einen Übergang von einem Niveau $E_i$ nach $E_f$, so ist die in Form eines Photons freigewordene Energie:
+\begin{align}
+	\Delta E = \frac{h c}{\lambda} = E_i - E_f \text{.}
+\end{align}
+Nutzt man Gleichung \ref{eq:energieniveaus_bohr} und formt nach $\frac{1}{\lambda}$ um, so erhält man:
+\begin{align}
+	\frac{1}{\lambda} = \frac{1}{2} \, \frac{\alpha^2 \mu c}{h} \left( \frac{1}{n_f^2} - \frac{1}{n_i^2}\right)
+\end{align}
+und kann die Rydberg-Konstante direkt ablesen:
+\begin{align}
+\label{eq:rydberg_konstante}
+R(\mu) = \frac{1}{2} \, \frac{\alpha^2 \mu c}{h} = \frac{\mu e^4}{8 c \epsilon_0^2 h^3} \text{,}
+\end{align}
+welche insbesondere von der reduzierten Masse des Elektron-Kern-Systems abhängt.
+Vernachlässigt man die Schwerpunktsbewegung so erhält man mit $\mu \approx m_e$ die Rydberg-Konstante bei unendlicher Kernmasse \cite{CODATA}:
+\begin{align}
+	R_\infty = \SI{10973731.568539 +- 0.000055}{\per\metre}
+\end{align}
+Offensichtlich hängt die Rydberg-Konstante und damit auch das Spektrum von der reduzierten Masse $\mu$ ab (Gleichung \ref{eq:rydberg_formel}), welche durch:
+\begin{align}
+	R = \frac{\mu}{m_e} \cdot R_\infty = \frac{R_\infty}{1 + \frac{m_e}{m_\mathrm{K}}}
+\end{align}
+ausgedrückt werden kann.
+Aufgrund diesen Zusammenhangs kommt es zu einer Isotopieaufspaltung des Wasserstoffspektrums, da die Rydberg-Konstante für Deuterium ($m_\mathrm{K} \approx m_\mathrm{p} + m_\mathrm{n}$) etwas größer ist, als die von einfachem Wasserstoff ($m_\mathrm{K} = m_\mathrm{p}$) und somit die Emission von Deuterium bei etwas höherer Energie stattfindet als die des Wasserstoff.
+
+Man klassifiziert aus historischen Gründen Übergänge oft nach ihrem Endniveau $n_f$, sodass diese für $n_i > n_f$ in sogenannte Serien eingeordnet werden.
+Für Wasserstoff sind diese: Lyman ($n_i \rightarrow 1$), Balmer ($n_i \rightarrow 2$), Paschen ($n_i \rightarrow 3$), \dots\\
+In diesem Versuch werden einige Linien der Balmer-Serie beobachtet, da nur diese Emission im optisch sichtbaren Bereich aufweist.
+
+\subsection{Spektroskopie}
+
+
+
 \section{Bestimmung des Planckschen Wirkungsquantums}
 
 \subsection{Durchführung}

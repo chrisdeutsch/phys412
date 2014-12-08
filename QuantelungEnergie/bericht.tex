@@ -564,19 +564,20 @@ Mit den physikalischen Konstanten aus (CODATA 2010) und dem berechneten Wert fü
 
 \subsubsection{Auswertung CCD}
 
-Wir wählen wie bereits erwähnt die jeweils beste Messung aus den vorliegenden Daten aus und stellen die Aufspaltung grafisch dar.
-Dabei passen wir mit \texttt{gnuplot} (least-squares-fit) zwei Gaußfunktionen an die Maxima mit folgender Fithypothese an:
+Es wird, wie bereits erwähnt, die jeweils beste Messung aus den vorliegenden Daten ausgewählt und grafisch dargestellt.
+Dabei wurden mit \texttt{gnuplot} (least-squares-fit) zwei Gaußfunktionen an die Maxima mit folgender Fithypothese angepasst:
 \begin{align}
 f(x)&=\mathcal{G}_1(x)+\mathcal{G}_2(x) + d\qquad\text{mit}\\
 \mathcal{G}_i(x)&=A\,\exp\left[-\frac{1}{2}\left(\frac{x-S_i}{\sigma_i}\right)^2\right]
+\label{eq:fithypothese_gauss}
 \end{align}
 Diese sind zusammen mit den Messdaten in den Abbildungen \ref{fig:aufspaltung_rot} bis  \ref{fig:aufspaltung_violett} dargestellt.
-Die Isotopieaufspaltung der violetten Balmer-Linie ist dabei so klein, dass wir sie nicht messen konnten.
-Der Vollständigkeit halber haben wir die Messwerte und eine daran angepasste Gaußkurve in dieses Protokoll aufgenommen, eine Auswertung ist damit jedoch nicht möglich.\\
+Die Isotopieaufspaltung der violetten Balmer-Linie ist dabei so klein, dass sie in dem Versuch nicht gemessen werden konnte.
+Der Vollständigkeit halber werden die Messwerte und eine daran angepasste Gaußkurve in dieses Protokoll aufgenommen, eine Auswertung ist damit jedoch nicht möglich gewesen.\\
 \\
-Für den Intensitätsfehler haben wir mit Berücksichtigung der Mittelung der Messwerte über einen Zeitraum (die genommenen Daten unterliegen deswegen sehr kleinen Schwankungen) \SI{0.2}{\percent} für die Daten zur roten und türkisen Linie angenommen.
-Für die blaue Linie haben wir aufgrund der geringen Intensität sehr lange im Programm VideoCom mitteln lassen und wählen deswegen \SI{0.1}{\percent} als Fehler für die Intensität.
-Den Fehler des Winkels schätzen wir zu \SI{0.0015}{\degree} ab; dies folgt aus der Überlegung, dass wir einen Winkelbereich von ca. \SI{5.5}{\degree} auf \num{2048} Pixeln messen.
+Für den Intensitätsfehler wurde mit Berücksichtigung der Mittelung der Messwerte über einen Zeitraum (die genommenen Daten unterliegen deswegen sehr kleinen Schwankungen) \SI{0.2}{\percent} für die Daten zur roten und türkisen Linie angenommen.
+Im Fall der blauen Linie wurde aufgrund der geringen Intensität sehr lange im Programm VideoCom über die Messwerte gemittelt und deswegen \SI{0.1}{\percent} als Fehler für die Intensität gewählt.
+Den Fehler des Winkels kann man zu \SI{0.0015}{\degree} abschätzen; dies folgt aus der Überlegung, dass ein Winkelbereich von ca. \SI{5.5}{\degree} auf \num{2048} Pixeln vermessen wurde.
 \begin{figure}[h]
 \centering
 \input{./plots/aufspaltung/rot2.tex}
@@ -606,10 +607,10 @@ In Abbildung \ref{fig:aufspaltung_blau} ist offensichtlich, dass die Amplitude d
 Da die Linien sehr schmal und die Aufspaltung sehr gering ist, liegen hier wenige Messdaten vor, an die die Funktion angepasst werden kann.
 Dabei ist die Anpassung auch noch sehr stark von der Wahl der Anfangsbedingungen abhängig.
 Einzig die für diese Anpassung gewählten Anfangsbedingungen (der Anfangswert der Amplitude des Hauptmaximas wurde bei der Anpassung übernommen) liefert ein halbwegs sinnvolles Ergebnis.
-Da die Amplitude zur Auswertung nicht benötigt wird und die Schwerpunkte der Gaußkurven sinnvoll erscheinen, ist dies die unserer Meinung nach beste Möglichkeit, auswertbare Daten zu erhalten und wir werden diese Anpassung zur Auswertung nutzen.
+Da die Amplitude zur Auswertung nicht benötigt wird und die Schwerpunkte der Gaußkurven sinnvoll erscheinen, ist dies die unserer Meinung nach beste Möglichkeit, auswertbare Daten zu erhalten und diese werden zur Anpassung in der Auswertung nutzen.
 
 In Tabelle \ref{tab:balmer_ccd_messwerte} sind die Messwerte, die der Auswertung zugrunde liegen, dargestellt.
-Die Ergebnisse der Anpassungen durch \texttt{gnuplot} sind dort ebenfalls  in den Spalten "`Schwerpunkt 1"' und "`Schwerpunkt 2"' dargestellt.
+Die Ergebnisse der Anpassungen für die Schwerpunkte $S_1$ (Wasserstofflinie) und $S_2$ (Deuteriumlinie) durch \texttt{gnuplot} sind dort ebenfalls eingetragen worden.
 Aus der Differenz der Schwerpunkte errechnen wir in \ref{tab:balmer_ccd_auswertung} die Winkelaufspaltung $\Delta\beta$ zwischen der Wasserstoff- und Deuteriumlinie.\\
 \\
 Aus der Gittergleichung \eqref{eq:gittergleichung} folgt durch Differenzieren
@@ -621,8 +622,8 @@ und wir erhalten nach Umstellen der Gleichung:
 \Delta\lambda=g\,\cos(\beta)\Delta\beta
 \label{eq:balmer_wellenlängenaufspaltung}
 \end{align}
-Mit \eqref{eq:balmer_wellenlängenaufspaltung} können wir damit die Wellenlängenaufspaltung $\Delta\lambda$ der beiden Linien aus der Winkelaufspaltung und dem Reflexionswinkel ausrechnen.
-Den Reflexionswinkel $\beta$ erhalten wir gemäß Abbildung \ref{fig:winkelverhaeltnis} und Formel  \eqref{eq:reflexionswinkel} aus den in Tabelle \ref{tab:balmer_ccd_messwerte} eingetragenen Gitterwinkeln bei festem Bankwinkel $\omega_\text{B}$= \SI{150}{\degree}.
+Mit \eqref{eq:balmer_wellenlängenaufspaltung} kann die Wellenlängenaufspaltung $\Delta\lambda$ der beiden Linien aus der Winkelaufspaltung und dem Reflexionswinkel ausgerechnet werden.
+Den Reflexionswinkel $\beta$ erhält man gemäß Abbildung \ref{fig:winkelverhaeltnis} und Formel  \eqref{eq:reflexionswinkel} aus den in Tabelle \ref{tab:balmer_ccd_messwerte} eingetragenen Gitterwinkeln bei festem Bankwinkel $\omega_\text{B}$= \SI{150}{\degree}.
 Die so gefundenen Werte sind ebenso wie die Fehler bereits in der Tabelle \ref{tab:balmer_ccd_auswertung} eingetragen.
 \begin{table}[h]
 \centering
@@ -641,14 +642,44 @@ Die so gefundenen Werte sind ebenso wie die Fehler bereits in der Tabelle \ref{t
 \noindent
 Zum Vergleich errechnen wir mit \eqref{eq:rydberg} die folgenden theoretischen Werte:
 \begin{align}
-\Delta\lambda_\alpha=\SI{0.179}{\nano\metre}\\
-\Delta\lambda_\beta=\SI{0.132}{\nano\metre}\\
-\Delta\lambda_\gamma=\SI{0.118}{\nano\metre}
+\Delta\lambda_\alpha=\SI{179}{\pico\metre}\\
+\Delta\lambda_\beta=\SI{132}{\pico\metre}\\
+\Delta\lambda_\gamma=\SI{118}{\pico\metre}
 \end{align}
 Die von uns gemessenen Werte liegen alle unter den theoretischen Werten für die Wellenlängenverschiebung.
 Der Literaturwert der roten Balmer-Linie liegt nicht mehr im $1$-$\sigma$-Bereich der gemessenen Isotopieaufspaltung, die anderen beiden Aufspaltungen sind unter Berücksichtigung der Fehlergrenzen mit dem Literaturwert verträglich.
 Die Aufspaltung der blauen Linie ist unter Berücksichtigung der schlechten Anpassung, die der Auswertung zugrunde liegt, gut bestimmt worden.
-\clearpage
+\FloatBarrier
+\subsection{Weitergehende Überlegungen}
+
+\subsubsection{Erklärung weiterer Linien im Spektrum der Balmer-Lampe}
+\subsubsection{Dopplerverbreiterung der Linien}
+Zur Abschätzung der Dopplerverbreiterung wird unter der Annahme, dass die Temperatur der Balmer-Lampe \SI{1000}{\kelvin} beträgt, Formel \eqref{eq:doppler} verwendet.
+Die damit gefundenen Werte sind für die von uns beobachteten Wellenlängen in Tabelle \ref{tab:doppler} in der letzten Spalte eingetragen worden.
+\begin{table}[h]
+\centering
+\resizebox{\columnwidth}{!}{%
+\input{./tables/doppler.tex}}
+\caption{Werte zur Dopplerverbreiterung}
+\label{tab:doppler}
+\end{table}
+In den anderen Spalten wurde die Linienbreite aus den mit der CCD-Kamera gemessenen Daten berechnet.
+Dazu wurden die Schwankungsbreiten $\sigma_1$ des Hauptmaximums (Wasserstofflinie) aus den Anpassungen in Abbildungen \ref{fig:aufspaltung_rot}, \ref{fig:aufspaltung_tuerkis} und \ref{fig:aufspaltung_violett} in die Tabelle eingetragen.
+Die Anpassung für die blaue Linie (wie in \ref{fig:aufspaltung_blau}) wurde in \ref{fig:doppler_blau} mit einer neuen Fithypothese mit nur einer Gaußfunktion und Untergrund wiederholt, um einen sinnvolleren Wert für die Schwankungsbreite zu erhalten.
+\begin{figure}[h]
+\centering
+\input{./plots/doppler_blau1.tex}
+\caption{Anpassung von einer Gaußkurve an die Messwerte der blauen Balmer-Linie}
+\label{fig:doppler_blau}
+\end{figure}
+Die gefundenen Schwankungsbreiten wurden mit dem Faktor $2\sqrt{2\ln2}$ multipliziert, um die Halbwertsbreite der angepassten Gaußfunktion zu erhalten.
+Mit \eqref{eq:balmer_wellenlängenaufspaltung} wurde dieser Wert anschließend in eine Länge umgerechnet, um die gemessenen Werte mit den theoretischen zu vergleichen.
+Die gemessenen Linienbreiten für die rote und türkise Linie liefern dabei plausible Werte, die der anderen beiden Linien erscheinen deutlich zu groß.
+Ursache hierfür sind vor allem die Anpassungen mit nur einer Gauß-Kurve, wobei eine sinnvolle Anpassung mit zwei Gauß-Kurven aufgrund weniger Messwerte nicht möglich war.
+Darum soll im Weiteren nur noch auf die Breiten der roten und türkisen Linien eingegangen werden.
+
+Die gefundenen Linienbreiten sind um den Faktor \num{5} größer als der erwartete Wert, wobei die natürliche Linienbreite mit $\frac{\delta\nu}{\nu}\approx \num{e-8}$ deutlich schmäler ist als die hier auftretenden Werte, so dass diese für die hier getroffene Abschätzung tatsächlich vernachlässigt werden kann.
+Da die Druckverbreiterung proportional zu Druck bzw. Wirkungsquerschnitt ist (vgl. \cite{gerthsen}), scheidet sie aufgrund der in diesem Versuch in der Lampe herrschenden Bedingungen (kein besonders hoher Druck, kleiner Wirkungsquerschnitt) als Ursache für die Linienverbreiterung aus.
 
 \begin{table}
 \centering
@@ -686,6 +717,12 @@ Die Aufspaltung der blauen Linie ist unter Berücksichtigung der schlechten Anpa
 	\emph{NIST Atomic Spectra Database} (ver. 5.2), [Online].
 	Available: \url{http://physics.nist.gov/asd} [2014, December 7].
 	National Institute of Standards and Technology, Gaithersburg, MD. 
+	
+\bibitem{gerthsen}
+	Dieter Meschede,
+	\emph{Gerthsen Physik}.
+	Springer Verlag,
+	23. Auflage
  
 \end{thebibliography}
 

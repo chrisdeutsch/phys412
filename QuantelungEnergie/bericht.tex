@@ -378,6 +378,7 @@ Wegen der teilweise hohen Schwankungen der Intensität haben wir die Messwerte i
 \subsection{Auswertung}
 
 \subsubsection{Bestimmung der Gitterkonstanten}
+\label{sssec:gitterkonstante}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.65\textwidth]{./figures/winkelverhaeltniss.pdf}
@@ -468,7 +469,28 @@ wobei der Fehler $\Delta g$ gegeben ist durch:
 	\caption{Berechnete Wellenlängen der Balmer-Linien. Literaturwerte aus \emph{NIST Atomic Spectra Database} \cite{NISTSpectra}}
 	\label{tab:balmer_wellenlaenge}
 \end{table}
+Da die Gitterkonstante anhand des Quecksilberspektrums bestimmt wurde, ist es nun möglich die Wellenlängen der Balmer-Linien mit der Gittergleichung zu bestimmen.
+Es werden auch hier wieder Interferenzordnungen erster Ordnung vermessen, sodass die Wellenlänge berechnet werden kann durch:
+\begin{align*}
+  \lambda = g \cdot ( \sin(\alpha) + \sin(\beta)) \text{.}
+\end{align*}
+Die Ein- und Ausfallswinkel werden dabei analog zu Abschnitt \ref{sssec:gitterkonstanten} aus den gemessenen Gitter- und Bankwinkeln in Tabelle \ref{tab:gitterkonstante_messdaten} (hier jedoch ohne Korrektur, da bei der Messung die Strichskala auf die Wasserstoff-Linie zentriert wurde).
+Unter Beachtung der Fehler der Winkel $\alpha$, $\beta$ sowie der gemessenen Gitterkonstante $g = \SI{409.90 +- 0.36}{\nano\metre}$ ergeben sich die Wellenlängen aus Tabelle \ref{tab:balmer_wellenlaenge}.
 
+Um die Isotopieaufspaltung zu bestimmen, misst man die Aufspaltung im Okular $d$.
+Die Umrechnung der Aufspaltung im Okular in eine Aufspaltung des Ausfallwinkels $\Delta \beta$, wie zuvor bei der Winkelkorrektur bei der Bestimmung der Gitterkonstanten, durch die Brennweite des Fernrohrobjektivs $f$ in Kleinwinkelnäherung gegeben:
+\begin{align*}
+  \Delta \beta = \frac{d}{f}
+\end{align*}
+Um dies in eine Wellenlängenaufspaltung $\Delta \lambda$ umzurechnen, betrachtet man das Differential der Gittergleichung in erster Ordnung:
+\begin{align*}
+  \mathrm{d}\lambda = \frac{\del \lambda}{\del \alpha} \mathrm{d}\alpha + \frac{\del \lambda}{\del \beta} \mathrm{d}\beta
+\end{align*}
+In linearer Approximation ($\Delta \alpha = \num{0}$) folgt somit:
+\begin{align*}
+  \Delta \lambda &= \frac{\del \lambda}{\del \beta} \cdot \Delta \beta \\
+  &= g \cos(\beta) \Delta \beta
+\end{align*}
 
 \subsubsection{Bestimmung der Rydberg-Konstanten aus den Linien der Balmer-Serie}
 Geradenfit:

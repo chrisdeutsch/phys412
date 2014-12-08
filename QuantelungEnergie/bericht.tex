@@ -525,21 +525,57 @@ Die Berechnung der Isotopieaufspaltung anhand der Beobachtung mit dem Okular und
 \end{table}
 
 \subsubsection{Bestimmung der Rydberg-Konstanten aus den Linien der Balmer-Serie}
-Geradenfit:
+Da die Wellenlängen der ersten vier Linien der Balmer-Serie bestimmt wurden, kann nun mithilfe der Rydberg-Formel (ref Theorieteil) und einer geeigneten Linearisierung eine Bestimmung der Rydberg-Konstanten durchgeführt werden.
+Konkret liefert die Rydberg-Formel für die Balmer-Serie (Übergang: $n \rightarrow 2$) von Wasserstoff:
 \begin{align*}
-	\frac{1}{\lambda} = R \cdot \left( \frac{1}{4} - \frac{1}{n^2} \right) \quad \text{mit} \quad R = \SI{11.0163 +- 0.02154}{\per\micro\metre}
+	\frac{1}{\lambda} = R_\mathrm{H} \cdot \left(\frac{1}{2^2} - \frac{1}{n^2} \right) \text{,}
 \end{align*}
-\begin{align*}
-	\chi_\mathrm{red.}^2 = \num{0.263}
-\end{align*}
-\begin{figure}
+wobei die Linien H$\alpha$, H$\beta$, H$\gamma$, H$\delta$ den natürlichen Zahlen $n = 3, 4, 5, 6$ entsprechen.
+Zur Linearisierung kann nun $\frac{1}{\lambda}$ gegen $\frac{1}{4} - \frac{1}{n^2}$ aufgetragen werden.
+Dazu wurde in Tabelle \ref{tab:rydberg_linearisierung} die reziproke Wellenlänge gebildet und deren Fehler mit Gaußsscher Fehlerfortpflanzung berechnet.
+\begin{table}[h]
+	\centering
+	\input{./tables/balmer_rydberg_linearisierung.tex}
+	\caption{Linearisierte Werte für Rydberg}
+	\label{tab:rydberg_linearisierung}
+\end{table}
+Es wird folglich eine Ursprungsgerade mit \texttt{Gnuplot} an die linearisierten Datenpunkte angepasst, welche zusammen in Abbildung \ref{fig:rydberg_balmer} aufgetragen sind.
+\begin{figure}[h]
 	\centering
 	\input{./plots/rydberg_linearisierung.tex}
 	\caption{Linearisierung zur Bestimmung der Rydberg-Konstanten}
 	\label{fig:rydberg_balmer}
 \end{figure}
+Die Anpassung ergibt für die Rydberg-Konstante:
+\begin{align*}
+	R_\mathrm{H} = \SI{11.016 +- 0.022}{\per\micro\metre} \text{,}
+\end{align*}
+bei einer Anpassungsgüte $\chi_\mathrm{red.}^2 = \num{0.263}$.
+Literaturwerte:
+\begin{align*}
+	R_\infty = \SI{10.974}{\per\micro\metre}\\
+	R_\mathrm{H} = \SI{10.969}{\per\micro\metre}\\
+	R_\mathrm{D} = \SI{10.971}{\per\micro\metre}\\
+\end{align*}
 
-
+Zur Berechnung des Planckschen Wirkungsquantums aus der Rydberg-Konstanten $R_\mathrm{H}$ wird der Zusammenhang:
+\begin{align*}
+	R_\mathrm{H} = \left( 1 + \frac{m_e}{m_p} \right) R_\infty = \left( 1 + \frac{m_e}{m_p} \right) \frac{m_e e^4}{8 c \epsilon_0^2 h^3}
+\end{align*}
+genutzt, sodass für das Wirkungsquantum folgt:
+\begin{align}
+	\label{eq:wirkungsquantum_rydberg}
+	h &= \sqrt[3]{\left( 1 + \frac{m_e}{m_p} \right) \frac{m_e e^4}{8 c \epsilon_0^2 R_\mathrm{H}}}
+\end{align}
+und mit Gaußsscher Fehlerfortpflanzung:
+\begin{align*}
+	\Delta h &= \frac{h \cdot \Delta R_\mathrm{H}}{3 R_\mathrm{H}} \text{,}
+\end{align*}
+wobei $h$ das berechnete Wirkungsquantum aus Gleichung \ref{eq:wirkungsquantum_rydberg} bezeichnet.
+Mit den physikalischen Konstanten aus \cite{CODATA} und dem berechneten Wert für $R_\mathrm{H}$ folgt:
+\begin{align*}
+	h = \SI{6.619 +- 0.005e-34}{\joule\second}
+\end{align*}
 
 \subsubsection{Auswertung CCD}
 
@@ -679,9 +715,15 @@ gegeben, mit der Anzahl beleuchteter Spalte $N$ und der beobachteten Ordnung $n$
 
 \bibitem{NISTSpectra}
 	Kramida, A., Ralchenko, Yu., Reader, J., and NIST ASD Team (2014).
-	\emph{NIST Atomic Spectra Database} (ver. 5.2), [Online].
-	Available: \url{http://physics.nist.gov/asd} [2014, December 7].
-	National Institute of Standards and Technology, Gaithersburg, MD. 
+	\emph{NIST Atomic Spectra Database} (ver. 5.2).
+	\url{http://physics.nist.gov/asd} (Letzter Abruf: 7. Dezember 2014).
+	National Institute of Standards and Technology, Gaithersburg, MD.
+
+\bibitem{CODATA}
+	P.J. Mohr, B.N. Taylor, and D.B. Newell (2011),
+	\emph{The 2010 CODATA Recommended Values of the Fundamental Physical Constants}.
+	\url{http://physics.nist.gov/constants} (Letzer Abruf: 8. Dezember 2014).
+	National Institute of Standards and Technology, Gaithersburg, MD.
 	
 \bibitem{gerthsen}
 	Dieter Meschede,

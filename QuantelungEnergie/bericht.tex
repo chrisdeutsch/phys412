@@ -474,7 +474,7 @@ Es werden auch hier wieder Interferenzordnungen erster Ordnung vermessen, sodass
 \begin{align*}
   \lambda = g \cdot ( \sin(\alpha) + \sin(\beta)) \text{.}
 \end{align*}
-Die Ein- und Ausfallswinkel werden dabei analog zu Abschnitt \ref{sssec:gitterkonstanten} aus den gemessenen Gitter- und Bankwinkeln in Tabelle \ref{tab:gitterkonstante_messdaten} (hier jedoch ohne Korrektur, da bei der Messung die Strichskala auf die Wasserstoff-Linie zentriert wurde).
+Die Ein- und Ausfallswinkel werden dabei analog zu Abschnitt \ref{sssec:gitterkonstante} aus den gemessenen Gitter- und Bankwinkeln in Tabelle \ref{tab:balmer_okular_messdaten} (hier jedoch ohne Korrektur, da bei der Messung die Strichskala auf die Wasserstoff-Linie zentriert wurde).
 Unter Beachtung der Fehler der Winkel $\alpha$, $\beta$ sowie der gemessenen Gitterkonstante $g = \SI{409.90 +- 0.36}{\nano\metre}$ ergeben sich die Wellenlängen aus Tabelle \ref{tab:balmer_wellenlaenge}.
 
 Um die Isotopieaufspaltung zu bestimmen, misst man die Aufspaltung im Okular $d$.
@@ -489,8 +489,19 @@ Um dies in eine Wellenlängenaufspaltung $\Delta \lambda$ umzurechnen, betrachte
 In linearer Approximation ($\Delta \alpha = \num{0}$) folgt somit:
 \begin{align*}
   \Delta \lambda &= \frac{\partial \lambda}{\partial \beta} \cdot \Delta \beta \\
-  &= g \cos(\beta) \Delta \beta
+  &= g \cos(\beta) \Delta \beta \text{,}
 \end{align*}
+wobei der Fehler mittels Gaußsscher Fehlerfortpflanzung zu:
+\begin{align*}
+	\sigma_{\Delta \lambda} = \sqrt{\left( \cos(\beta) \Delta \beta \cdot \sigma_g \right)^2 + \left( g \cdot \sin(\beta) \Delta \beta \cdot \sigma_\beta \right)^2 + \left( g \cdot \cos(\beta) \cdot \sigma_{\Delta \beta}\right)^2}
+\end{align*}
+mit
+\begin{align*}
+	\sigma_\beta &= \sqrt{\sigma_{\omega_\mathrm{G}}^2 + \sigma_{\omega_\mathrm{B}}^2} \\
+	\sigma_{\Delta \beta} &= \frac{\sigma_d}{f}
+\end{align*}
+und $\sigma_g$ aus der Bestimmung der Gitterkonstante.
+Die Berechnung der Isotopieaufspaltung anhand der Beobachtung mit dem Okular und Vergleich mit den theoretischen Werten wurde in Tabelle \ref{tab:balmer_aufspaltung_okular} aufgetragen.
 \begin{table}[h]
 	\centering
 	\input{./tables/balmer_aufspaltung_okular.tex}

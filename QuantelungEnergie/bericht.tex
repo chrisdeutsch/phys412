@@ -243,7 +243,32 @@ Für Wasserstoff sind diese: Lyman ($n_i \rightarrow 1$), Balmer ($n_i \rightarr
 In diesem Versuch werden einige Linien der Balmer-Serie beobachtet, da nur diese Emission im optisch sichtbaren Bereich aufweist.
 
 \subsection{Spektroskopie}
+\subsubsection{spektroskopisches Auflösungsvermögen}
+Das Auflösungsvermögen $\mathcal{R}$ ist definiert als das Verhältnis der Wellenlänge $\lambda$ zur Wellenlängendifferenz von zwei gerade noch auflösbaren Linien.
+Gerade noch auflösbar heißt dabei, dass das Rayleigh-Kriterium erfüllt ist, welches besagt, dass der Abstand der beiden Intensitätsmaxima genau der Halbwertsbreite des Intensitätsverlaufs entspricht.
+Damit folgt mit der Halbwertsbreite $\delta \lambda$ der Maxima des Fabry-Pérot-Etalons \cite{hecht}:
+\begin{align}
+\mathcal{R} = \frac{\lambda}{\delta \lambda} = \mathcal{F} \cdot m
+\label{eq:aufloesung}
+\end{align}
 
+\subsubsection{Natürliche Linienbreite und Linienverbreiterung}
+Aufgrund der Heisenberg'schen Unschärferelation führt die endlichen Lebensdauer $\tau$ angeregter Zustände zu einer Energieunschärfe $\Gamma$ bei der Relaxation des Zustandes.
+Die Energieunschärfe ist gegeben durch:
+\begin{align*}
+\Gamma = \frac{\hbar}{\tau}
+\end{align*}
+Diese Energieunschärfe hat ein Lorentz-Profil.
+Darüber hinaus kommt es zur Dopplerverbreiterung aufgrund der thermischen Bewegung der angeregten Atome.
+Die Geschwindigkeitsverteilung der Atome in Beobachtungsrichtung ist gaußförmig um Null, sodass auch die Dopplerverbreitung ein gaußförmiges Profil mit der Halbwertsbreite:
+\begin{align}
+\delta \lambda = \frac{\lambda_0}{c} \sqrt{\frac{8 k_\mathrm{B} T \ln(2)}{m}}
+\label{eq:doppler}
+\end{align}
+hat.
+Die Kombination von natürlicher Linienbreite (Lorentz) und Dopplerverbreiterung (Gauß) führt (durch Faltung) zu einem sogenannten Voigt-Profil \cite{siegmann}.
+Neben der Dopplerverbreiterung existiert noch die Druckverbreiterung der Linien aufgrund von Stößen mit Nachbarn eines angeregten Atoms.
+Dieser Effekt wird erst bei der Beobachtung von Sternen relevant und daher nicht weiter diskutiert.
 
 
 \section{Bestimmung des Planckschen Wirkungsquantums}
@@ -814,6 +839,19 @@ gegeben, mit der Anzahl beleuchteter Spalte $N$ und der beobachteten Ordnung $n$
 	\emph{Gerthsen Physik}.
 	Springer Verlag,
 	23. Auflage
+
+\bibitem{hecht}
+	Eugene Hecht,
+	\emph{Optik}.
+	Oldenbourg,
+	5. Auflage
+
+\bibitem{siegmann}
+	Anthony E. Siegmann,
+	\emph{Lasers}.
+	University Science Books,
+	1986
+
  
 \end{thebibliography}
 

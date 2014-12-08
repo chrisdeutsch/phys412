@@ -416,32 +416,49 @@ In Abbildung \ref{fig:kennlinie_intensitaet} wurden beide Kennlinien aufgetragen
 	\item Klar zu erkennen -- Gleiche Grenzfrequenz! -- logisch da Elektronenenergie unabhängig von Intensität
 \end{itemize}
 
-
+\clearpage
 \section{Balmer-Serie}
 
 \subsection{Durchführung}
 
 \subsubsection{Aufbau und Justage}
-Wir setzen $\omega_\mathrm{B}$ konstant auf \SI{150}{\degree}.
+\label{sssec:balmer_okular}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{./figures/versuchsaufbau_balmerserie.pdf}
+\caption{Versuchsanordnung zur Beobachtung der Balmer-Serie mit Okular bzw. CCD-Kamera}
+\label{fig:aufbau_balmer}
+\end{figure}
+\noindent Der Versuchsaufbau erfolgt wie in Abbildung \ref{fig:aufbau_balmer} gezeigt.
+Dabei wird der Aufbau zunächst mit einer Quecksilber-Spektrallampe justiert, da die Intensität dort höher ist.
+Auf der ersten optischen Bank werden Linse, Spalt und Projektionsobjektiv befestigt.
+Mit den Reflexen des Lichts am auf \SI{0}{\degree} gedrehten Gitter kann eine möglichst genaue Ausrichtung aller Elemente entlang einer optischen Achse sichergestellt werden.
+Die Linse mit \SI{50}{\milli\metre} Brennweite wird dabei so positioniert, dass sie die Lampe scharf auf den Spalt abbildet.
+Nun wird direkt neben dem Spalt durch Reflexion am Gitter eine scharfe Abbildung des Spalts selbst erreicht, in dem das Projektionsobjektiv zunächst grob positioniert und durch Drehen an der Linse optimal eingestellt wird.
+Der Aufbau befindet sich danach in so genannter Autokollimation, was bedeutet, dass der Spalt ins Unendliche abgebildet wird.
+Die zweite optische Bank wird so gedreht, dass sie mit der ersten optischen Bank einen Bankwinkel $\omega_\text{B}$ zwischen \SI{130}{\degree} und \SI{170}{\degree} bildet.
+Für die Durchführung wird $\omega_\text{B}$=\SI{150}{\degree} gewählt und  für alle Versuchsteile beibehalten und vor den Messungen kontrolliert und gegebenenfalls neu justiert.
+Am Ende der zweiten optischen Bank wird das Okular befestigt und so eingestellt, dass die Skala gut ablesbar ist.
+Mit Hilfe der Linse mit \SI{300}{\milli\metre} Brennweite kann das zu beobachtende Spektrum scharf auf das Okular abgebildet werden (Fernrohraufbau).
 
 \subsubsection{Bestimmung der Gitterkonstanten}
 \label{sssec:durchfuehrung_gitterkonstante}
+Die Bestimmung der Gitterkonstante erfolgt mit einer Hg-Spektrallampe, da sie viele beobachtbare Linien hat und so eine gute Messung mit möglichst vielen Werten möglich ist.
+Dazu wird das Gitter während ständiger Beobachtung durch das Okular so gedreht, bis die erste sichtbare Linie erscheint.
+Hierfür sollte der Spalt zunächst weit geöffnet sein, um eine hohe Intensität zu erreichen und nach Auffinden der Linie verkleinert werden, um eine möglichst genaue Messung durchzuführen.
+Ist die entsprechende Linie mit der Linse mit Brennweite $f=$\SI{300}{\milli\metre} scharf im Okular zu beobachten wird der Gitterwinkel $\omega_\text{G}$ auf der Winkelskala abgelesen.
+Hier ist abermals darauf zu achten, dass der Bankwinkel weiterhin \SI{150}{\degree} beträgt.
+So verfährt man für alle sichtbaren Linien, die im Anschluss an die Messung mit Hilfe der gegebenen Tabelle der sichtbaren Spektrallinien von Quecksilber einer Wellenlänge zugeordnet werden können.
+Die entsprechenden Messwerte sind in Tabelle \ref{tab:gitterkonstante_messdaten} notiert.
 \begin{table}[h]
 	\centering
 	\input{./tables/gitterkonstante_messdaten.tex}
 	\caption{Ergebnisse der $\Delta \omega_\mathrm{G} = \SI{0.5}{\degree}$ und $\Delta d = \SI{0.05}{\milli\metre}$}
 	\label{tab:gitterkonstante_messdaten}
 \end{table}
-(Erklären warum wir die \SI{690}{\nano\metre} Linie nicht gemessen haben und was es mit $d$ auf sich hat. Konvention bei der Messung von $d$, rechts positiv -- kleineres $\beta$)
+(Erklären warum wir die \SI{690}{\nano\metre} Linie nicht gemessen haben)
 
-\subsubsection{Messung der Balmer-Linien mit einem Okular}
-\label{sssec:balmer_okular}
-\begin{table}
-	\centering
-	\input{./tables/balmer_okular_messdaten.tex}
-	\caption{Messung der Balmer-Linien}
-	\label{tab:balmer_okular_messdaten}
-\end{table}
+\subsubsection{Messung der Balmer-Linien mit einem Okular} 
 
 \subsubsection{Messung der Balmer-Linien mit einer CCD-Kamera}
 Wir nutzen den Versuchsaufbau wie in \ref{sssec:balmer_okular} beschrieben, ersetzen das Okular jedoch durch eine CCD Kamera, die wir mit dem Computer verbinden.
@@ -538,8 +555,13 @@ wobei der Fehler $\Delta g$ gegeben ist durch:
 	\Delta g = \frac{\Delta \left( \frac{1}{g} \right)}{\left( \frac{1}{g} \right)^2} \text{.}
 \end{align*}
 
-
 \subsubsection{Wellenlängen und Isotopieaufspaltung der Balmer-Linien bei Beobachtung mit dem Okular}
+\begin{table}[h]
+	\centering
+	\input{./tables/balmer_okular_messdaten.tex}
+	\caption{Messung der Balmer-Linien}
+	\label{tab:balmer_okular_messdaten}
+\end{table}
 \begin{table}[h]
 	\centering
 	\input{./tables/balmer_wellenlaengen.tex}
@@ -730,6 +752,7 @@ Die Aufspaltung der blauen Linie ist unter Berücksichtigung der schlechten Anpa
 \subsection{Weitergehende Überlegungen}
 
 \subsubsection{Erklärung weiterer Linien im Spektrum der Balmer-Lampe}
+
 \subsubsection{Dopplerverbreiterung der Linien}
 Zur Abschätzung der Dopplerverbreiterung wird unter der Annahme, dass die Temperatur der Balmer-Lampe \SI{1000}{\kelvin} beträgt, Formel \eqref{eq:doppler} verwendet.
 Die damit gefundenen Werte sind für die von uns beobachteten Wellenlängen in Tabelle \ref{tab:doppler} in der letzten Spalte eingetragen worden.
@@ -758,30 +781,15 @@ Darum soll im Weiteren nur noch auf die Breiten der roten und türkisen Linien e
 Die gefundenen Linienbreiten sind um den Faktor \num{5} größer als der erwartete Wert, wobei die natürliche Linienbreite mit $\frac{\delta\nu}{\nu}\approx \num{e-8}$ deutlich schmäler ist als die hier auftretenden Werte, so dass diese für die hier getroffene Abschätzung tatsächlich vernachlässigt werden kann.
 Da die Druckverbreiterung proportional zu Druck bzw. Wirkungsquerschnitt ist (vgl. \cite{gerthsen}), scheidet sie aufgrund der in diesem Versuch in der Lampe herrschenden Bedingungen (kein besonders hoher Druck, kleiner Wirkungsquerschnitt) als Ursache für die Linienverbreiterung aus.
 
-\begin{table}
-\centering
-\begin{subtable}{0.5\textwidth}
-\centering
-
-<tabular-environment>
-
-\caption{<subcaption>}
-\end{subtable}%
-\begin{subtable}{0.5\textwidth}
-\centering
-
-<tabular-environment>
-
-\caption{<subcaption>}
-\end{subtable}
-
-\caption{<main caption>}
-\end{table}
-
-\section{Grafikstorage}
-
-\clearpage
-
+\subsubsection{Auflösungsvermögen des Gitters}
+Das Auflösungsvermögen eines Gitters ist durch
+\begin{align*}
+\mathcal{R}=\frac{\lambda}{\Delta\lambda}=n\,N
+\end{align*}
+gegeben, mit der Anzahl beleuchteter Spalte $N$ und der beobachteten Ordnung $n$. Unter der Annahme, dass das Gitter über die volle Breite (\SI{25}{\milli\metre}) beleuchtet ist und die Linien jeweils in der ersten Beugungsordnung beobachtet werden, erhält man mit der Gitterkonstante $g=\SI{409.9}{\nano\metre}$ als obere Grenze für das Auflösungsvermögen:
+\begin{align*}
+\mathcal{R}=60990\approx 61000
+\end{align*}
 
 % BIBLIOGRAPHIE
 

@@ -484,15 +484,19 @@ Die entsprechenden Messwerte sind in Tabelle \ref{tab:gitterkonstante_messdaten}
 (Erklären warum wir die \SI{690}{\nano\metre} Linie nicht gemessen haben)
 
 \subsubsection{Messung der Balmer-Linien mit einem Okular} 
+Zu den weiteren Messungen wird nun die Quecksilberlampe gegen eine deuterierte Balmer-Lampe getauscht (Mischungsverhältnis ca. 1:2).
+Wie bei der Bestimmung der Gitterkonstante dreht man nun das Gitter bis man eine beobachtbare Wasserstofflinie (hellere der beiden Linien) sieht und notiert den Gitterwinkel $\omega_\text{G}$, bei dem die Linie im Nullpunkt der Okularskala liegt.
+Hieraus kann später die Wellenlänge der beobachteten Linie gemessen werden.
+Außerdem wird wie oben die Verschiebung $d$ notiert, unter der die Deuteriumlinie (schwächere der beiden Linien) im Okular auftritt, um so später die Isotopieaufspaltung zu bestimmen.
 
 \subsubsection{Messung der Balmer-Linien mit einer CCD-Kamera}
-Wir nutzen den Versuchsaufbau wie in \ref{sssec:balmer_okular} beschrieben, ersetzen das Okular jedoch durch eine CCD Kamera, die wir mit dem Computer verbinden.
-Im Programm VideoCom wird die Brennweite der auf die CCD-Zeile abbildenden Linse (\SI{300}{\milli\meter}) eingetragen, so dass jedem der 2048 Pixel ein Winkel zugeordnet werden kann, den wir im folgenden mit $\alpha$ bezeichnen.
-Um die Linien aufzufinden nutzen wir das Okular auf einem zusätzlichen Reiter (um die vertikale Ausrichtung bei jedem Durchgang nicht anpassen zu müssen) und drehen das Gitter entsprechend, bis die Linie möglichst zentral liegt.
-Dann setzen wir den Reiter mit der Kamera anstelle des Okulars auf die optische Bank und betrachten das Intensitätsprofil auf dem Bildschirm, um die Abbildungslinse so zu verschieben, bis wir scharf auf die Kamera abbilden.
-Wir vergrößern nun den Bildausschnitt, um den Bereich der Linie besser betrachten zu können und verändern die Spaltbreite so, dass wir eine möglichst hohe Intensität und gleichzeitig eine gute Aufspaltung messen.
-Da dies nicht immer eindeutig gelang haben wir zu jeder Linie mehrere Messungen durchgeführt und zur Auswertung jeweils die Messung gewählt, bei der die Aufspaltung gut zu erkennen war.
-Wegen der teilweise hohen Schwankungen der Intensität haben wir die Messwerte im Programm über eine gewisse Zeit mitteln lassen, bis mit dem Auge beinahe keine Schwankungen mehr zu erkennen waren.
+Es wird der Versuchsaufbau wie in \ref{sssec:balmer_okular} beschrieben genutzt, allerdings mit einer CCD-Kamera anstelle des Okulars. 
+Im Programm VideoCom wird die Brennweite der auf die CCD-Zeile abbildenden Linse (\SI{300}{\milli\meter}) eingetragen, so dass jedem der 2048 Pixel ein Winkel zugeordnet werden kann, der im folgenden mit $\alpha$ bezeichnet wird.
+Um die Linien aufzufinden wird das Okular auf einem zusätzlichen Reiter aufgebaut (um die vertikale Ausrichtung bei jedem Durchgang nicht anpassen zu müssen) und das Gitter entsprechend gedreht, bis die Linie möglichst zentral liegt.
+Die CCD-Kamera wird nun statt des Okulars auf der optischen Bank aufgebaut und das Intensitätsprofil kann auf dem Bildschirm betrachtet werden, um die Abbildungslinse so zu verschieben, bis sie scharf auf die Kamera abbildet.
+Durch Vergrößerung des Bildschausschnitts kann der Bereich der Linie besser betrachtet werden können und die Spaltbreite wird so angepasst, dass eine möglichst hohe Intensität und gleichzeitig eine gute Aufspaltung erreicht wird.
+Da dies nicht immer eindeutig gelang wurden zu jeder Linie mehrere Messungen durchgeführt und zur Auswertung jeweils die Messung gewählt, bei der die Aufspaltung gut zu erkennen war.
+Wegen der teilweise hohen Schwankungen der Intensität lässt man die Messwerte im Programm über eine gewisse Zeit mitteln, bis mit dem Auge beinahe keine Schwankungen mehr zu erkennen sind.
 
 \subsection{Auswertung}
 
@@ -581,6 +585,7 @@ wobei der Fehler $\Delta g$ gegeben ist durch:
 \end{align*}
 
 \subsubsection{Wellenlängen und Isotopieaufspaltung der Balmer-Linien bei Beobachtung mit dem Okular}
+\label{sssec:balmer_okular_aufspaltung}
 \begin{table}[h]
 	\centering
 	\input{./tables/balmer_okular_messdaten.tex}
@@ -593,8 +598,8 @@ wobei der Fehler $\Delta g$ gegeben ist durch:
 	\caption{Berechnete Wellenlängen der Balmer-Linien. Literaturwerte aus \emph{NIST Atomic Spectra Database} \cite{NISTSpectra}}
 	\label{tab:balmer_wellenlaenge}
 \end{table}
-Da die Gitterkonstante anhand des Quecksilberspektrums bestimmt wurde, ist es nun möglich die Wellenlängen der Balmer-Linien mit der Gittergleichung zu bestimmen.
-Es werden auch hier wieder Interferenzordnungen erster Ordnung vermessen, sodass die Wellenlänge berechnet werden kann durch:
+Da die Gitterkonstante anhand des Quecksilberspektrums bestimmt wurde, ist es nun möglich die Wellenlängen der beobachteten Balmer-Linien mit der Gittergleichung zu bestimmen.
+Es werden auch hier Interferenzordnungen erster Ordnung vermessen, sodass die Wellenlänge berechnet werden kann durch:
 \begin{align*}
   \lambda = g \cdot ( \sin(\alpha) + \sin(\beta)) \text{.}
 \end{align*}
@@ -602,7 +607,7 @@ Die Ein- und Ausfallswinkel werden dabei analog zu Abschnitt \ref{sssec:gitterko
 Unter Beachtung der Fehler der Winkel $\alpha$, $\beta$ sowie der gemessenen Gitterkonstante $g = \SI{409.90 +- 0.36}{\nano\metre}$ ergeben sich die Wellenlängen aus Tabelle \ref{tab:balmer_wellenlaenge}.
 
 Um die Isotopieaufspaltung zu bestimmen, misst man die Aufspaltung im Okular $d$.
-Die Umrechnung der Aufspaltung im Okular in eine Aufspaltung des Ausfallwinkels $\Delta \beta$, wie zuvor bei der Winkelkorrektur bei der Bestimmung der Gitterkonstanten, durch die Brennweite des Fernrohrobjektivs $f$ in Kleinwinkelnäherung gegeben:
+Die Umrechnung der Aufspaltung im Okular in eine Aufspaltung des Ausfallwinkels $\Delta \beta$, wie zuvor bei der Winkelkorrektur bei der Bestimmung der Gitterkonstanten, ist durch die Brennweite des Fernrohrobjektivs $f$ in Kleinwinkelnäherung gegeben:
 \begin{align*}
   \Delta \beta = \frac{d}{f}
 \end{align*}
@@ -611,15 +616,16 @@ Um dies in eine Wellenlängenaufspaltung $\Delta \lambda$ umzurechnen, betrachte
   \mathrm{d}\lambda = \frac{\partial \lambda}{\partial \alpha} \mathrm{d}\alpha + \frac{\partial \lambda}{\partial \beta} \mathrm{d}\beta
 \end{align*}
 In linearer Approximation ($\Delta \alpha = \num{0}$) folgt somit:
-\begin{align*}
+\begin{align}
   \Delta \lambda &= \frac{\partial \lambda}{\partial \beta} \cdot \Delta \beta \\
   &= g \cos(\beta) \Delta \beta \text{,}
-\end{align*}
+  \label{eq:gitter_differenzial}
+\end{align}
 wobei der Fehler mittels Gaußsscher Fehlerfortpflanzung zu:
 \begin{align*}
 	\sigma_{\Delta \lambda} = \sqrt{\left( \cos(\beta) \Delta \beta \cdot \sigma_g \right)^2 + \left( g \cdot \sin(\beta) \Delta \beta \cdot \sigma_\beta \right)^2 + \left( g \cdot \cos(\beta) \cdot \sigma_{\Delta \beta}\right)^2}
 \end{align*}
-mit
+bestimmt wurde mit
 \begin{align*}
 	\sigma_\beta &= \sqrt{\sigma_{\omega_\mathrm{G}}^2 + \sigma_{\omega_\mathrm{B}}^2} \\
 	\sigma_{\Delta \beta} &= \frac{\sigma_d}{f}
@@ -639,7 +645,7 @@ Konkret liefert die Rydberg-Formel für die Balmer-Serie (Übergang: $n \rightar
 \begin{align*}
 	\frac{1}{\lambda} = R_\mathrm{H} \cdot \left(\frac{1}{2^2} - \frac{1}{n^2} \right) \text{,}
 \end{align*}
-wobei die Linien H$\alpha$, H$\beta$, H$\gamma$, H$\delta$ den natürlichen Zahlen $n = 3, 4, 5, 6$ entsprechen.
+wobei die Linien H$_\alpha$, H$_\beta$, H$_\gamma$, H$_\delta$ den natürlichen Zahlen $n = 3, 4, 5, 6$ entsprechen.
 Zur Linearisierung kann nun $\frac{1}{\lambda}$ gegen $\frac{1}{4} - \frac{1}{n^2}$ aufgetragen werden.
 Dazu wurde in Tabelle \ref{tab:rydberg_linearisierung} die reziproke Wellenlänge gebildet und deren Fehler mit Gaußsscher Fehlerfortpflanzung berechnet.
 \begin{table}[h]
@@ -689,7 +695,7 @@ Mit den physikalischen Konstanten aus \cite{CODATA} und dem berechneten Wert fü
 \subsubsection{Auswertung CCD}
 
 Es wird, wie bereits erwähnt, die jeweils beste Messung aus den vorliegenden Daten ausgewählt und grafisch dargestellt.
-Dabei wurden mit \texttt{gnuplot} (least-squares-fit) zwei Gaußfunktionen an die Maxima mit folgender Fithypothese angepasst:
+Dabei wurden mit \texttt{Gnuplot} (Least-Squares-Fit) zwei Gaußfunktionen an die Maxima mit folgender Fithypothese angepasst:
 \begin{align}
 f(x)&=\mathcal{G}_1(x)+\mathcal{G}_2(x) + d\qquad\text{mit}\\
 \mathcal{G}_i(x)&=A\,\exp\left[-\frac{1}{2}\left(\frac{x-S_i}{\sigma_i}\right)^2\right]
@@ -734,19 +740,14 @@ Einzig die für diese Anpassung gewählten Anfangsbedingungen (der Anfangswert d
 Da die Amplitude zur Auswertung nicht benötigt wird und die Schwerpunkte der Gaußkurven sinnvoll erscheinen, ist dies die unserer Meinung nach beste Möglichkeit, auswertbare Daten zu erhalten und diese werden zur Anpassung in der Auswertung nutzen.
 
 In Tabelle \ref{tab:balmer_ccd_messwerte} sind die Messwerte, die der Auswertung zugrunde liegen, dargestellt.
-Die Ergebnisse der Anpassungen für die Schwerpunkte $S_1$ (Wasserstofflinie) und $S_2$ (Deuteriumlinie) durch \texttt{gnuplot} sind dort ebenfalls eingetragen worden.
+Die Ergebnisse der Anpassungen für die Schwerpunkte $S_1$ (Wasserstofflinie) und $S_2$ (Deuteriumlinie) durch \texttt{Gnuplot} sind dort ebenfalls eingetragen worden.
 Aus der Differenz der Schwerpunkte errechnen wir in \ref{tab:balmer_ccd_auswertung} die Winkelaufspaltung $\Delta\beta$ zwischen der Wasserstoff- und Deuteriumlinie.\\
 \\
-Aus der Gittergleichung \eqref{eq:gittergleichung} folgt durch Differenzieren
+Wie in Abschnitt \ref{sssec:balmer_okular_aufspaltung} nutzen wir Formel \eqref{eq:gitter_differenzial}:
 \begin{align*}
-\frac{\text{d}\lambda}{\text{d}\beta}=g\,\cos(\beta)
-\end{align*}
-und wir erhalten nach Umstellen der Gleichung:
-\begin{align}
 \Delta\lambda=g\,\cos(\beta)\Delta\beta
-\label{eq:balmer_wellenlängenaufspaltung}
-\end{align}
-Mit \eqref{eq:balmer_wellenlängenaufspaltung} kann die Wellenlängenaufspaltung $\Delta\lambda$ der beiden Linien aus der Winkelaufspaltung und dem Reflexionswinkel ausgerechnet werden.
+\end{align*}
+Damit kann die Wellenlängenaufspaltung $\Delta\lambda$ der beiden Linien aus der Winkelaufspaltung und dem Reflexionswinkel ausgerechnet werden.
 Den Reflexionswinkel $\beta$ erhält man gemäß Abbildung \ref{fig:winkelverhaeltnis} und Formel  \eqref{eq:reflexionswinkel} aus den in Tabelle \ref{tab:balmer_ccd_messwerte} eingetragenen Gitterwinkeln bei festem Bankwinkel $\omega_\text{B}$= \SI{150}{\degree}.
 Die so gefundenen Werte sind ebenso wie die Fehler bereits in der Tabelle \ref{tab:balmer_ccd_auswertung} eingetragen.
 \begin{table}[h]

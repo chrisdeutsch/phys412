@@ -339,7 +339,7 @@ In Abbildung \ref{fig:kennlinie_intensitaet} wurden beide Kennlinien aufgetragen
 	\item Klar zu erkennen -- Gleiche Grenzfrequenz! -- logisch da Elektronenenergie unabhängig von Intensität
 \end{itemize}
 
-
+\clearpage
 \section{Balmer-Serie}
 
 \subsection{Durchführung}
@@ -352,7 +352,7 @@ In Abbildung \ref{fig:kennlinie_intensitaet} wurden beide Kennlinien aufgetragen
 \caption{Versuchsanordnung zur Beobachtung der Balmer-Serie mit Okular bzw. CCD-Kamera}
 \label{fig:aufbau_balmer}
 \end{figure}
-Der Versuchsaufbau erfolgt wie in Abbildung \ref{fig:aufbau_balmer} gezeigt.
+\noindent Der Versuchsaufbau erfolgt wie in Abbildung \ref{fig:aufbau_balmer} gezeigt.
 Dabei wird der Aufbau zunächst mit einer Quecksilber-Spektrallampe justiert, da die Intensität dort höher ist.
 Auf der ersten optischen Bank werden Linse, Spalt und Projektionsobjektiv befestigt.
 Mit den Reflexen des Lichts am auf \SI{0}{\degree} gedrehten Gitter kann eine möglichst genaue Ausrichtung aller Elemente entlang einer optischen Achse sichergestellt werden.
@@ -366,13 +366,20 @@ Mit Hilfe der Linse mit \SI{300}{\milli\metre} Brennweite kann das zu beobachten
 
 \subsubsection{Bestimmung der Gitterkonstanten}
 \label{sssec:durchfuehrung_gitterkonstante}
+Die Bestimmung der Gitterkonstante erfolgt mit einer Hg-Spektrallampe, da sie viele beobachtbare Linien hat und so eine gute Messung mit möglichst vielen Werten möglich ist.
+Dazu wird das Gitter während ständiger Beobachtung durch das Okular so gedreht, bis die erste sichtbare Linie erscheint.
+Hierfür sollte der Spalt zunächst weit geöffnet sein, um eine hohe Intensität zu erreichen und nach Auffinden der Linie verkleinert werden, um eine möglichst genaue Messung durchzuführen.
+Ist die entsprechende Linie mit der Linse mit Brennweite $f=$\SI{300}{\milli\metre} scharf im Okular zu beobachten wird der Gitterwinkel $\omega_\text{G}$ auf der Winkelskala abgelesen.
+Hier ist abermals darauf zu achten, dass der Bankwinkel weiterhin \SI{150}{\degree} beträgt.
+So verfährt man für alle sichtbaren Linien, die im Anschluss an die Messung mit Hilfe der gegebenen Tabelle der sichtbaren Spektrallinien von Quecksilber einer Wellenlänge zugeordnet werden können.
+Die entsprechenden Messwerte sind in Tabelle \ref{tab:gitterkonstante_messdaten} notiert.
 \begin{table}[h]
 	\centering
 	\input{./tables/gitterkonstante_messdaten.tex}
 	\caption{Ergebnisse der $\Delta \omega_\mathrm{G} = \SI{0.5}{\degree}$ und $\Delta d = \SI{0.05}{\milli\metre}$}
 	\label{tab:gitterkonstante_messdaten}
 \end{table}
-(Erklären warum wir die \SI{690}{\nano\metre} Linie nicht gemessen haben und was es mit $d$ auf sich hat. Konvention bei der Messung von $d$, rechts positiv -- kleineres $\beta$)
+(Erklären warum wir die \SI{690}{\nano\metre} Linie nicht gemessen haben)
 
 \subsubsection{Messung der Balmer-Linien mit einem Okular} 
 

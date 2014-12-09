@@ -139,7 +139,7 @@ Energie eines Photons:
 \subsection{Photozelle}
 
 \subsubsection{Aufbau und Wirkung}
-Die Photozelle ist eine Form der Elektronenröhre, bei der zwei Elektroden in einem evakuierten Glaskolben (mit kleiner mittleren freien Weglänge $\Lambda$) befestigt sind.
+Die Photozelle ist eine Form der Elektronenröhre, bei der zwei Elektroden in einem evakuierten Glaskolben (mit großer mittlere freien Weglänge $\Lambda$) befestigt sind.
 Eine der Elektroden bildet die Photokathode, aus der die Elektronen durch Lichteinfall (siehe \ref{ssec:photoeffekt}) ausgelöst werden.
 \begin{figure}[h]
 \centering
@@ -165,8 +165,6 @@ Die Energiebilanz des Elektrons lautet somit:
 \begin{align}
 E_e = E_\gamma - W_\mathrm{A} = h \cdot \nu - W_\mathrm{A}
 \end{align}
-
-Messung: Intensitäten oberhalb einer Grenzfrequenz (Austrittsarbeit);
 
 \subsubsection{Photostromverlauf}
 
@@ -274,8 +272,8 @@ Gerade noch auflösbar heißt dabei, dass das Rayleigh-Kriterium erfüllt ist, w
 	\label{fig:gitter}
 \end{figure}
 Ein optisches Gitter besteht aus einer regelmäßigen Anordnung von parallelen Spalten, welche je nach Gittertyp reflektierend oder transmittierend sind.
-Das Gitter ist ein wichtiges Instrument zur Spektroskopie, da dieses aufgrund von Beugung und Interferenz einen von der Wellenlänge abhängigen Transmissions- / Reflektionswinkel aufweist.
-Betrachtet man ein Reflektionsgitter mit Spaltabstand $g$ (Gitterkonstante) wie in Abbildung \ref{fig:gitter} so erhält man:
+Das Gitter ist ein wichtiges Instrument zur Spektroskopie, da dieses aufgrund von Beugung und Interferenz einen von der Wellenlänge abhängigen Transmissions- / Reflexionswinkel aufweist.
+Betrachtet man ein Reflexionsgitter mit Spaltabstand $g$ (Gitterkonstante) wie in Abbildung \ref{fig:gitter} so erhält man:
 \begin{align}
 	\sin(\alpha) = \frac{\Delta_2}{g} \qquad \sin(\beta) = \frac{\Delta_1}{g} \text{,}
 \end{align}
@@ -293,7 +291,7 @@ Um konstruktive Interferenz zu erreichen, muss der Unterschied $\Delta$ der Wegs
 	m \lambda = g \cdot \left( \sin(\alpha) + \sin(\beta) \right) \quad \text{mit} \quad m \in \mathbb{Z}
 \end{align}
 Man nennt $m$ die Ordnung der Interferenz.
-Berechnet man Intensität des gebeugten Strahls mittels Beugungsformalismus, so bestimmt man nach dem Rayleigh-Kriterium in Abschnitt \ref{sssec:aufloesungsvermoegen} das Auflösungsvermögen durch die Halbwertsbreite $\Delta \lambda$ der Intensitätsmaxima und erhält:
+Berechnet man die Intensität des gebeugten Strahls mittels Beugungsformalismus, so bestimmt man nach dem Rayleigh-Kriterium in Abschnitt \ref{sssec:aufloesungsvermoegen} das Auflösungsvermögen durch die Halbwertsbreite $\Delta \lambda$ der Intensitätsmaxima und erhält:
 \begin{align}
 	\mathcal{R} = \frac{\lambda}{\Delta \lambda} = m \cdot N \text{,}
 \end{align}
@@ -820,7 +818,7 @@ Zum Vergleich errechnen wir mit \eqref{eq:rydberg_formel} die folgenden theoreti
 \Delta\lambda_\beta=\SI{132}{\pico\metre}\\
 \Delta\lambda_\gamma=\SI{118}{\pico\metre}
 \end{align}
-Die von uns gemessenen Werte liegen alle unter den theoretischen Werten für die Wellenlängenverschiebung.
+Die von uns gemessenen Werte der roten und türkisen Linie liegen unter den theoretischen Werten für die Wellenlängenverschiebung, der für die blaue darüber.
 Der Literaturwert der roten Balmer-Linie liegt nicht mehr im $1$-$\sigma$-Bereich der gemessenen Isotopieaufspaltung, die anderen beiden Aufspaltungen sind unter Berücksichtigung der Fehlergrenzen mit dem Literaturwert verträglich.
 Die Aufspaltung der blauen Linie ist unter Berücksichtigung der schlechten Anpassung, die der Auswertung zugrunde liegt, gut bestimmt worden.
 \FloatBarrier
@@ -856,8 +854,9 @@ Die gemessenen Linienbreiten für die rote und türkise Linie liefern dabei plau
 Ursache hierfür sind vor allem die Anpassungen mit nur einer Gauß-Kurve, wobei eine sinnvolle Anpassung mit zwei Gauß-Kurven aufgrund weniger Messwerte nicht möglich war.
 Darum soll im Weiteren nur noch auf die Breiten der roten und türkisen Linien eingegangen werden.
 
-Die gefundenen Linienbreiten sind um den Faktor \num{5} größer als der erwartete Wert, wobei die natürliche Linienbreite mit $\frac{\delta\nu}{\nu}\approx \num{e-8}$ deutlich schmäler ist als die hier auftretenden Werte, so dass diese für die hier getroffene Abschätzung tatsächlich vernachlässigt werden kann.
+Die gefundenen Linienbreiten sind um den Faktor \num{5} größer als der erwartete Wert, wobei die natürliche Linienbreite mit $\frac{\delta\nu}{\nu}\approx \num{e-8}$ deutlich schmäler ist als die hier auftretenden Werte, so dass diese für die hier getroffene Abschätzung vernachlässigt werden kann.
 Da die Druckverbreiterung proportional zu Druck bzw. Wirkungsquerschnitt ist (vgl. \cite{gerthsen}), scheidet sie aufgrund der in diesem Versuch in der Lampe herrschenden Bedingungen (kein besonders hoher Druck, kleiner Wirkungsquerschnitt) als Ursache für die Linienverbreiterung aus.
+Es handelt sich deswegen anscheinend um Fehler in der Anpassung oder Berechnung, die auf die gefundenen (zu großen) Halbwertsbreiten führen.
 
 \subsubsection{Auflösungsvermögen des Gitters}
 Das Auflösungsvermögen eines Gitters ist durch
@@ -868,6 +867,16 @@ gegeben, mit der Anzahl beleuchteter Spalte $N$ und der beobachteten Ordnung $n$
 \begin{align*}
 \mathcal{R}=60990\approx 61000
 \end{align*}
+
+\subsection{Fazit}
+Insgesamt ist der Versuchsteil als gelungen zu bewerten.
+Trotz leichter Schwierigkeiten, Messwerte für die blaue und violette Linie aufzunehmen konnte die Aufspaltung der messbaren Linien gut durchgeführt und berechnet werden.
+Die mit dem Okular gefundenen Werte stimmen innerhalb der Fehlergrenzen mit den Literaturwerten überein, wobei durch die Beobachtung mit dem Auge der Fehler zwischen recht großen \SI{11}{\percent} und \SI{25}{\percent} liegt.
+Im Vergleich zu den theoretischen Werten für die Isotopieaufspaltung liegen die mit der CCD-Kamera gefundenen Werte in der gleichen Größenordnung, allerdings teilweise außerhalb des $1$-$\sigma$-Bereichs um den Mittelwert.
+Ursache hierfür ist offenbar die Anpassung durch \textit{Gnuplot} und die Tatsache, dass die Linien nicht ganz zentral in der CCD-Zeile lagen.
+Die Abschätzung der Dopplerverbreiterung hingegen liefert keine sinnvollen Werte und übersteigt die erwarteten Werte etwa um den Faktor $5$.
+Eine eindeutige Ursache konnte hierfür nicht gefunden werden.
+WIRKUNGSQUANTUM FAZIT
 
 % BIBLIOGRAPHIE
 

@@ -22,7 +22,7 @@ fit f(x) './messwerte/planck_quantum_linearisierung.txt' using 3:1:2 via m1, n1
 
 load './../gnuplot_linestyles.plt'
 
-plot 	'./messwerte/planck_quantum_linearisierung.txt' using 3:1:2 with yerrorbars ls 1 t'Messung 1',\
-		f(x) ls 2 t'Regressionsgerade 1'
+plot 	'./messwerte/planck_quantum_linearisierung.txt' using 3:1:2 with yerrorbars ls 1 t'Datenpunkte',\
+		f(x) ls 2 t'Regressionsgerade'
 
 unset output

@@ -109,7 +109,8 @@ Assistent: & Dennis Sauerland
 % ZUSAMMENFASSUNG
 \begin{abstract}
 \noindent
-
+Photoeffekt -- Plancksches Wirkungsquantum, Energieabhängigkeit
+Balmer-Serie -- Isotopieaufspaltung, Rydberg-Konstante
 \end{abstract}
 
 \end{titlepage}
@@ -514,7 +515,7 @@ da diese für Kalium in der Größenordnung von $\SI{2.29}{\electronvolt}$ \cite
 \begin{figure}[h]
 	\centering
 	\input{./plots/kennlinie_intensitaet.tex}
-	\caption{Intensitätsvergleich der Kennlinien $\lambda = \SI{365}{\nano\metre}$}
+	\caption{Intensitätsvergleich der Kennlinien bei $\lambda = \SI{365}{\nano\metre}$}
 	\label{fig:kennlinie_intensitaet}
 \end{figure}
 Bei der Durchführung wurde die Kennlinie der Photozelle bei der Wellenlänge $\lambda = \SI{365}{\nano\metre}$ jeweils bei zwei unterschiedlichen Intensitäten gemessen.
@@ -522,6 +523,14 @@ In Abbildung \ref{fig:kennlinie_intensitaet} wurden beide Kennlinien aufgetragen
 Zunächst erkennt man eine signifikante Abweichung der Kathodenphotoströme, welche mit steigender Gegenspannung $U$ sinkt und schließlich bei der gleichen Grenzfrequenz $U_0$ verschwindet.
 Dies ist nicht verwunderlich, denn wie schon in Abschnitt \ref{ssec:photoeffekt} besprochen, hängt die Energie des Elektrons nur von der Frequenz des Photons ab und nicht von der Intensität des einfallenden Lichts.
 Daher kommt es auch zu einem Verschwinden des Photostroms bei derselben Gegenspannung, was in den beiden Kennlinien gut sichtbar ist.
+
+\subsection{Fazit}
+Zusammenfassend kann der Versuchsteil nicht als erfolgreich bewertet werden.
+Die Methodik der Grenzspannungsbestimmung hat gut funktioniert, wobei wir dennoch davon ausgehen, dass dort ein systematischer Fehler aufgetreten ist, den wir nicht näher bestimmen konnten.
+Dieser Fehler zieht sich durch die restliche Auswertung, sodass wir nur die Größenordnung des Planckschen Wirkungsquantums bestimmen konnten auch wenn dessen statistischer Fehler klein ist.
+Auch der berechnete Achsenabschnitt der linearisierten Energiebilanz kann nicht zur Abschätzung der Austrittsarbeit verwendet werden.
+Einzig der qualitative Intensitätsvergleich liefert die erwarteten Ergebnisse.
+
 \clearpage
 \section{Balmer-Serie}
 
@@ -628,7 +637,7 @@ Die berechneten Winkel wurde in Tabelle \ref{tab:gitterkonstante_umrechnung_wink
 \begin{table}[h]
 	\centering
 	\input{./tables/gitterkonstante_umrechnung_alpha_beta.tex}
-	\caption{Ergebnisse der Umrechnung $\Delta \alpha = \SI{8.8}{\milli\radian}$ und $\Delta \beta = \SI{9.8}{\milli\radian}$}
+	\caption{Berechnung der Ein- und Ausfallswinkel anhand der gemessenen Winkel aus Tabelle \ref{tab:gitterkonstante_messdaten}. Fehler: $\Delta \alpha = \SI{8.8}{\milli\radian}$, $\Delta \beta = \SI{9.8}{\milli\radian}$}
 	\label{tab:gitterkonstante_umrechnung_winkel}
 \end{table}
 
@@ -657,7 +666,7 @@ In Abbildung \ref{fig:gitterkonstante} wurden die Datenpunkte mitsamt Regression
 \begin{figure}[h]
 	\centering
 	\input{./plots/gitterkonstante.tex}
-	\caption{Gitterkonstante}
+	\caption{Linearisierung der Gittergleichung zur Bestimmung der Gitterkonstanten}
 	\label{fig:gitterkonstante}
 \end{figure}
 An der Steigung der Geraden lässt sich sofort die Gitterkonstanten in reziproken Einheiten ablesen, sodass man:
@@ -736,7 +745,7 @@ Dazu wurde in Tabelle \ref{tab:rydberg_linearisierung} die reziproke Wellenläng
 \begin{table}[h]
 	\centering
 	\input{./tables/balmer_rydberg_linearisierung.tex}
-	\caption{Linearisierte Werte für Rydberg}
+	\caption{Reziproke Wellenlängen zur Linearisierung der Messdaten}
 	\label{tab:rydberg_linearisierung}
 \end{table}
 Es wird folglich eine Ursprungsgerade mit \texttt{Gnuplot} an die linearisierten Datenpunkte angepasst, welche zusammen in Abbildung \ref{fig:rydberg_balmer} aufgetragen sind.

@@ -244,7 +244,8 @@ Die Energieniveaus ergeben sich nun aus der Lösung der stationären Schrödinge
 	\mathcal{H} \psi = E \psi
 \end{align}
 und führt auf die Quantenzahlen $n, \ell, m_\ell$ mit Energieeigenwerten wie sie vom Bohr-Modell vorhergesagt wurden (Gleichung \ref{eq:energieniveaus_bohr}).
-Bei der quantenmechanischen Lösung beschreibt die Hauptquantenzahl $n$ jedoch nicht den Bahndrehimpuls des Teilchens, sondern die Drehimpulsquantenzahl $\ell$ sowie die magnetische Quantenzahl $m_\ell$, welche die Projektion des Drehimpulses auf eine frei wählbare Quantisierungsachse beschreibt.
+Bei der quantenmechanischen Lösung beschreibt die Hauptquantenzahl $n$ jedoch nicht den Bahndrehimpuls des Teilchens, sondern die Drehimpulsquantenzahl $\ell$ sowie die magnetische Quantenzahl $m_\ell$.
+Insbesondere hat der Drehimpuls in der Grobstruktur keinen Einfluss auf die Energieniveaus.
 
 \subsubsection{Rydberg-Formel und Balmer-Serie}
 \label{sssec:rydberg}
@@ -687,6 +688,7 @@ Es werden auch hier Interferenzordnungen erster Ordnung vermessen, sodass die We
 \end{align*}
 Die Ein- und Ausfallswinkel werden dabei analog zu Abschnitt \ref{sssec:gitterkonstante} aus den gemessenen Gitter- und Bankwinkeln in Tabelle \ref{tab:balmer_okular_messdaten} (hier jedoch ohne Korrektur, da bei der Messung die Strichskala auf die Wasserstoff-Linie zentriert wurde).
 Unter Beachtung der Fehler der Winkel $\alpha$, $\beta$ sowie der gemessenen Gitterkonstante $g = \SI{409.90 +- 0.36}{\nano\metre}$ ergeben sich die Wellenlängen aus Tabelle \ref{tab:balmer_wellenlaenge}.
+Diese stimmen in Anbetracht der statistischen Fehler gut mit den Literaturwerten für die Balmer-Serie überein, sodass diese Messung als erfolgreich angesehen werden kann.
 
 Um die Isotopieaufspaltung zu bestimmen, misst man die Aufspaltung im Okular $d$.
 Die Umrechnung der Aufspaltung im Okular in eine Aufspaltung des Ausfallwinkels $\Delta \beta$, wie zuvor bei der Winkelkorrektur bei der Bestimmung der Gitterkonstanten, ist durch die Brennweite des Fernrohrobjektivs $f$ in Kleinwinkelnäherung gegeben:
@@ -720,10 +722,10 @@ Die Berechnung der Isotopieaufspaltung anhand der Beobachtung mit dem Okular und
 	\caption{Berechnete Isotopieaufspaltung mit dem Okular. Theoretische Werte wurden mithilfe der Rydberg-Formel aus Abschnitt \ref{sssec:rydberg} und den physikalischen Konstanten von \cite{CODATA} berechnet.}
 	\label{tab:balmer_aufspaltung_okular}
 \end{table}
-In Anbetracht der Fehler stimmen die hier berechneten Werte für die Isotopieaufspaltung gut mit den theoretischen überein.
+In Anbetracht der Fehler stimmen die hier berechneten Werte für die Isotopieaufspaltung gut mit den Theoretischen überein.
 
 \subsubsection{Bestimmung der Rydberg-Konstanten aus den Linien der Balmer-Serie}
-Da die Wellenlängen der ersten vier Linien der Balmer-Serie bestimmt wurden, kann nun mithilfe der Rydberg-Formel (ref Theorieteil) und einer geeigneten Linearisierung eine Bestimmung der Rydberg-Konstanten durchgeführt werden.
+Da die Wellenlängen der ersten vier Linien der Balmer-Serie bestimmt wurden, kann nun mithilfe der Rydberg-Formel (Gl. \ref{eq:rydberg_formel}) und einer geeigneten Linearisierung eine Bestimmung der Rydberg-Konstanten durchgeführt werden.
 Konkret liefert die Rydberg-Formel für die Balmer-Serie (Übergang: $n \rightarrow 2$) von Wasserstoff:
 \begin{align*}
 	\frac{1}{\lambda} = R_\mathrm{H} \cdot \left(\frac{1}{2^2} - \frac{1}{n^2} \right) \text{,}
@@ -749,12 +751,11 @@ Die Anpassung ergibt für die Rydberg-Konstante:
 	R_\mathrm{H} = \SI{11.016 +- 0.022}{\per\micro\metre} \text{,}
 \end{align*}
 bei einer Anpassungsgüte $\chi_\mathrm{red.}^2 = \num{0.263}$.
-Literaturwerte:
+Der Literaturwert für die Rydberg-Konstante ist \cite{CODATA}:
 \begin{align*}
-	R_\infty = \SI{10.974}{\per\micro\metre}\\
-	R_\mathrm{H} = \SI{10.969}{\per\micro\metre}\\
-	R_\mathrm{D} = \SI{10.971}{\per\micro\metre}\\
+	R_\infty= \SI{10.974}{\per\micro\metre} \text{,}
 \end{align*}
+sodass unser berechneter Wert im $2\sigma$-Bereich mit diesem übereinstimmt.
 
 Zur Berechnung des Planckschen Wirkungsquantums aus der Rydberg-Konstanten $R_\mathrm{H}$ wird der Zusammenhang:
 \begin{align*}
@@ -774,10 +775,11 @@ Mit den physikalischen Konstanten aus \cite{CODATA} und dem berechneten Wert fü
 \begin{align*}
 	h = \SI{6.619 +- 0.005e-34}{\joule\second}
 \end{align*}
+Auch dieser Wert stimmt mit dem Literaturwert nur im $2\sigma$-Bereich überein, was darauf zurückzuführen ist, dass schon die Rydberg-Konstante eine Abweichung im $2\sigma$-Bereich aufwies.
 
 \subsubsection{Auswertung CCD}
 
-Es wird, wie bereits erwähnt, die jeweils beste Messung aus den vorliegenden Daten ausgewählt und grafisch dargestellt.
+Es wird, wie in der Durchführung erwähnt, die jeweils beste Messung aus den vorliegenden Daten ausgewählt und grafisch dargestellt.
 Dabei wurden mit \texttt{Gnuplot} (Least-Squares-Fit) zwei Gaußfunktionen an die Maxima mit folgender Fithypothese angepasst:
 \begin{align}
 f(x)&=\mathcal{G}_1(x)+\mathcal{G}_2(x) + d\qquad\text{mit}\\
@@ -848,7 +850,7 @@ Die so gefundenen Werte sind ebenso wie die Fehler bereits in der Tabelle \ref{t
 \label{tab:balmer_ccd_auswertung}
 \end{table}
 \noindent
-Zum Vergleich errechnen wir mit \eqref{eq:rydberg_formel} die folgenden theoretischen Werte:
+Zum Vergleich errechnen wir mit der Rydberg-Formel \eqref{eq:rydberg_formel} unter Beachtung der reduzierten Massen die folgenden theoretischen Aufspaltungen:
 \begin{align}
 \Delta\lambda_\alpha=\SI{179}{\pico\metre}\\
 \Delta\lambda_\beta=\SI{132}{\pico\metre}\\
@@ -862,7 +864,7 @@ Die Aufspaltung der blauen Linie ist unter Berücksichtigung der schlechten Anpa
 
 \subsubsection{Erklärung weiterer Linien im Spektrum der Balmer-Lampe}
 
-Bei der Messung der Balmer-Linien sind auch andere Linien, die offensichtlich nicht zum Balmer-Spektrum gehören, zu sehen. Bei etwa \SI{590}{\nano\metre} konnte eine gelbe Linie beobachtet werden, die den beiden Natrium-D-Linien bei \SI{590.0}{\nano\metre} bzw \SI{590.6}{\nano\metre} zugeordnet werden kann.
+Bei der Messung der Balmer-Linien sind auch andere Linien, die offensichtlich nicht zum Balmer-Spektrum gehören, zu sehen. Es konnte eine gelbe Linie beobachtet werden, die den beiden Natrium-D-Linien bei \SI{590.0}{\nano\metre} bzw \SI{590.6}{\nano\metre} zugeordnet werden kann.
 Ursache für die Beobachtung ist ein kleiner Anteil Natrium in der Balmer-Lampe, der bei der Gasentladung entstehendes Wasser binden soll.
 
 \subsubsection{Dopplerverbreiterung der Linien}
@@ -890,9 +892,10 @@ Die gemessenen Linienbreiten für die rote und türkise Linie liefern dabei plau
 Ursache hierfür sind vor allem die Anpassungen mit nur einer Gauß-Kurve, wobei eine sinnvolle Anpassung mit zwei Gauß-Kurven aufgrund weniger Messwerte nicht möglich war.
 Darum soll im Weiteren nur noch auf die Breiten der roten und türkisen Linien eingegangen werden.
 
-Die gefundenen Linienbreiten sind um den Faktor \num{5} größer als der erwartete Wert, wobei die natürliche Linienbreite mit $\frac{\delta\nu}{\nu}\approx \num{e-8}$ deutlich schmäler ist als die hier auftretenden Werte, so dass diese für die hier getroffene Abschätzung vernachlässigt werden kann.
+Die gefundenen Linienbreiten sind um den Faktor \num{5} größer als die Dopplerverbreiterung, wobei die natürliche Linienbreite deutlich schmäler ist als die hier auftretenden Werte, so dass diese für die hier getroffene Abschätzung vernachlässigt werden kann.
 Da die Druckverbreiterung proportional zu Druck bzw. Wirkungsquerschnitt ist (vgl. \cite{gerthsen}), scheidet sie aufgrund der in diesem Versuch in der Lampe herrschenden Bedingungen (kein besonders hoher Druck, kleiner Wirkungsquerschnitt) als Ursache für die Linienverbreiterung aus.
-Es handelt sich deswegen anscheinend um Fehler in der Anpassung oder Berechnung, die auf die gefundenen (zu großen) Halbwertsbreiten führen.
+Die Breite der Linien hängt vermutlich damit zusammen, dass die Abbildungslinse nicht scharf auf die CCD-Zeile abgebildet hat, da das Scharfstellen der Linse bei kleinen Intensitäten aufgrund des Untergrundrauschens nur schwer möglich war.
+
 
 \subsubsection{Auflösungsvermögen des Gitters}
 Das Auflösungsvermögen eines Gitters ist durch
@@ -903,16 +906,17 @@ gegeben, mit der Anzahl beleuchteter Spalte $N$ und der beobachteten Ordnung $n$
 \begin{align*}
 \mathcal{R} = \frac{\SI{25}{\milli\metre}}{\SI{409.9}{\nano\metre}} \approx 61000
 \end{align*}
+Dies lässt darauf schließen, dass auch das begrenzte Auflösungsvermögen des Gitters keinen Einfluss auf die Linienbreite bei der CCD-Aufnahme gehabt haben kann, da die Größenordnung der Halbwertsbreite $\Delta \lambda$ im sichtbaren Spektrum in der Größenordnung \SI{1}{\pico\metre} liegt.
 
 \subsection{Fazit}
 Insgesamt ist der Versuchsteil als gelungen zu bewerten.
 Trotz leichter Schwierigkeiten, Messwerte für die blaue und violette Linie aufzunehmen konnte die Aufspaltung der messbaren Linien gut durchgeführt und berechnet werden.
-Die mit dem Okular gefundenen Werte stimmen innerhalb der Fehlergrenzen mit den Literaturwerten überein, wobei durch die Beobachtung mit dem Auge der Fehler zwischen recht großen \SI{11}{\percent} und \SI{25}{\percent} liegt.
+Die mit dem Okular gefundenen Werte stimmen innerhalb der Fehlergrenzen mit den Literaturwerten überein, wobei durch die Beobachtung mit dem Auge der relative Fehler zwischen \SI{11}{\percent} und \SI{25}{\percent} liegt.
 Im Vergleich zu den theoretischen Werten für die Isotopieaufspaltung liegen die mit der CCD-Kamera gefundenen Werte in der gleichen Größenordnung, allerdings teilweise außerhalb des $1$-$\sigma$-Bereichs um den Mittelwert.
-Ursache hierfür ist offenbar die Anpassung durch \textit{Gnuplot} und die Tatsache, dass die Linien nicht ganz zentral in der CCD-Zeile lagen.
+Ursache hierfür ist offenbar die Anpassung mit \textit{Gnuplot} und die Tatsache, dass die Linien nicht ganz zentral in der CCD-Zeile lagen.
 Die Abschätzung der Dopplerverbreiterung hingegen liefert keine sinnvollen Werte und übersteigt die erwarteten Werte etwa um den Faktor $5$.
 Eine eindeutige Ursache konnte hierfür nicht gefunden werden.
-WIRKUNGSQUANTUM FAZIT
+Auch das Plancksche Wirkungsquantum konnte mit wesentlich höherer Genauigkeit, als dies beim Photoeffekt der Fall war, bestimmt werden.
 
 % BIBLIOGRAPHIE
 

@@ -174,13 +174,32 @@ Messung: Intensitäten oberhalb einer Grenzfrequenz (Austrittsarbeit);
 \end{align}
 
 \subsubsection{Austrittsarbeit und Kontaktpotential}
-Kontaktpotentialdifferenz zweier Metall ist gleich der Differenz ihrer Austrittsarbeiten (Der Photoeffekt Klaus/Herrmann)
-Austrittsarbeit ist Abstand Fermi-Niveau - Kontinuum.
-Bringt man zwei unterschiedliche Leiter mit verschiedenen Austrittsarbeiten in Kontakt, so entsteht ein Ladungsfluss der die Fermi-Niveaus beider Leiter ausgleicht.
-
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figures/kontaktspannung.pdf}
+	\caption{schematische Erklärung des Kontaktpotentials}
+	\label{fig:kontaktpotential}
+\end{figure}
+Um ein Elektron aus einem Metall zu lösen, ist eine Mindestenergie erforderlich, die man Austrittsarbeit $W_\mathrm{A}$ nennt.
+Drücken wir diese durch ein Austrittspotential $\phi$ aus, so ergibt sich für ein Elektron, welches durch ein Photon der Frequenz $\nu$ aus dem Kathodenmaterial gelöst wurde:
 \begin{align}
-	U_\mathrm{K} = \frac{\phi_1 - \phi_2}{e}
+	E_\mathrm{kin} = h \nu - e \, \phi_\mathrm{K}
 \end{align}
+Legt man nun zwischen der Ringanode und der Kathode eine Gegenspannung an, so ist die Grenzspannung $U_0$ bei der keine Elektronen mehr bei der Anode ankommen gegeben durch:
+\begin{align}
+	E_\mathrm{kin} \stackrel{!}{=} e \, \hat{U}_0 = e \cdot \left( U_0 + \phi_\mathrm{A} - \phi_\mathrm{K}\right) \text{,}
+\end{align}
+insbesondere ist die Potentialdifferenz $\hat{U}_0$ die das Elektron durchlaufen muss aufgrund der unterschiedlichen Austrittspotentiale von Kathode $\phi_\mathrm{K}$ und Anode $\phi_\mathrm{A}$, nicht gleich der gemessenen Spannung $U_0$.
+Dieser Sachverhalt ist in Abbildung \ref{fig:kontaktpotential} schematisch dargestellt.
+Die Kontaktspannung $U_\mathrm{Kontakt}$ zwischen zwei Metallen ist gleich der Differenz ihrer Austrittpotentiale, sodass diese im Fall der Photozelle gegeben ist durch:
+\begin{align}
+	U_\mathrm{Kontakt} = \phi_\mathrm{A} - \phi_\mathrm{K}\text{.}
+\end{align}
+Mit der Austrittsarbeit der Kathode $W_\mathrm{K} = e \, \phi_\mathrm{K}$ erhält man dann als Energiebilanz des Elektrons:
+\begin{align}
+	h \nu = e \, U_0 + W_\mathrm{K} + e \, U_\mathrm{Kontakt} \text{,}
+\end{align}
+und ist somit abhängig von der Kontaktspannung zwischen Anode und Kathode.
 
 \subsection{Aufbau der Atomhülle}
 

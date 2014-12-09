@@ -11,7 +11,7 @@ set key bottom right
 set xrange [500:850]
 set yrange [*:*]
 set xlabel '$\nu \, / \, \si{\tera\hertz}$'
-set ylabel '$U_G \, / \, \si{\volt}$'
+set ylabel '$U_0 \, / \, \si{\volt}$'
 
 set grid
 

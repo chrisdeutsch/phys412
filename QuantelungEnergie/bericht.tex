@@ -565,9 +565,9 @@ Die entsprechenden Messwerte sind in Tabelle \ref{tab:gitterkonstante_messdaten}
 
 \subsubsection{Messung der Balmer-Linien mit einem Okular} 
 Zu den weiteren Messungen wird nun die Quecksilberlampe gegen eine deuterierte Balmer-Lampe getauscht (Mischungsverhältnis ca. 1:2).
-Wie bei der Bestimmung der Gitterkonstante dreht man nun das Gitter bis man eine beobachtbare Wasserstofflinie (hellere der beiden Linien) sieht und notiert den Gitterwinkel $\omega_\text{G}$, bei dem die Linie im Nullpunkt der Okularskala liegt.
+Wie bei der Bestimmung der Gitterkonstante dreht man nun das Gitter bis man eine beobachtbare Wasserstofflinie (die hellere der beiden sichtbaren Linien) sieht und notiert den Gitterwinkel $\omega_\text{G}$, bei dem die Linie im Nullpunkt der Okularskala liegt.
 Hieraus kann später die Wellenlänge der beobachteten Linie gemessen werden.
-Außerdem wird wie oben die Verschiebung $d$ notiert, unter der die Deuteriumlinie (schwächere der beiden Linien) im Okular auftritt, um so später die Isotopieaufspaltung zu bestimmen.
+Außerdem wird wie oben die Verschiebung $d$ notiert, unter der die Deuteriumlinie (die schwächere der beiden Linien) im Okular auftritt, um so später die Isotopieaufspaltung zu bestimmen.
 Die Messdaten wurden in Tabelle \ref{tab:balmer_okular_messdaten} aufgetragen.
 \begin{table}[h]
 	\centering
@@ -627,10 +627,9 @@ Die berechneten Winkel wurde in Tabelle \ref{tab:gitterkonstante_umrechnung_wink
 \begin{table}[h]
 	\centering
 	\input{./tables/gitterkonstante_umrechnung_alpha_beta.tex}
-	\caption{Ergebnisse der Umrechnung $\Delta \alpha = \SI{8.8}{\milli\radian}$ und $\Delta \beta = \SI{9.8}{\milli\radian}$}
+	\caption{Ergebnisse der Umrechnung der Winkel. $\Delta \alpha = \SI{8.8}{\milli\radian}$ und $\Delta \beta = \SI{9.8}{\milli\radian}$}
 	\label{tab:gitterkonstante_umrechnung_winkel}
 \end{table}
-
 Nachdem die gemessenen Winkel in Ein- und Ausfallswinkel am Gitter umgerechnet wurden, kann mithilfe der Gittergleichung in erster Interferenzordnung:
 \begin{align}
 	\lambda = g \cdot (\sin(\alpha) + \sin(\beta))
@@ -651,12 +650,12 @@ Die Anpassung ergibt:
 \end{align}
 bei einem reduzierten Chi-Quadrat von $\chi_\mathrm{red.}^2 = \num{1.3e-5}$.
 In Anbetracht des Chi-Quadrates liegt eine gute Anpassung vor, dennoch scheinen die Datenpunkte besser auf einer Geraden zu liegen als deren Fehler nahelegen.
-Auch die Tatsache, dass $\chi_\mathrm{red.}^2 \ll 1$ legt nahe, dass die statistischen Fehler der Winkelmessungen überschätzt wurden.
+Auch die Tatsache, dass $\chi_\mathrm{red.}^2 \ll 1$ ist, legt nahe, dass die statistischen Fehler der Winkelmessungen überschätzt wurden.
 In Abbildung \ref{fig:gitterkonstante} wurden die Datenpunkte mitsamt Regressionsgerade aufgetragen.
 \begin{figure}[h]
 	\centering
 	\input{./plots/gitterkonstante.tex}
-	\caption{Gitterkonstante}
+	\caption{Bestimmung der Gitterkonstante aus den gemessenen Einfalls- und Ausfallswinkeln}
 	\label{fig:gitterkonstante}
 \end{figure}
 An der Steigung der Geraden lässt sich sofort die Gitterkonstanten in reziproken Einheiten ablesen, sodass man:
@@ -699,7 +698,7 @@ Um dies in eine Wellenlängenaufspaltung $\Delta \lambda$ umzurechnen, betrachte
 \end{align*}
 In linearer Approximation ($\Delta \alpha = \num{0}$) folgt somit:
 \begin{align}
-  \Delta \lambda &= \frac{\partial \lambda}{\partial \beta} \cdot \Delta \beta \\
+  \Delta \lambda &= \frac{\partial \lambda}{\partial \beta} \cdot \Delta \beta \notag\\
   &= g \cos(\beta) \Delta \beta \text{,}
   \label{eq:gitter_differenzial}
 \end{align}
@@ -709,7 +708,7 @@ wobei der Fehler mittels Gaußsscher Fehlerfortpflanzung zu:
 \end{align*}
 bestimmt wurde mit
 \begin{align*}
-	\sigma_\beta &= \sqrt{\sigma_{\omega_\mathrm{G}}^2 + \sigma_{\omega_\mathrm{B}}^2} \\
+	\sigma_\beta &= \sqrt{\sigma_{\omega_\mathrm{G}}^2 + \sigma_{\omega_\mathrm{B}}^2}\\
 	\sigma_{\Delta \beta} &= \frac{\sigma_d}{f}
 \end{align*}
 und $\sigma_g$ aus der Bestimmung der Gitterkonstante.
@@ -723,7 +722,7 @@ Die Berechnung der Isotopieaufspaltung anhand der Beobachtung mit dem Okular und
 In Anbetracht der Fehler stimmen die hier berechneten Werte für die Isotopieaufspaltung gut mit den theoretischen überein.
 
 \subsubsection{Bestimmung der Rydberg-Konstanten aus den Linien der Balmer-Serie}
-Da die Wellenlängen der ersten vier Linien der Balmer-Serie bestimmt wurden, kann nun mithilfe der Rydberg-Formel (ref Theorieteil) und einer geeigneten Linearisierung eine Bestimmung der Rydberg-Konstanten durchgeführt werden.
+Da die Wellenlängen der ersten vier Linien der Balmer-Serie bestimmt wurden, kann nun mithilfe der Rydberg-Formel \eqref{eq:rydberg_formel} und einer geeigneten Linearisierung eine Bestimmung der Rydberg-Konstanten durchgeführt werden.
 Konkret liefert die Rydberg-Formel für die Balmer-Serie (Übergang: $n \rightarrow 2$) von Wasserstoff:
 \begin{align*}
 	\frac{1}{\lambda} = R_\mathrm{H} \cdot \left(\frac{1}{2^2} - \frac{1}{n^2} \right) \text{,}
@@ -734,7 +733,7 @@ Dazu wurde in Tabelle \ref{tab:rydberg_linearisierung} die reziproke Wellenläng
 \begin{table}[h]
 	\centering
 	\input{./tables/balmer_rydberg_linearisierung.tex}
-	\caption{Linearisierte Werte für Rydberg}
+	\caption{Linearisierte Werte zur Bestimmung der Rydberg-Konstante}
 	\label{tab:rydberg_linearisierung}
 \end{table}
 Es wird folglich eine Ursprungsgerade mit \texttt{Gnuplot} an die linearisierten Datenpunkte angepasst, welche zusammen in Abbildung \ref{fig:rydberg_balmer} aufgetragen sind.
@@ -755,7 +754,6 @@ Literaturwerte:
 	R_\mathrm{H} = \SI{10.969}{\per\micro\metre}\\
 	R_\mathrm{D} = \SI{10.971}{\per\micro\metre}\\
 \end{align*}
-
 Zur Berechnung des Planckschen Wirkungsquantums aus der Rydberg-Konstanten $R_\mathrm{H}$ wird der Zusammenhang:
 \begin{align*}
 	R_\mathrm{H} = \left( 1 + \frac{m_e}{m_p} \right) R_\infty = \left( 1 + \frac{m_e}{m_p} \right) \frac{m_e e^4}{8 c \epsilon_0^2 h^3}

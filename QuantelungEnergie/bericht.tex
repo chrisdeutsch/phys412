@@ -166,10 +166,20 @@ E_e = E_\gamma - W_\mathrm{A} = h \cdot \nu - W_\mathrm{A}
 \end{align}
 
 \subsubsection{Photostromverlauf}
-
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{./figures/kennlinie_photozelle.pdf}
+\caption{Qualitative Kennlinie einer Photozelle für Saug- ($U>0$) und Gegenspannungsbetrieb ($U<0$) nach \cite{prak_uheidelberg}}
+\label{fig:kennlinie}
+\end{figure}
+Abbildung \ref{fig:kennlinie} zeigt qualitativ den Verlauf des Anodenstroms in Abhängigkeit der angelegten Spannung. Dabei ist das Vorzeichen so gewählt, dass für $U>0$ der positive Pol der Spannungsquelle an der Anode anliegt (Saugbetrieb).
+In dieser Beschaltung erreicht der Strom eine Sättigung bei hohen Spannungen, wenn alle ausgelösten Elektronen die Anode erreichen.
+Für Temperaturen über dem absoluten Nullpunkt nähert sich der Photostrom asymptotisch an $0$, wobei für eine ideale Photozelle ein Schnittpunkt mit der $U$-Achse existiert (vgl. \cite{prak_uheidelberg}).
+Dort ist auch erwähnt, dass für eine Geometrie wie sie hier vorliegt, der Photostrom im Bereich von $U_0$ folgender Abhängigkeit genügt:
 \begin{align}
 	I_\mathrm{Photo} \propto (E_\mathrm{kin} - e \cdot U_0)^2
 \end{align}
+Wegen der asymptotischen Annäherung wird darum die Wurzel des Photostroms aufgetragen, um aus der entstehenden linearen Abhängigkeit die Nullstelle $U_0$ extrapolieren zu können, bei der der Photostrom im idealen Fall verschwinden sollte.
 
 \subsubsection{Austrittsarbeit und Kontaktpotential}
 \begin{figure}
@@ -909,6 +919,11 @@ WIRKUNGSQUANTUM FAZIT
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{9}
+\bibitem{prak_uheidelberg}
+	Dr. J. Wagner.
+	\emph{Physikalisches Anfängerpraktikum der Universität Heidelberg} (Versuch 35).
+	\url{http://www.physi.uni-heidelberg.de/Einrichtungen/AP/anleitungen/35_Fotoeffekt_01.pdf} (Letzter Abruf: 09. Dezember 2014).
+
 \bibitem{demtroder}
 	Wolfgang Demtröder,
 	\emph{Experimentalphysik 3: Atome, Moleküle und Festkörper}.
@@ -918,13 +933,13 @@ WIRKUNGSQUANTUM FAZIT
 \bibitem{NISTSpectra}
 	Kramida, A., Ralchenko, Yu., Reader, J., and NIST ASD Team (2014).
 	\emph{NIST Atomic Spectra Database} (ver. 5.2).
-	\url{http://physics.nist.gov/asd} (Letzter Abruf: 7. Dezember 2014).
+	\url{http://physics.nist.gov/asd} (Letzter Abruf: 07. Dezember 2014).
 	National Institute of Standards and Technology, Gaithersburg, MD.
 
 \bibitem{CODATA}
 	P.J. Mohr, B.N. Taylor, and D.B. Newell (2011),
 	\emph{The 2010 CODATA Recommended Values of the Fundamental Physical Constants}.
-	\url{http://physics.nist.gov/constants} (Letzer Abruf: 8. Dezember 2014).
+	\url{http://physics.nist.gov/constants} (Letzer Abruf: 08. Dezember 2014).
 	National Institute of Standards and Technology, Gaithersburg, MD.
 	
 \bibitem{gerthsen}
@@ -933,6 +948,8 @@ WIRKUNGSQUANTUM FAZIT
 	Springer Verlag,
 	23. Auflage
 
+<<<<<<< HEAD
+=======
 \bibitem{crc}
 	David R. Lide (ed),
 	\emph{CRC Handbook of Chemistry and Physics},
@@ -940,6 +957,7 @@ WIRKUNGSQUANTUM FAZIT
 	Section 12: Properties of Solids --
 	\emph{Electron Work Function of the Elements}
 
+>>>>>>> b8d1c110f9bc9d24aa1a03aba42fb5ad40003c77
  
 \end{thebibliography}
 

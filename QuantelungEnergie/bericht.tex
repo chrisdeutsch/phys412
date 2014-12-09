@@ -572,7 +572,7 @@ Die Messdaten wurden in Tabelle \ref{tab:balmer_okular_messdaten} aufgetragen.
 \begin{table}[h]
 	\centering
 	\input{./tables/balmer_okular_messdaten.tex}
-	\caption{Messung der Balmer-Linien}
+	\caption{Messdaten der mit dem Okular bestimmten Balmer-Linien}
 	\label{tab:balmer_okular_messdaten}
 \end{table}
 
@@ -885,7 +885,7 @@ Die Anpassung für die blaue Linie (wie in \ref{fig:aufspaltung_blau}) wurde in 
 \label{fig:doppler_blau}
 \end{figure}
 Die gefundenen Schwankungsbreiten wurden mit dem Faktor $2\sqrt{2\ln2}$ multipliziert, um die Halbwertsbreite der angepassten Gaußfunktion zu erhalten.
-Mit \eqref{eq:gitter_differenzial} wurde dieser Wert anschließend in eine Länge umgerechnet, um die gemessenen Werte mit den theoretischen zu vergleichen.
+Mit \eqref{eq:gitter_differenzial} wurde dieser Wert anschließend in die Wellenlänge umgerechnet, um die gemessenen Werte mit den theoretischen zu vergleichen.
 Die gemessenen Linienbreiten für die rote und türkise Linie liefern dabei plausible Werte, die der anderen beiden Linien erscheinen deutlich zu groß.
 Ursache hierfür sind vor allem die Anpassungen mit nur einer Gauß-Kurve, wobei eine sinnvolle Anpassung mit zwei Gauß-Kurven aufgrund weniger Messwerte nicht möglich war.
 Darum soll im Weiteren nur noch auf die Breiten der roten und türkisen Linien eingegangen werden.
@@ -901,7 +901,7 @@ Das Auflösungsvermögen eines Gitters ist durch
 \end{align*}
 gegeben, mit der Anzahl beleuchteter Spalte $N$ und der beobachteten Ordnung $n$. Unter der Annahme, dass das Gitter über die volle Breite (\SI{25}{\milli\metre}) beleuchtet ist und die Linien jeweils in der ersten Beugungsordnung beobachtet werden, erhält man mit der Gitterkonstante $g=\SI{409.9}{\nano\metre}$ als obere Grenze für das Auflösungsvermögen:
 \begin{align*}
-\mathcal{R}=60990\approx 61000
+\mathcal{R} = \frac{\SI{25}{\milli\metre}}{\SI{409.9}{\nano\metre}} \approx 61000
 \end{align*}
 
 \subsection{Fazit}

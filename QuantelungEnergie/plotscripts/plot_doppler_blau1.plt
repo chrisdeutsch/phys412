@@ -14,7 +14,7 @@ set samples 10000
 
 set xrange [-0.03:0.06]
 set yrange [0:*]
-set xlabel 'Winkel $\alpha$ / \si{\degree}'
+set xlabel 'Winkel $\delta$ / \si{\degree}'
 set ylabel 'Intensität $I$ / \si{\percent}'
 
 set grid

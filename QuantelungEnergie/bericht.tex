@@ -124,6 +124,7 @@ Assistent: & Dennis Sauerland
 \section{Grundlagen / Theorie}
 
 \subsection{Photoelektrischer Effekt}
+\label{ssec:photoeffekt}
 Photoeffekt umfasst drei verschiedene Arten der Wechselwirkung von Licht mit Materie.
 Betrachtet wird der äußere photoelektrische Effekt, das heißt das Herauslösen von Elektronen aus Metalloberflächen (oder Halbleiter) durch Photonen.
 Erstmalige Deutung ("Licht" gibt Energie in Paketen welche Photonen genannt werden ab) von Einstein 1905 (Nobelpreis).
@@ -138,21 +139,34 @@ Energie eines Photons:
 \subsection{Photozelle}
 
 \subsubsection{Aufbau und Wirkung}
-Photozelle: eine Form von Elektronenröhre
-Zwei Elektroden im evakuierten Glaskolben (freie Weglänge $\Lambda$).
-Elektroden: Photokathode (hierauf treffen die Photonen) und Anode (die hier aufgefangenen Elektronen verursachen den Photostrom).
-
-Messung: Intensitäten oberhalb einer Grenzfrequenz (Austrittsarbeit);
-
-Betriebsmodi: Saugspannung (Anode + Kathode -) oder Gegenspannung (Anode - Kathode +).
-
-
-Elektronen in der Photokathode absorbieren Photonen der Energie $E_\gamma$.
-Ist die Energie der Elektronen anschließend hoch genug (größer als die Austrittsarbeit), so können die Elektronen aus dem Metall austreten.
-Die Energiebilanz des gelösten Elektrons (ohne Messkreis):
+Die Photozelle ist eine Form der Elektronenröhre, bei der zwei Elektroden in einem evakuierten Glaskolben (mit kleiner mittleren freien Weglänge $\Lambda$) befestigt sind.
+Eine der Elektroden bildet die Photokathode, aus der die Elektronen durch Lichteinfall (siehe \ref{ssec:photoeffekt}) ausgelöst werden.
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.65\textwidth]{./figures/aufbau_photozelle.pdf}
+\caption{Aufbau einer Photozelle mit Beschaltung der Gegenfeldmethode}
+\label{fig:aufbau_photozelle}
+\end{figure}
+Die Anode ist dabei aus einem dünnen Metallring gefertigt, damit die Photonen sie passieren können, ohne auf sie aufzutreffen und dort gegebenenfalls Elektronen auszulösen, was die Messung stark verfälscht.
+Um diesem Effekt entgegenzuwirken wird das Material der Anode (in dem Versuch Platin-Rhodium) so gewählt, dass es eine möglichst hohe Austrittsarbeit hat, damit für den Fall von Photoneneinfall keine Elektronen ausgelöst werden können.
+Umgekehrt soll die Austrittsarbeit der Kathode gering sein, damit dort viele Elektronen ausgelöst werden können, hierfür wird in dem Versuch Kalium auf einer oxidierten Silberschicht verwendet.
+Die Elektronen fliegen durch die äußere Beschaltung zur Anode und erzeugen dort den \textbf{Photostrom}.
+Für den Betrieb einer Photozelle sind grundsätzlich zwei Beschaltungen möglich:
+\begin{itemize}
+\item Bei dem Betrieb mit \textbf{Saugspannung} wird die Anode mit dem positiven Pol der regelbaren Spannungsquelle verbunden, die Kathode mit dem negativen.
+So werden die Elektronen zur Anode hin beschleunigt und dort als Strom registriert.
+Das Verfahren eignet sich, wenn man einen besonders hohen Photostrom messen will, allerdings lassen sich dabei keine Rückschlüsse auf die Energie der Elektronen/Photonen ziehen.
+\item Bei der \textbf{Gegenfeldmethode}, wie wir sie verwenden werden, wird die Kathode positiv geladen und die Anode negativ, so dass die Elektronen zur Kathode hin beschleunigt werden.
+Es erreichen demzufolge nur noch Elektronen mit Energien größer $e\,U$ die Anode und bei Verschwinden des Photostroms entspricht die kinetische Energie der Elektronen nach dem Auslösen gerade der Energie $e\,U$, da keine Elektronen mehr die Anode erreichen und als Strom registriert werden.
+\end{itemize}
+In dem Versuch wird nur die Gegenfeldmethode verwendet, um daraus das Plancksche Wirkungsquantum zu bestimmen und die Austrittsarbeit abzuschätzen.
+Dies ist möglich, da die Elektronen in der Photokathode die Energie $E_\gamma$ der Photonen absorbieren und erst aus der Kathode austreten können, wenn diese größer ist als die Austrittsarbeit des Kathodenmaterials.
+Die Energiebilanz des Elektrons lautet somit:
 \begin{align}
 E_e = E_\gamma - W_\mathrm{A} = h \cdot \nu - W_\mathrm{A}
 \end{align}
+
+Messung: Intensitäten oberhalb einer Grenzfrequenz (Austrittsarbeit);
 
 \subsubsection{Photostromverlauf}
 

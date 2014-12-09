@@ -454,7 +454,7 @@ Nach Berechnung von Frequenz und mittlerer Grenzspannung ergeben sich die Werte 
 \begin{table}[h]
 	\centering
 	\input{./tables/photoeffekt_planck_quantum_daten.tex}
-	\caption{Linearisierung zur Bestimmung von h}
+	\caption{Varianzgewichtete Mittelwerte der zwei Grenzspannungen zu jeder Wellenlänge/Frequenz}
 	\label{tab:photoeffekt_planck_fitdaten}
 \end{table}
 Anschließend werden diese Werte in einem $U_0$-$\nu$-Diagramm aufgetragen und eine Ausgleichsgerade nach dem Least-Squares-Verfahren berechnet.
@@ -480,19 +480,23 @@ Demnach ist die Steigung $m$ gegeben durch:
 \begin{align*}
 	m = \frac{h}{e}
 \end{align*}
-Das Wirkungsquantum wird durch Multiplikation der Steigung $m$ mit der Elementarladung\footnote{2010 CODATA recommended values\\\url{http://physics.nist.gov/cgi-bin/cuu/Value?e}\\Letzer Abruf: 6. Dezember 2014}:
+Das Wirkungsquantum wird durch Multiplikation der Steigung $m$ mit der Elementarladung \cite{CODATA}:
 \begin{align}
 	e = \SI{1.602176565 +- 0.000000035e-19}{\coulomb}
 \end{align}
 berechnet, wobei der Einfluss des Fehlers der Elementarladung klein gegen den der Steigung ist und daher vernachlässigt wird.
 Somit ergibt sich:
 \begin{align*}
-	h = \SI{5.93 +- 0.04}{\joule\second}
+	h = \SI{5.93 +- 0.04e-34}{\joule\second}
 \end{align*}
-(FEHLERDISKUSSION!)
-Höchstwahrscheinlich systematischer Fehler bei Grenzspannungsbestimmung.
+Dieser Wert stimmt leider nicht mit dem Literaturwert $h = \SI{6.626 e-34}{\joule\second}$ \cite{CODATA} überein.
+In Anbetracht des statistischen Fehlers muss hier von einem systematischen Fehler ausgegangen werden, dessen Ursache wir nicht eindeutig lokalisieren können.
+In dieser Hinsicht liefert auch der Achsenabschnitt (auch unter Beachtung des Kontaktpotentials) keine gute Abschätzung für die Austrittsarbeit:
+\begin{align*}
+	W_\mathrm{K} + e \, U_\mathrm{Kontakt} = \SI{1.326 +- 0.008}{\electronvolt} \text{,}
+\end{align*}
+da diese für Kalium in der Größenordnung von $\SI{2.29}{\electronvolt}$ \cite{crc} liegen sollte.
 
-TODO: Abschätzung Austrittsarbeit
 
 \subsubsection{Einfluss der Intensität auf die Kennlinien}
 \begin{figure}[h]
@@ -930,17 +934,12 @@ WIRKUNGSQUANTUM FAZIT
 	Springer Verlag,
 	23. Auflage
 
-\bibitem{hecht}
-	Eugene Hecht,
-	\emph{Optik}.
-	Oldenbourg,
-	5. Auflage
-
-\bibitem{siegmann}
-	Anthony E. Siegmann,
-	\emph{Lasers}.
-	University Science Books,
-	1986
+\bibitem{crc}
+	David R. Lide (ed),
+	\emph{CRC Handbook of Chemistry and Physics},
+	84th Edition. CRC Press. Boca Raton, Florida, 2003;
+	Section 12: Properties of Solids --
+	\emph{Electron Work Function of the Elements}
 
  
 \end{thebibliography}

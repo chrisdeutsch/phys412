@@ -138,7 +138,7 @@ Erstmalig wurde dies durch Einstein (1905 Nobelpreis) gedeutet als Quantisierung
 \subsection{Photozelle}
 
 \subsubsection{Aufbau und Wirkung}
-Die Photozelle ist eine Form der Elektronenröhre, bei der zwei Elektroden in einem evakuierten Glaskolben (mit großer mittlere freien Weglänge $\Lambda$) befestigt sind.
+Die Photozelle ist eine Form der Elektronenröhre, bei der zwei Elektroden in einem evakuierten Glaskolben (um große mittlere freie Weglänge $\Lambda$ zu erreichen) befestigt sind.
 Eine der Elektroden bildet die Photokathode, aus der die Elektronen durch Lichteinfall (siehe \ref{ssec:photoeffekt}) ausgelöst werden.
 \begin{figure}[h]
 \centering
@@ -149,7 +149,7 @@ Eine der Elektroden bildet die Photokathode, aus der die Elektronen durch Lichte
 Die Anode ist dabei aus einem dünnen Metallring gefertigt, damit die Photonen sie passieren können, ohne auf sie aufzutreffen und dort gegebenenfalls Elektronen auszulösen, was die Messung stark verfälscht.
 Um diesem Effekt entgegenzuwirken wird das Material der Anode (in dem Versuch Platin-Rhodium) so gewählt, dass es eine möglichst hohe Austrittsarbeit hat, damit für den Fall von Photoneneinfall keine Elektronen ausgelöst werden können.
 Umgekehrt soll die Austrittsarbeit der Kathode gering sein, damit dort viele Elektronen ausgelöst werden können, hierfür wird in dem Versuch Kalium auf einer oxidierten Silberschicht verwendet.
-Die Elektronen fliegen durch die äußere Beschaltung zur Anode und erzeugen dort den \textbf{Photostrom}.
+Die Elektronen fliegen zur Anode und erzeugen so einen \textbf{Photostrom}.
 Für den Betrieb einer Photozelle sind grundsätzlich zwei Beschaltungen möglich:
 \begin{itemize}
 \item Bei dem Betrieb mit \textbf{Saugspannung} wird die Anode mit dem positiven Pol der regelbaren Spannungsquelle verbunden, die Kathode mit dem negativen.
@@ -195,6 +195,7 @@ Die Kontaktspannung $U_\mathrm{Kontakt}$ zwischen zwei Metallen ist gleich der D
 \end{align}
 Mit der Austrittsarbeit der Kathode $W_\mathrm{K} = e \, \phi_\mathrm{K}$ erhält man dann als Energiebilanz des Elektrons:
 \begin{align}
+\label{eq:energiebilanz}
 	h \nu = e \, U_0 + W_\mathrm{K} + e \, U_\mathrm{Kontakt} \text{,}
 \end{align}
 und ist somit abhängig von der Kontaktspannung zwischen Anode und Kathode.
@@ -236,6 +237,7 @@ und führt auf die Quantenzahlen $n, \ell, m_\ell$ mit Energieeigenwerten wie si
 Bei der quantenmechanischen Lösung beschreibt die Hauptquantenzahl $n$ jedoch nicht den Bahndrehimpuls des Teilchens, sondern die Drehimpulsquantenzahl $\ell$ sowie die magnetische Quantenzahl $m_\ell$, welche die Projektion des Drehimpulses auf eine frei wählbare Quantisierungsachse beschreibt.
 
 \subsubsection{Rydberg-Formel und Balmer-Serie}
+\label{sssec:rydberg}
 Bereits vor der Beschreibung des Spektrums von Wasserstoff durch Bohr wurde dieses von Rydberg empirisch durch die sogenannte Rydberg-Formel beschrieben:
 \begin{align}
 	\label{eq:rydberg_formel}
@@ -367,8 +369,7 @@ Die Messung von Gegenspannung und Photostrom erfolgt dann über zwei Voltmeter, 
 
 \subsubsection{Messung der Kennlinien}
 Zunächst wählen wir den Interferenzfilter mit Mittenwellenlänge $\lambda = \SI{365}{\nano\metre}$ und überprüfen, in welcher Größenordnung sich die Grenzspannung $U_0$, bei der kein Photostrom mehr fließt, befindet.
-Diese liegt in der Größenordnung von \SI{2}{\volt}, daher wählen wir einen Spannungsteiler aus \SI{100}{\ohm} und \SI{222}{\ohm}.
-(Warum kein \SI{333}{\ohm ?})
+Diese liegt in der Größenordnung von \SI{2}{\volt}, daher wählen wir einen Spannungsteiler aus \SI{100}{\ohm} und \SI{222}{\ohm}, um die Spannungsquelle feiner zu regeln.
 
 Nun wird mit der Messung der Kennlinien für die Wellenlängen $\lambda = \num{365}$, \num{405} , \num{436}, \num{546}, \SI{578}{\nano\metre} begonnen.
 Es wird für jeden Filter wie folgt vorgegangen:
@@ -415,10 +416,9 @@ Die restlichen Linearisierungen wurden im Anhang \ref{app:kennlinien} zusammenge
 \begin{table}[h]
 	\centering
 	\input{./tables/photoeffekt_fit_ergebnisse.tex}
-	\caption{Ergebnisse der Anpassung einer Geraden $f(x) = m \cdot x + b$ an die linearisierten Kennlinien bei verschiedenen Wellenlängen}
+	\caption{Ergebnisse der Anpassung einer Geraden mit Steigung $m$ und Achsenabschnitt $b$ an die linearisierten Kennlinien bei verschiedenen Wellenlängen}
 	\label{tab:photoeffekt_fit_results}
 \end{table}
-Bisschen was zum Chiquadrat HIER!!!
 Mit den Ergebnissen der Anpassung kann nun die Grenzspannung $U_0$ als Schnittpunkt der Geraden mit der $x$-Achse berechnet werden, sodass wir:
 \begin{align*}
 	U_0 &= -\frac{b}{m} \\
@@ -429,12 +429,12 @@ Auf diese Weise wird $U_0$ für jede der zehn Anpassungen berechnet und in Tabel
 \begin{table}[h]
 	\centering
 	\input{./tables/photoeffekt_grenzspannungen.tex}
-	\caption{Grenzspannungen}
+	\caption{Aus den Anpassungsgeraden in Tabelle \ref{tab:photoeffekt_fit_results} berechnete Grenzspannungen}
 	\label{tab:photoeffekt_grenzspannungen}
 \end{table}
 
 \subsubsection{Berechnung des Planckschen Wirkungsquantums}
-Um das Plancksche Wirkungsquantum aus den gemessenen Grenzspannungen $U_0$ bei verschiedenen Wellenlängen $\lambda$ zu berechnen, wird die Energiebilanz (REFERENZ!) des Photons verwendet.
+Um das Plancksche Wirkungsquantum aus den gemessenen Grenzspannungen $U_0$ bei verschiedenen Wellenlängen $\lambda$ zu berechnen, wird die Energiebilanz (Gleichung \ref{eq:energiebilanz}) des Photons verwendet.
 Dazu wird die Grenzspannung gegen die Frequenz des einfallenden Lichts aufgetragen, um eine Gerade mit der Steigung $h/e$ zu erhalten.
 Zunächst wird der varianzgewichtete Mittelwert verwendet, um jeweils zwei Messungen zu der gleichen Wellenlänge zu mitteln.
 Dieser ist gegeben durch:
@@ -492,6 +492,8 @@ Somit ergibt sich:
 (FEHLERDISKUSSION!)
 Höchstwahrscheinlich systematischer Fehler bei Grenzspannungsbestimmung.
 
+TODO: Abschätzung Austrittsarbeit
+
 \subsubsection{Einfluss der Intensität auf die Kennlinien}
 \begin{figure}[h]
 	\centering
@@ -527,7 +529,7 @@ Die Linse mit \SI{50}{\milli\metre} Brennweite wird dabei so positioniert, dass 
 Nun wird direkt neben dem Spalt durch Reflexion am Gitter eine scharfe Abbildung des Spalts selbst erreicht, in dem das Projektionsobjektiv zunächst grob positioniert und durch Drehen an der Linse optimal eingestellt wird.
 Der Aufbau befindet sich danach in so genannter Autokollimation, was bedeutet, dass der Spalt ins Unendliche abgebildet wird.
 Die zweite optische Bank wird so gedreht, dass sie mit der ersten optischen Bank einen Bankwinkel $\omega_\text{B}$ zwischen \SI{130}{\degree} und \SI{170}{\degree} bildet.
-Für die Durchführung wird $\omega_\text{B}$=\SI{150}{\degree} gewählt und  für alle Versuchsteile beibehalten und vor den Messungen kontrolliert und gegebenenfalls neu justiert.
+Für die Durchführung wird $\omega_\text{B}$=\SI{150 +- 0.25}{\degree} gewählt und  für alle Versuchsteile beibehalten und vor den Messungen kontrolliert und gegebenenfalls neu justiert.
 Am Ende der zweiten optischen Bank wird das Okular befestigt und so eingestellt, dass die Skala gut ablesbar ist.
 Mit Hilfe der Linse mit \SI{300}{\milli\metre} Brennweite kann das zu beobachtende Spektrum scharf auf das Okular abgebildet werden (Fernrohraufbau).
 
@@ -539,20 +541,27 @@ Hierfür sollte der Spalt zunächst weit geöffnet sein, um eine hohe Intensitä
 Ist die entsprechende Linie mit der Linse mit Brennweite $f=$\SI{300}{\milli\metre} scharf im Okular zu beobachten wird der Gitterwinkel $\omega_\text{G}$ auf der Winkelskala abgelesen.
 Hier ist abermals darauf zu achten, dass der Bankwinkel weiterhin \SI{150}{\degree} beträgt.
 So verfährt man für alle sichtbaren Linien, die im Anschluss an die Messung mit Hilfe der gegebenen Tabelle der sichtbaren Spektrallinien von Quecksilber einer Wellenlänge zugeordnet werden können.
+Da manche Linien dicht beieinander lagen, wurde deren relative Position $d$ zum Zentrum des Okulars an der Strichskala abgelesen.
 Die entsprechenden Messwerte sind in Tabelle \ref{tab:gitterkonstante_messdaten} notiert.
 \begin{table}[h]
 	\centering
 	\input{./tables/gitterkonstante_messdaten.tex}
-	\caption{Ergebnisse der $\Delta \omega_\mathrm{G} = \SI{0.5}{\degree}$ und $\Delta d = \SI{0.05}{\milli\metre}$}
+	\caption{Lage der Quecksilber Linien bei der Messung mit dem Reflektionsgitter. $d$ kennzeichnet die Lage der Linie auf der Strichskala des Okulars bei gegebenem Gitterwinkel. Fehler: $\Delta \omega_\mathrm{G} = \SI{0.5}{\degree}$, $\Delta d = \SI{0.05}{\milli\metre}$}
 	\label{tab:gitterkonstante_messdaten}
 \end{table}
-(Erklären warum wir die \SI{690}{\nano\metre} Linie nicht gemessen haben)
 
 \subsubsection{Messung der Balmer-Linien mit einem Okular} 
 Zu den weiteren Messungen wird nun die Quecksilberlampe gegen eine deuterierte Balmer-Lampe getauscht (Mischungsverhältnis ca. 1:2).
 Wie bei der Bestimmung der Gitterkonstante dreht man nun das Gitter bis man eine beobachtbare Wasserstofflinie (hellere der beiden Linien) sieht und notiert den Gitterwinkel $\omega_\text{G}$, bei dem die Linie im Nullpunkt der Okularskala liegt.
 Hieraus kann später die Wellenlänge der beobachteten Linie gemessen werden.
 Außerdem wird wie oben die Verschiebung $d$ notiert, unter der die Deuteriumlinie (schwächere der beiden Linien) im Okular auftritt, um so später die Isotopieaufspaltung zu bestimmen.
+Die Messdaten wurden in Tabelle \ref{tab:balmer_okular_messdaten} aufgetragen.
+\begin{table}[h]
+	\centering
+	\input{./tables/balmer_okular_messdaten.tex}
+	\caption{Messung der Balmer-Linien}
+	\label{tab:balmer_okular_messdaten}
+\end{table}
 
 \subsubsection{Messung der Balmer-Linien mit einer CCD-Kamera}
 Es wird der Versuchsaufbau wie in \ref{sssec:balmer_okular} beschrieben genutzt, allerdings mit einer CCD-Kamera anstelle des Okulars. 
@@ -584,7 +593,8 @@ Diese ist (in Kleinwinkelnäherung) gegeben durch die Brennweite $f$ des Objekti
 \begin{align*}
 \Delta \beta = -\frac{d}{f} \text{,}
 \end{align*}
-wobei das Vorzeichen von der verwendeten Konvention bei der Messung von $d$ abhängt, welche in der Durchführung in Abschnitt \ref{sssec:durchfuehrung_gitterkonstante} beschrieben wurde.
+wobei das Vorzeichen von der Messrichtung von $d$ abhängt.
+Hier wurde $d$ so gemessen, dass es rechts vom Zentrum der Strichskala positiv ist und somit kleineren Ausfallswinkeln $\beta$ entspricht.
 Mit der Brennweite des Fernrohrobjektivs $f = \SI{300}{\milli\metre}$ folgt mit der erwähnten Korrektur für den tatsächlichen Ausfallswinkel:
 \begin{align*}
 	\beta^\prime = \beta + \Delta \beta
@@ -653,12 +663,6 @@ wobei der Fehler $\Delta g$ gegeben ist durch:
 \label{sssec:balmer_okular_aufspaltung}
 \begin{table}[h]
 	\centering
-	\input{./tables/balmer_okular_messdaten.tex}
-	\caption{Messung der Balmer-Linien}
-	\label{tab:balmer_okular_messdaten}
-\end{table}
-\begin{table}[h]
-	\centering
 	\input{./tables/balmer_wellenlaengen.tex}
 	\caption{Berechnete Wellenlängen der Balmer-Linien. Literaturwerte aus \emph{NIST Atomic Spectra Database} \cite{NISTSpectra}}
 	\label{tab:balmer_wellenlaenge}
@@ -700,9 +704,10 @@ Die Berechnung der Isotopieaufspaltung anhand der Beobachtung mit dem Okular und
 \begin{table}[h]
 	\centering
 	\input{./tables/balmer_aufspaltung_okular.tex}
-	\caption{Berechnete Isotopieaufspaltung mit dem Okular. Theoretische Werte wurden mithilfe der Rydberg-Formel und NIST Konstanten berechnet (ref Theorieteil)}
+	\caption{Berechnete Isotopieaufspaltung mit dem Okular. Theoretische Werte wurden mithilfe der Rydberg-Formel aus Abschnitt \ref{sssec:rydberg} und den physikalischen Konstanten von \cite{CODATA} berechnet.}
 	\label{tab:balmer_aufspaltung_okular}
 \end{table}
+In Anbetracht der Fehler stimmen die hier berechneten Werte für die Isotopieaufspaltung gut mit den theoretischen überein.
 
 \subsubsection{Bestimmung der Rydberg-Konstanten aus den Linien der Balmer-Serie}
 Da die Wellenlängen der ersten vier Linien der Balmer-Serie bestimmt wurden, kann nun mithilfe der Rydberg-Formel (ref Theorieteil) und einer geeigneten Linearisierung eine Bestimmung der Rydberg-Konstanten durchgeführt werden.

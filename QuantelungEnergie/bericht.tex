@@ -204,7 +204,7 @@ mit der Feinstrukturkonstante $\alpha$:
 \begin{align}
 	\alpha = \frac{e^2}{4 \pi \epsilon_0 \hbar c}
 \end{align}
-und der reduzierte Masse $\mu$ des Systems Elektron-Kern:
+und der reduzierten Masse $\mu$ des Systems Elektron-Kern:
 \begin{align}
 	\mu = \frac{m_e \cdot m_\mathrm{K}}{m_e + m_\mathrm{K}}
 \end{align}
@@ -257,32 +257,67 @@ Für Wasserstoff sind diese: Lyman ($n_i \rightarrow 1$), Balmer ($n_i \rightarr
 In diesem Versuch werden einige Linien der Balmer-Serie beobachtet, da nur diese Emissionen im optisch sichtbaren Bereich aufweist.
 
 \subsection{Spektroskopie}
-\subsubsection{spektroskopisches Auflösungsvermögen}
-Das Auflösungsvermögen $\mathcal{R}$ ist definiert als das Verhältnis der Wellenlänge $\lambda$ zur Wellenlängendifferenz von zwei gerade noch auflösbaren Linien.
-Gerade noch auflösbar heißt dabei, dass das Rayleigh-Kriterium erfüllt ist, welches besagt, dass der Abstand der beiden Intensitätsmaxima genau der Halbwertsbreite des Intensitätsverlaufs entspricht.
-Damit folgt mit der Halbwertsbreite $\delta \lambda$ der Maxima des Fabry-Pérot-Etalons \cite{hecht}:
+\subsubsection{Spektroskopisches Auflösungsvermögen}
+\label{sssec:aufloesungsvermoegen}
+Das spektroskopische Auflösungsvermögen $\mathcal{R}$ ist definiert als das Verhältnis der Wellenlänge $\lambda$ zur Wellenlängendifferenz $\Delta \lambda$ von zwei gerade noch auflösbaren Linien.
 \begin{align}
-\mathcal{R} = \frac{\lambda}{\delta \lambda} = \mathcal{F} \cdot m
+\mathcal{R} = \frac{\lambda}{\Delta \lambda}
 \label{eq:aufloesung}
 \end{align}
+Gerade noch auflösbar heißt dabei, dass das Rayleigh-Kriterium erfüllt ist, welches besagt, dass der Abstand zweier Intensitätsmaxima $\Delta \lambda$ genau der Halbwertsbreite des Intensitätsverlaufs entspricht.
+
+\subsubsection{Optisches Gitter}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\textwidth]{./figures/herleitung_gitter.pdf}
+	\caption{Zur Herleitung der Gittergleichung}
+	\label{fig:gitter}
+\end{figure}
+Ein optisches Gitter besteht aus einer regelmäßigen Anordnung von parallelen Spalten, welche je nach Gittertyp reflektierend oder transmittierend sind.
+Das Gitter ist ein wichtiges Instrument zur Spektroskopie, da dieses aufgrund von Beugung und Interferenz einen von der Wellenlänge abhängigen Transmissions- / Reflektionswinkel aufweist.
+Betrachtet man ein Reflektionsgitter mit Spaltabstand $g$ (Gitterkonstante) wie in Abbildung \ref{fig:gitter} so erhält man:
+\begin{align}
+	\sin(\alpha) = \frac{\Delta_2}{g} \qquad \sin(\beta) = \frac{\Delta_1}{g} \text{,}
+\end{align}
+sodass der Weglängenunterschied zweier benachbarter Strahlen $\Delta$ gegeben ist durch:
+\begin{align}
+	\Delta = \Delta_2 - \Delta_1 = g \cdot \left(\sin(\alpha) - \sin(\beta) \right)
+\end{align}
+Im Gegensatz zu den Verhältnissen in der Zeichnung, wird $\beta$ in gleicher Richtung wie $\alpha$ gemessen, sodass die Substitution $\beta \rightarrow -\beta$ auf den Weglängenunterschied:
+\begin{align}
+	\Delta = g \cdot \left(\sin(\alpha) + \sin(\beta) \right)
+\end{align}
+führt.
+Um konstruktive Interferenz zu erreichen, muss der Unterschied $\Delta$ der Wegstrecken ein ganzzahliges Vielfaches $m$ der Wellenlänge $\lambda$ sein, sodass die optische Gittergleichung folgt:
+\begin{align}
+	m \lambda = g \cdot \left( \sin(\alpha) + \sin(\beta) \right) \quad \text{mit} \quad m \in \mathbb{Z}
+\end{align}
+Man nennt $m$ die Ordnung der Interferenz.
+Berechnet man Intensität des gebeugten Strahls mittels Beugungsformalismus, so bestimmt man nach dem Rayleigh-Kriterium in Abschnitt \ref{sssec:aufloesungsvermoegen} das Auflösungsvermögen durch die Halbwertsbreite $\Delta \lambda$ der Intensitätsmaxima und erhält:
+\begin{align}
+	\mathcal{R} = \frac{\lambda}{\Delta \lambda} = m \cdot N \text{,}
+\end{align}
+wobei $N$ die Anzahl der beleuchteten Spalte ist.
 
 \subsubsection{Natürliche Linienbreite und Linienverbreiterung}
 Aufgrund der Heisenberg'schen Unschärferelation führt die endlichen Lebensdauer $\tau$ angeregter Zustände zu einer Energieunschärfe $\Gamma$ bei der Relaxation des Zustandes.
-Die Energieunschärfe ist gegeben durch:
+Die Energieunschärfe ist gegeben durch \cite{demtroder}:
 \begin{align*}
 \Gamma = \frac{\hbar}{\tau}
 \end{align*}
-Diese Energieunschärfe hat ein Lorentz-Profil.
+und deren Verlauf wird beschrieben durch das Lorentz-Profil.
 Darüber hinaus kommt es zur Dopplerverbreiterung aufgrund der thermischen Bewegung der angeregten Atome.
-Die Geschwindigkeitsverteilung der Atome in Beobachtungsrichtung ist gaußförmig um Null, sodass auch die Dopplerverbreitung ein gaußförmiges Profil mit der Halbwertsbreite:
+Die Geschwindigkeitsverteilung der Atome in Beobachtungsrichtung ist gaußförmig um Null, sodass auch die Dopplerverbreitung ein gaußförmiges Profil mit der Halbwertsbreite \cite{demtroder}:
 \begin{align}
 \delta \lambda = \frac{\lambda_0}{c} \sqrt{\frac{8 k_\mathrm{B} T \ln(2)}{m}}
 \label{eq:doppler}
 \end{align}
 hat.
-Die Kombination von natürlicher Linienbreite (Lorentz) und Dopplerverbreiterung (Gauß) führt (durch Faltung) zu einem sogenannten Voigt-Profil \cite{siegmann}.
+Die Kombination von natürlicher Linienbreite (Lorentz) und Dopplerverbreiterung (Gauß) führt (durch Faltung) zu einem sogenannten Voigt-Profil.
 Neben der Dopplerverbreiterung existiert noch die Druckverbreiterung der Linien aufgrund von Stößen mit Nachbarn eines angeregten Atoms.
-Dieser Effekt wird erst bei der Beobachtung von Sternen relevant und daher nicht weiter diskutiert.
+Diese führen dazu, dass eine Kollision mit einem angeregten Atom zur verfrühten Emissions eines Photons führt.
+Daher reduziert sich die typische Zeitskala der Relaxation des Atoms, sodass gemäß der Heisenberg'schen Unschärferelation eine größere Energieunschärfe $\Gamma$ resultiert.
+Darüberhinaus folgt eine Störung des Hamiltonians durch Nachbaratome, welche in leicht verschobenen Energieeigenwerten resultiert und somit auch eine Form von Druckverbreiterung darstellt.
 
 
 \section{Bestimmung des Planckschen Wirkungsquantums}
@@ -839,6 +874,11 @@ gegeben, mit der Anzahl beleuchteter Spalte $N$ und der beobachteten Ordnung $n$
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{9}
+\bibitem{demtroder}
+	Wolfgang Demtröder,
+	\emph{Experimentalphysik 3: Atome, Moleküle und Festkörper}.
+	Springer Verlag,
+	4. Auflage
 
 \bibitem{NISTSpectra}
 	Kramida, A., Ralchenko, Yu., Reader, J., and NIST ASD Team (2014).

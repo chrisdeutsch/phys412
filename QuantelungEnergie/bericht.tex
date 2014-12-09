@@ -132,9 +132,9 @@ Um ein Elektron aus dem Material zu lösen, muss die Austrittsarbeit überwunden
 Man stellt fest, dass die auf das Elektron übertragene Energie unabhängig von der Intensität des Lichts ist, was ein Widerspruch der klassischen Theorie der elektromagnetischen Strahlung ist.
 Darüber hinaus stellt man fest, dass diese nur von der Frequenz $\nu$ der Strahlung abhängt.
 Erstmalig wurde dies durch Einstein (1905 Nobelpreis) als Quantisierung der Energie des Lichts in sogenannte Photonen mit einer Energie:
-\begin{align}
+\begin{align*}
 	E_\gamma = h \cdot \nu
-\end{align}
+\end{align*}
 gedeutet.
 
 \subsection{Photozelle}
@@ -163,9 +163,9 @@ Es erreichen demzufolge nur noch Elektronen mit Energien größer $e\,U$ die Ano
 In dem Versuch wird nur die Gegenfeldmethode verwendet, um daraus das Plancksche Wirkungsquantum zu bestimmen und die Austrittsarbeit abzuschätzen.
 Dies ist möglich, da die Elektronen in der Photokathode die Energie $E_\gamma$ der Photonen absorbieren und erst aus der Kathode austreten können, wenn diese größer ist als die Austrittsarbeit des Kathodenmaterials.
 Die Energiebilanz des Elektrons lautet somit:
-\begin{align}
+\begin{align*}
 E_e = E_\gamma - W_\mathrm{A} = h \cdot \nu - W_\mathrm{A}
-\end{align}
+\end{align*}
 
 \subsubsection{Photostromverlauf}
 \begin{figure}[h]
@@ -178,9 +178,9 @@ Abbildung \ref{fig:kennlinie} zeigt qualitativ den Verlauf des Anodenstroms in A
 In dieser Beschaltung erreicht der Strom eine Sättigung bei hohen Spannungen, wenn alle ausgelösten Elektronen die Anode erreichen.
 Für Temperaturen über dem absoluten Nullpunkt nähert sich der Photostrom im negativen Spannungsbereich asymptotisch an $0$, wobei für eine ideale Photozelle ein Schnittpunkt mit der $U$-Achse existiert (vgl. \cite{prak_uheidelberg}).
 Dort ist auch erwähnt, dass für eine Geometrie wie sie hier vorliegt, der Photostrom im Bereich von $U_0$ folgender Abhängigkeit genügt:
-\begin{align}
+\begin{align*}
 	I_\mathrm{Photo} \propto (h \nu - e \cdot U_0)^2
-\end{align}
+\end{align*}
 Wegen der asymptotischen Annäherung wird darum die Wurzel des Photostroms aufgetragen, um aus der entstehenden linearen Abhängigkeit die Nullstelle $U_0$ extrapolieren zu können, bei der der Photostrom im idealen Fall verschwinden sollte.
 
 \subsubsection{Austrittsarbeit und Kontaktpotential}
@@ -192,19 +192,19 @@ Wegen der asymptotischen Annäherung wird darum die Wurzel des Photostroms aufge
 \end{figure}
 Um ein Elektron aus einem Metall zu lösen, ist eine Mindestenergie erforderlich, die man Austrittsarbeit $W_\mathrm{A}$ nennt.
 Drücken wir diese durch ein Austrittspotential $\phi$ aus, so ergibt sich für ein Elektron, welches durch ein Photon der Frequenz $\nu$ aus dem Kathodenmaterial gelöst wurde:
-\begin{align}
+\begin{align*}
 	E_\mathrm{kin} = h \nu - e \, \phi_\mathrm{K}
-\end{align}
+\end{align*}
 Legt man nun zwischen der Ringanode und der Kathode eine Gegenspannung an, so ist die Grenzspannung $U_0$, bei der keine Elektronen mehr bei der Anode ankommen, gegeben durch:
-\begin{align}
+\begin{align*}
 	E_\mathrm{kin} \stackrel{!}{=} e \, \hat{U}_0 = e \cdot \left( U_0 + \phi_\mathrm{A} - \phi_\mathrm{K}\right)
-\end{align}
+\end{align*}
 Insbesondere ist die Potentialdifferenz $\hat{U}_0$, die das Elektron durchlaufen muss, aufgrund der unterschiedlichen Austrittspotentiale von Kathode $\phi_\mathrm{K}$ und Anode $\phi_\mathrm{A}$, nicht gleich der gemessenen Spannung $U_0$.
 Dieser Sachverhalt ist in Abbildung \ref{fig:kontaktpotential} schematisch dargestellt.
 Die Kontaktspannung $U_\mathrm{Kontakt}$ zwischen zwei Metallen ist gleich der Differenz ihrer Austrittpotentiale, so dass diese im Fall der Photozelle gegeben ist durch:
-\begin{align}
+\begin{align*}
 	U_\mathrm{Kontakt} = \phi_\mathrm{A} - \phi_\mathrm{K}\text{.}
-\end{align}
+\end{align*}
 Mit der Austrittsarbeit der Kathode $W_\mathrm{K} = e \, \phi_\mathrm{K}$ erhält man daraus als Energiebilanz des Elektrons:
 \begin{align}
 \label{eq:energiebilanz}
@@ -230,21 +230,21 @@ Mithilfe dieser Postulate, ist es möglich die Energie der Bahnen zu bestimmen, 
 	E_n = - \frac{1}{2} \, \frac{1}{n^2} \, \alpha^2 \mu c^2 \text{,}
 \end{align}
 mit der Feinstrukturkonstante $\alpha$:
-\begin{align}
+\begin{align*}
 	\alpha = \frac{e^2}{4 \pi \epsilon_0 \hbar c}
-\end{align}
+\end{align*}
 und der reduzierten Masse $\mu$ des Systems Elektron-Kern:
-\begin{align}
+\begin{align*}
 	\mu = \frac{m_e \cdot m_\mathrm{K}}{m_e + m_\mathrm{K}}
-\end{align}
+\end{align*}
 Die quantenmechanische Behandlung von zwei Punktladungen im gemeinsamen Coulomb-Potential führt im Schwerpunktssystem mit der Relativkoordinate $\vec{r}$ auf den Hamiltonian:
-\begin{align}
+\begin{align*}
 	\mathcal{H} = - \frac{\hbar}{2 \mu} \nabla^2 - \frac{e^2}{4 \pi \epsilon_0 |\vec{r}|} \text{.}
-\end{align}
+\end{align*}
 Die Energieniveaus ergeben sich nun aus der Lösung der stationären Schrödingergleichung:
-\begin{align}
+\begin{align*}
 	\mathcal{H} \psi = E \psi
-\end{align}
+\end{align*}
 und führt auf die Quantenzahlen $n, \ell, m_\ell$ mit Energieeigenwerten wie sie vom Bohr-Modell vorhergesagt wurden (Gleichung \ref{eq:energieniveaus_bohr}).
 Bei der quantenmechanischen Lösung beschreibt die Hauptquantenzahl $n$ jedoch nicht den Bahndrehimpuls des Teilchens, sondern die Drehimpulsquantenzahl $\ell$ sowie die magnetische Quantenzahl $m_\ell$.
 Insbesondere hat der Drehimpuls in der Grobstruktur keinen Einfluss auf die Energieniveaus.
@@ -259,13 +259,13 @@ Bereits vor der Beschreibung des Spektrums von Wasserstoff durch Bohr wurden die
 wobei $R$ die Rydberg-Konstante in Einheiten einer Wellenzahl bezeichnet.
 Nach der theoretischen Beschreibung durch Bohr konnte diese berechnet werden.
 Betrachtet man einen Übergang von einem Niveau $E_i$ nach $E_f$, so ist die in Form eines Photons freigewordene Energie:
-\begin{align}
+\begin{align*}
 	\Delta E = \frac{h c}{\lambda} = E_i - E_f \text{.}
-\end{align}
+\end{align*}
 Nutzt man Gleichung \ref{eq:energieniveaus_bohr} und formt nach $\frac{1}{\lambda}$ um, so erhält man:
-\begin{align}
+\begin{align*}
 	\frac{1}{\lambda} = \frac{1}{2} \, \frac{\alpha^2 \mu c}{h} \left( \frac{1}{n_f^2} - \frac{1}{n_i^2}\right)
-\end{align}
+\end{align*}
 und kann die Rydberg-Konstante direkt ablesen:
 \begin{align}
 \label{eq:rydberg_konstante}
@@ -273,13 +273,13 @@ R(\mu) = \frac{1}{2} \, \frac{\alpha^2 \mu c}{h} = \frac{\mu e^4}{8 c \epsilon_0
 \end{align}
 Sie hängt insbesondere von der reduzierten Masse des Elektron-Kern-Systems ab.
 Vernachlässigt man die Schwerpunktsbewegung so erhält man mit $\mu \approx m_e$ die Rydberg-Konstante bei unendlicher Kernmasse \cite{CODATA}:
-\begin{align}
+\begin{align*}
 	R_\infty = \SI{10973731.568539 +- 0.000055}{\per\metre}
-\end{align}
+\end{align*}
 Offensichtlich hängt die Rydberg-Konstante und damit auch das Emissionsspektrum von der reduzierten Masse $\mu$ ab (Gleichung \ref{eq:rydberg_formel}), wobei die Abhängigkeit durch:
-\begin{align}
+\begin{align*}
 	R = \frac{\mu}{m_e} \cdot R_\infty = \frac{R_\infty}{1 + \frac{m_e}{m_\mathrm{K}}}
-\end{align}
+\end{align*}
 ausgedrückt werden kann.
 Aufgrund dieses Zusammenhangs kommt es bei Beobachtung einer Mischung von Wasserstoff und Deuterium zu einer \textbf{Isotopieaufspaltung} des Wasserstoffspektrums, da die Rydberg-Konstante für Deuterium ($m_\mathrm{K} \approx m_\mathrm{p} + m_\mathrm{n}$) etwas größer ist, als die von einfachem Wasserstoff ($m_\mathrm{K} = m_\mathrm{p}$) und somit die Emission von Deuterium bei etwas höherer Energie stattfindet als die des Wasserstoff.
 
@@ -307,27 +307,27 @@ Gerade noch auflösbar heißt dabei, dass das Rayleigh-Kriterium erfüllt ist, w
 Ein optisches Gitter besteht aus einer regelmäßigen Anordnung von parallelen Spalten, welche je nach Gittertyp reflektierend oder transmittierend sind.
 Das Gitter ist ein wichtiges Instrument zur Spektroskopie, da es aufgrund von Beugung und Interferenz einen von der Wellenlänge abhängigen Transmissions- / Reflexionswinkel aufweist.
 Betrachtet man ein Reflexionsgitter mit Spaltabstand $g$ (Gitterkonstante) wie in Abbildung \ref{fig:gitter} so erhält man:
-\begin{align}
+\begin{align*}
 	\sin(\alpha) = \frac{\Delta_2}{g} \qquad \sin(\beta) = \frac{\Delta_1}{g} \text{,}
-\end{align}
+\end{align*}
 sodass der Weglängenunterschied zweier benachbarter Strahlen $\Delta$ gegeben ist durch:
-\begin{align}
+\begin{align*}
 	\Delta = \Delta_2 - \Delta_1 = g \cdot \left(\sin(\alpha) - \sin(\beta) \right)
-\end{align}
+\end{align*}
 Im Gegensatz zu den Verhältnissen in der Zeichnung, wird $\beta$ in gleicher Richtung wie $\alpha$ gemessen, sodass die Substitution $\beta \rightarrow -\beta$ auf den Weglängenunterschied:
-\begin{align}
+\begin{align*}
 	\Delta = g \cdot \left(\sin(\alpha) + \sin(\beta) \right)
-\end{align}
+\end{align*}
 führt.
 Um konstruktive Interferenz zu erreichen, muss der Unterschied $\Delta$ der Wegstrecken ein ganzzahliges Vielfaches $m$ der Wellenlänge $\lambda$ sein, so dass die optische Gittergleichung folgt:
-\begin{align}
+\begin{align*}
 	m \lambda = g \cdot \left( \sin(\alpha) + \sin(\beta) \right) \quad \text{mit} \quad m \in \mathbb{Z}
-\end{align}
+\end{align*}
 Man nennt $m$ die Ordnung der Interferenz.
 Berechnet man die Intensität des gebeugten Strahls mittels Beugungsformalismus, so bestimmt man nach dem Rayleigh-Kriterium in Abschnitt \ref{sssec:aufloesungsvermoegen} das Auflösungsvermögen durch die Halbwertsbreite $\Delta \lambda$ der Intensitätsmaxima und erhält:
-\begin{align}
+\begin{align*}
 	\mathcal{R} = \frac{\lambda}{\Delta \lambda} = m \cdot N \text{,}
-\end{align}
+\end{align*}
 wobei $N$ die Anzahl der beleuchteten Spalte ist.
 
 \subsubsection{Natürliche Linienbreite und Linienverbreiterung}
@@ -494,9 +494,9 @@ Demnach ist die Steigung $m$ gegeben durch:
 	m = \frac{h}{e}
 \end{align*}
 Das Wirkungsquantum wird durch Multiplikation der Steigung $m$ mit der Elementarladung \cite{CODATA}:
-\begin{align}
+\begin{align*}
 	e = \SI{1.602176565 +- 0.000000035e-19}{\coulomb}
-\end{align}
+\end{align*}
 berechnet, wobei der Einfluss des Fehlers der Elementarladung klein gegen den der Steigung ist und daher vernachlässigt wird.
 Somit ergibt sich:
 \begin{align*}
@@ -575,9 +575,9 @@ Die entsprechenden Messwerte sind in Tabelle \ref{tab:gitterkonstante_messdaten}
 
 \subsubsection{Messung der Balmer-Linien mit einem Okular} 
 Zu den weiteren Messungen wird nun die Quecksilberlampe gegen eine deuterierte Balmer-Lampe getauscht (Mischungsverhältnis ca. 1:2).
-Wie bei der Bestimmung der Gitterkonstante dreht man nun das Gitter bis man eine beobachtbare Wasserstofflinie (hellere der beiden Linien) sieht und notiert den Gitterwinkel $\omega_\text{G}$, bei dem die Linie im Nullpunkt der Okularskala liegt.
+Wie bei der Bestimmung der Gitterkonstante dreht man nun das Gitter bis man eine beobachtbare Wasserstofflinie (die hellere der beiden sichtbaren Linien) sieht und notiert den Gitterwinkel $\omega_\text{G}$, bei dem die Linie im Nullpunkt der Okularskala liegt.
 Hieraus kann später die Wellenlänge der beobachteten Linie gemessen werden.
-Außerdem wird wie oben die Verschiebung $d$ notiert, unter der die Deuteriumlinie (schwächere der beiden Linien) im Okular auftritt, um so später die Isotopieaufspaltung zu bestimmen.
+Außerdem wird wie oben die Verschiebung $d$ notiert, unter der die Deuteriumlinie (die schwächere der beiden Linien) im Okular auftritt, um so später die Isotopieaufspaltung zu bestimmen.
 Die Messdaten wurden in Tabelle \ref{tab:balmer_okular_messdaten} aufgetragen.
 \begin{table}[h]
 	\centering
@@ -606,11 +606,11 @@ Wegen der teilweise hohen Schwankungen der Intensität lässt man die Messwerte 
 	\label{fig:winkelverhaeltnis}
 \end{figure}
 Aus Abbildung \ref{fig:winkelverhaeltnis} folgt der Zusammenhang zwischen den gemessenen Winkeln ($\omega_\mathrm{G}$, $\omega_\mathrm{B}$) und den Ein- beziehungsweise Ausfallswinkeln des Strahls auf das Gitter ($\alpha$, $\beta$): 
-\begin{align*}
+\begin{align}
 	\alpha &= \omega_\text{G} \\
 	\beta &= \omega_\text{G} + \omega_\text{B} - \SI{180}{\degree}
 	\label{eq:reflexionswinkel}
-\end{align*}
+\end{align}
 Da nahe beieinanderliegende Linien nicht durch Verstellen des Gitters zu messen waren und stattdessen die Abweichung vom Zentrum des Okulars $d$ auf der darin angebrachten Skala abgelesen wurde, muss eine Korrektur des Ausfallswinkels anhand der gemessenen Abweichung $d$ erfolgen.
 Diese ist (in Kleinwinkelnäherung) gegeben durch die Brennweite $f$ des Objektivs im Fernrohraufbau:
 \begin{align*}
@@ -640,11 +640,10 @@ Die berechneten Winkel wurde in Tabelle \ref{tab:gitterkonstante_umrechnung_wink
 	\caption{Berechnung der Ein- und Ausfallswinkel anhand der gemessenen Winkel aus Tabelle \ref{tab:gitterkonstante_messdaten}. Fehler: $\Delta \alpha = \SI{8.8}{\milli\radian}$, $\Delta \beta = \SI{9.8}{\milli\radian}$}
 	\label{tab:gitterkonstante_umrechnung_winkel}
 \end{table}
-
 Nachdem die gemessenen Winkel in Ein- und Ausfallswinkel am Gitter umgerechnet wurden, kann mithilfe der Gittergleichung in erster Interferenzordnung:
-\begin{align}
+\begin{align*}
 	\lambda = g \cdot (\sin(\alpha) + \sin(\beta))
-\end{align}
+\end{align*}
 die Gitterkonstante $g$ bestimmt werden.
 Dazu tragen wir $\sin(\alpha) + \sin(\beta)$ gegen die Wellenlänge $\lambda$ auf, um:
 \begin{align*}
@@ -656,12 +655,12 @@ Da der Fehler der Wellenlänge $\lambda$ gegen den der Sinus-Summe vernachlässi
 Mithilfe von \texttt{Gnuplot} wird eine Ursprungsgerade an die linearisierten Datenpunkte angepasst.
 Dabei wird der Fehler der Sinus-Summe gemäß Gaußsscher Fehlerfortpflanzung in den Größen $\alpha$ und $\beta$ berechnet.
 Die Anpassung ergibt:
-\begin{align}
+\begin{align*}
 	\sin(\alpha) + \sin(\beta) = \SI{2439.6 +- 2.1}{\per\milli\metre} \cdot \lambda \text{,}
-\end{align}
+\end{align*}
 bei einem reduzierten Chi-Quadrat von $\chi_\mathrm{red.}^2 = \num{1.3e-5}$.
 In Anbetracht des Chi-Quadrates liegt eine gute Anpassung vor, dennoch scheinen die Datenpunkte besser auf einer Geraden zu liegen als deren Fehler nahelegen.
-Auch die Tatsache, dass $\chi_\mathrm{red.}^2 \ll 1$ legt nahe, dass die statistischen Fehler der Winkelmessungen überschätzt wurden.
+Auch die Tatsache, dass $\chi_\mathrm{red.}^2 \ll 1$ ist, legt nahe, dass die statistischen Fehler der Winkelmessungen überschätzt wurden.
 In Abbildung \ref{fig:gitterkonstante} wurden die Datenpunkte mitsamt Regressionsgerade aufgetragen.
 \begin{figure}[h]
 	\centering
@@ -710,7 +709,7 @@ Um dies in eine Wellenlängenaufspaltung $\Delta \lambda$ umzurechnen, betrachte
 \end{align*}
 In linearer Approximation ($\Delta \alpha = \num{0}$) folgt somit:
 \begin{align}
-  \Delta \lambda &= \frac{\partial \lambda}{\partial \beta} \cdot \Delta \beta \\
+  \Delta \lambda &= \frac{\partial \lambda}{\partial \beta} \cdot \Delta \beta \notag\\
   &= g \cos(\beta) \Delta \beta \text{,}
   \label{eq:gitter_differenzial}
 \end{align}
@@ -720,7 +719,7 @@ wobei der Fehler mittels Gaußsscher Fehlerfortpflanzung zu:
 \end{align*}
 bestimmt wurde mit
 \begin{align*}
-	\sigma_\beta &= \sqrt{\sigma_{\omega_\mathrm{G}}^2 + \sigma_{\omega_\mathrm{B}}^2} \\
+	\sigma_\beta &= \sqrt{\sigma_{\omega_\mathrm{G}}^2 + \sigma_{\omega_\mathrm{B}}^2}\\
 	\sigma_{\Delta \beta} &= \frac{\sigma_d}{f}
 \end{align*}
 und $\sigma_g$ aus der Bestimmung der Gitterkonstante.
@@ -734,7 +733,7 @@ Die Berechnung der Isotopieaufspaltung anhand der Beobachtung mit dem Okular und
 In Anbetracht der Fehler stimmen die hier berechneten Werte für die Isotopieaufspaltung gut mit den Theoretischen überein.
 
 \subsubsection{Bestimmung der Rydberg-Konstanten aus den Linien der Balmer-Serie}
-Da die Wellenlängen der ersten vier Linien der Balmer-Serie bestimmt wurden, kann nun mithilfe der Rydberg-Formel (Gl. \ref{eq:rydberg_formel}) und einer geeigneten Linearisierung eine Bestimmung der Rydberg-Konstanten durchgeführt werden.
+Da die Wellenlängen der ersten vier Linien der Balmer-Serie bestimmt wurden, kann nun mithilfe der Rydberg-Formel \eqref{eq:rydberg_formel} und einer geeigneten Linearisierung eine Bestimmung der Rydberg-Konstanten durchgeführt werden.
 Konkret liefert die Rydberg-Formel für die Balmer-Serie (Übergang: $n \rightarrow 2$) von Wasserstoff:
 \begin{align*}
 	\frac{1}{\lambda} = R_\mathrm{H} \cdot \left(\frac{1}{2^2} - \frac{1}{n^2} \right) \text{,}
@@ -790,17 +789,16 @@ Auch dieser Wert stimmt mit dem Literaturwert nur im $2\sigma$-Bereich überein,
 
 Es wird, wie in der Durchführung erwähnt, die jeweils beste Messung aus den vorliegenden Daten ausgewählt und grafisch dargestellt.
 Dabei wurden mit \texttt{Gnuplot} (Least-Squares-Fit) zwei Gaußfunktionen an die Maxima mit folgender Fithypothese angepasst:
-\begin{align}
+\begin{align*}
 f(x)&=\mathcal{G}_1(x)+\mathcal{G}_2(x) + d\qquad\text{mit}\\
 \mathcal{G}_i(x)&=A\,\exp\left[-\frac{1}{2}\left(\frac{x-S_i}{\sigma_i}\right)^2\right]
-\label{eq:fithypothese_gauss}
-\end{align}
+\end{align*}
 Diese sind zusammen mit den Messdaten in den Abbildungen \ref{fig:aufspaltung_rot} bis  \ref{fig:aufspaltung_violett} dargestellt.
 Die Isotopieaufspaltung der violetten Balmer-Linie ist dabei so klein, dass sie in dem Versuch nicht gemessen werden konnte.
 Der Vollständigkeit halber werden die Messwerte und eine daran angepasste Gaußkurve in dieses Protokoll aufgenommen, eine Auswertung ist damit jedoch nicht möglich gewesen.\\
 \\
 Für den Intensitätsfehler wurde mit Berücksichtigung der Mittelung der Messwerte über einen Zeitraum (die genommenen Daten unterliegen deswegen sehr kleinen Schwankungen) \SI{0.2}{\percent} für die Daten zur roten und türkisen Linie angenommen.
-Im Fall der blauen Linie wurde aufgrund der geringen Intensität sehr lange im Programm VideoCom über die Messwerte gemittelt und deswegen \SI{0.1}{\percent} als Fehler für die Intensität gewählt.
+Im Fall der blauen und violetten Linie wurde aufgrund der geringen Intensität sehr lange im Programm VideoCom über die Messwerte gemittelt und deswegen \SI{0.1}{\percent} als Fehler für die Intensität gewählt.
 Den Fehler des Winkels kann man zu \SI{0.0015}{\degree} abschätzen; dies folgt aus der Überlegung, dass ein Winkelbereich von ca. \SI{5.5}{\degree} auf \num{2048} Pixeln vermessen wurde.
 \begin{figure}[h]
 \centering
@@ -970,12 +968,13 @@ Auch das Plancksche Wirkungsquantum konnte mit wesentlich höherer Genauigkeit, 
  
 \end{thebibliography}
 
+\clearpage
+
 % APPENDIX
 \begin{appendix}
 \section{Anhang}
 \subsection{Kennlinien des Photostroms}
 \label{app:kennlinien}
-\FloatBarrier
 \input{./appendix/kennlinien.tex}
 
 \end{appendix}

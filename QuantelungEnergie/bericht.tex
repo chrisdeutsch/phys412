@@ -578,7 +578,7 @@ Die Messdaten wurden in Tabelle \ref{tab:balmer_okular_messdaten} aufgetragen.
 
 \subsubsection{Messung der Balmer-Linien mit einer CCD-Kamera}
 Es wird der Versuchsaufbau wie in \ref{sssec:balmer_okular} beschrieben genutzt, allerdings mit einer CCD-Kamera anstelle des Okulars. 
-Im Programm VideoCom wird die Brennweite der auf die CCD-Zeile abbildenden Linse (\SI{300}{\milli\meter}) eingetragen, so dass jedem der 2048 Pixel ein Winkel zugeordnet werden kann, der im folgenden mit $\alpha$ bezeichnet wird.
+Im Programm VideoCom wird die Brennweite der auf die CCD-Zeile abbildenden Linse (\SI{300}{\milli\meter}) eingetragen, so dass jedem der 2048 Pixel ein Winkel zugeordnet werden kann, der im folgenden mit $\delta$ bezeichnet wird.
 Um die Linien aufzufinden wird das Okular auf einem zusätzlichen Reiter aufgebaut (um die vertikale Ausrichtung bei jedem Durchgang nicht anpassen zu müssen) und das Gitter entsprechend gedreht, bis die Linie möglichst zentral liegt.
 Die CCD-Kamera wird nun statt des Okulars auf der optischen Bank aufgebaut und das Intensitätsprofil kann auf dem Bildschirm betrachtet werden, um die Abbildungslinse so zu verschieben, bis sie scharf auf die Kamera abbildet.
 Durch Vergrößerung des Bildschausschnitts kann der Bereich der Linie besser betrachtet werden können und die Spaltbreite wird so angepasst, dass eine möglichst hohe Intensität und gleichzeitig eine gute Aufspaltung erreicht wird.
@@ -775,7 +775,7 @@ Mit den physikalischen Konstanten aus \cite{CODATA} und dem berechneten Wert fü
 	h = \SI{6.619 +- 0.005e-34}{\joule\second}
 \end{align*}
 
-\subsubsection{Auswertung CCD}
+\subsubsection{Auswertung der Daten mit der CCD-Kamera}
 
 Es wird, wie bereits erwähnt, die jeweils beste Messung aus den vorliegenden Daten ausgewählt und grafisch dargestellt.
 Dabei wurden mit \texttt{Gnuplot} (Least-Squares-Fit) zwei Gaußfunktionen an die Maxima mit folgender Fithypothese angepasst:
@@ -866,7 +866,7 @@ Bei der Messung der Balmer-Linien sind auch andere Linien, die offensichtlich ni
 Ursache für die Beobachtung ist ein kleiner Anteil Natrium in der Balmer-Lampe, der bei der Gasentladung entstehendes Wasser binden soll.
 
 \subsubsection{Dopplerverbreiterung der Linien}
-Zur Abschätzung der Dopplerverbreiterung wird unter der Annahme, dass die Temperatur der Balmer-Lampe \SI{1000}{\kelvin} beträgt, Formel \eqref{eq:doppler} verwendet.
+Zur Abschätzung der Dopplerverbreiterung wird, unter der Annahme, dass die Temperatur der Balmer-Lampe \SI{1000}{\kelvin} beträgt, Formel \eqref{eq:doppler} verwendet.
 Die damit gefundenen Werte sind für die von uns beobachteten Wellenlängen in Tabelle \ref{tab:doppler} in der letzten Spalte eingetragen worden.
 \begin{table}[h]
 \centering

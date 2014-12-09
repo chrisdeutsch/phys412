@@ -173,7 +173,7 @@ Bringt man zwei unterschiedliche Leiter mit verschiedenen Austrittsarbeiten in K
 
 \subsubsection{Bohrsches Atommodell}
 Das Bohrsche Atommodell ist ein halbklassisches Modell zur Erklärung der diskreten Energieniveaus in Atomen mit einem Elektron.
-In diesem wird die Energie durch die Bewegung von Elektron und Kern um den gemeinsamen Schwerpunkt, aufgrund des Coulomb-Potentials, beschrieben, dabei wird oftmals in guter Näherung der Kern als stationär angenommen.
+In diesem wird die Energie durch die Bewegung von Elektron und Kern um den gemeinsamen Schwerpunkt aufgrund des Coulomb-Potentials beschrieben, dabei wird oftmals in guter Näherung der Kern als stationär angenommen.
 In diesem klassischen Bild tritt das Problem auf, dass das Elektron schon nach kurzer Zeit in den Kern stürzen sollte, da die Bahn um den gemeinsamen Schwerpunkt eine beschleunigte Bewegung darstellt und Energie in Form von Bremsstrahlung emittiert wird.
 Um dieses Problem zu beheben, bediente sich Niels Bohr (1913) der folgenden drei Postulate:
 \begin{enumerate}
@@ -186,11 +186,11 @@ Mithilfe dieser Postulate, ist es möglich die Energie der Bahnen zu bestimmen, 
 	\label{eq:energieniveaus_bohr}
 	E_n = - \frac{1}{2} \, \frac{1}{n^2} \, \alpha^2 \mu c^2 \text{,}
 \end{align}
-wobei die Feinstrukturkonstante $\alpha$ definiert ist durch:
+mit der Feinstrukturkonstante $\alpha$:
 \begin{align}
 	\alpha = \frac{e^2}{4 \pi \epsilon_0 \hbar c}
 \end{align}
-und die reduzierte Masse $\mu$ des Systems Elektron-Kern:
+und der reduzierte Masse $\mu$ des Systems Elektron-Kern:
 \begin{align}
 	\mu = \frac{m_e \cdot m_\mathrm{K}}{m_e + m_\mathrm{K}}
 \end{align}
@@ -203,10 +203,10 @@ Die Energieniveaus ergeben sich nun aus der Lösung der stationären Schrödinge
 	\mathcal{H} \psi = E \psi
 \end{align}
 und führt auf die Quantenzahlen $n, \ell, m_\ell$ mit Energieeigenwerten wie sie vom Bohr-Modell vorhergesagt wurden (Gleichung \ref{eq:energieniveaus_bohr}).
-Bei der quantenmechanischen Lösung beschreibt die Hauptquantenzahl $n$ jedoch nicht den Bahndrehimpuls des Teilchens, sondern die Drehimpulsquantenzahl $\ell$ sowie die magnetische Quantenzahl $m_\ell$ welche die Projektion des Drehimpulses auf eine frei wählbare Quantisierungsachse beschreibt.
+Bei der quantenmechanischen Lösung beschreibt die Hauptquantenzahl $n$ jedoch nicht den Bahndrehimpuls des Teilchens, sondern die Drehimpulsquantenzahl $\ell$ sowie die magnetische Quantenzahl $m_\ell$, welche die Projektion des Drehimpulses auf eine frei wählbare Quantisierungsachse beschreibt.
 
 \subsubsection{Rydberg-Formel und Balmer-Serie}
-Bereits vor der Beschreibung des Spektrums von Wasserstoff durch Bohr, wurde dieses von Rydberg empirisch durch die sogenannte Rydberg-Formel beschrieben:
+Bereits vor der Beschreibung des Spektrums von Wasserstoff durch Bohr wurde dieses von Rydberg empirisch durch die sogenannte Rydberg-Formel beschrieben:
 \begin{align}
 	\label{eq:rydberg_formel}
 	\frac{1}{\lambda} = R \cdot \left( \frac{1}{n_f^2} - \frac{1}{n_i^2} \right) \text{,}
@@ -231,16 +231,16 @@ Vernachlässigt man die Schwerpunktsbewegung so erhält man mit $\mu \approx m_e
 \begin{align}
 	R_\infty = \SI{10973731.568539 +- 0.000055}{\per\metre}
 \end{align}
-Offensichtlich hängt die Rydberg-Konstante und damit auch das Spektrum von der reduzierten Masse $\mu$ ab (Gleichung \ref{eq:rydberg_formel}), welche durch:
+Offensichtlich hängt die Rydberg-Konstante und damit auch das Emissionsspektrum von der reduzierten Masse $\mu$ ab (Gleichung \ref{eq:rydberg_formel}), welche durch:
 \begin{align}
 	R = \frac{\mu}{m_e} \cdot R_\infty = \frac{R_\infty}{1 + \frac{m_e}{m_\mathrm{K}}}
 \end{align}
 ausgedrückt werden kann.
-Aufgrund diesen Zusammenhangs kommt es zu einer \textbf{Isotopieaufspaltung} des Wasserstoffspektrums, da die Rydberg-Konstante für Deuterium ($m_\mathrm{K} \approx m_\mathrm{p} + m_\mathrm{n}$) etwas größer ist, als die von einfachem Wasserstoff ($m_\mathrm{K} = m_\mathrm{p}$) und somit die Emission von Deuterium bei etwas höherer Energie stattfindet als die des Wasserstoff.
+Aufgrund dieses Zusammenhangs kommt es bei Beobachtung einer Mischung von Wasserstoff und Deuterium zu einer \textbf{Isotopieaufspaltung} des Wasserstoffspektrums, da die Rydberg-Konstante für Deuterium ($m_\mathrm{K} \approx m_\mathrm{p} + m_\mathrm{n}$) etwas größer ist, als die von einfachem Wasserstoff ($m_\mathrm{K} = m_\mathrm{p}$) und somit die Emission von Deuterium bei etwas höherer Energie stattfindet als die des Wasserstoff.
 
 Man klassifiziert aus historischen Gründen Übergänge oft nach ihrem Endniveau $n_f$, sodass diese für $n_i > n_f$ in sogenannte Serien eingeordnet werden.
 Für Wasserstoff sind diese: Lyman ($n_i \rightarrow 1$), Balmer ($n_i \rightarrow 2$), Paschen ($n_i \rightarrow 3$), \dots\\
-In diesem Versuch werden einige Linien der Balmer-Serie beobachtet, da nur diese Emission im optisch sichtbaren Bereich aufweist.
+In diesem Versuch werden einige Linien der Balmer-Serie beobachtet, da nur diese Emissionen im optisch sichtbaren Bereich aufweist.
 
 \subsection{Spektroskopie}
 \subsubsection{spektroskopisches Auflösungsvermögen}
@@ -765,7 +765,7 @@ Die so gefundenen Werte sind ebenso wie die Fehler bereits in der Tabelle \ref{t
 \label{tab:balmer_ccd_auswertung}
 \end{table}
 \noindent
-Zum Vergleich errechnen wir mit \eqref{eq:rydberg} die folgenden theoretischen Werte:
+Zum Vergleich errechnen wir mit \eqref{eq:rydberg_formel} die folgenden theoretischen Werte:
 \begin{align}
 \Delta\lambda_\alpha=\SI{179}{\pico\metre}\\
 \Delta\lambda_\beta=\SI{132}{\pico\metre}\\
@@ -802,7 +802,7 @@ Die Anpassung für die blaue Linie (wie in \ref{fig:aufspaltung_blau}) wurde in 
 \label{fig:doppler_blau}
 \end{figure}
 Die gefundenen Schwankungsbreiten wurden mit dem Faktor $2\sqrt{2\ln2}$ multipliziert, um die Halbwertsbreite der angepassten Gaußfunktion zu erhalten.
-Mit \eqref{eq:balmer_wellenlängenaufspaltung} wurde dieser Wert anschließend in eine Länge umgerechnet, um die gemessenen Werte mit den theoretischen zu vergleichen.
+Mit \eqref{eq:gitter_differenzial} wurde dieser Wert anschließend in eine Länge umgerechnet, um die gemessenen Werte mit den theoretischen zu vergleichen.
 Die gemessenen Linienbreiten für die rote und türkise Linie liefern dabei plausible Werte, die der anderen beiden Linien erscheinen deutlich zu groß.
 Ursache hierfür sind vor allem die Anpassungen mit nur einer Gauß-Kurve, wobei eine sinnvolle Anpassung mit zwei Gauß-Kurven aufgrund weniger Messwerte nicht möglich war.
 Darum soll im Weiteren nur noch auf die Breiten der roten und türkisen Linien eingegangen werden.

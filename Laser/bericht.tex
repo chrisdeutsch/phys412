@@ -135,10 +135,25 @@ Tutor: & Tobias Macha
 
 Zur Untersuchung der Polarisation des hier verwendeten Experimentierlasers wird der Intensitätsverlauf an einer Photodiode in Abhängigkeit des Winkels eines davor stehenden Linearpolarisators betrachtet.
 Dieser ist in der Lage, einfallendes Licht in eine vorgegebene Richtung linear zu polarisieren.
-Für den Fall, dass das einfallende Licht bereits linear polarisiert ist (wie für den hier verwendeten Laser angenommen werden kann), gilt für die hinter dem Polarisator registrierte Intensität\cite{gerthsen}:
+Für den Fall, dass das einfallende Licht bereits linear polarisiert ist (wie für den hier verwendeten Laser angenommen werden kann), gilt für die hinter dem Polarisator registrierte Intensität \cite{gerthsen}:
 \begin{align}
 I=I_0\cdot\cos^2\alpha
 \end{align}
+Der Winkel am Polarisationsfilter wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Intensität an der Photodiode in \si{\milli\volt} notiert.
+In Tabelle \ref{tab:intensitaet} sind die Messwerte festgehalten worden.
+\begin{table}
+	\centering
+	\input{./tables/intensitaet.tex}
+	\caption{Messwerte der Intensität an der Photodiode in Abhängigkeit des Winkels am Linearpolarisator}
+	\label{tab:intensitaet}
+\end{table}
+
+\begin{figure}
+	\centering
+	\input{./plots/malus.tex}
+	\caption{Anpassung einer zu erwartenden Kurve an die Messwerte}
+	\label{fig:malus}
+\end{figure}
 
 \subsection{Messung des Strahlprofils und des Stabilitätsgebiets des Lasers}
 

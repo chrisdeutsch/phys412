@@ -126,10 +126,70 @@ Tutor: & Tobias Macha
 \section{Theorie}
 
 \section{Durchführung und Auswertung}
+Sofern nicht anders angegeben Durchführung wie in Praktikumsanleitung.
 
 \subsection{Aufbau des Helium-Neon Experimentierlasers und Charakterisierung der Intensität}
 
 \subsection{Bestimmung der Wellenlänge des Lasers mit einem Reflexionsgitter}
+\subsubsection{Durchführung}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figures/wellenlaenge_lineal.pdf}
+	\caption{Wellenlängenbestimmung nach Schawlow \cite{schawlow}}
+	\label{fig:schawlow}
+\end{figure}
+Identifikation der Reflektion (nullte Beugungsordnung) aufgrund hoher Intensität.
+
+\begin{align}
+	x_0 = \SI{252 +- 2}{\centi\metre}
+\end{align}
+
+\subsubsection{Auswertung}
+
+Zunächst wird die Position $y_0$ des reflektierten Strahls (nullte Beugungsordnung) auf dem Schirm berechnet durch:
+\begin{align}
+	y_0 = \frac{d_0}{2} \text{.}
+\end{align}
+Mit dem gemessenen Wert $d_0 = \SI{19.7 +- 0.2}{\centi\metre}$ kann diese bestimmt werden zu:
+\begin{align}
+	y_0 = \SI{9.85 +- 0.10}{\centi\metre}
+\end{align}
+Damit können nun die restlichen Positionen $y_n$ der $n$-ten Beugungsordnungen bestimmt werden durch:
+\begin{align}
+	y_n &= d_n - y_0 \\
+	\Delta y_n &= \sqrt{\Delta d_n^2 + \Delta y_0^2}
+\end{align}
+Anschließend kann gemäß \cite{schawlow}:
+\begin{align}
+	\lambda = \frac{g}{2 n} \left( \frac{y_n^2 - y_0^2}{x_0^2} \right)
+\end{align}
+die Wellenlänge aus den einzelnen Interferenzmaxima berechnet werden, wobei $g$ die Gitterkonstante des Reflexionsgitters bezeichnet.
+Unter Vernachlässigung des Fehlers in der Gitterkonstante des Lineals berechnet sich der Fehler aus Gauß'scher Fehlerfortpflanzung zu:
+\begin{align}
+	\Delta \lambda = \frac{g}{2 n} \sqrt{\left( \frac{2 y_n}{x_0^2} \right)^2 \cdot \Delta y_n^2 + \left( \frac{2 y_0}{x_0^2} \right)^2 \cdot \Delta y_0^2 + \left(\frac{2\left(y_n^2 - y_0^2 \right)}{x_0^3}\right)^2 \cdot \Delta x_0^2}
+\end{align}
+Mit diesen Überlegungen erhält man die Werte aus Tabelle \ref{tab:wellenlaengen_berechnung}.
+\begin{table}[h]
+	\centering
+	\input{./tables/wellenlaenge.tex}
+	\caption{Messdaten und Berechnung zur Wellenlängenbestimmung}
+	\label{tab:wellenlaengen_berechnung}
+\end{table}
+Es wird der varianzgewichtete Mittelwert:
+\begin{align}
+	\bar{\lambda} = \frac{\sum_i \frac{\lambda_i}{\Delta \lambda_i^2}}{\sum_i \frac{1}{\Delta \lambda_i^2}}
+\end{align}
+wobei der Fehler des Mittelwerts
+\begin{align}
+\Delta \bar{\lambda} = \frac{1}{\sqrt{\sum_i \frac{1}{\Delta \lambda_i^2}}}
+\end{align}
+somit folgt:
+\begin{align}
+	\bar{\lambda} = \SI{632.0 +- 3.6}{\nano\metre}
+\end{align}
+
+\subsubsection{Vergleich mit der exakten Rechnung}
+
 
 \subsection{Untersuchung der Polarisation des Lasers}
 
@@ -149,12 +209,10 @@ Tutor: & Tobias Macha
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{9}
-\bibitem{crc}
-	David R. Lide (ed),
-	\emph{CRC Handbook of Chemistry and Physics},
-	84th Edition. CRC Press. Boca Raton, Florida, 2003;
-	Section 12: Properties of Solids --
-	\emph{Electron Work Function of the Elements}
+\bibitem{schawlow}
+	A. L. Schawlow,
+	\emph{Measuring the Wavelength of Light with a Ruler},
+	American Journal of Physics, Volume 33, Issue 11 (1965)
  
 \end{thebibliography}
 

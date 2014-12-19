@@ -226,14 +226,14 @@ Bemerkenswert ist, dass wir die Tendenz die Wellenlänge zu überschätzen in Me
 Eine mögliche Ursache kann sein, dass das Lineal einen kleinen Winkel zur Senkrechten auf der Wand aufwies und somit eine tendenzielle Unterschätzung der berechneten Wellenlänge zur Folge hat.
 
 \subsection{Untersuchung der Polarisation des Lasers}
-
+\label{ssec:polarisation}
 Zur Untersuchung der Polarisation des hier verwendeten Experimentierlasers wird der Intensitätsverlauf an einer Photodiode in Abhängigkeit des Winkels eines davor stehenden Linearpolarisators betrachtet.
 Dieser ist in der Lage, einfallendes Licht in eine vorgegebene Richtung linear zu polarisieren.
 Für den Fall, dass das einfallende Licht bereits linear polarisiert ist (wie für den hier verwendeten Laser angenommen werden kann), gilt für die hinter dem Polarisator registrierte Intensität (Gesetz von Malus):
 \begin{align}
 I=I_0\cdot\cos^2\varphi
 \end{align}
-Der Winkel am Polarisationsfilter wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Intensität an der Photodiode in \si{\milli\volt} notiert.
+Der Winkel am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Intensität an der Photodiode in \si{\milli\volt} notiert.
 In Tabelle \ref{tab:intensitaet} sind die Messwerte festgehalten worden.
 \begin{table}
 	\centering
@@ -252,6 +252,15 @@ In Tabelle \ref{tab:intensitaet} sind die Messwerte festgehalten worden.
 \subsection{Messung des Strahlprofils und des Stabilitätsgebiets des Lasers}
 
 \subsection{Aufbau der optischen Diode}
+
+Die optische Diode wird in diesem Versuch durch eine Kombination von Linearpolarisator und $\lambda/4$-Platte erreicht.
+Sie wird gemäß der Praktikumsanleitung aufgebaut und justiert.
+Zur korrekten Einstellung der Diode wird der Polarisator nun so gedreht, dass das transmittierte Licht ein Maximum erreicht.
+Hierfür findet man bei der Einstellung von \SI{254}{\degree} das Transmissionsminimum und verdreht den Polarisator um weitere \SI{90}{\degree} (dies folgt aus dem Gesetz von Malus, siehe Abschnitt \ref{ssec:polarisation}), so dass das Transmissionsmaximum bei einer Einstellung von \SI{344}{\degree} erreicht wird.\\
+\\
+Vor der optischen Diode kann eine Intensität von \SI{66.2+-0.1}{\milli\volt} gemessen werden, hinter der Diode beträgt die Intensität \SI{47.2+-0.1}{\milli\volt}.
+Die Leistungsverluste an der Diode (z.B. Reflexionen an der Vorderseite der $\lambda/4$-Platte) belaufen sich somit auf ca. \SI{1}{\milli\watt}.
+Dabei wurde wie oben der Umrechnungsfaktor \num{17.5} zwischen der gemessenen Intensität in \si{\milli\volt} und \si{\milli\watt} verwendet.
 
 \subsection{Optischer Spektrumanalysator}
 

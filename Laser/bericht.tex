@@ -129,7 +129,25 @@ Tutor: & Tobias Macha
 Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
 Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
 
-\subsection{Aufbau des Helium-Neon Experimentierlasers und Charakterisierung der Intensität}
+\subsection{Aufbau des Helium-Neon Experimentierlasers}
+Nach der Justierung des Lasers wurde für jede der vier untersuchten Resonatorlängen $L$ die Länge des Resonators mit einem Maßband vermessen, wobei der Fehler der Längenmessung auf $\Delta L = \SI{0.4}{\centi\metre}$ abgeschätzt wird.
+Diese Abschätzung begründet sich darin, dass die exakte Lage der Spiegel in der Fassungen nicht bekannt ist.
+Anschließend bestimmen wir die mittlere Spannung an der Photodiode $U_\mathrm{PD}$ mithilfe der \textit{Measure}-Funktion des Oszilloskops, wobei deren Fehler anhand der beobachteten Schwankungen auf $\Delta U_\mathrm{PD} = \SI{0.2}{\milli\volt}$ geschätzt wird.
+Unter der Annahme, dass die Photodiode im linearen Bereich arbeitet, was aufgrund des \SI{50}{\ohm}-Abschlusswiderstandes am Oszilloskop gewährleistet ist, kann mithilfe des Umrechnungsfaktors $\SI{1}{\milli\watt} / \SI{17.5}{\milli\volt}$ aus der Versuchsbeschreibung \cite{anleitung} eine Umrechnung in eine Leistung erfolgen:
+\begin{align}
+	P = \frac{\SI{1}{\milli\watt}}{\SI{17.5}{\milli\volt}} \cdot U_\mathrm{PD}
+\end{align}
+Dabei erfolgt die Fehlerfortpflanzung mit demselben Umrechnungsfaktor.
+Die gemessenen Größen und die Umrechnung wurde in Tabelle \ref{tab:intensitaeten} durchgeführt.
+\begin{table}[h]
+	\centering
+	\input{./tables/intensitaet.tex}
+	\caption{Gemessene Leistungen bei verschiedenen Resonatorlängen. Die Photospannungen wurden um den Untergrund bei blockiertem Laserstrahl korregiert.}
+	\label{tab:intensitaeten}
+\end{table}
+Auffällig ist die Abnahme der Intensität mit der Resonatorlänge, welche dadurch erklärt werden kann, dass das vom Strahl eingenommene Volumen in der Entladungsröhre mit steigender Länge $L$ abnimmt.
+Das verringerte Volumen führt dazu, dass die Verstärkung des aktiven Mediums aufgrund von Sättigung abnimmt.
+Außerdem längerer Weg durch Luft (Streuung) vermutlich untergeordnete Rolle.
 
 \subsection{Bestimmung der Wellenlänge des Lasers mit einem Reflexionsgitter}
 \subsubsection{Durchführung}
@@ -238,9 +256,9 @@ Der Winkel am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und je
 In Tabelle \ref{tab:intensitaet} sind die Messwerte festgehalten worden.
 \begin{table}
 	\centering
-	\input{./tables/intensitaet.tex}
+	\input{./tables/malus.tex}
 	\caption{Messwerte der Intensität an der Photodiode in Abhängigkeit des Winkels am Linearpolarisator}
-	\label{tab:intensitaet}
+	\label{tab:malus}
 \end{table}
 Diese Messwerte werden im Anschluss in ein Diagramm eingetragen und eine Kurve der Form
 \begin{align}

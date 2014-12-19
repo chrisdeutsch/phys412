@@ -144,7 +144,7 @@ Anschließend werden die Maxima des Musters markiert, wobei darauf geachtet werd
 Die nullte Beugungsordnung kann daran erkannt werden, dass sie maximale Intensität aufweist.
 Nachdem ausreichend viele Ordnungen markiert wurden, wird das Lineal aus dem Strahlengang entfernt und der Auftreffpunkt des Laserstrahls auf dem Whiteboard markiert.
 Schließlich wird mit einem Maßband die Position $d$ aller Beugungsmaxima relativ zum Auftreffpunkt des Lasers ohne Lineal gemessen (vergleiche dazu auch Abbildung \ref{fig:schawlow}).
-Die Schärfe des Interferenzmusters ließ es dabei zu, die Längen $d$ mit einem abgeschätzten Fehler von $\Delta d = \SI{0.2}{\centi\metre}$ zu bestimmen.
+Die Schärfe des Interferenzmusters ließ es dabei zu, die Längen $d$ mit einem abgeschätzten Fehler von $\Delta d = \SI{0.4}{\centi\metre}$ zu bestimmen, wobei die Hauptfehlerquelle in der Bestimmung des Intensitätsmaximums liegt und nicht in der Längenmessung mit dem Maßband.
 
 \subsubsection{Auswertung}
 In \cite{schawlow} wird gezeigt, dass für die Gittergleichung in Kleinwinkelnäherung ($\frac{y_n}{x_0} \ll 1$) gegeben ist:
@@ -157,9 +157,9 @@ Um aus den gemessenen Werten $d_n$ die Wellenlänge zu bestimmen, muss zunächst
 \begin{align}
 	y_0 = \frac{d_0}{2} \text{,}
 \end{align}
-sodass mit dem gemessenen Wert $d_0 = \SI{19.7 +- 0.2}{\centi\metre}$ folgt:
+sodass mit dem gemessenen Wert $d_0 = \SI{19.7 +- 0.4}{\centi\metre}$ folgt:
 \begin{align}
-	y_0 = \SI{9.85 +- 0.10}{\centi\metre} \text{.}
+	y_0 = \SI{9.85 +- 0.20}{\centi\metre} \text{.}
 \end{align}
 So kann die Position $y_n$ des $n$-ten Interferenzmaximums berechnet werden durch:
 \begin{align}
@@ -188,7 +188,7 @@ verwendet, wobei dessen Fehler gegeben ist durch:
 \end{align}
 Mit den Werten aus Tabelle \ref{tab:wellenlaengen_berechnung} folgt für die varianzgewichtete mittlere Wellenlänge:
 \begin{align}
-	\bar{\lambda} = \SI{632.0 +- 3.6}{\nano\metre} \text{.}
+	\bar{\lambda} = \SI{632.3 +- 5.6}{\nano\metre} \text{.}
 \end{align}
 Der Vergleich mit dem Literaturwert \cite{NISTSpectra} für den ($\mathrm{5s} \rightarrow \mathrm{3p}$)-Übergang von Neon:
 \begin{align}
@@ -197,28 +197,33 @@ Der Vergleich mit dem Literaturwert \cite{NISTSpectra} für den ($\mathrm{5s} \r
 liefert eine gute Übereinstimmung innerhalb des statistischen Fehlers.
 
 \subsubsection{Vergleich mit der exakten Rechnung}
-Schließlich soll die Verwendung der Näherungsformel gerechtfertigt werden.
-Mit der Gittergleichung
+Im Folgenden soll der Einfluss der Näherung bei der Berechnung der Wellenlänge untersucht werden.
+Dazu betrachtet man die Gittergleichung mit dem Einfallswinkel $\alpha$ und den Ausfallswinkel der $n$-ten Interferenzordnung $\beta_n$, welche jeweils zur Gitterebene gemessen werden (vergleiche Abbildung \ref{fig:schawlow}):
 \begin{align}
-	n \lambda = g \left( \cos(\alpha) - \cos(\beta_n) \right)
+	n \lambda = g \left( \cos(\alpha) - \cos(\beta_n) \right) \text{.}
 	\label{eq:wellenlaenge_exakt}
 \end{align}
-und
+Wegen $\alpha = \beta_0$ kann der Kosinus ausgedrückt werden als (Satz des Pythagoras):
 \begin{align}
 	\cos(\alpha) &= \frac{x_0}{\sqrt{x_0^2 + y_0^2}} \\
-	\cos(\beta_n) &= \frac{x_0}{\sqrt{x_0^2 + y_n^2}}
+	\cos(\beta_n) &= \frac{x_0}{\sqrt{x_0^2 + y_n^2}} \text{,}
 \end{align}
-folgt die relative Abweichung durch Quotientenbildung von Gleichungen \ref{eq:gittergleichung_schawlow} und \ref{eq:wellenlaenge_exakt}:
+womit die relative Abweichung der Näherung von der exakten Rechnung aus den Gleichungen \ref{eq:gittergleichung_schawlow} und \ref{eq:wellenlaenge_exakt} folgt:
 \begin{align}
 	\frac{\Delta \lambda}{\lambda} = \frac{\lambda_\mathrm{KWN} - \lambda}{\lambda} = \frac{1}{2} \frac{\frac{y_n^2 - y_0^2}{x_0^2}}{ \frac{x_0}{\sqrt{x_0^2 + y_0^2}} - \frac{x_0}{\sqrt{x_0^2 + y_n^2}} } - 1
 \end{align}
-
+Diese Funktion ist in Abhängigkeit von $y_n$ in Abbildung \ref{fig:abweichung_wellenlaenge} aufgetragen, wobei für $y_0$ und $x_0$ die im Versuch gemessenen Werte verwendet werden.
 \begin{figure}[h]
 	\centering
 	\input{./plots/abweichung_wellenlaenge.tex}
 	\caption{Relative Abweichung der Näherungsformel von der exakten Berechnung bei der im Versuch verwendeten Konfiguration: $y_0 = \SI{9.85}{\centi\metre}$, $x_0 = \SI{252}{\centi\metre}$. Der blaue Pfeil markiert die größte vermessene Interferenzordnung $n = 19$.}
 	\label{fig:abweichung_wellenlaenge}
 \end{figure}
+Man sieht, dass die Abweichung für größere Ordnungen $n$ und damit größere Abstände $y_n$ rapide zunimmt, da $\frac{y_n}{x_0} \ll 1$ nicht mehr gegeben ist.
+Demnach weist die größte vermessene Ordnung $n = \num{19}$ die größte relative Abweichung auf, welche wie man in Abbildung \ref{fig:abweichung_wellenlaenge} ablesen kann $\Delta \lambda / \lambda \approx \SI{2}{\percent}$ beträgt.
+Dies entspricht schon einer Überschätzung der Wellenlänge von mehr als \SI{10}{\nano\metre} und liegt damit schon in der Größenordnung des statistischen Fehlers der Einzelmessungen.
+Bemerkenswert ist, dass wir die Tendenz die Wellenlänge zu überschätzen in Messdaten nicht beobachtet werden kann, weshalb davon ausgegangen werden muss, dass ein systematischer Fehler diese kompensiert.
+Eine mögliche Ursache kann sein, dass das Lineal einen kleinen Winkel zur Senkrechten auf der Wand aufwies und somit eine tendenzielle Unterschätzung der berechneten Wellenlänge zur Folge hat.
 
 \subsection{Untersuchung der Polarisation des Lasers}
 

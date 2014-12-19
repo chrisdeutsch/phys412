@@ -236,7 +236,7 @@ I=I_0\cdot\cos^2\varphi
 \end{align}
 Der Winkel am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Intensität an der Photodiode in \si{\milli\volt} notiert.
 In Tabelle \ref{tab:intensitaet} sind die Messwerte festgehalten worden.
-\begin{table}[htbp]
+\begin{table}
 	\centering
 	\input{./tables/intensitaet.tex}
 	\caption{Messwerte der Intensität an der Photodiode in Abhängigkeit des Winkels am Linearpolarisator}
@@ -244,8 +244,15 @@ In Tabelle \ref{tab:intensitaet} sind die Messwerte festgehalten worden.
 \end{table}
 Diese Messwerte werden im Anschluss in ein Diagramm eingetragen und eine Kurve der Form
 \begin{align}
-Inhalt...
+f(x) = a\cdot\cos^2(x-b) + c
 \end{align}
+an die Daten angepasst.
+Dabei beschreibt $a$ die Intensität $I_0$, $b$ und $c$ sind Offsets \textbf{(deutsches Wort)} für den Winkel bzw. die Intensität.
+Man kann an der Anpassung gut erkennen, dass die Intensität wie erwartet dem Gesetz von Malus folgt.
+Dies bestätigt auch die Annahme, dass der Laser durch die an der Entladungsröhre befestigten Brewster-Fenster mit linear polarisiertem Licht betrieben wird.
+Geringe Abweichungen der Anpassung von den Messwerten lassen sich durch eine nicht ideale Justage erklären.
+Der Laserstrahl trifft dabei nicht das Zentrum des Polarisators, so dass (ja was genau).
+Grund für die Annahme ist, dass das Maximum bei \SI{180}{\degree} nicht die gleiche Intensität hat, wie die Maxima bei \SI{0}{\degree} bzw. \SI{360}{\degree}. 
 \begin{figure}
 	\centering
 	\input{./plots/malus.tex}

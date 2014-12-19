@@ -200,7 +200,7 @@ liefert eine gute Übereinstimmung innerhalb des statistischen Fehlers.
 Schließlich soll die Verwendung der Näherungsformel gerechtfertigt werden.
 Mit der Gittergleichung
 \begin{align}
-	n \lambda = g \left( \cos(\alpha) - \cos(\beta) \right)
+	n \lambda = g \left( \cos(\alpha) - \cos(\beta_n) \right)
 	\label{eq:wellenlaenge_exakt}
 \end{align}
 und
@@ -210,13 +210,13 @@ und
 \end{align}
 folgt die relative Abweichung durch Quotientenbildung von Gleichungen \ref{eq:gittergleichung_schawlow} und \ref{eq:wellenlaenge_exakt}:
 \begin{align}
-	\frac{\lambda_\mathrm{KWN}}{\lambda} - 1 = \frac{1}{2} \frac{\frac{y_n^2 - y_0^2}{x_0^2}}{ \frac{x_0}{\sqrt{x_0^2 + y_0^2}} - \frac{x_0}{\sqrt{x_0^2 + y_n^2}} } - 1
+	\frac{\Delta \lambda}{\lambda} = \frac{\lambda_\mathrm{KWN} - \lambda}{\lambda} = \frac{1}{2} \frac{\frac{y_n^2 - y_0^2}{x_0^2}}{ \frac{x_0}{\sqrt{x_0^2 + y_0^2}} - \frac{x_0}{\sqrt{x_0^2 + y_n^2}} } - 1
 \end{align}
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\input{./plots/abweichung_wellenlaenge.tex}
-	\caption{Abweichung}
+	\caption{Relative Abweichung der Näherungsformel von der exakten Berechnung bei der im Versuch verwendeten Konfiguration: $y_0 = \SI{9.85}{\centi\metre}$, $x_0 = \SI{252}{\centi\metre}$. Der blaue Pfeil markiert die größte vermessene Interferenzordnung $n = 19$.}
 	\label{fig:abweichung_wellenlaenge}
 \end{figure}
 

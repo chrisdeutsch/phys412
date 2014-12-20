@@ -29,6 +29,9 @@
   separate-uncertainty
 }
 
+% Einheitendefinitionen
+\DeclareSIUnit{\dBm}{dBm}
+
 % Randbreiten
 \usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
 
@@ -343,16 +346,52 @@ Die Wirkung eines solchen \textbf{Mischers} auf zwei Eingangssignale $x(t) = \ha
 	\end{align}
 	Das resultierende Spektrum enthält sowohl die Summe als auch die Differenz der beiden Eingangsfrequenzen.
 	\item \textbf{Mischung durch Anwendung einer nichtlinearen Operation auf die Summe der Signale:} Um die Differenzfrequenz $|\omega_1 - \omega_2|$ zu bestimmen, ist es nicht nötig das Produkt der beiden Eingänge zu bilden.
-	Alternativ reicht es aus die Summe beider Signale zu bilden und eine nichtlineare Operation auf diese durchzuführen.
-	
+	Alternativ reicht es aus die Summe beider Signale zu bilden und eine nichtlineare Operation $f$ auf diese anzuwenden.
+	Beschreibt man diese durch eine Potenzreihenentwicklung:
+	\begin{align}
+		f(x) = \sum_{n=0}^{\infty} a_n x^n
+	\end{align}
+	und wendet diese auf die Summe der Eingangssignale $(x+y)(t)$ an, so folgt für das Ausgangssignal:
+	\begin{align}
+		f(x+y)(t) = \sum_{n=0}^{\infty} a_n \left[ \hat{x} \sin(\omega_1 t) + \hat{y} \sin(\omega_2 t) \right]^n
+	\end{align}
+	Sofern mindestens einer der geraden Koeffizienten $a_n$ für $n = 2, 4, 6\dots$ nicht verschwindet, führt dies zum Auftreten eines Terms mit der Frequenz $|\omega_1 - \omega_2|$.
+	Dies kann mit dem binomischen Lehrsatz sowie einigen trigonometrischen Identitäten gezeigt werden, dennoch soll hier darauf verzichtet werden.
+	Der Spezialfall $f(x) = x^2$ ist bereits bei der Mischung der elektrischen Felder der verschiedenen Axialmoden in der Photodiode aufgetreten, da die gemessene Intensität quadratisch mit der Summe der Feldstärken $E_1$ und $E_2$ zusammenhängt.
+	Demnach agiert bereits die Photodiode als Mischer für die elektrischen Feldstärken der verschiedenen Moden.
 \end{itemize}
-
-
+Der \textbf{Leistungspegel} des Generators wird auf $L = \SI{+7}{\dBm}$ eingestellt. Um diese logarithmische Größe in Einheiten einer Leistung zu erhalten, betrachtet man die Definition des Leistungspegels $L$: 
 \begin{align}
-	\Delta \nu &= \frac{c}{2 L} \\
-	c &= 2 L \nu_\mathrm{RF}\\
-	\Delta c &= 2 \sqrt{ L^2 \cdot \Delta \nu_\mathrm{RF}^2 + \nu_\mathrm{RF}^2 \cdot \Delta L^2}
+	L = 10 \cdot \log_{10}\left( \frac{P}{P_0}\right) \text{,}
 \end{align}
+wobei $P_0$ als Referenzgröße dient.
+Für das Dezibel-Milliwatt (\si{dBm}) ist diese gegeben durch $P_0 = \SI{1}{\milli\watt}$, womit für die Leistung des Hochfrequenzgenerators folgt:
+\begin{align}
+	P = P_0 \cdot 10^{\frac{L}{10}} = \SI{1}{\milli\watt} \cdot 10^{\num{0.7}} \approx \SI{5}{\milli\watt}
+\end{align}
+
+
+Axialmodenabstand gegeben durch:
+\begin{align}
+	\Delta \nu &= \frac{c}{2 L}
+\end{align}
+Mit $\Delta \nu \approx \nu_\mathrm{HF}$:
+\begin{align}
+	2 L = c \cdot \frac{1}{\nu_\mathrm{RF}}
+\end{align}
+\begin{table}[h]
+	\centering
+	\input{./tables/optische_schwebung.tex}
+	\caption{opt schwebung}
+	\label{tab:messdaten_optische_schwebung}
+\end{table}
+
+\begin{figure}[h]
+	\centering
+	\input{./plots/linearisierung_modenabstand.tex}
+	\caption{linearisierung}
+	\label{fig:linearisierung_modenabstand}
+\end{figure}
 
 \section{Fazit}
 

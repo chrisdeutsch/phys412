@@ -29,6 +29,9 @@
   separate-uncertainty
 }
 
+% Einheitendefinitionen
+\DeclareSIUnit{\dBm}{dBm}
+
 % Randbreiten
 \usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
 
@@ -357,12 +360,38 @@ Die Wirkung eines solchen \textbf{Mischers} auf zwei Eingangssignale $x(t) = \ha
 	Der Spezialfall $f(x) = x^2$ ist bereits bei der Mischung der elektrischen Felder der verschiedenen Axialmoden in der Photodiode aufgetreten, da die gemessene Intensität quadratisch mit der Summe der Feldstärken $E_1$ und $E_2$ zusammenhängt.
 	Demnach agiert bereits die Photodiode als Mischer für die elektrischen Feldstärken der verschiedenen Moden.
 \end{itemize}
+Der \textbf{Leistungspegel} des Generators wird auf $L = \SI{+7}{\dBm}$ eingestellt. Um diese logarithmische Größe in Einheiten einer Leistung zu erhalten, betrachtet man die Definition des Leistungspegels $L$: 
+\begin{align}
+	L = 10 \cdot \log_{10}\left( \frac{P}{P_0}\right) \text{,}
+\end{align}
+wobei $P_0$ als Referenzgröße dient.
+Für das Dezibel-Milliwatt (\si{dBm}) ist diese gegeben durch $P_0 = \SI{1}{\milli\watt}$, womit für die Leistung des Hochfrequenzgenerators folgt:
+\begin{align}
+	P = P_0 \cdot 10^{\frac{L}{10}} = \SI{1}{\milli\watt} \cdot 10^{\num{0.7}} \approx \SI{5}{\milli\watt}
+\end{align}
+
+
 Axialmodenabstand gegeben durch:
 \begin{align}
-	\Delta \nu &= \frac{c}{2 L} \\
-	c &= 2 L \nu_\mathrm{RF}\\
-	\Delta c &= 2 \sqrt{ L^2 \cdot \Delta \nu_\mathrm{RF}^2 + \nu_\mathrm{RF}^2 \cdot \Delta L^2}
+	\Delta \nu &= \frac{c}{2 L}
 \end{align}
+Mit $\Delta \nu \approx \nu_\mathrm{HF}$:
+\begin{align}
+	2 L = c \cdot \frac{1}{\nu_\mathrm{RF}}
+\end{align}
+\begin{table}[h]
+	\centering
+	\input{./tables/optische_schwebung.tex}
+	\caption{opt schwebung}
+	\label{tab:messdaten_optische_schwebung}
+\end{table}
+
+\begin{figure}[h]
+	\centering
+	\input{./plots/linearisierung_modenabstand.tex}
+	\caption{linearisierung}
+	\label{fig:linearisierung_modenabstand}
+\end{figure}
 
 \section{Fazit}
 

@@ -380,26 +380,55 @@ Aufgrund der begrenzten Bandbreite des Oszilloskops ist es nötig, eine übersch
 Diese erfolgt über den theoretischen Axialmodenabstand:
 \begin{align}
 	\Delta \nu = \frac{c}{2 L} \text{,}
+	\label{eq:modenabstand}
 \end{align}
 wobei $L$ die gemessene Resonatorlänge ist.
-
-Mit $\Delta \nu \approx \nu_\mathrm{HF}$:
-\begin{align}
-	2 L = c \cdot \frac{1}{\nu_\mathrm{RF}}
-\end{align}
+Fällt die Hochfrequenz $\nu_\mathrm{HF}$ und der Modenabstand $\Delta \nu$ innerhalb der Bandbreite des Oszilloskops zusammen, so kann ein sinusförmiges Signal gemessen werden.
+(mehr Beschreibung zum Signal)
+Anschließend wird die Hochfrequenz $\nu_\mathrm{HF}$ schrittweise verändert, sodass die Periode des Signals zunimmt.
+Durch diese Methodik nähert man sich langsam der minimalen Signalfrequenz, wobei diese nicht beliebig genau bestimmt werden kann, da bei einer Annäherung in \SI{50}{\kilo\hertz}-Schritten das Signal in der Nähe des Minimums im Rauschen untergeht.
+Ist dieser Punkt erreicht, wird die Frequenz des Signalgenerators notiert und dient als Approximation\footnote{Streng genommen müsste noch die Frequenz des Restsignals auf dem Oszilloskops vermessen werden. Da dieses aber im Rauschen nicht auszumachen ist und dessen Frequenz klein ist gegen den Modenabstand $\Delta \nu$, kann dieser Beitrag vernachlässigt werden.} des Modenabstandes $\Delta \nu$.
+Aus der verwendeten Schrittbreite von \SI{50}{\kilo\hertz} folgt ein abgeschätzter Fehler für die Bestimmung des Frequenzminimums von $\Delta \nu_\mathrm{HF} = \SI{25}{\kilo\hertz}$ (halbe Schrittbreite).
+Die gemessenen Modenabstände wurden in Tabelle \ref{tab:messdaten_optische_schwebung} aufgetragen.
 \begin{table}[h]
 	\centering
 	\input{./tables/optische_schwebung.tex}
-	\caption{opt schwebung}
+	\caption{Messwerte des longitudinalen Modenabstandes. Die eingestellte Hochfrequenz im Frequenzminimum approximiert den axialen Modenabstand $\nu_\mathrm{HF} \approx \Delta \nu$.}
 	\label{tab:messdaten_optische_schwebung}
 \end{table}
 
+Diese Messwerte können im Hinblick auf den theoretischen Modenabstand in Gleichung \ref{eq:modenabstand} einen Wert für die Lichtgeschwindigkeit $c$ liefern.
+Dazu wird die doppelte Resonatorlänge $2 L$ gegen die inverse Frequenz des Hochfrequenzgenerators im Frequenzminimum des gemischten Signals auf.
+Der Graph sollte daher dem theoretischen Zusammenhang:
+\begin{align}
+	2 L = c \cdot \frac{1}{\nu_\mathrm{RF}}
+\end{align}
+folgen, wobei die Näherung $\Delta \nu \approx \nu_\mathrm{HF}$ verwendet wird.
+Diese Form der Linearisierung wird gewählt, da bei einer Anpassung mit der \emph{Methode der kleinsten Quadrate} nur die Fehler in $y$-Richtung in die Gewichtung der Messpunkte eingehen.
+Da der Fehler in der Frequenzbestimmung im Verhältnis zur Resonatorlängenbestimmung klein ist, wurde diese Form gewählt um eine sinnvolle Gewichtung bei der Geradenanpassung zu erzielen.
+Mithilfe von \texttt{Gnuplot} wird eine Ursprungsgerade an die linearisierten Datenpunkte angepasst, wobei die Fehler gegeben sind durch:
+\begin{align}
+\Delta(2L) &= 2 \Delta L \\
+\Delta \left( \frac{1}{\nu_\mathrm{HF}} \right) &= \frac{\Delta \nu_\mathrm{HF}}{\nu_\mathrm{HF}^2}
+\end{align}
+Die Linearisierung wurde in Abbildung \ref{fig:linearisierung_modenabstand} aufgetragen.
 \begin{figure}[h]
 	\centering
 	\input{./plots/linearisierung_modenabstand.tex}
 	\caption{linearisierung}
 	\label{fig:linearisierung_modenabstand}
 \end{figure}
+Die Güte der Anpassung ist gegeben durch das reduzierte Chi-Quadrat $\chi_\mathrm{red.}^2 = \num{0.8}$ und bestätigt das zugrundeliegende Modell.
+Die Lichtgeschwindigkeit $c$ lässt sich sofort an der Steigung der angepassten Ursprungsgerade ablesen und ist gegeben durch:
+\begin{align}
+	c &= \SI{29.929 +- 0.073}{\centi\metre\per\nano\second} \nonumber\\
+	&= \SI{2.9929 +- 0.0073 e8}{\metre\per\second}
+\end{align}
+Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
+\begin{align}
+	c_0 = \SI{299792458}{\metre\per\second}
+\end{align}
+überein.
 
 \section{Fazit}
 

@@ -123,6 +123,9 @@ Tutor: & Tobias Macha
 
 \section{Einführung}
 
+In diesem Praktikumsversuch wird ein Helium-Neon-Laser (HeNe-Laser) als Experimentierlaser aufgebaut und seine Eigenschaften wie beispielsweise Strahlprofil, Modenabstände und Polarisation für verschiedene Resonatorlängen vermessen.
+Der HeNe-Laser wurde erstmals 1960 von Javan, Bennett und Herriott \cite{javan} entwickelt und stellt den ersten Laser dar, der kontinuierliches Laserlicht erzeugte.
+
 \section{Theorie}
 
 \section{Durchführung und Auswertung}
@@ -136,6 +139,7 @@ Anschließend bestimmen wir die mittlere Spannung an der Photodiode $U_\mathrm{P
 Unter der Annahme, dass die Photodiode im linearen Bereich arbeitet, was aufgrund des \SI{50}{\ohm}-Abschlusswiderstandes am Oszilloskop gewährleistet ist, kann mithilfe des Umrechnungsfaktors $\SI{1}{\milli\watt} / \SI{17.5}{\milli\volt}$ aus der Versuchsbeschreibung \cite{anleitung} eine Umrechnung in eine Leistung erfolgen:
 \begin{align}
 	P = \frac{\SI{1}{\milli\watt}}{\SI{17.5}{\milli\volt}} \cdot U_\mathrm{PD}
+	\label{eq:umrechnung_watt}
 \end{align}
 Dabei erfolgt die Fehlerfortpflanzung mit demselben Umrechnungsfaktor.
 Die gemessenen Größen und die Umrechnung wurde in Tabelle \ref{tab:intensitaeten} durchgeführt.
@@ -266,17 +270,17 @@ f(x) = a\cdot\cos^2(x-b) + c
 \end{align}
 an die Daten angepasst.
 Dabei beschreibt $a$ die Intensität $I_0$, $b$ und $c$ sind Offsets \textbf{(deutsches Wort)} für den Winkel bzw. die Intensität.
-Man kann an der Anpassung gut erkennen, dass die Intensität wie erwartet dem Gesetz von Malus folgt.
-Dies bestätigt auch die Annahme, dass der Laser durch die an der Entladungsröhre befestigten Brewster-Fenster mit linear polarisiertem Licht betrieben wird.
-Geringe Abweichungen der Anpassung von den Messwerten lassen sich durch eine nicht ideale Justage erklären.
-Der Laserstrahl trifft dabei nicht das Zentrum des Polarisators, so dass (ja was genau).
-Grund für die Annahme ist, dass das Maximum bei \SI{180}{\degree} nicht die gleiche Intensität hat, wie die Maxima bei \SI{0}{\degree} bzw. \SI{360}{\degree}. 
 \begin{figure}
 	\centering
 	\input{./plots/malus.tex}
 	\caption{Anpassung einer zu erwartenden Kurve an die Messwerte}
 	\label{fig:malus}
 \end{figure}
+Man kann an der Anpassung gut erkennen, dass die Intensität wie erwartet dem Gesetz von Malus folgt.
+Dies bestätigt auch die Annahme, dass der Laser durch die an der Entladungsröhre befestigten Brewster-Fenster mit linear polarisiertem Licht betrieben wird.
+Geringe Abweichungen der Anpassung von den Messwerten lassen sich durch eine nicht ideale Justage erklären.
+Der Laserstrahl trifft dabei nicht das Zentrum des Polarisators, so dass die Winkelabhängigkeit der Intensität nicht optimal gemessen werden kann.
+Grund für die Annahme ist, dass das Maximum bei \SI{180}{\degree} nicht die gleiche Intensität hat, wie die Maxima bei \SI{0}{\degree} bzw. \SI{360}{\degree}. 
 
 \subsection{Messung des Strahlprofils und des Stabilitätsgebiets des Lasers}
 
@@ -289,7 +293,7 @@ Hierfür findet man bei der Einstellung von \SI{254}{\degree} das Transmissionsm
 \\
 Vor der optischen Diode kann bei der Resonatorlänge \SI{50}{\centi\metre} eine Intensität von \SI{66.2+-0.1}{\milli\volt} gemessen werden, hinter der Diode beträgt die Intensität \SI{47.2+-0.1}{\milli\volt}.
 Die Leistungsverluste an der Diode (z.B. Reflexionen an der Vorderseite der $\lambda/4$-Platte) belaufen sich somit auf ca. \SI{1}{\milli\watt}.
-Dabei wurde wie oben der Umrechnungsfaktor \num{17.5} zwischen der gemessenen Intensität in \si{\milli\volt} und \si{\milli\watt} verwendet.
+Dabei wurde wie in \eqref{eq:umrechnung_watt} der Umrechnungsfaktor \num{17.5} zwischen der gemessenen Intensität in \si{\milli\volt} und \si{\milli\watt} verwendet.
 
 \subsection{Optischer Spektrumanalysator}
 
@@ -308,6 +312,11 @@ Dabei wurde wie oben der Umrechnungsfaktor \num{17.5} zwischen der gemessenen In
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{9}
+\bibitem{javan}
+A. Javan, W. R. Bennett, Jr., and D. R. Herriott,
+\emph{Population Inversion and Continuous Optical Maser Oscillation in a Gas Discharge Containing a He-Ne Mixture},
+Phys. Rev. Lett. 6, 106 – Published 1 February 1961
+
 \bibitem{anleitung}
 	Physikalisches Praktikum IV: Atome, Moleküle, Festkörper,
 	Versuchsbeschreibung \emph{P442: Laser} (Stand: 12. September 2014),

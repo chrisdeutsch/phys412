@@ -326,7 +326,7 @@ Die Überlagerung des elektrischen Feldes zweier Axialmoden mit den Kreisfrequen
 	E(t) = E_1 \sin(\omega_1 t) + E_2 \sin(\omega_2 t)
 	\label{eq:superposition_efeld}
 \end{align}
-Da die Photodiode die Intensität $I$ des auftreffenden Lichts misst und diese gegeben ist durch $I \propto E^2$ erhält man durch quadrieren von Gleichung \ref{eq:superposition_efeld} und Anwendung der trigonometrischen Additionstheoreme das resultierende Frequenzspektrum der Intensität, welche aus den Frequenzen $\omega_1 + \omega_2, |\omega_1 - \omega_2|$ sowie den zweiten Harmonischen $2\omega_1, 2\omega_2$ besteht.
+Da die Photodiode die Intensität $I$ des auftreffenden Lichts misst und diese gegeben ist durch $I \propto E^2$ erhält man durch quadrieren von Gleichung \eqref{eq:superposition_efeld} und Anwendung der trigonometrischen Additionstheoreme das resultierende Frequenzspektrum der Intensität, welche aus den Frequenzen $\omega_1 + \omega_2, |\omega_1 - \omega_2|$ sowie den zweiten Harmonischen $2\omega_1, 2\omega_2$ besteht.
 Mit Ausnahme von dem Heterodynsignal mit der Frequenz $|\omega_1 - \omega_2|$, welche in der Größenordnung von einigen $\SI{100}{\mega\hertz}$ liegt, sind die restlichen auftretenden Frequenzen so groß ($\sim \si{\peta\hertz}$), dass diese aufgrund der endlichen Bandbreite von Koaxialkabel und Photodiode ($\sim \si{\giga\hertz}$) nicht gemessen werden können.
 
 Auch die Frequenz der optischen Schwebung ist so hoch, dass diese nicht direkt gemessen werden kann.
@@ -356,6 +356,10 @@ Die Wirkung eines solchen \textbf{Mischers} auf zwei Eingangssignale $x(t) = \ha
 
 \section{Fazit}
 
+\begin{figure}
+\centering
+\input{./plots/modenabstand/template.tex}
+\end{figure}
 
 % BIBLIOGRAPHIE
 \vspace{\fill}

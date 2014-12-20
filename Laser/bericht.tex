@@ -324,16 +324,19 @@ Dabei wurde wie in \eqref{eq:umrechnung_watt} der Umrechnungsfaktor \num{17.5} z
 \subsection{Optischer Spektrumanalysator}
 
 \subsection{Präzise Messung des Modenabstandes mittels einer optischen Schwebung}
-Die Überlagerung des elektrischen Feldes zweier Axialmoden mit den Kreisfrequenzen $\omega_1$ und $\omega_2$ auf einer Photodiode kann geschrieben werden als:
+In diesem Teil soll der Modenabstand der longitudinalen Moden im Resonator durch eine optische Schwebung gemessen werden.
+Dazu betrachtet man die Überlagerung des elektrischen Feldes zweier Axialmoden mit den Kreisfrequenzen $\omega_1$ und $\omega_2$ auf einer Photodiode.
+Die Superposition der elektrischen Felder kann geschrieben werden als:
 \begin{align}
 	E(t) = E_1 \sin(\omega_1 t) + E_2 \sin(\omega_2 t)
 	\label{eq:superposition_efeld}
 \end{align}
-Da die Photodiode die Intensität $I$ des auftreffenden Lichts misst und diese gegeben ist durch $I \propto E^2$ erhält man durch quadrieren von Gleichung \ref{eq:superposition_efeld} und Anwendung der trigonometrischen Additionstheoreme das resultierende Frequenzspektrum der Intensität, welche aus den Frequenzen $\omega_1 + \omega_2, |\omega_1 - \omega_2|$ sowie den zweiten Harmonischen $2\omega_1, 2\omega_2$ besteht.
-Mit Ausnahme von dem Heterodynsignal mit der Frequenz $|\omega_1 - \omega_2|$, welche in der Größenordnung von einigen $\SI{100}{\mega\hertz}$ liegt, sind die restlichen auftretenden Frequenzen so groß ($\sim \si{\peta\hertz}$), dass diese aufgrund der endlichen Bandbreite von Koaxialkabel und Photodiode ($\sim \si{\giga\hertz}$) nicht gemessen werden können.
-
-Auch die Frequenz der optischen Schwebung ist so hoch, dass diese nicht direkt gemessen werden kann.
+Da die Photodiode die Intensität $I$ des auftreffenden Lichts misst und diese gegeben ist durch $I \propto E^2$, erhält man durch quadrieren von Gleichung \ref{eq:superposition_efeld} und Anwendung der trigonometrischen Additionstheoreme das resultierende Frequenzspektrum der Intensität, welche aus den Frequenzen $\omega_1 + \omega_2, |\omega_1 - \omega_2|$ sowie den zweiten Harmonischen $2\omega_1, 2\omega_2$ besteht.
+Mit Ausnahme von dem Heterodynsignal mit der Frequenz $|\omega_1 - \omega_2|$, welche in der Größenordnung von einigen $\SI{100}{\mega\hertz}$ liegt, sind die restlichen auftretenden Frequenzen so groß ($\sim \si{\peta\hertz}$), dass diese aufgrund der endlichen Bandbreite der Photodiode ($\sim \si{\giga\hertz}$) nicht gemessen werden können.
+Auch die Frequenz der optischen Schwebung ist so hoch, dass diese nicht direkt mit dem vorhandenen analogen Oszilloskop (Bandbreite $B = \SI{35}{\mega\hertz}$) gemessen werden kann.
 Daher wird in einer zweiten Stufe das Signal der Schwebung mit dem eines Hochfrequenzgenerators der Frequenz $\nu_\mathrm{HF}$ gemischt.
+
+\subsubsection{Mathematische Beschreibung der Funktionsweise eines Mischers}
 Die Wirkung eines solchen \textbf{Mischers} auf zwei Eingangssignale $x(t) = \hat{x} \sin(\omega_1 t)$ und $y(t) = \hat{y} \sin(\omega_2 t)$ lässt sich auf zwei verschiedenen Weisen realisieren \cite{horowitz_hill}:
 \begin{itemize}
 	\item \textbf{multiplikative Mischung:} Durch Multiplikation der beiden Signale $x(t)$ und $y(t)$ führt die Anwendung der trigonometrischen Identität:
@@ -360,7 +363,10 @@ Die Wirkung eines solchen \textbf{Mischers} auf zwei Eingangssignale $x(t) = \ha
 	Der Spezialfall $f(x) = x^2$ ist bereits bei der Mischung der elektrischen Felder der verschiedenen Axialmoden in der Photodiode aufgetreten, da die gemessene Intensität quadratisch mit der Summe der Feldstärken $E_1$ und $E_2$ zusammenhängt.
 	Demnach agiert bereits die Photodiode als Mischer für die elektrischen Feldstärken der verschiedenen Moden.
 \end{itemize}
-Der \textbf{Leistungspegel} des Generators wird auf $L = \SI{+7}{\dBm}$ eingestellt. Um diese logarithmische Größe in Einheiten einer Leistung zu erhalten, betrachtet man die Definition des Leistungspegels $L$: 
+
+\subsubsection{Messung des Modenabstandes durch Mischung mit der Hochfrequenz}
+Wie bereits erwähnt, wird das Signal der optischen Schwebung mit der Frequenz $\Delta \nu = |\omega_1 - \omega_2| / (2\pi)$ mit dem eines Hochfrequenzgenerators $\nu_\mathrm{HF}$ gemischt.
+Dabei wird der \textbf{Leistungspegel} des Generators auf $L = \SI{+7}{\dBm}$ eingestellt. Um diese logarithmische Größe in Einheiten einer Leistung zu erhalten, betrachtet man die Definition des Leistungspegels $L$: 
 \begin{align}
 	L = 10 \cdot \log_{10}\left( \frac{P}{P_0}\right) \text{,}
 \end{align}
@@ -369,12 +375,14 @@ Für das Dezibel-Milliwatt (\si{dBm}) ist diese gegeben durch $P_0 = \SI{1}{\mil
 \begin{align}
 	P = P_0 \cdot 10^{\frac{L}{10}} = \SI{1}{\milli\watt} \cdot 10^{\num{0.7}} \approx \SI{5}{\milli\watt}
 \end{align}
-
-
-Axialmodenabstand gegeben durch:
+Schließlich betrachtet man das Resultat der Mischung am Oszilloskop, welches die Differenzfrequenz $\nu = |\nu_\mathrm{HF} - \Delta \nu|$ aufweist.
+Aufgrund der begrenzten Bandbreite des Oszilloskops ist es nötig, eine überschlagsmäßige Berechnung des Modenabstands $\Delta \nu$ durchzuführen, um einen Anhaltspunkt für die Frequenzeinstellung des Hochfrequenzgenerators zu erhalten.
+Diese erfolgt über den theoretischen Axialmodenabstand:
 \begin{align}
-	\Delta \nu &= \frac{c}{2 L}
+	\Delta \nu = \frac{c}{2 L} \text{,}
 \end{align}
+wobei $L$ die gemessene Resonatorlänge ist.
+
 Mit $\Delta \nu \approx \nu_\mathrm{HF}$:
 \begin{align}
 	2 L = c \cdot \frac{1}{\nu_\mathrm{RF}}

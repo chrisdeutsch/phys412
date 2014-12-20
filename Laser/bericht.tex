@@ -299,6 +299,33 @@ Dabei wurde wie in \eqref{eq:umrechnung_watt} der Umrechnungsfaktor \num{17.5} z
 \subsection{Optischer Spektrumanalysator}
 
 \subsection{Präzise Messung des Modenabstandes mittels einer optischen Schwebung}
+Die Überlagerung des elektrischen Feldes zweier Axialmoden mit den Kreisfrequenzen $\omega_1$ und $\omega_2$ auf einer Photodiode kann geschrieben werden als:
+\begin{align}
+	E(t) = E_1 \sin(\omega_1 t) + E_2 \sin(\omega_2 t)
+	\label{eq:superposition_efeld}
+\end{align}
+Da die Photodiode die Intensität $I$ des auftreffenden Lichts misst und diese gegeben ist durch $I \propto E^2$ erhält man durch quadrieren von Gleichung \ref{eq:superposition_efeld} und Anwendung der trigonometrischen Additionstheoreme das resultierende Frequenzspektrum der Intensität, welche aus den Frequenzen $\omega_1 + \omega_2, |\omega_1 - \omega_2|$ sowie den zweiten Harmonischen $2\omega_1, 2\omega_2$ besteht.
+Mit Ausnahme von dem Heterodynsignal mit der Frequenz $|\omega_1 - \omega_2|$, welche in der Größenordnung von einigen $\SI{100}{\mega\hertz}$ liegt, sind die restlichen auftretenden Frequenzen so groß ($\sim \si{\peta\hertz}$), dass diese aufgrund der endlichen Bandbreite von Koaxialkabel und Photodiode ($\sim \si{\giga\hertz}$) nicht gemessen werden können.
+
+Auch die Frequenz der optischen Schwebung ist so hoch, dass diese nicht direkt gemessen werden kann.
+Daher wird in einer zweiten Stufe das Signal der Schwebung mit dem eines Hochfrequenzgenerators der Frequenz $\nu_\mathrm{HF}$ gemischt.
+Die Wirkung eines solchen \textbf{Mischers} auf zwei Eingangssignale $x(t) = \hat{x} \sin(\omega_1 t)$ und $y(t) = \hat{y} \sin(\omega_2 t)$ lässt sich auf zwei verschiedenen Weisen realisieren \cite{horowitz_hill}:
+\begin{itemize}
+	\item \textbf{multiplikative Mischung:} Durch Multiplikation der beiden Signale $x(t)$ und $y(t)$ führt die Anwendung der trigonometrischen Identität:
+	\begin{align}
+		\sin(\omega_1 t) \sin(\omega_2 t) = \frac{1}{2} \cos\left[ (\omega_1 - \omega_2) t \right] - \frac{1}{2} \cos\left[ (\omega_1 + \omega_2) t\right]
+	\end{align}
+	auf das resultierende Signal:
+	\begin{align}
+		(x\cdot y)(t) = \frac{\hat{x} \, \hat{y}}{2} \left\{ \cos\left[ (\omega_1 - \omega_2) t \right] - \cos\left[ (\omega_1 + \omega_2) t\right]\right\} \text{.}
+	\end{align}
+	Das resultierende Spektrum enthält sowohl die Summe als auch die Differenz der beiden Eingangsfrequenzen.
+	\item \textbf{Mischung durch Anwendung einer nichtlinearen Operation auf die Summe der Signale:} Um die Differenzfrequenz $|\omega_1 - \omega_2|$ zu bestimmen, ist es nicht nötig das Produkt der beiden Eingänge zu bilden.
+	Alternativ reicht es aus die Summe beider Signale zu bilden und eine nichtlineare Operation auf diese durchzuführen.
+	
+\end{itemize}
+
+
 \begin{align}
 	\Delta \nu &= \frac{c}{2 L} \\
 	c &= 2 L \nu_\mathrm{RF}\\
@@ -332,6 +359,12 @@ Phys. Rev. Lett. 6, 106 – Published 1 February 1961
 	\emph{NIST Atomic Spectra Database} (ver. 5.2).
 	\url{http://physics.nist.gov/asd} (Letzter Abruf: 18. Dezember 2014).
 	National Institute of Standards and Technology, Gaithersburg, MD.
+	
+\bibitem{horowitz_hill}
+	Paul Horowitz, Winfred Hill,
+	\emph{The Art of Electronics Second Edition},
+	Cambridge University Press 1989,
+	Chapter 13.12: High frequency and high-speed techniques -- Radiofrequency circuit elements
  
 \end{thebibliography}
 

@@ -256,21 +256,15 @@ Für den Fall, dass das einfallende Licht bereits linear polarisiert ist (wie f�
 \begin{align}
 I=I_0\cdot\cos^2\varphi
 \end{align}
-Der Winkel am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Intensität an der Photodiode in \si{\milli\volt} notiert.
+Der Winkel $\varphi$ am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Photospannung $U_\text{P}$ an der Photodiode in \si{\milli\volt} notiert.
 In Tabelle \ref{tab:malus} sind die Messwerte bei einer Resonatorlänge von \SI{50}{\centi\metre} festgehalten worden.
-Der Fehler $\Delta\varphi$ für den Winkel ergibt sich aus der Tatsache, dass der Polarisator in Schritten von \SI{2}{\degree} eingestellt werden konnte, der Fehler für die Intensität wurde aufgrund der Schwankungen, die zu beobachten waren (es wurde mit der \emph{Measure}-Funktion des Oszilloskops gemessen), auf \SI{0.3}{\milli\volt} abgeschätzt.
-\begin{table}
-	\centering
-	\input{./tables/malus.tex}
-	\caption{Messwerte der Intensität an der Photodiode in Abhängigkeit des Winkels am Linearpolarisator}
-	\label{tab:malus}
-\end{table}
-Diese Messwerte werden im Anschluss in ein Diagramm eingetragen und mit \texttt{Gnuplot} eine Kurve der Form
+Der Fehler $\Delta\varphi$ für den Winkel ergibt sich aus der Tatsache, dass der Polarisator in Schritten von \SI{2}{\degree} eingestellt werden konnte, der Fehler für die Photospannung wurde aufgrund der Schwankungen, die zu beobachten waren (es wurde mit der \emph{Measure}-Funktion des Oszilloskops gemessen), auf \SI{0.3}{\milli\volt} abgeschätzt.
+Diese Messwerte werden im Anschluss mit \eqref{eq:umrechnung_watt} in Intensitäten umgerechnet, in ein Diagramm eingetragen und mit \texttt{Gnuplot} eine Kurve der Form
 \begin{align}
 f(x) = a\cdot\cos^2(x-b) + c
 \end{align}
 an die Daten angepasst.
-Dabei beschreibt $a$ die Intensität $I_0$, $b$ und $c$ sind Offsets \textbf{(deutsches Wort)} für den Winkel bzw. die Intensität.
+Dabei beschreibt $a$ die Intensität $I_0$, der Parameter $b$ berücksichtigt eine eventuelle Abweichung, dass die Polarisatoreinstellung $\varphi=0$ nicht der Polarisationsrichtung des Lasers entspricht und $c$ beschreibt den auftretenden Untergrund der Spannungs- / Intensitätsmessung.
 \begin{figure}
 	\centering
 	\input{./plots/malus.tex}
@@ -280,8 +274,26 @@ Dabei beschreibt $a$ die Intensität $I_0$, $b$ und $c$ sind Offsets \textbf{(de
 Man kann an der Anpassung gut erkennen, dass die Intensität wie erwartet dem Gesetz von Malus folgt.
 Dies bestätigt auch die Annahme, dass der Laser durch die an der Entladungsröhre befestigten Brewster-Fenster mit linear polarisiertem Licht betrieben wird.
 Die Abweichungen der Anpassung (das reduzierte $\chi^2$ von \num{25.4} bestätigt die schlechte Übereinstimmung) von den Messwerten lassen sich durch eine nicht ideale Justage erklären.
-Der Laserstrahl trifft dabei nicht das Zentrum des Polarisators, so dass die Winkelabhängigkeit der Intensität nicht optimal gemessen werden kann.
-Grund für die Annahme ist, dass das Maximum bei \SI{180}{\degree} nicht die gleiche Intensität hat, wie die Maxima bei \SI{0}{\degree} bzw. \SI{360}{\degree}. 
+ERKLÄRUNG
+Grund für die Annahme ist, dass das Maximum bei \SI{180}{\degree} nicht den zu erwartenden gleichen Wert annimmt, wie die Maxima bei \SI{0}{\degree} bzw. \SI{360}{\degree}.\\
+\\
+Nachfolgend soll der Polarisationsgrad des Lasers bestimmt werden.
+Dieser ist gegeben durch:
+\begin{align}
+P=\frac{|I_{\parallel}-I_{\perp}|}{I_{\parallel}+I_{\perp}}
+\end{align}
+Der Fehler ergibt sich mit Gauß'scher Fehlerfortpflanzung zu:
+\begin{align}
+\Delta P=\sqrt{\left(1+\frac{I_{\perp}}{(I_{\parallel}+I_{\perp})^2}\right)^2\left(\Delta I_{\parallel}\right)^2 + \left(\frac{I_{\perp}}{(I_{\parallel}+I_{\perp})^2}-\frac{1}{I_{\parallel}+I_{\perp}}\right)^2\left(\Delta I_{\perp}\right)^2}
+\end{align}
+Hierbei wird angenommen, dass $I_\parallel$ die Intensität ist, bei der der Linearpolarisaor parallel zur Polarisationsrichtung des Lichts steht und so ein Transmissionsmaximum erreicht wird.
+Für $I_\perp$ ist die Polarisationsrichtung des Lichts senkrecht zur Richtung des Polarisators, es wird also ein Transmissionsminimum erreicht.
+Dazu wählen wir aus Tabelle \ref{tab:malus} die Werte für $\varphi=\SI{90}{\degree}$ als Transmissionsminimum und ausgehend davon liegt das Transmissionsmaximum bei $\varphi=\SI{0}{\degree}$.
+Der in der Anpassung (s.o.) bestimmte Parameter $b=\SI{1.7+-0.6}{\degree}$, der die Lage der Extrema genau festlegt, wird dabei vernachlässigt, da er recht klein ist und hierfür keine Messwerte vorliegen. 
+Dann ergibt sich $P$ mit $I_\parallel=\SI{2.26+-0.02}{\milli\watt}$ und $I_\perp=\SI{0.03+-0.02}{\milli\watt}$ (die Photospannungen wurden mit \eqref{eq:umrechnung_watt} abermals in Intensitäten umgerechnet) zu:
+\begin{align}
+P=\num{0.97+-0.03}
+\end{align}
 
 \subsection{Messung des Strahlprofils und des Stabilitätsgebiets des Lasers}
 
@@ -340,7 +352,13 @@ Phys. Rev. Lett. 6, 106 – Published 1 February 1961
 % APPENDIX
 \begin{appendix}
 \section{Anhang}
-
+\subsection{Messwerte der Photospannung hinter dem Polarisator}
+\begin{table}[h]
+	\centering
+	\input{./tables/malus.tex}
+	\caption{Messwerte der Spannung an der Photodiode in Abhängigkeit des Winkels am Linearpolarisator}
+	\label{tab:malus}
+\end{table}
 
 \end{appendix}
 

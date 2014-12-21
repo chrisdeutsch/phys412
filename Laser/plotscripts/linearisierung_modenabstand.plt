@@ -24,7 +24,7 @@ fit f(x) './messwerte/modenabstand_schwebung.txt' using (1000.0/$3):(2*$1):(2*$2
 
 load './../gnuplot_linestyles.plt'
 
-plot 	'./messwerte/modenabstand_schwebung.txt' using (1000.0/$3):(2*$1):(1000*$4/$3**2):(2*$2) with xyerrorbars ls 1 t'Datenpunkte',\
+plot 	'./messwerte/modenabstand_schwebung.txt' using (1000.0/$3):(2*$1):(1000*$4/$3**2):(2*$2) with xyerrorbars ls 1 t'linearisierte Messwerte',\
 		f(x) ls 2 t'Anpassungsgerade'
 
 unset output

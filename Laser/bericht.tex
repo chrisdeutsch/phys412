@@ -131,6 +131,41 @@ Der HeNe-Laser wurde erstmals 1960 von Javan, Bennett und Herriott \cite{javan} 
 
 \section{Theorie}
 
+\subsection{Aktives Medium}
+
+\subsection{Formelsammlung Gaußstrahlen \cite{linden}}
+Ebene Wellen ungeeignet zur Beschreibung von räumlich begrenzten Strahlen (unendliche Ausdehnung).
+\begin{align}
+	I(z,r) = I_0 \left( \frac{w_0}{w(z)} \right)^2 \exp\left(- \frac{2 r^2}{w^2(z)} \right)
+\end{align}
+Strahlradius $w(z)$ gegeben durch Abfall der Intensität um den Faktor $1/\mathrm{e}^2$:
+\begin{align}
+	w(z) = w_0 \sqrt{1 + \left( \frac{z}{z_0} \right)^2}
+	\label{eq:gauss_axialprofil}
+\end{align}
+Strahltaille $w_0$:
+\begin{align}
+	w_0 = \sqrt{\frac{\lambda z_0}{\pi}}
+\end{align}
+mit der Rayleigh-Länge $z_0$:
+\begin{align}
+	&I(z = \pm z_0, r =0) = \frac{I_0}{2}
+\end{align}
+Der Intensitätsverlauf ist durch Angabe von Rayleigh-Länge oder Strahltaille eindeutig beschrieben.
+
+\subsection{Resonatoren}
+\subsubsection{Allgemeines}
+\subsubsection{longitudinale Moden}
+\subsubsection{transversale Moden}
+\subsubsection{Stabilität}
+\subsubsection{Halbsymmetrischer Resonator}
+Strahltaille liegt auf dem ebenen Spiegel:
+\begin{align}
+	w_0^2 = w_1^2 = \frac{L \lambda}{\pi} \sqrt{\frac{g}{1 - g}}
+	\label{eq:strahltaille_halbsym}
+\end{align} (Siegman)
+
+
 \section{Durchführung und Auswertung}
 Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
 Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
@@ -310,13 +345,31 @@ Daran kann man sehen, dass das hier verwendete Laserlicht sehr stark (linear) po
 
 \subsection{Messung des Strahlprofils und des Stabilitätsgebiets des Lasers}
 
-Intensitätsverlauf des Lasers:
-\begin{align}
-	I(r,z) = I_0 \left( \frac{w_0}{w(z)} \right)^2 \mathrm{e}^{-\frac{2 r^2}{w(z)^2}}
-\end{align}
-
-
-
+\begin{itemize}
+	\item Beschreibung der Schiebe-Messmethode und der auftretenden Fehler. Wo liegt die Strahltaille?
+	
+	\item Erklärung was eigentlich gemessen wird. Messschieber schneidet den Gaußstrahl ab, sodass ein proportionaler Radius gemessen wird. Gleichgewicht zwischen Verstärkung und Verluste erklären.
+	Wie kommt man physikalisch auf die Fithypothese.
+	
+	\item Anpassung an die Datenpunkte erklären. Hat der Proportionalitätsfaktor Abhängigkeiten von den anderen Fitparametern? Vermutlich schon, aber nur Schwache.
+	
+	Fithypothese: $w_\mathrm{fit}(z) = \alpha \cdot w_\mathrm{exp.}$, wobei der experimentelle Strahlradius gegeben ist durch:
+	\begin{align}
+	w_\mathrm{exp.}(z) = w_0 \sqrt{1 + \left( \frac{\lambda}{\pi} \right)^2 \left( \frac{z}{w_0^2}\right)^2}
+	\end{align}
+	Fit erfolgt dann über $\alpha$ und $w_0$.
+	
+	\item Anpassungsergebnisse diskutieren!
+	
+	\item Wie erhält man aus der Anpassung den experimentellen Strahlradius? Durch Proportionalitätskonstante teilen.
+	
+	\item Wie berechnet sich der theoretische Strahlradius aus der Resonatorgeometrie.
+	
+	Verwendung der Strahltaille zur Beschreibung des Gaußstrahls.
+	Diese ist für einen gegebenen halbsymmetrischen Resonator durch Gleichung \ref{eq:strahltaille_halbsym} gegeben.
+	Die Beschreibung des Strahlverlaufs erfolgt dann durch Gleichung \ref{eq:gauss_axialprofil}.
+	
+\end{itemize}
 
 \subsection{Aufbau der optischen Diode}
 
@@ -451,14 +504,20 @@ Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{9}
 \bibitem{javan}
-A. Javan, W. R. Bennett, Jr., and D. R. Herriott,
-\emph{Population Inversion and Continuous Optical Maser Oscillation in a Gas Discharge Containing a He-Ne Mixture},
-Phys. Rev. Lett. 6, 106 – Published 1 February 1961
+	A. Javan, W. R. Bennett, Jr., and D. R. Herriott,
+	\emph{Population Inversion and Continuous Optical Maser Oscillation in a Gas Discharge Containing a He-Ne Mixture},
+	Phys. Rev. Lett. 6, 106 – Published 1 February 1961
+
+\bibitem{linden}
+	S. Linden,
+	Skript zur Vorlesung \emph{physik311: Optik und Wellenmechanik} (Stand: 31. Januar 2014),
+	Physikalisches Institut, Universität Bonn
 
 \bibitem{anleitung}
 	Physikalisches Praktikum IV: Atome, Moleküle, Festkörper,
 	Versuchsbeschreibung \emph{P442: Laser} (Stand: 12. September 2014),
 	Universität Bonn
+
 \bibitem{schawlow}
 	A. L. Schawlow,
 	\emph{Measuring the Wavelength of Light with a Ruler},

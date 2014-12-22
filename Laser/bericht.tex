@@ -32,6 +32,9 @@
 % Einheitendefinitionen
 \DeclareSIUnit{\dBm}{dBm}
 
+% Operatordefinitionen
+\DeclareMathOperator{\erf}{erf}
+
 % Randbreiten
 \usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
 
@@ -146,6 +149,7 @@ Strahlradius $w(z)$ gegeben durch Abfall der Intensität um den Faktor $1/\mathr
 Strahltaille $w_0$:
 \begin{align}
 	w_0 = \sqrt{\frac{\lambda z_0}{\pi}}
+	\label{eq:rayleigh_laenge}
 \end{align}
 mit der Rayleigh-Länge $z_0$:
 \begin{align}
@@ -254,6 +258,7 @@ Mit den Werten aus Tabelle \ref{tab:wellenlaengen_berechnung} folgt für die var
 Der Vergleich mit dem Literaturwert \cite{NISTSpectra} für den ($\mathrm{5s} \rightarrow \mathrm{3p}$)-Übergang von Neon:
 \begin{align}
 	\lambda = \SI{632.81646}{\nano\metre}
+	\label{eq:HeNe_wellenlaenge}
 \end{align}
 liefert eine gute Übereinstimmung innerhalb des statistischen Fehlers.
 
@@ -345,20 +350,7 @@ Daran kann man sehen, dass das hier verwendete Laserlicht sehr stark (linear) po
 
 \subsection{Messung des Strahlprofils und des Stabilitätsgebiets des Lasers}
 
-\begin{itemize}
-	\item Beschreibung der Schiebe-Messmethode und der auftretenden Fehler. Wo liegt die Strahltaille?
-	
-	\item Erklärung was eigentlich gemessen wird. Messschieber schneidet den Gaußstrahl ab, sodass ein proportionaler Radius gemessen wird. Gleichgewicht zwischen Verstärkung und Verluste erklären.
-	Wie kommt man physikalisch auf die Fithypothese.
-	
-	\item Anpassung an die Datenpunkte erklären. Hat der Proportionalitätsfaktor Abhängigkeiten von den anderen Fitparametern? Vermutlich schon, aber nur Schwache.
-	
-	Fithypothese: $w_\mathrm{fit}(z) = \alpha \cdot w_\mathrm{exp.}$, wobei der experimentelle Strahlradius gegeben ist durch:
-	\begin{align}
-	w_\mathrm{exp.}(z) = w_0 \sqrt{1 + \left( \frac{\lambda}{\pi} \right)^2 \left( \frac{z}{w_0^2}\right)^2}
-	\end{align}
-	Fit erfolgt dann über $\alpha$ und $w_0$.
-	
+\begin{itemize}		
 	\item Anpassungsergebnisse diskutieren!
 	
 	\item Wie erhält man aus der Anpassung den experimentellen Strahlradius? Durch Proportionalitätskonstante teilen.
@@ -372,12 +364,14 @@ Daran kann man sehen, dass das hier verwendete Laserlicht sehr stark (linear) po
 \end{itemize}
 
 Im Folgenden soll das Strahlprofil im Resonator bei verschiedenen Resonatorlängen bestimmt werden.
+Es werden dabei beispielhaft für eine Resonatorlänge Tabellen und Graphen in diesem Abschnitt aufgeführt.
+Eine Zusammenstellung aller vermessenen Resonatorlängen findet sich in Anhang \ref{app:strahlprofil}.
 
 \subsubsection{Messmethode}
-Die Messung der Strahlprofils, beziehungsweise einer dazu proportionalen Größe (siehe Abschnitt (REF!)), erfolgt mithilfe eines Messschiebers, der in den Strahlengang gebracht wird.
+Die Messung der Strahlprofils, beziehungsweise einer dazu proportionalen Größe (siehe Abschnitt \ref{sssec:spaltbreite_strahlradius}), erfolgt mithilfe eines Messschiebers, der in den Strahlengang gebracht wird.
 Dabei wird die in \cite{anleitung} dargestellte Methode, bei der der Messschieber bei konstanter Spaltbreite longitudinal im Resonator verschoben wird, verwendet.
 Konkret wird der Messschieber auf die konstante Breite $d$ eingestellt und an eine Position im Resonator gebracht, an der bei transversaler Verschiebung der Laser kurz aufblitzt.
-Dann wird dessen Abstand $z$ vom ebenen Resonatorspiegel langsam vergrößert und beobachtet, wann der Strahl nichtmehr aufleuchtet, wenn der Messschieber um die Strahlachse bewegt wird.
+Dann wird dessen Abstand $z$ vom ebenen Resonatorspiegel langsam vergrößert und beobachtet, wann der Strahl nichtmehr aufleuchtet, wenn der Messschieber gegen die Strahlachse bewegt wird.
 Ist dieser Punkt erreicht, so wird der Abstand $z$ wieder verkleinert bis der Laser gerade noch anfängt zu arbeiten.
 Dann kann der Abstand $z$ des Messschiebers vom ebenen Resonatorspiegel vermessen werden.
 Dieser ist gleichzeitig der Abstand von der Strahltaille, da diese bei halbsymmetrischen Resonatoren auf dem ebenen Spiegel liegt (siehe auch Abschnitt (REF!)).
@@ -386,17 +380,66 @@ Bei dieser Methode treten Fehler in der Bestimmung der Position $z$ des Messschi
 Der Fehler in der Position setzt sich zusammen aus dem Messfehler sowie einem zusätzlichen Beitrag aufgrund von nicht optimaler Ausrichtung (senkrecht zur optischen Achse) des Messschiebers.
 Dazu kommt, dass die Position $z$ hinter dem Resonator nicht direkt mit der auf der optischen Bank angebrachten Skala vermessen werden konnte, weshalb für Messpunkte hinter dem Resonator ein größerer Fehler angenommen wurde, als für solche vor dem Resonator.
 Der Fehler in der Spaltbreite $d$ ist im Wesentlichen nicht durch die Messung mit der Messschieber gegeben, sondern liegt darin, dass die (der unterschied $d = \pm \SI{0.01}{\milli\metre}$ kaum erkennbar).
-Daher wird der statistische Fehler der Spaltbreite konservativ auf $\Delta d = \SI{0.01}{\milli\metre}$ abgeschätzt.
+Daher wird der statistische Fehler der Spaltbreite auf $\Delta d = \SI{0.01}{\milli\metre}$ abgeschätzt.
+\begin{table}[h]
+	\centering
+	\input{./tables/strahlradien/80cm.tex}
+	\caption{Messdaten zum Strahlprofil im Resonator der Länge $L = \SI{795 +- 4}{\milli\metre}$}
+	\label{tab:ex_messdaten_strahlprofil}
+\end{table}
 
 
 \subsubsection{Zusammenhang zwischen Spaltbreite $d$ und Strahlradius $w$}
+\label{sssec:spaltbreite_strahlradius}
 Zunächst gilt es zu beachten, dass der Strahlradius $w$ keine scharfe Begrenzung der transversalen Intensitätsverteilung eines Gaußstrahls darstellt.
 Wie in Abschnitt (REF) erklärt, ist das transversale Profil der $\mathrm{TM}_{00}$-Mode gegeben durch durch eine Gaußfunktion, anhand derer der Strahlradius definiert ist als der Abstand von der Strahlachse, bei dem die Intensität auf $1/\mathrm{e}^2$ abgefallen ist.
 Durch Begrenzung der der transversalen Strahlbreite auf die Spaltbreite des Messschiebers $d$, kommt es zu zusätlichen Verlusten aufgrund von Reflexion und Absorptions an den Backen des Messschiebers.
-Diese Verluste führen zu einer Änderung der Schwellenbedingung für Laseroperation, was bei dieser Messmethode ausgenutzt wird, um eine zum Strahlradius $w$ proportionale Größe $d$ bzw. $d/2$ zu messen.
+Diese Verluste führen zu einer Änderung der Schwellenbedingung für Laseroperation, was bei dieser Messmethode ausgenutzt wird, um eine zum Strahlradius $w$ proportionale Größe $d$ zu messen.
+Da der Laser durch die Verschiebung des Messschiebers entlang der Strahlachse, stehts an der Schwelle operiert, ist die Strahlleistung im Spalt $P_\mathrm{Spalt}$ konstant bezüglich der verschiedener Messpositionen $z$.
+Im Folgenden soll gezeigt werden, dass dann in der Tat gilt:
+\begin{align}
+	d = \alpha \cdot w(z) \text{,}
+\end{align}
+wobei $\alpha$ unabhängig vom Abstand $z$ von der Strahltaille ist.
+Dazu betrachtet man die Leistung des Strahls auf der Fläche des durch den Messschiebers gebildeten Spaltes mit der Breite $d$:
+\begin{align}
+	P_\mathrm{Spalt} &= I_0 \left( \frac{w_0}{w(z)} \right)^2 \int_{A_\mathrm{Spalt}} \exp\left( -\frac{2 r^2}{w^2(z)} \right) \mathrm{d}A
+\end{align}
+mit $A_\mathrm{Spalt} = \left\{(x,y) \in \mathbb{R}^2 \middle| |x| < \frac{d}{2} \right\}$ und $r^2 = x^2 + y^2$.
+Ausführen der Integration liefert die (konstante) Spaltleistung:
+\begin{align}
+	P_\mathrm{Spalt} &= \frac{1}{2} \pi I_0 w_0^2 \,\erf\left( \frac{d}{\sqrt{2} w(z)} \right)
+\end{align}
+Mit dem Ansatz $d(z) = \alpha(z) \cdot w(z)$ folgt:
+\begin{align}
+	\alpha(z) = \sqrt{2} \, \erf^{-1}\left( \frac{2}{\pi} \cdot \frac{P_\mathrm{Spalt}}{I_0 w_0^2}\right) = \mathrm{konst.}
+\end{align}
+Der Proportionalitätsfaktor $\alpha$ ist somit tatsächlich unabhängig von der Position des Messschiebers.
 
+\subsubsection{Experimentelle Bestimmung des Strahlprofils}
+Mit den Überlegungen aus dem vorigen Abschnitt wählen wir als Anpassungshypothese:
+\begin{align}
+	 r(z) = \frac{d(z)}{2} = \alpha \cdot w_\mathrm{exp.}(z) \text{,}
+\end{align}
+wobei das Profil $w_\mathrm{exp.}(z)$, unabhängig von der Rayleigh-Länge $z_0$, durch die Strahltaille $w_0$ ausgedrückt wird:
+\begin{align}
+	w_\mathrm{exp.}(z) = w_0 \sqrt{1 + \left( \frac{\lambda}{\pi} \right)^2 \left( \frac{z}{w_0^2}\right)^2}
+\end{align}
+(Folgerung aus Gleichungen \ref{eq:gauss_axialprofil} und \ref{eq:rayleigh_laenge}).
+Das Halbieren der Spaltbreite ist dabei optional und wurde durchgeführt um eine zum Strahlradius $w$ ähnlichere Größe zu erhalten.
 
+Somit kann die Anpassung an die Messpunkte durch die \emph{Methode der kleinsten Quadrate} erfolgen.
+Dabei werden die Proportionalitätskonstante $\alpha$ und die Strahltaille $w_0$ als Anpassungsparameter gewählt.
+Die Messdaten, Anpassung, experimentelles und theoretisches Strahlprofil wurden in Abbildung \ref{fig:ex_strahlradius} aufgetragen.
+Dabei ist der theoretische Strahlradius durch die aus der Resonatorgeometrie folgenden Strahltaille (Gleichung \ref{eq:strahltaille_halbsym}) gegeben.
+Für die Wellenlänge des HeNe-Lasers wurde der Wert aus Gleichung \ref{eq:HeNe_wellenlaenge} verwendet.
 
+\begin{figure}[h]
+	\centering
+	\input{./plots/strahlradien/strahlradius_80cm.tex}
+	\caption{Strahlradius \SI{795 +- 4}{\milli\metre}}
+	\label{fig:ex_strahlradius}
+\end{figure}
 
 \subsection{Aufbau der optischen Diode}
 
@@ -591,6 +634,7 @@ Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
 
 \clearpage
 \subsection{Bestimmung des Strahlprofils im Resonator}
+\label{app:strahlprofil}
 \FloatBarrier
 \begin{table}[t]
 	\centering

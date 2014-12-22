@@ -349,20 +349,6 @@ P=\num{0.97+-0.06}
 Daran kann man sehen, dass das hier verwendete Laserlicht sehr stark (linear) polarisiert ist.
 
 \subsection{Messung des Strahlprofils und des Stabilitätsgebiets des Lasers}
-
-\begin{itemize}		
-	\item Anpassungsergebnisse diskutieren!
-	
-	\item Wie erhält man aus der Anpassung den experimentellen Strahlradius? Durch Proportionalitätskonstante teilen.
-	
-	\item Wie berechnet sich der theoretische Strahlradius aus der Resonatorgeometrie.
-	
-	Verwendung der Strahltaille zur Beschreibung des Gaußstrahls.
-	Diese ist für einen gegebenen halbsymmetrischen Resonator durch Gleichung \ref{eq:strahltaille_halbsym} gegeben.
-	Die Beschreibung des Strahlverlaufs erfolgt dann durch Gleichung \ref{eq:gauss_axialprofil}.
-	
-\end{itemize}
-
 Im Folgenden soll das Strahlprofil im Resonator bei verschiedenen Resonatorlängen bestimmt werden.
 Es werden dabei beispielhaft für eine Resonatorlänge Tabellen und Graphen in diesem Abschnitt aufgeführt.
 Eine Zusammenstellung aller vermessenen Resonatorlängen findet sich in Anhang \ref{app:strahlprofil}.
@@ -426,7 +412,7 @@ wobei das Profil $w_\mathrm{exp.}(z)$, unabhängig von der Rayleigh-Länge $z_0$
 	w_\mathrm{exp.}(z) = w_0 \sqrt{1 + \left( \frac{\lambda}{\pi} \right)^2 \left( \frac{z}{w_0^2}\right)^2}
 \end{align}
 (Folgerung aus Gleichungen \ref{eq:gauss_axialprofil} und \ref{eq:rayleigh_laenge}).
-Das Halbieren der Spaltbreite ist dabei optional und wurde durchgeführt um eine zum Strahlradius $w$ ähnlichere Größe zu erhalten.
+Das Halbieren\footnote{Auch der Fehler $\Delta r$ halbiert sich dementsprechend: $\Delta r = \Delta d / 2$} der Spaltbreite ist dabei optional und wurde durchgeführt um eine zum Strahlradius $w$ ähnlichere Größe zu erhalten.
 
 Somit kann die Anpassung an die Messpunkte durch die \emph{Methode der kleinsten Quadrate} erfolgen.
 Dabei werden die Proportionalitätskonstante $\alpha$ und die Strahltaille $w_0$ als Anpassungsparameter gewählt.
@@ -443,13 +429,17 @@ Die resultierenden Anpassungsparameter für alle Resonatorlängen wurden in Tabe
 \begin{figure}[h]
 	\centering
 	\input{./plots/strahlradien/strahlradius_80cm.tex}
-	\caption{Strahlradius \SI{795 +- 4}{\milli\metre}}
+	\caption{Anpassung des Strahlprofils an die Messdaten für die Resonatorlänge $L = \SI{795 +- 4}{\milli\metre}$}
 	\label{fig:ex_strahlradius}
 \end{figure}
 
-(Systematischer Fehler -- Knick)
+Bemerkenswert ist, dass man bei den letzten\footnote{bezogen auf den Abstand $z$ von der Strahltaille} Messpunkten im Strahlprofil ein systematisches Abknicken beobachten kann.
+Die Ursache liegt vermutlich darin, dass an der Knickstelle das Aufblitzen des Lasers von der anderen Seite des Messschiebers beobachtet wurde, da der sphärische Resonatorspiegel den Blick auf den Messschieber beeinträchtigt hat.
+Da der Reflexionsgrad beider Seiten des Messschiebers unterschiedlich ist, kommt es hier zu einem systematischen Fehler aufgrund der unterschiedlichen Helligkeiten des Reflexes an den Messbacken.
+Aus diesem Grund kommt es zu den in Tabelle \ref{tab:strahlradius_fitergebnis} dargestellten relativ schlechten $\chi$-Quadraten.
 
-(Fazit)
+Zusammenfassend kann man sagen, dass des experimentell bestimmte Strahlprofil gut mit dem Theoretischen übereinstimmt.
+Einzig für die Resonatorlänge $L = \SI{500}{\milli\metre}$ kommt es zu einer signifikanten Abweichung, da auf dem Messbereich nur wenige Messpunkte zur Verfügung standen.
 
 
 \subsection{Aufbau der optischen Diode}
@@ -650,52 +640,52 @@ Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
 \begin{table}[t]
 	\centering
 	\input{./tables/strahlradien/50cm.tex}
-	\caption{Messdaten \SI{50}{\centi\metre}}
+	\caption{Messdaten zum Strahlprofil im Resonator der Länge $L = \SI{500 +- 4}{\milli\metre}$}
 	\label{tab:strahlradius_50}
 \end{table}
 \begin{figure}[b]
 	\centering
 	\input{./plots/strahlradien/strahlradius_50cm.tex}
-	\caption{Strahlradius \SI{50}{\centi\metre}}
+	\caption{Anpassung des Strahlprofils an die Messdaten für die Resonatorlänge $L = \SI{500 +- 4}{\milli\metre}$}
 	\label{fig:strahlradius_50}
 \end{figure}
 \FloatBarrier
 \begin{table}[t]
 	\centering
 	\input{./tables/strahlradien/70cm.tex}
-	\caption{Messdaten \SI{70}{\centi\metre}}
+	\caption{Messdaten zum Strahlprofil im Resonator der Länge $L = \SI{690 +- 4}{\milli\metre}$}
 	\label{tab:strahlradius_70}
 \end{table}
 \begin{figure}[b]
 	\centering
 	\input{./plots/strahlradien/strahlradius_70cm.tex}
-	\caption{Strahlradius \SI{70}{\centi\metre}}
+	\caption{Anpassung des Strahlprofils an die Messdaten für die Resonatorlänge $L = \SI{690 +- 4}{\milli\metre}$}
 	\label{fig:strahlradius_70}
 \end{figure}
 \FloatBarrier
 \begin{table}[t]
 	\centering
 	\input{./tables/strahlradien/80cm.tex}
-	\caption{Messdaten \SI{80}{\centi\metre}}
+	\caption{Messdaten zum Strahlprofil im Resonator der Länge $L = \SI{795 +- 4}{\milli\metre}$}
 	\label{tab:strahlradius_80}
 \end{table}
 \begin{figure}[b]
 	\centering
 	\input{./plots/strahlradien/strahlradius_80cm.tex}
-	\caption{Strahlradius \SI{80}{\centi\metre}}
+	\caption{Anpassung des Strahlprofils an die Messdaten für die Resonatorlänge $L = \SI{795 +- 4}{\milli\metre}$}
 	\label{fig:strahlradius_80}
 \end{figure}
 \FloatBarrier
 \begin{table}[t]
 	\centering
 	\input{./tables/strahlradien/90cm.tex}
-	\caption{Messdaten \SI{90}{\centi\metre}}
+	\caption{Messdaten zum Strahlprofil im Resonator der Länge $L = \SI{892 +- 4}{\milli\metre}$}
 	\label{tab:strahlradius_90}
 \end{table}
 \begin{figure}[b]
 	\centering
 	\input{./plots/strahlradien/strahlradius_90cm.tex}
-	\caption{Strahlradius \SI{90}{\centi\metre}}
+	\caption{Anpassung des Strahlprofils an die Messdaten für die Resonatorlänge $L = \SI{892 +- 4}{\milli\metre}$}
 	\label{fig:strahlradius_90}
 \end{figure}
 \FloatBarrier

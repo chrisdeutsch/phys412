@@ -137,6 +137,7 @@ Der HeNe-Laser wurde erstmals 1960 von Javan, Bennett und Herriott \cite{javan} 
 \subsection{Aktives Medium}
 
 \subsection{Formelsammlung Gaußstrahlen \cite{linden}}
+\label{gaussstrahlen}
 Ebene Wellen ungeeignet zur Beschreibung von räumlich begrenzten Strahlen (unendliche Ausdehnung).
 \begin{align}
 	I(z,r) = I_0 \left( \frac{w_0}{w(z)} \right)^2 \exp\left(- \frac{2 r^2}{w^2(z)} \right)
@@ -365,7 +366,7 @@ Dieser ist gleichzeitig der Abstand von der Strahltaille, da diese bei halbsymme
 Bei dieser Methode treten Fehler in der Bestimmung der Position $z$ des Messschiebers und dessen Spaltbreite $d$ auf.
 Der Fehler in der Position setzt sich zusammen aus dem Messfehler sowie einem zusätzlichen Beitrag aufgrund von nicht optimaler Ausrichtung (senkrecht zur optischen Achse) des Messschiebers.
 Dazu kommt, dass die Position $z$ hinter dem Resonator nicht direkt mit der auf der optischen Bank angebrachten Skala vermessen werden konnte, weshalb für Messpunkte hinter dem Resonator ein größerer Fehler angenommen wurde, als für solche vor dem Resonator.
-Die Genauigkeit in der Spaltbreite $d$ eines typischen Messschiebers ist $\Delta d = \SI{0.02}{\milli\metre}$ trotz einer Auflösung von \SI{0.01}{\milli\metre} \cite{messschieber_katalog}.
+Für den Fehler in der Spaltbreite $d$ wird $\Delta = \SI{0.02}{\milli\metre}$ angenommen, was darin begründet liegt, dass trotz einer Auflösung von \SI{0.01}{\milli\metre} bei typischen (digitalen) Messschiebern nur eine Genauigkeit von \SI{0.02}{\milli\metre} erreicht wird \cite{messschieber_katalog}.
 \begin{table}[h]
 	\centering
 	\input{./tables/strahlradien/80cm.tex}
@@ -377,7 +378,7 @@ Die Genauigkeit in der Spaltbreite $d$ eines typischen Messschiebers ist $\Delta
 \subsubsection{Zusammenhang zwischen Spaltbreite $d$ und Strahlradius $w$}
 \label{sssec:spaltbreite_strahlradius}
 Zunächst gilt es zu beachten, dass der Strahlradius $w$ keine scharfe Begrenzung der transversalen Intensitätsverteilung eines Gaußstrahls darstellt.
-Wie in Abschnitt (REF) erklärt, ist das transversale Profil der $\mathrm{TM}_{00}$-Mode gegeben durch durch eine Gaußfunktion, anhand derer der Strahlradius definiert ist als der Abstand von der Strahlachse, bei dem die Intensität auf $1/\mathrm{e}^2$ abgefallen ist.
+Wie in Abschnitt \ref{gaussstrahlen} erklärt, ist das transversale Profil der $\mathrm{TM}_{00}$-Mode gegeben durch durch eine Gaußfunktion, anhand derer der Strahlradius definiert ist als der Abstand von der Strahlachse, bei dem die Intensität auf $1/\mathrm{e}^2$ abgefallen ist.
 Durch Begrenzung der der transversalen Strahlbreite auf die Spaltbreite des Messschiebers $d$, kommt es zu zusätlichen Verlusten aufgrund von Reflexion und Absorptions an den Backen des Messschiebers.
 Diese Verluste führen zu einer Änderung der Schwellenbedingung für Laseroperation, was bei dieser Messmethode ausgenutzt wird, um eine zum Strahlradius $w$ proportionale Größe $d$ zu messen.
 Da der Laser durch die Verschiebung des Messschiebers entlang der Strahlachse, stehts an der Schwelle operiert, ist die Strahlleistung im Spalt $P_\mathrm{Spalt}$ konstant bezüglich der verschiedener Messpositionen $z$.

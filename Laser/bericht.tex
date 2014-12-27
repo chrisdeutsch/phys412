@@ -628,6 +628,53 @@ Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
 \end{align}
 überein.
 
+\subsection{Modenspektrum des Helium-Neon-Lasers}
+In diesem Abschnitt soll der Einfluss der thermischen Bewegung der Neonatome in der Entladungsröhre auf den Helium-Neon-Laser untersucht werden.
+Mit der Masse des Neon-Atoms $m_\mathrm{Ne} = \SI{20.18}{\atomicmassunit}$ \cite{iupac_periodic_table} und der abgeschätzten Temperatur $T = \SI{400}{\kelvin}$ innerhalb der Röhre, ist die Geschwindigkeitsverteilung der Neon-Atome eindeutig gegeben durch die Maxwell-Boltzmann-Verteilung.
+Die wahrscheinlichste Geschwindigkeit eines Neon-Atoms in der Entladungsröhre ist somit gegeben durch:
+\begin{align}
+	v_\mathrm{w} = \sqrt{\frac{2 k_\mathrm{B} T}{m}}
+\end{align}
+Bei der oben abgeschätzten Temperatur von \SI{400}{\kelvin} ergibt sich:
+\begin{align}
+	v_\mathrm{w} \approx \SI{574}{\metre\per\second}
+\end{align}
+Betrachtet man die Geschwindigkeitsverteilung entlang der optischen Achse des Lasers, so ist diese gaußförmig um Null.
+Dadurch kommt es ebenfalls zu einem gaußförmigen Verstärkungsprofils des aktiven Mediums aufgrund des Dopplereffekts.
+Die Halbwertsbreite (FWHM) dieses Profils ist gegeben durch \cite{meschede}:
+\begin{align}
+	\Delta \nu_\mathrm{D} = \frac{\nu_0}{c} \sqrt{\frac{8 k_\mathrm{B} T \ln(2)}{m}} \text{,}
+\end{align}
+wobei $\nu_0$ die unverschobene Frequenz des Laserübergangs ist.
+Mit den oben angegeben Werten und der Frequenz des Laserübergangs ($\frac{\nu_0}{c} = \frac{1}{\lambda_0}$, $\lambda_0 = \SI{632.8}{\nano\metre}$), folgt die Halbwertsbreite des Verstärkungsprofils:
+\begin{align}
+	\Delta \nu_\mathrm{D} \approx \SI{1.51}{\giga\hertz}
+\end{align}
+Um abschätzen zu können, wie viele longitudinale Resonatormoden innerhalb dieses Verstärkungsprofil fallen, berechnet man den freien Spektralbereich des Laserresonators durch:
+\begin{align}
+	\Delta \nu_\mathrm{FSR} = \frac{c}{2 L} \text{.}
+\end{align}
+Für einen Resonator der Länge $L = \SI{30}{\centi\metre}$ erhält man somit einen freien Spektralbereich von:
+\begin{align}
+	\Delta \nu_\mathrm{FSR} \approx \SI{500}{\mega\hertz}
+\end{align}
+Die Anzahl der Moden die in die Dopplerbreite des Verstärkungsprofils fallen ist somit gegeben durch das Verhältnis von Dopplerbreite zum freien Spektralbereich.
+Für den \SI{30}{\centi\metre} Resonator fallen \num{3} Moden innerhalb die Halbwertsbreite.
+
+Für die in diesem Versuch verwendeten Resonatorlänge von \SI{50}{\centi\metre} bis \SI{100}{\centi\metre} folgt für den freien Spektralbereich:
+\begin{align}
+\SI{150}{\mega\hertz} \le \Delta \nu_\mathrm{FSR} \le \SI{300}{\mega\hertz}
+\end{align}
+Analog ergibt sich für die Anzahl $N$ der Moden innerhalb der Dopplerbreite des Verstärkungsprofils:
+\begin{align}
+	&N(L = \SI{50}{\centi\metre}) = 5 \\
+	&N(L = \SI{100}{\centi\metre}) = 10
+\end{align}
+In Abbildung \ref{fig:ALL0028} des optischen Spektrumanalysators für den Resonator der Länge $L = \SI{50 +- 0.4}{\centi\metre}$ kann man in der Tat fünf longitudinale Moden erkennen.
+Auch die restlichen Aufnahmen folgen dem Trend der steigenden Anzahl der Moden bei größerer Resonatorlänge.
+
+
+
 \section{Fazit}
 
 \section{Grafikstorage}
@@ -636,6 +683,7 @@ Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
 \centering
 \input{./plots/modenabstand/ALL0028.tex}
 \caption{Resonatorlänge 50cm ALL0028}
+\label{fig:ALL0028}
 \end{figure}
 \begin{figure}
 \centering
@@ -694,6 +742,18 @@ Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
 	\emph{The Art of Electronics Second Edition},
 	Cambridge University Press 1989,
 	Chapter 13.12: High frequency and high-speed techniques -- Radiofrequency circuit elements
+
+\bibitem{iupac_periodic_table}
+	International Union of Pure and Applied Chemistry,
+	\emph{IUPAC Periodic Table of the Elements} (Stand: 1. Mai 2013),
+	\url{http://iupac.org/reports/periodic_table/}
+
+\bibitem{meschede}
+	Dieter Meschede,
+	\emph{Optik, Licht und Laser} (3. Auflage),
+	Vieweg Teubner 2008
+	
+	
  
 \end{thebibliography}
 

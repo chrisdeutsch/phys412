@@ -135,12 +135,55 @@ Der HeNe-Laser wurde erstmals 1960 von Javan, Bennett und Herriott \cite{javan} 
 \section{Theorie}
 
 \subsection{Aktives Medium}
+\subsubsection{Übergänge und Einsteinkoeffizienten}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.5\textwidth]{./figures/einsteinkoeffizienten.pdf}
 	\caption{Erklärung der Einsteinkoeffizienten zwischen zwei Energieniveaus mit Besetzungszahlen $N$ und Entartungsgrad $g$.}
 	\label{fig:einsteinkoeff}
 \end{figure}
+\begin{itemize}
+	\item \textbf{Absorption:} Durch Absorption eines Photons der Energie $\hbar \omega_{12}$ aus dem Lichtfeld mit der spektralen Energiedichte $\rho(\omega)$ kann ein Elektron vom Zustand $\ket{1}$ in den Zustand $\ket{2}$ übergehen.
+	Mathematisch beschreibt der Einsteinkoeffizient $B_{12}$ die Rate der Besetzungsänderung des Zustandes mit der Energie $E_2$:
+	\begin{align}
+		\frac{\mathrm{d} N_2}{\mathrm{d} t} = N_1 B_{12} \rho\left( \omega_{12} \right)
+	\end{align}
+	
+	\item \textbf{stimulierte Emission:} Ein Photon des Lichtfeldes der Energie $\hbar \omega_{12}$ induziert einen Übergang vom Zustand $\ket{2}$ nach $\ket{1}$, unter Emission eines zum Photon des Lichtfeldes identischen Photons.
+	Die mathematische Beschreibung der Rate erfolgt über den Koeffizienten $B_{21}$:
+	\begin{align}
+		\frac{\mathrm{d} N_2}{\mathrm{d} t} = N_2 B_{21} \rho\left( \omega_{12} \right)
+	\end{align}
+	
+	\item \textbf{spontante Emission:}
+	Unabhängig vom äußeren Lichtfeld zerfällt ein angeregter Zustand unter Emission eines Photons in den Grundzustand.
+	Die Zerfallsrate wird dabei durch den Koeffizienten $A_{21}$ beschrieben:
+	\begin{align}
+		\frac{\mathrm{d} N_2}{\mathrm{d} t} = - N_2 A_{21}
+	\end{align}
+	Aus dieser Gleichung folgt direkt der reziproke Zusammenhang mit der Lebensdauer $\tau$ des angeregten Zustandes:
+	\begin{align}
+		\tau = \frac{1}{A_{21}}
+	\end{align}
+\end{itemize}
+Weiterhin wird der Zusammenhang der Einsteinkoeffizienten durch:
+\begin{align}
+	g_1 B_{12} = g_2 B_{21}  \qquad A_{21} = \frac{\hbar \omega_{12}^3}{\pi^2 c^3}
+\end{align}
+erklärt.
+
+\subsubsection{Niveauschemata aktiver Medien}
+Aus den Ratengleichungen des vorigen Abschnitts folgt für das Zweiniveausystem:
+\begin{align}
+	\frac{\mathrm{d}(N_1 - N_2)}{\mathrm{d} t} = N_2 A_{21} + B_{21} \rho(\omega_{12}) \left( N_2 - \frac{g_2}{g_1} N_1 \right) \stackrel{\mathrm{Gleichgewicht}}{=} 0 \text{,}
+\end{align}
+wobei man den Besetzungsunterschied definiert als:
+\begin{align}
+	\sigma = N_2 - \frac{g_2}{g_1} N_1 \text{.}
+\end{align}
+Um eine Verstärkung des Lichtfeldes durch stimulierte Emission zu erreichen, ist eine Besetzungsinversion $\sigma > 0$ nötig.
+Aufgrund der spontanten Emission kann in einem Zweiniveausystem im Gleichgewicht niemals eine nichtnegativer Besetzungsunterschied erreicht werden, weshalb für aktive Medien keine Zweiniveausysteme verwendet werden.
+In Abbildung REF wurde beispielhaft das Niveauschema für Lasermedien mit drei und vier Niveaus aufgetragen.
 
 \subsection{Formelsammlung Gaußstrahlen \cite{linden}}
 \label{gaussstrahlen}

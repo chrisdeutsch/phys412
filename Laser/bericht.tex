@@ -460,6 +460,18 @@ Dabei wurde wie in \eqref{eq:umrechnung_watt} der Umrechnungsfaktor \num{17.5} z
 
 \subsection{Optischer Spektrumanalysator}
 
+\subsubsection{Durchführung}
+
+Der optische Spektrumanalysator dient der Beobachtung der Modenabstände des Lasers.
+Dazu wird ein externer konfokaler Resonator genutzt, dessen Transmission maximal wird, wenn die Frequenz des Lasers in Resonanz mit der Frequenz des exteren Resonator ist.
+Die Länge des Resonators wird mit einer anliegenden Wechselspannung kontinuierlich verändert und die Intensität mit einer Photodiode in Abhängigkeit der Länge des Resonators (die proportional zur angelegten Spannung ist), beobachtet.
+Der Spektrumanalysator wird wie in \cite{anleitung} beschrieben aufgebaut und justiert.
+Die Modulationsfrequenz der am externen Resonator anliegenden Wechselspannung wird dabei möglichst genau (die Ausgangsfrequenz des Generators schwankt leicht und lässt sich nur schwer auf einen genauen Wert einstellen) auf \SI{50}{\hertz} eingestellt, um äußere Störfaktoren zu minimieren.
+Dies betrifft vor allem die Lampen im Versuchsraum, die mit gewöhnlicher \SI{50}{\hertz} Wechselspannung betrieben werden.\\
+\\
+Nach der Justage muss kontrolliert werden, dass die Längenänderung des Resonators groß genug ist, um mindestens einen freien Spektralbereich zu sehen.
+Dies ist gegeben, wenn auf dem Oszilloskop zwei gaußförmige Einhüllende über dem Modenspektrum (das aus Lorentzkurven aufgebaut ist) zu beobachten sind.
+
 \subsection{Präzise Messung des Modenabstandes mittels einer optischen Schwebung}
 In diesem Teil soll der Modenabstand der longitudinalen Moden im Resonator durch eine optische Schwebung gemessen werden.
 Dazu betrachtet man die Überlagerung des elektrischen Feldes zweier Axialmoden mit den Kreisfrequenzen $\omega_1$ und $\omega_2$ auf einer Photodiode.
@@ -568,24 +580,25 @@ Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
 überein.
 
 \section{Fazit}
-\clearpage
+
 \section{Grafikstorage}
-\begin{figure}[h]
+\FloatBarrier
+\begin{figure}
 \centering
 \input{./plots/modenabstand/ALL0028.tex}
 \caption{Resonatorlänge 50cm ALL0028}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}
 \centering
 \input{./plots/modenabstand/ALL0026.tex}
 \caption{Resonatorlänge 70cm ALL0026}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}
 \centering
 \input{./plots/modenabstand/ALL0022.tex}
 \caption{Resonatorlänge 80cm ALL0022}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}
 \centering
 \input{./plots/modenabstand/ALL0014.tex}
 \caption{Resonatorlänge 90cm ALL0014}
@@ -647,8 +660,8 @@ Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
 	\caption{Messwerte der Spannung an der Photodiode in Abhängigkeit des Winkels am Linearpolarisator}
 	\label{tab:malus}
 \end{table}
-
 \clearpage
+
 \subsection{Bestimmung des Strahlprofils im Resonator}
 \label{app:strahlprofil}
 \FloatBarrier
@@ -664,7 +677,7 @@ Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
 	\caption{Anpassung des Strahlprofils an die Messdaten für die Resonatorlänge $L = \SI{500 +- 4}{\milli\metre}$}
 	\label{fig:strahlradius_50}
 \end{figure}
-\FloatBarrier
+\clearpage
 \begin{table}[t]
 	\centering
 	\input{./tables/strahlradien/70cm.tex}
@@ -677,7 +690,7 @@ Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
 	\caption{Anpassung des Strahlprofils an die Messdaten für die Resonatorlänge $L = \SI{690 +- 4}{\milli\metre}$}
 	\label{fig:strahlradius_70}
 \end{figure}
-\FloatBarrier
+\clearpage
 \begin{table}[t]
 	\centering
 	\input{./tables/strahlradien/80cm.tex}
@@ -703,7 +716,7 @@ Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
 	\caption{Anpassung des Strahlprofils an die Messdaten für die Resonatorlänge $L = \SI{892 +- 4}{\milli\metre}$}
 	\label{fig:strahlradius_90}
 \end{figure}
-\FloatBarrier
+\clearpage
 
 
 \end{appendix}

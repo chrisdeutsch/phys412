@@ -191,11 +191,11 @@ In Abbildung \ref{fig:niveauschema} wurde beispielhaft das Niveauschema für Las
 	\label{fig:niveauschema}
 \end{figure}
 
-\subsection{Formelsammlung Gaußstrahlen \cite{linden}}
+\subsection{Gaußstrahlen}
 \label{gaussstrahlen}
 Zur Beschreibung von transversal begrenzten Strahlen in Resonatoren oder im freien Raum sind ebene Wellen aufgrund ihrer unendlichen Ausdehnung ungeeignet.
 Stattdessen werden Gaußstrahlen zur Beschreibung solcher Wellen verwendet.
-Diese sind Lösungen der paraxialen Helmholtzgleichung und keine exakte Lösung der Wellengleichung.
+Diese sind Lösungen der paraxialen Helmholtzgleichung und keine exakte Lösung der Wellengleichung \cite{linden}.
 Die axiale und transversale Intensitätsverteilung solcher Strahlen wird beschrieben durch:
 \begin{align}
 	I(z,r) = I_0 \left( \frac{w_0}{w(z)} \right)^2 \exp\left(- \frac{2 r^2}{w^2(z)} \right) \text{,}
@@ -217,32 +217,77 @@ und die Rayleigh-Länge $z_0$ definiert ist, als der axiale Abstand von der Stra
 \end{align}
 Ist die Wellenlänge $\lambda$ des Strahls bekannt, so seine Intensitätsverteilung eindeutig durch Angabe der Strahltaille $w_0$ oder der Rayleigh-Länge $z_0$ definiert.
 
+Krümmungsradius:
+\begin{align}
+	R(z) = z \left( 1 + \left( \frac{z_0}{z} \right)^2 \right)
+\end{align}
+
 \subsection{Resonatoren}
-\subsubsection{Allgemeines}
-\subsubsection{longitudinale Moden}
-\subsubsection{transversale Moden}
+Resonatoren sind Anordnungen optischer Elemente in denen ein Lichtstrahl auf einem geschlossenen Pfad zirkulieren kann.
+In diesem Versuch wird ein linearer Resonator verwendet, was bedeutet, dass jeder Lichstrahl in sich selbst reflektiert wird und dadurch bei kontinuierlichem Betrieb eine stehende Welle im Resonator ausbildet.
+Resonatoren zeichnen sich dadurch aus, dass in ihnen nur bestimmte Frequenzen\footnote{Diese Resonanzen haben endliche aber von Null verschiedene Linienbreite.} konstruktiv ausbreiten können.
+Beispiele für die Verwendung von Resonatoren sind:
+\begin{itemize}
+	\item \textbf{Laserresonatoren:} Durch Hinzufügen eines aktiven Mediums in den Resonatorzwischenraum kann es zu einer Verstärkung des zirkulierenden Lichts durch stimulierte Emission kommen.
+	Dadurch kann ein nahezu monochromatischer kohärenter Laserstrahl mit hoher Intensität im Resonator erzeugt werden.	
+	
+	\item \textbf{Filter:} Aufgrund der Resonanz bei bestimmten Frequenzen eignen sich Resonatoren auch als Filter.
+	In diesem Versuch wird aus diesem Grund ein durchstimmbares\footnote{Durch Längenänderung des Resonators kann die resonante Frequenz variiert werden.} Fabry-Pérot-Interferometer aus zwei sphärischen Spiegeln in konfokalem Aufbau verwendet, um in Abschnitt \ref{ssec:spektrumanalysator} das Frequenzspektrum des aufgebauten Lasers zu untersuchen.
+\end{itemize}
+
+\subsubsection{Moden in Resonatoren}
+Unter Resonatormoden versteht man Verteilungen des elektrischen Feldes, die sich nach einem Umlauf im Resonator in ihrer Form reproduzieren, wobei es zu Verlusten oder Verstärkungen kommen kann.
+Im einfachsten Fall kann die \textbf{axiale Modenstruktur} für $\mathrm{TEM}_{q00}$-Fundamentalmode durch Gaußstrahlen aus Abschnitt \ref{gaussstrahlen} beschrieben werden.
+Dabei ist die Bedingung für das ausbilden einer stehenden Welle im Resonator gegeben durch:
+\begin{align}
+	\nu_q = q \cdot \frac{c}{2 L} \qquad q \in \mathbb{N} \setminus \{0\}
+\end{align}
+Der freie Spektralbereich $\Delta \nu_\mathrm{FSR}$, das heißt der Frequenzabstand der Axialmoden, kann direkt abgelesen werden:
+\begin{align}
+	\Delta \nu_\mathrm{FSR} = \frac{c}{2 L}
+\end{align}
+Darüber hinaus muss sich auch die transversale Verteilung der Felder reproduzieren.
+Dadurch kommt es zu einer \textbf{transversalen Modenstruktur}, welche durch Hermite-Gauß'sche Funktionen beschrieben wird.
+In Abbildung \ref{fig:transversalmoden} wurde die qualitative Intensitätsverteilung im Querschnitt einer $\mathrm{TEM}_{nm}$-Mode dargestellt.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./figures/transversalmoden.png}
-	\caption{Hermite-Gauß'sche $\mathrm{TM}_{nm}$-Moden}
+	\caption{Qualitative Darstellung der Hermite-Gauß'schen $\mathrm{TEM}_{nm}$-Moden}
 	\label{fig:transversalmoden}
 \end{figure}
+Im Allgemeinen ist die Resonanzfrequenz eines Resonators abhängig von der propagierenden Transversalmode, sodass die Resonanzfrequenz gegeben ist durch \cite{siegman}:
+\begin{align}
+	\nu_{qnm} = q \cdot \frac{c}{2 L} + \left( n + m + 1 \right) \cdot \delta \nu_\mathrm{t} \qquad (\mathrm{TEM}_{qnm}\text{-Mode})\text{,}
+\end{align}
+wobei $\delta \nu_\mathrm{t}$ den transversalen Modenabstand beschreibt und abhängig von der Resonatorgeometrie ist.
 
 \subsubsection{Stabilität}
-$g$-Faktoren:
+Betrachtet man einen Resonator aus zwei sphärischen Spiegeln mit Radien $R_i$ und Abstand $L$ und nimmt an, dass deren transversale Ausdehnung groß genug ist, um Beugungsverluste an den Rändern der Spiegel zu vernachlässigen, so charakterisiert man einen stabilen Resonator dadurch, dass dieser einen Gaußstrahl mit fester Strahltaille $w_0$ an beiden Spiegeln in sich selbst reflektiert \cite{siegman}.
+Dies ist genau dann der Fall, wenn der Krümmungsradius $R(z)$ des Gaußstrahls\footnote{Das Koordinatensystem wird so gewählt, dass $z$ den Abstand von der Strahltaille angibt.} an der jeweiligen Spiegelposition dem des Spiegels entspricht.
+Unter Beachtung der Vorzeichen der Krümmungsradien\footnote{Aus dem Resonator betrachtet, entspricht ein positiver Krümmungsradius einem konkaven Spiegel.} erhält man so:
 \begin{align}
-	g_i = 1 - \frac{L}{R_i}
+	R_1 = - z_1 - \frac{z_0^2}{z_1}  \qquad
+	R_2 = z_2 + \frac{z_0^2}{z_2} \text{.}
 \end{align}
+Wie in \cite{siegman} gezeigt, erhält man unter der Nebenbedingung $L = z_2 - z_1$ nur dann reelle und endliche Strahlparameter, wenn die Stabilitätsbedingung:
 \begin{align}
 	0 \le g_1 g_2 \le 1
 \end{align}
+erfüllt ist.
+Die $g$-Faktoren sind dabei definiert als:
+\begin{align}
+	g_i = 1 - \frac{L}{R_i} \text{.}
+\end{align}
+
 \subsubsection{Halbsymmetrischer Resonator}
-Strahltaille liegt auf dem ebenen Spiegel:
+Da in diesem Versuch ein halbsymmetrischer Resonator ($R_1 = \infty$, $g_1 \rightarrow 1$ und $R_2 = R$, $g_2 \rightarrow g$) verwendet wird, soll hier in Anbetracht der Auswertung einige wichtige Eigenschaften aufgeführt werden.
+Da der Planspiegel einen unendlichen Krümmungsradius hat, liegt die Strahltaille an der Position des ebenen Spiegels, da ein Gaußstrahl nur an der Strahltaille einen unendlichen Krümmungsradius aufweist.
+Dann ist die Weite der Taille gegeben durch \cite{siegman}:
 \begin{align}
 	w_0^2 = w_1^2 = \frac{L \lambda}{\pi} \sqrt{\frac{g}{1 - g}}
 	\label{eq:strahltaille_halbsym}
-\end{align} (Siegman)
-
+\end{align}
+und gemäß Abschnitt \ref{gaussstrahlen} ist das Strahlprofil im Resonator somit eindeutig festgelegt.
 
 \section{Durchführung und Auswertung}
 Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
@@ -407,7 +452,7 @@ Grund für die Annahme ist, dass das Maximum bei \SI{180}{\degree} nicht den zu 
 Nachfolgend soll der Polarisationsgrad des Lasers bestimmt werden.
 Dieser ist gegeben durch:
 \begin{align}
-P=\frac{|I_{\parallel}-I_{\perp}|}{I_{\parallel}+I_{\perp}}
+P=\frac{I_{\parallel}-I_{\perp}}{I_{\parallel}+I_{\perp}}
 \end{align}
 Der Fehler ergibt sich mit Gauß'scher Fehlerfortpflanzung zu:
 \begin{align}
@@ -526,6 +571,7 @@ Die Leistungsverluste an der Diode (z.B. Reflexionen an der Vorderseite der $\la
 Dabei wurde wie in \eqref{eq:umrechnung_watt} der Umrechnungsfaktor \num{17.5} zwischen der gemessenen Intensität in \si{\milli\volt} und \si{\milli\watt} verwendet.
 
 \subsection{Optischer Spektrumanalysator}
+\label{ssec:spektrumanalysator}
 
 \subsubsection{Durchführung}
 
@@ -744,7 +790,7 @@ Auch die restlichen Aufnahmen folgen dem Trend der steigenden Anzahl der Moden b
 \vspace{\fill}
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
-\begin{thebibliography}{9}
+\begin{thebibliography}{19}
 \bibitem{javan}
 	A. Javan, W. R. Bennett, Jr., and D. R. Herriott,
 	\emph{Population Inversion and Continuous Optical Maser Oscillation in a Gas Discharge Containing a He-Ne Mixture},
@@ -754,6 +800,12 @@ Auch die restlichen Aufnahmen folgen dem Trend der steigenden Anzahl der Moden b
 	S. Linden,
 	Skript zur Vorlesung \emph{physik311: Optik und Wellenmechanik} (Stand: 31. Januar 2014),
 	Physikalisches Institut, Universität Bonn
+
+\bibitem{siegman}
+	A. E. Siegman,
+	\emph{Lasers},
+	University Science Books 1986,
+	Chapter 19: Stable Two-Mirror Resonators
 
 \bibitem{anleitung}
 	Physikalisches Praktikum IV: Atome, Moleküle, Festkörper,

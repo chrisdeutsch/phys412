@@ -143,7 +143,7 @@ Der HeNe-Laser wurde erstmals 1960 von Javan, Bennett und Herriott \cite{javan} 
 	\label{fig:einsteinkoeff}
 \end{figure}
 \begin{itemize}
-	\item \textbf{Absorption:} Durch Absorption eines Photons der Energie $\hbar \omega_{12}$ aus dem Lichtfeld mit der spektralen Energiedichte $\rho(\omega)$ kann ein Elektron vom Zustand $\ket{1}$ in den Zustand $\ket{2}$ übergehen.
+	\item \textbf{Absorption:} Durch Absorption eines Photons der Energie $E_2 - E_1 = \hbar \omega_{12}$ aus dem Lichtfeld mit der spektralen Energiedichte $\rho(\omega)$ kann ein Elektron vom Zustand $\ket{1}$ in den Zustand $\ket{2}$ übergehen.
 	Mathematisch beschreibt der Einsteinkoeffizient $B_{12}$ die Rate der Besetzungsänderung des Zustandes mit der Energie $E_2$:
 	\begin{align}
 		\frac{\mathrm{d} N_2}{\mathrm{d} t} = N_1 B_{12} \rho\left( \omega_{12} \right)
@@ -193,31 +193,42 @@ In Abbildung \ref{fig:niveauschema} wurde beispielhaft das Niveauschema für Las
 
 \subsection{Formelsammlung Gaußstrahlen \cite{linden}}
 \label{gaussstrahlen}
-Ebene Wellen ungeeignet zur Beschreibung von räumlich begrenzten Strahlen (unendliche Ausdehnung).
+Zur Beschreibung von transversal begrenzten Strahlen in Resonatoren oder im freien Raum sind ebene Wellen aufgrund ihrer unendlichen Ausdehnung ungeeignet.
+Stattdessen werden Gaußstrahlen zur Beschreibung solcher Wellen verwendet.
+Diese sind Lösungen der paraxialen Helmholtzgleichung und keine exakte Lösung der Wellengleichung.
+Die axiale und transversale Intensitätsverteilung solcher Strahlen wird beschrieben durch:
 \begin{align}
-	I(z,r) = I_0 \left( \frac{w_0}{w(z)} \right)^2 \exp\left(- \frac{2 r^2}{w^2(z)} \right)
+	I(z,r) = I_0 \left( \frac{w_0}{w(z)} \right)^2 \exp\left(- \frac{2 r^2}{w^2(z)} \right) \text{,}
 \end{align}
-Strahlradius $w(z)$ gegeben durch Abfall der Intensität um den Faktor $1/\mathrm{e}^2$:
+wobei der Strahlradius $w(z)$ definiert ist, als der Abstand $r$ von der Ausbreitungsachse, bei der die Intensität um den Faktor $1/ \mathrm{e}^2$ abgefallen ist.
+Der axiale Verlauf des Strahlprofils lässt sich dann beschreiben durch:
 \begin{align}
-	w(z) = w_0 \sqrt{1 + \left( \frac{z}{z_0} \right)^2}
+	w(z) = w_0 \sqrt{1 + \left( \frac{z}{z_0} \right)^2} \text{,}
 	\label{eq:gauss_axialprofil}
 \end{align}
-Strahltaille $w_0$:
+wobei die Strahltaille $w_0$ (minimaler Strahlradius) gegeben ist durch:
 \begin{align}
 	w_0 = \sqrt{\frac{\lambda z_0}{\pi}}
 	\label{eq:rayleigh_laenge}
 \end{align}
-mit der Rayleigh-Länge $z_0$:
+und die Rayleigh-Länge $z_0$ definiert ist, als der axiale Abstand von der Strahltaille, bei der sich die Intensität halbiert:
 \begin{align}
 	&I(z = \pm z_0, r =0) = \frac{I_0}{2}
 \end{align}
-Der Intensitätsverlauf ist durch Angabe von Rayleigh-Länge oder Strahltaille eindeutig beschrieben.
+Ist die Wellenlänge $\lambda$ des Strahls bekannt, so seine Intensitätsverteilung eindeutig durch Angabe der Strahltaille $w_0$ oder der Rayleigh-Länge $z_0$ definiert.
 
 \subsection{Resonatoren}
 \subsubsection{Allgemeines}
 \subsubsection{longitudinale Moden}
 \subsubsection{transversale Moden}
 \subsubsection{Stabilität}
+$g$-Faktoren:
+\begin{align}
+	g_i = 1 - \frac{L}{R_i}
+\end{align}
+\begin{align}
+	0 \le g_1 g_2 \le 1
+\end{align}
 \subsubsection{Halbsymmetrischer Resonator}
 Strahltaille liegt auf dem ebenen Spiegel:
 \begin{align}

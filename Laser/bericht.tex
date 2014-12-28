@@ -71,7 +71,7 @@
 \renewcommand{\thesubtable}{\alph{subtable}}
 
 % Manuelle Silbentrennung
-\hyphenation{}
+\hyphenation{Re-so-na-tor}
 
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
@@ -521,6 +521,24 @@ Dies betrifft vor allem die Lampen im Versuchsraum, die mit gewöhnlicher \SI{50
 Nach der Justage muss kontrolliert werden, dass die Längenänderung des Resonators groß genug ist, um mindestens einen freien Spektralbereich zu sehen.
 Dies ist gegeben, wenn auf dem Oszilloskop zwei gaußförmige Einhüllende über dem Modenspektrum (das aus Lorentzkurven aufgebaut ist) zu beobachten sind.
 
+\subsubsection{Messwerte}
+
+Für alle Resonatorlängen wird hier nach dem gleichen Verfahren vorgegangen.
+Nach korrekter Justage muss die Amplitude der Wechselspannung entsprechend angepasst werden, damit mindestens ein freier Spektralbereich von den Piezoelementen im externen Resonator durchfahren wird.
+Anschließend kann der Intensitätsverlauf auf dem digitalen Oszilloskop beobachtet werden.
+Die dabei gemessenen Verläufe wurden in den Abbildungen \ref{fig:ALL0028} bis \ref{fig:ALL0014} gezeigt.
+Man sieht in allen Abbildungen deutlich die zwei gaußförmigen Einhüllenden in einem freien Spektralbereich.
+Zur späteren Auswertung wurde in die Grafiken ebenfalls eine Anpassungskurve eingezeichnet.
+Diese folgt aus einer \emph{least-squares}-Anpassung mit \texttt{Gnuplot} auf Basis einer Superposition von $n$ Lorentzprofilen:
+\begin{align}
+f(x)=\sum_{i=1}^{n}a_i\cdot\frac{b_i^2}{(x-c_i)^2+b_i^2}
+\end{align}
+Dabei beschreibt $a_i$ die Höhe, $b_i$ die Breite und $c_i$ die Lage des $i$-ten Peaks.
+Da die Anpassungen an die hier gemessenen Werte auf sehr vielen freien Parametern beruhen, ist die Angabe von Startwerten sehr wichtig.
+Trotzdem konnten einzelne, flache Peaks nicht immer angepasst werden, so dass sie nicht weiter berücksichtigt wurden.
+Weiterhin wurden die Höhen einzelner Peaks nicht korrekt angepasst, wie man in den Darstellungen gut sehen kann.
+Da für die quantitative Auswertung jedoch nur die $b_i$ (die Schwerpunkte) benötigt werden, wurden die von \texttt{Gnuplot} gefundenen Werte für diese Parameter trotzdem verwendet.
+
 \subsection{Präzise Messung des Modenabstandes mittels einer optischen Schwebung}
 In diesem Teil soll der Modenabstand der longitudinalen Moden im Resonator durch eine optische Schwebung gemessen werden.
 Dazu betrachtet man die Überlagerung des elektrischen Feldes zweier Axialmoden mit den Kreisfrequenzen $\omega_1$ und $\omega_2$ auf einer Photodiode.
@@ -690,15 +708,18 @@ Auch die restlichen Aufnahmen folgen dem Trend der steigenden Anzahl der Moden b
 \input{./plots/modenabstand/ALL0026.tex}
 \caption{Resonatorlänge 70cm ALL0026}
 \end{figure}
+\label{fig:ALL0026}
 \begin{figure}
 \centering
 \input{./plots/modenabstand/ALL0022.tex}
 \caption{Resonatorlänge 80cm ALL0022}
+\label{fig:ALL0022}
 \end{figure}
 \begin{figure}
 \centering
 \input{./plots/modenabstand/ALL0014.tex}
 \caption{Resonatorlänge 90cm ALL0014}
+\label{fig:ALL0014}
 \end{figure}
 \clearpage
 % BIBLIOGRAPHIE

@@ -650,33 +650,44 @@ Im konfokalen Modenabstand von einer longitudinalen Mode (d.h. genau in der Mitt
 Die zwei beobachteten Gaußpeaks entpechen daher einer longitudinalen und einer halbaxialen Mode.\\
 \\
 Die Berechnung des longitudinalen Modenabstands wird hier beispielhaft für den Resonator der Länge \SI{50+-0.4}{\centi\metre} durchgeführt, die Tabellen für alle anderen Resonatorlängen befinden sich im Anhang.
-In Tabelle \ref{tab:ALL0028} wurden dabei die jeweiligen Positionen $x_i$ der Maxima (Ergebnisse der Anpassung) notiert und die Abstände $\Delta x_{ij}$ zweier aufeinanderfolgender Maxima innerhalb eines Gaußpeaks berechnet.
+In Tabelle \ref{tab:ALL0028} wurden dabei die jeweiligen Positionen $x_i$ der Maxima (Ergebnisse der Anpassung) notiert und die Abstände $\Delta T$ zweier aufeinanderfolgender Maxima innerhalb eines Gaußpeaks berechnet.
 Der Fehler ergibt sich mit Gaußscher Fehlerfortpflanzung analog zu \eqref{eq:fehler_differenz} mit:
 \begin{align}
-\Delta(\Delta x_{ij})=\Delta(x_{i+1}-x_i)=\sqrt{(\Delta x_{i+1})^2+(\Delta x_i)^2}
+\Delta(\Delta T)=\Delta(x_{i+1}-x_i)=\sqrt{(\Delta x_{i+1})^2+(\Delta x_i)^2}
 \end{align}
-Außerdem wurde der Abstand zweier gleicher Moden (d.h. für den Fall von fünf Moden pro Gaußpeak der Abstand $x_{i+5}-x_i$) errechnet, der Fehler berechnet sich wie oben.
+Außerdem wurde der Abstand zweier gleicher Moden (d.h. für den Fall von fünf Moden pro Gaußpeak der Abstand $T_\text{kon}=x_{i+5}-x_i$) errechnet, der Fehler berechnet sich wie oben.
 Dieser Wert entspricht gerade dem konfokalen Modenabstand.
 Durch Bildung des varianzgewichteten Mittelwerts über die Werte für beide Abstände ergeben sich die ebenfalls in die Tabelle eingetragenen Werte für den Abstand zweier transversaler Moden und den konfokalen Modenabstand. 
 \begin{table}[h]
 \centering
 \resizebox{\columnwidth}{!}{%
 \input{./tables/modenabstand/ALL0028.tex}}
-\caption{Messwerte und Berechnung zum longitudinalen Modenabstand. $x_i$ beschreibt die Position der Maxima, $x_{ij}$ die Differenz zweier aufeinander folgender Positionen und $x_\text{kon}$ den Abstand zweier gleicher Tranversalmoden. Diese sind getrennt dargestellt, da sie keinen zeilenweisen Bezug zu den $x_i$ haben.}
+\caption{Messwerte und Berechnung zum longitudinalen Modenabstand. $x_i$ beschreibt die Position der Maxima, $x_{ij}$ die Differenz zweier aufeinander folgender Positionen und $T_\text{kon}$ den Abstand zweier gleicher Tranversalmoden. Diese sind getrennt dargestellt, da sie keinen zeilenweisen Bezug zu den $x_i$ haben.}
 \label{tab:ALL0028}
 \end{table}
 Mit den Mittelwerten kann nun der Abstand zweier Moden in Einheiten des konfokalen Modenabstands gefunden werden.
 Man erhält so für die hier betrachtete Resonatorlänge \SI{50+-0.4}{\centi\metre}:
 \begin{align}
-\frac{\Delta\nu_\text{Mode}}{\Delta\nu_\text{kon}}=\num{0.201}
+\frac{\Delta T}{T_\text{kon}}= \num{0.201+-0.001}
 \end{align}
-
+Aus der Gaußschen Fehlerfortpflanzung folgt für den Fehler:
+\begin{align}
+\Delta\left(\frac{\Delta T}{T_\text{kon}}\right)=\sqrt{\frac{(\Delta(\Delta T))^2}{T_\text{kon}^2}+\frac{(\Delta T)^2(\Delta T_\text{kon})^2}{T_\text{kon}^4}}
+\end{align}
 Die Berechnung des Modenabstands erfolgt nach:
 \begin{align}
-\Delta\nu=\frac{\Delta\nu_\text{kon}}{T_\text{kon}} \cdot \Delta T 
+\Delta\nu_\text{long}=\frac{\Delta\nu_\text{kon}}{T_\text{kon}} \cdot \Delta T 
 \end{align}
 Damit können die gemessenen Zeiten für den longitudinalen Modenabstand in Frequenzen umgerechnet werden.
-Der konfokale Modenabstand (hier \SI{1.5}{\giga\hertz}) ist bekannt und kann so als Ausgangspunkt zur Umrechnung zwischen Frequenz- und Zeitdomäne genutzt werden.
+Der konfokale Modenabstand (hier \SI{1.499}{\giga\hertz}, s.o.) ist bekannt und kann so als Ausgangspunkt zur Umrechnung zwischen Frequenz- und Zeitdomäne genutzt werden.
+Man erhält damit für den longitudinalen Modenabstand:
+\begin{align}
+\Delta\nu_\text{long}=\SI{301.3+-0.8}{\mega\hertz}
+\end{align}
+Der Fehler wurde abermals mit Gaußscher Fehlerfortpflanzung und mit den einzelnen Fehlern für $\Delta T$ und $T_\text{kon}$ berechnet mit:
+\begin{align}
+\Delta\left(\Delta\nu_\text{long}\right)=\Delta\nu_\text{kon}\cdot\sqrt{\frac{(\Delta(\Delta T))^2}{T_\text{kon}^2}+\frac{(\Delta T)^2(\Delta T_\text{kon})^2}{T_\text{kon}^4}}
+\end{align}
 
 \subsection{Präzise Messung des Modenabstandes mittels einer optischen Schwebung}
 In diesem Teil soll der Modenabstand der longitudinalen Moden im Resonator durch eine optische Schwebung gemessen werden.

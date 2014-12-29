@@ -245,6 +245,7 @@ Dabei ist die Bedingung für das ausbilden einer stehenden Welle im Resonator ge
 Der freie Spektralbereich $\Delta \nu_\mathrm{FSR}$, das heißt der Frequenzabstand der Axialmoden, kann direkt abgelesen werden:
 \begin{align}
 	\Delta \nu_\mathrm{FSR} = \frac{c}{2 L}
+	\label{eq:modenabstand}
 \end{align}
 Darüber hinaus muss sich auch die transversale Verteilung der Felder reproduzieren.
 Dadurch kommt es zu einer \textbf{transversalen Modenstruktur}, welche durch Hermite-Gauß'sche Funktionen beschrieben wird.
@@ -602,6 +603,48 @@ Da die Anpassungen an die hier gemessenen Werte auf sehr vielen freien Parameter
 Trotzdem konnten einzelne, flache Peaks nicht immer angepasst werden, so dass sie nicht weiter berücksichtigt wurden.
 Weiterhin wurden die Höhen einzelner Peaks nicht korrekt angepasst, wie man in den Darstellungen gut sehen kann.
 Da für die quantitative Auswertung jedoch nur die $b_i$ (die Schwerpunkte) benötigt werden, wurden die von \texttt{Gnuplot} gefundenen Werte für diese Parameter trotzdem verwendet.
+\begin{figure}[htb]
+\centering
+\input{./plots/modenabstand/ALL0028.tex}
+\caption{Resonatorlänge 50cm ALL0028}
+\label{fig:ALL0028}
+\end{figure}
+\begin{figure}[htb]
+\centering
+\input{./plots/modenabstand/ALL0026.tex}
+\caption{Resonatorlänge 70cm ALL0026}
+\end{figure}
+\label{fig:ALL0026}
+\begin{figure}[htb]
+\centering
+\input{./plots/modenabstand/ALL0022.tex}
+\caption{Resonatorlänge 80cm ALL0022}
+\label{fig:ALL0022}
+\end{figure}
+\begin{figure}[htb]
+\centering
+\input{./plots/modenabstand/ALL0014.tex}
+\caption{Resonatorlänge 90cm ALL0014}
+\label{fig:ALL0014}
+\end{figure}
+\FloatBarrier
+\subsubsection{Bestimmung der Modenabstände}
+Da die Messung der Frequenzabstände zweier Moden in Einheiten des konfokalen Modenabstands durchgeführt werden soll, muss dieser zunächst berechnet werden. 
+Er ergibt sich aus der Überlegung, dass in einem konfokalen Resonator das einfallende Licht intern dreimal reflektiert wird und der Strahl so den vierfachen Spiegelabstand durchläuft, bis er an der Stelle, an der er eintrat, austritt.
+EVTL GRAFIK
+Dies entspricht der doppelten Weglänge im Vergleich zu einem plan-planen Resonator und man erhält für den konfokalen Modenabstand \cite{anleitung}:
+\begin{align}
+\Delta\nu_\text{kon}=\frac{c}{4\,l}
+\end{align}
+Hierbei entspricht $l$ der Länge des externen Resonators (hier \SI{5}{\centi\metre}), woraus für diesen Versuch folgt:
+\begin{align}
+\Delta\nu_\text{kon}=\SI{1.499}{\giga\hertz}
+\end{align}
+Daraus folgt für den freien Spektralbereich des konfokalen Resonators (siehe auch \eqref{eq:modenabstand}):
+\begin{align}
+\Delta\nu_\text{FSR}=\frac{c}{2\,l}=2\,\Delta\nu_\text{kon}=\SI{2.998}{\giga\hertz} \text{,}
+\end{align}
+wodurch der Frequenzabstand zweier longitudinaler Moden der gleichen Transversalmode gegeben ist.
 
 \subsection{Präzise Messung des Modenabstandes mittels einer optischen Schwebung}
 In diesem Teil soll der Modenabstand der longitudinalen Moden im Resonator durch eine optische Schwebung gemessen werden.
@@ -657,10 +700,9 @@ Für das Dezibel-Milliwatt (\si{dBm}) ist diese gegeben durch $P_0 = \SI{1}{\mil
 \end{align}
 Schließlich betrachtet man das Resultat der Mischung am Oszilloskop, welches die Differenzfrequenz $\nu = |\nu_\mathrm{HF} - \Delta \nu|$ aufweist.
 Aufgrund der begrenzten Bandbreite des Oszilloskops ist es nötig, eine überschlagsmäßige Berechnung des Modenabstands $\Delta \nu$ durchzuführen, um einen Anhaltspunkt für die Frequenzeinstellung des Hochfrequenzgenerators zu erhalten.
-Diese erfolgt über den theoretischen Axialmodenabstand:
+Diese erfolgt über den theoretischen Axialmodenabstand (siehe \eqref{modenabstand}):
 \begin{align}
 	\Delta \nu = \frac{c}{2 L} \text{,}
-	\label{eq:modenabstand}
 \end{align}
 wobei $L$ die gemessene Resonatorlänge ist.
 Fällt die Hochfrequenz $\nu_\mathrm{HF}$ und der Modenabstand $\Delta \nu$ innerhalb der Bandbreite des Oszilloskops zusammen, so kann ein sinusförmiges Signal gemessen werden.
@@ -760,31 +802,7 @@ Auch die restlichen Aufnahmen folgen dem Trend der steigenden Anzahl der Moden b
 \section{Fazit}
 
 \section{Grafikstorage}
-\FloatBarrier
-\begin{figure}
-\centering
-\input{./plots/modenabstand/ALL0028.tex}
-\caption{Resonatorlänge 50cm ALL0028}
-\label{fig:ALL0028}
-\end{figure}
-\begin{figure}
-\centering
-\input{./plots/modenabstand/ALL0026.tex}
-\caption{Resonatorlänge 70cm ALL0026}
-\end{figure}
-\label{fig:ALL0026}
-\begin{figure}
-\centering
-\input{./plots/modenabstand/ALL0022.tex}
-\caption{Resonatorlänge 80cm ALL0022}
-\label{fig:ALL0022}
-\end{figure}
-\begin{figure}
-\centering
-\input{./plots/modenabstand/ALL0014.tex}
-\caption{Resonatorlänge 90cm ALL0014}
-\label{fig:ALL0014}
-\end{figure}
+
 \clearpage
 % BIBLIOGRAPHIE
 \vspace{\fill}
@@ -865,13 +883,13 @@ Auch die restlichen Aufnahmen folgen dem Trend der steigenden Anzahl der Moden b
 \subsection{Bestimmung des Strahlprofils im Resonator}
 \label{app:strahlprofil}
 \FloatBarrier
-\begin{table}[t]
+\begin{table}[ht]
 	\centering
 	\input{./tables/strahlradien/50cm.tex}
 	\caption{Messdaten zum Strahlprofil im Resonator der Länge $L = \SI{500 +- 4}{\milli\metre}$}
 	\label{tab:strahlradius_50}
 \end{table}
-\begin{figure}[b]
+\begin{figure}[hb]
 	\centering
 	\input{./plots/strahlradien/strahlradius_50cm.tex}
 	\caption{Anpassung des Strahlprofils an die Messdaten für die Resonatorlänge $L = \SI{500 +- 4}{\milli\metre}$}

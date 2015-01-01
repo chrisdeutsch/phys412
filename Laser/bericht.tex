@@ -419,8 +419,16 @@ Für den Fall, dass das einfallende Licht bereits linear polarisiert ist (wie f�
 \begin{align}
 I=I_0\cdot\cos^2\varphi
 \end{align}
+\textbf{Was bedeutet $\varphi$. Das ist nicht der Winkel am Polarisator..}
+Eigentlich misst man:
+\begin{align}
+	I = I_0 \cdot \cos^2 (\varphi - \varphi_0)
+\end{align}
+oderso.
+Dann ist $\varphi$ tatsächlich der Polarsiatorwinkel und $\varphi_0$ die Polarisationsrichtung. 
 
 \subsubsection{Überprüfung des Gesetzes von Malus}
+\textbf{Überschrift passt nicht so wirklich.}
 Der Winkel $\varphi$ am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Photospannung $U_\text{P}$ an der Photodiode in \si{\milli\volt} notiert.
 In Tabelle \ref{tab:malus} sind die Messwerte bei einer Resonatorlänge von \SI{50}{\centi\metre} festgehalten worden.
 Der Fehler $\Delta\varphi$ für den Winkel ergibt sich aus der Tatsache, dass der Polarisator in Schritten von \SI{2}{\degree} eingestellt werden konnte, der Fehler für die Photospannung wurde aufgrund der Schwankungen, die zu beobachten waren (es wurde mit der \emph{Measure}-Funktion des Oszilloskops gemessen), auf \SI{0.3}{\milli\volt} abgeschätzt.
@@ -446,8 +454,8 @@ bei einem reduzierten $\chi^2$ von \num{25.4}.
 Man kann an der Anpassung gut erkennen, dass die Intensität wie erwartet dem Gesetz von Malus folgt.
 Dies bestätigt auch die Annahme, dass der Laser durch die an der Entladungsröhre befestigten Brewster-Fenster mit linear polarisiertem Licht betrieben wird.
 Die Abweichungen der Anpassung (das reduzierte $\chi^2$ von \num{25.4} bestätigt die schlechte Übereinstimmung) von den Messwerten lassen sich durch eine nicht ideale Justage erklären.
-ERKLÄRUNG
-Grund für die Annahme ist, dass das Maximum bei \SI{180}{\degree} nicht den zu erwartenden gleichen Wert annimmt, wie die Maxima bei \SI{0}{\degree} bzw. \SI{360}{\degree}.
+Es ist davon auszugehen, dass der Laserstrahl den Polarisationsfilter nicht genau an dessen Rotationsachse durchtreten hat.
+Geht man außerdem davon aus, dass der Transmissionsgrad des Filters Variationen über dessen Oberfläche aufweist, so würde dies erklären, weshalb das Intensitätsmaximum bei $\sim \SI{180}{\degree}$ kleiner ist als dies bei $\sim \SI{0}{\degree}$ bzw. $\SI{360}{\degree}$ der Fall ist.
 
 \subsubsection{Polarisationsgrad des Lasers}
 Nachfolgend soll der Polarisationsgrad des Lasers bestimmt werden.
@@ -898,7 +906,7 @@ Auch die restlichen Aufnahmen folgen dem Trend der steigenden Anzahl der Moden b
 \begin{table}[b]
 	\centering
 	\input{./tables/malus.tex}
-	\caption{Messwerte der Spannung an der Photodiode in Abhängigkeit des Winkels am Linearpolarisator}
+	\caption{Messwerte der Spannung an der Photodiode in Abhängigkeit des Winkels am Linearpolarisator \textbf{Falsche Anzahl an stellen für Photospannung/Fehler. Und bezeichnung von Photospan./Fehler inkonsistent.}}
 	\label{tab:malus}
 \end{table}
 \FloatBarrier

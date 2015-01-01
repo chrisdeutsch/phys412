@@ -350,7 +350,6 @@ So kann die Position $y_n$ des $n$-ten Interferenzmaximums berechnet werden durc
 \begin{align}
 	y_n &= d_n - y_0 \\
 	\Delta y_n &= \sqrt{\Delta d_n^2 + \Delta y_0^2}
-	\label{eq:fehler_differenz}
 \end{align}
 und anschließend mit der genäherten Gittergleichung \ref{eq:gittergleichung_schawlow} die Wellenlänge des Lasers für die einzelnen Maxima berechnet werden, wobei für die Gitterkonstante $g = \SI{1}{\milli\metre}$ gilt, da die Beugung an der Millimeter-Skala des Maßstabes stattfindet. 
 Der Fehler der berechneten Wellenlänge $\Delta \lambda$ ist gegeben durch Gauß'sche Fehlerfortpflanzung unter der Vernachlässigung des Fehlers in der Gitterkonstanten $g$:
@@ -578,31 +577,32 @@ Dabei wurde wie in \eqref{eq:umrechnung_watt} der Umrechnungsfaktor \num{17.5} z
 \subsubsection{Durchführung}
 
 Der optische Spektrumanalysator dient der Beobachtung der Modenabstände des Lasers.
-Dazu wird ein externer konfokaler Resonator genutzt, dessen Transmission maximal wird, wenn die Frequenz des Lasers \textbf{eher der jeweiligen Mode} in Resonanz mit der Frequenz des exteren Resonator ist.
-Die Länge des Resonators wird mit einer anliegenden Wechselspannung \textbf{Rampe ist hier wichtig damit die gemessenen Zeitdifferenzen auf dem Oszi auch proportional zur Spannungsdifferenz und damit zur Längendifferenz sind} kontinuierlich verändert und die Intensität mit einer Photodiode in Abhängigkeit der Länge des Resonators (die proportional zur angelegten Spannung ist), beobachtet.
+Dazu wird ein externer konfokaler Resonator genutzt, dessen Transmission maximal wird, wenn die Frequenz der jeweiligen Mode in Resonanz mit der Frequenz des exteren Resonator ist.
+Die Länge des Resonators wird mit einer anliegenden Wechselspannung kontinuierlich verändert und die Intensität mit einer Photodiode in Abhängigkeit der Länge des Resonators (die proportional zur angelegten Spannung ist), beobachtet.
+Um diesen Zusammenhang sicherzustellen wird als Signal für die Wechselspannung ein Sägezahn eingestellt, damit die gemessenen Zeitdifferenzen proportional zur Spannungsdifferenz sind und durch den Piezo-Effekt (Längenänderung ist proportional zu angelegter Spannung) auch die Längendifferenz des externen Resonators proportional zur messbaren Zeitdifferenz ist.
 Der Spektrumanalysator wird wie in \cite{anleitung} beschrieben aufgebaut und justiert.
-Die Modulationsfrequenz der am externen Resonator anliegenden Wechselspannung wird dabei möglichst genau (die Ausgangsfrequenz des Generators schwankt leicht und lässt sich nur schwer auf einen genauen Wert einstellen) auf \SI{50}{\hertz} eingestellt, um äußere Störfaktoren zu minimieren.
+\textbf{Die Modulationsfrequenz der am externen Resonator anliegenden Wechselspannung wird dabei möglichst genau} (die Ausgangsfrequenz des Generators schwankt leicht und lässt sich nur schwer auf einen genauen Wert einstellen) \textbf{auf \SI{50}{\hertz} eingestellt, um äußere Störfaktoren zu minimieren.}
 Dies betrifft vor allem die Lampen im Versuchsraum, die mit gewöhnlicher \SI{50}{\hertz} Wechselspannung betrieben werden.\\
 \\
 Nach der Justage muss kontrolliert werden, dass die Längenänderung des Resonators groß genug ist, um mindestens einen freien Spektralbereich zu sehen.
-Dies ist gegeben, wenn auf dem Oszilloskop zwei gaußförmige Einhüllende über dem Modenspektrum (das aus Lorentzkurven aufgebaut ist) zu beobachten sind. \textbf{hier explizit die Fragestellung in dick auf dem Blatt beantworten}
+\textbf{Dies ist gegeben, wenn auf dem Oszilloskop zwei gaußförmige Einhüllende über dem Modenspektrum (das aus Lorentzkurven aufgebaut ist) zu beobachten sind.}
 
 \subsubsection{Messwerte}
 
 Für alle Resonatorlängen wird hier nach dem gleichen Verfahren vorgegangen.
 Nach korrekter Justage muss die Amplitude der Wechselspannung entsprechend angepasst werden, damit mindestens ein freier Spektralbereich von den Piezoelementen im externen Resonator durchfahren wird.
 Anschließend kann der Intensitätsverlauf auf dem digitalen Oszilloskop beobachtet werden.
-Die dabei gemessenen Verläufe wurden in den Abbildungen \ref{fig:ALL0028} bis \ref{fig:ALL0014} gezeigt. \textbf{Immer ein Bild in die Auswertung. Rest in Anhang.}
+Die dabei gemessenen Verläufe wurden in den Abbildungen \ref{fig:ALL0028}, sowie \ref{fig:ALL0026}, \ref{fig:ALL0022} und \ref{fig:ALL0014} (im Anhang) gezeigt. 
 Man sieht in allen Abbildungen deutlich die zwei gaußförmigen Einhüllenden in einem freien Spektralbereich.
 Zur späteren Auswertung wurde in die Grafiken ebenfalls eine Anpassungskurve eingezeichnet.
-Diese folgt aus einer \emph{least-squares}-Anpassung \textbf{Methode kleinster Quadrate} mit \texttt{Gnuplot} auf Basis einer Superposition von $n$ Lorentzprofilen:
+Diese folgt aus einer \emph{least-squares}-Anpassung (Methode kleinster Quadrate) mit \texttt{Gnuplot} auf Basis einer Superposition von $n$ Lorentzprofilen:
 \begin{align}
 f(x)=\sum_{i=1}^{n}a_i\cdot\frac{b_i^2}{(x-c_i)^2+b_i^2}
 \end{align}
-Dabei beschreibt $a_i$ die Höhe, $b_i$ die Breite und $c_i$ die Lage des $i$-ten Peaks. \textbf{Anderes deutsches Wort für Peaks}
+Dabei beschreibt $a_i$ die Höhe, $b_i$ die Breite und $c_i$ die Lage des $i$-ten Maximums. \textbf{Anderes deutsches Wort für Peaks}
 Da die Anpassungen an die hier gemessenen Werte auf sehr vielen freien Parametern beruhen, ist die Angabe von Startwerten sehr wichtig.
-Trotzdem konnten einzelne, flache Peaks nicht immer angepasst werden, so dass sie nicht weiter berücksichtigt wurden.
-Weiterhin wurden die Höhen einzelner Peaks nicht korrekt angepasst, wie man in den Darstellungen gut sehen kann.
+Trotzdem konnten einzelne, flache Maxima nicht immer angepasst werden, so dass sie nicht weiter berücksichtigt wurden.
+Weiterhin wurden die Höhen einzelner Maxima nicht korrekt angepasst, wie man in den Darstellungen gut sehen kann.
 Da für die quantitative Auswertung jedoch nur die $b_i$ (die Schwerpunkte) benötigt werden, wurden die von \texttt{Gnuplot} gefundenen Werte für diese Parameter trotzdem verwendet.
 \begin{figure}[htb]
 \centering
@@ -610,85 +610,64 @@ Da für die quantitative Auswertung jedoch nur die $b_i$ (die Schwerpunkte) ben�
 \caption{Resonatorlänge 50cm ALL0028}
 \label{fig:ALL0028}
 \end{figure}
-\begin{figure}[htb]
-\centering
-\input{./plots/modenabstand/ALL0026.tex}
-\caption{Resonatorlänge 70cm ALL0026}
-\end{figure}
-\label{fig:ALL0026}
-\begin{figure}[htb]
-\centering
-\input{./plots/modenabstand/ALL0022.tex}
-\caption{Resonatorlänge 80cm ALL0022}
-\label{fig:ALL0022}
-\end{figure}
-\begin{figure}[htb]
-\centering
-\input{./plots/modenabstand/ALL0014.tex}
-\caption{Resonatorlänge 90cm ALL0014}
-\label{fig:ALL0014}
-\end{figure}
-\FloatBarrier
 \subsubsection{Bestimmung der Modenabstände}
-Da die Messung der Frequenzabstände zweier Moden in Einheiten des konfokalen Modenabstands durchgeführt werden soll, muss dieser zunächst berechnet werden. \textbf{Nein muss er nicht. Erst wenn man die Frequenzabstände in Frequenzeinheiten haben will.}
-Er ergibt sich aus der Überlegung, dass in einem konfokalen Resonator das einfallende Licht intern dreimal reflektiert wird und der Strahl so den vierfachen Spiegelabstand durchläuft, bis er an der Stelle, an der er eintrat, austritt. \textbf{Erklärung weg einfach nur auf Siegmann verweisen.}
-EVTL GRAFIK
-Dies entspricht der doppelten Weglänge im Vergleich zu einem plan-planen Resonator und man erhält für den konfokalen Modenabstand \cite{anleitung}:
+Der konfokale Modenabstand ist gegeben durch \cite{siegman}:
 \begin{align}
-\Delta\nu_\text{kon}=\frac{c}{4\,l}
+\Delta\nu_\text{konf.}=\frac{c}{4\,l}
 \end{align}
 Hierbei entspricht $l$ der Länge des externen Resonators (hier \SI{5}{\centi\metre}), woraus für diesen Versuch folgt:
 \begin{align}
-\Delta\nu_\text{kon}=\SI{1.499}{\giga\hertz}
+\Delta\nu_\text{konf.}=\SI{1.499}{\giga\hertz}
 \end{align}
-Daraus folgt für den freien Spektralbereich des konfokalen Resonators \textbf{Vllt. eine Fußnote zu der Unsicherheit was FSR und konfokaler Modenabstand angeht und wie wir ihn letztendlich definiert haben.} (siehe auch \eqref{eq:modenabstand}):
+Daraus folgt für den freien Spektralbereich des konfokalen Resonators\footnote{In der Literatur wird der konfokale Modenabstand oft gleichgesetzt mit dem freien Spektralbereich. Hier soll mit dem freien Spektralbereich nur der Abstand zweier longitudinaler Moden bezeichnet werden, nicht der Bereich zwischen zwei Transmissionsmaxima des Fabry-Pérot-Interferometers.} (siehe auch \eqref{eq:modenabstand}):
 \begin{align}
 \Delta\nu_\text{FSR}=\frac{c}{2\,l}=2\,\Delta\nu_\text{kon}=\SI{2.998}{\giga\hertz} \text{,}
 \end{align}
-wodurch der Frequenzabstand zweier longitudinaler Moden der gleichen Transversalmode gegeben ist.
-Im konfokalen Modenabstand von einer longitudinalen Mode (d.h. genau in der Mitte des freien Spektralbereichs) treten im Fall des konfokalen Resonators die von Siegman \cite{siegman} als \emph{half axial modes}, im Folgenden \emph{halbaxiale Moden} genannt auf. \textbf{Lieber erklären woher die kommen (ungerade $n+m$ fallen die Transversalmoden genau zwischen die Axialmoden) statt die Benennung von Siegmann zitieren.}
-Die zwei beobachteten Gaußpeaks entpechen daher einer longitudinalen und einer halbaxialen Mode.\\
+Man beobachtet, dass für ungerade $n+m$ allerdings auch Transversalmoden TEM$_nm$ in dem Frequenzspektrum zu erkennen sind.
+Sie fallen genau zwischen die beobachtbaren Maxima zweier longitudinaler Moden.
+Daher ergibt sich der Abstand einer longitudinalen Mode zu einer dieser transversalen Moden als konfokaler Modenabstand, der den freien Spektralbereich gerade halbiert.
+Die zwei beobachteten Gaußprofile entsprechen daher einer longitudinalen und einer der oben genannten Transversalmoden.\\
 \\
 Die Berechnung des longitudinalen Modenabstands wird hier beispielhaft für den Resonator der Länge \SI{50+-0.4}{\centi\metre} durchgeführt, die Tabellen für alle anderen Resonatorlängen befinden sich im Anhang.
-In Tabelle \ref{tab:ALL0028} wurden dabei die jeweiligen Positionen $x_i$ der Maxima (Ergebnisse der Anpassung) notiert und die Abstände $\Delta T$ zweier aufeinanderfolgender Maxima innerhalb eines Gaußpeaks berechnet.
-Der Fehler ergibt sich mit Gaußscher Fehlerfortpflanzung analog zu \eqref{eq:fehler_differenz} mit:
+In Tabelle \ref{tab:ALL0028} wurden dabei die jeweiligen Positionen $x_i$ der Maxima (Ergebnisse der Anpassung) notiert und die Abstände $\Delta T$ zweier aufeinanderfolgender Maxima innerhalb eines Gaußprofils berechnet.
+Der Fehler ergibt sich mit Gaußscher Fehlerfortpflanzung aus:
 \begin{align}
 \Delta(\Delta T)=\Delta(x_{i+1}-x_i)=\sqrt{(\Delta x_{i+1})^2+(\Delta x_i)^2}
+\label{eq:fehler_differenz}
 \end{align}
-Außerdem wurde der Abstand zweier gleicher Moden (d.h. für den Fall von fünf Moden pro Gaußpeak der Abstand $T_\text{kon}=x_{i+5}-x_i$) \textbf{vllt was allgemeiner ausdrücken und in der grafik markieren?} errechnet, der Fehler berechnet sich wie oben. \textbf{Versteh ich nicht.}
-Dieser Wert entspricht gerade dem konfokalen Modenabstand. \textbf{Das auch nicht. Vermutlich wegen der unklaren Definition von gleichen Moden. Habs doch verstanden ist aber vllt. nicht ganz klar ausgedrückt.}
+Außerdem wurde der Abstand zweier gleicher longitudinaler Moden (d.h. beispielweise für den Fall von fünf Moden pro Gaußprofil der Abstand $T_\text{konf.}=x_{i+5}-x_i$, siehe auch Grafik \ref{fig:ALL0028}) errechnet, der Fehler dieses Abstands berechnet sich analog zu \eqref{eq:fehler_differenz}.
+Dieser Wert entspricht gerade dem konfokalen Modenabstand.
 Durch Bildung des varianzgewichteten Mittelwerts über die Werte für beide Abstände ergeben sich die ebenfalls in die Tabelle eingetragenen Werte für den Abstand zweier transversaler Moden und den konfokalen Modenabstand. 
 \begin{table}[h]
 \centering
 \resizebox{\columnwidth}{!}{%
 \input{./tables/modenabstand/ALL0028.tex}}
-\caption{Messwerte und Berechnung zum longitudinalen Modenabstand. $x_i$ beschreibt die Position der Maxima, $x_{ij}$ die Differenz zweier aufeinander folgender Positionen \textbf{Notationsänderung? seh ich nicht in der tab.} und $T_\text{kon}$ den Abstand zweier gleicher Tranversalmoden. Diese sind getrennt dargestellt, da sie keinen zeilenweisen Bezug zu den $x_i$ haben.\textbf{punkt zu komma}}
+\caption{Messwerte und Berechnung zum longitudinalen Modenabstand. $x_i$ beschreibt die Position der Maxima, $\Delta T$ die Differenz zweier aufeinander folgender Positionen und $T_\text{konf.}$ den Abstand zweier gleicher Tranversalmoden. Dieser ist getrennt dargestellt, da die Werte keinen zeilenweisen Bezug zu den $x_i$ haben.}
 \label{tab:ALL0028}
 \end{table}
 Mit den Mittelwerten kann nun der Abstand zweier Moden in Einheiten des konfokalen Modenabstands gefunden werden.
 Man erhält so für die hier betrachtete Resonatorlänge \SI{50+-0.4}{\centi\metre} \textbf{Hier müsste noch erklärt werden, dass das auch für die Frequenzen und nicht nur für die Oszizeiten gilt.}:
 \begin{align}
-\frac{\Delta T}{T_\text{kon}}= \num{0.201+-0.001}
+\frac{\Delta T}{T_\text{konf.}}= \num{0.201+-0.001}
 \end{align}
 Aus der Gaußschen Fehlerfortpflanzung folgt für den Fehler:
 \begin{align}
-\Delta\left(\frac{\Delta T}{T_\text{kon}}\right)=\sqrt{\frac{(\Delta(\Delta T))^2}{T_\text{kon}^2}+\frac{(\Delta T)^2(\Delta T_\text{kon})^2}{T_\text{kon}^4}}
+\Delta\left(\frac{\Delta T}{T_\text{konf.}}\right)=\sqrt{\frac{(\Delta(\Delta T))^2}{T_\text{konf.}^2}+\frac{(\Delta T)^2(\Delta T_\text{konf.})^2}{T_\text{konf.}^4}}
 \end{align}
 Die Berechnung des Modenabstands erfolgt nach:
 \begin{align}
-\Delta\nu_\text{long}=\frac{\Delta\nu_\text{kon}}{T_\text{kon}} \cdot \Delta T 
+\Delta\nu_\text{long.}=\frac{\Delta\nu_\text{konf.}}{T_\text{konf.}} \cdot \Delta T 
 \end{align}
 Damit können die gemessenen Zeiten für den longitudinalen Modenabstand in Frequenzen umgerechnet werden.
 Der konfokale Modenabstand (hier \SI{1.499}{\giga\hertz}, s.o.) ist bekannt und kann so als Ausgangspunkt zur Umrechnung zwischen Frequenz- und Zeitdomäne genutzt werden.
 Man erhält damit für den longitudinalen Modenabstand:
 \begin{align}
-\Delta\nu_\text{long}=\SI{301.3+-0.8}{\mega\hertz}
+\Delta\nu_\text{long.}=\SI{301.3+-0.8}{\mega\hertz}
 \end{align}
-Der Fehler wurde abermals mit Gaußscher Fehlerfortpflanzung und mit den einzelnen Fehlern für $\Delta T$ und $T_\text{kon}$ berechnet mit:
+Der Fehler wurde abermals mit Gaußscher Fehlerfortpflanzung und mit den einzelnen Fehlern für $\Delta T$ und $T_\text{konf.}$ berechnet mit:
 \begin{align}
-\Delta\left(\Delta\nu_\text{long}\right)=\Delta\nu_\text{kon}\cdot\sqrt{\frac{(\Delta(\Delta T))^2}{T_\text{kon}^2}+\frac{(\Delta T)^2(\Delta T_\text{kon})^2}{T_\text{kon}^4}}
+\Delta\left(\Delta\nu_\text{long.}\right)=\Delta\nu_\text{konf.}\cdot\sqrt{\frac{(\Delta(\Delta T))^2}{T_\text{konf.}^2}+\frac{(\Delta T)^2(\Delta T_\text{konf.})^2}{T_\text{konf.}^4}}
 \end{align}
-\textbf{Ich würde in den Indizes konfokal mit konf. abkürzen. kon sieht irgendwie komisch aus. Außerdem würde ich auch in den Indizes bei Abkürzungen Punkte machen. So hab ich das bisher auch gemacht.}
 
 \subsection{Präzise Messung des Modenabstandes mittels einer optischen Schwebung}
 In diesem Teil soll der Modenabstand der longitudinalen Moden im Resonator durch eine optische Schwebung gemessen werden.
@@ -979,6 +958,26 @@ Auch die restlichen Aufnahmen folgen dem Trend der steigenden Anzahl der Moden b
 	\label{fig:strahlradius_90}
 \end{figure}
 \clearpage
+
+\subsection{Bestimmung der Modenabstände mit dem optischen Spektrumanalysator}
+\begin{figure}[htb]
+\centering
+\input{./plots/modenabstand/ALL0026.tex}
+\caption{Resonatorlänge 70cm ALL0026}
+\end{figure}
+\label{fig:ALL0026}
+\begin{figure}[htb]
+\centering
+\input{./plots/modenabstand/ALL0022.tex}
+\caption{Resonatorlänge 80cm ALL0022}
+\label{fig:ALL0022}
+\end{figure}
+\begin{figure}[htb]
+\centering
+\input{./plots/modenabstand/ALL0014.tex}
+\caption{Resonatorlänge 90cm ALL0014}
+\label{fig:ALL0014}
+\end{figure}
 
 
 \end{appendix}

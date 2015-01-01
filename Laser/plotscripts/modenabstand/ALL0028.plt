@@ -58,6 +58,12 @@ fit[x=4.232:13.5] f(x) './messwerte/modenabstand/ALL0028.txt' using ($1*1000):($
 
 load './../gnuplot_linestyles.plt'
 
+set arrow from 5.3603,0 to 5.3603,108 nohead lw 1.2
+set arrow from 9.8339 ,0 to 9.8339,96  nohead lw 1.2
+
+set arrow from 5.3603,35 to 9.8339,35 heads size 0.3,30 lw 1.2
+set label 1  '$T_\text{konf.}$' at graph 0.3,0.05
+
 plot 	'./messwerte/modenabstand/ALL0028.txt' using ($1*1000):($2*1000):(1) every 2 with yerrorbars ls 2 lw 2 t'Messwerte',\
     f(x) ls 1 lw 2 t'Anpassungskurve'\
 

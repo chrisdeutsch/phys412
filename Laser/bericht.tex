@@ -428,7 +428,7 @@ Dabei ist $\varphi$ der Polarsiatorwinkel und $\varphi_0$ beschreibt die Polaris
 
 \subsubsection{Überschrift ganz weglassen?}
 \textbf{Überschrift passt nicht so wirklich.}
-Der Winkel $\varphi$ am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Photospannung $U_\text{P}$ an der Photodiode in \si{\milli\volt} notiert.
+Der Winkel $\varphi$ am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Photospannung $U_\text{PD}$ an der Photodiode in \si{\milli\volt} notiert.
 In Tabelle \ref{tab:malus} sind die Messwerte bei einer Resonatorlänge von \SI{50}{\centi\metre} festgehalten worden.
 Der Fehler $\Delta\varphi$ für den Winkel ergibt sich aus der Tatsache, dass der Polarisator in Schritten von \SI{2}{\degree} eingestellt werden konnte, der Fehler für die Photospannung wurde aufgrund der Schwankungen, die zu beobachten waren (es wurde mit der \emph{Measure}-Funktion des Oszilloskops gemessen), auf \SI{0.3}{\milli\volt} abgeschätzt.
 Diese Messwerte werden im Anschluss mit \eqref{eq:umrechnung_watt} in Intensitäten umgerechnet, in ein Diagramm eingetragen und mit \texttt{Gnuplot} eine Kurve der Form
@@ -913,13 +913,14 @@ Auch die restlichen Aufnahmen folgen dem Trend der steigenden Anzahl der Moden b
 \begin{appendix}
 \section{Anhang}
 \subsection{Messwerte der Photospannung hinter dem Polarisator}
-\begin{table}[b]
+\begin{table}[htb]
 	\centering
-	\input{./tables/malus.tex}
-	\caption{Messwerte der Spannung an der Photodiode in Abhängigkeit des Winkels am Linearpolarisator \textbf{Falsche Anzahl an stellen für Photospannung/Fehler. Und bezeichnung von Photospan./Fehler inkonsistent.}}
+	\resizebox{0.85\textwidth}{!}{
+	\input{./tables/malus.tex}}
+	\caption{Messwerte der Spannung an der Photodiode in Abhängigkeit des Winkels am Linearpolarisator}
 	\label{tab:malus}
 \end{table}
-\FloatBarrier
+\clearpage
 
 \subsection{Bestimmung des Strahlprofils im Resonator}
 \label{app:strahlprofil}
@@ -978,24 +979,48 @@ Auch die restlichen Aufnahmen folgen dem Trend der steigenden Anzahl der Moden b
 \clearpage
 
 \subsection{Bestimmung der Modenabstände mit dem optischen Spektrumanalysator}
-\begin{figure}[htb]
+\begin{figure}[ht]
 \centering
-\input{./plots/modenabstand/ALL0026.tex}
+\resizebox{0.75\textwidth}{!}{
+\input{./plots/modenabstand/ALL0026.tex}}
 \caption{Resonatorlänge 70cm ALL0026}
-\end{figure}
 \label{fig:ALL0026}
-\begin{figure}[htb]
+\end{figure}
+\begin{table}[hb]
 \centering
-\input{./plots/modenabstand/ALL0022.tex}
+\resizebox{\columnwidth}{!}{%
+\input{./tables/modenabstand/ALL0026.tex}}
+\caption{Messwerte und Berechnung zum longitudinalen Modenabstand. $x_i$ beschreibt die Position der Maxima, $\Delta T$ die Differenz zweier aufeinander folgender Positionen und $T_\text{konf.}$ den Abstand zweier gleicher Tranversalmoden. Dieser ist getrennt dargestellt, da die Werte keinen zeilenweisen Bezug zu den $x_i$ haben.}
+\end{table}
+\clearpage
+\begin{figure}[ht]
+\centering
+\resizebox{0.75\textwidth}{!}{
+\input{./plots/modenabstand/ALL0022.tex}}
 \caption{Resonatorlänge 80cm ALL0022}
 \label{fig:ALL0022}
 \end{figure}
-\begin{figure}[htb]
+\begin{table}[hb]
 \centering
-\input{./plots/modenabstand/ALL0014.tex}
+\resizebox{\columnwidth}{!}{%
+\input{./tables/modenabstand/ALL0022.tex}}
+\caption{Messwerte und Berechnung zum longitudinalen Modenabstand. $x_i$ beschreibt die Position der Maxima, $\Delta T$ die Differenz zweier aufeinander folgender Positionen und $T_\text{konf.}$ den Abstand zweier gleicher Tranversalmoden. Dieser ist getrennt dargestellt, da die Werte keinen zeilenweisen Bezug zu den $x_i$ haben.}
+\end{table}
+\clearpage
+\begin{figure}[ht]
+\centering
+\resizebox{0.75\textwidth}{!}{
+\input{./plots/modenabstand/ALL0014.tex}}
 \caption{Resonatorlänge 90cm ALL0014}
 \label{fig:ALL0014}
 \end{figure}
+\begin{table}[hb]
+\centering
+\resizebox{\columnwidth}{!}{%
+\input{./tables/modenabstand/ALL0014.tex}}
+\caption{Messwerte und Berechnung zum longitudinalen Modenabstand. $x_i$ beschreibt die Position der Maxima, $\Delta T$ die Differenz zweier aufeinander folgender Positionen und $T_\text{konf.}$ den Abstand zweier gleicher Tranversalmoden. Dieser ist getrennt dargestellt, da die Werte keinen zeilenweisen Bezug zu den $x_i$ haben.}
+\end{table}
+\clearpage
 
 
 \end{appendix}

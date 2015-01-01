@@ -71,7 +71,7 @@
 \renewcommand{\thesubtable}{\alph{subtable}}
 
 % Manuelle Silbentrennung
-\hyphenation{Re-so-na-tor}
+\hyphenation{Re-so-na-tor Mo-den-ab-stand}
 
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
@@ -417,17 +417,16 @@ Zur Untersuchung der Polarisation des hier verwendeten Experimentierlasers wird 
 Dieser ist in der Lage, einfallendes Licht in eine vorgegebene Richtung linear zu polarisieren.
 Für den Fall, dass das einfallende Licht bereits linear polarisiert ist (wie für den hier verwendeten Laser angenommen werden kann), gilt für die hinter dem Polarisator registrierte Intensität (Gesetz von Malus):
 \begin{align}
-I=I_0\cdot\cos^2\varphi
+I=I_0\cdot\cos^2\alpha
 \end{align}
-\textbf{Was bedeutet $\varphi$. Das ist nicht der Winkel am Polarisator..}
-Eigentlich misst man:
+In dem Versuch wird tatsächlich der Zusammenhang:
 \begin{align}
 	I = I_0 \cdot \cos^2 (\varphi - \varphi_0)
 \end{align}
-oderso.
-Dann ist $\varphi$ tatsächlich der Polarsiatorwinkel und $\varphi_0$ die Polarisationsrichtung. 
+gemessen.
+Dabei ist $\varphi$ der Polarsiatorwinkel und $\varphi_0$ beschreibt die Polarisationsrichtung. 
 
-\subsubsection{Überprüfung des Gesetzes von Malus}
+\subsubsection{Überschrift ganz weglassen?}
 \textbf{Überschrift passt nicht so wirklich.}
 Der Winkel $\varphi$ am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Photospannung $U_\text{P}$ an der Photodiode in \si{\milli\volt} notiert.
 In Tabelle \ref{tab:malus} sind die Messwerte bei einer Resonatorlänge von \SI{50}{\centi\metre} festgehalten worden.
@@ -607,7 +606,7 @@ Diese folgt aus einer \emph{least-squares}-Anpassung (Methode kleinster Quadrate
 \begin{align}
 f(x)=\sum_{i=1}^{n}a_i\cdot\frac{b_i^2}{(x-c_i)^2+b_i^2}
 \end{align}
-Dabei beschreibt $a_i$ die Höhe, $b_i$ die Breite und $c_i$ die Lage des $i$-ten Maximums. \textbf{Anderes deutsches Wort für Peaks}
+Dabei beschreibt $a_i$ die Höhe, $b_i$ die Breite und $c_i$ die Lage des $i$-ten Maximums.
 Da die Anpassungen an die hier gemessenen Werte auf sehr vielen freien Parametern beruhen, ist die Angabe von Startwerten sehr wichtig.
 Trotzdem konnten einzelne, flache Maxima nicht immer angepasst werden, so dass sie nicht weiter berücksichtigt wurden.
 Weiterhin wurden die Höhen einzelner Maxima nicht korrekt angepasst, wie man in den Darstellungen gut sehen kann.
@@ -654,7 +653,7 @@ Durch Bildung des varianzgewichteten Mittelwerts über die Werte für beide Abst
 \label{tab:ALL0028}
 \end{table}
 Mit den Mittelwerten kann nun der Abstand zweier Moden in Einheiten des konfokalen Modenabstands gefunden werden.
-Man erhält so für die hier betrachtete Resonatorlänge \SI{50+-0.4}{\centi\metre} \textbf{Hier müsste noch erklärt werden, dass das auch für die Frequenzen und nicht nur für die Oszizeiten gilt.}:
+Man erhält so für die hier betrachtete Resonatorlänge \SI{50+-0.4}{\centi\metre}\footnote{Aus der Proportionalität zwischen Zeit und Spannung am Piezoelement und damit der Länge des externen Resonators gilt dieses Verhältnis ebenso für die Frequenzen.}:
 \begin{align}
 \frac{\Delta T}{T_\text{konf.}}= \num{0.201+-0.001}
 \end{align}
@@ -670,12 +669,23 @@ Damit können die gemessenen Zeiten für den longitudinalen Modenabstand in Freq
 Der konfokale Modenabstand (hier \SI{1.499}{\giga\hertz}, s.o.) ist bekannt und kann so als Ausgangspunkt zur Umrechnung zwischen Frequenz- und Zeitdomäne genutzt werden.
 Man erhält damit für den longitudinalen Modenabstand:
 \begin{align}
-\Delta\nu_\text{long.}=\SI{301.3+-0.8}{\mega\hertz}
+\Delta\nu_\text{long.}=\SI{301.3+-0.7}{\mega\hertz}
 \end{align}
 Der Fehler wurde abermals mit Gaußscher Fehlerfortpflanzung und mit den einzelnen Fehlern für $\Delta T$ und $T_\text{konf.}$ berechnet mit:
 \begin{align}
 \Delta\left(\Delta\nu_\text{long.}\right)=\Delta\nu_\text{konf.}\cdot\sqrt{\frac{(\Delta(\Delta T))^2}{T_\text{konf.}^2}+\frac{(\Delta T)^2(\Delta T_\text{konf.})^2}{T_\text{konf.}^4}}
 \end{align}
+
+\subsubsection{Ergebnisse und Fazit}
+
+Mit dieser Vorgehensweise erhält man für alle vier Resonatorlängen die in Tabelle \ref{tab:modenabstand} eingetragenen Ergebnisse für den Abstand zweier Moden und den longitudinalen Modenabstand.
+\begin{table}[htb]
+\centering
+\input{./tables/modenabstand.tex}
+\label{tab:modenabstand}
+\caption{Ergebnisse für $\nu_\text{long.}$ und $\frac{\Delta T}{T_\text{konf.}}$ für alle Resonatorlängen.}
+\end{table}
+Eine Bewertung der gefundenen Werte erfolgt später im Vergleich zu den ermittelten Modenabständen mit einer optischen Schwebung.
 
 \subsection{Präzise Messung des Modenabstandes mittels einer optischen Schwebung}
 In diesem Teil soll der Modenabstand der longitudinalen Moden im Resonator durch eine optische Schwebung gemessen werden.

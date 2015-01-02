@@ -618,7 +618,7 @@ Da für die quantitative Auswertung jedoch nur die $b_i$ (die Schwerpunkte) ben�
 \label{fig:ALL0028}
 \end{figure}
 \subsubsection{Bestimmung der Modenabstände}
-Der konfokale Modenabstand ist gegeben durch \cite{siegman}:
+Der \textbf{konfokale Modenabstand} ist gegeben durch \cite{siegman}:
 \begin{align}
 \Delta\nu_\text{konf.}=\frac{c}{4\,l}
 \end{align}
@@ -626,7 +626,7 @@ Hierbei entspricht $l$ der Länge des externen Resonators (hier \SI{5}{\centi\me
 \begin{align}
 \Delta\nu_\text{konf.}=\SI{1.499}{\giga\hertz}
 \end{align}
-Daraus folgt für den freien Spektralbereich des konfokalen Resonators\footnote{In der Literatur wird der konfokale Modenabstand oft gleichgesetzt mit dem freien Spektralbereich. Hier soll mit dem freien Spektralbereich nur der Abstand zweier longitudinaler Moden bezeichnet werden, nicht der Bereich zwischen zwei Transmissionsmaxima des Fabry-Pérot-Interferometers.} (siehe auch \eqref{eq:modenabstand}):
+Daraus folgt für den \textbf{freien Spektralbereich des konfokalen Resonators}\footnote{In der Literatur wird der konfokale Modenabstand oft gleichgesetzt mit dem freien Spektralbereich. Hier soll mit dem freien Spektralbereich nur der Abstand zweier longitudinaler Moden bezeichnet werden, nicht der Bereich zwischen zwei Transmissionsmaxima des Fabry-Pérot-Interferometers.} (siehe auch \eqref{eq:modenabstand}):
 \begin{align}
 \Delta\nu_\text{FSR}=\frac{c}{2\,l}=2\,\Delta\nu_\text{kon}=\SI{2.998}{\giga\hertz} \text{,}
 \end{align}
@@ -685,7 +685,12 @@ Mit dieser Vorgehensweise erhält man für alle vier Resonatorlängen die in Tab
 \label{tab:modenabstand}
 \caption{Ergebnisse für $\nu_\text{long.}$ und $\frac{\Delta T}{T_\text{konf.}}$ für alle Resonatorlängen.}
 \end{table}
-Eine Bewertung der gefundenen Werte erfolgt später im Vergleich zu den ermittelten Modenabständen mit einer optischen Schwebung.
+Wie später in Tabelle \ref{tab:messdaten_optische_schwebung} zu sehen ist, decken sich die hier gefundenen Werte gut mit den Ergebnissen der optischen Schwebung, deren Genauigkeit deutlich höher liegt als beim optischen Spektrumanalysator.
+Die leichten Abweichungen sind vor allem mit den vielen Faktoren, mit denen der Modenabstand bestimmt wurde, zu erklären.
+Die Justage des externen Resonators ist relativ aufwändig und die Einstellung der Wechselspannung für das Piezoelement nur sehr schwierig auf \SI{50}{\hertz} festzulegen.
+Bei der Wahl der Amplitude muss darauf geachtet werden, dass sowohl ein freier Spektralbereich durchfahren wird, als auch dass das Sägezahnsignal durchweg linear verläuft, was nicht immer gleichzeitig zu erreichen war.
+Weiterhin führt die Anpassung in \texttt{Gnuplot} zu einer weiteren Fehlerquelle, die allerdings als einziges in der Auswertung berücksichtigt wird.
+Dennoch stellt der optische Spektrumanalysator eine gute und vor allem anschauliche Möglichkeit zur Analyse des Modenspektrums eines Lasers dar.
 
 \subsection{Präzise Messung des Modenabstandes mittels einer optischen Schwebung}
 In diesem Teil soll der Modenabstand der longitudinalen Moden im Resonator durch eine optische Schwebung gemessen werden.

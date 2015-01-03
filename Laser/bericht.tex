@@ -426,8 +426,6 @@ In dem Versuch wird tatsächlich der Zusammenhang:
 gemessen.
 Dabei ist $\varphi$ der Polarsiatorwinkel und $\varphi_0$ beschreibt die Polarisationsrichtung. 
 
-\subsubsection{Überschrift ganz weglassen?}
-\textbf{Überschrift passt nicht so wirklich.}
 Der Winkel $\varphi$ am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Photospannung $U_\text{PD}$ an der Photodiode in \si{\milli\volt} notiert.
 In Tabelle \ref{tab:malus} sind die Messwerte bei einer Resonatorlänge von \SI{50}{\centi\metre} festgehalten worden.
 Der Fehler $\Delta\varphi$ für den Winkel ergibt sich aus der Tatsache, dass der Polarisator in Schritten von \SI{2}{\degree} eingestellt werden konnte, der Fehler für die Photospannung wurde aufgrund der Schwankungen, die zu beobachten waren (es wurde mit der \emph{Measure}-Funktion des Oszilloskops gemessen), auf \SI{0.3}{\milli\volt} abgeschätzt.
@@ -436,7 +434,7 @@ Diese Messwerte werden im Anschluss mit \eqref{eq:umrechnung_watt} in Intensitä
 f(x) = a\cdot\cos^2(x-b) + c
 \end{align}
 an die Daten angepasst.
-Dabei beschreibt $a$ die Intensität $I_0$, der Parameter $b$ berücksichtigt eine eventuelle Abweichung, dass die Polarisatoreinstellung $\varphi=0$ nicht der Polarisationsrichtung des Lasers entspricht und $c$ beschreibt den auftretenden Untergrund der Spannungs- / Intensitätsmessung.
+Dabei beschreibt $a$ die Intensität $I_0$, der Parameter $b$ berücksichtigt die Polarisationsrichtung des Lasers und $c$ beschreibt den auftretenden Untergrund der Spannungs- / Intensitätsmessung.
 Als Ergebnis der Anpassung erhält man
 \begin{align}
 a&=\SI{2.24+-0.04}{\milli\watt}\\
@@ -630,7 +628,7 @@ Daraus folgt für den \textbf{freien Spektralbereich des konfokalen Resonators}\
 \begin{align}
 \Delta\nu_\text{FSR}=\frac{c}{2\,l}=2\,\Delta\nu_\text{kon}=\SI{2.998}{\giga\hertz} \text{,}
 \end{align}
-Man beobachtet, dass für ungerade $n+m$ allerdings auch Transversalmoden TEM$_nm$ in dem Frequenzspektrum zu erkennen sind.
+Man beobachtet, dass für ungerade $n+m$ allerdings auch Transversalmoden TEM$_{nm}$ in dem Frequenzspektrum zu erkennen sind.
 Sie fallen genau zwischen die beobachtbaren Maxima zweier longitudinaler Moden.
 Daher ergibt sich der Abstand einer longitudinalen Mode zu einer dieser transversalen Moden als konfokaler Modenabstand, der den freien Spektralbereich gerade halbiert.
 Die zwei beobachteten Gaußprofile entsprechen daher einer longitudinalen und einer der oben genannten Transversalmoden.\\
@@ -678,7 +676,7 @@ Der Fehler wurde abermals mit Gaußscher Fehlerfortpflanzung und mit den einzeln
 
 \subsubsection{Ergebnisse und Fazit}
 
-Mit dieser Vorgehensweise erhält man für alle vier Resonatorlängen die in Tabelle \ref{tab:modenabstand} eingetragenen Ergebnisse für den Abstand zweier Moden und den longitudinalen Modenabstand.
+Mit dieser Vorgehensweise erhält man für alle vier Resonatorlängen die in Tabelle \ref{tab:modenabstand} \textbf{Ungültige REF!} eingetragenen Ergebnisse für den Abstand zweier Moden und den longitudinalen Modenabstand.
 \begin{table}[htb]
 \centering
 \input{./tables/modenabstand.tex}

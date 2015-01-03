@@ -71,7 +71,7 @@
 \renewcommand{\thesubtable}{\alph{subtable}}
 
 % Manuelle Silbentrennung
-\hyphenation{Re-so-na-tor Mo-den-ab-stand}
+\hyphenation{Re-so-na-tor Mo-den-ab-stand Re-so-na-tor-län-ge}
 
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
@@ -129,8 +129,8 @@ Tutor: & Tobias Macha
 
 \section{Einführung}
 
-In diesem Praktikumsversuch wird ein Helium-Neon-Laser (HeNe-Laser) als Experimentierlaser aufgebaut und seine Eigenschaften wie beispielsweise Strahlprofil, Modenabstände und Polarisation für verschiedene Resonatorlängen vermessen.
-Der HeNe-Laser wurde erstmals 1960 von Javan, Bennett und Herriott \cite{javan} entwickelt und stellt den ersten Laser dar, der kontinuierliches Laserlicht erzeugte.
+Der Helium-Neon-Laser (HeNe-Laser) wurde erstmals 1960 von Javan, Bennett und Herriott \cite{javan} entwickelt und stellt den ersten Laser dar, der kontinuierliches Laserlicht erzeugte.
+In diesem Praktikumsversuch wird ein HeNe-Laser als Experimentierlaser aufgebaut und seine Eigenschaften wie beispielsweise Strahlprofil, Modenabstände und Polarisation für verschiedene Resonatorlängen vermessen.
 
 \section{Theorie}
 
@@ -149,7 +149,7 @@ Der HeNe-Laser wurde erstmals 1960 von Javan, Bennett und Herriott \cite{javan} 
 		\frac{\mathrm{d} N_2}{\mathrm{d} t} = N_1 B_{12} \rho\left( \omega_{12} \right)
 	\end{align}
 	
-	\item \textbf{stimulierte Emission:} Ein Photon des Lichtfeldes der Energie $\hbar \omega_{12}$ induziert einen Übergang vom Zustand $\ket{2}$ nach $\ket{1}$, unter Emission eines zum Photon des Lichtfeldes identischen Photons.
+	\item \textbf{stimulierte Emission:} Ein Photon des Lichtfeldes der Energie $\hbar \omega_{12}$ induziert einen Übergang vom Zustand $\ket{2}$ nach $\ket{1}$, unter Emission eines zum Photon des Lichtfeldes identischen Photons.\textbf{vielleicht noch was zur Kohärenz der beiden Photonen, Kohärenz macht ja eigentlich erst Laserlicht aus}
 	Die mathematische Beschreibung der Rate erfolgt über den Koeffizienten $B_{21}$:
 	\begin{align}
 		\frac{\mathrm{d} N_2}{\mathrm{d} t} = N_2 B_{21} \rho\left( \omega_{12} \right)
@@ -161,12 +161,12 @@ Der HeNe-Laser wurde erstmals 1960 von Javan, Bennett und Herriott \cite{javan} 
 	\begin{align}
 		\frac{\mathrm{d} N_2}{\mathrm{d} t} = - N_2 A_{21}
 	\end{align}
-	Aus dieser Gleichung folgt direkt der reziproke Zusammenhang mit der Lebensdauer $\tau$ des angeregten Zustandes:
+	Aus dieser Gleichung folgt direkt der reziproke Zusammenhang für die Lebensdauer $\tau$ des angeregten Zustands:
 	\begin{align}
 		\tau = \frac{1}{A_{21}}
 	\end{align}
 \end{itemize}
-Weiterhin wird der Zusammenhang der Einsteinkoeffizienten durch:
+Weiterhin wird der Zusammenhang der Einsteinkoeffizienten untereinander durch:
 \begin{align}
 	g_1 B_{12} = g_2 B_{21}  \qquad A_{21} = \frac{\hbar \omega_{12}^3}{\pi^2 c^3}
 \end{align}
@@ -182,7 +182,7 @@ wobei man den Besetzungsunterschied definiert als:
 	\sigma = N_2 - \frac{g_2}{g_1} N_1 \text{.}
 \end{align}
 Um eine Verstärkung des Lichtfeldes durch stimulierte Emission zu erreichen, ist eine Besetzungsinversion $\sigma > 0$ nötig.
-Aufgrund der spontanten Emission kann in einem Zweiniveausystem im Gleichgewicht niemals eine nichtnegativer Besetzungsunterschied erreicht werden, weshalb für aktive Medien keine Zweiniveausysteme verwendet werden.
+Aufgrund der spontanen Emission kann in einem Zweiniveausystem im Gleichgewicht niemals ein nichtnegativer Besetzungsunterschied erreicht werden, weshalb für aktive Medien keine Zweiniveausysteme verwendet werden.
 In Abbildung \ref{fig:niveauschema} wurde beispielhaft das Niveauschema für Lasermedien mit drei und vier Niveaus aufgetragen.
 \begin{figure}[h]
 	\centering
@@ -211,12 +211,12 @@ wobei die Strahltaille $w_0$ (minimaler Strahlradius) gegeben ist durch:
 	w_0 = \sqrt{\frac{\lambda z_0}{\pi}}
 	\label{eq:rayleigh_laenge}
 \end{align}
-und die Rayleigh-Länge $z_0$ definiert ist, als der axiale Abstand von der Strahltaille, bei der sich die Intensität halbiert:
+und die Rayleigh-Länge $z_0$ als der axiale Abstand von der Strahltaille, bei der sich die Intensität halbiert, definiert ist:
 \begin{align}
 	&I(z = \pm z_0, r =0) = \frac{I_0}{2}
 \end{align}
-Ist die Wellenlänge $\lambda$ des Strahls bekannt, so seine Intensitätsverteilung eindeutig durch Angabe der Strahltaille $w_0$ oder der Rayleigh-Länge $z_0$ definiert.
-
+Ist die Wellenlänge $\lambda$ des Strahls bekannt, so ist seine Intensitätsverteilung eindeutig durch Angabe der Strahltaille $w_0$ oder der Rayleigh-Länge $z_0$ definiert.
+\textbf{Hier fehlt noch was, glaube ich}
 Krümmungsradius:
 \begin{align}
 	R(z) = z \left( 1 + \left( \frac{z_0}{z} \right)^2 \right)
@@ -225,7 +225,7 @@ Krümmungsradius:
 \subsection{Resonatoren}
 Resonatoren sind Anordnungen optischer Elemente in denen ein Lichtstrahl auf einem geschlossenen Pfad zirkulieren kann.
 In diesem Versuch wird ein linearer Resonator verwendet, was bedeutet, dass jeder Lichstrahl in sich selbst reflektiert wird und dadurch bei kontinuierlichem Betrieb eine stehende Welle im Resonator ausbildet.
-Resonatoren zeichnen sich dadurch aus, dass in ihnen nur bestimmte Frequenzen\footnote{Diese Resonanzen haben endliche aber von Null verschiedene Linienbreite.} konstruktiv ausbreiten können.
+Resonatoren zeichnen sich dadurch aus, dass in ihnen nur bestimmte Frequenzen\footnote{Diese Resonanzen haben eine endliche von Null verschiedene Linienbreite.} konstruktiv ausbreiten können.
 Beispiele für die Verwendung von Resonatoren sind:
 \begin{itemize}
 	\item \textbf{Laserresonatoren:} Durch Hinzufügen eines aktiven Mediums in den Resonatorzwischenraum kann es zu einer Verstärkung des zirkulierenden Lichts durch stimulierte Emission kommen.
@@ -237,8 +237,8 @@ Beispiele für die Verwendung von Resonatoren sind:
 
 \subsubsection{Moden in Resonatoren}
 Unter Resonatormoden versteht man Verteilungen des elektrischen Feldes, die sich nach einem Umlauf im Resonator in ihrer Form reproduzieren, wobei es zu Verlusten oder Verstärkungen kommen kann.
-Im einfachsten Fall kann die \textbf{axiale Modenstruktur} für $\mathrm{TEM}_{q00}$-Fundamentalmode durch Gaußstrahlen aus Abschnitt \ref{gaussstrahlen} beschrieben werden.
-Dabei ist die Bedingung für das ausbilden einer stehenden Welle im Resonator gegeben durch:
+Im einfachsten Fall kann die \textbf{axiale Modenstruktur} für $\mathrm{TEM}_{q00}$-Fundamentalmoden durch Gaußstrahlen aus Abschnitt \ref{gaussstrahlen} beschrieben werden.
+Dabei ist die Bedingung für das Ausbilden einer stehenden Welle im Resonator gegeben durch:
 \begin{align}
 	\nu_q = q \cdot \frac{c}{2 L} \qquad q \in \mathbb{N} \setminus \{0\}
 \end{align}
@@ -265,7 +265,7 @@ wobei $\delta \nu_\mathrm{t}$ den transversalen Modenabstand beschreibt und abh�
 \subsubsection{Stabilität}
 Betrachtet man einen Resonator aus zwei sphärischen Spiegeln mit Radien $R_i$ und Abstand $L$ und nimmt an, dass deren transversale Ausdehnung groß genug ist, um Beugungsverluste an den Rändern der Spiegel zu vernachlässigen, so charakterisiert man einen stabilen Resonator dadurch, dass dieser einen Gaußstrahl mit fester Strahltaille $w_0$ an beiden Spiegeln in sich selbst reflektiert \cite{siegman}.
 Dies ist genau dann der Fall, wenn der Krümmungsradius $R(z)$ des Gaußstrahls\footnote{Das Koordinatensystem wird so gewählt, dass $z$ den Abstand von der Strahltaille angibt.} an der jeweiligen Spiegelposition dem des Spiegels entspricht.
-Unter Beachtung der Vorzeichen der Krümmungsradien\footnote{Aus dem Resonator betrachtet, entspricht ein positiver Krümmungsradius einem konkaven Spiegel.} erhält man so:
+Unter Beachtung der Vorzeichen der Krümmungsradien\footnote{Aus dem Resonator betrachtet, entspricht ein positiver Krümmungsradius einem konkaven Spiegel.} erhält man:
 \begin{align}
 	R_1 = - z_1 - \frac{z_0^2}{z_1}  \qquad
 	R_2 = z_2 + \frac{z_0^2}{z_2} \text{.}
@@ -281,7 +281,8 @@ Die $g$-Faktoren sind dabei definiert als:
 \end{align}
 
 \subsubsection{Halbsymmetrischer Resonator}
-Da in diesem Versuch ein halbsymmetrischer Resonator ($R_1 = \infty$, $g_1 \rightarrow 1$ und $R_2 = R$, $g_2 \rightarrow g$) verwendet wird, soll hier in Anbetracht der Auswertung einige wichtige Eigenschaften aufgeführt werden.
+\label{ssec:halbsym_res}
+Da in diesem Versuch ein halbsymmetrischer Resonator ($R_1 = \infty$, $g_1 \rightarrow 1$ und $R_2 = R$, $g_2 \rightarrow g$) verwendet wird, sollen hier in Anbetracht der Auswertung einige wichtige Eigenschaften aufgeführt werden.
 Da der Planspiegel einen unendlichen Krümmungsradius hat, liegt die Strahltaille an der Position des ebenen Spiegels, da ein Gaußstrahl nur an der Strahltaille einen unendlichen Krümmungsradius aufweist.
 Dann ist die Weite der Taille gegeben durch \cite{siegman}:
 \begin{align}
@@ -297,7 +298,7 @@ Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweili
 \subsection{Aufbau des Helium-Neon Experimentierlasers}
 Nach der Justierung des Lasers wurde für jede der vier untersuchten Resonatorlängen $L$ die Länge des Resonators mit einem Maßband vermessen, wobei der Fehler der Längenmessung auf $\Delta L = \SI{0.4}{\centi\metre}$ abgeschätzt wird.
 Diese Abschätzung begründet sich darin, dass die exakte Lage der Spiegel in der Fassungen nicht bekannt ist.
-Anschließend bestimmen wir die mittlere Spannung an der Photodiode $U_\mathrm{PD}$ mithilfe der \textit{Measure}-Funktion des Oszilloskops, wobei deren Fehler anhand der beobachteten Schwankungen auf $\Delta U_\mathrm{PD} = \SI{0.2}{\milli\volt}$ geschätzt wird.
+Anschließend bestimmt man die mittlere Spannung an der Photodiode $U_\mathrm{PD}$ mithilfe der \textit{Measure}-Funktion des Oszilloskops, wobei deren Fehler anhand der beobachteten Schwankungen auf $\Delta U_\mathrm{PD} = \SI{0.2}{\milli\volt}$ geschätzt wird.
 Unter der Annahme, dass die Photodiode im linearen Bereich arbeitet, was aufgrund des \SI{50}{\ohm}-Abschlusswiderstandes am Oszilloskop gewährleistet ist, kann mithilfe des Umrechnungsfaktors $\SI{1}{\milli\watt} / \SI{17.5}{\milli\volt}$ aus der Versuchsbeschreibung \cite{anleitung} eine Umrechnung in eine Leistung erfolgen:
 \begin{align}
 	P = \frac{\SI{1}{\milli\watt}}{\SI{17.5}{\milli\volt}} \cdot U_\mathrm{PD}
@@ -313,7 +314,7 @@ Die gemessenen Größen und die Umrechnung wurde in Tabelle \ref{tab:intensitaet
 \end{table}
 Auffällig ist die Abnahme der Intensität mit der Resonatorlänge, welche dadurch erklärt werden kann, dass das vom Strahl eingenommene Volumen in der Entladungsröhre mit steigender Länge $L$ abnimmt.
 Das verringerte Volumen führt dazu, dass die Verstärkung des aktiven Mediums abnimmt, da dieses in dem Volumen gesättigt wird.
-Darüber hinaus ist auch der Weg des Laserstrahls durch Luft länger, wodurch es zu höheren Verlusten aufgrund von Streuung kommt.
+Darüber hinaus ist auch der Weg des Laserstrahls durch die Luft länger, wodurch es zu höheren Verlusten aufgrund von Streuung kommt.
 
 \subsection{Bestimmung der Wellenlänge des Lasers mit einem Reflexionsgitter}
 \subsubsection{Durchführung}
@@ -326,7 +327,7 @@ Darüber hinaus ist auch der Weg des Laserstrahls durch Luft länger, wodurch es
 Zur Bestimmung der Wellenlänge des Helium-Neon Lasers nach Schawlow \cite{schawlow} wird ein Stahlmaßstab mit eingravierter Skaleneinteilung als Reflexionsgitter verwendet.
 Dazu wird der Laserstrahl in flachem Winkel auf die Millimeter-Skala des Maßstabes geleitet, sodass ein scharfes Interferenzmuster auf dem Whiteboard in einer Entfernung (von der Mitte der beleuchteten Stelle am Lineal) von $x_0 = \SI{252 +- 2}{\centi\metre}$ entsteht.
 Anschließend werden die Maxima des Musters markiert, wobei darauf geachtet werden muss, dass bei der nullten Beugungsordnung begonnen wird, um negative Beugungsordnungen zu vermeiden.
-Die nullte Beugungsordnung kann daran erkannt werden, dass sie maximale Intensität aufweist.
+Die nullte Beugungsordnung kann daran erkannt werden, dass sie die maximale Intensität aufweist.
 Nachdem ausreichend viele Ordnungen markiert wurden, wird das Lineal aus dem Strahlengang entfernt und der Auftreffpunkt des Laserstrahls auf dem Whiteboard markiert.
 Schließlich wird mit einem Maßband die Position $d$ aller Beugungsmaxima relativ zum Auftreffpunkt des Lasers ohne Lineal gemessen (vergleiche dazu auch Abbildung \ref{fig:schawlow}).
 Die Schärfe des Interferenzmusters ließ es dabei zu, die Längen $d$ mit einem abgeschätzten Fehler von $\Delta d = \SI{0.4}{\centi\metre}$ zu bestimmen, wobei die Hauptfehlerquelle in der Bestimmung des Intensitätsmaximums liegt und nicht in der Längenmessung mit dem Maßband.
@@ -406,26 +407,26 @@ Diese Funktion ist in Abhängigkeit von $y_n$ in Abbildung \ref{fig:abweichung_w
 	\label{fig:abweichung_wellenlaenge}
 \end{figure}
 Man sieht, dass die Abweichung für größere Ordnungen $n$ und damit größere Abstände $y_n$ rapide zunimmt, da $\frac{y_n}{x_0} \ll 1$ nicht mehr gegeben ist.
-Demnach weist die größte vermessene Ordnung $n = \num{19}$ die größte relative Abweichung auf, welche wie man in Abbildung \ref{fig:abweichung_wellenlaenge} ablesen kann $\Delta \lambda / \lambda \approx \SI{2}{\percent}$ beträgt.
+Demnach weist die größte vermessene Ordnung $n = \num{19}$ die größte relative Abweichung auf, welche wie man in Abbildung \ref{fig:abweichung_wellenlaenge} ablesen kann, $\Delta \lambda / \lambda \approx \SI{2}{\percent}$ beträgt.
 Dies entspricht schon einer Überschätzung der Wellenlänge von mehr als \SI{10}{\nano\metre} und liegt damit schon in der Größenordnung des statistischen Fehlers der Einzelmessungen.
-Bemerkenswert ist, dass wir die Tendenz die Wellenlänge zu überschätzen in Messdaten nicht beobachtet werden kann, weshalb davon ausgegangen werden muss, dass ein systematischer Fehler diese kompensiert.
-Eine mögliche Ursache kann sein, dass das Lineal einen kleinen Winkel zur Senkrechten auf der Wand aufwies und somit eine tendenzielle Unterschätzung der berechneten Wellenlänge zur Folge hat.
+Bemerkenswert ist, dass die Tendenz, die Wellenlänge zu überschätzen, in den Messdaten nicht beobachtet werden kann, weshalb davon ausgegangen werden muss, dass ein systematischer Fehler diese kompensiert.
+Eine mögliche Ursache kann sein, dass das Lineal einen kleinen Winkel zur Senkrechten auf der Wand aufwies und somit eine tendenzielle Unterschätzung der berechneten Wellenlänge folgt.
 
 \subsection{Untersuchung der Polarisation des Lasers}
 \label{ssec:polarisation}
 Zur Untersuchung der Polarisation des hier verwendeten Experimentierlasers wird der Intensitätsverlauf an einer Photodiode in Abhängigkeit des Winkels eines davor stehenden Linearpolarisators betrachtet.
 Dieser ist in der Lage, einfallendes Licht in eine vorgegebene Richtung linear zu polarisieren.
-Für den Fall, dass das einfallende Licht bereits linear polarisiert ist (wie für den hier verwendeten Laser angenommen werden kann), gilt für die hinter dem Polarisator registrierte Intensität (Gesetz von Malus):
+Für den Fall, dass das einfallende Licht bereits linear polarisiert ist (wie für den hier verwendeten Laser angenommen wird), gilt für die hinter dem Polarisator registrierte Intensität (Gesetz von Malus):
 \begin{align}
 I=I_0\cdot\cos^2\alpha
 \end{align}
-In dem Versuch wird tatsächlich der Zusammenhang:
+In dem Versuch wird aufgrund des Aufbaus jedoch der Zusammenhang:
 \begin{align}
 	I = I_0 \cdot \cos^2 (\varphi - \varphi_0)
 \end{align}
 gemessen.
-Dabei ist $\varphi$ der Polarsiatorwinkel und $\varphi_0$ beschreibt die Polarisationsrichtung. 
-
+Dabei ist $\varphi$ der Polarsiatorwinkel und $\varphi_0$ beschreibt die Polarisationsrichtung des Lasers.\\ 
+\\
 Der Winkel $\varphi$ am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Photospannung $U_\text{PD}$ an der Photodiode in \si{\milli\volt} notiert.
 In Tabelle \ref{tab:malus} sind die Messwerte bei einer Resonatorlänge von \SI{50}{\centi\metre} festgehalten worden.
 Der Fehler $\Delta\varphi$ für den Winkel ergibt sich aus der Tatsache, dass der Polarisator in Schritten von \SI{2}{\degree} eingestellt werden konnte, der Fehler für die Photospannung wurde aufgrund der Schwankungen, die zu beobachten waren (es wurde mit der \emph{Measure}-Funktion des Oszilloskops gemessen), auf \SI{0.3}{\milli\volt} abgeschätzt.
@@ -448,7 +449,7 @@ bei einem reduzierten $\chi^2$ von \num{25.4}.
 	\caption{Anpassung einer zu erwartenden Kurve an die Messwerte}
 	\label{fig:malus}
 \end{figure}
-Man kann an der Anpassung gut erkennen, dass die Intensität wie erwartet dem Gesetz von Malus folgt.
+Man kann an der Anpassung erkennen, dass die Intensität wie erwartet dem Gesetz von Malus folgt.
 Dies bestätigt auch die Annahme, dass der Laser durch die an der Entladungsröhre befestigten Brewster-Fenster mit linear polarisiertem Licht betrieben wird.
 Die Abweichungen der Anpassung (das reduzierte $\chi^2$ von \num{25.4} bestätigt die schlechte Übereinstimmung) von den Messwerten lassen sich durch eine nicht ideale Justage erklären.
 Es ist davon auszugehen, dass der Laserstrahl den Polarisationsfilter nicht genau an dessen Rotationsachse durchtreten hat.
@@ -485,12 +486,12 @@ Konkret wird der Messschieber auf die konstante Breite $d$ eingestellt und an ei
 Dann wird dessen Abstand $z$ vom ebenen Resonatorspiegel langsam vergrößert und beobachtet, wann der Strahl nichtmehr aufleuchtet, wenn der Messschieber gegen die Strahlachse bewegt wird.
 Ist dieser Punkt erreicht, so wird der Abstand $z$ wieder verkleinert bis der Laser gerade noch anfängt zu arbeiten.
 Dann kann der Abstand $z$ des Messschiebers vom ebenen Resonatorspiegel vermessen werden.
-Dieser ist gleichzeitig der Abstand von der Strahltaille, da diese bei halbsymmetrischen Resonatoren auf dem ebenen Spiegel liegt (siehe auch Abschnitt (REF!)).
-
+Dieser ist gleichzeitig der Abstand von der Strahltaille, da diese bei halbsymmetrischen Resonatoren auf dem ebenen Spiegel liegt (siehe auch Abschnitt \ref{ssec:halbsym_res}).\\
+\\
 Bei dieser Methode treten Fehler in der Bestimmung der Position $z$ des Messschiebers und dessen Spaltbreite $d$ auf.
 Der Fehler in der Position setzt sich zusammen aus dem Messfehler sowie einem zusätzlichen Beitrag aufgrund von nicht optimaler Ausrichtung (senkrecht zur optischen Achse) des Messschiebers.
 Dazu kommt, dass die Position $z$ hinter dem Resonator nicht direkt mit der auf der optischen Bank angebrachten Skala vermessen werden konnte, weshalb für Messpunkte hinter dem Resonator ein größerer Fehler angenommen wurde, als für solche vor dem Resonator.
-Für den Fehler in der Spaltbreite $d$ wird $\Delta = \SI{0.02}{\milli\metre}$ angenommen, was darin begründet liegt, dass trotz einer Auflösung von \SI{0.01}{\milli\metre} bei typischen (digitalen) Messschiebern nur eine Genauigkeit von \SI{0.02}{\milli\metre} erreicht wird \cite{messschieber_katalog}.
+Für den Fehler in der Spaltbreite $d$ wird $\Delta = \SI{0.02}{\milli\metre}$ angenommen, was darin begründet liegt, dass nach \cite{messschieber_katalog} trotz einer Auflösung von \SI{0.01}{\milli\metre} bei typischen (digitalen) Messschiebern nur eine Genauigkeit von \SI{0.02}{\milli\metre} erreicht wird.
 \begin{table}[h]
 	\centering
 	\input{./tables/strahlradien/80cm.tex}
@@ -505,13 +506,13 @@ Zunächst gilt es zu beachten, dass der Strahlradius $w$ keine scharfe Begrenzun
 Wie in Abschnitt \ref{gaussstrahlen} erklärt, ist das transversale Profil der $\mathrm{TM}_{00}$-Mode gegeben durch eine Gaußfunktion, anhand derer der Strahlradius definiert ist als der Abstand von der Strahlachse, bei dem die Intensität auf $1/\mathrm{e}^2$ abgefallen ist.
 Durch Begrenzung der transversalen Strahlbreite auf die Spaltbreite des Messschiebers $d$, kommt es zu zusätzlichen Verlusten aufgrund von Reflexion und Absorption an den Backen des Messschiebers.
 Diese Verluste führen zu einer Änderung der Schwellenbedingung für Laseroperation, was bei dieser Messmethode ausgenutzt wird, um eine zum Strahlradius $w$ proportionale Größe $d$ zu messen.
-Da der Laser durch die Verschiebung des Messschiebers entlang der Strahlachse, stehts an der Schwelle operiert, ist die Strahlleistung im Spalt $P_\mathrm{Spalt}$ konstant bezüglich der verschiedener Messpositionen $z$.
+Da der Laser durch die Verschiebung des Messschiebers entlang der Strahlachse, stets an dieser Schwelle operiert, ist die Strahlleistung im Spalt $P_\mathrm{Spalt}$ konstant bezüglich der verschiedenen Messpositionen $z$.
 Im Folgenden soll gezeigt werden, dass dann in der Tat gilt:
 \begin{align}
 	d = \alpha \cdot w(z) \text{,}
 \end{align}
 wobei $\alpha$ unabhängig vom Abstand $z$ von der Strahltaille ist.
-Dazu betrachtet man die Leistung des Strahls auf der Fläche des durch den Messschiebers gebildeten Spaltes mit der Breite $d$:
+Dazu betrachtet man die Leistung des Strahls auf der Fläche des durch den Messschieber gebildeten Spalts mit der Breite $d$:
 \begin{align}
 	P_\mathrm{Spalt} &= I_0 \left( \frac{w_0}{w(z)} \right)^2 \int_{A_\mathrm{Spalt}} \exp\left( -\frac{2 r^2}{w^2(z)} \right) \mathrm{d}A
 \end{align}
@@ -536,12 +537,12 @@ wobei das Profil $w_\mathrm{exp.}(z)$, unabhängig von der Rayleigh-Länge $z_0$
 	w_\mathrm{exp.}(z) = w_0 \sqrt{1 + \left( \frac{\lambda}{\pi} \right)^2 \left( \frac{z}{w_0^2}\right)^2}
 \end{align}
 (Folgerung aus Gleichungen \ref{eq:gauss_axialprofil} und \ref{eq:rayleigh_laenge}).
-Das Halbieren\footnote{Auch der Fehler $\Delta r$ halbiert sich entsprechend: $\Delta r = \Delta d / 2$} der Spaltbreite ist dabei optional und wurde durchgeführt um eine zum Strahlradius $w$ ähnlichere Größe zu erhalten.
-
+Das Halbieren\footnote{Auch der Fehler $\Delta r$ halbiert sich entsprechend: $\Delta r = \Delta d / 2$} der Spaltbreite ist dabei optional und wurde durchgeführt um eine zum Strahlradius $w$ ähnlichere Größe zu erhalten.\\
+\\
 Somit kann die Anpassung an die Messpunkte durch die \emph{Methode der kleinsten Quadrate} erfolgen.
 Dabei werden die Proportionalitätskonstante $\alpha$ und die Strahltaille $w_0$ als Anpassungsparameter gewählt.
 Die Messdaten, Anpassung, experimentelles und theoretisches Strahlprofil wurden in Abbildung \ref{fig:ex_strahlradius} aufgetragen.
-Dabei ist das theoretische Strahlprofil eindeutig durch die aus der Resonatorgeometrie folgenden Strahltaille (Gleichung \ref{eq:strahltaille_halbsym}) und der Wellenlänge des Lasers $\lambda$ festgelegt.
+Dabei ist das theoretische Strahlprofil eindeutig durch die aus der Resonatorgeometrie folgende Strahltaille (Gleichung \ref{eq:strahltaille_halbsym}) und der Wellenlänge des Lasers $\lambda$ festgelegt.
 Für die Wellenlänge des HeNe-Lasers wurde der Wert aus Gleichung \ref{eq:HeNe_wellenlaenge} verwendet.
 Die resultierenden Anpassungsparameter für alle Resonatorlängen wurden in Tabelle \ref{tab:strahlradius_fitergebnis} aufgetragen.
 \begin{table}[h]
@@ -557,11 +558,11 @@ Die resultierenden Anpassungsparameter für alle Resonatorlängen wurden in Tabe
 	\label{fig:ex_strahlradius}
 \end{figure}
 
-Bemerkenswert ist, dass man bei den letzten\footnote{bezüglich des Abstandes $z$ von der Strahltaille} Messpunkten im Strahlprofil ein systematisches Abknicken beobachten kann.
+Bemerkenswert ist, dass man bei den letzten\footnote{bezüglich des Abstandes $z$ von der Strahltaille} Messpunkten im Strahlprofil ein systematisches Abknicken \textbf{sagt man "`Abknicken"'?} beobachten kann.
 Die Ursache liegt vermutlich darin, dass an der Knickstelle das Aufblitzen des Lasers von der anderen Seite des Messschiebers beobachtet wurde, da der sphärische Resonatorspiegel den Blick auf den Messschieber beeinträchtigt hat.
-Da der Reflexionsgrad beider Seiten des Messschiebers unterschiedlich ist, kommt es hier zu einem systematischen Fehler aufgrund der unterschiedlichen Helligkeiten des Reflexes an den Messbacken.
-
-Zusammenfassend kann man sagen, dass des experimentell bestimmte Strahlprofil gut mit dem Theoretischen übereinstimmt.
+Da der Reflexionsgrad beider Seiten des Messschiebers unterschiedlich ist, kommt es hier zu einem systematischen Fehler aufgrund der unterschiedlichen Helligkeiten des Reflexes an den Messbacken.\\
+\\
+Zusammenfassend kann man sagen, dass das experimentell bestimmte Strahlprofil gut mit dem theoretischen übereinstimmt.
 Einzig für die Resonatorlänge $L = \SI{500}{\milli\metre}$ kommt es zu einer signifikanten Abweichung, da auf dem Messbereich nur wenige Messpunkte zur Verfügung standen.
 
 
@@ -572,7 +573,7 @@ Sie wird gemäß der Praktikumsanleitung aufgebaut und justiert.
 Zur korrekten Einstellung der Diode wird der Polarisator nun so gedreht, dass das transmittierte Licht ein Maximum erreicht.
 Hierfür findet man bei der Einstellung von \SI{254}{\degree} das Transmissionsminimum und verdreht den Polarisator um weitere \SI{90}{\degree} (dies folgt aus dem Gesetz von Malus, siehe Abschnitt \ref{ssec:polarisation}), so dass das Transmissionsmaximum bei einer Einstellung von \SI{344}{\degree} erreicht wird.\\
 \\
-Vor der optischen Diode kann bei der Resonatorlänge \SI{50}{\centi\metre} eine Intensität von \SI{66.2+-0.1}{\milli\volt} gemessen werden, hinter der Diode beträgt die Intensität \SI{47.2+-0.1}{\milli\volt}.
+Vor der optischen Diode kann bei der Resonatorlänge \SI{50}{\centi\metre} eine Intensität von \SI{66.2+-0.1}{\milli\volt} gemessen werden, hinter der Diode beträgt die Intensität nur noch \SI{47.2+-0.1}{\milli\volt}.
 Die Leistungsverluste an der Diode (z.B. Reflexionen an der Vorderseite der $\lambda/4$-Platte) belaufen sich somit auf ca. \SI{1}{\milli\watt}.
 Dabei wurde wie in \eqref{eq:umrechnung_watt} der Umrechnungsfaktor \num{17.5} zwischen der gemessenen Intensität in \si{\milli\volt} und \si{\milli\watt} verwendet.
 

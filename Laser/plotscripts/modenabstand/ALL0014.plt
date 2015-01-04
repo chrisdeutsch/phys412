@@ -12,8 +12,8 @@ set key top right
 
 set xrange [*:*]
 set yrange [0:350]
-set xlabel 'Zeit / 1000'
-set ylabel 'Photospannung $I / \si{\milli\volt}$'
+set xlabel 'Zeitablenkung $T$ / \si{\milli\second}'
+set ylabel 'Photospannung $U_\text{PD} / \si{\milli\volt}$'
 
 set grid
 

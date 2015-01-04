@@ -612,7 +612,7 @@ Da für die quantitative Auswertung jedoch nur die $b_i$ (die Schwerpunkte) ben�
 \begin{figure}[htb]
 \centering
 \input{./plots/modenabstand/ALL0028.tex}
-\caption{Resonatorlänge 50cm ALL0028}
+\caption{Beobachtetes Modenspektrum und Anpassung für die Resonatorlänge \SI{50+-0.4}{\centi\meter} (Datensatz ALL0028)}
 \label{fig:ALL0028}
 \end{figure}
 \subsubsection{Bestimmung der Modenabstände}
@@ -626,11 +626,11 @@ Hierbei entspricht $l$ der Länge des externen Resonators (hier \SI{5}{\centi\me
 \end{align}
 Daraus folgt für den \textbf{freien Spektralbereich des konfokalen Resonators}\footnote{In der Literatur wird der konfokale Modenabstand oft gleichgesetzt mit dem freien Spektralbereich. Hier soll mit dem freien Spektralbereich nur der Abstand zweier longitudinaler Moden bezeichnet werden, nicht der Bereich zwischen zwei Transmissionsmaxima des Fabry-Pérot-Interferometers.} (siehe auch \eqref{eq:modenabstand}):
 \begin{align}
-\Delta\nu_\text{FSR}=\frac{c}{2\,l}=2\,\Delta\nu_\text{kon}=\SI{2.998}{\giga\hertz} \text{,}
+\Delta\nu_\text{FSR}=\frac{c}{2\,l}=2\,\Delta\nu_\text{kon}=\SI{2.998}{\giga\hertz}
 \end{align}
 Man beobachtet, dass für ungerade $n+m$ allerdings auch Transversalmoden TEM$_{nm}$ in dem Frequenzspektrum zu erkennen sind.
 Sie fallen genau zwischen die beobachtbaren Maxima zweier longitudinaler Moden.
-Daher ergibt sich der Abstand einer longitudinalen Mode zu einer dieser transversalen Moden als konfokaler Modenabstand, der den freien Spektralbereich gerade halbiert.
+Daher ergibt sich der Abstand zwischen einer longitudinalen Mode und einer dieser transversalen Moden als konfokaler Modenabstand, der den freien Spektralbereich gerade halbiert.
 Die zwei beobachteten Gaußprofile entsprechen daher einer longitudinalen und einer der oben genannten Transversalmoden.\\
 \\
 Die Berechnung des longitudinalen Modenabstands wird hier beispielhaft für den Resonator der Länge \SI{50+-0.4}{\centi\metre} durchgeführt, die Tabellen für alle anderen Resonatorlängen befinden sich im Anhang.
@@ -650,7 +650,7 @@ Durch Bildung des varianzgewichteten Mittelwerts über die Werte für beide Abst
 \caption{Messwerte und Berechnung zum longitudinalen Modenabstand. $x_i$ beschreibt die Position der Maxima, $\Delta T$ die Differenz zweier aufeinander folgender Positionen und $T_\text{konf.}$ den Abstand zweier gleicher Tranversalmoden. Dieser ist getrennt dargestellt, da die Werte keinen zeilenweisen Bezug zu den $x_i$ haben.}
 \label{tab:ALL0028}
 \end{table}
-Mit den Mittelwerten kann nun der Abstand zweier Moden in Einheiten des konfokalen Modenabstands gefunden werden.
+Mit den Mittelwerten kann nun der Abstand zweier Moden in Einheiten des konfokalen Modenabstands ausgedrückt werden.
 Man erhält so für die hier betrachtete Resonatorlänge \SI{50+-0.4}{\centi\metre}\footnote{Aus der Proportionalität zwischen Zeit und Spannung am Piezoelement und damit der Länge des externen Resonators gilt dieses Verhältnis ebenso für die Frequenzen.}:
 \begin{align}
 \frac{\Delta T}{T_\text{konf.}}= \num{0.201+-0.001}
@@ -676,17 +676,17 @@ Der Fehler wurde abermals mit Gaußscher Fehlerfortpflanzung und mit den einzeln
 
 \subsubsection{Ergebnisse und Fazit}
 
-Mit dieser Vorgehensweise erhält man für alle vier Resonatorlängen die in Tabelle \ref{tab:modenabstand} \textbf{Ungültige REF!} eingetragenen Ergebnisse für den Abstand zweier Moden und den longitudinalen Modenabstand.
 \begin{table}[htb]
 \centering
 \input{./tables/modenabstand.tex}
-\label{tab:modenabstand}
-\caption{Ergebnisse für $\nu_\text{long.}$ und $\frac{\Delta T}{T_\text{konf.}}$ für alle Resonatorlängen.}
+\caption{Ergebnisse für $\nu_\text{long.}$ und $\frac{\Delta T}{T_\text{konf.}}$ für alle Resonatorlängen}
+\label{tab:moden}
 \end{table}
+Mit dieser Vorgehensweise erhält man für alle vier Resonatorlängen die in Tabelle \ref{tab:moden} eingetragenen Ergebnisse für den Abstand zweier Moden und den longitudinalen Modenabstand.
 Wie später in Tabelle \ref{tab:messdaten_optische_schwebung} zu sehen ist, decken sich die hier gefundenen Werte gut mit den Ergebnissen der optischen Schwebung, deren Genauigkeit deutlich höher liegt als beim optischen Spektrumanalysator.
 Die leichten Abweichungen sind vor allem mit den vielen Faktoren, mit denen der Modenabstand bestimmt wurde, zu erklären.
 Die Justage des externen Resonators ist relativ aufwändig und die Einstellung der Wechselspannung für das Piezoelement nur sehr schwierig auf \SI{50}{\hertz} festzulegen.
-Bei der Wahl der Amplitude muss darauf geachtet werden, dass sowohl ein freier Spektralbereich durchfahren wird, als auch dass das Sägezahnsignal durchweg linear verläuft, was nicht immer gleichzeitig zu erreichen war.
+Bei der Wahl der Amplitude muss darauf geachtet werden, dass sowohl ein freier Spektralbereich durchfahren wird, als auch, dass das Sägezahnsignal durchweg linear verläuft, was nicht immer gleichzeitig zu erreichen war.
 Weiterhin führt die Anpassung in \texttt{Gnuplot} zu einer weiteren Fehlerquelle, die allerdings als einziges in der Auswertung berücksichtigt wird.
 Dennoch stellt der optische Spektrumanalysator eine gute und vor allem anschauliche Möglichkeit zur Analyse des Modenspektrums eines Lasers dar.
 
@@ -698,7 +698,7 @@ Die Superposition der elektrischen Felder kann geschrieben werden als:
 	E(t) = E_1 \sin(\omega_1 t) + E_2 \sin(\omega_2 t)
 	\label{eq:superposition_efeld}
 \end{align}
-Da die Photodiode die Intensität $I$ des auftreffenden Lichts misst und diese gegeben ist durch $I \propto E^2$, erhält man durch quadrieren von Gleichung \ref{eq:superposition_efeld} und Anwendung der trigonometrischen Additionstheoreme das resultierende Frequenzspektrum der Intensität, welche aus den Frequenzen $\omega_1 + \omega_2, |\omega_1 - \omega_2|$ sowie den zweiten Harmonischen $2\omega_1, 2\omega_2$ besteht.
+Da die Photodiode die Intensität $I$ des auftreffenden Lichts misst und diese gegeben ist durch $I \propto E^2$, erhält man durch Quadrieren von Gleichung \ref{eq:superposition_efeld} und Anwendung der trigonometrischen Additionstheoreme das resultierende Frequenzspektrum der Intensität, welche aus den Frequenzen $\omega_1 + \omega_2, |\omega_1 - \omega_2|$ sowie den zweiten Harmonischen $2\omega_1, 2\omega_2$ besteht.
 Mit Ausnahme von dem Heterodynsignal mit der Frequenz $|\omega_1 - \omega_2|$, welche in der Größenordnung von einigen $\SI{100}{\mega\hertz}$ liegt, sind die restlichen auftretenden Frequenzen so groß ($\sim \si{\peta\hertz}$), dass diese aufgrund der endlichen Bandbreite der Photodiode ($\sim \si{\giga\hertz}$) nicht gemessen werden können.
 Auch die Frequenz der optischen Schwebung ist so hoch, dass diese nicht direkt mit dem vorhandenen analogen Oszilloskop (Bandbreite $B = \SI{35}{\mega\hertz}$) gemessen werden kann.
 Daher wird in einer zweiten Stufe das Signal der Schwebung mit dem eines Hochfrequenzgenerators der Frequenz $\nu_\mathrm{HF}$ gemischt.
@@ -716,7 +716,7 @@ Die Wirkung eines solchen \textbf{Mischers} auf zwei Eingangssignale $x(t) = \ha
 	\end{align}
 	Das resultierende Spektrum enthält sowohl die Summe als auch die Differenz der beiden Eingangsfrequenzen.
 	\item \textbf{Mischung durch Anwendung einer nichtlinearen Operation auf die Summe der Signale:} Um die Differenzfrequenz $|\omega_1 - \omega_2|$ zu bestimmen, ist es nicht nötig das Produkt der beiden Eingänge zu bilden.
-	Alternativ reicht es aus die Summe beider Signale zu bilden und eine nichtlineare Operation $f$ auf diese anzuwenden.
+	Alternativ reicht es aus, die Summe beider Signale zu bilden und eine nichtlineare Operation $f$ auf diese anzuwenden.
 	Beschreibt man diese durch eine Potenzreihenentwicklung:
 	\begin{align}
 		f(x) = \sum_{n=0}^{\infty} a_n x^n
@@ -726,9 +726,9 @@ Die Wirkung eines solchen \textbf{Mischers} auf zwei Eingangssignale $x(t) = \ha
 		f(x+y)(t) = \sum_{n=0}^{\infty} a_n \left[ \hat{x} \sin(\omega_1 t) + \hat{y} \sin(\omega_2 t) \right]^n
 	\end{align}
 	Sofern mindestens einer der geraden Koeffizienten $a_n$ für $n = 2, 4, 6\dots$ nicht verschwindet, führt dies zum Auftreten eines Terms mit der Frequenz $|\omega_1 - \omega_2|$.
-	Dies kann mit dem binomischen Lehrsatz sowie einigen trigonometrischen Identitäten gezeigt werden, dennoch soll hier darauf verzichtet werden.
+	Dies kann mit dem binomischen Lehrsatz sowie einigen trigonometrischen Identitäten gezeigt werden, darauf soll hier jedoch verzichtet werden.
 	Der Spezialfall $f(x) = x^2$ ist bereits bei der Mischung der elektrischen Felder der verschiedenen Axialmoden in der Photodiode aufgetreten, da die gemessene Intensität quadratisch mit der Summe der Feldstärken $E_1$ und $E_2$ zusammenhängt.
-	Demnach agiert bereits die Photodiode als Mischer für die elektrischen Feldstärken der verschiedenen Moden.
+	Demnach agiert die Photodiode bereits als Mischer für die elektrischen Feldstärken der verschiedenen Moden.
 \end{itemize}
 
 \subsubsection{Messung des Modenabstandes durch Mischung mit der Hochfrequenz}
@@ -750,9 +750,9 @@ Diese erfolgt über den theoretischen Axialmodenabstand (siehe \eqref{eq:modenab
 \end{align}
 wobei $L$ die gemessene Resonatorlänge ist.
 Fällt die Hochfrequenz $\nu_\mathrm{HF}$ und der Modenabstand $\Delta \nu$ innerhalb der Bandbreite des Oszilloskops zusammen, so kann ein sinusförmiges Signal gemessen werden.
-(mehr Beschreibung zum Signal)
+\textbf{(mehr Beschreibung zum Signal) hattest du selber noch angemerkt}
 Anschließend wird die Hochfrequenz $\nu_\mathrm{HF}$ schrittweise verändert, sodass die Periode des Signals zunimmt.
-Durch diese Methodik nähert man sich langsam der minimalen Signalfrequenz, wobei diese nicht beliebig genau bestimmt werden kann, da bei einer Annäherung in \SI{50}{\kilo\hertz}-Schritten das Signal in der Nähe des Minimums im Rauschen untergeht.
+Durch diese Methodik nähert man sich langsam der minimalen Signalfrequenz an, wobei diese nicht beliebig genau bestimmt werden kann, da bei einer Annäherung in \SI{50}{\kilo\hertz}-Schritten das Signal in der Nähe des Minimums im Rauschen untergeht.
 Ist dieser Punkt erreicht, wird die Frequenz des Signalgenerators notiert und dient als Approximation\footnote{Streng genommen müsste noch die Frequenz des Restsignals auf dem Oszilloskops vermessen werden. Da dieses aber im Rauschen nicht auszumachen ist und dessen Frequenz klein ist gegen den Modenabstand $\Delta \nu$, kann dieser Beitrag vernachlässigt werden.} des Modenabstandes $\Delta \nu$.
 Aus der verwendeten Schrittbreite von \SI{50}{\kilo\hertz} folgt ein abgeschätzter Fehler für die Bestimmung des Frequenzminimums von $\Delta \nu_\mathrm{HF} = \SI{25}{\kilo\hertz}$ (halbe Schrittbreite).
 Die gemessenen Modenabstände wurden in Tabelle \ref{tab:messdaten_optische_schwebung} aufgetragen.
@@ -761,14 +761,15 @@ Die gemessenen Modenabstände wurden in Tabelle \ref{tab:messdaten_optische_schw
 	\input{./tables/optische_schwebung.tex}
 	\caption{Messwerte des longitudinalen Modenabstandes. Die eingestellte Hochfrequenz im Frequenzminimum approximiert den axialen Modenabstand $\nu_\mathrm{HF} \approx \Delta \nu$.}
 	\label{tab:messdaten_optische_schwebung}
-\end{table}
-
+\end{table}\\
+\\
 Diese Messwerte können im Hinblick auf den theoretischen Modenabstand in Gleichung \ref{eq:modenabstand} einen Wert für die Lichtgeschwindigkeit $c$ liefern.
-Dazu wird die doppelte Resonatorlänge $2 L$ gegen die inverse Frequenz des Hochfrequenzgenerators im Frequenzminimum des gemischten Signals auf.
+Dazu wird die doppelte Resonatorlänge $2 L$ gegen die inverse Frequenz des Hochfrequenzgenerators im Frequenzminimum des gemischten Signals aufgetragen.
 Der Graph sollte daher dem theoretischen Zusammenhang:
 \begin{align}
 	2 L = c \cdot \frac{1}{\nu_\mathrm{RF}}
 \end{align}
+\textbf{RF oder HF in der Formel?}
 folgen, wobei die Näherung $\Delta \nu \approx \nu_\mathrm{HF}$ verwendet wird.
 Diese Form der Linearisierung wird gewählt, da bei einer Anpassung mit der \emph{Methode der kleinsten Quadrate} nur die Fehler in $y$-Richtung in die Gewichtung der Messpunkte eingehen.
 Da der Fehler in der Frequenzbestimmung im Verhältnis zur Resonatorlängenbestimmung klein ist, wurde diese Form gewählt um eine sinnvolle Gewichtung bei der Geradenanpassung zu erzielen.
@@ -799,7 +800,7 @@ Dieser Wert stimmt gut mit der Definition der Lichtgeschwindigkeit im Vakuum:
 \subsection{Modenspektrum des Helium-Neon-Lasers}
 In diesem Abschnitt soll der Einfluss der thermischen Bewegung der Neonatome in der Entladungsröhre auf den Helium-Neon-Laser untersucht werden.
 Mit der Masse des Neon-Atoms $m_\mathrm{Ne} = \SI{20.18}{\atomicmassunit}$ \cite{iupac_periodic_table} und der abgeschätzten Temperatur $T = \SI{400}{\kelvin}$ innerhalb der Röhre, ist die Geschwindigkeitsverteilung der Neon-Atome eindeutig gegeben durch die Maxwell-Boltzmann-Verteilung.
-Die wahrscheinlichste Geschwindigkeit eines Neon-Atoms in der Entladungsröhre ist somit gegeben durch:
+Die wahrscheinlichste Geschwindigkeit eines Neon-Atoms in der Entladungsröhre ist somit:
 \begin{align}
 	v_\mathrm{w} = \sqrt{\frac{2 k_\mathrm{B} T}{m}}
 \end{align}
@@ -827,8 +828,8 @@ Für einen Resonator der Länge $L = \SI{30}{\centi\metre}$ erhält man somit ei
 	\Delta \nu_\mathrm{FSR} \approx \SI{500}{\mega\hertz}
 \end{align}
 Die Anzahl der Moden die in die Dopplerbreite des Verstärkungsprofils fallen ist somit gegeben durch das Verhältnis von Dopplerbreite zum freien Spektralbereich.
-Für den \SI{30}{\centi\metre} Resonator fallen \num{3} Moden innerhalb die Halbwertsbreite.
-
+Für den \SI{30}{\centi\metre} Resonator fallen \num{3} Moden innerhalb die Halbwertsbreite.\\
+\\
 Für die in diesem Versuch verwendeten Resonatorlänge von \SI{50}{\centi\metre} bis \SI{100}{\centi\metre} folgt für den freien Spektralbereich:
 \begin{align}
 \SI{150}{\mega\hertz} \le \Delta \nu_\mathrm{FSR} \le \SI{300}{\mega\hertz}
@@ -996,12 +997,12 @@ Fazits zu den einzelnen Teilen sind glaub ich überflüssig.\\
 \centering
 \resizebox{0.75\textwidth}{!}{
 \input{./plots/modenabstand/ALL0026.tex}}
-\caption{Resonatorlänge 70cm ALL0026}
+\caption{Beobachtetes Modenspektrum und Anpassung für die Resonatorlänge \SI{69+-0.4}{\centi\meter} (Datensatz ALL0026)}
 \label{fig:ALL0026}
 \end{figure}
 \begin{table}[hb]
 \centering
-\resizebox{\columnwidth}{!}{%
+\resizebox{0.95\columnwidth}{!}{%
 \input{./tables/modenabstand/ALL0026.tex}}
 \caption{Messwerte und Berechnung zum longitudinalen Modenabstand. $x_i$ beschreibt die Position der Maxima, $\Delta T$ die Differenz zweier aufeinander folgender Positionen und $T_\text{konf.}$ den Abstand zweier gleicher Tranversalmoden. Dieser ist getrennt dargestellt, da die Werte keinen zeilenweisen Bezug zu den $x_i$ haben.}
 \end{table}
@@ -1010,12 +1011,12 @@ Fazits zu den einzelnen Teilen sind glaub ich überflüssig.\\
 \centering
 \resizebox{0.75\textwidth}{!}{
 \input{./plots/modenabstand/ALL0022.tex}}
-\caption{Resonatorlänge 80cm ALL0022}
+\caption{Beobachtetes Modenspektrum und Anpassung für die Resonatorlänge \SI{79.5+-0.4}{\centi\meter} (Datensatz ALL0022)}
 \label{fig:ALL0022}
 \end{figure}
 \begin{table}[hb]
 \centering
-\resizebox{\columnwidth}{!}{%
+\resizebox{0.95\columnwidth}{!}{%
 \input{./tables/modenabstand/ALL0022.tex}}
 \caption{Messwerte und Berechnung zum longitudinalen Modenabstand. $x_i$ beschreibt die Position der Maxima, $\Delta T$ die Differenz zweier aufeinander folgender Positionen und $T_\text{konf.}$ den Abstand zweier gleicher Tranversalmoden. Dieser ist getrennt dargestellt, da die Werte keinen zeilenweisen Bezug zu den $x_i$ haben.}
 \end{table}
@@ -1024,12 +1025,12 @@ Fazits zu den einzelnen Teilen sind glaub ich überflüssig.\\
 \centering
 \resizebox{0.75\textwidth}{!}{
 \input{./plots/modenabstand/ALL0014.tex}}
-\caption{Resonatorlänge 90cm ALL0014}
+\caption{Beobachtetes Modenspektrum und Anpassung für die Resonatorlänge \SI{89.2+-0.4}{\centi\meter} (Datensatz ALL0014)}
 \label{fig:ALL0014}
 \end{figure}
 \begin{table}[hb]
 \centering
-\resizebox{\columnwidth}{!}{%
+\resizebox{0.95\columnwidth}{!}{%
 \input{./tables/modenabstand/ALL0014.tex}}
 \caption{Messwerte und Berechnung zum longitudinalen Modenabstand. $x_i$ beschreibt die Position der Maxima, $\Delta T$ die Differenz zweier aufeinander folgender Positionen und $T_\text{konf.}$ den Abstand zweier gleicher Tranversalmoden. Dieser ist getrennt dargestellt, da die Werte keinen zeilenweisen Bezug zu den $x_i$ haben.}
 \end{table}

@@ -424,13 +424,8 @@ Zur Untersuchung der Polarisation des hier verwendeten Experimentierlasers wird 
 Dieser ist in der Lage, einfallendes Licht in eine vorgegebene Richtung linear zu polarisieren.
 Für den Fall, dass das einfallende Licht bereits linear polarisiert ist (wie für den hier verwendeten Laser angenommen wird), gilt für die \textbf{hinter dem Polarisator registrierte Intensität} (Gesetz von Malus):
 \begin{align}
-I=I_0\cdot\cos^2\alpha
-\end{align}
-In dem Versuch wird aufgrund des Aufbaus jedoch der Zusammenhang:
-\begin{align}
 	I = I_0 \cdot \cos^2 (\varphi - \varphi_0)
 \end{align}
-gemessen.
 Dabei ist $\varphi$ der Polarsiatorwinkel und $\varphi_0$ beschreibt die Polarisationsrichtung des Lasers.\\ 
 \\
 Der Winkel $\varphi$ am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Photospannung $U_\text{PD}$ an der Photodiode in \si{\milli\volt} notiert.
@@ -570,7 +565,7 @@ Bemerkenswert ist, dass man bei den letzten\footnote{bezüglich des Abstandes $z
 Die Ursache liegt vermutlich darin, dass an der Knickstelle das Aufblitzen des Lasers von der anderen Seite des Messschiebers beobachtet wurde, da der sphärische Resonatorspiegel den Blick auf den Messschieber beeinträchtigt hat.
 Da der Reflexionsgrad beider Seiten des Messschiebers unterschiedlich ist, kommt es hier zu einem systematischen Fehler aufgrund der unterschiedlichen Helligkeiten des Reflexes an den Messbacken.\\
 \\
-Zusammenfassend kann man sagen, dass das experimentell bestimmte Strahlprofil gut mit dem theoretischen übereinstimmt.
+Zusammenfassend kann man sagen, dass das experimentell bestimmte Strahlprofil gut mit dem Theoretischen übereinstimmt.
 Einzig für die Resonatorlänge $L = \SI{500}{\milli\metre}$ kommt es zu einer signifikanten Abweichung, da auf dem Messbereich nur wenige Messpunkte zur Verfügung standen.
 Bei einer erneuten Durchführung sollte darauf geachtet werden, dass Gasentladungsröhre etwas weiter vom Planspiegel des Resonators aufgestellt wird, damit mehr Messpunkte vor dem Resonator aufgenommen werden können.
 Außerdem sollte das Aufblitzen des Laser auf eine konsistente Weise beobachtet werden, um das hier angesprochene Abflachen der Messpunkte zu vermeiden.
@@ -583,9 +578,9 @@ Zur korrekten Einstellung der Diode wird der Polarisator nun so gedreht, dass da
 Hierfür findet man bei der Einstellung von \SI{254}{\degree} das Transmissionsminimum und verdreht den Polarisator um weitere \SI{90}{\degree} (dies folgt aus dem Gesetz von Malus, siehe Abschnitt \ref{ssec:polarisation}), so dass das Transmissionsmaximum bei einer Einstellung von \SI{344}{\degree} erreicht wird.\\
 \\
 Vor der optischen Diode kann bei der Resonatorlänge \SI{50}{\centi\metre} eine Intensität von \SI{66.2+-0.1}{\milli\volt} gemessen werden, hinter der Diode beträgt die Intensität nur noch \SI{47.2+-0.1}{\milli\volt}.
-Die Leistungsverluste an der Diode (z.B. Reflexionen an der Vorderseite der $\lambda/4$-Platte) belaufen sich somit auf ca. \SI{1}{\milli\watt}.
+Die Leistungsverluste an der Diode (z.B. Reflexionen an der Vorderseite der $\lambda/4$-Platte und des Polarisators) belaufen sich somit auf ca. \SI{1}{\milli\watt}.
 Dabei wurde wie in \eqref{eq:umrechnung_watt} der Umrechnungsfaktor \num{17.5} zwischen der gemessenen Intensität in \si{\milli\volt} und \si{\milli\watt} verwendet.
-Die angesprochenen Reflexionen an der optischen Diode führen zu einer unerwünschten Rückkopplung des Strahls in den Resonator, weswegen die $\lambda/4$-Platte leicht verdreht wurde, damit der Strahl nicht in sich selbst reflektiert wird.
+Die angesprochenen Reflexionen an der optischen Diode führen zu einer unerwünschten Rückkopplung des Strahls in den Resonator, weswegen die $\lambda/4$-Platte und der Polarisator leicht gegen die optische Achse verdreht wurden, damit der Strahl nicht in sich selbst reflektiert wird.
 
 \subsection{Optischer Spektrumanalysator}
 \label{ssec:spektrumanalysator}
@@ -699,7 +694,7 @@ Die leichten Abweichungen sind vor allem mit den vielen Faktoren, mit denen der 
 Die Justage des externen Resonators ist relativ aufwändig und die Einstellung der Wechselspannung für das Piezoelement nur sehr schwierig auf \SI{50}{\hertz} festzulegen.
 Bei der Wahl der Amplitude muss darauf geachtet werden, dass sowohl ein freier Spektralbereich durchfahren wird, als auch, dass das Sägezahnsignal durchweg linear verläuft, was nicht immer gleichzeitig zu erreichen war.
 Dieser nichtlineare Verlauf der Sägezahnspannung sorgt für eine Verzerrung der Zeitachse, womit die tendenziell höher liegenden Werte für den longitudinalen Modenabstand im Vergleich zu Tabelle \ref{tab:messdaten_optische_schwebung} erklärt werden können.
-Hier könnte eine bessere Wechselspannungsquelle Abhilfe schaffen, bei der die Frequenz auch direkt auf \SI{50}{\hertz} einstellbar ist.
+Abhilfe würde hier ein bessere Wechselspannungsquelle schaffen.
 Weiterhin führt die Anpassung in \texttt{Gnuplot} zu einer weiteren Fehlerquelle, die allerdings als einziges in der Auswertung berücksichtigt wird.
 Dennoch stellt der optische Spektrumanalysator eine gute und vor allem anschauliche Möglichkeit zur Analyse des Modenspektrums eines Lasers dar.
 

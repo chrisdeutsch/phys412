@@ -763,7 +763,6 @@ Diese erfolgt über den theoretischen Axialmodenabstand (siehe \eqref{eq:modenab
 \end{align}
 wobei $L$ die gemessene Resonatorlänge ist.
 Fällt die Hochfrequenz $\nu_\mathrm{HF}$ und der Modenabstand $\Delta \nu$ innerhalb der Bandbreite des Oszilloskops zusammen, so kann ein sinusförmiges Signal gemessen werden.
-\textbf{(mehr Beschreibung zum Signal) hattest du selber noch angemerkt}
 Anschließend wird die Hochfrequenz $\nu_\mathrm{HF}$ schrittweise verändert, sodass die Periode des Signals zunimmt.
 Durch diese Methodik nähert man sich langsam der minimalen Signalfrequenz an, wobei diese nicht beliebig genau bestimmt werden kann, da bei einer Annäherung in \SI{50}{\kilo\hertz}-Schritten das Signal in der Nähe des Minimums im Rauschen untergeht.
 Ist dieser Punkt erreicht, wird die Frequenz des Signalgenerators notiert und dient als Approximation\footnote{Streng genommen müsste noch die Frequenz des Restsignals auf dem Oszilloskops vermessen werden. Da dieses aber im Rauschen nicht auszumachen ist und dessen Frequenz klein ist gegen den Modenabstand $\Delta \nu$, kann dieser Beitrag vernachlässigt werden.} des Modenabstandes $\Delta \nu$.
@@ -778,13 +777,13 @@ Die gemessenen Modenabstände wurden in Tabelle \ref{tab:messdaten_optische_schw
 \\
 Diese Messwerte können im Hinblick auf den theoretischen Modenabstand in Gleichung \eqref{eq:modenabstand} einen Wert für die Lichtgeschwindigkeit $c$ liefern.
 Dazu wird die doppelte Resonatorlänge $2 L$ gegen die inverse Frequenz des Hochfrequenzgenerators im Frequenzminimum des gemischten Signals aufgetragen.
-Der Graph sollte daher dem theoretischen Zusammenhang:
+Der Graph sollte daher dem \textbf{theoretischen Zusammenhang}\footnote{Im Vergleich zur Berechnung der Lichtgeschwindigkeit für jede Resonatorlänge und anschließender Mittelwertbildung, kommt es bei der Annahme einer Ursprungsgerade zur genaueren Bestimmtung, da zusätzliche Informationen (der Punkt $(0,0)$ liegt auf der Geraden) in die Anpassung eingehen.}:
 \begin{align}
 	2 L = c \cdot \frac{1}{\nu_\mathrm{HF}}
 \end{align}
 folgen, wobei die Näherung $\Delta \nu \approx \nu_\mathrm{HF}$ verwendet wird.
 Diese Form der Linearisierung wird gewählt, da bei einer Anpassung mit der \emph{Methode der kleinsten Quadrate} nur die Fehler in $y$-Richtung in die Gewichtung der Messpunkte eingehen.
-Da der \textbf{Fehler in der Frequenzbestimmung im Verhältnis zur Resonatorlängenbestimmung klein ist}, wurde diese Form gewählt um eine sinnvolle Gewichtung bei der Geradenanpassung zu erzielen.
+Da der Fehler in der Frequenzbestimmung im Verhältnis zur Resonatorlängenbestimmung klein ist, wurde diese Form gewählt um eine sinnvolle Gewichtung bei der Geradenanpassung zu erzielen.
 Mithilfe von \texttt{Gnuplot} wird eine Ursprungsgerade an die linearisierten Datenpunkte angepasst, wobei die Fehler gegeben sind durch:
 \begin{align}
 &\Delta(2L) = 2 \Delta L \\

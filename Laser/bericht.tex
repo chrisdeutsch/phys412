@@ -115,9 +115,9 @@ Tutor: & Tobias Macha
 % ZUSAMMENFASSUNG
 \begin{abstract}
 \noindent
-In dem vorliegenden Versuch soll ein Helium-Neon Experimentierlaser aufgebaut werden und auf seine Eigenschaften hin untersucht werden.
-Dabei soll das Strahlprofil und die Polarisation untersucht und die Wellenlänge bestimmt werden.
-Weiterhin wird das Modenverhalten des Lasers analysiert - zum Einsatz kommen dazu ein optischer Spektrumanalysator und eine optische Schwebung, deren Aufbau und Wirkung verstanden werden soll.
+In dem vorliegenden Versuch soll ein Helium-Neon Experimentierlaser aufgebaut und auf seine Eigenschaften hin untersucht werden.
+Dabei soll das Strahlprofil vermessen und die Wellenlänge und Polarisation bestimmt werden.
+Weiterhin soll das Modenverhalten des Lasers analysiert werden - dazu werden ein optischer Spektrumanalysator und eine optische Schwebung genutzt, deren Aufbau und Wirkung verstanden werden soll.
 \end{abstract}
 
 \end{titlepage}
@@ -577,7 +577,7 @@ Hierfür findet man bei der Einstellung von \SI{254}{\degree} das Transmissionsm
 Vor der optischen Diode kann bei der Resonatorlänge \SI{50}{\centi\metre} eine Intensität von \SI{66.2+-0.1}{\milli\volt} gemessen werden, hinter der Diode beträgt die Intensität nur noch \SI{47.2+-0.1}{\milli\volt}.
 Die Leistungsverluste an der Diode (z.B. Reflexionen an der Vorderseite der $\lambda/4$-Platte) belaufen sich somit auf ca. \SI{1}{\milli\watt}.
 Dabei wurde wie in \eqref{eq:umrechnung_watt} der Umrechnungsfaktor \num{17.5} zwischen der gemessenen Intensität in \si{\milli\volt} und \si{\milli\watt} verwendet.
-Die angesprochenen Reflexionen an der optischen Diode führen weiterhin zu einer unerwünschten Rückkopplung des Strahls in den Resonator, was sich allerdings nicht vermeiden ließ.\textbf{Durch Drehen konnte die doch vermieden werden?}
+Die angesprochenen Reflexionen an der optischen Diode führen zu einer unerwünschten Rückkopplung des Strahls in den Resonator, weswegen die $\lambda/4$-Platte leicht verdreht wurde, damit der Strahl nicht in sich selbst reflektiert wird.
 
 \subsection{Optischer Spektrumanalysator}
 \label{ssec:spektrumanalysator}
@@ -691,6 +691,7 @@ Die leichten Abweichungen sind vor allem mit den vielen Faktoren, mit denen der 
 Die Justage des externen Resonators ist relativ aufwändig und die Einstellung der Wechselspannung für das Piezoelement nur sehr schwierig auf \SI{50}{\hertz} festzulegen.
 Bei der Wahl der Amplitude muss darauf geachtet werden, dass sowohl ein freier Spektralbereich durchfahren wird, als auch, dass das Sägezahnsignal durchweg linear verläuft, was nicht immer gleichzeitig zu erreichen war.
 Dieser nichtlineare Verlauf der Sägezahnspannung sorgt für eine Verzerrung der Zeitachse, womit die tendenziell höher liegenden Werte für den longitudinalen Modenabstand im Vergleich zu Tabelle \ref{tab:messdaten_optische_schwebung} erklärt werden können.
+Hier könnte eine bessere Wechselspannungsquelle Abhilfe schaffen, bei der die Frequenz auch direkt auf \SI{50}{\hertz} einstellbar ist.
 Weiterhin führt die Anpassung in \texttt{Gnuplot} zu einer weiteren Fehlerquelle, die allerdings als einziges in der Auswertung berücksichtigt wird.
 Dennoch stellt der optische Spektrumanalysator eine gute und vor allem anschauliche Möglichkeit zur Analyse des Modenspektrums eines Lasers dar.
 

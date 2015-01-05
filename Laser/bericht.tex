@@ -511,7 +511,7 @@ Für den Fehler in der Spaltbreite $d$ wird $\Delta = \SI{0.02}{\milli\metre}$ a
 Zunächst gilt es zu beachten, dass der Strahlradius $w$ keine scharfe Begrenzung der transversalen Intensitätsverteilung eines Gaußstrahls darstellt.
 Wie in Abschnitt \ref{gaussstrahlen} erklärt, ist das transversale Profil der $\mathrm{TM}_{00}$-Mode gegeben durch eine Gaußfunktion, anhand derer der Strahlradius definiert ist als der Abstand von der Strahlachse, bei dem die Intensität auf $1/\mathrm{e}^2$ abgefallen ist.
 Durch Begrenzung der transversalen Strahlbreite auf die Spaltbreite des Messschiebers $d$, kommt es zu zusätzlichen Verlusten aufgrund von Reflexion und Absorption an den Backen des Messschiebers.
-Diese Verluste führen zu einer Änderung der Schwellenbedingung für Laseroperation, was bei dieser Messmethode ausgenutzt wird, um eine zum Strahlradius $w$ proportionale Größe $d$ zu messen.
+Diese Verluste führen zu einer Änderung der Schwellenbedingung\footnote{Die Schwellenbedingung ist dadurch gegeben, dass die Kleinsignalverstärkung $\gamma(\nu)$ des Lasers der Verlustkonstante $\alpha(\nu)$ entspricht. Unterhalb dieser Schwelle reicht die Verstärkung durch stimulierte Emission nicht aus, um die Laseroszillation zu gewährleisten.} für Laseroperation, was bei dieser Messmethode ausgenutzt wird, um eine zum Strahlradius $w$ proportionale Größe $d$ zu messen.
 Da der Laser durch die Verschiebung des Messschiebers entlang der Strahlachse, stets an dieser Schwelle operiert, ist die Strahlleistung im Spalt $P_\mathrm{Spalt}$ konstant bezüglich der verschiedenen Messpositionen $z$.
 Im Folgenden soll gezeigt werden, dass dann in der Tat gilt:
 \begin{align}
@@ -778,16 +778,15 @@ Diese Messwerte können im Hinblick auf den theoretischen Modenabstand in Gleich
 Dazu wird die doppelte Resonatorlänge $2 L$ gegen die inverse Frequenz des Hochfrequenzgenerators im Frequenzminimum des gemischten Signals aufgetragen.
 Der Graph sollte daher dem theoretischen Zusammenhang:
 \begin{align}
-	2 L = c \cdot \frac{1}{\nu_\mathrm{RF}}
+	2 L = c \cdot \frac{1}{\nu_\mathrm{HF}}
 \end{align}
-\textbf{RF oder HF in der Formel?}
 folgen, wobei die Näherung $\Delta \nu \approx \nu_\mathrm{HF}$ verwendet wird.
 Diese Form der Linearisierung wird gewählt, da bei einer Anpassung mit der \emph{Methode der kleinsten Quadrate} nur die Fehler in $y$-Richtung in die Gewichtung der Messpunkte eingehen.
 Da der Fehler in der Frequenzbestimmung im Verhältnis zur Resonatorlängenbestimmung klein ist, wurde diese Form gewählt um eine sinnvolle Gewichtung bei der Geradenanpassung zu erzielen.
 Mithilfe von \texttt{Gnuplot} wird eine Ursprungsgerade an die linearisierten Datenpunkte angepasst, wobei die Fehler gegeben sind durch:
 \begin{align}
-\Delta(2L) &= 2 \Delta L \\
-\Delta \left( \frac{1}{\nu_\mathrm{HF}} \right) &= \frac{\Delta \nu_\mathrm{HF}}{\nu_\mathrm{HF}^2}
+&\Delta(2L) = 2 \Delta L \\
+&\Delta \left( \frac{1}{\nu_\mathrm{HF}} \right) = \frac{\Delta \nu_\mathrm{HF}}{\nu_\mathrm{HF}^2}
 \end{align}
 Die Linearisierung wurde in Abbildung \ref{fig:linearisierung_modenabstand} aufgetragen.
 \begin{figure}[h]

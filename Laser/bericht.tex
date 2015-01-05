@@ -422,7 +422,7 @@ Mit diesen Maßnahmen sollten absolute Fehler der Wellenlänge von unter \SI{2}{
 \label{ssec:polarisation}
 Zur Untersuchung der Polarisation des hier verwendeten Experimentierlasers wird der Intensitätsverlauf an einer Photodiode in Abhängigkeit des Winkels eines davor stehenden Linearpolarisators betrachtet.
 Dieser ist in der Lage, einfallendes Licht in eine vorgegebene Richtung linear zu polarisieren.
-Für den Fall, dass das einfallende Licht bereits linear polarisiert ist (wie für den hier verwendeten Laser angenommen wird), gilt für die hinter dem Polarisator registrierte Intensität (Gesetz von Malus):
+Für den Fall, dass das einfallende Licht bereits linear polarisiert ist (wie für den hier verwendeten Laser angenommen wird), gilt für die \textbf{hinter dem Polarisator registrierte Intensität} (Gesetz von Malus):
 \begin{align}
 I=I_0\cdot\cos^2\alpha
 \end{align}
@@ -434,15 +434,17 @@ gemessen.
 Dabei ist $\varphi$ der Polarsiatorwinkel und $\varphi_0$ beschreibt die Polarisationsrichtung des Lasers.\\ 
 \\
 Der Winkel $\varphi$ am Polarisator wurde in Schritten von \SI{10}{\degree} gedreht und jeweils die Photospannung $U_\text{PD}$ an der Photodiode in \si{\milli\volt} notiert.
+Dabei ist durch einen Abschlusswiderstand am Oszilloskop darauf zu achten, dass die Photodiode nicht in Sättigung betrieben wird.
+Durch den nichtlinearen Zusammenhang zwischen Leistung und Intensität kann oberhalb einer bestimmten Leistungsgrenze keine Zunahme der Intensität mehr verzeichnet werden, obwohl die Leistung weiter ansteigt.
 In Tabelle \ref{tab:malus} sind die Messwerte bei einer Resonatorlänge von \SI{50}{\centi\metre} festgehalten worden.
 Der Fehler $\Delta\varphi$ für den Winkel ergibt sich aus der Tatsache, dass der Polarisator in Schritten von \SI{2}{\degree} eingestellt werden konnte, der Fehler für die Photospannung wurde aufgrund der Schwankungen, die zu beobachten waren (es wurde mit der \emph{Measure}-Funktion des Oszilloskops gemessen), auf \SI{0.3}{\milli\volt} abgeschätzt.
-Diese Messwerte werden im Anschluss mit \eqref{eq:umrechnung_watt} in Intensitäten umgerechnet, in ein Diagramm eingetragen und mit \texttt{Gnuplot} eine Kurve der Form
+Diese Messwerte werden im Anschluss mit \eqref{eq:umrechnung_watt} in Intensitäten umgerechnet, in ein Diagramm eingetragen und mit \texttt{Gnuplot} eine Kurve der Form:
 \begin{align}
 f(x) = a\cdot\cos^2(x-b) + c
 \end{align}
 an die Daten angepasst.
 Dabei beschreibt $a$ die Intensität $I_0$, der Parameter $b$ berücksichtigt die Polarisationsrichtung des Lasers und $c$ beschreibt den auftretenden Untergrund der Spannungs- / Intensitätsmessung.
-Als Ergebnis der Anpassung erhält man
+Als Ergebnis der Anpassung erhält man:
 \begin{align}
 a&=\SI{2.24+-0.04}{\milli\watt}\\
 b&=\SI{1.7+-0.6}{\degree}\\
@@ -492,7 +494,7 @@ Konkret wird der Messschieber auf die konstante Breite $d$ eingestellt und an ei
 Dann wird dessen Abstand $z$ vom ebenen Resonatorspiegel langsam vergrößert und beobachtet, wann der Strahl nichtmehr aufleuchtet, wenn der Messschieber gegen die Strahlachse bewegt wird.
 Ist dieser Punkt erreicht, so wird der Abstand $z$ wieder verkleinert bis der Laser gerade noch anfängt zu arbeiten.
 Dann kann der Abstand $z$ des Messschiebers vom ebenen Resonatorspiegel vermessen werden.
-Dieser ist gleichzeitig der Abstand von der Strahltaille, da diese bei halbsymmetrischen Resonatoren auf dem ebenen Spiegel liegt (siehe auch Abschnitt \ref{ssec:halbsym_res}).\\
+Dieser ist gleichzeitig der Abstand von der \textbf{Strahltaille}, da diese bei halbsymmetrischen Resonatoren \textbf{auf dem ebenen Spiegel liegt} (siehe auch Abschnitt \ref{ssec:halbsym_res}).\\
 \\
 Bei dieser Methode treten Fehler in der Bestimmung der Position $z$ des Messschiebers und dessen Spaltbreite $d$ auf.
 Der Fehler in der Position setzt sich zusammen aus dem Messfehler sowie einem zusätzlichen Beitrag aufgrund von nicht optimaler Ausrichtung (senkrecht zur optischen Achse) des Messschiebers.
@@ -511,7 +513,7 @@ Für den Fehler in der Spaltbreite $d$ wird $\Delta = \SI{0.02}{\milli\metre}$ a
 Zunächst gilt es zu beachten, dass der Strahlradius $w$ keine scharfe Begrenzung der transversalen Intensitätsverteilung eines Gaußstrahls darstellt.
 Wie in Abschnitt \ref{gaussstrahlen} erklärt, ist das transversale Profil der $\mathrm{TM}_{00}$-Mode gegeben durch eine Gaußfunktion, anhand derer der Strahlradius definiert ist als der Abstand von der Strahlachse, bei dem die Intensität auf $1/\mathrm{e}^2$ abgefallen ist.
 Durch Begrenzung der transversalen Strahlbreite auf die Spaltbreite des Messschiebers $d$, kommt es zu zusätzlichen Verlusten aufgrund von Reflexion und Absorption an den Backen des Messschiebers.
-Diese Verluste führen zu einer Änderung der Schwellenbedingung für Laseroperation, was bei dieser Messmethode ausgenutzt wird, um eine zum Strahlradius $w$ proportionale Größe $d$ zu messen.
+Diese Verluste führen zu einer \textbf{Änderung der Schwellenbedingung für Laseroperation}, was bei dieser Messmethode ausgenutzt wird, um eine \textbf{zum Strahlradius $w$ proportionale Größe $d$} zu messen.
 Da der Laser durch die Verschiebung des Messschiebers entlang der Strahlachse, stets an dieser Schwelle operiert, ist die Strahlleistung im Spalt $P_\mathrm{Spalt}$ konstant bezüglich der verschiedenen Messpositionen $z$.
 Im Folgenden soll gezeigt werden, dass dann in der Tat gilt:
 \begin{align}
@@ -773,7 +775,7 @@ Die gemessenen Modenabstände wurden in Tabelle \ref{tab:messdaten_optische_schw
 	\label{tab:messdaten_optische_schwebung}
 \end{table}\\
 \\
-Diese Messwerte können im Hinblick auf den theoretischen Modenabstand in Gleichung \ref{eq:modenabstand} einen Wert für die Lichtgeschwindigkeit $c$ liefern.
+Diese Messwerte können im Hinblick auf den theoretischen Modenabstand in Gleichung \eqref{eq:modenabstand} einen Wert für die Lichtgeschwindigkeit $c$ liefern.
 Dazu wird die doppelte Resonatorlänge $2 L$ gegen die inverse Frequenz des Hochfrequenzgenerators im Frequenzminimum des gemischten Signals aufgetragen.
 Der Graph sollte daher dem theoretischen Zusammenhang:
 \begin{align}
@@ -782,7 +784,7 @@ Der Graph sollte daher dem theoretischen Zusammenhang:
 \textbf{RF oder HF in der Formel?}
 folgen, wobei die Näherung $\Delta \nu \approx \nu_\mathrm{HF}$ verwendet wird.
 Diese Form der Linearisierung wird gewählt, da bei einer Anpassung mit der \emph{Methode der kleinsten Quadrate} nur die Fehler in $y$-Richtung in die Gewichtung der Messpunkte eingehen.
-Da der Fehler in der Frequenzbestimmung im Verhältnis zur Resonatorlängenbestimmung klein ist, wurde diese Form gewählt um eine sinnvolle Gewichtung bei der Geradenanpassung zu erzielen.
+Da der \textbf{Fehler in der Frequenzbestimmung im Verhältnis zur Resonatorlängenbestimmung klein ist}, wurde diese Form gewählt um eine sinnvolle Gewichtung bei der Geradenanpassung zu erzielen.
 Mithilfe von \texttt{Gnuplot} wird eine Ursprungsgerade an die linearisierten Datenpunkte angepasst, wobei die Fehler gegeben sind durch:
 \begin{align}
 \Delta(2L) &= 2 \Delta L \\
@@ -838,7 +840,7 @@ Für einen Resonator der Länge $L = \SI{30}{\centi\metre}$ erhält man somit ei
 	\Delta \nu_\mathrm{FSR} \approx \SI{500}{\mega\hertz}
 \end{align}
 Die Anzahl der Moden die in die Dopplerbreite des Verstärkungsprofils fallen ist somit gegeben durch das Verhältnis von Dopplerbreite zum freien Spektralbereich.
-Für den \SI{30}{\centi\metre} Resonator fallen \num{3} Moden innerhalb die Halbwertsbreite.\\
+Für den \SI{30}{\centi\metre} Resonator fallen \num{3} Moden in die Halbwertsbreite.\\
 \\
 Für die in diesem Versuch verwendeten Resonatorlänge von \SI{50}{\centi\metre} bis \SI{100}{\centi\metre} folgt für den freien Spektralbereich:
 \begin{align}

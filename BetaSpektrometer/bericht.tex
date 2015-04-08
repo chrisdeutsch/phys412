@@ -1,0 +1,260 @@
+% PAKETE UND DOKUMENTKONFIGURATION
+\documentclass[11pt, a4paper]{article}
+
+% Encoding für Umlaute
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Silbentrennung
+\usepackage[ngerman]{babel}
+
+% erweiterte Matheumgebungen und Formelnummer mit Sectionnummer
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+
+% Braket Notation
+\usepackage{braket}
+
+% zusätzliche mathematische Schriftarten
+\usepackage{amsfonts}
+
+% verschiedene mathematische Symbole
+\usepackage{amssymb}
+
+% Einheiten setzen z.B. \SI{10}{\kilo\gram\meter\per\second\squared}
+% Fehler: \SI{10 +- 0,2e-4}{\metre}
+\usepackage{siunitx}
+\sisetup{
+  output-decimal-marker={,},
+  separate-uncertainty
+}
+
+% Einheitendefinitionen
+\DeclareSIUnit{\dBm}{dBm}
+
+% Operatordefinitionen
+\DeclareMathOperator{\erf}{erf}
+
+% Randbreiten
+\usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
+
+% Bilder einfügen
+\usepackage{graphicx}
+
+% Verweise innerhalb des Dokuments
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,
+	allcolors = {black}
+}
+
+% bessere Tabellenlayouts
+\usepackage{booktabs}
+\usepackage{multirow}
+
+% Seitenlayout (Kopfzeile)
+\usepackage{fancyhdr}
+
+% Float Barriers
+\usepackage{placeins}
+
+% Pakete für gedrehte Subfigures
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+
+% Caption-Setup
+\captionsetup{font={small}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\thesubtable}{\alph{subtable}}
+
+% Manuelle Silbentrennung
+\hyphenation{Re-so-na-tor Mo-den-ab-stand Re-so-na-tor-län-ge}
+
+% Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
+% 3 subsubsections)
+\setcounter{tocdepth}{3}
+
+% FANCYHDR SETUP
+\pagestyle{fancy}
+\fancyhead[EL,OR]{\thepage}
+\fancyhead[ER]{\leftmark}
+\fancyhead[OL]{\rightmark}
+
+\renewcommand{\sectionmark}[1]{
+\markboth{\thesection{} #1}{\thesection{} #1}
+}
+\renewcommand{\subsectionmark}[1]{
+\markright{\thesubsection{} #1}
+}
+
+% DOKUMENTINFORMATIONEN
+\title{P523 \\ Beta Spektrometer}
+
+\author{Christopher Deutsch\footnote{christopher.deutsch@uni-bonn.de} \and Christian Bespin\footnote{christian.bespin@uni-bonn.de}}
+
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+
+\maketitle
+
+% DURCHFÜHRUNGSDATUM UND TUTOR
+\begin{center}
+\begin{tabular}{l r}
+Durchführung: & 07./08. April 2015 \\
+Gruppe: & $\alpha$ 6 \\
+Tutor: & Yannick Wunderlich
+\end{tabular}
+\end{center}
+
+% ZUSAMMENFASSUNG
+\begin{abstract}
+\noindent
+\end{abstract}
+
+\end{titlepage}
+
+% INHALTSVERZEICHNIS
+\tableofcontents
+% Neue Seite nach TOC
+\newpage
+
+% INHALT VERSUCHSPROTOKOLL
+
+\section{Einführung}
+
+
+\section{Theorie}
+
+\subsection{Aktives Medium}
+\subsubsection{Übergänge und Einsteinkoeffizienten}
+
+\subsubsection{Niveauschemata aktiver Medien}
+
+\subsection{Gaußstrahlen}
+
+\subsection{Resonatoren}
+
+\subsubsection{Moden in Resonatoren}
+
+\section{Durchführung und Auswertung}
+Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
+Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
+
+\subsection{Aufbau des Helium-Neon Experimentierlasers}
+
+\subsection{Bestimmung der Wellenlänge des Lasers mit einem Reflexionsgitter}
+\subsubsection{Durchführung}
+
+\subsubsection{Auswertung}
+\subsubsection{Vergleich mit der exakten Rechnung}
+\subsection{Untersuchung der Polarisation des Lasers}
+\subsubsection{Polarisationsgrad des Lasers}
+
+\subsection{Messung des Strahlprofils und des Stabilitätsgebiets des Lasers}
+\subsubsection{Messmethode}
+\subsubsection{Zusammenhang zwischen Spaltbreite am Messschieber und Strahlradius}
+\subsubsection{Experimentelle Bestimmung des Strahlprofils}
+
+\subsection{Aufbau der optischen Diode}
+\subsection{Optischer Spektrumanalysator}
+
+\subsubsection{Durchführung}
+\subsubsection{Messwerte}
+
+\subsubsection{Bestimmung der Modenabstände}
+
+\subsubsection{Ergebnisse und Fazit}
+
+\subsection{Präzise Messung des Modenabstandes mittels einer optischen Schwebung}
+
+\subsubsection{Mathematische Beschreibung der Funktionsweise eines Mischers}
+
+\subsubsection{Messung des Modenabstandes durch Mischung mit der Hochfrequenz}
+
+\subsection{Modenspektrum des Helium-Neon-Lasers}
+
+\section{Fazit}
+
+\clearpage
+% BIBLIOGRAPHIE
+\vspace{\fill}
+% Maximale Anzahl der Einträge in Klammer
+% Zitieren mit \cite{lamport94}
+\begin{thebibliography}{19}
+\bibitem{javan}
+	A. Javan, W. R. Bennett, Jr., and D. R. Herriott,
+	\emph{Population Inversion and Continuous Optical Maser Oscillation in a Gas Discharge Containing a He-Ne Mixture},
+	Phys. Rev. Lett. 6, 106 – Published 1 February 1961
+
+\bibitem{linden}
+	S. Linden,
+	Skript zur Vorlesung \emph{physik311: Optik und Wellenmechanik} (Stand: 31. Januar 2014),
+	Physikalisches Institut, Universität Bonn
+
+\bibitem{siegman}
+	A. E. Siegman,
+	\emph{Lasers},
+	University Science Books 1986,
+	Chapter 19: Stable Two-Mirror Resonators
+
+\bibitem{anleitung}
+	Physikalisches Praktikum IV: Atome, Moleküle, Festkörper,
+	Versuchsbeschreibung \emph{P442: Laser} (Stand: 12. September 2014),
+	Universität Bonn
+	
+\bibitem{messschieber_katalog}
+	\emph{Mitutoyo Messgeräte-Katalog},
+	ABSOLUTE AOS Digimatic Messschieber,\\
+	\url{http://www2.mitutoyo.de/ebooks/german/handmessgeraete/index.html} (Letzter Abruf: 22. Dezember 2014)	
+
+\bibitem{schawlow}
+	A. L. Schawlow,
+	\emph{Measuring the Wavelength of Light with a Ruler},
+	Am. J. Phys., Volume 33, Issue 11 (1965)
+
+\bibitem{NISTSpectra}
+	Kramida, A., Ralchenko, Yu., Reader, J., and NIST ASD Team (2014).
+	\emph{NIST Atomic Spectra Database} (ver. 5.2).
+	\url{http://physics.nist.gov/asd} (Letzter Abruf: 18. Dezember 2014).
+	National Institute of Standards and Technology, Gaithersburg, MD.
+	
+\bibitem{horowitz_hill}
+	Paul Horowitz, Winfred Hill,
+	\emph{The Art of Electronics Second Edition},
+	Cambridge University Press 1989,
+	Chapter 13.12: High frequency and high-speed techniques -- Radiofrequency circuit elements
+
+\bibitem{iupac_periodic_table}
+	International Union of Pure and Applied Chemistry,
+	\emph{IUPAC Periodic Table of the Elements} (Stand: 1. Mai 2013),
+	\url{http://iupac.org/reports/periodic_table/}
+
+\bibitem{meschede}
+	Dieter Meschede,
+	\emph{Optik, Licht und Laser} (3. Auflage),
+	Vieweg Teubner 2008
+	
+	
+ 
+\end{thebibliography}
+
+\clearpage
+
+% APPENDIX
+\begin{appendix}
+\section{Anhang}
+\subsection{Messwerte der Photospannung hinter dem Polarisator}
+
+\subsection{Bestimmung des Strahlprofils im Resonator}
+
+\subsection{Bestimmung der Modenabstände mit dem optischen Spektrumanalysator}
+
+\end{appendix}
+
+\end{document}

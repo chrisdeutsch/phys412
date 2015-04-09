@@ -178,15 +178,68 @@ Grundsätzlich ist ein Zerfall nur möglich, wenn die Zerfallsenergie $Q$ positi
 
 \subsubsection{Innere Konversion und Augereffekt}
 
-\subsection{Spektrometer}
+\subsection{Das $\beta$-Spektrometer}
+Das Spektrometer ist ein Instrument, welches es ermöglicht, eine Vielzahl von Teilchen nach gewissen Eigenschaften wie zum Beispiel Energie, Impuls oder Masse zu trennen und dabei die Anzahl der auftretenden Teilchen in einem gewissen (Energie-, Impuls-, Massen-)Intervall zu zählen.
+Den resultierenden Graphen nennt man ein Spektrum.
 
 \subsubsection{Grundlagen}
+In diesem Versuch wird ein magnetisches Spektrometer verwendet, welches die Ablenkung von geladenen Teilchen im Magnetfeld ausnutzt.
+Betrachtet man ein Elektron, welches sich in einem homogenen Magnetfeld $\vec{B}$ mit der Geschwindigkeit $\vec{v}$ senkrecht zum Magnetfeld bewegt, so wirkt die Lorentzkraft als Zentripetalkraft und das Elektron beschreibt eine Kreisbahn mit Radius $\rho$.
+\begin{align}
+	F_\mathrm{Z} &\stackrel{!}{=} F_\mathrm{L} \nonumber\\
+	\mathrm{e} v B &= \frac{\gamma m_\mathrm{e} v^2}{\rho}
+\end{align}
+Mit dem relativistischem Impuls $p = \gamma m v$ folgt sofort:
+\begin{align}
+	p = \mathrm{e} B \rho
+	\label{eq:impuls_radius}
+\end{align}
+Man sieht, dass die Größe $B \rho$ charakteristisch für den Impuls ist und gleichzeitig eine Aussage über die Dimension des Spektrometers macht.
+Daher werden Impulse in der $\beta$-Spektroskopie als $B \rho$-Werte angegeben.
 
-\subsubsection{Überblick über Spektrometertypen (?)}
+(Kram für eventuell verwendete einheitenlose Größen $\epsilon$, $\eta$, wasweißich)
 
-\subsubsection{Semicircular Spectrometer}
+\subsubsection{Halbkreisförmiges Spektrometer}
+(GRAFIK)
+Ein halbkreisförmiges Spektrometer nutzt ein homogenes Magnetfeld senkrecht zur Flugrichtung der Elektronen um diese auf eine Kreisbahn zu lenken.
+Nach Gleichung \ref{eq:impuls_radius} ist das Produkt von Magnetfeld $B$ und Bahnradius $\rho$ charakteristisch für den Impuls des Elektrons.
+
+Nachteil nur Fokussierung in der $\rho$-Ebene führt zu geringer Transmission.
+Vorteil: einfache Konstruktion, Magnetfeld leicht zu messen, gut geeignet um große Spektralbereiche aufzunehmen (konstante Magnetfeldstärke)
 
 \subsubsection{Doppelt-fokussierendes Spektrometer}
+(GRAFIK)
+Betatron-Oszillationen ($\omega_0$: Elektronen Umlauffrequenz) (Zitat Hillert)
+\begin{align}
+	\omega_\rho = \omega_0 \sqrt{1-n} \qquad \omega_z = \omega_0 \sqrt{n}
+\end{align}
+mit dem Feldindex:
+\begin{align}
+	n = - \frac{\rho}{B_z(\rho)} \frac{\mathrm{d} B_z(\rho)}{\mathrm{d} \rho}
+\end{align}
+Während einer halben Periode der jeweiligen Betatronschwingung läuft das Elektron auf der Kreisbahn einen Winkel von:
+\begin{align}
+	\phi_\rho &= \omega_0 \cdot \frac{\pi}{\omega_\rho} \qquad \phi_z = \omega_0 \cdot \frac{\pi}{\omega_z}\\
+	\phi_\rho &= \pi \left[ 1+ \frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} \qquad \phi_z = \pi \left[ -\frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} \label{eq:betatronwinkel}
+\end{align}
+ab, wobei $\rho_0$ den Designorbit kennzeichnet.
+An Gleichung \ref{eq:betatronwinkel} ließt man nach quadrieren ab:
+\begin{align}
+	\frac{1}{\phi_\rho^2} + \frac{1}{\phi_z^2} = \frac{1}{\pi^2} \label{eq:betatronwinkelverhaeltnis}
+\end{align}
+Um eine stigmatische Abbildung zu erlangen, das heißt der Fokus der $\rho$ und der $z$-Ebene liegen im selben Punkt, muss die Bedingung $\phi_\rho = \phi_z$ gestellt werden.
+Damit folgt aus Gleichung \ref{eq:betatronwinkelverhaeltnis} der gesamte Winkel der Elektronenbahn im Spektrometer.
+Dieser ergibt sich zu $\phi = \pi \sqrt{2}$, weshalb das doppelt-fokussierende Spektrometer auch $\pi \sqrt{2}$-Spektrometer genannt wird.
+Gleichzeitig folgt aus der gestellten Anforderung $\phi_\rho = \phi_z$ mit Gleichung \ref{eq:betatronwinkel} die Bestimmungsgleichung für das magnetische Feld:
+\begin{align}
+	B^\prime(\rho) = - \frac{1}{2 \rho} B(\rho)
+\end{align}
+Mit der Randbedingung $B(\rho_0) = B_0$ folgt als allgemeine Lösung:
+\begin{align}
+	B(\rho) = B_0 \sqrt{\frac{\rho_0}{\rho}}
+\end{align}
+
+Der Vorteil gegenüber dem halbkreisförmigen Spektrometer liegt darin, dass das doppelt-fokussierende ebenfalls in der $z$-Ebene fokussierend wirkt und damit höhere Transmissionen möglich sind.
 
 \subsection{Detektoren (?)}
 \subsubsection{Halbleiterdetektoren}

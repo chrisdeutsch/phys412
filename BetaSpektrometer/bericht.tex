@@ -128,6 +128,8 @@ Tutor: & Yannick Wunderlich
 
 \section{Einführung}
 
+In diesem Praktikumsversuch werden Spektren und Maximalenergie der emittierten Teilchen verschiedener $\beta$-Strahler vermessen bzw bestimmt.
+Der $\beta$-Zerfall stellt eine Form der Kernumwandlung dar und sendet dabei Elektronen oder Positronen aus, die ein kontinuierliches Energiespektrum aufweisen, welches häufig auch diskrete, charakteristische Linien aufweist, die zur Kalibration des verwendeten Spektrometers genutzt werden.
 
 \section{Theorie}
 \subsection{$\beta$-Zerfall}
@@ -202,7 +204,7 @@ Daher werden Impulse in der $\beta$-Spektroskopie als $B \rho$-Werte angegeben.
 \subsubsection{Halbkreisförmiges Spektrometer}
 (GRAFIK)
 Ein halbkreisförmiges Spektrometer nutzt ein homogenes Magnetfeld senkrecht zur Flugrichtung der Elektronen um diese auf eine Kreisbahn zu lenken.
-Nach Gleichung \ref{eq:impuls_radius} ist das Produkt von Magnetfeld $B$ und Bahnradius $\rho$ charakteristisch für den Impuls des Elektrons.
+Nach Gleichung \eqref{eq:impuls_radius} ist das Produkt von Magnetfeld $B$ und Bahnradius $\rho$ charakteristisch für den Impuls des Elektrons.
 
 Nachteil nur Fokussierung in der $\rho$-Ebene führt zu geringer Transmission.
 Vorteil: einfache Konstruktion, Magnetfeld leicht zu messen, gut geeignet um große Spektralbereiche aufzunehmen (konstante Magnetfeldstärke)
@@ -223,12 +225,12 @@ Während einer halben Periode der jeweiligen Betatronschwingung läuft das Elekt
 	\phi_\rho &= \pi \left[ 1+ \frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} \qquad \phi_z = \pi \left[ -\frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} \label{eq:betatronwinkel}
 \end{align}
 ab, wobei $\rho_0$ den Designorbit kennzeichnet.
-An Gleichung \ref{eq:betatronwinkel} ließt man nach quadrieren ab:
+An Gleichung \eqref{eq:betatronwinkel} ließt man nach quadrieren ab:
 \begin{align}
 	\frac{1}{\phi_\rho^2} + \frac{1}{\phi_z^2} = \frac{1}{\pi^2} \label{eq:betatronwinkelverhaeltnis}
 \end{align}
 Um eine stigmatische Abbildung zu erlangen, das heißt der Fokus der $\rho$ und der $z$-Ebene liegen im selben Punkt, muss die Bedingung $\phi_\rho = \phi_z$ gestellt werden.
-Damit folgt aus Gleichung \ref{eq:betatronwinkelverhaeltnis} der gesamte Winkel der Elektronenbahn im Spektrometer.
+Damit folgt aus Gleichung \eqref{eq:betatronwinkelverhaeltnis} der gesamte Winkel der Elektronenbahn im Spektrometer.
 Dieser ergibt sich zu $\phi = \pi \sqrt{2}$, weshalb das doppelt-fokussierende Spektrometer auch $\pi \sqrt{2}$-Spektrometer genannt wird.
 Gleichzeitig folgt aus der gestellten Anforderung $\phi_\rho = \phi_z$ mit Gleichung \ref{eq:betatronwinkel} die Bestimmungsgleichung für das magnetische Feld:
 \begin{align}
@@ -253,7 +255,12 @@ Der Vorteil gegenüber dem halbkreisförmigen Spektrometer liegt darin, dass das
 Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
 Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
 
-\subsection{Aufbau des Helium-Neon Experimentierlasers}
+\subsection{Bestimmung der Offsetspannung der Hallsonde}
+
+Zur Messung des Magnetfelds des Spektrometers wird eine Hallsonde verwendet, die jedoch auch bei ausgeschaltetem Magnetfeld eine Spannung $\neq 0$ \si{\volt} anzeigt.
+Um die tatsächliche Offsetspannung zu ermitteln, nutzt man die Hysterese des Magneten aus und misst für beide Stromrichtungen, die am Magneten angelegt werden die jeweiligen Remanenzfelder (als Hallspannung $U_\text{H}$) gemessen.
+GRAFIK
+
 
 \subsection{Bestimmung der Wellenlänge des Lasers mit einem Reflexionsgitter}
 \subsubsection{Durchführung}

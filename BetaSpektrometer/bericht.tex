@@ -30,7 +30,7 @@
 }
 
 % Einheitendefinitionen
-\DeclareSIUnit{\dBm}{dBm}
+\DeclareSIUnit{\skt}{Skt.}
 
 % Operatordefinitionen
 \DeclareMathOperator{\erf}{erf}
@@ -201,7 +201,7 @@ Unsinnige Definition $\epsilon_0$ aber damit folgt Riezler-Kopitzki Form.
 \subsubsection{Innere Konversion und Augereffekt}
 
 \subsection{Das $\beta$-Spektrometer}
-Das Spektrometer ist ein Instrument, welches es ermöglicht, eine Vielzahl von Teilchen nach gewissen Eigenschaften wie zum Beispiel Energie, Impuls oder Masse zu trennen und dabei die Anzahl der auftretenden Teilchen in einem gewissen (Energie-, Impuls-, Massen-)Intervall zu zählen.
+Das Spektrometer ist ein Instrument, welches es ermöglicht, eine Vielzahl von Teilchen nach gewissen Eigenschaften wie zum Beispiel Energie, Impuls oder Masse zu trennen und dabei die Anzahl der auftretenden Teilchen in einem gewissen (Energie-, Impuls-, Massen-) Intervall zu zählen.
 Den resultierenden Graphen nennt man ein Spektrum.
 
 \subsubsection{Grundlagen}
@@ -241,8 +241,8 @@ mit dem Feldindex:
 \end{align}
 Während einer halben Periode der jeweiligen Betatronschwingung läuft das Elektron auf der Kreisbahn einen Winkel von:
 \begin{align}
-	\phi_\rho &= \omega_0 \cdot \frac{\pi}{\omega_\rho} \qquad \phi_z = \omega_0 \cdot \frac{\pi}{\omega_z}\\
-	\phi_\rho &= \pi \left[ 1+ \frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} \qquad \phi_z = \pi \left[ -\frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} \label{eq:betatronwinkel}
+	\phi_\rho &= \omega_0 \cdot \frac{\pi}{\omega_\rho} & \phi_z &= \omega_0 \cdot \frac{\pi}{\omega_z}\\
+	\phi_\rho &= \pi \left[ 1+ \frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} & \phi_z &= \pi \left[ -\frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} \label{eq:betatronwinkel}
 \end{align}
 ab, wobei $\rho_0$ den Designorbit kennzeichnet.
 An Gleichung \eqref{eq:betatronwinkel} ließt man nach quadrieren ab:
@@ -252,7 +252,7 @@ An Gleichung \eqref{eq:betatronwinkel} ließt man nach quadrieren ab:
 Um eine stigmatische Abbildung zu erlangen, das heißt der Fokus der $\rho$ und der $z$-Ebene liegen im selben Punkt, muss die Bedingung $\phi_\rho = \phi_z$ gestellt werden.
 Damit folgt aus Gleichung \eqref{eq:betatronwinkelverhaeltnis} der gesamte Winkel der Elektronenbahn im Spektrometer.
 Dieser ergibt sich zu $\phi = \pi \sqrt{2}$, weshalb das doppelt-fokussierende Spektrometer auch $\pi \sqrt{2}$-Spektrometer genannt wird.
-Gleichzeitig folgt aus der gestellten Anforderung $\phi_\rho = \phi_z$ mit Gleichung \ref{eq:betatronwinkel} die Bestimmungsgleichung für das magnetische Feld:
+Gleichzeitig folgt aus der gestellten Anforderung $\phi_\rho = \phi_z$ mit Gleichung \eqref{eq:betatronwinkel} die Bestimmungsgleichung für das magnetische Feld:
 \begin{align}
 	B^\prime(\rho) = - \frac{1}{2 \rho} B(\rho)
 \end{align}
@@ -260,7 +260,6 @@ Mit der Randbedingung $B(\rho_0) = B_0$ folgt als allgemeine Lösung:
 \begin{align}
 	B(\rho) = B_0 \sqrt{\frac{\rho_0}{\rho}}
 \end{align}
-
 Der Vorteil gegenüber dem halbkreisförmigen Spektrometer liegt darin, dass das doppelt-fokussierende ebenfalls in der $z$-Ebene fokussierend wirkt und damit höhere Transmissionen möglich sind.
 
 \subsection{Detektoren (?)}
@@ -285,8 +284,21 @@ Um die tatsächliche Offsetspannung zu ermitteln, nutzt man die Hysterese des Ma
 	\caption{Skizzierte Hysteresekurve. Der tatsächliche Spannungswert für $I=\SI{0}{\ampere}$ ergibt sich aus Mittelung von $U_\text{+}$ und $U_\text{-}$.}
 	\label{fig:hysterese}
 \end{figure}
-Bei jeder Messung wird dann das arithmetische Mittel von $U_\text{+}$ und $U_\text{-}$ berechnet und im Anschluss über diese wieder gemittelt, um einen guten Wert für die Offsetspannung $U_0$ zu erhalten.
-
+Bei jeder Messung wird dann das arithmetische Mittel (mit $U_\text{R}$ bezeichnet) von $U_\text{+}$ und $U_\text{-}$ berechnet und im Anschluss über alle $U_\text{R}$ wieder gemittelt, um einen guten Wert für die Offsetspannung $U_0$ zu erhalten.
+TABELLE MIT WERTEN
+Der Fehler der Mittelung über $U_\text{+}$ und $U_\text{-}$ ergibt sich mit Gauß'scher Fehlerfortpflanzung aus
+\begin{align}
+	\sigma_{U_\text{R}} = \sqrt{(\sigma_{U_\text{+}})^2 + (\sigma_{U_\text{-}})^2}
+\end{align}
+Den im weiteren Verlauf benutzten Wert für die Offsetspannung $U_0$ erhält man, indem über alle $U_\text{R}$ gemittelt wird. Da die Fehler auf $U_\text{R}$ gleich groß sind, ergibt sich für $\sigma_{U_0}$
+\begin{align}
+	\sigma_{U_0} = \frac{\sigma_{U_\text{R}}}{\sqrt{6}}
+\end{align}
+und alle gemessenen Hallspannungen werden in der folgenden Auswertung um
+\begin{align}
+	U_0 = \SI{7.16 +- 0.03}{\skt}
+\end{align}
+korrigiert.
 
 \subsection{Bestimmung der Wellenlänge des Lasers mit einem Reflexionsgitter}
 \subsubsection{Durchführung}
@@ -344,8 +356,8 @@ Bei jeder Messung wird dann das arithmetische Mittel von $U_\text{+}$ und $U_\te
 	Chapter 19: Stable Two-Mirror Resonators
 
 \bibitem{anleitung}
-	Physikalisches Praktikum IV: Atome, Moleküle, Festkörper,
-	Versuchsbeschreibung \emph{P442: Laser} (Stand: 12. September 2014),
+	Physikalisches Praktikum V: Kern- und Teilchenphysik,
+	Versuchsbeschreibung \emph{P523: $\beta$-Spektrometer} (Stand: Januar 2015),
 	Universität Bonn
 	
 \bibitem{messschieber_katalog}

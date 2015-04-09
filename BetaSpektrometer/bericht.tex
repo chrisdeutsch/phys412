@@ -128,7 +128,7 @@ Tutor: & Yannick Wunderlich
 
 \section{Einführung}
 
-In diesem Praktikumsversuch werden Spektren und Maximalenergie der emittierten Teilchen verschiedener $\beta$-Strahler vermessen bzw bestimmt.
+In diesem Praktikumsversuch werden Spektren und Maximalenergie der emittierten Teilchen verschiedener $\beta$-Strahler vermessen bzw. bestimmt.
 Der $\beta$-Zerfall stellt eine Form der Kernumwandlung dar und sendet dabei Elektronen oder Positronen aus, die ein kontinuierliches Energiespektrum aufweisen, welches häufig auch diskrete, charakteristische Linien aufweist, die zur Kalibration des verwendeten Spektrometers genutzt werden.
 
 \section{Theorie}
@@ -279,7 +279,13 @@ Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweili
 
 Zur Messung des Magnetfelds des Spektrometers wird eine Hallsonde verwendet, die jedoch auch bei ausgeschaltetem Magnetfeld eine Spannung $\neq 0$ \si{\volt} anzeigt.
 Um die tatsächliche Offsetspannung zu ermitteln, nutzt man die Hysterese des Magneten aus und misst für beide Stromrichtungen, die am Magneten angelegt werden die jeweiligen Remanenzfelder (als Hallspannung $U_\text{H}$) gemessen.
-GRAFIK
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{./figures/hysterese.pdf}
+	\caption{Skizzierte Hysteresekurve. Der tatsächliche Spannungswert für $I=\SI{0}{\ampere}$ ergibt sich aus Mittelung von $U_\text{+}$ und $U_\text{-}$.}
+	\label{fig:hysterese}
+\end{figure}
+Bei jeder Messung wird dann das arithmetische Mittel von $U_\text{+}$ und $U_\text{-}$ berechnet und im Anschluss über diese wieder gemittelt, um einen guten Wert für die Offsetspannung $U_0$ zu erhalten.
 
 
 \subsection{Bestimmung der Wellenlänge des Lasers mit einem Reflexionsgitter}

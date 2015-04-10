@@ -290,19 +290,24 @@ Um die tatsächliche Offsetspannung zu ermitteln, nutzt man die Hysterese des Ma
 	\caption{Skizzierte Hysteresekurve. Der tatsächliche Spannungswert für $I=\SI{0}{\ampere}$ ergibt sich aus Mittelung von $U_\text{+}$ und $U_\text{-}$.}
 	\label{fig:hysterese}
 \end{figure}
-Bei jeder Messung wird dann das arithmetische Mittel (mit $U_\text{R}$ bezeichnet) von $U_\text{+}$ und $U_\text{-}$ berechnet und im Anschluss über alle $U_\text{R}$ wieder gemittelt, um einen guten Wert für die Offsetspannung $U_0$ zu erhalten.
-TABELLE MIT WERTEN
+Bei jeder Messung wird dann das arithmetische Mittel (mit $U_0$ bezeichnet) von $U_\text{+}$ und $U_\text{-}$ berechnet und im Anschluss über alle $U_0$ wieder gemittelt, um einen guten Wert für die Offsetspannung $U_0$ zu erhalten.
+\begin{table}[h]
+	\centering
+	\input{./tables/offset.tex}
+	\caption{Messwerte und Auswertung zur Bestimmung der Offsetspannung der Hallsonde. Die unterste Zeile ergibt sich aus Mittelung über alle $U_0$.}
+	\label{tab:offset}
+\end{table}
 Der Fehler der Mittelung über $U_\text{+}$ und $U_\text{-}$ ergibt sich mit Gauß'scher Fehlerfortpflanzung aus
 \begin{align}
-	\sigma_{U_\text{R}} = \sqrt{(\sigma_{U_\text{+}})^2 + (\sigma_{U_\text{-}})^2}
+	\Delta U_0 = \sqrt{(\Delta U_\text{+})^2 + (\Delta U_\text{-})^2}
 \end{align}
-Den im weiteren Verlauf benutzten Wert für die Offsetspannung $U_0$ erhält man, indem über alle $U_\text{R}$ gemittelt wird. Da die Fehler auf $U_\text{R}$ gleich groß sind, ergibt sich für $\sigma_{U_0}$
+Den im weiteren Verlauf benutzten Wert für die Offsetspannung $\overline{U_0}$ erhält man, indem über alle $U_0$ gemittelt wird. Da die Fehler auf $U_0$ gleich groß sind, ergibt sich für $\Delta\overline{U_0}$
 \begin{align}
-	\sigma_{U_0} = \frac{\sigma_{U_\text{R}}}{\sqrt{6}}
+	\Delta\overline{U_0} = \frac{\Delta U_0}{\sqrt{6}}
 \end{align}
 und alle gemessenen Hallspannungen werden in der folgenden Auswertung um
 \begin{align}
-	U_0 = \SI{7.16 +- 0.03}{\skt}
+	\overline{U_0} = \SI{7.16 +- 0.03}{\skt}
 \end{align}
 korrigiert.
 

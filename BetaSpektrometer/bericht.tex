@@ -320,18 +320,19 @@ Den im weiteren Verlauf benutzten Wert für die Offsetspannung $\overline{U_0}$ 
 und alle gemessenen Hallspannungen werden in der folgenden Auswertung um
 \begin{align}
 	\overline{U_0} = \SI{7.16 +- 0.03}{\skt}
+	\label{hall_korrektur}
 \end{align}
 korrigiert.
 
 \subsection{Kalibration des Spektrometers}
 Zur Kalibration des Spektrometers wird das Spektrum von \isotope[137]{Cs} bei Transmissionen von \SI{1}{\percent} und \SI{4}{\percent} vermessen.
 Von Interesse sind dabei die Konversionslinien des angeregten Isotops \isotope[137]{Ba}, welche zur Impulskalibrierung genutzt werden können.
-Der angeregte Zustand von \isotope[137]{Ba} hat eine Zerfallsenergie von:
+Der angeregte Zustand von \isotope[137]{Ba} hat eine Zerfallsenergie von
 \begin{align*}
 	Q_\gamma = \SI{661,660}{\kilo\electronvolt}\text{.}
 \end{align*}
 Bei innerer Konversion überträgt sich diese Energie auf ein kernnahes Elektron, welches aus dem Atom gelöst wird.
-Nach der Ionisation hat das Elektron eine kinetische Energie von:
+Nach der Ionisation hat das Elektron eine kinetische Energie von
 \begin{align}
 	T = Q_\gamma - E_\mathrm{B} \text{,}
 	\label{eq:kin_energie_konversion}
@@ -339,12 +340,12 @@ Nach der Ionisation hat das Elektron eine kinetische Energie von:
 wobei $E_\mathrm{B}$ die Bindungsenergie des jeweiligen Elektrons im Atom bezeichnet.
 Im Spektrum sind zwei Konversionslinien zu erkennen, welche zur K- und L-Schale von Barium zuzuordnen sind.
 Weiterhin muss beachtet werden, dass im Magnetfeld des Spektrometer eine Zeemanaufspaltung der Niveaus der L-Schale zu beobachten ist.
-Zunächst soll die Konversionslinie des Elektrons der K-Schale mit der Bindungsenergie:
+Zunächst soll die Konversionslinie des Elektrons der K-Schale mit der Bindungsenergie
 \begin{align*}
 E_\mathrm{K} = \SI{37,441}{\kilo\electronvolt}
 \end{align*}
 betrachtet werden.
-Mit den Gleichungen \eqref{eq:b_rho} und \eqref{eq:kin_energie_konversion} kann der Impuls des Elektrons in der für die Spektroskopie üblichen Größe:
+Mit den Gleichungen \eqref{eq:b_rho} und \eqref{eq:kin_energie_konversion} kann der Impuls des Elektrons in der für die Spektroskopie üblichen Größe
 \begin{align*}
 	\left(B \rho \right)_\mathrm{K} = \SI{3379}{G.cm}
 \end{align*}
@@ -358,7 +359,7 @@ E_{\mathrm{L}_{\mathrm{II}}} = \SI{5,624}{\kilo\electronvolt} \quad
 E_{\mathrm{L}_{\mathrm{III}}} = \SI{5,247}{\kilo\electronvolt}
 \end{align*}
 Da die Aufspaltung mit dem Spektroskop nicht auflösbar ist, muss eine sinnvolle Mittlung durchgeführt werden.
-Dazu betrachtet man die Entartungsgrade der einzelnen Niveaus:
+Dazu betrachtet man die Entartungsgrade der einzelnen Niveaus
 \begin{align*}
 g_{\mathrm{L}_{\mathrm{I}}} = \num{1} \quad
 g_{\mathrm{L}_{\mathrm{II}}} = \num{2} \quad
@@ -375,6 +376,15 @@ In Analogie zur K-Schale kann der Impuls des Elektrons berechnet werden:
 
 \subsubsection{Untergrundmessungen}
 
+Zur späteren Bereinigung der Messwerte werden vorher Untergrundmessungen durchgeführt.
+Für den Untergrund des Caesium-Zerfalls bei 1\% und 4\% Transmission sind die in Tabelle \ref{tab:untergrund_cs} notierten Werte für die Counts $N$ gemessen worden.
+\begin{table}[h]
+	\centering
+	\input{./tables/untergrund_cs.tex}
+	\caption{Untergrundmessung von \isotope[137]{Cs} bei 1\% und 4\% Transmission}
+	\label{tab:untergrund_cs}
+\end{table}
+Die Messwerte wurden dabei in der untersten Zeile gemittelt und der Fehler aus der Standardabweichung berechnet.
 
 \subsubsection{Grobspektrum von Barium}
 \begin{table}[h]
@@ -383,43 +393,54 @@ In Analogie zur K-Schale kann der Impuls des Elektrons berechnet werden:
 	\caption{Messdaten Grobspektrum TEMPORÄR}
 	\label{tab:spektrum_ba4_grob}
 \end{table}
+Zunächst wurde grob das Spektrum von Barium aufgenommen, um die ungefähren Positionen der Konversionslinien zu finden.
+Dieses ist in Abbildung \ref{fig:ba_t4_grob} dargestellt. 
+Um die Dispersion des Spektrometers zu berücksichtigen wurden die gemessenen und bereits korrigierten Zählraten wie in der Praktikumsanleitung erwähnt, durch die korrigierte Hallspannung dividiert werden, so dass das gemessene Impulsintervall proportional zum Magnetfeld ist.
 \begin{figure}[h]
 	\centering
 	\input{./plots/barium_t4_grob.tex}
 	\caption{Barium Grobspektrum Transmission 4}
 	\label{fig:ba_t4_grob}
 \end{figure}
-
-Kalibration mit \isotope[137]{Ba}.
-Fehler der Hallspannung:
+Die korrigierten Hallspannungen erhält man mit \eqref{hall_korrektur} und Anwenden von:
+\begin{align}
+U_\mathrm{H}^\mathrm{Korr} &= U_\mathrm{H} - U_0 \\
+\Delta U_\mathrm{H}^\mathrm{Korr} &= \sqrt{\Delta U_\mathrm{H}^2 + \Delta U_0^2} \qquad \text{(Gauß'sche Fehlerfortpflanzung)}
+\end{align}
+Für den Fehler der Hallspannung wurde dabei
 \begin{align}
 	\Delta U_\mathrm{H} = \SI{0.1}{\skt}
 \end{align}
-Korrektur der Hallspannung:
-\begin{align}
-	U_\mathrm{H}^\mathrm{Korr} &= U_\mathrm{H} - U_0 \\
-	\Delta U_\mathrm{H}^\mathrm{Korr} &= \sqrt{\Delta U_\mathrm{H}^2 + \Delta U_0^2}
-\end{align}
-Fehler der Counts (Poisson-Verteilung):
+angenommen, was der letzten ablesbaren Stelle der Digitalanzeige entspricht.
+Da die Zählraten poissonverteilt sind, kann für den Fehler
 \begin{align}
 	\Delta N = \sqrt{N}
 \end{align}
-Abzug des Hintergrundes:
+angenommen werden.
+Für die Bereinigung der Zählraten mit den oben gefundenen Werten für den Hintergrund gilt
 \begin{align}
-	N - N_\mathrm{HG} \qquad \Delta(N - N_\mathrm{HG}) = \sqrt{\Delta N^2 + \Delta N_\mathrm{HG}^2}
+	N_\text{Korr = }N - N_0 \qquad \Delta N_\text{Korr} = \sqrt{\Delta N^2 + \Delta N_0^2}
 \end{align}
-Korrektur der Dispersion (das gemessene Impulsintervall ist proportional zum Magnetfeld):
+wobei erneut die Gauß'sche Fehlerfortpflanzung für den Fehler angewendet wurde.
+Die oben angesprochene Dispersionskorrektur 
 \begin{align}
-	n = \frac{N-N_\mathrm{HG}}{U_\mathrm{H}^\mathrm{Korr}}
+	n = \frac{N_\text{Korr}}{U_\mathrm{H}^\mathrm{Korr}} \\	
+	\text{FEHLER NOCH AUSRECHNEN}
 \end{align}
-(TODO: $n$ anderen Namen geben und physikalische Bedeutung klarmachen; keine Counts mehr sondern jetzt eher eine Impulsverteilung)
-
+ändert die Zählraten so, dass diese nun als eine Impulsverteilung aufgefasst werden können. 
 
 \begin{figure}[h]
 	\centering
 	\input{./plots/barium_t4_fein.tex}
 	\caption{Barium Feinspektrum Transmission 4}
-	\label{fig:ba_t4_grob}
+	\label{fig:ba_t4_fein}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\input{./plots/barium_t1_fein.tex}
+	\caption{Barium Feinspektrum Transmission 1}
+	\label{fig:ba_t1_fein}
 \end{figure}
 
 \begin{figure}[h]

@@ -323,6 +323,58 @@ und alle gemessenen Hallspannungen werden in der folgenden Auswertung um
 \end{align}
 korrigiert.
 
+\subsection{Kalibration des Spektrometers}
+Zur Kalibration des Spektrometers wird das Spektrum von \isotope[137]{Cs} bei Transmissionen von \SI{1}{\percent} und \SI{4}{\percent} vermessen.
+Von Interesse sind dabei die Konversionslinien des angeregten Isotops \isotope[137]{Ba}, welche zur Impulskalibrierung genutzt werden können.
+Der angeregte Zustand von \isotope[137]{Ba} hat eine Zerfallsenergie von:
+\begin{align*}
+	Q_\gamma = \SI{661,660}{\kilo\electronvolt}\text{.}
+\end{align*}
+Bei innerer Konversion überträgt sich diese Energie auf ein kernnahes Elektron, welches aus dem Atom gelöst wird.
+Nach der Ionisation hat das Elektron eine kinetische Energie von:
+\begin{align}
+	T = Q_\gamma - E_\mathrm{B} \text{,}
+	\label{eq:kin_energie_konversion}
+\end{align}
+wobei $E_\mathrm{B}$ die Bindungsenergie des jeweiligen Elektrons im Atom bezeichnet.
+Im Spektrum sind zwei Konversionslinien zu erkennen, welche zur K- und L-Schale von Barium zuzuordnen sind.
+Weiterhin muss beachtet werden, dass im Magnetfeld des Spektrometer eine Zeemanaufspaltung der Niveaus der L-Schale zu beobachten ist.
+Zunächst soll die Konversionslinie des Elektrons der K-Schale mit der Bindungsenergie:
+\begin{align*}
+E_\mathrm{K} = \SI{37,441}{\kilo\electronvolt}
+\end{align*}
+betrachtet werden.
+Mit den Gleichungen \eqref{eq:b_rho} und \eqref{eq:kin_energie_konversion} kann der Impuls des Elektrons in der für die Spektroskopie üblichen Größe:
+\begin{align*}
+	\left(B \rho \right)_\mathrm{K} = \SI{3379}{G.cm}
+\end{align*}
+angegeben werden.
+
+Schließlich soll die Zeemanaufspaltung der L-Schale betrachtet werden, welche sich in drei diskrete Energieniveaus aufspaltet.
+Für die Bindungsenergie der aufgespalteten Niveaus ist gegeben:
+\begin{align*}
+E_{\mathrm{L}_{\mathrm{I}}} = \SI{5,987}{\kilo\electronvolt} \quad
+E_{\mathrm{L}_{\mathrm{II}}} = \SI{5,624}{\kilo\electronvolt} \quad
+E_{\mathrm{L}_{\mathrm{III}}} = \SI{5,247}{\kilo\electronvolt}
+\end{align*}
+Da die Aufspaltung mit dem Spektroskop nicht auflösbar ist, muss eine sinnvolle Mittlung durchgeführt werden.
+Dazu betrachtet man die Entartungsgrade der einzelnen Niveaus:
+\begin{align*}
+g_{\mathrm{L}_{\mathrm{I}}} = \num{1} \quad
+g_{\mathrm{L}_{\mathrm{II}}} = \num{2} \quad
+g_{\mathrm{L}_{\mathrm{III}}} = \num{1}
+\end{align*}
+und führt eine dementsprechend gewichtete Mittlung durch:
+\begin{align*}
+E_\mathrm{L} = \frac{E_{\mathrm{L}_{\mathrm{I}}} + 2E_{\mathrm{L}_{\mathrm{II}}} + E_{\mathrm{L}_{\mathrm{III}}}}{4} \approx \SI{5,621}{\kilo\electronvolt}
+\end{align*}
+In Analogie zur K-Schale kann der Impuls des Elektrons berechnet werden:
+\begin{align}
+\left(B \rho \right)_\mathrm{L} = \SI{3497}{G.cm}
+\end{align}
+
+\subsubsection{Untergrundmessungen}
+
 
 \subsubsection{Grobspektrum von Barium}
 \begin{figure}[h]
@@ -332,7 +384,6 @@ korrigiert.
 	\label{fig:ba_t4_grob}
 \end{figure}
 
-\subsection{Kalibration des Spektrometers}
 Kalibration mit \isotope[137]{Ba}.
 Fehler der Hallspannung:
 \begin{align}
@@ -357,32 +408,6 @@ Korrektur der Dispersion (das gemessene Impulsintervall ist proportional zum Mag
 \end{align}
 (TODO: $n$ anderen Namen geben und physikalische Bedeutung klarmachen; keine Counts mehr sondern jetzt eher eine Impulsverteilung)
 
-Aus den gegebenen Bindungsenergien:
-\begin{align*}
-	E_\mathrm{K} = \SI{37,441}{\kilo\electronvolt}
-\end{align*}
-und
-\begin{align*}
-	E_{\mathrm{L}_{\mathrm{I}}} = \SI{5,987}{\kilo\electronvolt} \\
-	E_{\mathrm{L}_{\mathrm{II}}} = \SI{5,624}{\kilo\electronvolt} \\
-	E_{\mathrm{L}_{\mathrm{III}}} = \SI{5,247}{\kilo\electronvolt}
-\end{align*}
-Entartungsgrade:
-\begin{align*}
-	g_{\mathrm{L}_{\mathrm{I}}} = \num{1} \\
-	g_{\mathrm{L}_{\mathrm{II}}} = \num{2} \\
-	g_{\mathrm{L}_{\mathrm{III}}} = \num{1}
-\end{align*}
-Gewichtetes Mittel:
-\begin{align}
-	E_\mathrm{L} = \frac{E_{\mathrm{L}_{\mathrm{I}}} + 2E_{\mathrm{L}_{\mathrm{II}}} + E_{\mathrm{L}_{\mathrm{III}}}}{4} \approx \SI{5,621}{\kilo\electronvolt}
-\end{align}
-
-Bestimmung der $B\rho$-Werte zur Kalibration aus Gleichung \ref{eq:b_rho}, wobei für die kinetische Energie $T$ des Elektrons die Differenz von Anregung $Q = \SI{661,660}{\kilo\electronvolt}$ und Bindungsenergie genommen wird:
-\begin{align}
-	\left(B \rho \right)_\mathrm{K} = \SI{3379}{G.cm} \\
-	\left(B \rho \right)_\mathrm{L} = \SI{3497}{G.cm}
-\end{align}
 
 \begin{figure}[h]
 	\centering

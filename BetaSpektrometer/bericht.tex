@@ -52,6 +52,7 @@
 % bessere Tabellenlayouts
 \usepackage{booktabs}
 \usepackage{multirow}
+\usepackage{multicol}
 
 % Seitenlayout (Kopfzeile)
 \usepackage{fancyhdr}
@@ -170,6 +171,17 @@ Man unterscheidet zwischen drei verschiedenen $\beta$-Zerfallsarten ($m(A,Z)$: A
 Grundsätzlich ist ein Zerfall nur möglich, wenn die Zerfallsenergie $Q$ positiv ist (Energieerhaltung).
 
 \subsubsection{Fermitheorie des $\beta$-Zerfalls}
+Fermi lieferte 1934 den ersten theoretischen Ansatz zur Beschreibung des $\beta$-Zerfalls, nachdem von Pauli bereits die Existenz eines dritten Teilchens, des Neutrinos gefordert worden war.
+Das beobachtete Zerfallsspektrum zeigte eine kontinuierliche Energieverteilung mit einer oberen Grenze, die als Differenz zwischen Ausgangs- und Endzustand verstanden werden kann.
+Wenn der $\beta$-Zerfall als Zweikörperzerfall betrachtet wird, erwartet man für alle $\beta$-Teilchen die gleiche Energie (die gerade dieser Differenz entspricht).\cite{krane}
+In der beobachteten Energieverteilung fehlte also immer ein Beitrag, der später dem Neutrino zugeordnet wurde und man begann, den Zerfall als Dreikörperzerfall zu betrachten.
+\\
+\\
+Fermi beschreibt die Wahrscheinlichkeit, dass ein Teilchen mit Impuls $p$ emittiert wird als quantenmechanische Übergangswahrscheinlichkeit, die sich aus der Störungstheorie ergibt.
+Für ein Elektron, das im Impulsintervall zwischen $p$ und $p+\text{d}p$ emittiert wird, ist die Wahrscheinlichkeit pro Zeiteinheit dann gegeben als \cite{mayer-kuckuk}:
+\begin{align}
+	N(p)\text{d}p = \frac{2\pi}{\hbar}\left|\Braket{f|H|i}\right|^2\frac{\text{d}n}{\text{d}E_0}
+\end{align}
 \begin{itemize}
 	\item Einführung: historische Relevanz des kontinuierlichen Spektrums (Dreikörperzerfall und kein Zweikörperzerfall)
 	\item Spektrum
@@ -365,19 +377,19 @@ Bestimmung der $B\rho$-Werte zur Kalibration aus Gleichung \ref{eq:b_rho}, wobei
 
 
 \subsubsection{Grobspektrum von Barium}
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\input{./plots/barium_t4_grob.tex}
 	\caption{Barium Grobspektrum Transmission 4}
 	\label{fig:ba_t4_grob}
 \end{figure}
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\input{./plots/barium_t4_fein.tex}
 	\caption{Barium Feinspektrum Transmission 4}
 	\label{fig:ba_t4_grob}
 \end{figure}
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\input{./plots/kalibration.tex}
 	\caption{Kalibration}
@@ -406,21 +418,20 @@ Bestimmung der $B\rho$-Werte zur Kalibration aus Gleichung \ref{eq:b_rho}, wobei
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
-\bibitem{javan}
-	A. Javan, W. R. Bennett, Jr., and D. R. Herriott,
-	\emph{Population Inversion and Continuous Optical Maser Oscillation in a Gas Discharge Containing a He-Ne Mixture},
-	Phys. Rev. Lett. 6, 106 – Published 1 February 1961
+\bibitem{krane}
+	Kenneth S. Krane,
+	\emph{Introductory Nuclear Physics},
+	John Wiley \& Sons 1988
 
 \bibitem{linden}
 	S. Linden,
 	Skript zur Vorlesung \emph{physik311: Optik und Wellenmechanik} (Stand: 31. Januar 2014),
 	Physikalisches Institut, Universität Bonn
 
-\bibitem{siegman}
-	A. E. Siegman,
-	\emph{Lasers},
-	University Science Books 1986,
-	Chapter 19: Stable Two-Mirror Resonators
+\bibitem{mayer-kuckuk}
+	Theo Mayer-Kuckuk,
+	\emph{Kernphysik - Eine Einführung} (7. Auflage),
+	Teubner 2002,
 
 \bibitem{anleitung}
 	Physikalisches Praktikum V: Kern- und Teilchenphysik,

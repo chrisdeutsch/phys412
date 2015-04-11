@@ -19,7 +19,6 @@ unset grid
 
 load './../gnuplot_linestyles.plt'
 
-
 plot './data/barium_t4_grob.txt' using 1:3:2:4 w xyerrorbars t'Messwerte' ls 1
 
 unset output

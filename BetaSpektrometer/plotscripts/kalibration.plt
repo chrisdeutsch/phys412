@@ -21,8 +21,8 @@ load './../gnuplot_linestyles.plt'
 
 f(x) = a*x
 
-fit f(x) './data/kalibration.txt' using 1:2:3 via a
+fit f(x) './data/kalibration.txt' using 1:2:3 yerror via a
 
-plot './data/kalibration.txt' using 1:2:3 w yerrorbars t'Messwerte' ls 1, f(x) ls 2
+plot './data/kalibration.txt' using 1:2:3 w yerrorbars t'Messwerte' ls 1, f(x) ls 2 lw 2
 
 unset output

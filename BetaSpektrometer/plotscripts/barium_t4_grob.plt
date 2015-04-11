@@ -4,11 +4,9 @@ set term epslatex color size 5,3.5
 
 set output './plots/barium_t4_grob.tex'
 
-set title 'Barium Transmission 4 Grobspektrum'
-
 set key top right
 
-set decimalsign ','
+set decimalsign '{,}'
 
 set xrange [*:*]
 set yrange [*:*]

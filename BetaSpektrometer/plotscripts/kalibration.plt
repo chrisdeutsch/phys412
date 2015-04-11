@@ -4,8 +4,6 @@ set term epslatex color size 5,3.5
 
 set output './plots/kalibration.tex'
 
-set title 'Kalibration'
-
 set key top right
 
 set decimalsign ','

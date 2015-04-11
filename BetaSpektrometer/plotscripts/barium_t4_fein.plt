@@ -4,13 +4,11 @@ set term epslatex color size 5,3.5
 
 set output './plots/barium_t4_fein.tex'
 
-set title 'Barium Transmission 4 Feinspektrum'
-
 set key top right
 
-set decimalsign ','
+set decimalsign '{,}'
 
-set xrange [*:*]
+set xrange [147:159]
 set yrange [*:*]
 set xlabel '$U_\mathrm{H}$ / \si{\skt}'
 set ylabel '$n$'
@@ -32,6 +30,6 @@ g = 0.2
 
 fit g(x) './data/barium_t4_fein.txt' using 1:3:4 yerror via a,b,c,d,e,f,g
 
-plot './data/barium_t4_fein.txt' using 1:3:2:4 w xyerrorbars t'Messwerte' ls 1, g(x) ls 2 lw 2
+plot [147:159] './data/barium_t4_fein.txt' using 1:3:2:4 w xyerrorbars t'Messwerte' ls 1, g(x) ls 2 lw 2
 
 unset output

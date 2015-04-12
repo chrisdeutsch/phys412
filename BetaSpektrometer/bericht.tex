@@ -400,7 +400,6 @@ Um die Dispersion des Spektrometers zu berücksichtigen wurden die gemessenen un
 	\caption{Barium Grobspektrum Transmission 4}
 	\label{fig:ba_t4_grob}
 \end{figure}
-
 Bei der Aufnahme des Spektrums wurde die Hallspannung $U_\mathrm{H}$ und die Anzahl der Ereignisse $N$ gemessen.
 Dabei wird der Fehler der gemessenen Hallspannung (Begründung) auf
 \begin{align*}
@@ -411,9 +410,8 @@ Darüber hinaus ergibt sich der Schätzwert für den Fehler der Ereigniszahl gem
 \begin{align*}
 	\Delta N = \sqrt{N}
 \end{align*}
-
-Zunächst muss die Hallspannung $U_\mathrm{H}$ gemäß der in Abschnitt \ref{ssec:offsetspannung} ermittelten Offsetspannung $U_0$ \eqref{hall_korrektur} korrigiert werden.
-Die korregierte Hallspannung erhält man durch:
+Zunächst muss die Hallspannung $U_\mathrm{H}$ gemäß der in Abschnitt \ref{ssec:offsetspannung} ermittelten Offsetspannung $\overline{U_0}$ \eqref{hall_korrektur} korrigiert werden.
+Die korrigierte Hallspannung erhält man durch:
 \begin{align}
 U_\mathrm{H}^\mathrm{korr.} = U_\mathrm{H} - U_0 \qquad
 \Delta U_\mathrm{H}^\mathrm{korr.} = \sqrt{\Delta U_\mathrm{H}^2 + \Delta U_0^2} \text{,}
@@ -426,7 +424,7 @@ Für die Bereinigung der Zählraten mit den in Abschnitt \ref{sssec:untergrund1}
 wobei erneut die Gauß'sche Fehlerfortpflanzung für den Fehler angewendet wurde.
 Weiterhin ist aufgrund der Dispersion des Spektrometers das gemessene Impulsintervall proportional zum anliegenden Magnetfeld.
 Um eine vom Magnetfeld unabhängige Impulsverteilung zu erhalten, kann die Anzahl der Ereignisse (UNTERGRUNDBEREINIGT) durch eine zum Magnetfeld proportionale Größe dividiert werden.
-Es liegt nahe die korregierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ zu diesem Zweck zu verwenden, sodass man die Impulsverteilung $n$ erhält:
+Es liegt nahe die korrigierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ zu diesem Zweck zu verwenden, sodass man die Impulsverteilung $n$ erhält:
 \begin{align}
 	n = \frac{N_\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}} \qquad \Delta n = \sqrt{\left( \frac{\Delta N_\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}}\right)^2 + \left( \frac{N_\mathrm{korr.} \cdot \Delta U_\mathrm{H}^\mathrm{korr.}}{ {U_\mathrm{H}^\mathrm{korr.}}^2 }\right)^2}
 \end{align}

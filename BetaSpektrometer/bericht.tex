@@ -303,7 +303,7 @@ Um die tatsächliche Offsetspannung zu ermitteln, nutzt man die Hysterese des Ma
 	\caption{Skizzierte Hysteresekurve. Der tatsächliche Spannungswert für $I=\SI{0}{\ampere}$ ergibt sich aus Mittelung von $U_\text{+}$ und $U_\text{-}$.}
 	\label{fig:hysterese}
 \end{figure}
-Bei jeder Messung wird dann das arithmetische Mittel (mit $U_0$ bezeichnet) von $U_\text{+}$ und $U_\text{-}$ berechnet und im Anschluss über alle $U_0$ wieder gemittelt, um einen guten Wert für die Offsetspannung $U_0$ zu erhalten.
+Bei jeder Messung wird dann das arithmetische Mittel (mit $U_0$ bezeichnet) von $U_\text{+}$ und $U_\text{-}$ berechnet und im Anschluss über alle $U_0$ wieder gemittelt, um einen guten Wert für die Offsetspannung $\overline{U_0}$ zu erhalten.
 \begin{table}[h]
 	\centering
 	\input{./tables/offset.tex}
@@ -351,7 +351,8 @@ Mit den Gleichungen \eqref{eq:b_rho} und \eqref{eq:kin_energie_konversion} kann 
 	\left(B \rho \right)_\mathrm{K} = \SI{3379}{G.cm}
 \end{align*}
 angegeben werden.
-
+\\
+\\
 Schließlich soll die Zeemanaufspaltung der L-Schale betrachtet werden, welche sich in drei diskrete Energieniveaus aufspaltet.
 Für die Bindungsenergie der aufgespalteten Niveaus ist gegeben:
 \begin{align*}
@@ -383,21 +384,16 @@ Für den Untergrund des Caesium-Zerfalls bei 1\% und 4\% Transmission sind die i
 \begin{table}[h]
 	\centering
 	\input{./tables/untergrund_cs.tex}
-	\caption{Untergrundmessung von \isotope[137]{Cs} bei 1\% und 4\% Transmission}
+	\caption{Untergrundmessung von \isotope[137]{Ba} bei 1\% und 4\% Transmission}
 	\label{tab:untergrund_cs}
 \end{table}
 Die Messwerte wurden dabei in der untersten Zeile gemittelt und der Fehler aus der Standardabweichung berechnet.
 
 \subsubsection{Grobspektrum von Barium}
-\begin{table}[h]
-	\centering
-	\input{./tables/spektrum_ba4_grob.tex}
-	\caption{Messdaten Grobspektrum TEMPORÄR}
-	\label{tab:spektrum_ba4_grob}
-\end{table}
+
 Zunächst wurde grob das Spektrum von Barium aufgenommen, um die ungefähren Positionen der Konversionslinien zu finden.
 Dieses ist in Abbildung \ref{fig:ba_t4_grob} dargestellt. 
-Um die Dispersion des Spektrometers zu berücksichtigen wurden die gemessenen und bereits korrigierten Zählraten wie in der Praktikumsanleitung erwähnt, durch die korrigierte Hallspannung dividiert werden, so dass das gemessene Impulsintervall proportional zum Magnetfeld ist.
+Um die Dispersion des Spektrometers zu berücksichtigen wurden die gemessenen und bereits korrigierten Zählraten wie in der Praktikumsanleitung erwähnt, durch die korrigierte Hallspannung dividiert, so dass das gemessene Impulsintervall proportional zum Magnetfeld ist.
 \begin{figure}[h]
 	\centering
 	\input{./plots/barium_t4_grob.tex}
@@ -463,12 +459,6 @@ Es liegt nahe die korregierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ zu dies
 
 \subsection{Auflösungsvermögen des Spektrometers}
 
-\begin{table}[h]
-	\centering
-	\input{./tables/untergrund_ba4.tex}
-	\caption{Untergrund \isotope[137]{Ba} bei 4}
-	\label{tab:untergrund_ba4}
-\end{table}
 \subsection{Bestimmung der Zerfallsenergie}
 
 
@@ -541,11 +531,12 @@ Es liegt nahe die korregierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ zu dies
 % APPENDIX
 \begin{appendix}
 \section{Anhang}
-\subsection{Messwerte der Photospannung hinter dem Polarisator}
-
-\subsection{Bestimmung des Strahlprofils im Resonator}
-
-\subsection{Bestimmung der Modenabstände mit dem optischen Spektrumanalysator}
+\begin{sidewaystable}
+	\centering
+	\input{./tables/spektrum_ba4_grob.tex}
+	\caption{Messdaten Grobspektrum TEMPORÄR}
+	\label{tab:spektrum_ba4_grob}
+\end{sidewaystable}
 
 \end{appendix}
 

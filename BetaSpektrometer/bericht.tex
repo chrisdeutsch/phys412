@@ -293,6 +293,7 @@ Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu en
 Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
 
 \subsection{Bestimmung der Offsetspannung der Hallsonde}
+\label{ssec:offsetspannung}
 
 Zur Messung des Magnetfelds des Spektrometers wird eine Hallsonde verwendet, die jedoch auch bei ausgeschaltetem Magnetfeld eine Spannung $\neq 0$ \si{\volt} anzeigt.
 Um die tatsächliche Offsetspannung zu ermitteln, nutzt man die Hysterese des Magneten aus und misst für beide Stromrichtungen, die am Magneten angelegt werden die jeweiligen Remanenzfelder (als Hallspannung $U_\text{H}$) gemessen.
@@ -375,6 +376,7 @@ In Analogie zur K-Schale kann der Impuls des Elektrons berechnet werden:
 \end{align}
 
 \subsubsection{Untergrundmessungen}
+\label{sssec:untergrund1}
 
 Zur späteren Bereinigung der Messwerte werden vorher Untergrundmessungen durchgeführt.
 Für den Untergrund des Caesium-Zerfalls bei 1\% und 4\% Transmission sind die in Tabelle \ref{tab:untergrund_cs} notierten Werte für die Counts $N$ gemessen worden.
@@ -402,32 +404,38 @@ Um die Dispersion des Spektrometers zu berücksichtigen wurden die gemessenen un
 	\caption{Barium Grobspektrum Transmission 4}
 	\label{fig:ba_t4_grob}
 \end{figure}
-Die korrigierten Hallspannungen erhält man mit \eqref{hall_korrektur} und Anwenden von:
-\begin{align}
-U_\mathrm{H}^\mathrm{Korr} &= U_\mathrm{H} - U_0 \\
-\Delta U_\mathrm{H}^\mathrm{Korr} &= \sqrt{\Delta U_\mathrm{H}^2 + \Delta U_0^2} \qquad \text{(Gauß'sche Fehlerfortpflanzung)}
-\end{align}
-Für den Fehler der Hallspannung wurde dabei
-\begin{align}
+
+Bei der Aufnahme des Spektrums wurde die Hallspannung $U_\mathrm{H}$ und die Anzahl der Ereignisse $N$ gemessen.
+Dabei wird der Fehler der gemessenen Hallspannung (Begründung) auf
+\begin{align*}
 	\Delta U_\mathrm{H} = \SI{0.1}{\skt}
-\end{align}
-angenommen, was der letzten ablesbaren Stelle der Digitalanzeige entspricht.
-Da die Zählraten poissonverteilt sind, kann für den Fehler
-\begin{align}
+\end{align*}
+geschätzt.
+Darüber hinaus ergibt sich der Schätzwert für den Fehler der Ereigniszahl gemäß der Poisson-Verteilung aus der Wurzel der Ereignisse:
+\begin{align*}
 	\Delta N = \sqrt{N}
-\end{align}
-angenommen werden.
-Für die Bereinigung der Zählraten mit den oben gefundenen Werten für den Hintergrund gilt
+\end{align*}
+
+Zunächst muss die Hallspannung $U_\mathrm{H}$ gemäß der in Abschnitt \ref{ssec:offsetspannung} ermittelten Offsetspannung $U_0$ \eqref{hall_korrektur} korrigiert werden.
+Die korregierte Hallspannung erhält man durch:
 \begin{align}
-	N_\text{Korr = }N - N_0 \qquad \Delta N_\text{Korr} = \sqrt{\Delta N^2 + \Delta N_0^2}
+U_\mathrm{H}^\mathrm{korr.} = U_\mathrm{H} - U_0 \qquad
+\Delta U_\mathrm{H}^\mathrm{korr.} = \sqrt{\Delta U_\mathrm{H}^2 + \Delta U_0^2} \text{,}
+\end{align}
+wobei der Fehler mit Gauß'scher Fehlerfortpflanzung folgt.
+Für die Bereinigung der Zählraten mit den in Abschnitt \ref{sssec:untergrund1} gefundenen Werten für den Hintergrund gilt
+\begin{align}
+	N_\mathrm{korr.} = N - N_0 \qquad \Delta N_\mathrm{korr.} = \sqrt{\Delta N^2 + \Delta N_0^2}
 \end{align}
 wobei erneut die Gauß'sche Fehlerfortpflanzung für den Fehler angewendet wurde.
-Die oben angesprochene Dispersionskorrektur 
+Weiterhin ist aufgrund der Dispersion des Spektrometers das gemessene Impulsintervall proportional zum anliegenden Magnetfeld.
+Um eine vom Magnetfeld unabhängige Impulsverteilung zu erhalten, kann die Anzahl der Ereignisse (UNTERGRUNDBEREINIGT) durch eine zum Magnetfeld proportionale Größe dividiert werden.
+Es liegt nahe die korregierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ zu diesem Zweck zu verwenden, sodass man die Impulsverteilung $n$ erhält:
 \begin{align}
-	n = \frac{N_\text{Korr}}{U_\mathrm{H}^\mathrm{Korr}} \\	
-	\text{FEHLER NOCH AUSRECHNEN}
+	n = \frac{N_\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}} \qquad \Delta n = \sqrt{\left( \frac{\Delta N_\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}}\right)^2 + \left( \frac{N_\mathrm{korr.} \cdot \Delta U_\mathrm{H}^\mathrm{korr.}}{ {U_\mathrm{H}^\mathrm{korr.}}^2 }\right)^2}
 \end{align}
-ändert die Zählraten so, dass diese nun als eine Impulsverteilung aufgefasst werden können. 
+
+
 
 \begin{figure}[h]
 	\centering

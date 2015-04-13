@@ -358,7 +358,7 @@ E_\mathrm{K} = \SI{37,441}{\kilo\electronvolt}
 betrachtet werden.
 Mit den Gleichungen \eqref{eq:b_rho} und \eqref{eq:kin_energie_konversion} kann der Impuls des Elektrons in der für die Spektroskopie üblichen Größe
 \begin{align*}
-	\left(B \rho \right)_\mathrm{K} = \SI{3379}{G.cm}
+	\left(B \rho \right)_\mathrm{K} = \SI{3381}{G.cm}
 \end{align*}
 angegeben werden.
 \\
@@ -383,7 +383,7 @@ E_\mathrm{L} = \frac{E_{\mathrm{L}_{\mathrm{I}}} + 2E_{\mathrm{L}_{\mathrm{II}}}
 \end{align*}
 In Analogie zur K-Schale kann der Impuls des Elektrons berechnet werden:
 \begin{align}
-\left(B \rho \right)_\mathrm{L} = \SI{3497}{G.cm}
+\left(B \rho \right)_\mathrm{L} = \SI{3500}{G.cm}
 \end{align}
 
 \subsubsection{Untergrundmessungen}
@@ -399,7 +399,7 @@ Für den Untergrund des Caesium-Zerfalls bei 1\% und 4\% Transmission sind die i
 \end{table}
 Die Messwerte wurden dabei in der untersten Zeile gemittelt und der Fehler aus der Standardabweichung berechnet.
 
-\subsubsection{Grobspektrum von Barium}
+\subsubsection{Spektrum von Caesium}
 
 Zunächst wurde grob das Spektrum von Barium aufgenommen, um die ungefähren Positionen der Konversionslinien zu finden.
 Dieses ist in Abbildung \ref{fig:ba_t4_grob} dargestellt. 
@@ -439,8 +439,7 @@ Es liegt nahe die korrigierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ zu dies
 	n = \frac{N_\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}} \qquad \Delta n = \sqrt{\left( \frac{\Delta N_\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}}\right)^2 + \left( \frac{N_\mathrm{korr.} \cdot \Delta U_\mathrm{H}^\mathrm{korr.}}{ {U_\mathrm{H}^\mathrm{korr.}}^2 }\right)^2}
 \end{align}
 
-
-
+\subsubsection{Konversionslinien}
 \begin{figure}[h]
 	\centering
 	\input{./plots/barium_t4_fein.tex}
@@ -455,14 +454,29 @@ Es liegt nahe die korrigierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ zu dies
 	\label{fig:ba_t1_fein}
 \end{figure}
 
+Anpassung der Gaußfunktionen.
+Fitergebnisse.
+Anpassung der Ursprungsgeraden.
+Fitergebnisse.
+
 \begin{figure}[h]
 	\centering
 	\input{./plots/kalibration.tex}
 	\caption{Kalibration}
 	\label{fig:kalibration}
 \end{figure}
+Aus der Steigung der Ursprungsgeraden $m$ kann die Proportionalitätskonstante $\lambda$:
 \begin{align}
-	\lambda \approx \SI{22.4 +- 0.1}{G.cm\per\skt}
+	B \rho = \lambda \cdot U_\mathrm{H}^\mathrm{korr.}
+\end{align}
+berechnet werden.
+Dazu reicht die Bildung des Kehrwertes:
+\begin{align}
+	\lambda = \frac{1}{m} \qquad \Delta \lambda = \frac{\Delta m}{m^2}
+\end{align}
+Mit diese Überlegungen erhält man:
+\begin{align}
+	\lambda = \SI{22.37 +- 0.05}{G.cm\per\skt}
 \end{align}
 
 \subsection{Auflösungsvermögen des Spektrometers}
@@ -482,11 +496,6 @@ Es liegt nahe die korrigierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ zu dies
 	Kenneth S. Krane,
 	\emph{Introductory Nuclear Physics},
 	John Wiley \& Sons 1988
-
-\bibitem{linden}
-	S. Linden,
-	Skript zur Vorlesung \emph{physik311: Optik und Wellenmechanik} (Stand: 31. Januar 2014),
-	Physikalisches Institut, Universität Bonn
 
 \bibitem{mayer-kuckuk}
 	Theo Mayer-Kuckuk,

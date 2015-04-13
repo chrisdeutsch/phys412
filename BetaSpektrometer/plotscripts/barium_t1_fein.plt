@@ -10,7 +10,7 @@ set decimalsign '{,}'
 
 set xrange [*:*]
 set yrange [*:*]
-set xlabel '$U_\mathrm{H}$ / \si{\skt}'
+set xlabel '$ U_\mathrm{H}^\mathrm{korr.}$ / \si{\skt}'
 set ylabel '$n$'
 
 set grid

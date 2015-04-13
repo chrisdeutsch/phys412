@@ -13,7 +13,7 @@ set yrange [*:*]
 set xlabel '$U_\mathrm{H}$ / \si{\skt}'
 set ylabel '$n$'
 
-unset grid
+set grid
 
 load './../gnuplot_linestyles.plt'
 

@@ -13,7 +13,7 @@ set yrange [0:*]
 set xlabel '$B \rho$ / \si{G.cm}'
 set ylabel '$U_H$ / \si{\skt}'
 
-unset grid
+set grid
 
 load './../gnuplot_linestyles.plt'
 

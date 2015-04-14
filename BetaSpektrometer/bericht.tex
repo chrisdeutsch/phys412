@@ -32,6 +32,7 @@
 
 % Einheitendefinitionen
 \DeclareSIUnit{\skt}{Skt.}
+\DeclareSIUnit{\gauss}{G}
 
 % Operatordefinitionen
 \DeclareMathOperator{\erf}{erf}
@@ -349,6 +350,7 @@ und alle gemessenen Hallspannungen werden in der folgenden Auswertung um
 korrigiert.
 
 \subsection{Kalibration des Spektrometers}
+\label{ssec:kalibration}
 Zur Kalibration des Spektrometers wird das Spektrum von \isotope[137]{Cs} bei Transmissionen von \SI{1}{\percent} und \SI{4}{\percent} vermessen.
 Von Interesse sind dabei die Konversionslinien des angeregten Isotops \isotope[137]{Ba}, welche zur Impulskalibrierung genutzt werden können.
 Der angeregte Zustand von \isotope[137]{Ba} hat eine Zerfallsenergie von
@@ -480,6 +482,7 @@ mit dem Schwerpunkt $\mu$ und der Breite (Standardabweichung) $\sigma$ beschreib
 	\caption{Barium Feinspektrum Transmission 1}
 	\label{fig:ba_t1_fein}
 \end{figure}
+
 Die mit \texttt{gnuplot} gefundenen Werte für die Anpassungsparameter $\mu$ und $\sigma$ (die einer Spannung in Skalenteilen entsprechen) wurden für die jeweiligen Schalen und Transmissionen in Tabelle \ref{tab:fitergebnisse_ba} festgehalten.
 \begin{table}[h]
 	\centering
@@ -487,16 +490,22 @@ Die mit \texttt{gnuplot} gefundenen Werte für die Anpassungsparameter $\mu$ und
 	\caption{Ergebnisse der Anpassung für die Schwerpunkte der Konversionslinien von \isotope[137]{Ba} bei 1\% und 4\% Transmission.}
 	\label{tab:fitergebnisse_ba}
 \end{table}
-Anpassung der Ursprungsgeraden.
-Fitergebnisse.
-
+Mit den angepassten Linienschwerpunkten kann nun die Impulskaltbration durchgeführt werden.
+Dazu wurden in Abschnitt \ref{ssec:kalibration} bereits die mit den Linien korrespondierenden $(B \rho)$-Werte berechnet.
+Trägt man nun die Schwerpunkte der Linien $U_\mathrm{H}$ gegen den berechneten $(B \rho)$-Wert auf, so erhält man eine Ursprungsgerade mit der Steigung $m$.
+Diese Form der Darstellung wurde gewählt, da bei der Anpassung einer Ursprungsgeraden mit \texttt{gnuplot} nur $y$-Fehler berücksichtigt werden können.
 \begin{figure}[h]
 	\centering
 	\input{./plots/kalibration.tex}
 	\caption{Kalibration}
 	\label{fig:kalibration}
 \end{figure}
-Aus der Steigung der Ursprungsgeraden $m$ kann die Proportionalitätskonstante $\lambda$:
+In Abbildung \ref{fig:kalibration} wurde die Anpassung der Ursprungsgerade  an die Kalibrationsdaten durchgeführt.
+Es ergibit sich die Steigung:
+\begin{align}
+	m = \SI{0.0447 +- 0.0001}{\skt\per \gauss \per \centi\metre}
+\end{align}
+Aus der Steigung $m$ kann nun die Proportionalitätskonstante $\lambda$:
 \begin{align}
 	B \rho = \lambda \cdot U_\mathrm{H}^\mathrm{korr.}
 \end{align}
@@ -509,6 +518,7 @@ Mit diese Überlegungen erhält man:
 \begin{align}
 	\lambda = \SI{22.37 +- 0.05}{G.cm\per\skt}
 \end{align}
+und die Kalibration ist abgeschlossen.
 
 \subsubsection{Auflösungsvermögen des Spektrometers}
 Im Folgenden soll das Auflösungsvermögen des Spektrometers bei verschiedenen Transmissionen bestimmt werden.

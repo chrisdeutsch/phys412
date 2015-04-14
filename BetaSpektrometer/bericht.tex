@@ -286,17 +286,17 @@ mit dem Feldindex:
 \begin{align}
 	n = - \frac{\rho}{B_z(\rho)} \frac{\mathrm{d} B_z(\rho)}{\mathrm{d} \rho}
 \end{align}
-Während einer halben Periode der jeweiligen Betatronschwingung läuft das Elektron auf der Kreisbahn einen Winkel von:
+Während einer halben Periode der jeweiligen Betatronschwingung durchläuft das Elektron auf der Kreisbahn einen Winkel von:
 \begin{align}
 	\phi_\rho &= \omega_0 \cdot \frac{\pi}{\omega_\rho} & \phi_z &= \omega_0 \cdot \frac{\pi}{\omega_z}\\
 	\phi_\rho &= \pi \left[ 1+ \frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} & \phi_z &= \pi \left[ -\frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} \label{eq:betatronwinkel}
 \end{align}
-ab, wobei $\rho_0$ den Designorbit kennzeichnet.
-An Gleichung \eqref{eq:betatronwinkel} ließt man nach quadrieren ab:
+ab, wobei $\rho_0$ den Radius der Sollbahn bezeichnet.
+An Gleichung \eqref{eq:betatronwinkel} ließt man nach Quadrieren ab:
 \begin{align}
 	\frac{1}{\phi_\rho^2} + \frac{1}{\phi_z^2} = \frac{1}{\pi^2} \label{eq:betatronwinkelverhaeltnis}
 \end{align}
-Um eine stigmatische Abbildung zu erlangen, das heißt der Fokus der $\rho$ und der $z$-Ebene liegen im selben Punkt, muss die Bedingung $\phi_\rho = \phi_z$ gestellt werden.
+Um eine stigmatische Abbildung zu erhalten (d.h. der Fokus der $\rho$- und $z$-Ebene liegen im selben Punkt) muss die Bedingung $\phi_\rho = \phi_z$ gestellt werden.
 Damit folgt aus Gleichung \eqref{eq:betatronwinkelverhaeltnis} der gesamte Winkel der Elektronenbahn im Spektrometer.
 Dieser ergibt sich zu $\phi = \pi \sqrt{2}$, weshalb das doppelt-fokussierende Spektrometer auch $\pi \sqrt{2}$-Spektrometer genannt wird.
 Gleichzeitig folgt aus der gestellten Anforderung $\phi_\rho = \phi_z$ mit Gleichung \eqref{eq:betatronwinkel} die Bestimmungsgleichung für das magnetische Feld:
@@ -369,7 +369,7 @@ Nach der Ionisation hat das Elektron eine kinetische Energie von
 	\label{eq:kin_energie_konversion}
 \end{align}
 wobei $E_\mathrm{B}$ die Bindungsenergie des jeweiligen Elektrons im Atom bezeichnet.
-Im Spektrum sind zwei Konversionslinien zu erkennen, welche zur K- und L-Schale von Barium zuzuordnen sind.
+Im Spektrum sind zwei Konversionslinien zu erkennen, welche der K- und L-Schale von Barium zuzuordnen sind.
 Weiterhin muss beachtet werden, dass im Magnetfeld des Spektrometer eine Zeemanaufspaltung der Niveaus der L-Schale zu beobachten ist.
 Zunächst soll die Konversionslinie des Elektrons der K-Schale mit der Bindungsenergie
 \begin{align*}
@@ -390,14 +390,14 @@ E_{\mathrm{L}_{\mathrm{I}}} = \SI{5,987}{\kilo\electronvolt} \quad
 E_{\mathrm{L}_{\mathrm{II}}} = \SI{5,624}{\kilo\electronvolt} \quad
 E_{\mathrm{L}_{\mathrm{III}}} = \SI{5,247}{\kilo\electronvolt}
 \end{align*}
-Da die Aufspaltung mit dem Spektroskop nicht auflösbar ist, muss eine sinnvolle Mittlung durchgeführt werden.
+Da die Aufspaltung mit dem Spektroskop nicht auflösbar ist, muss eine sinnvolle Mittelung durchgeführt werden.
 Dazu betrachtet man die Entartungsgrade der einzelnen Niveaus
 \begin{align*}
 g_{\mathrm{L}_{\mathrm{I}}} = \num{1} \quad
 g_{\mathrm{L}_{\mathrm{II}}} = \num{2} \quad
 g_{\mathrm{L}_{\mathrm{III}}} = \num{1}
 \end{align*}
-und führt eine dementsprechend gewichtete Mittlung durch:
+und führt eine dementsprechend gewichtete Mittelung durch:
 \begin{align*}
 E_\mathrm{L} = \frac{E_{\mathrm{L}_{\mathrm{I}}} + 2E_{\mathrm{L}_{\mathrm{II}}} + E_{\mathrm{L}_{\mathrm{III}}}}{4} \approx \SI{5,621}{\kilo\electronvolt}
 \end{align*}
@@ -435,8 +435,8 @@ Darüber hinaus ergibt sich der Schätzwert für den Fehler der Ereigniszahl gem
 Zunächst muss die Hallspannung $U_\mathrm{H}$ gemäß der in Abschnitt \ref{ssec:offsetspannung} ermittelten Offsetspannung $\overline{U_0}$ \eqref{hall_korrektur} korrigiert werden.
 Die korrigierte Hallspannung erhält man durch:
 \begin{align}
-U_\mathrm{H}^\mathrm{korr.} = U_\mathrm{H} - U_0 \qquad
-\Delta U_\mathrm{H}^\mathrm{korr.} = \sqrt{\Delta U_\mathrm{H}^2 + \Delta U_0^2} \text{,}
+U_\mathrm{H}^\mathrm{korr.} = U_\mathrm{H} - \overline{U_0} \qquad
+\Delta U_\mathrm{H}^\mathrm{korr.} = \sqrt{\Delta U_\mathrm{H}^2 + \Delta \overline{U_0}^2} \text{,}
 \end{align}
 wobei der Fehler mit Gauß'scher Fehlerfortpflanzung folgt.
 Für die Bereinigung der Zählraten mit den in Abschnitt \ref{sssec:untergrund1} gefundenen Werten für den Hintergrund gilt
@@ -445,13 +445,13 @@ Für die Bereinigung der Zählraten mit den in Abschnitt \ref{sssec:untergrund1}
 \end{align}
 wobei abermals die Gauß'sche Fehlerfortpflanzung für den Fehler angewendet wurde.
 Weiterhin ist aufgrund der Dispersion des Spektrometers das gemessene Impulsintervall proportional zum anliegenden Magnetfeld.
-Um eine vom Magnetfeld unabhängige Impulsverteilung zu erhalten, kann die Anzahl der Ereignisse (UNTERGRUNDBEREINIGT) durch eine zum Magnetfeld proportionale Größe dividiert werden.
+Um eine vom Magnetfeld unabhängige Impulsverteilung zu erhalten, kann die Anzahl der um den Untergrund bereinigten Ereignisse durch eine zum Magnetfeld proportionale Größe dividiert werden.
 Es liegt nahe die korrigierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ zu diesem Zweck zu verwenden, sodass man die Impulsverteilung $n$ erhält:
 \begin{align}
 	n = \frac{N_\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}} \qquad \Delta n = \sqrt{\left( \frac{\Delta N_\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}}\right)^2 + \left( \frac{N_\mathrm{korr.} \cdot \Delta U_\mathrm{H}^\mathrm{korr.}}{ {U_\mathrm{H}^\mathrm{korr.}}^2 }\right)^2}
 \end{align}
-Trägt man die Impulsverteilung $n$ gegen die korrigierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ auf, so erhält die Abbildungen \ref{fig:ba_t4_grob}.
-Dort sieht man eine Erhöhung der Zählrate bei ca. $U_\mathrm{H}^\mathrm{korr.} \approx \SI{150}{\skt}$, welche als Konversionslinien des angeregten Bariumkerns zu deuten sind.
+Trägt man die Impulsverteilung $n$ gegen die korrigierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ auf, so erhält die Abbildung \ref{fig:ba_t4_grob}.
+Dort sieht man eine Erhöhung der Zählrate bei ca. $U_\mathrm{H}^\mathrm{korr.} \approx \SI{150}{\skt}$, welche auf die Konversionslinien des angeregten Bariumkerns hindeutet.
 Im folgenden Abschnitt sollen diese zur Impulskalibration genauer untersucht werden.
 \begin{figure}[h]
 	\centering
@@ -462,11 +462,11 @@ Im folgenden Abschnitt sollen diese zur Impulskalibration genauer untersucht wer
 
 \subsubsection{Konversionslinien}
 \label{sssec:konversionslinien}
-Zusätzlich zu der groben Aufnahme des Spektrums wurde der Bereich der Konversionslinien mit zwei verschiedenen Transmissionen $T = \SI{4}{\percent}$ und $T = \SI{1}{\percent}$ vermessen.(Messdauer)
+Zusätzlich zu der groben Aufnahme des Spektrums wurde der Bereich der Konversionslinien mit zwei verschiedenen Transmissionen $T = \SI{4}{\percent}$ (bei einer Messdauer von \SI{40}{\second}) und $T = \SI{1}{\percent}$ (bei einer Messdauer von \SI{100}{\second}) vermessen.
 Die Messdaten und die daraus abgeleiteten Größen wurden in Tabellen \ref{tab:spektrum_ba4_fein} und \ref{tab:spektrum_ba1_fein} dargestellt, wobei die Berechnung der abgeleiteten Größen in Analogie zu Abschnitt \ref{sssec:spektrum_caesium} erfolgte.
 \\
 \\
-Sichtbar sind die Konversionslinien der K- und L-Schale des angeregten Barium-Kerns, an welche wir mithilfe von \texttt{gnuplot} die Summe zweier Gaußfunktionen mit Offset anpassen. Konkret lautet die Anpassungshypothese:
+Sichtbar sind die Konversionslinien der K- und L-Schale des angeregten Barium-Kerns, an welche mithilfe von \texttt{gnuplot} die Summe zweier Gaußfunktionen mit Offset angepasst wurde. Konkret lautet die Anpassungshypothese:
 \begin{align*}
 	f(x) = \mathcal{G}_1(x) + \mathcal{G}_2(x) + b \text{,}
 \end{align*}
@@ -487,7 +487,6 @@ mit dem Schwerpunkt $\mu$ und der Breite (Standardabweichung) $\sigma$ beschreib
 	\caption{Barium Feinspektrum Transmission 1}
 	\label{fig:ba_t1_fein}
 \end{figure}
-
 Die mit \texttt{gnuplot} gefundenen Werte für die Anpassungsparameter $\mu$ und $\sigma$ (die einer Spannung in Skalenteilen entsprechen) wurden für die jeweiligen Schalen und Transmissionen in Tabelle \ref{tab:fitergebnisse_ba} festgehalten.
 \begin{table}[h]
 	\centering
@@ -506,30 +505,29 @@ Diese Form der Darstellung wurde gewählt, da bei der Anpassung einer Ursprungsg
 	\label{fig:kalibration}
 \end{figure}
 In Abbildung \ref{fig:kalibration} wurde die Anpassung der Ursprungsgerade  an die Kalibrationsdaten durchgeführt.
-Es ergibit sich die Steigung:
+Es ergibt sich die Steigung:
 \begin{align}
 	m = \SI{0.0447 +- 0.0001}{\skt\per \gauss \per \centi\metre}
 \end{align}
-Aus der Steigung $m$ kann nun die Proportionalitätskonstante $\lambda$:
+Aus der Steigung $m$ kann nun die Proportionalitätskonstante $\lambda$
 \begin{align}
 	B \rho = \lambda \cdot U_\mathrm{H}^\mathrm{korr.}
 \end{align}
 berechnet werden.
-Dazu reicht die Bildung des Kehrwertes:
+Dazu reicht die Bildung des Kehrwertes
 \begin{align}
 	\lambda = \frac{1}{m} \qquad \Delta \lambda = \frac{\Delta m}{m^2}
 \end{align}
-Mit diese Überlegungen erhält man:
+so dass man schlussendlich erhält:
 \begin{align}
 	\lambda = \SI{22.37 +- 0.05}{G.cm\per\skt}
 \end{align}
-und die Kalibration ist abgeschlossen.
 
 \subsubsection{Auflösungsvermögen des Spektrometers}
 Im Folgenden soll das Auflösungsvermögen des Spektrometers bei verschiedenen Transmissionen bestimmt werden.
 Die für das Auflösungsvermögen relevante Größe ist dabei die relative Linienbreite $R$ aus Gleichung \eqref{eq:rel_linienbreite}.
 Zur Berechnung wird die Halbwertsbreite sowie der Schwerpunkt der jeweiligen Linie benötigt.
-Der Schwerpunkt $\mu$ der Linie ist direkt aus der Anpassung (REF) der Gaußfunktionen an die Linien abzulesen, lediglich bei der Bestimmung der Halbwertsbreite muss eine weitere Berechnung erfolgen, da nur die Standardabweichung der Gaußfunktion zur Verfügung steht.
+Der Schwerpunkt $\mu$ der Linie ist direkt aus der Anpassung \ref{tab:fitergebnisse_ba} der Gaußfunktionen an die Linien abzulesen, lediglich bei der Bestimmung der Halbwertsbreite muss eine weitere Berechnung erfolgen, da nur die Standardabweichung der Gaußfunktion zur Verfügung steht.
 \begin{align}
 	\mathrm{FWHM} = 2 \sqrt{2\ln(2)} \cdot \sigma
 \end{align}
@@ -537,12 +535,12 @@ Aufgrund des linearen Zusammenhangs zwischen Hallspannung $U_\mathrm{H}$ und Ele
 \begin{align*}
 	R = \frac{\Delta (B \rho)}{B \rho} = \frac{\Delta U_\mathrm{H}^\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}}
 \end{align*}
-(Bezeichung geändert: $\Delta$ kennzeichnet hier Halbwertsbreiten)
+Bei diesen Berechnungen muss beachtet werden, dass mit $\Delta$ bezeichnete Größen in diesem Zusammenhang keinen Fehler angeben, sondern die jeweiligen Halbwertsbreiten darstellen.
 
 \begin{table}[h]
 	\centering
 	\input{./tables/aufloesungsvermoegen.tex}
-	\caption{Auflösungsvermögen}
+	\caption{Auflösungsvermögen ($\Delta R$ bezeichnet hier wieder den Fehler)}
 	\label{tab:aufloesungsvermoegen}
 \end{table}
 

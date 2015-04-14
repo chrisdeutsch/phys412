@@ -8,7 +8,7 @@ set key top right
 
 set decimalsign '{,}'
 
-set xrange [1:2.5]
+set xrange [1:3]
 set yrange [0:*]
 set xlabel '$\epsilon$'
 set ylabel '$F(Z = \num{82},\epsilon)$'
@@ -25,6 +25,6 @@ B = 403
 
 fit f(x) './data/fermi_tl.txt' using (sqrt($1**2 + 1)):2 via A, B
 
-plot 	'./data/fermi_tl.txt' using (sqrt($1**2 + 1)):2  t'tabellierte Werte' ls 1 lw 2, f(x) t'Fermifunktion' ls 2 lw 2
+plot 	'./data/fermi_tl.txt' using (sqrt($1**2 + 1)):2  t'tabellierte Werte' ls 1, f(x) t'Fermifunktion' ls 2
 
 unset output

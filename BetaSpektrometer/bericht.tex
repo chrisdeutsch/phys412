@@ -210,7 +210,7 @@ Unsinnige Definition $\epsilon_0$ aber damit folgt Riezler-Kopitzki Form.
 
 Kurie-Plot (kurze Form):
 \begin{align}
-	\sqrt{\frac{N(\epsilon)}{F(Z,\epsilon) \eta \epsilon}} \propto (\epsilon_0 - \epsilon)%
+	\sqrt{\frac{N(\epsilon)}{F(Z,\epsilon) \eta \epsilon}} \propto (\epsilon_0 - \epsilon)
 \end{align}
 
 \begin{align}
@@ -408,9 +408,10 @@ In Analogie zur K-Schale kann der Impuls des Elektrons berechnet werden:
 
 \subsubsection{Untergrundmessungen}
 \label{sssec:untergrund1}
-(MESSZEITEN)
 Zur späteren Bereinigung der Messwerte werden vorher Untergrundmessungen durchgeführt.
-Für den Untergrund des Caesium-Zerfalls bei 1\% und 4\% Transmission sind die in Tabelle \ref{tab:untergrund_cs} notierten Werte für die Counts $N$ gemessen worden.
+Um möglichst hohe Zählraten zu erzielen wurde die Messzeit bei 4\% Transmission auf \SI{40}{\second} eingestellt, bei 1\% Transmission auf \SI{100}{\second} erhöht.
+Durch eine nicht ideale Kalibration der Zähleinheit konnten jedoch nicht die in der Praktikumsanleitung empfohlene Zählraten erreicht werden.
+Für den Untergrund des Caesium-Zerfalls bei beiden Transmissionseinstellungen sind die in Tabelle \ref{tab:untergrund_cs} notierten Werte für die Zählrate $N$ gemessen worden.
 \begin{table}[h]
 	\centering
 	\input{./tables/untergrund_cs.tex}
@@ -442,7 +443,7 @@ Für die Bereinigung der Zählraten mit den in Abschnitt \ref{sssec:untergrund1}
 \begin{align}
 	N_\mathrm{korr.} = N - N_0 \qquad \Delta N_\mathrm{korr.} = \sqrt{\Delta N^2 + \Delta N_0^2}
 \end{align}
-wobei erneut die Gauß'sche Fehlerfortpflanzung für den Fehler angewendet wurde.
+wobei abermals die Gauß'sche Fehlerfortpflanzung für den Fehler angewendet wurde.
 Weiterhin ist aufgrund der Dispersion des Spektrometers das gemessene Impulsintervall proportional zum anliegenden Magnetfeld.
 Um eine vom Magnetfeld unabhängige Impulsverteilung zu erhalten, kann die Anzahl der Ereignisse (UNTERGRUNDBEREINIGT) durch eine zum Magnetfeld proportionale Größe dividiert werden.
 Es liegt nahe die korrigierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ zu diesem Zweck zu verwenden, sodass man die Impulsverteilung $n$ erhält:
@@ -463,7 +464,8 @@ Im folgenden Abschnitt sollen diese zur Impulskalibration genauer untersucht wer
 \label{sssec:konversionslinien}
 Zusätzlich zu der groben Aufnahme des Spektrums wurde der Bereich der Konversionslinien mit zwei verschiedenen Transmissionen $T = \SI{4}{\percent}$ und $T = \SI{1}{\percent}$ vermessen.(Messdauer)
 Die Messdaten und die daraus abgeleiteten Größen wurden in Tabellen \ref{tab:spektrum_ba4_fein} und \ref{tab:spektrum_ba1_fein} dargestellt, wobei die Berechnung der abgeleiteten Größen in Analogie zu Abschnitt \ref{sssec:spektrum_caesium} erfolgte.
-
+\\
+\\
 Sichtbar sind die Konversionslinien der K- und L-Schale des angeregten Barium-Kerns, an welche wir mithilfe von \texttt{gnuplot} die Summe zweier Gaußfunktionen mit Offset anpassen. Konkret lautet die Anpassungshypothese:
 \begin{align*}
 	f(x) = \mathcal{G}_1(x) + \mathcal{G}_2(x) + b \text{,}
@@ -473,14 +475,12 @@ wobei $\mathcal{G}$ die Gaußfunktion:
 	\mathcal{G}(x) = A \cdot \exp\left( - \frac{(x - \mu)^2}{2 \sigma^2}\right)
 \end{align*}
 mit dem Schwerpunkt $\mu$ und der Breite (Standardabweichung) $\sigma$ beschreibt.
-
 \begin{figure}[h]
 	\centering
 	\input{./plots/barium_t4_fein.tex}
 	\caption{Barium Feinspektrum Transmission 4}
 	\label{fig:ba_t4_fein}
 \end{figure}
-
 \begin{figure}[h]
 	\centering
 	\input{./plots/barium_t1_fein.tex}
@@ -488,12 +488,17 @@ mit dem Schwerpunkt $\mu$ und der Breite (Standardabweichung) $\sigma$ beschreib
 	\label{fig:ba_t1_fein}
 \end{figure}
 
-Fitergebnisse.
-
-Mit den angepassten Linienschwerpunkten kann die Impulskaltbration nun durchgeführt werden.
-Dazu wurden in Abschnitt \ref{ssec:kalibration} bereits die zu den Linien gehörigen $(B \rho)$-Werte berechnet.
+Die mit \texttt{gnuplot} gefundenen Werte für die Anpassungsparameter $\mu$ und $\sigma$ (die einer Spannung in Skalenteilen entsprechen) wurden für die jeweiligen Schalen und Transmissionen in Tabelle \ref{tab:fitergebnisse_ba} festgehalten.
+\begin{table}[h]
+	\centering
+	\input{./tables/fitergebnisse_ba.tex}
+	\caption{Ergebnisse der Anpassung für die Schwerpunkte der Konversionslinien von \isotope[137]{Ba} bei 1\% und 4\% Transmission.}
+	\label{tab:fitergebnisse_ba}
+\end{table}
+Mit den angepassten Linienschwerpunkten kann nun die Impulskaltbration durchgeführt werden.
+Dazu wurden in Abschnitt \ref{ssec:kalibration} bereits die mit den Linien korrespondierenden $(B \rho)$-Werte berechnet.
 Trägt man nun die Schwerpunkte der Linien $U_\mathrm{H}$ gegen den berechneten $(B \rho)$-Wert auf, so erhält man eine Ursprungsgerade mit der Steigung $m$.
-Diese Form des Graphens wurde gewählt, da bei der Anpassung einer Ursprungsgeraden mit \texttt{gnuplot} nur $y$-Fehler beachtet werden können.
+Diese Form der Darstellung wurde gewählt, da bei der Anpassung einer Ursprungsgeraden mit \texttt{gnuplot} nur $y$-Fehler berücksichtigt werden können.
 \begin{figure}[h]
 	\centering
 	\input{./plots/kalibration.tex}
@@ -542,18 +547,9 @@ Aufgrund des linearen Zusammenhangs zwischen Hallspannung $U_\mathrm{H}$ und Ele
 \end{table}
 
 \subsection{Bestimmung der Zerfallsenergie}
-Nachdem die Kalibration abgeschlossen wurde, sollen die $\beta$-Spektren von \isotope[204]{Tl} und \isotope[22]{Na} bei Transmissionen von \SI{4}{\percent} vermessen werden.
-Die Messzeit bei dieser Transmission beträgt \SI{100}{\second}.
 
 \subsubsection{Spektrum von Thallium}
-(UNTERGRUNDTEXT)
-\begin{table}[h]
-	\centering
-	\input{./tables/untergrund_tl.tex}
-	\caption{Untergrund Thallium (WRAPFIG?)}
-	\label{tab:untergrund_tl}
-\end{table}
-
+(UNTERGRUND)
 
 Literatur:\\
 \url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=204TL&unc=nds}\\
@@ -566,24 +562,22 @@ Literatur:\\
 \end{figure}
 
 \subsubsection{Bestimmung der Endpunktsenergie von Thallium}
-Zur Bestimmung der Endpunktsenergie $\epsilon_0$ mit dem Kurie-Plot muss zunächst die Fermi-Funktion von Thallium geeignet interpoliert werden.
-Dazu passen wir gemäß der Hypothese \cite{fermi_function}:
-\begin{align*}
-	F(Z, \epsilon) = \sqrt{A + \frac{B}{\epsilon - 1}}
-\end{align*}
-eine Kurve an die Datenpunkte von \cite{anleitung} an.
-Die Anpassung ergibt:
-\begin{align*}
-	A &= \num{137.6 +- 3.5 } \\
-	B &= \num{348.93 +- 0.79}
-\end{align*}
-und ist zusammen mit den gegebenen Datenpunkten in Abbildung \ref{fig:fermi_tl} dargestellt.
 \begin{figure}[h]
 	\centering
 	\input{./plots/fermi_tl.tex}
 	\caption{Fermi Funktion Thallium}
 	\label{fig:fermi_tl}
 \end{figure}
+
+Hypothese \cite{fermi_function}
+\begin{align*}
+	F(Z, \epsilon) = \sqrt{A + \frac{B}{\epsilon - 1}}
+\end{align*}
+Ergebnisse:
+\begin{align*}
+	A &= \num{137.576} \\
+	B &= \num{348.934}
+\end{align*}
 
 \begin{figure}[h]
 	\centering
@@ -594,13 +588,7 @@ und ist zusammen mit den gegebenen Datenpunkten in Abbildung \ref{fig:fermi_tl} 
 
 
 \subsubsection{Spektrum von Natrium}
-(UNTERGRUNDTEXT)
-\begin{table}[h]
-	\centering
-	\input{./tables/untergrund_na.tex}
-	\caption{Untergrund Natrium (WRAPFIG?)}
-	\label{tab:untergrund_na}
-\end{table}
+(UNTERGRUND)
 
 \begin{figure}[h]
 	\centering
@@ -672,13 +660,6 @@ und ist zusammen mit den gegebenen Datenpunkten in Abbildung \ref{fig:fermi_tl} 
 	\input{./tables/spektrum_ba1_fein.tex}
 	\caption{Messdaten des Spektrums von \isotope[137]{Cs} im Bereich der \isotope[137]{Ba} Konversionslinien und daraus abgeleitete Größen bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{100}{s}$.}
 	\label{tab:spektrum_ba1_fein}
-\end{sidewaystable}
-
-\begin{sidewaystable}
-	\centering
-	\input{./tables/spektrum_tl.tex}
-	\caption{Messdaten des Spektrums von \isotope[204]{Tl} bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{100}{s}$.}
-	\label{tab:spektrum_tl}
 \end{sidewaystable}
 
 \end{appendix}

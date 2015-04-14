@@ -408,9 +408,10 @@ In Analogie zur K-Schale kann der Impuls des Elektrons berechnet werden:
 
 \subsubsection{Untergrundmessungen}
 \label{sssec:untergrund1}
-(MESSZEITEN)
 Zur späteren Bereinigung der Messwerte werden vorher Untergrundmessungen durchgeführt.
-Für den Untergrund des Caesium-Zerfalls bei 1\% und 4\% Transmission sind die in Tabelle \ref{tab:untergrund_cs} notierten Werte für die Counts $N$ gemessen worden.
+Um möglichst hohe Zählraten zu erzielen wurde die Messzeit bei 4\% Transmission auf \SI{40}{\second} eingestellt, bei 1\% Transmission auf \SI{100}{\second} erhöht.
+Durch eine nicht ideale Kalibration der Zähleinheit konnten jedoch nicht die in der Praktikumsanleitung empfohlene Zählraten erreicht werden.
+Für den Untergrund des Caesium-Zerfalls bei beiden Transmissionseinstellungen sind die in Tabelle \ref{tab:untergrund_cs} notierten Werte für die Zählrate $N$ gemessen worden.
 \begin{table}[h]
 	\centering
 	\input{./tables/untergrund_cs.tex}
@@ -442,7 +443,7 @@ Für die Bereinigung der Zählraten mit den in Abschnitt \ref{sssec:untergrund1}
 \begin{align}
 	N_\mathrm{korr.} = N - N_0 \qquad \Delta N_\mathrm{korr.} = \sqrt{\Delta N^2 + \Delta N_0^2}
 \end{align}
-wobei erneut die Gauß'sche Fehlerfortpflanzung für den Fehler angewendet wurde.
+wobei abermals die Gauß'sche Fehlerfortpflanzung für den Fehler angewendet wurde.
 Weiterhin ist aufgrund der Dispersion des Spektrometers das gemessene Impulsintervall proportional zum anliegenden Magnetfeld.
 Um eine vom Magnetfeld unabhängige Impulsverteilung zu erhalten, kann die Anzahl der Ereignisse (UNTERGRUNDBEREINIGT) durch eine zum Magnetfeld proportionale Größe dividiert werden.
 Es liegt nahe die korrigierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ zu diesem Zweck zu verwenden, sodass man die Impulsverteilung $n$ erhält:
@@ -463,7 +464,8 @@ Im folgenden Abschnitt sollen diese zur Impulskalibration genauer untersucht wer
 \label{sssec:konversionslinien}
 Zusätzlich zu der groben Aufnahme des Spektrums wurde der Bereich der Konversionslinien mit zwei verschiedenen Transmissionen $T = \SI{4}{\percent}$ und $T = \SI{1}{\percent}$ vermessen.(Messdauer)
 Die Messdaten und die daraus abgeleiteten Größen wurden in Tabellen \ref{tab:spektrum_ba4_fein} und \ref{tab:spektrum_ba1_fein} dargestellt, wobei die Berechnung der abgeleiteten Größen in Analogie zu Abschnitt \ref{sssec:spektrum_caesium} erfolgte.
-
+\\
+\\
 Sichtbar sind die Konversionslinien der K- und L-Schale des angeregten Barium-Kerns, an welche wir mithilfe von \texttt{gnuplot} die Summe zweier Gaußfunktionen mit Offset anpassen. Konkret lautet die Anpassungshypothese:
 \begin{align*}
 	f(x) = \mathcal{G}_1(x) + \mathcal{G}_2(x) + b \text{,}
@@ -473,14 +475,12 @@ wobei $\mathcal{G}$ die Gaußfunktion:
 	\mathcal{G}(x) = A \cdot \exp\left( - \frac{(x - \mu)^2}{2 \sigma^2}\right)
 \end{align*}
 mit dem Schwerpunkt $\mu$ und der Breite (Standardabweichung) $\sigma$ beschreibt.
-
 \begin{figure}[h]
 	\centering
 	\input{./plots/barium_t4_fein.tex}
 	\caption{Barium Feinspektrum Transmission 4}
 	\label{fig:ba_t4_fein}
 \end{figure}
-
 \begin{figure}[h]
 	\centering
 	\input{./plots/barium_t1_fein.tex}
@@ -488,12 +488,17 @@ mit dem Schwerpunkt $\mu$ und der Breite (Standardabweichung) $\sigma$ beschreib
 	\label{fig:ba_t1_fein}
 \end{figure}
 
-Fitergebnisse.
-
-Mit den angepassten Linienschwerpunkten kann die Impulskaltbration nun durchgeführt werden.
-Dazu wurden in Abschnitt \ref{ssec:kalibration} bereits die zu den Linien gehörigen $(B \rho)$-Werte berechnet.
+Die mit \texttt{gnuplot} gefundenen Werte für die Anpassungsparameter $\mu$ und $\sigma$ (die einer Spannung in Skalenteilen entsprechen) wurden für die jeweiligen Schalen und Transmissionen in Tabelle \ref{tab:fitergebnisse_ba} festgehalten.
+\begin{table}[h]
+	\centering
+	\input{./tables/fitergebnisse_ba.tex}
+	\caption{Ergebnisse der Anpassung für die Schwerpunkte der Konversionslinien von \isotope[137]{Ba} bei 1\% und 4\% Transmission.}
+	\label{tab:fitergebnisse_ba}
+\end{table}
+Mit den angepassten Linienschwerpunkten kann nun die Impulskaltbration durchgeführt werden.
+Dazu wurden in Abschnitt \ref{ssec:kalibration} bereits die mit den Linien korrespondierenden $(B \rho)$-Werte berechnet.
 Trägt man nun die Schwerpunkte der Linien $U_\mathrm{H}$ gegen den berechneten $(B \rho)$-Wert auf, so erhält man eine Ursprungsgerade mit der Steigung $m$.
-Diese Form des Graphens wurde gewählt, da bei der Anpassung einer Ursprungsgeraden mit \texttt{gnuplot} nur $y$-Fehler beachtet werden können.
+Diese Form der Darstellung wurde gewählt, da bei der Anpassung einer Ursprungsgeraden mit \texttt{gnuplot} nur $y$-Fehler berücksichtigt werden können.
 \begin{figure}[h]
 	\centering
 	\input{./plots/kalibration.tex}

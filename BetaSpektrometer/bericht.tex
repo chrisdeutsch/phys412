@@ -249,6 +249,7 @@ Daher werden Impulse in der $\beta$-Spektroskopie als $B \rho$-Werte angegeben.
 Relative Linienbreite:
 \begin{align}
 	R = \frac{\Delta (B \rho)}{B \rho}
+	\label{eq:rel_linienbreite}
 \end{align}
 
 \subsubsection{Halbkreisförmiges Spektrometer}
@@ -452,6 +453,7 @@ Im folgenden Abschnitt sollen diese zur Impulskalibration genauer untersucht wer
 \end{figure}
 
 \subsubsection{Konversionslinien}
+\label{sssec:konversionslinien}
 Zusätzlich zu der groben Aufnahme des Spektrums wurde der Bereich der Konversionslinien mit zwei verschiedenen Transmissionen $T = \SI{4}{\percent}$ und $T = \SI{1}{\percent}$ vermessen.(Messdauer)
 Die Messdaten und die daraus abgeleiteten Größen wurden in Tabellen \ref{tab:spektrum_ba4_fein} und \ref{tab:spektrum_ba1_fein} dargestellt, wobei die Berechnung der abgeleiteten Größen in Analogie zu Abschnitt \ref{sssec:spektrum_caesium} erfolgte.
 
@@ -504,11 +506,30 @@ Mit diese Überlegungen erhält man:
 \end{align}
 
 \subsubsection{Auflösungsvermögen des Spektrometers}
+Im Folgenden soll das Auflösungsvermögen des Spektrometers bei verschiedenen Transmissionen bestimmt werden.
+Die für das Auflösungsvermögen relevante Größe ist dabei die relative Linienbreite $R$ aus Gleichung \eqref{eq:rel_linienbreite}.
+Zur Berechnung wird die Halbwertsbreite sowie der Schwerpunkt der jeweiligen Linie benötigt.
+Der Schwerpunkt $\mu$ der Linie ist direkt aus der Anpassung (REF) der Gaußfunktionen an die Linien abzulesen, lediglich bei der Bestimmung der Halbwertsbreite muss eine weitere Berechnung erfolgen, da nur die Standardabweichung der Gaußfunktion zur Verfügung steht.
+\begin{align}
+	\mathrm{FWHM} = 2 \sqrt{2\ln(2)} \cdot \sigma
+\end{align}
+Aufgrund des linearen Zusammenhangs zwischen Hallspannung $U_\mathrm{H}$ und Elektronenimpuls $(B \rho)$ kann auf die Umrechnung verzichtet werden, sodass gilt:
+\begin{align*}
+	R = \frac{\Delta (B \rho)}{B \rho} = \frac{\Delta U_\mathrm{H}^\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}}
+\end{align*}
+(Bezeichung geändert: $\Delta$ kennzeichnet hier Halbwertsbreiten)
 
-
-
+\begin{table}[h]
+	\centering
+	\input{./tables/aufloesungsvermoegen.tex}
+	\caption{Auflösungsvermögen}
+	\label{tab:aufloesungsvermoegen}
+\end{table}
 
 \subsection{Bestimmung der Zerfallsenergie}
+Literatur:\\
+\url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=204TL&unc=nds}\\
+\url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=22NA&unc=nds}
 \begin{figure}[h]
 	\centering
 	\input{./plots/thallium_spektrum.tex}

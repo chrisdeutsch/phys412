@@ -8,15 +8,21 @@ set key top right
 
 set decimalsign '{,}'
 
-set xrange [*:*]
-set yrange [*:*]
+set xrange [1:*]
+set yrange [-0.05:*]
 set xlabel '$\epsilon$'
 set ylabel '$y$'
 
-unset grid
+set grid
 
 load './../gnuplot_linestyles.plt'
 
-plot './data/thallium_kurie.txt' using 3:(sqrt($6 / ($5 * $1 * $3))) t'Messwerte' ls 1
+f(x) = m*(x-b)
+m = -0.5
+b = 2.2
+
+fit [1.4:2.4] f(x) './data/thallium_kurie.txt' using 3:(sqrt($6 / ($5 * $1 * $3))) via m, b
+
+plot './data/thallium_kurie.txt' using 3:(sqrt($6 / ($5 * $1 * $3))) t'Messwerte' ls 1, f(x) ls 2
 
 unset output

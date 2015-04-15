@@ -66,6 +66,10 @@
 \usepackage{subcaption}
 \usepackage{rotating}
 
+% Paket für textumflossene Abbildungen und Tabellen
+\usepackage{wrapfig}
+
+
 % Caption-Setup
 \captionsetup{font={small}}
 \renewcommand{\thefigure}{\thesection.\arabic{figure}}
@@ -329,17 +333,16 @@ Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweili
 
 \subsection{Bestimmung der Offsetspannung der Hallsonde}
 \label{ssec:offsetspannung}
-
-Zu Beginn des Versuchs wird zur Bestimmung der Offsetspannung das Spektrometer ohne Präparat evakuiert.
-Die Messung des Magnetfelds des Spektrometers wird mit einer Hallsonde durchgeführt, die jedoch auch bei ausgeschaltetem Magnetfeld eine Spannung $\neq 0$ \si{\volt} anzeigt.
-Um die tatsächliche Offsetspannung zu ermitteln, nutzt man die Hysterese des Magneten aus und misst für beide Stromrichtungen, die am Magneten angelegt werden die jeweiligen Remanenzfelder (als Hallspannung $U_\text{H}$) gemessen.
-\begin{figure}[h]
+\begin{wrapfigure}{o}{7.5cm}
 	\centering
 	\includegraphics[width=0.5\textwidth]{./figures/hysterese.pdf}
 	\caption{Skizzierte Hysteresekurve. Der tatsächliche Spannungswert für $I=\SI{0}{\ampere}$ ergibt sich aus Mittelung von $U_\text{+}$ und $U_\text{-}$.}
 	\label{fig:hysterese}
-\end{figure}
-Bei jeder Messung wird dann das arithmetische Mittel (mit $U_0$ bezeichnet) von $U_\text{+}$ und $U_\text{-}$ berechnet und im Anschluss über alle $U_0$ wieder gemittelt, um einen guten Wert für die Offsetspannung $\overline{U_0}$ zu erhalten.
+\end{wrapfigure}
+Zu Beginn des Versuchs wird zur Bestimmung der Offsetspannung das Spektrometer ohne Präparat evakuiert.
+Die Messung des Magnetfelds des Spektrometers wird mit einer Hallsonde durchgeführt, die jedoch auch bei ausgeschaltetem Magnetfeld eine Spannung $\neq 0$ \si{\volt} anzeigt.
+Um die tatsächliche Offsetspannung zu ermitteln, nutzt man die Hysterese des Magneten aus und misst für beide Stromrichtungen, die am Magneten angelegt werden die jeweiligen Remanenzfelder (als Hallspannung $U_\text{H}$) gemessen.
+Bei jeder Messung wird das arithmetische Mittel (mit $U_0$ bezeichnet) von $U_\text{+}$ und $U_\text{-}$ berechnet und im Anschluss über alle $U_0$ wiederholt gemittelt, um einen guten Wert für die Offsetspannung $\overline{U_0}$ zu erhalten.
 \begin{table}[h]
 	\centering
 	\input{./tables/offset.tex}
@@ -433,22 +436,22 @@ Die Messwerte wurden dabei in der untersten Zeile gemittelt und der Fehler aus d
 \subsubsection{Spektrum von Caesium}
 \label{sssec:spektrum_caesium}
 Bei der Aufnahme des Spektrums wurde die Hallspannung $U_\mathrm{H}$ und die Anzahl der Ereignisse $N$ gemessen.
-Dabei wird der Fehler der gemessenen Hallspannung (Begründung) auf
+Dabei wird der Fehler der gemessenen Hallspannung aufgrund fehlender Kenntnis über das genaue Messverfahren auf
 \begin{align*}
 	\Delta U_\mathrm{H} = \SI{0.1}{\skt}
 \end{align*}
-geschätzt.
-Darüber hinaus ergibt sich der Schätzwert für den Fehler der Ereigniszahl gemäß der Poisson-Verteilung aus der Wurzel der Ereignisse:
+festgelegt, was der letzten Stelle der Digitalanzeige entspricht.
+Der Schätzwert für den Fehler der Ereigniszahl ergibt sich gemäß der Poisson-Verteilung (diese Annahme ist gültig, da die Zählraten poisson-verteilt sind) aus der Wurzel der Ereignisse:
 \begin{align*}
 	\Delta N = \sqrt{N}
 \end{align*}
-Zunächst muss die Hallspannung $U_\mathrm{H}$ gemäß der in Abschnitt \ref{ssec:offsetspannung} ermittelten Offsetspannung $\overline{U_0}$ \eqref{hall_korrektur} korrigiert werden.
+Zunächst muss die Hallspannung $U_\mathrm{H}$ um die in Abschnitt \ref{ssec:offsetspannung} ermittelte Offsetspannung $\overline{U_0}$ \eqref{hall_korrektur} bereinigt werden.
 Die korrigierte Hallspannung erhält man durch:
 \begin{align}
 U_\mathrm{H}^\mathrm{korr.} = U_\mathrm{H} - \overline{U_0} \qquad
 \Delta U_\mathrm{H}^\mathrm{korr.} = \sqrt{\Delta U_\mathrm{H}^2 + \Delta \overline{U_0}^2} \text{,}
 \end{align}
-wobei der Fehler mit Gauß'scher Fehlerfortpflanzung folgt.
+wobei der Fehler aus der Gauß'schen Fehlerfortpflanzung folgt.
 Für die Bereinigung der Zählraten mit den in Abschnitt \ref{sssec:untergrund1} gefundenen Werten für den Hintergrund gilt
 \begin{align}
 	N_\mathrm{korr.} = N - N_0 \qquad \Delta N_\mathrm{korr.} = \sqrt{\Delta N^2 + \Delta N_0^2}
@@ -476,11 +479,11 @@ Zusätzlich zu der groben Aufnahme des Spektrums wurde der Bereich der Konversio
 Die Messdaten und die daraus abgeleiteten Größen wurden in Tabellen \ref{tab:spektrum_ba4_fein} und \ref{tab:spektrum_ba1_fein} dargestellt, wobei die Berechnung der abgeleiteten Größen in Analogie zu Abschnitt \ref{sssec:spektrum_caesium} erfolgte.
 \\
 \\
-Sichtbar sind die Konversionslinien der K- und L-Schale des angeregten Barium-Kerns, an welche mithilfe von \texttt{gnuplot} die Summe zweier Gaußfunktionen mit Offset angepasst wurde. Konkret lautet die Anpassungshypothese:
+Sichtbar sind die Konversionslinien der K- und L-Schale des angeregten Barium-Kerns, an welche mithilfe von \texttt{gnuplot} die Summe zweier Gaußfunktionen mit Offset angepasst wurde. Konkret lautet die Anpassungshypothese
 \begin{align*}
 	f(x) = \mathcal{G}_1(x) + \mathcal{G}_2(x) + b \text{,}
 \end{align*}
-wobei $\mathcal{G}$ die Gaußfunktion:
+wobei $\mathcal{G}$ die Gaußfunktion
 \begin{align*}
 	\mathcal{G}(x) = A \cdot \exp\left( - \frac{(x - \mu)^2}{2 \sigma^2}\right)
 \end{align*}
@@ -504,7 +507,7 @@ Die mit \texttt{gnuplot} gefundenen Werte für die Anpassungsparameter $\mu$ und
 	\caption{Ergebnisse der Anpassung für die Schwerpunkte der Konversionslinien von \isotope[137]{Ba} bei 1\% und 4\% Transmission.}
 	\label{tab:fitergebnisse_ba}
 \end{table}
-Mit den angepassten Linienschwerpunkten kann nun die Impulskaltbration durchgeführt werden.
+Mit den angepassten Linienschwerpunkten kann nun die Impulskalibration durchgeführt werden.
 Dazu wurden in Abschnitt \ref{ssec:kalibration} bereits die mit den Linien korrespondierenden $(B \rho)$-Werte berechnet.
 Trägt man nun die Schwerpunkte der Linien $U_\mathrm{H}$ gegen den berechneten $(B \rho)$-Wert auf, so erhält man eine Ursprungsgerade mit der Steigung $m$.
 Diese Form der Darstellung wurde gewählt, da bei der Anpassung einer Ursprungsgeraden mit \texttt{gnuplot} nur $y$-Fehler berücksichtigt werden können.
@@ -557,17 +560,20 @@ Bei diesen Berechnungen muss beachtet werden, dass mit $\Delta$ bezeichnete Grö
 \subsection{Bestimmung der Zerfallsenergie}
 
 \subsubsection{Spektrum von Thallium}
-Bei der Vermessung des Spektrums von Thallium wurde analog zu Abschnitt \ref{sssec:spektrum_caesium} vorgegangen mit der Ausnahme, dass wir die Hallspannungen mit der in \ref{sssec:konversionslinien} berechneten Kalibration in $(B \rho)$-Werte umgerechnet wurden.
-Auch für diese Messung wurde erneut der Untergrund über eine Messzeit von \SI{100}{\second} bei einer eingestellten Transmission von \SI{4}{\percent} gemessen.
-Die Ergebnisse der Untergrundmessung finden sich in Tabelle \ref{tab:untergrund_tl}.
-\begin{table}[h]
+\begin{wraptable}{o}{4cm}
 	\centering
 	\input{./tables/untergrund_tl.tex}
 	\caption{Untergrundmessung von \isotope[204]{Tl} mit einer Messdauer von \SI{100}{\second} bei eingestellter Transmission von \SI{4}{\percent}.}
 	\label{tab:untergrund_tl}
-\end{table}
-Die gemessenen Werte und die daraus Berechneten wurden in Tabelle \ref{tab:spektrum_tl} dargestellt.
-Das Spektrum wurde in Abbildung \ref{fig:thallium_spectrum} aufgetragen.
+\end{wraptable}
+Bei der Vermessung des Spektrums von Thallium wurde analog zu Abschnitt \ref{sssec:spektrum_caesium} vorgegangen mit der Ausnahme, dass die Hallspannungen mit der in \ref{sssec:konversionslinien} berechneten Kalibration in $(B \rho)$-Werte umgerechnet wurden.
+Insbesondere sollen die einzelnen Formeln für Umrechnungen und Fehler hier nicht wiederholt werden, diese sind im oben genannten Abschnitt zu finden.
+Auch für diese Messung wurde der Untergrund über eine Messzeit von \SI{100}{\second} bei einer eingestellten Transmission von \SI{4}{\percent} gemessen.
+Die Wahl der langen Messzeit ist dabei auch in den sehr geringen Zählraten aufgrund des Versuchsaufbaus begründet, auch wenn der Untergrund dadurch sehr groß wird.
+Trotz einer Variation der Parameter an der Zähleinheit konnte kein besseres Verhältnis zwischen den Zählraten des Untergrunds und des Spektrums erreicht werden.
+Die Ergebnisse der Untergrundmessung finden sich in Tabelle \ref{tab:untergrund_tl}.
+Die gemessenen und die daraus berechneten Werte wurden in Tabelle \ref{tab:spektrum_tl} festgehalten.
+Das Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spectrum} aufgetragen.
 \begin{figure}[h]
 	\centering
 	\input{./plots/thallium_spektrum.tex}

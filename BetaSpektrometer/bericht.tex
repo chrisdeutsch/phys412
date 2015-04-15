@@ -547,7 +547,9 @@ Bei diesen Berechnungen muss beachtet werden, dass mit $\Delta$ bezeichnete Grö
 \subsection{Bestimmung der Zerfallsenergie}
 
 \subsubsection{Spektrum von Thallium}
-(UNTERGRUNDTEXT)
+Bei der Vermessung des Spektrums von Thallium wurde analog zu Abschnitt \ref{sssec:spektrum_caesium} vorgegangen mit der Ausnahme, dass wir die Hallspannungen mit der in \ref{sssec:konversionslinien} berechneten Kalibration in $(B \rho)$-Werte umgerechnet wurden.
+Auch für diese Messung wurde erneut der Untergrund über eine Messzeit von \SI{100}{\second} bei einer eingestellten Transmission von \SI{4}{\percent} gemessen.
+Die Ergebnisse der Untergrundmessung finden sich in Tabelle \ref{tab:untergrund_tl}.
 \begin{table}[h]
 	\centering
 	\input{./tables/untergrund_tl.tex}
@@ -579,9 +581,17 @@ Hypothese \cite{fermi_function}
 \end{align*}
 Ergebnisse:
 \begin{align*}
-	A &= \num{137.576} \\
-	B &= \num{348.934}
+	A &= \num{137.576 +- 3.429} \\
+	B &= \num{348.934 +- 0.7867}
 \end{align*}
+
+\begin{align}
+	y &= \sqrt{\frac{n}{F(Z,\epsilon) \eta \epsilon}} \\
+	\Delta y &= 
+	\sqrt{\frac{1}{4 F(Z, \epsilon) \eta \epsilon}
+	\left( \frac{\Delta N^2}{N} + N \frac{\Delta \eta^2}{\eta^2} + N \frac{\Delta \epsilon^2}{\epsilon^2} \right)
+	}
+\end{align}
 
 \begin{figure}[h]
 	\centering

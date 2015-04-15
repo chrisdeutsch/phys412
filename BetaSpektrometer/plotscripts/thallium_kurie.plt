@@ -21,7 +21,7 @@ f(x) = m*(x-b)
 m = -0.5
 b = 2.2
 
-fit [1.4:2.4] f(x) './data/thallium_kurie.txt' using 1:3:2:4 xyerror via m, b
+fit [1.4:2.3] f(x) './data/thallium_kurie.txt' using 1:3:2:4 xyerror via m, b
 
 plot './data/thallium_kurie.txt' using 1:3:2:4 w xyerrorbars t'Messwerte' ls 1, f(x) ls 2
 

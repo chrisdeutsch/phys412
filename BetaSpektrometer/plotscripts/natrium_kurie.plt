@@ -8,7 +8,7 @@ set key top right
 
 set decimalsign '{,}'
 
-set xrange [*:*]
+set xrange [1:2.1]
 set yrange [-0.25:*]
 set xlabel '$\epsilon$'
 set ylabel '$y$'
@@ -21,8 +21,8 @@ f(x) = m*(x-b)
 m = -1
 b = 2.1
 
-fit [1.5:2.0] f(x) './data/natrium_kurie.txt' using 3:(sqrt($6 / ($5 * $1 * $3))) via m, b
+fit [1.5:2] f(x) './data/natrium_kurie.txt' using 1:3:2:4 xyerror via m, b
 
-plot [1.2:2.6]'./data/natrium_kurie.txt' using 3:(sqrt($6 / ($5 * $1 * $3))) t'Messwerte' ls 1, f(x) ls 2
+plot './data/natrium_kurie.txt' using 1:3:2:4 w xyerrorbars t'Messwerte' ls 1, f(x) ls 2
 
 unset output

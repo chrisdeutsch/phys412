@@ -240,11 +240,17 @@ Daher werden Impulse in der $\beta$-Spektroskopie als $B \rho$-Werte angegeben.
 
 (Kram für eventuell verwendete einheitenlose Größen $\epsilon$, $\eta$, wasweißich)
 \begin{align}
-	\epsilon = 1 + \frac{T}{m_\mathrm{e} c^2} \\
-	\eta = \frac{p}{m_\mathrm{e} c}
+	\epsilon &= 1 + \frac{T}{m_\mathrm{e} c^2} \\
+	\eta &= \frac{p}{m_\mathrm{e} c}
 \end{align}
 \begin{align}
+	\eta = \frac{B \rho}{\SI{1704.5}{G.cm}}
+	\label{eq:brho_to_eta}
+\end{align}
+
+\begin{align}
 	\epsilon^2 = 1 + \eta^2
+	\label{eq:energie_impuls_rel}
 \end{align}
 
 \begin{align}
@@ -557,13 +563,11 @@ Die Ergebnisse der Untergrundmessung finden sich in Tabelle \ref{tab:untergrund_
 \begin{table}[h]
 	\centering
 	\input{./tables/untergrund_tl.tex}
-	\caption{Untergrund Tl, Messzeit, Transmission}
+	\caption{Untergrundmessung von \isotope[204]{Tl} mit einer Messdauer von \SI{100}{\second} bei eingestellter Transmission von \SI{4}{\percent}.}
 	\label{tab:untergrund_tl}
 \end{table}
-
-Literatur:\\
-\url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=204TL&unc=nds}\\
-\url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=22NA&unc=nds}
+Die gemessenen Werte und die daraus Berechneten wurden in Tabelle \ref{tab:spektrum_tl} dargestellt.
+Das Spektrum wurde in Abbildung \ref{fig:thallium_spectrum} aufgetragen.
 \begin{figure}[h]
 	\centering
 	\input{./plots/thallium_spektrum.tex}
@@ -571,7 +575,27 @@ Literatur:\\
 	\label{fig:thallium_spectrum}
 \end{figure}
 
-\subsubsection{Bestimmung der Endpunktsenergie von Thallium}
+\subsubsection{Bestimmung der Maximalenergie von Thallium}
+
+Literatur:\\
+\url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=204TL&unc=nds}\\
+\url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=22NA&unc=nds}\\
+
+Die Bestimmung der Maximalenergie der $\beta$-Spektren erfolgt hier über die Bestimmung des Endpunktes $\epsilon_0$ im Kurie-Diagramm (REF).
+In dieser Darstellung wird die Fermi-Funktion von Thallium für verschiedene Impulse $\eta$ beziehungsweise Energien $\epsilon$ benötigt.
+Dazu werden die in \cite{anleitung} gegebenen Datenpunkte extrapoliert, indem eine geeignete Kurve an diese angepasst wird.
+Als Anpassungshypothese wird gemäß \cite{fermi_function}:
+\begin{align*}
+	F(Z, \epsilon) = \sqrt{A + \frac{B}{\epsilon - 1}}
+\end{align*}
+gewählt.
+Die Anpassung der Kurve mit \texttt{gnuplot} ergibt:
+\begin{align*}
+	A &= \num{137.576 +- 3.429} \\
+	B &= \num{348.934 +- 0.7867}
+\end{align*}
+wobei im Folgenden der Fehler der Fermi-Funktion gegenüber der Fehler in den anderen Größen vernachlässigt wird.
+Trägt man die angepasste Funktion und die in \cite{anleitung} gegebenen Datenpunkte auf, so erhält man Abbildung \ref{fig:fermi_tl}.
 \begin{figure}[h]
 	\centering
 	\input{./plots/fermi_tl.tex}
@@ -579,23 +603,31 @@ Literatur:\\
 	\label{fig:fermi_tl}
 \end{figure}
 
-Hypothese \cite{fermi_function}
+Nun kann die Berechnung des Graphens in der Kurie-Darstellung erfolgen.
+Dazu empfiehlt es sich die dimensionslose Darstellung von Impuls $\eta$ und Energie $\epsilon$ zu verwenden.
+Zunächst wird dazu aus dem $(B \rho)$-Wert der Tabelle \ref{tab:spektrum_tl} der dimensionslose Impuls gemäß Gleichung \eqref{eq:brho_to_eta} berechnet.
+Dementsprechend ergibt sich der Fehler mittels Gauß'scher Fehlerfortpflanzung zu:
 \begin{align*}
-	F(Z, \epsilon) = \sqrt{A + \frac{B}{\epsilon - 1}}
+	\Delta \eta = \frac{\Delta (B \rho)}{\SI{1704.5}{G.cm}}
 \end{align*}
-Ergebnisse:
+Anschließend kann mit der Energie-Impuls-Relation für relativistische Teilchen \eqref{eq:energie_impuls_rel} die dimensionslose Energie $\epsilon$ berechnet werden.
+Auch hier ergibt sich der Fehler mit Gauß'scher Fehlefortpflanzung zu:
 \begin{align*}
-	A &= \num{137.576 +- 3.429} \\
-	B &= \num{348.934 +- 0.7867}
+	\Delta \epsilon = \frac{\eta \, \Delta \eta}{\epsilon}
 \end{align*}
-
+Schließlich kann die konkrete Kurie-Darstellung berechnet werden:
 \begin{align}
-	y &= \sqrt{\frac{n}{F(Z,\epsilon) \eta \epsilon}} \\
+	y &= \sqrt{\frac{n}{F(Z,\epsilon) \, \eta \, \epsilon}}
+	\label{eq:kurie_y}
+\end{align}
+und der Fehler berechnet sich zu:
+\begin{align}
 	\Delta y &= 
-	\sqrt{\frac{1}{4 F(Z, \epsilon) \eta \epsilon}
+	\sqrt{\frac{1}{4 F(Z, \epsilon) \, \eta \, \epsilon}
 	\left( \frac{\Delta N^2}{N} + N \frac{\Delta \eta^2}{\eta^2} + N \frac{\Delta \epsilon^2}{\epsilon^2} \right)
 	}
 \end{align}
+Die so berechneten Punkte in dem Kurie-Diagramm wurden in Tabelle \ref{tab:kurie_tl} aufgetragen, dabei ist zu beachten, dass nur die Werte eingetragen sind, für die der Radikand von Gleichung \ref{eq:kurie_y} einen positiven Wert annimmt.
 
 \begin{figure}[h]
 	\centering
@@ -691,6 +723,13 @@ Ergebnisse:
 	\input{./tables/spektrum_tl.tex}
 	\caption{Messdaten des Spektrums von \isotope[204]{Tl} und daraus abgeleitete Größen bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{100}{s}$.}
 	\label{tab:spektrum_tl}
+\end{sidewaystable}
+
+\begin{sidewaystable}
+	\centering
+	\input{./tables/kurie_tl.tex}
+	\caption{Kurie Tl}
+	\label{tab:kurie_tl}
 \end{sidewaystable}
 
 \end{appendix}

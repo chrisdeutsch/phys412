@@ -428,7 +428,7 @@ Für den Untergrund des Caesium-Zerfalls bei beiden Transmissionseinstellungen s
 \begin{table}[h]
 	\centering
 	\input{./tables/untergrund_cs.tex}
-	\caption{Untergrundmessung von \isotope[137]{Ba} bei 1\% und 4\% Transmission}
+	\caption{Untergrundmessung von \isotope[137]{Cs} bei 1\% und 4\% Transmission}
 	\label{tab:untergrund_cs}
 \end{table}
 Die Messwerte wurden dabei in der untersten Zeile gemittelt und der Fehler aus der Standardabweichung berechnet.
@@ -469,7 +469,7 @@ Im folgenden Abschnitt sollen diese zur Impulskalibration genauer untersucht wer
 \begin{figure}[h]
 	\centering
 	\input{./plots/barium_t4_grob.tex}
-	\caption{Barium Grobspektrum Transmission 4}
+	\caption{Spektrum von \isotope[137]{Cs} gemessen bei \SI{4}{\percent} Transmission mit einer Messdauer von \SI{40}{\second}. Sichtbar sind die Konversionslinien des angeregten \isotope[137]{Ba} Tochterkerns bei $U_\mathrm{H}^\mathrm{korr.} \approx \SI{150}{\skt}$}
 	\label{fig:ba_t4_grob}
 \end{figure}
 
@@ -491,13 +491,13 @@ mit dem Schwerpunkt $\mu$ und der Breite (Standardabweichung) $\sigma$ beschreib
 \begin{figure}[h]
 	\centering
 	\input{./plots/barium_t4_fein.tex}
-	\caption{Barium Feinspektrum Transmission 4}
+	\caption{Bereich der K- und L-Konversionslinien des angeregten \isotope[137]{Ba} Tochterkerns im Zerfall von \isotope[137]{Cs} bei \SI{4}{\percent} Transmission und einer Messdauer von \SI{40}{\second}. An die Datenpunkte wurde eine Summe von zwei Gaußfunktionen mit konstantem Versatz angepasst.}
 	\label{fig:ba_t4_fein}
 \end{figure}
 \begin{figure}[h]
 	\centering
 	\input{./plots/barium_t1_fein.tex}
-	\caption{Barium Feinspektrum Transmission 1}
+	\caption{Bereich der K- und L-Konversionslinien des angeregten \isotope[137]{Ba} Tochterkerns im Zerfall von \isotope[137]{Cs} bei \SI{1}{\percent} Transmission und einer Messdauer von \SI{100}{\second}. An die Datenpunkte wurde eine Summe von zwei Gaußfunktionen mit konstantem Versatz angepasst.}
 	\label{fig:ba_t1_fein}
 \end{figure}
 Die mit \texttt{gnuplot} gefundenen Werte für die Anpassungsparameter $\mu$ und $\sigma$ (die einer Spannung in Skalenteilen entsprechen) wurden für die jeweiligen Schalen und Transmissionen in Tabelle \ref{tab:fitergebnisse_ba} festgehalten.
@@ -514,7 +514,7 @@ Diese Form der Darstellung wurde gewählt, da bei der Anpassung einer Ursprungsg
 \begin{figure}[h]
 	\centering
 	\input{./plots/kalibration.tex}
-	\caption{Kalibration}
+	\caption{Anpassung der Kalibrationsgeraden an die gefundenen Linienschwerpunkte $U_\mathrm{H}$ und dem theoretisch berechneten $(B \rho)$-Wert der jeweiligen Linie bei beiden Transmissionen \num{1} und \SI{4}{\percent}. (FIXME)}
 	\label{fig:kalibration}
 \end{figure}
 In Abbildung \ref{fig:kalibration} wurde die Anpassung der Ursprungsgerade  an die Kalibrationsdaten durchgeführt.
@@ -577,7 +577,7 @@ Das Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spectrum} aufget
 \begin{figure}[h]
 	\centering
 	\input{./plots/thallium_spektrum.tex}
-	\caption{Thallium Spektrum}
+	\caption{Spektrum von \isotope[204]{Tl} gemessen bei \SI{4}{\percent} Transmission mit einer Messdauer von \SI{100}{\second}.}
 	\label{fig:thallium_spectrum}
 \end{figure}
 
@@ -591,9 +591,10 @@ Die Bestimmung der Maximalenergie der $\beta$-Spektren erfolgt hier über die Be
 In dieser Darstellung wird die Fermi-Funktion von Thallium für verschiedene Impulse $\eta$ beziehungsweise Energien $\epsilon$ benötigt.
 Dazu werden die in \cite{anleitung} gegebenen Datenpunkte extrapoliert, indem eine geeignete Kurve an diese angepasst wird.
 Als Anpassungshypothese wird gemäß \cite{fermi_function}:
-\begin{align*}
+\begin{align}
 	F(Z, \epsilon) = \sqrt{A + \frac{B}{\epsilon - 1}}
-\end{align*}
+	\label{eq:hypothese_fermifunktion}
+\end{align}
 gewählt.
 Die Anpassung der Kurve mit \texttt{gnuplot} ergibt:
 \begin{align*}
@@ -605,7 +606,7 @@ Trägt man die angepasste Funktion und die in \cite{anleitung} gegebenen Datenpu
 \begin{figure}[h]
 	\centering
 	\input{./plots/fermi_tl.tex}
-	\caption{Fermi Funktion Thallium}
+	\caption{Anpassung der Hypothese \eqref{eq:hypothese_fermifunktion} an den in \cite{anleitung} gegebenen Datensatz zur Fermi-Funktion von Thallium.}
 	\label{fig:fermi_tl}
 \end{figure}
 
@@ -638,7 +639,7 @@ Die so berechneten Punkte in dem Kurie-Diagramm wurden in Tabelle \ref{tab:kurie
 \begin{figure}[h]
 	\centering
 	\input{./plots/thallium_kurie.tex}
-	\caption{Thallium kurie}
+	\caption{Kurie-Darstellung des Spektrums von \isotope[204]{Tl}. Die Anpassung einer Geraden an den linearen Teil des Graphens (FITRANGE) ergibt den Endpunkt $\epsilon_0 = \num{2.38 +- 0.05}$ (TODO).}
 	\label{fig:thallium_kurie}
 \end{figure}
 
@@ -655,7 +656,7 @@ Die so berechneten Punkte in dem Kurie-Diagramm wurden in Tabelle \ref{tab:kurie
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_spektrum.tex}
-	\caption{Natrium Spektrum}
+	\caption{Spektrum von \isotope[22]{Na} gemessen bei \SI{4}{\percent} Transmission mit einer Messdauer von \SI{100}{\second}.}
 	\label{fig:natrium_spectrum}
 \end{figure}
 
@@ -663,7 +664,7 @@ Die so berechneten Punkte in dem Kurie-Diagramm wurden in Tabelle \ref{tab:kurie
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_kurie.tex}
-	\caption{natrium kurie}
+	\caption{Kurie-Darstellung des Spektrums von \isotope[22]{Na}. Die Anpassung einer Geraden an den linearen Teil des Graphens (FITRANGE) ergibt den Endpunkt $\epsilon_0 = \num{2.1 +- 0.05}$ (TODO).}
 	\label{fig:natrium_kurie}
 \end{figure}
 

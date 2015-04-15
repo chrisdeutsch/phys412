@@ -324,7 +324,8 @@ Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweili
 \subsection{Bestimmung der Offsetspannung der Hallsonde}
 \label{ssec:offsetspannung}
 
-Zur Messung des Magnetfelds des Spektrometers wird eine Hallsonde verwendet, die jedoch auch bei ausgeschaltetem Magnetfeld eine Spannung $\neq 0$ \si{\volt} anzeigt.
+Zu Beginn des Versuchs wird zur Bestimmung der Offsetspannung das Spektrometer ohne Präparat evakuiert.
+Die Messung des Magnetfelds des Spektrometers wird mit einer Hallsonde durchgeführt, die jedoch auch bei ausgeschaltetem Magnetfeld eine Spannung $\neq 0$ \si{\volt} anzeigt.
 Um die tatsächliche Offsetspannung zu ermitteln, nutzt man die Hysterese des Magneten aus und misst für beide Stromrichtungen, die am Magneten angelegt werden die jeweiligen Remanenzfelder (als Hallspannung $U_\text{H}$) gemessen.
 \begin{figure}[h]
 	\centering
@@ -357,6 +358,9 @@ korrigiert.
 \subsection{Kalibration des Spektrometers}
 \label{ssec:kalibration}
 Zur Kalibration des Spektrometers wird das Spektrum von \isotope[137]{Cs} bei Transmissionen von \SI{1}{\percent} und \SI{4}{\percent} vermessen.
+Dazu wird das Präparat in das Spektrometer eingesetzt und die jeweilige Transmission eingestellt.
+Nachdem die Messzeit festgelegt wurde, kann die Messung gestartet und die Zählrate an dem Impulszähler abgelesen werden.
+Für die gleiche Messzeit und Transmission werden bei geändertem Magnetfeld Messungen wiederholt, aus denen sich ein Zerfallsspektrum ableiten lässt.
 Von Interesse sind dabei die Konversionslinien des angeregten Isotops \isotope[137]{Ba}, welche zur Impulskalibrierung genutzt werden können.
 Der angeregte Zustand von \isotope[137]{Ba} hat eine Zerfallsenergie von
 \begin{align*}
@@ -409,7 +413,7 @@ In Analogie zur K-Schale kann der Impuls des Elektrons berechnet werden:
 \subsubsection{Untergrundmessungen}
 \label{sssec:untergrund1}
 Zur späteren Bereinigung der Messwerte werden vorher Untergrundmessungen durchgeführt.
-Um möglichst hohe Zählraten zu erzielen wurde die Messzeit bei 4\% Transmission auf \SI{40}{\second} eingestellt, bei 1\% Transmission auf \SI{100}{\second} erhöht.
+Um möglichst hohe Zählraten zu erzielen wurde die Messzeit bei eingebautem Präparat bei 4\% Transmission auf \SI{40}{\second} eingestellt und für 1\% Transmission auf \SI{100}{\second} erhöht.
 Durch eine nicht ideale Kalibration der Zähleinheit konnten jedoch nicht die in der Praktikumsanleitung empfohlene Zählraten erreicht werden.
 Für den Untergrund des Caesium-Zerfalls bei beiden Transmissionseinstellungen sind die in Tabelle \ref{tab:untergrund_cs} notierten Werte für die Zählrate $N$ gemessen worden.
 \begin{table}[h]
@@ -460,7 +464,7 @@ Im folgenden Abschnitt sollen diese zur Impulskalibration genauer untersucht wer
 	\label{fig:ba_t4_grob}
 \end{figure}
 
-\subsubsection{Konversionslinien}
+\subsubsection{Impulskalibration}
 \label{sssec:konversionslinien}
 Zusätzlich zu der groben Aufnahme des Spektrums wurde der Bereich der Konversionslinien mit zwei verschiedenen Transmissionen $T = \SI{4}{\percent}$ (bei einer Messdauer von \SI{40}{\second}) und $T = \SI{1}{\percent}$ (bei einer Messdauer von \SI{100}{\second}) vermessen.
 Die Messdaten und die daraus abgeleiteten Größen wurden in Tabellen \ref{tab:spektrum_ba4_fein} und \ref{tab:spektrum_ba1_fein} dargestellt, wobei die Berechnung der abgeleiteten Größen in Analogie zu Abschnitt \ref{sssec:spektrum_caesium} erfolgte.

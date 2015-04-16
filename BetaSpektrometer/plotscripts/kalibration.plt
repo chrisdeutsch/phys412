@@ -11,7 +11,7 @@ set decimalsign ','
 set xrange [0:4000]
 set yrange [0:*]
 set xlabel '$B \rho$ / \si{G.cm}'
-set ylabel '$U_H$ / \si{\skt}'
+set ylabel '$U_\mu$ / \si{\skt}'
 
 set grid
 
@@ -21,6 +21,6 @@ f(x) = a*x
 
 fit f(x) './data/kalibration.txt' using 1:2:3 yerror via a
 
-plot './data/kalibration.txt' using 1:2:3 w yerrorbars t'Messwerte' ls 1, f(x) ls 2 lw 2
+plot './data/kalibration.txt' using 1:2:3 w yerrorbars t'Messwerte' ls 1, f(x) ls 2 lw 2 t"Anpassung"
 
 unset output

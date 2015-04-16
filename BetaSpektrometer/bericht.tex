@@ -288,25 +288,30 @@ Vorteil: einfache Konstruktion, Magnetfeld leicht zu messen, gut geeignet um gro
 	\caption{Doppelt-fokussierendes Spektrometer}
 	\label{fig:pisqrt2_spectro}
 \end{figure}
-Betatron-Oszillationen ($\omega_0$: Elektronen Umlauffrequenz) (Zitat Hillert)
+Im doppelt-fokussierenden Spektrometer werden analog zum Halbkreisförmigen durch ein statisches Magnetfeld auf eine Kreisbahn gezwungen.
+Allerdings führt dieses eine Fokussierung des Elektronenstrahls in zwei Raumrichtungen durch, indem ein inhomogenes Magnetfeld verwendet wird, wobei die magnetische Feldstärke auf der Sollbahn des Teilchens konstant ist.
+In einem inhomogenen Magnetfeld führen die Elektronen in transversaler Richtung sogenannte Betatron-Schwingungen durch, deren Kreisfrequenz in der jeweiligen Raumrichtung gegeben ist durch (ZITAT HILLERT):
 \begin{align}
 	\omega_\rho = \omega_0 \sqrt{1-n} \qquad \omega_z = \omega_0 \sqrt{n}
 \end{align}
-mit dem Feldindex:
+wobei $\omega_0$ die Kreisfrequenz des Elektrons auf seiner Kreisbahn angibt und der Feldindex $n$ die Inhomogenität des Magnetfeldes durch:
 \begin{align}
 	n = - \frac{\rho}{B_z(\rho)} \frac{\mathrm{d} B_z(\rho)}{\mathrm{d} \rho}
 \end{align}
-Während einer halben Periode der jeweiligen Betatronschwingung durchläuft das Elektron auf der Kreisbahn einen Winkel von:
+beschreibt.
+Zur Herleitung der Fokussierungsbedingung betrachtet man den während einer halben Periode der jeweiligen Betatronschwingung vom Elektron durchlaufenen Winkel auf der Kreisbahn:
 \begin{align}
 	\phi_\rho &= \omega_0 \cdot \frac{\pi}{\omega_\rho} & \phi_z &= \omega_0 \cdot \frac{\pi}{\omega_z}\\
 	\phi_\rho &= \pi \left[ 1+ \frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} & \phi_z &= \pi \left[ -\frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} \label{eq:betatronwinkel}
 \end{align}
-ab, wobei $\rho_0$ den Radius der Sollbahn bezeichnet.
-An Gleichung \eqref{eq:betatronwinkel} ließt man nach Quadrieren ab:
+mit dem Radius der Sollbahn $\rho_0$.
+An Gleichungen \eqref{eq:betatronwinkel} ließt man nach Quadrieren ab:
 \begin{align}
 	\frac{1}{\phi_\rho^2} + \frac{1}{\phi_z^2} = \frac{1}{\pi^2} \label{eq:betatronwinkelverhaeltnis}
 \end{align}
 Um eine stigmatische Abbildung zu erhalten (d.h. der Fokus der $\rho$- und $z$-Ebene liegen im selben Punkt) muss die Bedingung $\phi_\rho = \phi_z$ gestellt werden.
+Anschaulich bedeutet dies, dass das Elektron eine halbe Betatronschwingung in beiden transversalen Richtungen durchgeführt hat und sich somit wieder auf der Sollbahn befindet.
+Ist gleichzeitig die Periode der Betatronschwingungen beider Richtungen gleich, so bildet sich ein räumlicher Fokus an dem ein Detektor aufgestellt werden kann.
 Damit folgt aus Gleichung \eqref{eq:betatronwinkelverhaeltnis} der gesamte Winkel der Elektronenbahn im Spektrometer.
 Dieser ergibt sich zu $\phi = \pi \sqrt{2}$, weshalb das doppelt-fokussierende Spektrometer auch $\pi \sqrt{2}$-Spektrometer genannt wird.
 Gleichzeitig folgt aus der gestellten Anforderung $\phi_\rho = \phi_z$ mit Gleichung \eqref{eq:betatronwinkel} die Bestimmungsgleichung für das magnetische Feld:
@@ -317,7 +322,7 @@ Mit der Randbedingung $B(\rho_0) = B_0$ folgt als allgemeine Lösung:
 \begin{align}
 	B(\rho) = B_0 \sqrt{\frac{\rho_0}{\rho}}
 \end{align}
-Der Vorteil gegenüber dem halbkreisförmigen Spektrometer liegt darin, dass das doppelt-fokussierende ebenfalls in der $z$-Ebene fokussierend wirkt und damit höhere Transmissionen möglich sind.
+Der Vorteil gegenüber dem halbkreisförmigen Spektrometer liegt darin, dass die doppelte Fokussierung höhere Transmissionen ermöglicht.
 
 \subsection{Detektoren (?)}
 \subsubsection{Halbleiterdetektoren}
@@ -516,7 +521,7 @@ Diese Form der Darstellung wurde gewählt, da bei der Anpassung einer Ursprungsg
 \begin{figure}[h]
 	\centering
 	\input{./plots/kalibration.tex}
-	\caption{Anpassung der Kalibrationsgeraden an die gefundenen Linienschwerpunkte $U_\mathrm{H}$ und dem theoretisch berechneten $(B \rho)$-Wert der jeweiligen Linie bei beiden Transmissionen \num{1} und \SI{4}{\percent}. (FIXME)}
+	\caption{Anpassung der Kalibrationsgeraden an die gefundenen Linienschwerpunkte $U_\mu$ und dem theoretisch berechneten $(B \rho)$-Wert der jeweiligen Linie bei beiden Transmissionen \num{1} und \SI{4}{\percent}.}
 	\label{fig:kalibration}
 \end{figure}
 In Abbildung \ref{fig:kalibration} wurde die Anpassung der Ursprungsgerade  an die Kalibrationsdaten durchgeführt.
@@ -587,8 +592,8 @@ Das so gewonnene Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spe
 \label{sssec:kurie_thallium}
 
 Literatur:\\
-\url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=204TL&unc=nds}\\
-\url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=22NA&unc=nds}\\
+
+
 
 Die Bestimmung der Maximalenergie der $\beta$-Spektren erfolgt hier über die Bestimmung des Endpunktes $\epsilon_0$ im Kurie-Diagramm \ref{fig:thallium_kurie}.
 In dieser Darstellung wird die Fermi-Funktion von Thallium für verschiedene Impulse $\eta$ beziehungsweise Energien $\epsilon$ benötigt.
@@ -661,6 +666,8 @@ Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt
 \begin{align}
 	Q_\mathrm{Tl} = \SI{716 +- 11}{\kilo\electronvolt}
 \end{align}
+Der in \cite{literatur_tl} gegebene Wert von $Q_\mathrm{Tl} = \SI{763.76 +- 0.18}{\kilo\electronvolt}$ kann nicht erreicht werden.
+Mögliche Ursachen dafür sind:
 
 \subsubsection{Spektrum von Natrium}
 \begin{wraptable}{o}{4.7cm}
@@ -670,7 +677,7 @@ Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt
 	\label{tab:untergrund_na}
 \end{wraptable}
 Bei der Auswertung des Natrium-Zerfalls wird analog zu den beiden anderen Zerfällen vorgegangen.
-Der über \SI{100}{\second} gemessene Untergrund bei \SI{1}{\percent} Transmission ist in Tabelle \ref{tab:untergrund_na} festgehalten worden.
+Der über \SI{100}{\second} gemessene Untergrund bei \SI{4}{\percent} Transmission ist in Tabelle \ref{tab:untergrund_na} festgehalten worden.
 Mit der Korrektur der Hallspannung und nach Abziehen des Untergrunds erhält man das in Abbildung \ref{fig:natrium_spectrum} gezeigte Spektrum für den Zerfall von Natrium.
 Die dazu gehörenden Messwerte sind in Tabelle \ref{tab:spektrum_na} notiert.
 Hier muss beachtet werden, dass die Hallspannung durchweg ein anderes Vorzeichen hat als bei den anderen Spektren.
@@ -689,9 +696,12 @@ Die Vorgehensweise dazu ist analog zur Bestimmung der Endpunktsenergie von Thall
 	m &= \num{-2.96+- 0.12} \\
 	\epsilon_0 &= \num{2.077 +- 0.014}
 \end{align}
+
+Literaturwert:
 \begin{align}
-	Q_\mathrm{Na} = \SI{550 +- 8}{\kilo\electronvolt}
+	Q_\mathrm{Na} = \SI{545.7 +- 0.4}{\kilo\electronvolt}
 \end{align}
+
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_kurie.tex}
@@ -731,7 +741,24 @@ Die Vorgehensweise dazu ist analog zur Bestimmung der Endpunktsenergie von Thall
 	Riezler, W.; Kopitzki, K.
 	\emph{Kernphysikalisches Praktikum},
 	Teubner 1963
- 
+
+\bibitem{tl_literatur}
+  C.J. Chiara, F.G. Kondev,
+  Nuclear Data Sheets 111,141 (2010),
+  \url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=204TL&unc=nds}
+  (Letzter Aufruf: 16. April 2015)
+
+\bibitem{na_literatur}
+  R.B. Firestone,
+  Nuclear Data Sheets 106, 1 (2005)
+  \url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=22NA&unc=nds}
+  (Letzter Aufruf: 16. April 2015)
+
+
+
+
+  
+
 \end{thebibliography}
 
 \clearpage
@@ -779,6 +806,13 @@ Die Vorgehensweise dazu ist analog zur Bestimmung der Endpunktsenergie von Thall
 	\input{./tables/spektrum_na.tex}
 	\caption{Messdaten des Spektrums von \isotope[22]{Na} und daraus abgeleitete Größen bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{100}{s}$.}
 	\label{tab:spektrum_na}
+\end{sidewaystable}
+
+\begin{sidewaystable}
+	\centering
+	\input{./tables/kurie_na.tex}
+	\caption{Kurie Na}
+	\label{tab:kurie_na}
 \end{sidewaystable}
 
 \end{appendix}

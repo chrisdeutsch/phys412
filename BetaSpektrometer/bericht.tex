@@ -582,6 +582,7 @@ Das Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spectrum} aufget
 \end{figure}
 
 \subsubsection{Bestimmung der Maximalenergie von Thallium}
+\label{sssec:kurie_thallium}
 
 Literatur:\\
 \url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=204TL&unc=nds}\\
@@ -677,6 +678,8 @@ Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt
 \end{figure}
 
 \subsubsection{Bestimmung der Endpunktsenergie von Natrium}
+Es soll nun die Endpunktsenergie von \isotope[22]{Na} bestimmt werden.
+Die Vorgehensweise dazu ist analog zur Bestimmung der Endpunktsenergie von Thallium in Abschnitt \ref{sssec:kurie_thallium} mit Ausnahme, dass die Fermi-Funktion von Natrium direkt aus \cite{riezler} abgelesen wurde. (UNTERSCHIED IM VORZEICHEN DER HALLSPANNUNG ERKLÄREN).
 \begin{align}
 	m &= \num{-2.96+- 0.12} \\
 	\epsilon_0 &= \num{2.077 +- 0.014}
@@ -720,6 +723,11 @@ Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt
 	Venkataramaiah, P.; Gopala, K.; Basavaraju, A.; Suryanarayana, S.S.; Sanjeevia, H.
 	\emph{A simple relation for the Fermi function},
 	Journal of Physics G 11 (3): 359-364
+
+\bibitem{riezler}
+	Riezler, W.; Kopitzki, K.
+	\emph{Kernphysikalisches Praktikum},
+	Teubner 1963
  
 \end{thebibliography}
 
@@ -761,6 +769,13 @@ Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt
 	\input{./tables/kurie_tl.tex}
 	\caption{Kurie Tl}
 	\label{tab:kurie_tl}
+\end{sidewaystable}
+
+\begin{sidewaystable}
+	\centering
+	\input{./tables/spektrum_na.tex}
+	\caption{Messdaten des Spektrums von \isotope[22]{Na} und daraus abgeleitete Größen bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{100}{s}$.}
+	\label{tab:spektrum_na}
 \end{sidewaystable}
 
 \end{appendix}

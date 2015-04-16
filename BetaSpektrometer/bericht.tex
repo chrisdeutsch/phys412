@@ -288,25 +288,30 @@ Vorteil: einfache Konstruktion, Magnetfeld leicht zu messen, gut geeignet um gro
 	\caption{Doppelt-fokussierendes Spektrometer}
 	\label{fig:pisqrt2_spectro}
 \end{figure}
-Betatron-Oszillationen ($\omega_0$: Elektronen Umlauffrequenz) (Zitat Hillert)
+Im doppelt-fokussierenden Spektrometer werden analog zum Halbkreisförmigen durch ein statisches Magnetfeld auf eine Kreisbahn gezwungen.
+Allerdings führt dieses eine Fokussierung des Elektronenstrahls in zwei Raumrichtungen durch, indem ein inhomogenes Magnetfeld verwendet wird, wobei die magnetische Feldstärke auf der Sollbahn des Teilchens konstant ist.
+In einem inhomogenen Magnetfeld führen die Elektronen in transversaler Richtung sogenannte Betatron-Schwingungen durch, deren Kreisfrequenz in der jeweiligen Raumrichtung gegeben ist durch (ZITAT HILLERT):
 \begin{align}
 	\omega_\rho = \omega_0 \sqrt{1-n} \qquad \omega_z = \omega_0 \sqrt{n}
 \end{align}
-mit dem Feldindex:
+wobei $\omega_0$ die Kreisfrequenz des Elektrons auf seiner Kreisbahn angibt und der Feldindex $n$ die Inhomogenität des Magnetfeldes durch:
 \begin{align}
 	n = - \frac{\rho}{B_z(\rho)} \frac{\mathrm{d} B_z(\rho)}{\mathrm{d} \rho}
 \end{align}
-Während einer halben Periode der jeweiligen Betatronschwingung durchläuft das Elektron auf der Kreisbahn einen Winkel von:
+beschreibt.
+Zur Herleitung der Fokussierungsbedingung betrachtet man den während einer halben Periode der jeweiligen Betatronschwingung vom Elektron durchlaufenen Winkel auf der Kreisbahn:
 \begin{align}
 	\phi_\rho &= \omega_0 \cdot \frac{\pi}{\omega_\rho} & \phi_z &= \omega_0 \cdot \frac{\pi}{\omega_z}\\
 	\phi_\rho &= \pi \left[ 1+ \frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} & \phi_z &= \pi \left[ -\frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} \label{eq:betatronwinkel}
 \end{align}
-ab, wobei $\rho_0$ den Radius der Sollbahn bezeichnet.
-An Gleichung \eqref{eq:betatronwinkel} ließt man nach Quadrieren ab:
+mit dem Radius der Sollbahn $\rho_0$.
+An Gleichungen \eqref{eq:betatronwinkel} ließt man nach Quadrieren ab:
 \begin{align}
 	\frac{1}{\phi_\rho^2} + \frac{1}{\phi_z^2} = \frac{1}{\pi^2} \label{eq:betatronwinkelverhaeltnis}
 \end{align}
 Um eine stigmatische Abbildung zu erhalten (d.h. der Fokus der $\rho$- und $z$-Ebene liegen im selben Punkt) muss die Bedingung $\phi_\rho = \phi_z$ gestellt werden.
+Anschaulich bedeutet dies, dass das Elektron eine halbe Betatronschwingung in beiden transversalen Richtungen durchgeführt hat und sich somit wieder auf der Sollbahn befindet.
+Ist gleichzeitig die Periode der Betatronschwingungen beider Richtungen gleich, so bildet sich ein räumlicher Fokus an dem ein Detektor aufgestellt werden kann.
 Damit folgt aus Gleichung \eqref{eq:betatronwinkelverhaeltnis} der gesamte Winkel der Elektronenbahn im Spektrometer.
 Dieser ergibt sich zu $\phi = \pi \sqrt{2}$, weshalb das doppelt-fokussierende Spektrometer auch $\pi \sqrt{2}$-Spektrometer genannt wird.
 Gleichzeitig folgt aus der gestellten Anforderung $\phi_\rho = \phi_z$ mit Gleichung \eqref{eq:betatronwinkel} die Bestimmungsgleichung für das magnetische Feld:
@@ -317,7 +322,7 @@ Mit der Randbedingung $B(\rho_0) = B_0$ folgt als allgemeine Lösung:
 \begin{align}
 	B(\rho) = B_0 \sqrt{\frac{\rho_0}{\rho}}
 \end{align}
-Der Vorteil gegenüber dem halbkreisförmigen Spektrometer liegt darin, dass das doppelt-fokussierende ebenfalls in der $z$-Ebene fokussierend wirkt und damit höhere Transmissionen möglich sind.
+Der Vorteil gegenüber dem halbkreisförmigen Spektrometer liegt darin, dass die doppelte Fokussierung höhere Transmissionen ermöglicht.
 
 \subsection{Detektoren (?)}
 \subsubsection{Halbleiterdetektoren}

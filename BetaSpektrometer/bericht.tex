@@ -560,7 +560,7 @@ Bei diesen Berechnungen muss beachtet werden, dass mit $\Delta$ bezeichnete Grö
 \subsection{Bestimmung der Zerfallsenergie}
 
 \subsubsection{Spektrum von Thallium}
-\begin{wraptable}{o}{4cm}
+\begin{wraptable}{O}{4.7cm}
 	\centering
 	\input{./tables/untergrund_tl.tex}
 	\caption{Untergrundmessung von \isotope[204]{Tl} mit einer Messdauer von \SI{100}{\second} bei eingestellter Transmission von \SI{4}{\percent}.}
@@ -569,11 +569,11 @@ Bei diesen Berechnungen muss beachtet werden, dass mit $\Delta$ bezeichnete Grö
 Bei der Vermessung des Spektrums von Thallium wurde analog zu Abschnitt \ref{sssec:spektrum_caesium} vorgegangen mit der Ausnahme, dass die Hallspannungen mit der in \ref{sssec:konversionslinien} berechneten Kalibration in $(B \rho)$-Werte umgerechnet wurden.
 Insbesondere sollen die einzelnen Formeln für Umrechnungen und Fehler hier nicht wiederholt werden, diese sind im oben genannten Abschnitt zu finden.
 Auch für diese Messung wurde der Untergrund über eine Messzeit von \SI{100}{\second} bei einer eingestellten Transmission von \SI{4}{\percent} gemessen.
-Die Wahl der langen Messzeit ist dabei auch in den sehr geringen Zählraten aufgrund des Versuchsaufbaus begründet, auch wenn der Untergrund dadurch sehr groß wird.
+Die Wahl der langen Messzeit ist dabei auch in den sehr geringen Zählraten aufgrund des Versuchsaufbaus begründet, obwohl dadurch der Untergrund sehr groß wird.
 Trotz einer Variation der Parameter an der Zähleinheit konnte kein besseres Verhältnis zwischen den Zählraten des Untergrunds und des Spektrums erreicht werden.
 Die Ergebnisse der Untergrundmessung finden sich in Tabelle \ref{tab:untergrund_tl}.
 Die gemessenen und die daraus berechneten Werte wurden in Tabelle \ref{tab:spektrum_tl} festgehalten.
-Das Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spectrum} aufgetragen.
+Das so gewonnene Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spectrum} aufgetragen.
 \begin{figure}[h]
 	\centering
 	\input{./plots/thallium_spektrum.tex}
@@ -645,14 +645,15 @@ Die so berechneten Punkte in dem Kurie-Diagramm wurden in Tabelle \ref{tab:kurie
 
 
 \subsubsection{Spektrum von Natrium}
-(UNTERGRUNDTEXT)
-\begin{table}[h]
+\begin{table}[ht]
 	\centering
 	\input{./tables/untergrund_na.tex}
-	\caption{Untergrund NA, Messzeit, Transmission}
+	\caption{Untergrundmessung für \isotope[22]{Na} mit einer Messdauer von \SI{100}{\second} bei eingestellter Transmission von \SI{4}{\percent}.}
 	\label{tab:untergrund_na}
 \end{table}
-
+Bei der Auswertung des Natrium-Zerfalls wird analog zu den beiden anderen Zerfällen vorgegangen.
+Der über \SI{100}{\second} gemessene Untergrund bei \SI{1}{\percent} Transmission ist in Tabelle \ref{tab:untergrund_na} festgehalten worden.
+Mit der Korrektur der Hallspannung und nach Abziehen des Untergrunds erhält man das in Abbildung \ref{fig:natrium_spectrum} gezeigte Spektrum für den Zerfall von Natrium.
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_spektrum.tex}

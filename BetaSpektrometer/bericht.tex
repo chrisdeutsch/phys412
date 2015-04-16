@@ -448,16 +448,16 @@ Dabei wird der Fehler der gemessenen Hallspannung aufgrund fehlender Kenntnis ü
 \begin{align*}
 	\Delta U_\mathrm{H} = \SI{0.1}{\skt}
 \end{align*}
-festgelegt, was der letzten Stelle der Digitalanzeige entspricht.
-Der Schätzwert für den Fehler der Ereigniszahl ergibt sich gemäß der Poisson-Verteilung (diese Annahme ist gültig, da die Zählraten poisson-verteilt sind) aus der Wurzel der Ereignisse:
+abgeschätzt, was der letzten Stelle der Digitalanzeige entspricht.
+Der Schätzwert für den Fehler der Ereigniszahl ergibt sich gemäß der zugrundeliegenden Poisson-Verteilung aus der Wurzel der Ereigniszahl:
 \begin{align*}
 	\Delta N = \sqrt{N}
 \end{align*}
-Zunächst muss die Hallspannung $U_\mathrm{H}$ um die in Abschnitt \ref{ssec:offsetspannung} ermittelte Offsetspannung $\overline{U_0}$ \eqref{hall_korrektur} bereinigt werden.
+Zunächst muss die Hallspannung $U_\mathrm{H}$ um die in Abschnitt \ref{ssec:offsetspannung} ermittelte Offsetspannung $\overline{U}_0$ \eqref{hall_korrektur} bereinigt werden.
 Die korrigierte Hallspannung erhält man durch:
 \begin{align}
-U_\mathrm{H}^\mathrm{korr.} = U_\mathrm{H} - \overline{U_0} \qquad
-\Delta U_\mathrm{H}^\mathrm{korr.} = \sqrt{\Delta U_\mathrm{H}^2 + \Delta \overline{U_0}^2} \text{,}
+U_\mathrm{H}^\mathrm{korr.} = U_\mathrm{H} - \overline{U}_0 \qquad
+\Delta U_\mathrm{H}^\mathrm{korr.} = \sqrt{\Delta U_\mathrm{H}^2 + \Delta \overline{U}_0^2} \text{,}
 \end{align}
 wobei der Fehler aus der Gauß'schen Fehlerfortpflanzung folgt.
 Für die Bereinigung der Zählraten mit den in Abschnitt \ref{sssec:untergrund1} gefundenen Werten für den Hintergrund gilt
@@ -472,7 +472,7 @@ Es liegt nahe die korrigierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ zu dies
 	n = \frac{N_\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}} \qquad \Delta n = \sqrt{\left( \frac{\Delta N_\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}}\right)^2 + \left( \frac{N_\mathrm{korr.} \cdot \Delta U_\mathrm{H}^\mathrm{korr.}}{ {U_\mathrm{H}^\mathrm{korr.}}^2 }\right)^2}
 \end{align}
 Trägt man die Impulsverteilung $n$ gegen die korrigierte Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ auf, so erhält die Abbildung \ref{fig:ba_t4_grob}.
-Dort sieht man eine Erhöhung der Zählrate bei ca. $U_\mathrm{H}^\mathrm{korr.} \approx \SI{150}{\skt}$, welche auf die Konversionslinien des angeregten Bariumkerns hindeutet.
+Dort sieht man eine Erhöhung der Zählrate bei ca. $U_\mathrm{H}^\mathrm{korr.} \approx \SI{150}{\skt}$, welche auf die Konversionslinien des angeregten Bariumkerns zurückzuführen sind.
 Im folgenden Abschnitt sollen diese zur Impulskalibration genauer untersucht werden.
 \begin{figure}[h]
 	\centering
@@ -485,6 +485,7 @@ Im folgenden Abschnitt sollen diese zur Impulskalibration genauer untersucht wer
 \label{sssec:konversionslinien}
 Zusätzlich zu der groben Aufnahme des Spektrums wurde der Bereich der Konversionslinien mit zwei verschiedenen Transmissionen $T = \SI{4}{\percent}$ (bei einer Messdauer von \SI{40}{\second}) und $T = \SI{1}{\percent}$ (bei einer Messdauer von \SI{100}{\second}) vermessen.
 Die Messdaten und die daraus abgeleiteten Größen wurden in Tabellen \ref{tab:spektrum_ba4_fein} und \ref{tab:spektrum_ba1_fein} dargestellt, wobei die Berechnung der abgeleiteten Größen in Analogie zu Abschnitt \ref{sssec:spektrum_caesium} erfolgte.
+Die Konversionslinien wurden in den Abbildungen \ref{fig:ba_t4_fein} und \ref{fig:ba_t1_fein} dargestellt.
 \\
 \\
 Sichtbar sind die Konversionslinien der K- und L-Schale des angeregten Barium-Kerns, an welche mithilfe von \texttt{gnuplot} die Summe zweier Gaußfunktionen mit Offset angepasst wurde. Konkret lautet die Anpassungshypothese
@@ -519,8 +520,8 @@ Man sieht eine deutliche Abweichung der Messwerte von einer Gaußfunktion, jedoc
 \end{table}
 Mit den angepassten Linienschwerpunkten kann nun die Impulskalibration durchgeführt werden.
 Dazu wurden in Abschnitt \ref{ssec:kalibration} bereits die mit den Linien korrespondierenden $(B \rho)$-Werte berechnet.
-Trägt man nun die Schwerpunkte der Linien $U_\mathrm{H}$ gegen den berechneten $(B \rho)$-Wert auf, so erhält man eine Ursprungsgerade mit der Steigung $m$.
-Diese Form der Darstellung wurde gewählt, da bei der Anpassung einer Ursprungsgeraden mit \texttt{gnuplot} nur $y$-Fehler berücksichtigt werden können.
+Trägt man nun die Schwerpunkte der Linien $U_\mu$ gegen den berechneten $(B \rho)$-Wert auf, so erhält man eine Ursprungsgerade mit der Steigung $m$.
+Diese Form der Darstellung wurde gewählt, da bei der Anpassung mit \texttt{gnuplot} nur $y$-Fehler berücksichtigt werden können.
 \begin{figure}[h]
 	\centering
 	\input{./plots/kalibration.tex}
@@ -549,12 +550,13 @@ so dass man schlussendlich erhält:
 \subsubsection{Auflösungsvermögen des Spektrometers}
 Im Folgenden soll das Auflösungsvermögen des Spektrometers bei verschiedenen Transmissionen bestimmt werden.
 Die für das Auflösungsvermögen relevante Größe ist dabei die relative Linienbreite $R$ aus Gleichung \eqref{eq:rel_linienbreite}.
-Zur Berechnung wird die Halbwertsbreite sowie der Schwerpunkt der jeweiligen Linie benötigt.
-Der Schwerpunkt $\mu$ der Linie ist direkt aus der Anpassung \ref{tab:fitergebnisse_ba} der Gaußfunktionen an die Linien abzulesen, lediglich bei der Bestimmung der Halbwertsbreite muss eine weitere Berechnung erfolgen, da nur die Standardabweichung der Gaußfunktion zur Verfügung steht.
+Zur Berechnung wird die Halbwertsbreite (FWHM) sowie der Schwerpunkt der jeweiligen Linie benötigt.
+Der Schwerpunkt $U_\mu$ der Linie ist direkt aus der Anpassung \ref{tab:fitergebnisse_ba} der Gaußfunktionen an die Linien abzulesen, lediglich bei der Bestimmung der Halbwertsbreite muss eine weitere Berechnung erfolgen, da nur die Standardabweichung der Gaußfunktion zur Verfügung steht.
+Die volle Halbwertsbreite lässt sich aus der Standardabweichung einer Gaußfunktion berechnen durch:
 \begin{align}
 	\mathrm{FWHM} = 2 \sqrt{2\ln(2)} \cdot \sigma
 \end{align}
-Aufgrund des linearen Zusammenhangs zwischen Hallspannung $U_\mathrm{H}$ und Elektronenimpuls $(B \rho)$ kann auf die Umrechnung verzichtet werden, sodass gilt:
+Aufgrund des linearen Zusammenhangs zwischen Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ und Elektronenimpuls $(B \rho)$ kann auf die Umrechnung verzichtet werden, sodass gilt:
 \begin{align*}
 	R = \frac{\Delta (B \rho)}{B \rho} = \frac{\Delta U_\mathrm{H}^\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}}
 \end{align*}
@@ -568,6 +570,7 @@ Bei diesen Berechnungen muss beachtet werden, dass mit $\Delta$ bezeichnete Grö
 \end{table}
 
 \subsection{Bestimmung der Zerfallsenergie}
+(MOTIVATION)
 
 \subsubsection{Spektrum von Thallium}
 \begin{wraptable}{o}{4.7cm}

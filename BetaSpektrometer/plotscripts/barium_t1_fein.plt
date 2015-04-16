@@ -30,6 +30,6 @@ g = 0.2
 
 fit g(x) './data/barium_t1_fein.txt' using 1:3:4 yerror via a,b,c,d,e,f,g
 
-plot [146:160] './data/barium_t1_fein.txt' using 1:3:2:4 w xyerrorbars t'Messwerte' ls 1, g(x) ls 2 lw 2
+plot [146:160] './data/barium_t1_fein.txt' using 1:3:2:4 w xyerrorbars t'Messwerte' ls 1, g(x) ls 2 lw 2 t'Anpassung'
 
 unset output

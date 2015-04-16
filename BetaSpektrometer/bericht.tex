@@ -421,16 +421,16 @@ In Analogie zur K-Schale kann der Impuls des Elektrons berechnet werden:
 
 \subsubsection{Untergrundmessungen}
 \label{sssec:untergrund1}
-Zur späteren Bereinigung der Messwerte werden vorher Untergrundmessungen durchgeführt.
-Um möglichst hohe Zählraten zu erzielen wurde die Messzeit bei eingebautem Präparat bei 4\% Transmission auf \SI{40}{\second} eingestellt und für 1\% Transmission auf \SI{100}{\second} erhöht.
-Durch eine nicht ideale Kalibration der Zähleinheit konnten jedoch nicht die in der Praktikumsanleitung empfohlene Zählraten erreicht werden.
-Für den Untergrund des Caesium-Zerfalls bei beiden Transmissionseinstellungen sind die in Tabelle \ref{tab:untergrund_cs} notierten Werte für die Zählrate $N$ gemessen worden.
-\begin{table}[h]
+\begin{wraptable}{o}{0.5\textwidth}
 	\centering
 	\input{./tables/untergrund_cs.tex}
 	\caption{Untergrundmessung von \isotope[137]{Cs} bei 1\% und 4\% Transmission}
 	\label{tab:untergrund_cs}
-\end{table}
+\end{wraptable}
+Zur späteren Bereinigung der Messwerte werden vorher Untergrundmessungen durchgeführt.
+Um möglichst hohe Zählraten zu erzielen wurde die Messzeit bei eingebautem Präparat bei 4\% Transmission auf \SI{40}{\second} eingestellt und für 1\% Transmission auf \SI{100}{\second} erhöht.
+Durch eine nicht ideale Kalibration der Zähleinheit konnten jedoch nicht die in der Praktikumsanleitung empfohlene Zählraten erreicht werden.
+Für den Untergrund des Caesium-Zerfalls bei beiden Transmissionseinstellungen sind die in Tabelle \ref{tab:untergrund_cs} notierten Werte für die Zählrate $N$ gemessen worden.
 Die Messwerte wurden dabei in der untersten Zeile gemittelt und der Fehler aus der Standardabweichung berechnet.
 
 \subsubsection{Spektrum von Caesium}
@@ -501,6 +501,8 @@ mit dem Schwerpunkt $\mu$ und der Breite (Standardabweichung) $\sigma$ beschreib
 	\label{fig:ba_t1_fein}
 \end{figure}
 Die mit \texttt{gnuplot} gefundenen Werte für die Anpassungsparameter $\mu$ und $\sigma$ (die einer Spannung in Skalenteilen entsprechen) wurden für die jeweiligen Schalen und Transmissionen in Tabelle \ref{tab:fitergebnisse_ba} festgehalten.
+Wie in der Darstellung ersichtlich ist die Anpassung für die Messwerte des bei \SI{1}{\percent} Transmission vor allem für die K-Schale nicht gut gelungen.
+Man sieht eine deutliche Abweichung der Messwerte von einer Gaußfunktion, jedoch liefert die Anpassung der Schwerpunkte sinnvolle Werte, so dass diese für die Auswertung verwendet werden.
 \begin{table}[h]
 	\centering
 	\input{./tables/fitergebnisse_ba.tex}
@@ -560,10 +562,10 @@ Bei diesen Berechnungen muss beachtet werden, dass mit $\Delta$ bezeichnete Grö
 \subsection{Bestimmung der Zerfallsenergie}
 
 \subsubsection{Spektrum von Thallium}
-\begin{wraptable}{O}{4.7cm}
+\begin{wraptable}{o}{4.7cm}
 	\centering
 	\input{./tables/untergrund_tl.tex}
-	\caption{Untergrundmessung von \isotope[204]{Tl} mit einer Messdauer von \SI{100}{\second} bei eingestellter Transmission von \SI{4}{\percent}.}
+	\caption{Untergrundmessung von \isotope[204]{Tl} mit einer Messdauer von \SI{100}{\second} bei \SI{4}{\percent} Transmission.}
 	\label{tab:untergrund_tl}
 \end{wraptable}
 Bei der Vermessung des Spektrums von Thallium wurde analog zu Abschnitt \ref{sssec:spektrum_caesium} vorgegangen mit der Ausnahme, dass die Hallspannungen mit der in \ref{sssec:konversionslinien} berechneten Kalibration in $(B \rho)$-Werte umgerechnet wurden.
@@ -588,7 +590,7 @@ Literatur:\\
 \url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=204TL&unc=nds}\\
 \url{http://www.nndc.bnl.gov/nudat2/decaysearchdirect.jsp?nuc=22NA&unc=nds}\\
 
-Die Bestimmung der Maximalenergie der $\beta$-Spektren erfolgt hier über die Bestimmung des Endpunktes $\epsilon_0$ im Kurie-Diagramm (REF).
+Die Bestimmung der Maximalenergie der $\beta$-Spektren erfolgt hier über die Bestimmung des Endpunktes $\epsilon_0$ im Kurie-Diagramm \ref{fig:thallium_kurie}.
 In dieser Darstellung wird die Fermi-Funktion von Thallium für verschiedene Impulse $\eta$ beziehungsweise Energien $\epsilon$ benötigt.
 Dazu werden die in \cite{anleitung} gegebenen Datenpunkte extrapoliert, indem eine geeignete Kurve an diese angepasst wird.
 Als Anpassungshypothese wird gemäß \cite{fermi_function}:
@@ -610,7 +612,6 @@ Trägt man die angepasste Funktion und die in \cite{anleitung} gegebenen Datenpu
 	\caption{Anpassung der Hypothese \eqref{eq:hypothese_fermifunktion} an den in \cite{anleitung} gegebenen Datensatz zur Fermi-Funktion von Thallium.}
 	\label{fig:fermi_tl}
 \end{figure}
-
 Nun kann die Berechnung des Graphens in der Kurie-Darstellung erfolgen.
 Dazu empfiehlt es sich die dimensionslose Darstellung von Impuls $\eta$ und Energie $\epsilon$ zu verwenden.
 Zunächst wird dazu aus dem $(B \rho)$-Wert der Tabelle \ref{tab:spektrum_tl} der dimensionslose Impuls gemäß Gleichung \eqref{eq:brho_to_eta} berechnet.
@@ -662,15 +663,18 @@ Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt
 \end{align}
 
 \subsubsection{Spektrum von Natrium}
-\begin{table}[ht]
+\begin{wraptable}{o}{4.7cm}
 	\centering
 	\input{./tables/untergrund_na.tex}
-	\caption{Untergrundmessung für \isotope[22]{Na} mit einer Messdauer von \SI{100}{\second} bei eingestellter Transmission von \SI{4}{\percent}.}
+	\caption{Untergrundmessung für \isotope[22]{Na} mit einer Messdauer von \SI{100}{\second} bei \SI{4}{\percent} Transmission.}
 	\label{tab:untergrund_na}
-\end{table}
+\end{wraptable}
 Bei der Auswertung des Natrium-Zerfalls wird analog zu den beiden anderen Zerfällen vorgegangen.
 Der über \SI{100}{\second} gemessene Untergrund bei \SI{1}{\percent} Transmission ist in Tabelle \ref{tab:untergrund_na} festgehalten worden.
 Mit der Korrektur der Hallspannung und nach Abziehen des Untergrunds erhält man das in Abbildung \ref{fig:natrium_spectrum} gezeigte Spektrum für den Zerfall von Natrium.
+Die dazu gehörenden Messwerte sind in Tabelle \ref{tab:spektrum_na} notiert.
+Hier muss beachtet werden, dass die Hallspannung durchweg ein anderes Vorzeichen hat als bei den anderen Spektren.
+Diese wurde in umgekehrter Polung angelegt, da Natrium unter Aussendung eines Positrons zerfällt ($\beta^+$-Zerfall).
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_spektrum.tex}
@@ -680,16 +684,14 @@ Mit der Korrektur der Hallspannung und nach Abziehen des Untergrunds erhält man
 
 \subsubsection{Bestimmung der Endpunktsenergie von Natrium}
 Es soll nun die Endpunktsenergie von \isotope[22]{Na} bestimmt werden.
-Die Vorgehensweise dazu ist analog zur Bestimmung der Endpunktsenergie von Thallium in Abschnitt \ref{sssec:kurie_thallium} mit Ausnahme, dass die Fermi-Funktion von Natrium direkt aus \cite{riezler} abgelesen wurde. (UNTERSCHIED IM VORZEICHEN DER HALLSPANNUNG ERKLÄREN).
+Die Vorgehensweise dazu ist analog zur Bestimmung der Endpunktsenergie von Thallium in Abschnitt \ref{sssec:kurie_thallium} mit Ausnahme, dass die Fermi-Funktion von Natrium direkt aus \cite{riezler} abgelesen wurde.
 \begin{align}
 	m &= \num{-2.96+- 0.12} \\
 	\epsilon_0 &= \num{2.077 +- 0.014}
 \end{align}
-
 \begin{align}
 	Q_\mathrm{Na} = \SI{550 +- 8}{\kilo\electronvolt}
 \end{align}
-
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_kurie.tex}

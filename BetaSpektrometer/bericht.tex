@@ -635,6 +635,12 @@ und der Fehler berechnet sich zu:
 	}
 \end{align}
 Die so berechneten Punkte in dem Kurie-Diagramm wurden in Tabelle \ref{tab:kurie_tl} aufgetragen, dabei ist zu beachten, dass nur die Werte eingetragen sind, für die der Radikand von Gleichung \ref{eq:kurie_y} einen positiven Wert annimmt.
+Die Anpassung erfolgt über die Hypothese:
+\begin{align}
+	y = m (\epsilon - \epsilon_0)
+\end{align}
+mit den Anpassungsparametern $m$ und $\epsilon_0$.
+So kann der Endpunkt des Kurie-Diagramms direkt abgelesen werden.
 
 \begin{figure}[h]
 	\centering
@@ -661,10 +667,15 @@ Die so berechneten Punkte in dem Kurie-Diagramm wurden in Tabelle \ref{tab:kurie
 \end{figure}
 
 \subsubsection{Bestimmung der Endpunktsenergie von Natrium}
+\begin{align}
+	m &= \num{-2.96+- 0.12} \\
+	\epsilon_0 &= \num{2.076 +- 0.014}
+\end{align}
+
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_kurie.tex}
-	\caption{Kurie-Darstellung des Spektrums von \isotope[22]{Na}. Die Anpassung einer Geraden an den linearen Teil des Graphens (FITRANGE) ergibt den Endpunkt $\epsilon_0 = \num{2.1 +- 0.05}$ (TODO).}
+	\caption{Kurie-Darstellung des Spektrums von \isotope[22]{Na}. Die Anpassung einer Geraden an den linearen Teil des Graphens (Bereich der Anpassung: $\num{1.5} \leq \epsilon \leq {2.0}$) ergibt den Endpunkt $\epsilon_0 = \num{2.076 +- 0.014}$.}
 	\label{fig:natrium_kurie}
 \end{figure}
 

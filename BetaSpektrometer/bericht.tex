@@ -692,22 +692,26 @@ Diese wurde in umgekehrter Polung angelegt, da Natrium unter Aussendung eines Po
 \subsubsection{Bestimmung der Endpunktsenergie von Natrium}
 Es soll nun die Endpunktsenergie von \isotope[22]{Na} bestimmt werden.
 Die Vorgehensweise dazu ist analog zur Bestimmung der Endpunktsenergie von Thallium in Abschnitt \ref{sssec:kurie_thallium} mit Ausnahme, dass die Fermi-Funktion von Natrium direkt aus \cite{riezler} abgelesen wurde.
-\begin{align}
-	m &= \num{-2.96+- 0.12} \\
-	\epsilon_0 &= \num{2.077 +- 0.014}
-\end{align}
-
-Literaturwert:
-\begin{align}
-	Q_\mathrm{Na} = \SI{545.7 +- 0.4}{\kilo\electronvolt}
-\end{align}
-
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_kurie.tex}
 	\caption{Kurie-Darstellung des Spektrums von \isotope[22]{Na}. Die Anpassung einer Geraden an den linearen Teil des Graphens (Bereich der Anpassung: $\num{1.5} \leq \epsilon \leq {2.0}$) ergibt den Endpunkt $\epsilon_0 = \num{2.077 +- 0.014}$.}
 	\label{fig:natrium_kurie}
 \end{figure}
+Es ergeben sich für die angepasste Gerade in \ref{fig:natrium_kurie} die folgenden Werte für die Steigung $m$ und die Entpunktsenergie $\epsilon_0$:
+\begin{align}
+	m &= \num{-2.96+- 0.12} \\
+	\epsilon_0 &= \num{2.077 +- 0.014}
+\end{align}
+Rechnet man diesen Wert für die (dimensionslose) Endpunktsenergie in die Zerfallsenergie um erhält mit REF THEORIE WIE OBEN man:
+\begin{align}
+Q_\mathrm{Na} = \SI{550.3+-7.2}{\kilo\electronvolt}
+\end{align}
+Der Vergleich mit dem Literaturwert
+\begin{align}
+	Q^{\mathrm{Lit.}}_\mathrm{Na} = \SI{545.7 +- 0.4}{\kilo\electronvolt}
+\end{align}
+liefert im Rahmen des Fehlers eine gute Übereinstimmung.
 
 \section{Fazit}
 

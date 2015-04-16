@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
-<ipe version="70005" creator="Ipe 7.1.5">
-<info created="D:20150412113353" modified="D:20150412121225"/>
+<ipe version="70107" creator="Ipe 7.1.7">
+<info created="D:20150412113353" modified="D:20150416212803"/>
 <preamble>% Encoding für Umlaute
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -254,7 +254,7 @@ h
 128 576 m
 128 0 0 -128 251.952 544.065 376.067 575.361 a
 </path>
-<text transformations="translations" pos="128 560" stroke="black" type="label" width="8.986" height="11.855" depth="0" halign="center" valign="baseline" size="LARGE">S</text>
+<text transformations="translations" pos="128 560" stroke="black" type="label" width="7.587" height="9.88" depth="0" halign="center" valign="baseline" size="Large">S</text>
 <path matrix="1 0 0 1 0.184165 3.86745" stroke="black" arrow="pointed/normal">
 360 568 m
 376 568 l
@@ -263,8 +263,8 @@ h
 400 568 m
 384 568 l
 </path>
-<text matrix="1 0 0 1 4 0" transformations="translations" pos="376 552" stroke="black" type="label" width="22.871" height="11.761" depth="0" halign="center" valign="baseline" size="LARGE">$\Delta x$</text>
-<text matrix="1 0 0 1 0 -8" transformations="translations" pos="424 584" stroke="black" type="label" width="9.579" height="7.412" depth="0" valign="baseline" size="LARGE">$x$</text>
+<text matrix="1 0 0 1 4 0" transformations="translations" pos="376 552" stroke="black" type="label" width="19.688" height="9.803" depth="0" halign="center" valign="baseline" size="Large">$\Delta x$</text>
+<text matrix="1 0 0 1 0 -8" transformations="translations" pos="424 584" stroke="black" type="label" width="7.982" height="6.177" depth="0" valign="baseline" size="Large">$x$</text>
 <path stroke="black" pen="heavier">
 96 608 m
 120 608 l
@@ -292,7 +292,7 @@ h
 <use name="mark/disk(sx)" pos="256 576" size="small" stroke="black"/>
 <use name="mark/disk(sx)" pos="252 608" size="small" stroke="black"/>
 <use name="mark/disk(sx)" pos="252 544" size="small" stroke="black"/>
-<text matrix="1 0 0 1 0 4" transformations="translations" pos="188 596" stroke="black" type="label" width="8.694" height="7.41" depth="3.35" valign="baseline" size="LARGE">$\rho$</text>
+<text matrix="1 0 0 1 0 4" transformations="translations" pos="188 596" stroke="black" type="label" width="7.245" height="6.176" depth="2.79" valign="baseline" size="Large">$\rho$</text>
 <path stroke="black">
 128 576 m
 252 608 l
@@ -319,10 +319,10 @@ h
 252 544 m
 317.321 654.114 l
 </path>
-<text matrix="1 0 0 1 56.3112 85.4101" transformations="translations" pos="188 596" stroke="black" type="label" width="5.151" height="4.297" depth="1.93" valign="baseline">$\rho$</text>
-<text matrix="1 0 0 1 80.1734 49.3926" transformations="translations" pos="188 596" stroke="black" type="label" width="5.151" height="4.297" depth="1.93" valign="baseline">$\rho$</text>
-<text matrix="1 0 0 1 93.3664 10.779" transformations="translations" pos="188 596" stroke="black" type="label" width="5.151" height="4.297" depth="1.93" valign="baseline">$\rho$</text>
-<text matrix="1 0 0 1 -4 -4" transformations="translations" pos="86.4106 615.56" stroke="black" type="label" width="36.839" height="11.853" depth="3.35" valign="baseline" size="LARGE">Spalt</text>
+<text matrix="1 0 0 1 56.3112 85.4101" transformations="translations" pos="188 596" stroke="black" type="label" width="7.245" height="6.176" depth="2.79" valign="baseline" size="Large">$\rho$</text>
+<text matrix="1 0 0 1 80.1734 49.3926" transformations="translations" pos="188 596" stroke="black" type="label" width="7.245" height="6.176" depth="2.79" valign="baseline" size="Large">$\rho$</text>
+<text matrix="1 0 0 1 93.3664 10.779" transformations="translations" pos="188 596" stroke="black" type="label" width="7.245" height="6.176" depth="2.79" valign="baseline" size="Large">$\rho$</text>
+<text matrix="1 0 0 1 4 -4" transformations="translations" pos="86.4106 615.56" stroke="black" type="label" width="31.102" height="9.879" depth="2.79" valign="baseline" size="Large">Spalt</text>
 <path matrix="1 0 0 1 -32 0" stroke="black">
 4 0 0 4 160 736 e
 </path>
@@ -393,8 +393,8 @@ h
 144.273 613.269 m
 23.4505 0 0 23.4505 129.461 595.089 124.53 618.015 a
 </path>
-<text matrix="1 0 0 1 -81.1221 -29.8008" transformations="translations" pos="216 640" stroke="black" type="label" width="6.018" height="3.864" depth="1.74" valign="baseline" size="small">$\varphi$</text>
-<text matrix="1 0 0 1 -90.2527 -27.8401" transformations="translations" pos="216 640" stroke="black" type="label" width="6.018" height="3.864" depth="1.74" valign="baseline" size="small">$\varphi$</text>
-<text matrix="1 0 0 1 207.484 -21.741" transformations="translations" pos="148 728" stroke="black" type="label" width="13.675" height="16.622" depth="0" valign="baseline" size="LARGE">$\vec{B}$</text>
+<text matrix="1 0 0 1 -81.1221 -29.8008" transformations="translations" pos="216 640" stroke="black" type="label" width="6.517" height="4.297" depth="1.93" valign="baseline">$\varphi$</text>
+<text matrix="1 0 0 1 -90.2527 -27.8401" transformations="translations" pos="216 640" stroke="black" type="label" width="6.517" height="4.297" depth="1.93" valign="baseline">$\varphi$</text>
+<text matrix="1 0 0 1 215.484 -13.741" transformations="translations" pos="148 728" stroke="black" type="label" width="11.395" height="13.852" depth="0" valign="baseline" size="Large">$\vec{B}$</text>
 </page>
 </ipe>

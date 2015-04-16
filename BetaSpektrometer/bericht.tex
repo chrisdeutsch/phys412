@@ -183,43 +183,47 @@ In der beobachteten Energieverteilung fehlte also immer ein Beitrag, der später
 \\
 \\
 Fermi beschreibt die Wahrscheinlichkeit, dass ein Teilchen mit Impuls $p$ emittiert wird als quantenmechanische Übergangswahrscheinlichkeit, die sich aus der Störungstheorie ergibt.
-Für ein Elektron, das im Impulsintervall zwischen $p$ und $p+\text{d}p$ emittiert wird, ist die Wahrscheinlichkeit pro Zeiteinheit dann gegeben als \cite{mayer-kuckuk}:
+Für ein Elektron, das im Impulsintervall zwischen $p$ und $p+\text{d}p$ emittiert wird, ist die Wahrscheinlichkeit pro Zeiteinheit dann gegeben als \cite{mayer-kuckuk}
 \begin{align}
 	N(p)\text{d}p = \frac{2\pi}{\hbar}\left|\Braket{f|H|i}\right|^2\frac{\text{d}n}{\text{d}E_0}
+	\label{eq:fermispektrum}
 \end{align}
-\begin{itemize}
-	\item Einführung: historische Relevanz des kontinuierlichen Spektrums (Dreikörperzerfall und kein Zweikörperzerfall)
-	\item Spektrum
-	\item erlaubte Übergänge
-	\item Kurieplot
-	\item verbotene Übergänge
-	\item Einfluß des Coulombfeldes
-\end{itemize}
+mit $\bra{f}$ und $\Ket{i}$ dem End- und Anfangszustand sowie $\frac{\text{d}n}{\text{d}E_0}$ der Dichte der Endzustände pro Energieintervall.
+Für den Übergang vom Anfangs- in den Endzustand lassen sich Bedingungen formulieren.
+Dabei wird wie oben bereits erwähnt in allen Fällen vorausgesetzt, dass der Zerfall energetisch möglich ist.
+Die s.g. erlaubten Übergänge gehen dabei von einem elektron bzw. Positron mit Bahndrehimpuls $\ell=0$ aus, für die zwei verschiedene Konfigurationen vorliegen können.
+Im Fall eines Fermi-Übergangs sind Spin des Elektrons bzw. Positrons und  des Neutrions antiparallel (Gesamtspin $S=0$), für Gamow-Teller-Übergänge stehen die Spins parallel (Gesamtspin $S=\pm1$).
+Übergänge mit höheren Bahndrehimpulsen können zwar auftreten, sind aber stark unterdrückt, weswegen sie auch als verbotene Übergänge bezeichnet werden.
 
-Spektrum nach Krane:
+\subsubsection{Einfluss des Coulombfeldes}
+Das mit der Fermitheorie entwickelte Spektrum \eqref{eq:fermispektrum} erhält durch die Coulombkraft des Kerns eine Verformung, die hier beachtet werden muss.
+Das Coulombfeld des Kerns wirkt anziehend auf Elektronen, so dass das Spektrum im Bereich kleiner Impulse eine Erhöhung im Gegensatz zum nicht korrigierten Spektrum aufweist, für Positronen analog eine Abflachung.
+Dieses Phänomen kann durch Multiplikation des Spektrums mit der s.g. Fermifunktion $F(Z, p)$ berücksichtigt werden.\\
+\\
+Da das Matrixelement $\Braket{f|H|i}=M_{fi}$ als energieunabhängig angenommen werden kann, kann man das Spektrum bei Vernachlässigung verbotener Übergänge und Berücksichtigung der Fermifunktion nach \cite{krane} schreiben als
 \begin{align}
-	N(p) \propto p^2 \left( Q - T_\mathrm{e} \right)^2 F(Z, p) \left| M_{fi} \right|^2 S(p, q)
+	N(p) \propto p^2 \left( Q - T_\mathrm{e} \right)^2 F(Z, p) \left| M_{fi} \right|^2
+	\label{eq:spektrum_krane}
 \end{align}
+wobei $Q$ die Zerfallsenergie und $T_\mathrm{e}$ die kinetische Energie des Elektrons (bzw. Positrons, da beide Leptonen die gleiche Masse haben) bezeichnet.
 
-Aufpassen bei der Definition von $\epsilon_0$ im Kurie-Plot von Riezler-Kopitzki.
-Da kann gut und gerne mal $\pm \SI{511}{\kilo\electronvolt}$ rauskommen wenn man die falsche Definition verwendet.
-
-Man definiert:
+\subsubsection{Kurieplot}
+Zur Bestimmung der Endpunktsenergie hat sich die nach Franz Kurie benannte Darstellung des Kurieplots bewährt, bei der das Zerfallsspektrum als lineare Funktion der Energie aufgetragen wird.
+Zur Vereinfachung werden folgende dimensionslose Größen eingeführt:
 \begin{align}
 	\epsilon = 1 + \frac{E_\mathrm{kin}}{m_\mathrm{e} c^2} \\
 	\eta = \frac{p}{m_\mathrm{e} c} \\
 	\epsilon_0 = 1 + \frac{Q}{m_\mathrm{e} c^2} \\
 \end{align}
-Unsinnige Definition $\epsilon_0$ aber damit folgt Riezler-Kopitzki Form.
-
-Kurie-Plot (kurze Form):
+Das Spektrum aus \eqref{eq:spektrum_krane} kann man mit
+\begin{align}
+N(\epsilon) = N(p) \frac{\mathrm{d}p}{\mathrm{d}\epsilon}\propto N(p) \frac{\epsilon}{\eta}
+\end{align}
+als Funktion der Energie schreiben und man erhält durch Umstellen die benötigte Form, die im Kurieplot aufgetragen wird:
 \begin{align}
 	\sqrt{\frac{N(\epsilon)}{F(Z,\epsilon) \eta \epsilon}} \propto (\epsilon_0 - \epsilon)
 \end{align}
-
-\begin{align}
-	N(\epsilon) = N(p) \frac{\mathrm{d}p}{\mathrm{d}\epsilon}\propto N(p) \frac{\epsilon}{\eta}
-\end{align}
+Durch Extrapolierung der so entstehenden Gerade kann die Endpunktsenergie $\epsilon_0$ direkt als Schnittpunkt mit der horizontalen Achse abgelesen werden.
 
 \subsubsection{Innere Konversion und Augereffekt}
 
@@ -271,7 +275,7 @@ Relative Linienbreite:
 \subsubsection{Halbkreisförmiges Spektrometer}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{./figures/semicircular_spectrometer.pdf}
+	\includegraphics[width=0.75\textwidth]{./figures/semicircular_spectrometer.pdf}
 	\caption{Halbkreisförmiges Spektrometer}
 	\label{fig:semicirc_spectro}
 \end{figure}
@@ -284,7 +288,7 @@ Vorteil: einfache Konstruktion, Magnetfeld leicht zu messen, gut geeignet um gro
 \subsubsection{Doppelt-fokussierendes Spektrometer}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{./figures/pisqrt2_spectrometer.pdf}
+	\includegraphics[width=0.6\textwidth]{./figures/pisqrt2_spectrometer.pdf}
 	\caption{Doppelt-fokussierendes Spektrometer}
 	\label{fig:pisqrt2_spectro}
 \end{figure}

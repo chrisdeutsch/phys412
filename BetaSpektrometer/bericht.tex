@@ -635,14 +635,30 @@ und der Fehler berechnet sich zu:
 	}
 \end{align}
 Die so berechneten Punkte in dem Kurie-Diagramm wurden in Tabelle \ref{tab:kurie_tl} aufgetragen, dabei ist zu beachten, dass nur die Werte eingetragen sind, für die der Radikand von Gleichung \ref{eq:kurie_y} einen positiven Wert annimmt.
-
+Die Anpassung erfolgt über die Hypothese:
+\begin{align}
+	y = m (\epsilon - \epsilon_0)
+\end{align}
+mit den Anpassungsparametern $m$ und $\epsilon_0$.
 \begin{figure}[h]
 	\centering
 	\input{./plots/thallium_kurie.tex}
-	\caption{Kurie-Darstellung des Spektrums von \isotope[204]{Tl}. Die Anpassung einer Geraden an den linearen Teil des Graphens (FITRANGE) ergibt den Endpunkt $\epsilon_0 = \num{2.38 +- 0.05}$ (TODO).}
+	\caption{Kurie-Darstellung des Spektrums von \isotope[204]{Tl}. Die Anpassung einer Geraden an den linearen Teil des Graphens (Bereich der Anpassung: $\num{1.8} \leq \epsilon \leq {2.4}$) ergibt den Endpunkt $\epsilon_0 = \num{2.401 +- 0.020}$.}
 	\label{fig:thallium_kurie}
 \end{figure}
-
+So kann der Endpunkt des Kurie-Diagramms direkt abgelesen werden.
+\begin{align}
+	m &= \num{-0.457 +- 0.026} \\
+	\epsilon_0 &= \num{2.401 +- 0.020}
+\end{align}
+Aus dem Endpunkt $\epsilon_0$ kann nun die Zerfallsenergie berechnet werden (REF THEORIE):
+\begin{align}
+	Q = (\epsilon_0 - 1) \cdot m_\mathrm{e} c^2
+\end{align}
+Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt sich:
+\begin{align}
+	Q_\mathrm{Tl} = \SI{716 +- 11}{\kilo\electronvolt}
+\end{align}
 
 \subsubsection{Spektrum von Natrium}
 \begin{table}[ht]
@@ -662,13 +678,21 @@ Mit der Korrektur der Hallspannung und nach Abziehen des Untergrunds erhält man
 \end{figure}
 
 \subsubsection{Bestimmung der Endpunktsenergie von Natrium}
+\begin{align}
+	m &= \num{-2.96+- 0.12} \\
+	\epsilon_0 &= \num{2.077 +- 0.014}
+\end{align}
+
+\begin{align}
+	Q_\mathrm{Na} = \SI{550 +- 8}{\kilo\electronvolt}
+\end{align}
+
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_kurie.tex}
-	\caption{Kurie-Darstellung des Spektrums von \isotope[22]{Na}. Die Anpassung einer Geraden an den linearen Teil des Graphens (FITRANGE) ergibt den Endpunkt $\epsilon_0 = \num{2.1 +- 0.05}$ (TODO).}
+	\caption{Kurie-Darstellung des Spektrums von \isotope[22]{Na}. Die Anpassung einer Geraden an den linearen Teil des Graphens (Bereich der Anpassung: $\num{1.5} \leq \epsilon \leq {2.0}$) ergibt den Endpunkt $\epsilon_0 = \num{2.077 +- 0.014}$.}
 	\label{fig:natrium_kurie}
 \end{figure}
-
 
 \section{Fazit}
 

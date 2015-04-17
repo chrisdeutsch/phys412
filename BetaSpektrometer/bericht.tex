@@ -286,7 +286,7 @@ wobei $\Delta B \rho$ die volle Halbwertsbreite (\emph{full width at half maximu
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{./figures/semicircular_spectrometer.pdf}
-	\caption{Aufbau eines halbkreisförmigen Spektrometers}
+	\caption{Aufbau eines halbkreisförmigen Spektrometers. $\Delta x$ ist die resultierende Bildbreite auf dem Detektor.}
 	\label{fig:semicirc_spectro}
 \end{figure}
 Ein halbkreisförmiges Spektrometer (Abbildung \ref{fig:semicirc_spectro}) nutzt ein homogenes Magnetfeld senkrecht zur Flugrichtung der Elektronen um diese auf eine Kreisbahn zu lenken.
@@ -604,12 +604,7 @@ Das so gewonnene Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spe
 
 \subsubsection{Bestimmung der Maximalenergie von Thallium}
 \label{sssec:kurie_thallium}
-
-Literatur:\\
-
-
-
-Die Bestimmung der Maximalenergie der $\beta$-Spektren erfolgt hier über die Bestimmung des Endpunktes $\epsilon_0$ im Kurie-Diagramm \ref{fig:thallium_kurie}.
+Die Bestimmung der Maximalenergie der $\beta$-Spektren erfolgt hier über die Bestimmung des Endpunktes $\epsilon_0$ im Kurie-Diagramm in Abbildung \ref{fig:thallium_kurie}.
 In dieser Darstellung wird die Fermi-Funktion von Thallium für verschiedene Impulse $\eta$ beziehungsweise Energien $\epsilon$ benötigt.
 Dazu werden die in \cite{anleitung} gegebenen Datenpunkte extrapoliert, indem eine geeignete Kurve an diese angepasst wird.
 Als Anpassungshypothese wird gemäß \cite{fermi_function}:
@@ -632,7 +627,7 @@ Trägt man die angepasste Funktion und die in \cite{anleitung} gegebenen Datenpu
 	\label{fig:fermi_tl}
 \end{figure}
 Nun kann die Berechnung des Graphen in der Kurie-Darstellung erfolgen.
-Dazu empfiehlt es sich die dimensionslose Darstellung von Impuls $\eta$ und Energie $\epsilon$ zu verwenden.
+Dazu empfiehlt es sich, die dimensionslose Darstellung von Impuls $\eta$ und Energie $\epsilon$ zu verwenden.
 Zunächst wird dazu aus dem $(B \rho)$-Wert der Tabelle \ref{tab:spektrum_tl} der dimensionslose Impuls gemäß Gleichung \eqref{eq:brho_to_eta} berechnet.
 Dementsprechend ergibt sich der Fehler mittels Gauß'scher Fehlerfortpflanzung zu:
 \begin{align}
@@ -655,7 +650,7 @@ und der Fehler berechnet sich zu:
 	\left( \frac{\Delta N^2}{N} + N \frac{\Delta \eta^2}{\eta^2} + N \frac{\Delta \epsilon^2}{\epsilon^2} \right)
 	}
 \end{align}
-Die so berechneten Punkte in dem Kurie-Diagramm wurden in Tabelle \ref{tab:kurie_tl} aufgetragen, dabei ist zu beachten, dass nur die Werte eingetragen sind, für die der Radikand von Gleichung \ref{eq:kurie_y} einen positiven Wert annimmt.
+Die so berechneten Punkte in dem Kurie-Diagramm wurden in Tabelle \ref{tab:kurie_tl} aufgetragen, wobei zu beachten ist, dass nur die Werte eingetragen sind, für die der Radikand von Gleichung \eqref{eq:kurie_y} einen positiven Wert annimmt.
 Die Anpassung erfolgt über die Hypothese:
 \begin{align}
 	y = m (\epsilon - \epsilon_0)
@@ -672,7 +667,8 @@ So kann der Endpunkt des Kurie-Diagramms direkt abgelesen werden.
 	m &= \num{-0.457 +- 0.026} \\
 	\epsilon_0 &= \num{2.401 +- 0.020}
 \end{align}
-Aus dem Endpunkt $\epsilon_0$ kann nun die Zerfallsenergie berechnet werden (REF THEORIE):
+Aus dem Endpunkt $\epsilon_0$ (d.h. die maximalen Energie) kann nun die Zerfallsenergie $Q$ berechnet werden.
+Sie ergibt sich durch Abziehen der Ruhemasse des Elektrons und Umwandlung der dimensionslosen Größen in natürliche Einheiten:
 \begin{align}
 	Q = (\epsilon_0 - 1) \cdot m_\mathrm{e} c^2\\
 	\Delta Q = \Delta \epsilon_0 \cdot m_\mathrm{e} c^2

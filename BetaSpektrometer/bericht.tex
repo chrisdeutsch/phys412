@@ -341,8 +341,8 @@ Der Vorteil gegenüber dem halbkreisförmigen Spektrometer liegt darin, dass die
 \section{Versuchsaufbau}
 Für diesen Versuch wird ein doppeltfokussierendes $\pi\sqrt{2}$-Spektrometer, wie es in der Theorie erklärt wird, verwendet.
 Dieses wird für die Messungen korrekt verschlossen und anschließend mit der zur Verfügung stehenden Vakuumpumpe evakuiert.
-Vor Inbetriebnahme des Magneten muss die Wasserkühlung aktiviert werden, erst danach kann der Strom am Drehregler des Transformators eingeschaltet werden.
-Das während der Messung am Detektor registrierte Signal wird anschließend in ein logisches Signal umgewandelt, welches in eine Zähleinheit mit einstellbarer Messzeit geleitet wird, an der auf einer LED Matrix die Zählrate abgelesen werden kann.
+Vor Inbetriebnahme des Magneten muss dessen Wasserkühlung aktiviert werden, erst danach kann der Strom am Drehregler des Transformators eingeschaltet werden.
+Der während der Messung am Halbleiterdetektor registrierte Puls wird anschließend in ein logisches Signal umgewandelt, welches in eine Zähleinheit mit einstellbarer Messzeit geleitet wird, an der auf einer LED Matrix die Anzahl der Ereignisse abgelesen werden kann.
 
 \section{Durchführung und Auswertung}
 Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
@@ -356,9 +356,9 @@ Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweili
 	\caption{Skizzierte Hysteresekurve. Der tatsächliche Spannungswert für $I=\SI{0}{\ampere}$ ergibt sich aus Mittelung von $U_\text{+}$ und $U_\text{-}$.}
 	\label{fig:hysterese}
 \end{wrapfigure}
-Zu Beginn des Versuchs wird zur Bestimmung der Offsetspannung das Spektrometer ohne Präparat evakuiert.
+Zu Beginn des Versuchs wird zur Bestimmung der Offsetspannung das Spektrometer evakuiert.
 Die Messung des Magnetfelds des Spektrometers wird mit einer Hallsonde durchgeführt, die jedoch auch bei ausgeschaltetem Magnetfeld eine Spannung ungleich null anzeigt.
-Um die tatsächliche Offsetspannung zu ermitteln, nutzt man die Hysterese des Magneten aus und misst beim Durchlaufen der Hystereseschleife, die jeweiligen Remanenzfelder (als Hallspannung $U_\text{H}$) bei abgeschaltetem Magnetstrom.
+Um die tatsächliche Offsetspannung zu ermitteln, nutzt man die Hysterese des Magneten aus und misst beim mehrfachen Durchlaufen der Hystereseschleife, die jeweiligen Remanenzfelder (als Hallspannung $U_\text{H}$) bei abgeschaltetem Magnetstrom.
 Bei jeder Messung wird das arithmetische Mittel (mit $U_0$ bezeichnet) von $U_\text{+}$ und $U_\text{-}$ berechnet und im Anschluss über alle $U_0$ wiederholt gemittelt, um einen Wert für die Offsetspannung $\overline{U}_0$ zu erhalten.
 \begin{table}[h]
 	\centering
@@ -376,7 +376,7 @@ Den im weiteren Verlauf benutzten Wert für die Offsetspannung $\overline{U}_0$ 
 \end{align}
 und alle gemessenen Hallspannungen werden in der folgenden Auswertung um
 \begin{align}
-	\overline{U}_0 = \SI{7.16 +- 0.03}{\skt}
+	\overline{U}_0 = \SI{7.16 +- 0.04}{\skt}
 	\label{hall_korrektur}
 \end{align}
 korrigiert.
@@ -518,7 +518,7 @@ mit dem Schwerpunkt $\mu$ und der Breite (Standardabweichung) $\sigma$ beschreib
 	\caption{Bereich der K- und L-Konversionslinien des angeregten \isotope[137]{Ba} Tochterkerns im Zerfall von \isotope[137]{Cs} bei \SI{1}{\percent} Transmission und einer Messdauer von \SI{100}{\second}. An die Datenpunkte wurde eine Summe von zwei Gaußfunktionen mit konstantem Versatz angepasst.}
 	\label{fig:ba_t1_fein}
 \end{figure}
-Die mit \texttt{gnuplot} gefundenen Werte für die Anpassungsparameter $\mu$ und $\sigma$ (die einer Spannung in Skalenteilen entsprechen) wurden für die jeweiligen Schalen und Transmissionen in Tabelle \ref{tab:fitergebnisse_ba} festgehalten.
+Die mit \texttt{gnuplot} gefundenen Werte für die Anpassungsparameter $\mu$ und $\sigma$ (die einer Spannung in Skalenteilen entsprechen) wurden für die jeweiligen Linien und Transmissionen in Tabelle \ref{tab:fitergebnisse_ba} festgehalten.
 Wie in der Darstellung ersichtlich ist die Anpassung für die Messwerte des bei \SI{1}{\percent} Transmission vor allem für die K-Schale nicht gut gelungen.
 Man sieht eine deutliche Abweichung der Messwerte von einer Gaußfunktion, jedoch liefert die Anpassung der Schwerpunkte sinnvolle Werte, so dass diese für die Auswertung verwendet werden.
 \begin{table}[h]
@@ -570,12 +570,14 @@ Aufgrund des linearen Zusammenhangs zwischen Hallspannung $U_\mathrm{H}^\mathrm{
 	R = \frac{\Delta (B \rho)}{B \rho} = \frac{\Delta U_\mathrm{H}^\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}}
 \end{align}
 Bei diesen Berechnungen muss beachtet werden, dass mit $\Delta$ bezeichnete Größen in diesem Zusammenhang keinen Fehler angeben, sondern die jeweiligen Halbwertsbreiten darstellen.
+Die relativen Linienbreiten wurden in Tabelle \ref{tab:aufloesungsvermoegen} dargestellt.
 \begin{table}[h]
 	\centering
 	\input{./tables/aufloesungsvermoegen.tex}
 	\caption{Relative Linienbreiten bei verschiedenen Transmissionen als Kenngröße für das Auflösungsvermögen. $\overline{R}$ kennzeichnet den fehlergewichteten Mittelwert der Linien bei konstanter Transmission.}
 	\label{tab:aufloesungsvermoegen}
 \end{table}
+(INTERPRETATION)
 
 \subsection{Bestimmung der Zerfallsenergie}
 (MOTIVATION)
@@ -604,11 +606,6 @@ Das so gewonnene Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spe
 
 \subsubsection{Bestimmung der Maximalenergie von Thallium}
 \label{sssec:kurie_thallium}
-
-Literatur:\\
-
-
-
 Die Bestimmung der Maximalenergie der $\beta$-Spektren erfolgt hier über die Bestimmung des Endpunktes $\epsilon_0$ im Kurie-Diagramm \ref{fig:thallium_kurie}.
 In dieser Darstellung wird die Fermi-Funktion von Thallium für verschiedene Impulse $\eta$ beziehungsweise Energien $\epsilon$ benötigt.
 Dazu werden die in \cite{anleitung} gegebenen Datenpunkte extrapoliert, indem eine geeignete Kurve an diese angepasst wird.
@@ -672,10 +669,11 @@ So kann der Endpunkt des Kurie-Diagramms direkt abgelesen werden.
 	m &= \num{-0.457 +- 0.026} \\
 	\epsilon_0 &= \num{2.401 +- 0.020}
 \end{align}
-Aus dem Endpunkt $\epsilon_0$ kann nun die Zerfallsenergie berechnet werden (REF THEORIE):
+Aus dem Endpunkt $\epsilon_0$ kann nun die Zerfallsenergie berechnet werden:
 \begin{align}
-	Q = (\epsilon_0 - 1) \cdot m_\mathrm{e} c^2\\
+	Q = (\epsilon_0 - 1) \cdot m_\mathrm{e} c^2 \qquad
 	\Delta Q = \Delta \epsilon_0 \cdot m_\mathrm{e} c^2
+	\label{eq:zerfallsenergie}
 \end{align}
 Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt sich:
 \begin{align}
@@ -683,6 +681,7 @@ Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt
 \end{align}
 Der in \cite{tl_literatur} gegebene Wert von $Q_\mathrm{Tl} = \SI{763.76 +- 0.18}{\kilo\electronvolt}$ kann nicht erreicht werden.
 Mögliche Ursachen dafür sind:
+(INTERPRETATION)
 \FloatBarrier
 
 \subsubsection{Spektrum von Natrium}
@@ -696,8 +695,7 @@ Bei der Auswertung des Natrium-Zerfalls wird analog zu den beiden anderen Zerfä
 Der über \SI{100}{\second} gemessene Untergrund bei \SI{4}{\percent} Transmission ist in Tabelle \ref{tab:untergrund_na} festgehalten worden.
 Mit der Korrektur der Hallspannung und nach Abziehen des Untergrunds erhält man das in Abbildung \ref{fig:natrium_spectrum} gezeigte Spektrum für den Zerfall von Natrium.
 Die dazu gehörenden Messwerte sind in Tabelle \ref{tab:spektrum_na} notiert.
-Hier muss beachtet werden, dass die Hallspannung durchweg ein anderes Vorzeichen hat als bei den anderen Spektren.
-Diese wurde in umgekehrter Polung angelegt, da Natrium unter Aussendung eines Positrons zerfällt ($\beta^+$-Zerfall).
+Hier muss beachtet werden, dass die Hallspannung durchweg ein anderes Vorzeichen hat als bei den anderen Spektren, da Natrium unter Aussendung eines Positrons zerfällt ($\beta^+$-Zerfall).
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_spektrum.tex}
@@ -709,28 +707,30 @@ Diese wurde in umgekehrter Polung angelegt, da Natrium unter Aussendung eines Po
 \subsubsection{Bestimmung der Endpunktsenergie von Natrium}
 Es soll nun die Endpunktsenergie von \isotope[22]{Na} bestimmt werden.
 Die Vorgehensweise dazu ist analog zur Bestimmung der Endpunktsenergie von Thallium in Abschnitt \ref{sssec:kurie_thallium} mit Ausnahme, dass die Fermi-Funktion von Natrium direkt aus \cite{riezler} abgelesen wurde.
+Die für die Kurie-Darstellung berechneten Werte wurden in Tabelle \ref{tab:kurie_na} tabelliert.
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_kurie.tex}
 	\caption{Kurie-Darstellung des Spektrums von \isotope[22]{Na}. Die Anpassung einer Geraden an den linearen Teil des Graphens (Bereich der Anpassung: $\num{1.5} \leq \epsilon \leq {2.0}$) ergibt den Endpunkt $\epsilon_0 = \num{2.077 +- 0.014}$.}
 	\label{fig:natrium_kurie}
 \end{figure}
-Es ergeben sich für die angepasste Gerade in \ref{fig:natrium_kurie} die folgenden Werte für die Steigung $m$ und die Entpunktsenergie $\epsilon_0$:
+Es ergeben sich für die angepasste Gerade in Abbildung \ref{fig:natrium_kurie} die folgenden Werte für die Steigung $m$ und die Endpunktsenergie $\epsilon_0$:
 \begin{align*}
 	m &= \num{-2.96+- 0.12} \\
 	\epsilon_0 &= \num{2.077 +- 0.014}
 \end{align*}
-Rechnet man diesen Wert für die (dimensionslose) Endpunktsenergie in die Zerfallsenergie um erhält mit REF THEORIE WIE OBEN man:
+Rechnet man diesen Wert für die (dimensionslose) Endpunktsenergie in die Zerfallsenergie um erhält man mit Gleichung \ref{eq:zerfallsenergie}:
 \begin{align*}
 Q_\mathrm{Na} = \SI{550.3+-7.2}{\kilo\electronvolt}
 \end{align*}
-Der Vergleich mit dem Literaturwert
+Der Vergleich mit dem Literaturwert \cite{na_literatur}
 \begin{align*}
 	Q^{\mathrm{Lit.}}_\mathrm{Na} = \SI{545.7 +- 0.4}{\kilo\electronvolt}
 \end{align*}
 liefert im Rahmen des Fehlers eine gute Übereinstimmung.
 
 \section{Fazit}
+(FAZIT)
 
 \clearpage
 % BIBLIOGRAPHIE

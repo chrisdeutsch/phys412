@@ -1,13 +1,15 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70107" creator="Ipe 7.1.7">
-<info created="D:20150412123030" modified="D:20150416213608"/>
+<info created="D:20150412123030" modified="D:20150417212141"/>
 <preamble>% Encoding für Umlaute
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
 % Silbentrennung
 \usepackage[ngerman]{babel}
+
+\usepackage{amsmath}
 </preamble>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
@@ -255,7 +257,7 @@ h
 261.575 619.865 m
 33.2219 0 0 -33.2219 288 640 314.439 619.884 a
 </path>
-<text matrix="0.969616 0 0 0.969616 -57.1892 32.9805" transformations="translations" pos="280 664" stroke="black" type="label" width="27.462" height="12.91" depth="2.01" halign="center" valign="baseline" size="Large">$\pi \sqrt{2}$</text>
+<text matrix="0.969616 0 0 0.969616 -57.1892 32.9805" transformations="translations" pos="280 664" stroke="black" type="label" width="27.462" height="13.02" depth="1.9" halign="center" valign="baseline" size="Large">$\pi \sqrt{2}$</text>
 <path matrix="0.969616 0 0 0.969616 -64.9461 48.4942" stroke="black">
 183.632 560.532 m
 124.203 0 0 -124.203 288.046 627.792 392.443 560.504 a
@@ -264,7 +266,7 @@ h
 183.633 560.533 m
 138.829 0 0 -138.829 288.051 652.023 392.443 560.504 a
 </path>
-<text matrix="0.969616 0 0 0.969616 -70.8195 50.9794" transformations="translations" pos="190.671 548.602" stroke="black" type="label" width="7.587" height="9.88" depth="0" valign="baseline" size="Large">S</text>
+<text matrix="0.969616 0 0 0.969616 -70.8195 46.9794" transformations="translations" pos="190.671 548.602" stroke="black" type="label" width="7.587" height="9.88" depth="0" valign="baseline" size="Large">S</text>
 <path matrix="0.969616 0 0 0.969616 -64.9461 48.4942" stroke="black" dash="dotted" arrow="normal/normal">
 288 640 m
 156.79 639.997 l
@@ -358,12 +360,13 @@ h
 157.172 738.828 m
 162.828 733.172 l
 </path>
-<text matrix="0.969616 0 0 0.969616 -64.9461 56.2509" transformations="translations" pos="384 776" stroke="black" type="label" width="46.368" height="13.846" depth="8.31" halign="center" valign="baseline" size="Large">$\vec{B} \propto \frac{1}{\sqrt{\rho}}$</text>
+<text matrix="0.969616 0 0 0.969616 -32.9461 40.2509" transformations="translations" pos="384 776" stroke="black" type="label" width="52.115" height="18.935" depth="14.69" halign="center" valign="baseline" size="Large">$\vec{B} \propto \dfrac{1}{\sqrt{\rho}}$</text>
 <path matrix="0.969616 0 0 0.969616 -64.9461 48.4942" stroke="black" pen="heavier">
 198.204 672.044 m
 176.922 679.614 l
 152.626 688.231 m
 132.084 695.486 l
 </path>
+<text transformations="translations" pos="48 736" stroke="black" type="label" width="31.102" height="9.879" depth="2.79" valign="baseline" size="Large">Spalt</text>
 </page>
 </ipe>

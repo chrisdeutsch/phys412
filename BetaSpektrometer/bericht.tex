@@ -286,7 +286,7 @@ wobei $\Delta B \rho$ die volle Halbwertsbreite (\emph{full width at half maximu
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{./figures/semicircular_spectrometer.pdf}
-	\caption{Halbkreisförmiges Spektrometer}
+	\caption{Aufbau eines halbkreisförmigen Spektrometers}
 	\label{fig:semicirc_spectro}
 \end{figure}
 Ein halbkreisförmiges Spektrometer nutzt ein homogenes Magnetfeld senkrecht zur Flugrichtung der Elektronen um diese auf eine Kreisbahn zu lenken.
@@ -299,7 +299,7 @@ Vorteil: einfache Konstruktion, Magnetfeld leicht zu messen, gut geeignet um gro
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{./figures/pisqrt2_spectrometer.pdf}
-	\caption{Doppelt-fokussierendes Spektrometer}
+	\caption{Aufbau eines doppeltfokussierenden Spektrometers}
 	\label{fig:pisqrt2_spectro}
 \end{figure}
 Im doppelt-fokussierenden Spektrometer werden analog zum Halbkreisförmigen durch ein statisches Magnetfeld auf eine Kreisbahn gezwungen.
@@ -592,7 +592,7 @@ Bei diesen Berechnungen muss beachtet werden, dass mit $\Delta$ bezeichnete Grö
 \begin{wraptable}{o}{4.7cm}
 	\centering
 	\input{./tables/untergrund_tl.tex}
-	\caption{Untergrundmessung von \isotope[204]{Tl} mit einer Messdauer von \SI{100}{\second} bei \SI{4}{\percent} Transmission.}
+	\caption{Untergrundmessung von \isotope[204]{Tl} mit Messdauer \SI{100}{\second} bei \SI{4}{\percent} Transmission.}
 	\label{tab:untergrund_tl}
 \end{wraptable}
 Bei der Vermessung des Spektrums von Thallium wurde analog zu Abschnitt \ref{sssec:spektrum_caesium} vorgegangen mit der Ausnahme, dass die offsetkorrigierten Hallspannungen mit der in \ref{sssec:konversionslinien} berechneten Kalibration in $(B \rho)$-Werte umgerechnet wurden.
@@ -600,7 +600,7 @@ Insbesondere sollen die einzelnen Formeln für Umrechnungen und Fehler hier nich
 Auch für diese Messung wurde der Untergrund über eine Messzeit von \SI{100}{\second} bei einer eingestellten Transmission von \SI{4}{\percent} gemessen.
 Die Wahl der langen Messzeit ist dabei auch in den sehr geringen Zählraten aufgrund des Versuchsaufbaus begründet, obwohl dadurch der Untergrund sehr groß wird.
 Trotz einer Variation der Parameter an der Zähleinheit konnte kein besseres Verhältnis zwischen den Zählraten des Untergrunds und des Spektrums erreicht werden.
-Die Ergebnisse der Untergrundmessung finden sich in Tabelle \ref{tab:untergrund_tl}.
+Die Zählraten $N$ der Untergrundmessung finden sich in Tabelle \ref{tab:untergrund_tl}.
 Die gemessenen und die daraus berechneten Werte wurden in Tabelle \ref{tab:spektrum_tl} festgehalten.
 Das so gewonnene Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spectrum} aufgetragen.
 \begin{figure}[h]
@@ -694,18 +694,20 @@ Mögliche Ursachen dafür sind:
 \FloatBarrier
 
 \subsubsection{Spektrum von Natrium}
-\begin{wraptable}{o}{4.7cm}
+\begin{wraptable}{o}{4.8cm}
 	\centering
 	\input{./tables/untergrund_na.tex}
-	\caption{Untergrundmessung für \isotope[22]{Na} mit einer Messdauer von \SI{100}{\second} bei \SI{4}{\percent} Transmission.}
+	\caption{Untergrundmessung für \isotope[22]{Na} mit Messdauer \SI{100}{\second} bei \SI{4}{\percent} Transmission.}
 	\label{tab:untergrund_na}
 \end{wraptable}
 Bei der Auswertung des Natrium-Zerfalls wird analog zu den beiden anderen Zerfällen vorgegangen.
-Der über \SI{100}{\second} gemessene Untergrund bei \SI{4}{\percent} Transmission ist in Tabelle \ref{tab:untergrund_na} festgehalten worden.
-Mit der Korrektur der Hallspannung und nach Abziehen des Untergrunds erhält man das in Abbildung \ref{fig:natrium_spectrum} gezeigte Spektrum für den Zerfall von Natrium.
-Die dazu gehörenden Messwerte sind in Tabelle \ref{tab:spektrum_na} notiert.
-Hier muss beachtet werden, dass die Hallspannung durchweg ein anderes Vorzeichen hat als bei den anderen Spektren.
-Diese wurde in umgekehrter Polung angelegt, da Natrium unter Aussendung eines Positrons zerfällt ($\beta^+$-Zerfall).
+Die über \SI{100}{\second} gemessenen Zählraten $N$ für den Untergrund bei \SI{4}{\percent} Transmission sind in Tabelle \ref{tab:untergrund_na} festgehalten worden.
+Zur späteren Verwendung wurde hierbei abermals gemittelt und der Fehler über die Standardabweichung berechnet.
+Wie auch beim Thallium-Zerfall sind die Untergrundwerte auffallend hoch, was durch Veränderungen an den Einstellungen der Messeinheit nicht verbessert werden konnte.
+Mit der Korrektur der Hallspannung und nach Bereinigung um den Untergrund erhält man das in Abbildung \ref{fig:natrium_spectrum} gezeigte Spektrum für den Zerfall von Natrium.
+Die dazu gehörenden Messwerte sind in Tabelle \ref{tab:spektrum_na} im Anhang notiert worden.
+Dabei muss allerdings beachtet werden, dass die Hallspannung durchweg ein anderes Vorzeichen hat als bei den anderen Spektren.
+Diese wurde vor Beginn der Messung am Transformator umgepolt, da Natrium unter Aussendung eines Positrons zerfällt ($\beta^+$-Zerfall).
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_spektrum.tex}
@@ -740,12 +742,13 @@ liefert im Rahmen des Fehlers eine gute Übereinstimmung.
 
 \section{Fazit}
 
-\clearpage
+\FloatBarrier
 % BIBLIOGRAPHIE
 \vspace{\fill}
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
+
 \bibitem{krane}
 	Kenneth S. Krane,
 	\emph{Introductory Nuclear Physics},
@@ -790,53 +793,53 @@ liefert im Rahmen des Fehlers eine gute Übereinstimmung.
 
 \end{thebibliography}
 
-\clearpage
-
 % APPENDIX
 \begin{appendix}
 \section{Anhang}
+Auf den folgenden Seiten sind der Vollständigkeit halber alle gemessenen Werte sowie die jeweils zur Auswertung berechneten Werte zusammengetragen.
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/spektrum_ba4_grob.tex}
 	\caption{Messdaten des Spektrums von \isotope[137]{Cs} und daraus abgeleitete Größen bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{40}{s}$.}
 	\label{tab:spektrum_ba4_grob}
 \end{sidewaystable}
-
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/spektrum_ba4_fein.tex}
 	\caption{Messdaten des Spektrums von \isotope[137]{Cs} im Bereich der \isotope[137]{Ba} Konversionslinien und daraus abgeleitete Größen bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{40}{s}$.}
 	\label{tab:spektrum_ba4_fein}
 \end{sidewaystable}
-
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/spektrum_ba1_fein.tex}
 	\caption{Messdaten des Spektrums von \isotope[137]{Cs} im Bereich der \isotope[137]{Ba} Konversionslinien und daraus abgeleitete Größen bei einer Transmission $T = \SI{1}{\percent}$ und Messdauer $t = \SI{100}{s}$.}
 	\label{tab:spektrum_ba1_fein}
 \end{sidewaystable}
-
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/spektrum_tl.tex}
 	\caption{Messdaten des Spektrums von \isotope[204]{Tl} und daraus abgeleitete Größen bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{100}{s}$.}
 	\label{tab:spektrum_tl}
 \end{sidewaystable}
-
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/kurie_tl.tex}
 	\caption{Kurie Tl}
 	\label{tab:kurie_tl}
 \end{sidewaystable}
-
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/spektrum_na.tex}
 	\caption{Messdaten des Spektrums von \isotope[22]{Na} und daraus abgeleitete Größen bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{100}{s}$.}
 	\label{tab:spektrum_na}
 \end{sidewaystable}
-
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/kurie_na.tex}

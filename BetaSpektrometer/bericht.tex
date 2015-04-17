@@ -169,7 +169,7 @@ Man unterscheidet zwischen drei verschiedenen $\beta$-Zerfallsarten, wobei im Fo
 	\begin{align}
 	Q_{\epsilon} = m( A, Z ) - m( A, Z - 1) - E_\mathrm{Bind.}
 	\end{align}
-	Nach dem Einfang befindet sich das Atom in einem angeregten Zustand, sodass zusätlich die Bindungsenergie des eingefangenen Elektrons abgezogen werden muss.
+	Nach dem Einfang befindet sich das Atom in einem angeregten Zustand, sodass zusätzlich die Bindungsenergie des eingefangenen Elektrons abgezogen werden muss.
 \end{itemize}
 Grundsätzlich ist ein Zerfall nur möglich, wenn die Energieerhaltung erfüllt bleibt.
 Das bedeutet, dass für einen möglichen Zerfall die Zerfallsenergie $Q$ positiv sein muss.
@@ -263,19 +263,19 @@ Mit dem relativistischem Impuls $p = \gamma m v$ folgt sofort:
 \end{align}
 Man sieht, dass die Größe $B \rho$ charakteristisch für den Impuls ist und gleichzeitig eine Aussage über die Dimension des Spektrometers macht.
 Daher werden Impulse in der $\beta$-Spektroskopie als $B \rho$-Werte angegeben.
-Drückt man den Impuls durch die kinetische Energie des Teilchens aus, so berechnet sich der korrespondierende $B \rho$-Wert durch:
+Drückt man den Impuls durch die kinetische Energie des Teilchens aus, so berechnet sich der korrespondierende $B \rho$-Wert durch
 \begin{align}
 B \rho = \frac{1}{c e} \sqrt{T \left( 2 E_0 + T \right)}
 \label{eq:b_rho}
 \end{align}
 wobei $E_0$ die Ruheenergie des Teilchens beschreibt.
-Zur Umrechnung in dimensionslose Impulse ist die Gleichung:
+Zur Umrechnung in dimensionslose Impulse ist die Gleichung
 \begin{align}
 	\eta = \frac{B \rho}{\SI{1704.5}{G.cm}}
 	\label{eq:brho_to_eta}
 \end{align}
 nützlich, welche sich aus der Kombination von Gleichung \eqref{eq:impuls_radius} und \eqref{eq:eta} ergibt.
-Maßgeblich für das Auflösungsvermögen des Spektrometers ist die relative Linienbreite:
+Maßgeblich für das Auflösungsvermögen des Spektrometers ist die relative Linienbreite
 \begin{align}
 	R = \frac{\Delta (B \rho)}{B \rho}
 	\label{eq:rel_linienbreite}
@@ -286,34 +286,34 @@ wobei $\Delta B \rho$ die volle Halbwertsbreite (\emph{full width at half maximu
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{./figures/semicircular_spectrometer.pdf}
-	\caption{Halbkreisförmiges Spektrometer}
+	\caption{Aufbau eines halbkreisförmigen Spektrometers. $\Delta x$ ist die resultierende Bildbreite auf dem Detektor.}
 	\label{fig:semicirc_spectro}
 \end{figure}
 Ein halbkreisförmiges Spektrometer (Abbildung \ref{fig:semicirc_spectro}) nutzt ein homogenes Magnetfeld senkrecht zur Flugrichtung der Elektronen um diese auf eine Kreisbahn zu lenken.
 Nach Gleichung \eqref{eq:impuls_radius} ist das Produkt von Magnetfeld $B$ und Bahnradius $\rho$ charakteristisch für den Impuls des Elektrons.
 Die Vorteile eines halbkreisförmigen Spektrometers sind die einfache Konstruktion, das einfache Messen des (homogenen) Magnetfeldes und die gute Eignung zur Aufnahme großer Spektralbereiche bei konstantem Magnetfeld.
-Der maßgeblichste Nachteil dieses Spektrometers ist die fehlende Fokussierung in der Senkrechten.
+Der maßgebliche Nachteil dieses Spektrometers ist die fehlende Fokussierung in der Senkrechten.
 Diese führt dazu, dass nur geringe Transmissionen erreicht werden können.
 
 \subsubsection{Doppelt-fokussierendes Spektrometer}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{./figures/pisqrt2_spectrometer.pdf}
-	\caption{Doppelt-fokussierendes Spektrometer}
+	\caption{Aufbau eines doppeltfokussierenden Spektrometers}
 	\label{fig:pisqrt2_spectro}
 \end{figure}
-Im doppelt-fokussierenden Spektrometer werden (analog zum Halbkreisförmigen) Elektronen durch ein statisches Magnetfeld auf eine Kreisbahn gezwungen.
+\noindent Im doppelt-fokussierenden Spektrometer werden (analog zum Halbkreisförmigen) Elektronen durch ein statisches Magnetfeld auf eine Kreisbahn gezwungen.
 Allerdings führt dieses eine Fokussierung des Elektronenstrahls in zwei Raumrichtungen durch, indem ein inhomogenes Magnetfeld verwendet wird, wobei die magnetische Feldstärke auf der Sollbahn des Teilchens konstant ist.
-In einem inhomogenen Magnetfeld führen die Elektronen in transversaler Richtung sogenannte Betatron-Schwingungen aus, deren Frequenz in der jeweiligen Raumrichtung gegeben ist durch \cite{hillert}:
+In einem inhomogenen Magnetfeld führen die Elektronen in transversaler Richtung sogenannte Betatron-Schwingungen aus, deren Frequenz in der jeweiligen Raumrichtung gegeben ist durch \cite{hillert}
 \begin{align}
 	\omega_\rho = \omega_0 \sqrt{1-n} \qquad \omega_z = \omega_0 \sqrt{n}
 \end{align}
-wobei $\omega_0$ die Kreisfrequenz des Elektrons auf seiner Kreisbahn angibt und der Feldindex $n$ die Inhomogenität des Magnetfeldes durch:
+wobei $\omega_0$ die Kreisfrequenz des Elektrons auf seiner Kreisbahn angibt und der Feldindex $n$ die Inhomogenität des Magnetfeldes durch
 \begin{align}
 	n = - \frac{\rho}{B_z(\rho)} \frac{\mathrm{d} B_z(\rho)}{\mathrm{d} \rho}
 \end{align}
 beschreibt.
-Zur Herleitung der Fokussierungsbedingung betrachtet man den während einer halben Periode der jeweiligen Betatronschwingung vom Elektron durchlaufenen Winkel auf der Kreisbahn:
+Zur Herleitung der Fokussierungsbedingung betrachtet man den während einer halben Periode der jeweiligen Betatronschwingung vom Elektron durchlaufenen Winkel auf der Kreisbahn
 \begin{align}
 	\phi_\rho &= \omega_0 \cdot \frac{\pi}{\omega_\rho} & \phi_z &= \omega_0 \cdot \frac{\pi}{\omega_z}\\
 	\phi_\rho &= \pi \left[ 1+ \frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} & \phi_z &= \pi \left[ -\frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} \label{eq:betatronwinkel}
@@ -586,7 +586,7 @@ Die relativen Linienbreiten wurden in Tabelle \ref{tab:aufloesungsvermoegen} dar
 \begin{wraptable}{o}{4.7cm}
 	\centering
 	\input{./tables/untergrund_tl.tex}
-	\caption{Untergrundmessung von \isotope[204]{Tl} mit einer Messdauer von \SI{100}{\second} bei \SI{4}{\percent} Transmission.}
+	\caption{Untergrundmessung von \isotope[204]{Tl} mit Messdauer \SI{100}{\second} bei \SI{4}{\percent} Transmission.}
 	\label{tab:untergrund_tl}
 \end{wraptable}
 Bei der Vermessung des Spektrums von Thallium wurde analog zu Abschnitt \ref{sssec:spektrum_caesium} vorgegangen mit der Ausnahme, dass die offsetkorrigierten Hallspannungen mit der in \ref{sssec:konversionslinien} berechneten Kalibration in $(B \rho)$-Werte umgerechnet wurden.
@@ -594,7 +594,7 @@ Insbesondere sollen die einzelnen Formeln für Umrechnungen und Fehler hier nich
 Auch für diese Messung wurde der Untergrund über eine Messzeit von \SI{100}{\second} bei einer eingestellten Transmission von \SI{4}{\percent} gemessen.
 Die Wahl der langen Messzeit ist dabei auch in den sehr geringen Zählraten aufgrund des Versuchsaufbaus begründet, obwohl dadurch der Untergrund sehr groß wird.
 Trotz einer Variation der Parameter an der Zähleinheit konnte kein besseres Verhältnis zwischen den Zählraten des Untergrunds und des Spektrums erreicht werden.
-Die Ergebnisse der Untergrundmessung finden sich in Tabelle \ref{tab:untergrund_tl}.
+Die Zählraten $N$ der Untergrundmessung finden sich in Tabelle \ref{tab:untergrund_tl}.
 Die gemessenen und die daraus berechneten Werte wurden in Tabelle \ref{tab:spektrum_tl} festgehalten.
 Das so gewonnene Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spectrum} aufgetragen.
 \begin{figure}[h]
@@ -606,7 +606,7 @@ Das so gewonnene Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spe
 
 \subsubsection{Bestimmung der Maximalenergie von Thallium}
 \label{sssec:kurie_thallium}
-Die Bestimmung der Maximalenergie der $\beta$-Spektren erfolgt hier über die Bestimmung des Endpunktes $\epsilon_0$ im Kurie-Diagramm \ref{fig:thallium_kurie}.
+Die Bestimmung der Maximalenergie der $\beta$-Spektren erfolgt hier über die Bestimmung des Endpunktes $\epsilon_0$ im Kurie-Diagramm in Abbildung \ref{fig:thallium_kurie}.
 In dieser Darstellung wird die Fermi-Funktion von Thallium für verschiedene Impulse $\eta$ beziehungsweise Energien $\epsilon$ benötigt.
 Dazu werden die in \cite{anleitung} gegebenen Datenpunkte extrapoliert, indem eine geeignete Kurve an diese angepasst wird.
 Als Anpassungshypothese wird gemäß \cite{fermi_function}:
@@ -629,7 +629,7 @@ Trägt man die angepasste Funktion und die in \cite{anleitung} gegebenen Datenpu
 	\label{fig:fermi_tl}
 \end{figure}
 Nun kann die Berechnung des Graphen in der Kurie-Darstellung erfolgen.
-Dazu empfiehlt es sich die dimensionslose Darstellung von Impuls $\eta$ und Energie $\epsilon$ zu verwenden.
+Dazu empfiehlt es sich, die dimensionslose Darstellung von Impuls $\eta$ und Energie $\epsilon$ zu verwenden.
 Zunächst wird dazu aus dem $(B \rho)$-Wert der Tabelle \ref{tab:spektrum_tl} der dimensionslose Impuls gemäß Gleichung \eqref{eq:brho_to_eta} berechnet.
 Dementsprechend ergibt sich der Fehler mittels Gauß'scher Fehlerfortpflanzung zu:
 \begin{align}
@@ -652,7 +652,7 @@ und der Fehler berechnet sich zu:
 	\left( \frac{\Delta N^2}{N} + N \frac{\Delta \eta^2}{\eta^2} + N \frac{\Delta \epsilon^2}{\epsilon^2} \right)
 	}
 \end{align}
-Die so berechneten Punkte in dem Kurie-Diagramm wurden in Tabelle \ref{tab:kurie_tl} aufgetragen, dabei ist zu beachten, dass nur die Werte eingetragen sind, für die der Radikand von Gleichung \ref{eq:kurie_y} einen positiven Wert annimmt.
+Die so berechneten Punkte in dem Kurie-Diagramm wurden in Tabelle \ref{tab:kurie_tl} aufgetragen, wobei zu beachten ist, dass nur die Werte eingetragen sind, für die der Radikand von Gleichung \eqref{eq:kurie_y} einen positiven Wert annimmt.
 Die Anpassung erfolgt über die Hypothese:
 \begin{align}
 	y = m (\epsilon - \epsilon_0)
@@ -669,7 +669,7 @@ So kann der Endpunkt des Kurie-Diagramms direkt abgelesen werden.
 	m &= \num{-0.457 +- 0.026} \\
 	\epsilon_0 &= \num{2.401 +- 0.020}
 \end{align}
-Aus dem Endpunkt $\epsilon_0$ kann nun die Zerfallsenergie berechnet werden:
+Aus dem Endpunkt $\epsilon_0$ kann nun die Zerfallsenergie $Q$ berechnet werden.
 \begin{align}
 	Q = (\epsilon_0 - 1) \cdot m_\mathrm{e} c^2 \qquad
 	\Delta Q = \Delta \epsilon_0 \cdot m_\mathrm{e} c^2
@@ -685,17 +685,20 @@ Mögliche Ursachen dafür sind:
 \FloatBarrier
 
 \subsubsection{Spektrum von Natrium}
-\begin{wraptable}{o}{4.7cm}
+\begin{wraptable}{o}{4.8cm}
 	\centering
 	\input{./tables/untergrund_na.tex}
-	\caption{Untergrundmessung für \isotope[22]{Na} mit einer Messdauer von \SI{100}{\second} bei \SI{4}{\percent} Transmission.}
+	\caption{Untergrundmessung für \isotope[22]{Na} mit Messdauer \SI{100}{\second} bei \SI{4}{\percent} Transmission.}
 	\label{tab:untergrund_na}
 \end{wraptable}
 Bei der Auswertung des Natrium-Zerfalls wird analog zu den beiden anderen Zerfällen vorgegangen.
-Der über \SI{100}{\second} gemessene Untergrund bei \SI{4}{\percent} Transmission ist in Tabelle \ref{tab:untergrund_na} festgehalten worden.
-Mit der Korrektur der Hallspannung und nach Abziehen des Untergrunds erhält man das in Abbildung \ref{fig:natrium_spectrum} gezeigte Spektrum für den Zerfall von Natrium.
-Die dazu gehörenden Messwerte sind in Tabelle \ref{tab:spektrum_na} notiert.
-Hier muss beachtet werden, dass die Hallspannung durchweg ein anderes Vorzeichen hat als bei den anderen Spektren, da Natrium unter Aussendung eines Positrons zerfällt ($\beta^+$-Zerfall).
+Die über \SI{100}{\second} gemessenen Ereignisse $N$ für den Untergrund bei \SI{4}{\percent} Transmission sind in Tabelle \ref{tab:untergrund_na} festgehalten worden.
+Zur späteren Verwendung wurde hierbei abermals gemittelt und der Fehler über die Standardabweichung berechnet.
+Wie auch beim Thallium-Zerfall sind die Untergrundwerte auffallend hoch, was durch Veränderungen an den Einstellungen der Messeinheit nicht verbessert werden konnte.
+Mit der Korrektur der Hallspannung und nach Bereinigung um den Untergrund erhält man das in Abbildung \ref{fig:natrium_spectrum} gezeigte Spektrum für den Zerfall von Natrium.
+Die dazu gehörenden Messwerte sind in Tabelle \ref{tab:spektrum_na} im Anhang notiert worden.
+Dabei muss allerdings beachtet werden, dass die Hallspannung durchweg ein anderes Vorzeichen hat als bei den anderen Spektren.
+Dies liegt an der Umkehrung des Magnetfeldes, da Natrium unter Aussendung eines Positrons zerfällt ($\beta^+$-Zerfall).
 \begin{figure}[h]
 	\centering
 	\input{./plots/natrium_spektrum.tex}
@@ -732,12 +735,13 @@ liefert im Rahmen des Fehlers eine gute Übereinstimmung.
 \section{Fazit}
 (FAZIT)
 
-\clearpage
+\FloatBarrier
 % BIBLIOGRAPHIE
 \vspace{\fill}
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
+
 \bibitem{krane}
 	Kenneth S. Krane,
 	\emph{Introductory Nuclear Physics},
@@ -792,53 +796,53 @@ liefert im Rahmen des Fehlers eine gute Übereinstimmung.
 
 \end{thebibliography}
 
-\clearpage
-
 % APPENDIX
 \begin{appendix}
 \section{Anhang}
+Auf den folgenden Seiten sind der Vollständigkeit halber alle gemessenen Werte sowie die jeweils zur Auswertung berechneten Werte zusammengetragen.
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/spektrum_ba4_grob.tex}
 	\caption{Messdaten des Spektrums von \isotope[137]{Cs} und daraus abgeleitete Größen bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{40}{s}$.}
 	\label{tab:spektrum_ba4_grob}
 \end{sidewaystable}
-
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/spektrum_ba4_fein.tex}
 	\caption{Messdaten des Spektrums von \isotope[137]{Cs} im Bereich der \isotope[137]{Ba} Konversionslinien und daraus abgeleitete Größen bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{40}{s}$.}
 	\label{tab:spektrum_ba4_fein}
 \end{sidewaystable}
-
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/spektrum_ba1_fein.tex}
 	\caption{Messdaten des Spektrums von \isotope[137]{Cs} im Bereich der \isotope[137]{Ba} Konversionslinien und daraus abgeleitete Größen bei einer Transmission $T = \SI{1}{\percent}$ und Messdauer $t = \SI{100}{s}$.}
 	\label{tab:spektrum_ba1_fein}
 \end{sidewaystable}
-
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/spektrum_tl.tex}
 	\caption{Messdaten des Spektrums von \isotope[204]{Tl} und daraus abgeleitete Größen bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{100}{s}$.}
 	\label{tab:spektrum_tl}
 \end{sidewaystable}
-
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/kurie_tl.tex}
 	\caption{Kurie Tl}
 	\label{tab:kurie_tl}
 \end{sidewaystable}
-
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/spektrum_na.tex}
 	\caption{Messdaten des Spektrums von \isotope[22]{Na} und daraus abgeleitete Größen bei einer Transmission $T = \SI{4}{\percent}$ und Messdauer $t = \SI{100}{s}$.}
 	\label{tab:spektrum_na}
 \end{sidewaystable}
-
+\clearpage
 \begin{sidewaystable}
 	\centering
 	\input{./tables/kurie_na.tex}

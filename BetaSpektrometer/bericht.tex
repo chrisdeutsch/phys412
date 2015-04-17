@@ -349,7 +349,10 @@ Der Vorteil gegenüber dem halbkreisförmigen Spektrometer liegt darin, dass die
 
 
 \section{Versuchsaufbau}
-Wenigstens ein bisschen was dazu sollten wir sagen.
+Für diesen Versuch wird ein doppeltfokussierendes $\pi\sqrt{2}$-Spektrometer, wie es in der Theorie erklärt wird, verwendet.
+Dieses wird für die Messungen korrekt verschlossen und anschließend mit der zur Verfügung stehenden Vakuumpumpe evakuiert.
+Vor Inbetriebnahme des Magneten muss die Wasserkühlung aktiviert werden, erst danach kann der Strom am Drehregler des Transformators eingeschaltet werden.
+Das während der Messung am Detektor registrierte Signal wird anschließend in ein logisches Signal umgewandelt, welches in eine Zähleinheit mit einstellbarer Messzeit geleitet wird, an der auf einer LED Matrix die Zählrate abgelesen werden kann.
 
 \section{Durchführung und Auswertung}
 Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
@@ -439,9 +442,9 @@ und führt eine dementsprechend gewichtete Mittelung durch:
 E_\mathrm{L} = \frac{E_{\mathrm{L}_{\mathrm{I}}} + 2E_{\mathrm{L}_{\mathrm{II}}} + E_{\mathrm{L}_{\mathrm{III}}}}{4} \approx \SI{5,621}{\kilo\electronvolt}
 \end{align*}
 In Analogie zur K-Schale kann der Impuls des Elektrons berechnet werden:
-\begin{align}
+\begin{align*}
 \left(B \rho \right)_\mathrm{L} = \SI{3500}{G.cm}
-\end{align}
+\end{align*}
 
 \subsubsection{Untergrundmessungen}
 \label{sssec:untergrund1}
@@ -461,14 +464,14 @@ Die Messwerte wurden dabei in der untersten Zeile gemittelt und der Fehler aus d
 \label{sssec:spektrum_caesium}
 Bei der Aufnahme des Spektrums wurde die Hallspannung $U_\mathrm{H}$ und die Anzahl der Ereignisse $N$ gemessen.
 Dabei wird der Fehler der gemessenen Hallspannung aufgrund fehlender Kenntnis über das genaue Messverfahren auf
-\begin{align*}
+\begin{align}
 	\Delta U_\mathrm{H} = \SI{0.1}{\skt}
-\end{align*}
+\end{align}
 abgeschätzt, was der letzten Stelle der Digitalanzeige entspricht.
 Der Schätzwert für den Fehler der Ereigniszahl ergibt sich gemäß der zugrundeliegenden Poisson-Verteilung aus der Wurzel der Ereigniszahl:
-\begin{align*}
+\begin{align}
 	\Delta N = \sqrt{N}
-\end{align*}
+\end{align}
 Zunächst muss die Hallspannung $U_\mathrm{H}$ um die in Abschnitt \ref{ssec:offsetspannung} ermittelte Offsetspannung $\overline{U}_0$ \eqref{hall_korrektur} bereinigt werden.
 Die korrigierte Hallspannung erhält man durch:
 \begin{align}
@@ -505,13 +508,13 @@ Die Konversionslinien wurden in den Abbildungen \ref{fig:ba_t4_fein} und \ref{fi
 \\
 \\
 Sichtbar sind die Konversionslinien der K- und L-Schale des angeregten Barium-Kerns, an welche mithilfe von \texttt{gnuplot} die Summe zweier Gaußfunktionen mit Offset angepasst wurde. Konkret lautet die Anpassungshypothese
-\begin{align*}
+\begin{align}
 	f(x) = \mathcal{G}_1(x) + \mathcal{G}_2(x) + b \text{,}
-\end{align*}
+\end{align}
 wobei $\mathcal{G}$ die Gaußfunktion
-\begin{align*}
+\begin{align}
 	\mathcal{G}(x) = A \cdot \exp\left( - \frac{(x - \mu)^2}{2 \sigma^2}\right)
-\end{align*}
+\end{align}
 mit dem Schwerpunkt $\mu$ und der Breite (Standardabweichung) $\sigma$ beschreibt.
 \begin{figure}[h]
 	\centering
@@ -573,9 +576,9 @@ Die volle Halbwertsbreite lässt sich aus der Standardabweichung einer Gaußfunk
 	\mathrm{FWHM} = 2 \sqrt{2\ln(2)} \cdot \sigma
 \end{align}
 Aufgrund des linearen Zusammenhangs zwischen Hallspannung $U_\mathrm{H}^\mathrm{korr.}$ und Elektronenimpuls $(B \rho)$ kann auf die Umrechnung verzichtet werden, sodass gilt:
-\begin{align*}
+\begin{align}
 	R = \frac{\Delta (B \rho)}{B \rho} = \frac{\Delta U_\mathrm{H}^\mathrm{korr.}}{U_\mathrm{H}^\mathrm{korr.}}
-\end{align*}
+\end{align}
 Bei diesen Berechnungen muss beachtet werden, dass mit $\Delta$ bezeichnete Größen in diesem Zusammenhang keinen Fehler angeben, sondern die jeweiligen Halbwertsbreiten darstellen.
 \begin{table}[h]
 	\centering
@@ -594,7 +597,7 @@ Bei diesen Berechnungen muss beachtet werden, dass mit $\Delta$ bezeichnete Grö
 	\caption{Untergrundmessung von \isotope[204]{Tl} mit einer Messdauer von \SI{100}{\second} bei \SI{4}{\percent} Transmission.}
 	\label{tab:untergrund_tl}
 \end{wraptable}
-Bei der Vermessung des Spektrums von Thallium wurde analog zu Abschnitt \ref{sssec:spektrum_caesium} vorgegangen mit der Ausnahme, dass die offsetkorrigierte Hallspannungen mit der in \ref{sssec:konversionslinien} berechneten Kalibration in $(B \rho)$-Werte umgerechnet wurden.
+Bei der Vermessung des Spektrums von Thallium wurde analog zu Abschnitt \ref{sssec:spektrum_caesium} vorgegangen mit der Ausnahme, dass die offsetkorrigierten Hallspannungen mit der in \ref{sssec:konversionslinien} berechneten Kalibration in $(B \rho)$-Werte umgerechnet wurden.
 Insbesondere sollen die einzelnen Formeln für Umrechnungen und Fehler hier nicht wiederholt werden, diese sind im oben genannten Abschnitt zu finden.
 Auch für diese Messung wurde der Untergrund über eine Messzeit von \SI{100}{\second} bei einer eingestellten Transmission von \SI{4}{\percent} gemessen.
 Die Wahl der langen Messzeit ist dabei auch in den sehr geringen Zählraten aufgrund des Versuchsaufbaus begründet, obwohl dadurch der Untergrund sehr groß wird.
@@ -638,18 +641,18 @@ Trägt man die angepasste Funktion und die in \cite{anleitung} gegebenen Datenpu
 	\caption{Anpassung der Hypothese \eqref{eq:hypothese_fermifunktion} an den in \cite{anleitung} gegebenen Datensatz zur Fermi-Funktion von Thallium.}
 	\label{fig:fermi_tl}
 \end{figure}
-Nun kann die Berechnung des Graphens in der Kurie-Darstellung erfolgen.
+Nun kann die Berechnung des Graphen in der Kurie-Darstellung erfolgen.
 Dazu empfiehlt es sich die dimensionslose Darstellung von Impuls $\eta$ und Energie $\epsilon$ zu verwenden.
 Zunächst wird dazu aus dem $(B \rho)$-Wert der Tabelle \ref{tab:spektrum_tl} der dimensionslose Impuls gemäß Gleichung \eqref{eq:brho_to_eta} berechnet.
 Dementsprechend ergibt sich der Fehler mittels Gauß'scher Fehlerfortpflanzung zu:
-\begin{align*}
+\begin{align}
 	\Delta \eta = \frac{\Delta (B \rho)}{\SI{1704.5}{G.cm}}
-\end{align*}
+\end{align}
 Anschließend kann mit der Energie-Impuls-Relation für relativistische Teilchen \eqref{eq:energie_impuls_rel} die dimensionslose Energie $\epsilon$ berechnet werden.
-Auch hier ergibt sich der Fehler mit Gauß'scher Fehlefortpflanzung zu:
-\begin{align*}
+Auch hier ergibt sich der Fehler mit Gauß'scher Fehlerfortpflanzung zu:
+\begin{align}
 	\Delta \epsilon = \frac{\eta \, \Delta \eta}{\epsilon}
-\end{align*}
+\end{align}
 Schließlich kann die konkrete Kurie-Darstellung berechnet werden:
 \begin{align}
 	y &= \sqrt{\frac{n}{F(Z,\epsilon) \, \eta \, \epsilon}}
@@ -689,6 +692,7 @@ Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt
 \end{align}
 Der in \cite{literatur_tl} gegebene Wert von $Q_\mathrm{Tl} = \SI{763.76 +- 0.18}{\kilo\electronvolt}$ kann nicht erreicht werden.
 Mögliche Ursachen dafür sind:
+\FloatBarrier
 
 \subsubsection{Spektrum von Natrium}
 \begin{wraptable}{o}{4.7cm}
@@ -709,6 +713,7 @@ Diese wurde in umgekehrter Polung angelegt, da Natrium unter Aussendung eines Po
 	\caption{Spektrum von \isotope[22]{Na} gemessen bei \SI{4}{\percent} Transmission mit einer Messdauer von \SI{100}{\second}.}
 	\label{fig:natrium_spectrum}
 \end{figure}
+\FloatBarrier
 
 \subsubsection{Bestimmung der Endpunktsenergie von Natrium}
 Es soll nun die Endpunktsenergie von \isotope[22]{Na} bestimmt werden.
@@ -720,18 +725,18 @@ Die Vorgehensweise dazu ist analog zur Bestimmung der Endpunktsenergie von Thall
 	\label{fig:natrium_kurie}
 \end{figure}
 Es ergeben sich für die angepasste Gerade in \ref{fig:natrium_kurie} die folgenden Werte für die Steigung $m$ und die Entpunktsenergie $\epsilon_0$:
-\begin{align}
+\begin{align*}
 	m &= \num{-2.96+- 0.12} \\
 	\epsilon_0 &= \num{2.077 +- 0.014}
-\end{align}
+\end{align*}
 Rechnet man diesen Wert für die (dimensionslose) Endpunktsenergie in die Zerfallsenergie um erhält mit REF THEORIE WIE OBEN man:
-\begin{align}
+\begin{align*}
 Q_\mathrm{Na} = \SI{550.3+-7.2}{\kilo\electronvolt}
-\end{align}
+\end{align*}
 Der Vergleich mit dem Literaturwert
-\begin{align}
+\begin{align*}
 	Q^{\mathrm{Lit.}}_\mathrm{Na} = \SI{545.7 +- 0.4}{\kilo\electronvolt}
-\end{align}
+\end{align*}
 liefert im Rahmen des Fehlers eine gute Übereinstimmung.
 
 \section{Fazit}

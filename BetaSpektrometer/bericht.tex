@@ -289,11 +289,11 @@ wobei $\Delta B \rho$ die volle Halbwertsbreite (\emph{full width at half maximu
 	\caption{Halbkreisförmiges Spektrometer}
 	\label{fig:semicirc_spectro}
 \end{figure}
-Ein halbkreisförmiges Spektrometer nutzt ein homogenes Magnetfeld senkrecht zur Flugrichtung der Elektronen um diese auf eine Kreisbahn zu lenken.
+Ein halbkreisförmiges Spektrometer (Abbildung \ref{fig:semicirc_spectro}) nutzt ein homogenes Magnetfeld senkrecht zur Flugrichtung der Elektronen um diese auf eine Kreisbahn zu lenken.
 Nach Gleichung \eqref{eq:impuls_radius} ist das Produkt von Magnetfeld $B$ und Bahnradius $\rho$ charakteristisch für den Impuls des Elektrons.
-
-Nachteil nur Fokussierung in der $\rho$-Ebene führt zu geringer Transmission.
-Vorteil: einfache Konstruktion, Magnetfeld leicht zu messen, gut geeignet um große Spektralbereiche aufzunehmen (konstante Magnetfeldstärke)
+Die Vorteile eines halbkreisförmigen Spektrometers sind die einfache Konstruktion, das einfache Messen des (homogenen) Magnetfeldes und die gute Eignung zur Aufnahme großer Spektralbereiche bei konstantem Magnetfeld.
+Der maßgeblichste Nachteil dieses Spektrometers ist die fehlende Fokussierung in der Senkrechten.
+Diese führt dazu, dass nur geringe Transmissionen erreicht werden können.
 
 \subsubsection{Doppelt-fokussierendes Spektrometer}
 \begin{figure}[h]
@@ -302,9 +302,9 @@ Vorteil: einfache Konstruktion, Magnetfeld leicht zu messen, gut geeignet um gro
 	\caption{Doppelt-fokussierendes Spektrometer}
 	\label{fig:pisqrt2_spectro}
 \end{figure}
-Im doppelt-fokussierenden Spektrometer werden analog zum Halbkreisförmigen durch ein statisches Magnetfeld auf eine Kreisbahn gezwungen.
+Im doppelt-fokussierenden Spektrometer werden (analog zum Halbkreisförmigen) Elektronen durch ein statisches Magnetfeld auf eine Kreisbahn gezwungen.
 Allerdings führt dieses eine Fokussierung des Elektronenstrahls in zwei Raumrichtungen durch, indem ein inhomogenes Magnetfeld verwendet wird, wobei die magnetische Feldstärke auf der Sollbahn des Teilchens konstant ist.
-In einem inhomogenen Magnetfeld führen die Elektronen in transversaler Richtung sogenannte Betatron-Schwingungen durch, deren Kreisfrequenz in der jeweiligen Raumrichtung gegeben ist durch (ZITAT HILLERT):
+In einem inhomogenen Magnetfeld führen die Elektronen in transversaler Richtung sogenannte Betatron-Schwingungen aus, deren Frequenz in der jeweiligen Raumrichtung gegeben ist durch \cite{hillert}:
 \begin{align}
 	\omega_\rho = \omega_0 \sqrt{1-n} \qquad \omega_z = \omega_0 \sqrt{n}
 \end{align}
@@ -328,7 +328,7 @@ Anschaulich bedeutet dies, dass das Elektron eine halbe Betatronschwingung in be
 Ist gleichzeitig die Periode der Betatronschwingungen beider Richtungen gleich, so bildet sich ein räumlicher Fokus an dem ein Detektor aufgestellt werden kann.
 Damit folgt aus Gleichung \eqref{eq:betatronwinkelverhaeltnis} der gesamte Winkel der Elektronenbahn im Spektrometer.
 Dieser ergibt sich zu $\phi = \pi \sqrt{2}$, weshalb das doppelt-fokussierende Spektrometer auch $\pi \sqrt{2}$-Spektrometer genannt wird.
-Gleichzeitig folgt aus der gestellten Anforderung $\phi_\rho = \phi_z$ mit Gleichung \eqref{eq:betatronwinkel} die Bestimmungsgleichung für das magnetische Feld:
+Gleichzeitig folgt aus der gestellten Anforderung $\phi_\rho = \phi_z$ mit Gleichung \eqref{eq:betatronwinkel} die Bestimmungsgleichung für das magnetische Feld\cite{siegbahn}:
 \begin{align}
 	B^\prime(\rho) = - \frac{1}{2 \rho} B(\rho)
 \end{align}
@@ -337,14 +337,6 @@ Mit der Randbedingung $B(\rho_0) = B_0$ folgt als allgemeine Lösung:
 	B(\rho) = B_0 \sqrt{\frac{\rho_0}{\rho}}
 \end{align}
 Der Vorteil gegenüber dem halbkreisförmigen Spektrometer liegt darin, dass die doppelte Fokussierung höhere Transmissionen ermöglicht.
-
-\subsection{Detektoren (?)}
-\subsubsection{Halbleiterdetektoren}
-
-\subsubsection{Hallsonde}
-
-\subsubsection{Hysterese (?)}
-
 
 \section{Versuchsaufbau}
 Für diesen Versuch wird ein doppeltfokussierendes $\pi\sqrt{2}$-Spektrometer, wie es in der Theorie erklärt wird, verwendet.
@@ -754,7 +746,17 @@ liefert im Rahmen des Fehlers eine gute Übereinstimmung.
 \bibitem{mayer-kuckuk}
 	Theo Mayer-Kuckuk,
 	\emph{Kernphysik - Eine Einführung} (7. Auflage),
-	Teubner 2002,
+	Teubner 2002
+
+\bibitem{siegbahn}
+	K. Siegbahn,
+	\emph{Alpha-, Beta- and Gamma-Ray Spectroscopy},
+	Elsevier Science Ltd. 1965
+
+\bibitem{hillert}
+	W. Hillert,
+	\emph{physics612: Accelerator Physics},
+	Universität Bonn 2014
 
 \bibitem{anleitung}
 	Physikalisches Praktikum V: Kern- und Teilchenphysik,

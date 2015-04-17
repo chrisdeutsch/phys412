@@ -169,7 +169,7 @@ Man unterscheidet zwischen drei verschiedenen $\beta$-Zerfallsarten, wobei im Fo
 	\begin{align}
 	Q_{\epsilon} = m( A, Z ) - m( A, Z - 1) - E_\mathrm{Bind.}
 	\end{align}
-	Nach dem Einfang befindet sich das Atom in einem angeregten Zustand, sodass zusätlich die Bindungsenergie des eingefangenen Elektrons abgezogen werden muss.
+	Nach dem Einfang befindet sich das Atom in einem angeregten Zustand, sodass zusätzlich die Bindungsenergie des eingefangenen Elektrons abgezogen werden muss.
 \end{itemize}
 Grundsätzlich ist ein Zerfall nur möglich, wenn die Energieerhaltung erfüllt bleibt.
 Das bedeutet, dass für einen möglichen Zerfall die Zerfallsenergie $Q$ positiv sein muss.
@@ -263,19 +263,19 @@ Mit dem relativistischem Impuls $p = \gamma m v$ folgt sofort:
 \end{align}
 Man sieht, dass die Größe $B \rho$ charakteristisch für den Impuls ist und gleichzeitig eine Aussage über die Dimension des Spektrometers macht.
 Daher werden Impulse in der $\beta$-Spektroskopie als $B \rho$-Werte angegeben.
-Drückt man den Impuls durch die kinetische Energie des Teilchens aus, so berechnet sich der korrespondierende $B \rho$-Wert durch:
+Drückt man den Impuls durch die kinetische Energie des Teilchens aus, so berechnet sich der korrespondierende $B \rho$-Wert durch
 \begin{align}
 B \rho = \frac{1}{c e} \sqrt{T \left( 2 E_0 + T \right)}
 \label{eq:b_rho}
 \end{align}
 wobei $E_0$ die Ruheenergie des Teilchens beschreibt.
-Zur Umrechnung in dimensionslose Impulse ist die Gleichung:
+Zur Umrechnung in dimensionslose Impulse ist die Gleichung
 \begin{align}
 	\eta = \frac{B \rho}{\SI{1704.5}{G.cm}}
 	\label{eq:brho_to_eta}
 \end{align}
 nützlich, welche sich aus der Kombination von Gleichung \eqref{eq:impuls_radius} und \eqref{eq:eta} ergibt.
-Maßgeblich für das Auflösungsvermögen des Spektrometers ist die relative Linienbreite:
+Maßgeblich für das Auflösungsvermögen des Spektrometers ist die relative Linienbreite
 \begin{align}
 	R = \frac{\Delta (B \rho)}{B \rho}
 	\label{eq:rel_linienbreite}
@@ -292,7 +292,7 @@ wobei $\Delta B \rho$ die volle Halbwertsbreite (\emph{full width at half maximu
 Ein halbkreisförmiges Spektrometer (Abbildung \ref{fig:semicirc_spectro}) nutzt ein homogenes Magnetfeld senkrecht zur Flugrichtung der Elektronen um diese auf eine Kreisbahn zu lenken.
 Nach Gleichung \eqref{eq:impuls_radius} ist das Produkt von Magnetfeld $B$ und Bahnradius $\rho$ charakteristisch für den Impuls des Elektrons.
 Die Vorteile eines halbkreisförmigen Spektrometers sind die einfache Konstruktion, das einfache Messen des (homogenen) Magnetfeldes und die gute Eignung zur Aufnahme großer Spektralbereiche bei konstantem Magnetfeld.
-Der maßgeblichste Nachteil dieses Spektrometers ist die fehlende Fokussierung in der Senkrechten.
+Der maßgebliche Nachteil dieses Spektrometers ist die fehlende Fokussierung in der Senkrechten.
 Diese führt dazu, dass nur geringe Transmissionen erreicht werden können.
 
 \subsubsection{Doppelt-fokussierendes Spektrometer}
@@ -302,18 +302,18 @@ Diese führt dazu, dass nur geringe Transmissionen erreicht werden können.
 	\caption{Aufbau eines doppeltfokussierenden Spektrometers}
 	\label{fig:pisqrt2_spectro}
 \end{figure}
-Im doppelt-fokussierenden Spektrometer werden (analog zum Halbkreisförmigen) Elektronen durch ein statisches Magnetfeld auf eine Kreisbahn gezwungen.
+\noindent Im doppelt-fokussierenden Spektrometer werden (analog zum Halbkreisförmigen) Elektronen durch ein statisches Magnetfeld auf eine Kreisbahn gezwungen.
 Allerdings führt dieses eine Fokussierung des Elektronenstrahls in zwei Raumrichtungen durch, indem ein inhomogenes Magnetfeld verwendet wird, wobei die magnetische Feldstärke auf der Sollbahn des Teilchens konstant ist.
-In einem inhomogenen Magnetfeld führen die Elektronen in transversaler Richtung sogenannte Betatron-Schwingungen aus, deren Frequenz in der jeweiligen Raumrichtung gegeben ist durch \cite{hillert}:
+In einem inhomogenen Magnetfeld führen die Elektronen in transversaler Richtung sogenannte Betatron-Schwingungen aus, deren Frequenz in der jeweiligen Raumrichtung gegeben ist durch \cite{hillert}
 \begin{align}
 	\omega_\rho = \omega_0 \sqrt{1-n} \qquad \omega_z = \omega_0 \sqrt{n}
 \end{align}
-wobei $\omega_0$ die Kreisfrequenz des Elektrons auf seiner Kreisbahn angibt und der Feldindex $n$ die Inhomogenität des Magnetfeldes durch:
+wobei $\omega_0$ die Kreisfrequenz des Elektrons auf seiner Kreisbahn angibt und der Feldindex $n$ die Inhomogenität des Magnetfeldes durch
 \begin{align}
 	n = - \frac{\rho}{B_z(\rho)} \frac{\mathrm{d} B_z(\rho)}{\mathrm{d} \rho}
 \end{align}
 beschreibt.
-Zur Herleitung der Fokussierungsbedingung betrachtet man den während einer halben Periode der jeweiligen Betatronschwingung vom Elektron durchlaufenen Winkel auf der Kreisbahn:
+Zur Herleitung der Fokussierungsbedingung betrachtet man den während einer halben Periode der jeweiligen Betatronschwingung vom Elektron durchlaufenen Winkel auf der Kreisbahn
 \begin{align}
 	\phi_\rho &= \omega_0 \cdot \frac{\pi}{\omega_\rho} & \phi_z &= \omega_0 \cdot \frac{\pi}{\omega_z}\\
 	\phi_\rho &= \pi \left[ 1+ \frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} & \phi_z &= \pi \left[ -\frac{\rho_0 B^\prime(\rho_0)}{B(\rho_0)} \right]^{-\frac{1}{2}} \label{eq:betatronwinkel}

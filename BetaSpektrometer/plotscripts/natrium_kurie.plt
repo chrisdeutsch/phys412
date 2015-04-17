@@ -7,6 +7,8 @@ set output './plots/natrium_kurie.tex'
 set key top right
 
 set decimalsign '{,}'
+set format x "%.1f"
+set format y "%.1f"
 
 set xrange [1:2.1]
 set yrange [-0.25:*]
@@ -23,6 +25,6 @@ b = 2.1
 
 fit [1.5:2] f(x) './data/natrium_kurie.txt' using 1:3:2:4 xyerror via m, b
 
-plot './data/natrium_kurie.txt' using 1:3:2:4 w xyerrorbars t'Messwerte' ls 1, f(x) ls 2
+plot './data/natrium_kurie.txt' using 1:3:2:4 w xyerrorbars t'Messwerte' ls 1, f(x) ls 2 t'Anpassung'
 
 unset output

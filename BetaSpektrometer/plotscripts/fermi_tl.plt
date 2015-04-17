@@ -7,6 +7,7 @@ set output './plots/fermi_tl.tex'
 set key top right
 
 set decimalsign '{,}'
+set format x "%.1f"
 
 set xrange [1:2.5]
 set yrange [0:*]

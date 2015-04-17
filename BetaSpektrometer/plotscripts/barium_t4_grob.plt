@@ -7,6 +7,7 @@ set output './plots/barium_t4_grob.tex'
 set key top right
 
 set decimalsign '{,}'
+set format y "%.1f"
 
 set xrange [*:*]
 set yrange [*:*]

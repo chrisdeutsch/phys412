@@ -258,10 +258,10 @@ Den resultierenden Graphen nennt man ein Spektrum.
 \subsubsection{Grundlagen}
 In diesem Versuch wird ein magnetisches Spektrometer verwendet, welches die Ablenkung von geladenen Teilchen im Magnetfeld ausnutzt.
 Betrachtet man ein Elektron, welches sich in einem homogenen Magnetfeld $\vec{B}$ mit der Geschwindigkeit $\vec{v}$ senkrecht zum Magnetfeld bewegt, so wirkt die Lorentzkraft als Zentripetalkraft und das Elektron beschreibt eine Kreisbahn mit Radius $\rho$.
-\begin{align}
-	F_\mathrm{Z} &\stackrel{!}{=} F_\mathrm{L} \nonumber\\
+\begin{align*}
+	F_\mathrm{Z} &\stackrel{!}{=} F_\mathrm{L} \\
 	e v B &= \frac{\gamma m_\mathrm{e} v^2}{\rho}
-\end{align}
+\end{align*}
 Mit dem relativistischem Impuls $p = \gamma m v$ folgt sofort:
 \begin{align}
 	p = e B \rho
@@ -460,9 +460,9 @@ Die Messwerte wurden dabei in der untersten Zeile gemittelt und der Fehler aus d
 \label{sssec:spektrum_caesium}
 Bei der Aufnahme des Spektrums wurde die Hallspannung $U_\mathrm{H}$ und die Anzahl der Ereignisse $N$ gemessen.
 Dabei wird der Fehler der gemessenen Hallspannung aufgrund fehlender Kenntnis über das genaue Messverfahren auf
-\begin{align}
+\begin{align*}
 	\Delta U_\mathrm{H} = \SI{0.1}{\skt}
-\end{align}
+\end{align*}
 abgeschätzt, was der letzten Stelle der Digitalanzeige entspricht.
 Der Schätzwert für den Fehler der Ereigniszahl ergibt sich gemäß der zugrundeliegenden Poisson-Verteilung aus der Wurzel der Ereigniszahl:
 \begin{align}
@@ -544,9 +544,9 @@ Diese Form der Darstellung wurde gewählt, da bei der Anpassung mit \texttt{gnup
 \end{figure}
 In Abbildung \ref{fig:kalibration} wurde die Anpassung der Ursprungsgerade  an die Kalibrationsdaten durchgeführt.
 Es ergibt sich die Steigung:
-\begin{align}
+\begin{align*}
 	m = \SI{0.0447 +- 0.0001}{\skt\per \gauss \per \centi\metre}
-\end{align}
+\end{align*}
 Aus der Steigung $m$ kann nun die Proportionalitätskonstante $\lambda$
 \begin{align}
 	B \rho = \lambda \cdot U_\mathrm{H}^\mathrm{korr.}
@@ -557,9 +557,9 @@ Dazu reicht die Bildung des Kehrwertes
 	\lambda = \frac{1}{m} \qquad \Delta \lambda = \frac{\Delta m}{m^2}
 \end{align}
 so dass man schlussendlich erhält:
-\begin{align}
+\begin{align*}
 	\lambda = \SI{22.37 +- 0.05}{G.cm\per\skt}
-\end{align}
+\end{align*}
 
 \subsubsection{Auflösungsvermögen des Spektrometers}
 Im Folgenden soll das Auflösungsvermögen des Spektrometers bei verschiedenen Transmissionen bestimmt werden.
@@ -673,10 +673,10 @@ mit den Anpassungsparametern $m$ und $\epsilon_0$.
 	\label{fig:thallium_kurie}
 \end{figure}
 So kann der Endpunkt des Kurie-Diagramms direkt abgelesen werden.
-\begin{align}
+\begin{align*}
 	m &= \num{-0.457 +- 0.026} \\
 	\epsilon_0 &= \num{2.401 +- 0.020}
-\end{align}
+\end{align*}
 Aus dem Endpunkt $\epsilon_0$ kann nun die Zerfallsenergie $Q$ berechnet werden.
 \begin{align}
 	Q = (\epsilon_0 - 1) \cdot m_\mathrm{e} c^2 \qquad
@@ -684,9 +684,9 @@ Aus dem Endpunkt $\epsilon_0$ kann nun die Zerfallsenergie $Q$ berechnet werden.
 	\label{eq:zerfallsenergie}
 \end{align}
 Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt sich:
-\begin{align}
+\begin{align*}
 	Q_\mathrm{Tl} = \SI{716 +- 11}{\kilo\electronvolt}
-\end{align}
+\end{align*}
 Der in \cite{tl_literatur} gegebene Wert von $Q_\mathrm{Tl}^\mathrm{Lit.} = \SI{763.76 +- 0.18}{\kilo\electronvolt}$ kann nicht erreicht werden.
 Leider konnten keine konkreten Fehler in der Methodik gefunden werden, weshalb davon ausgegangen wird, dass die problematische Einstellung der Zähleinheit die starke Abweichung verursachte.
 \FloatBarrier

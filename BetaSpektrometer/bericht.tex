@@ -124,7 +124,7 @@ Tutor: & Yannick Wunderlich
 % ZUSAMMENFASSUNG
 \begin{abstract}
 \noindent In dem vorliegenden Versuch soll die Maximalenergie bzw. Zerfallsenergie zweier $\beta$-Strahler bestimmt werden.
-Dazu wird ein doppeltfokussierendes $\beta$-Spektrometer verwendet, womit zunächst eine Impulskalibation anhand der Konversionslinien von \ce{^{137}Cs} durchgeführt wird.
+Dazu wird ein doppelt-fokussierendes $\beta$-Spektrometer verwendet, womit zunächst eine Impulskalibation anhand der Konversionslinien von \ce{^{137}Cs} durchgeführt wird.
 Ausgehend davon kann dann durch Extrapolierung der jeweiligen Kuriedarstellungen die Maximalenergie der Zerfälle von \ce{^{204}Tl} und \ce{^{22}Na} abgelesen werden.
 Darüber hinaus soll das Auflösungsvermögen des verwendeten Spektrometers bestimmt werden.
 \end{abstract}
@@ -258,10 +258,10 @@ Den resultierenden Graphen nennt man ein Spektrum.
 \subsubsection{Grundlagen}
 In diesem Versuch wird ein magnetisches Spektrometer verwendet, welches die Ablenkung von geladenen Teilchen im Magnetfeld ausnutzt.
 Betrachtet man ein Elektron, welches sich in einem homogenen Magnetfeld $\vec{B}$ mit der Geschwindigkeit $\vec{v}$ senkrecht zum Magnetfeld bewegt, so wirkt die Lorentzkraft als Zentripetalkraft und das Elektron beschreibt eine Kreisbahn mit Radius $\rho$.
-\begin{align}
-	F_\mathrm{Z} &\stackrel{!}{=} F_\mathrm{L} \nonumber\\
+\begin{align*}
+	F_\mathrm{Z} &\stackrel{!}{=} F_\mathrm{L} \\
 	e v B &= \frac{\gamma m_\mathrm{e} v^2}{\rho}
-\end{align}
+\end{align*}
 Mit dem relativistischem Impuls $p = \gamma m v$ folgt sofort:
 \begin{align}
 	p = e B \rho
@@ -305,7 +305,7 @@ Diese führt dazu, dass nur geringe Transmissionen erreicht werden können.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.6\textwidth]{./figures/pisqrt2_spectrometer.pdf}
-	\caption{Aufbau eines doppeltfokussierenden Spektrometers}
+	\caption{Aufbau eines doppelt-fokussierenden Spektrometers}
 	\label{fig:pisqrt2_spectro}
 \end{figure}
 \noindent Im doppelt-fokussierenden Spektrometer werden (analog zum Halbkreisförmigen) Elektronen durch ein statisches Magnetfeld auf eine Kreisbahn gezwungen.
@@ -345,7 +345,7 @@ Mit der Randbedingung $B(\rho_0) = B_0$ folgt als allgemeine Lösung:
 Der Vorteil gegenüber dem halbkreisförmigen Spektrometer liegt darin, dass die doppelte Fokussierung höhere Transmissionen ermöglicht.
 
 \section{Versuchsaufbau}
-Für diesen Versuch wird ein doppeltfokussierendes $\pi\sqrt{2}$-Spektrometer, wie es in der Theorie erklärt wird, verwendet.
+Für diesen Versuch wird ein doppelt-fokussierendes $\pi\sqrt{2}$-Spektrometer, wie es in der Theorie erklärt wird, verwendet.
 Dieses wird für die Messungen korrekt verschlossen und anschließend mit der zur Verfügung stehenden Vakuumpumpe evakuiert.
 Vor Inbetriebnahme des Magneten muss dessen Wasserkühlung aktiviert werden, erst danach kann der Strom am Drehregler des Transformators eingeschaltet werden.
 Der während der Messung am Halbleiterdetektor registrierte Puls wird anschließend in ein logisches Signal umgewandelt, welches in eine Zähleinheit mit einstellbarer Messzeit geleitet wird, an der auf einer LED Matrix die Anzahl der Ereignisse abgelesen werden kann.
@@ -460,9 +460,9 @@ Die Messwerte wurden dabei in der untersten Zeile gemittelt und der Fehler aus d
 \label{sssec:spektrum_caesium}
 Bei der Aufnahme des Spektrums wurde die Hallspannung $U_\mathrm{H}$ und die Anzahl der Ereignisse $N$ gemessen.
 Dabei wird der Fehler der gemessenen Hallspannung aufgrund fehlender Kenntnis über das genaue Messverfahren auf
-\begin{align}
+\begin{align*}
 	\Delta U_\mathrm{H} = \SI{0.1}{\skt}
-\end{align}
+\end{align*}
 abgeschätzt, was der letzten Stelle der Digitalanzeige entspricht.
 Der Schätzwert für den Fehler der Ereigniszahl ergibt sich gemäß der zugrundeliegenden Poisson-Verteilung aus der Wurzel der Ereigniszahl:
 \begin{align}
@@ -544,9 +544,9 @@ Diese Form der Darstellung wurde gewählt, da bei der Anpassung mit \texttt{gnup
 \end{figure}
 In Abbildung \ref{fig:kalibration} wurde die Anpassung der Ursprungsgerade  an die Kalibrationsdaten durchgeführt.
 Es ergibt sich die Steigung:
-\begin{align}
+\begin{align*}
 	m = \SI{0.0447 +- 0.0001}{\skt\per \gauss \per \centi\metre}
-\end{align}
+\end{align*}
 Aus der Steigung $m$ kann nun die Proportionalitätskonstante $\lambda$
 \begin{align}
 	B \rho = \lambda \cdot U_\mathrm{H}^\mathrm{korr.}
@@ -557,9 +557,9 @@ Dazu reicht die Bildung des Kehrwertes
 	\lambda = \frac{1}{m} \qquad \Delta \lambda = \frac{\Delta m}{m^2}
 \end{align}
 so dass man schlussendlich erhält:
-\begin{align}
+\begin{align*}
 	\lambda = \SI{22.37 +- 0.05}{G.cm\per\skt}
-\end{align}
+\end{align*}
 
 \subsubsection{Auflösungsvermögen des Spektrometers}
 Im Folgenden soll das Auflösungsvermögen des Spektrometers bei verschiedenen Transmissionen bestimmt werden.
@@ -612,7 +612,7 @@ Das so gewonnene Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spe
 	\label{fig:thallium_spectrum}
 \end{figure}
 
-\subsubsection{Bestimmung der Maximalenergie von Thallium (\ce{^{204}Tl})}
+\subsubsection{Bestimmung der Maximalenergie von Thallium}
 \label{sssec:kurie_thallium}
 Die Bestimmung der Maximalenergie der $\beta$-Spektren erfolgt hier über die Bestimmung des Endpunktes $\epsilon_0$ im Kurie-Diagramm in Abbildung \ref{fig:thallium_kurie}.
 In dieser Darstellung wird die Fermi-Funktion von Thallium für verschiedene Impulse $\eta$ beziehungsweise Energien $\epsilon$ benötigt.
@@ -673,10 +673,10 @@ mit den Anpassungsparametern $m$ und $\epsilon_0$.
 	\label{fig:thallium_kurie}
 \end{figure}
 So kann der Endpunkt des Kurie-Diagramms direkt abgelesen werden.
-\begin{align}
+\begin{align*}
 	m &= \num{-0.457 +- 0.026} \\
 	\epsilon_0 &= \num{2.401 +- 0.020}
-\end{align}
+\end{align*}
 Aus dem Endpunkt $\epsilon_0$ kann nun die Zerfallsenergie $Q$ berechnet werden.
 \begin{align}
 	Q = (\epsilon_0 - 1) \cdot m_\mathrm{e} c^2 \qquad
@@ -684,9 +684,9 @@ Aus dem Endpunkt $\epsilon_0$ kann nun die Zerfallsenergie $Q$ berechnet werden.
 	\label{eq:zerfallsenergie}
 \end{align}
 Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt sich:
-\begin{align}
+\begin{align*}
 	Q_\mathrm{Tl} = \SI{716 +- 11}{\kilo\electronvolt}
-\end{align}
+\end{align*}
 Der in \cite{tl_literatur} gegebene Wert von $Q_\mathrm{Tl}^\mathrm{Lit.} = \SI{763.76 +- 0.18}{\kilo\electronvolt}$ kann nicht erreicht werden.
 Leider konnten keine konkreten Fehler in der Methodik gefunden werden, weshalb davon ausgegangen wird, dass die problematische Einstellung der Zähleinheit die starke Abweichung verursachte.
 \FloatBarrier
@@ -714,7 +714,7 @@ Dies liegt an der Umkehrung des Magnetfeldes, da Natrium unter Aussendung eines 
 \end{figure}
 \FloatBarrier
 
-\subsubsection{Bestimmung der Endpunktsenergie von Natrium (\ce{^{22}Na})}
+\subsubsection{Bestimmung der Endpunktsenergie von Natrium}
 Es soll nun die Endpunktsenergie von \isotope[22]{Na} bestimmt werden.
 Die Vorgehensweise dazu ist analog zur Bestimmung der Endpunktsenergie von Thallium in Abschnitt \ref{sssec:kurie_thallium} mit Ausnahme, dass die Fermi-Funktion von Natrium direkt aus \cite{riezler} abgelesen wurde.
 Die für die Kurie-Darstellung berechneten Werte wurden in Tabelle \ref{tab:kurie_na} tabelliert.
@@ -740,13 +740,17 @@ Der Vergleich mit dem Literaturwert \cite{na_literatur}
 liefert im Rahmen des Fehlers eine gute Übereinstimmung.
 \FloatBarrier
 \section{Fazit}
-Insgesamt ist der hier behandelte Versuch nur bedingt gut gelungen.
-Prinzipiell konnten alle Messungen ohne größere Schwierigkeiten durchgeführt werden, jedoch waren die gemessenen Werte HIER ERKLÄRUNG WEIL SCHEISSE.
-Die Impulskalibration gelang mit den aufgenommenen Konversionslinien von Caesium relativ gut, wobei die Messung mit \SI{1}{\percent} Transmission nicht die erwartete Verbesserung der Auflösung brachte.
-Die Bestimmung der Endpunktsenergie von Natrium gelang gut, die bestimmte Maximalenergie von Thallium weicht jedoch stark vom Literaturwert ab, wofür keine konkrete Ursache in der Auswertung gefunden werden konnte (siehe auch das Fazit in \ref{sssec:kurie_thallium}).\\
-\\
-Dennoch konnte in dem Versuch ein guter Einblick in Aufbau und Funktionsweise eines Spektrometers sowie in die Arbeitsweise der $\beta$-Spektroskopie gewonnen werden.
- 
+Zusammenfassend kann man sagen, dass der Versuch nur bedingt erfolgreich verlaufen ist, dennoch einen guten Einblick in die Methodik der Spektroskopie geliefert hat.
+Die Impulskalibration des Spektrometers konnte ohne weitere Probleme durchgeführt werden.
+Dennoch konnte der theoretische Verlauf des Auflösungsvermögens bei verringerter Transmission nicht beobachtet werden.
+Die Bestimmung der Zerfallsenergie von \isotope[22]{Na} war erfolgreich und konnte den Literaturwert innerhalb der Fehlergrenzen reproduzieren.
+Dies kann leider nicht von der Bestimmung der Endpunktsenergie von \isotope[204]{Tl} behauptet werden, dort wurde lediglich die korrekte Größenordnung gemessen, war aber in Anbetracht der Fehler nicht mit dem Literaturwert kompatibel.
+
+Während der Versuchsdurchführung gab es Probleme mit dem verwendeten Fensterdiskriminator, welcher unter anderen Randbedingungen eingestellt wurde als dies am Tag der Durchführung der Fall war.
+Daher war eine Neueinstellung nötig, welche nicht zufriedenstellend durchgeführt werden konnte.
+Dadurch konnten die in der Praktikumsanleitung gewünschten Zählraten kaum und bei manchen Messungen garnicht erreicht werden.
+Außerdem resultierte dies in sehr hohen Untergründen, welche die Messung negativ beeinflussten.
+
 \FloatBarrier
 % BIBLIOGRAPHIE
 \vspace{\fill}

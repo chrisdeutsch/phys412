@@ -15,6 +15,7 @@
 % Braket Notation
 \usepackage{braket}
 \usepackage{isotope}
+\usepackage{mhchem}
 
 % zusätzliche mathematische Schriftarten
 \usepackage{amsfonts}
@@ -122,7 +123,10 @@ Tutor: & Yannick Wunderlich
 
 % ZUSAMMENFASSUNG
 \begin{abstract}
-\noindent
+\noindent In dem vorliegenden Versuch soll die Maximalenergie bzw. Zerfallsenergie zweier $\beta$-Strahler bestimmt werden.
+Dazu wird ein doppeltfokussierendes $\beta$-Spektrometer verwendet, womit zunächst eine Impulskalibation anhand der Konversionslinien von \ce{^{137}Cs} durchgeführt wird.
+Ausgehend davon kann dann durch Extrapolierung der jeweiligen Kuriedarstellungen die Maximalenergie der Zerfälle von \ce{^{204}Tl} und \ce{^{22}Na} abgelesen werden.
+Darüber hinaus soll das Auflösungsvermögen des verwendeten Spektrometers bestimmt werden.
 \end{abstract}
 
 \end{titlepage}
@@ -452,7 +456,7 @@ Durch eine nicht ideale Kalibration der Zähleinheit konnten jedoch nicht die in
 Für den Untergrund des Caesium-Zerfalls bei beiden Transmissionseinstellungen sind die in Tabelle \ref{tab:untergrund_cs} notierten Werte für die Anzahl der Ereignisse $N$ gemessen worden.
 Die Messwerte wurden dabei in der untersten Zeile gemittelt und der Fehler aus der Standardabweichung berechnet.
 
-\subsubsection{Spektrum von Caesium}
+\subsubsection{Spektrum von Caesium (\ce{^{137}Cs})}
 \label{sssec:spektrum_caesium}
 Bei der Aufnahme des Spektrums wurde die Hallspannung $U_\mathrm{H}$ und die Anzahl der Ereignisse $N$ gemessen.
 Dabei wird der Fehler der gemessenen Hallspannung aufgrund fehlender Kenntnis über das genaue Messverfahren auf
@@ -586,7 +590,7 @@ Dies liegt hauptsächlich an der Abweichung der Linie von der Gaußform in Abbil
 \subsection{Bestimmung der Zerfallsenergie}
 Zur Bestimmung der Zerfallsenergie $Q$ wird die in Abschnitt \ref{sssec:kurieplot} beschriebene Kurie-Darstellung verwendet, bei der sich die Zerfallsenergie direkt am Schnittpunkt des linearisierten Spektrums mit der $\epsilon$-Achse ablesen lässt.
 
-\subsubsection{Spektrum von Thallium}
+\subsubsection{Spektrum von Thallium (\ce{^{204}Tl})}
 \begin{wraptable}{o}{4.7cm}
 	\centering
 	\input{./tables/untergrund_tl.tex}
@@ -608,7 +612,7 @@ Das so gewonnene Spektrum wurde anschließend in Abbildung \ref{fig:thallium_spe
 	\label{fig:thallium_spectrum}
 \end{figure}
 
-\subsubsection{Bestimmung der Maximalenergie von Thallium}
+\subsubsection{Bestimmung der Maximalenergie von Thallium (\ce{^{204}Tl})}
 \label{sssec:kurie_thallium}
 Die Bestimmung der Maximalenergie der $\beta$-Spektren erfolgt hier über die Bestimmung des Endpunktes $\epsilon_0$ im Kurie-Diagramm in Abbildung \ref{fig:thallium_kurie}.
 In dieser Darstellung wird die Fermi-Funktion von Thallium für verschiedene Impulse $\eta$ beziehungsweise Energien $\epsilon$ benötigt.
@@ -690,7 +694,7 @@ Für gewöhnlich stellen verbotene Übergänge eine leichte Abweichung vom linea
 Es wird sich deswegen vermutlich um einen Fehler in der Messung handeln, die wie schon mehrfach erwähnt, nicht ideal durchgeführt werden konnte durch die Einstellungen der Zähleinheit.
 \FloatBarrier
 
-\subsubsection{Spektrum von Natrium}
+\subsubsection{Spektrum von Natrium (\ce{^{22}Na})}
 \begin{wraptable}{o}{4.8cm}
 	\vspace{-12pt}
 	\centering
@@ -714,7 +718,7 @@ Dies liegt an der Umkehrung des Magnetfeldes, da Natrium unter Aussendung eines 
 \end{figure}
 \FloatBarrier
 
-\subsubsection{Bestimmung der Endpunktsenergie von Natrium}
+\subsubsection{Bestimmung der Endpunktsenergie von Natrium (\ce{^{22}Na})}
 Es soll nun die Endpunktsenergie von \isotope[22]{Na} bestimmt werden.
 Die Vorgehensweise dazu ist analog zur Bestimmung der Endpunktsenergie von Thallium in Abschnitt \ref{sssec:kurie_thallium} mit Ausnahme, dass die Fermi-Funktion von Natrium direkt aus \cite{riezler} abgelesen wurde.
 Die für die Kurie-Darstellung berechneten Werte wurden in Tabelle \ref{tab:kurie_na} tabelliert.

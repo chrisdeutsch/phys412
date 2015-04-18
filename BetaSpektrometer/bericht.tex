@@ -15,6 +15,7 @@
 % Braket Notation
 \usepackage{braket}
 \usepackage{isotope}
+\usepackage{mhchem}
 
 % zusätzliche mathematische Schriftarten
 \usepackage{amsfonts}
@@ -122,7 +123,10 @@ Tutor: & Yannick Wunderlich
 
 % ZUSAMMENFASSUNG
 \begin{abstract}
-\noindent
+\noindent In dem vorliegenden Versuch soll die Maximalenergie bzw. Zerfallsenergie zweier $\beta$-Strahler bestimmt werden.
+Dazu wird ein doppeltfokussierendes $\beta$-Spektrometer verwendet, womit zunächst eine Impulskalibation anhand der Konversionslinien von \ce{^{137}Cs} durchgeführt wird.
+Ausgehend davon kann dann durch Extrapolierung der jeweiligen Kuriedarstellungen die Maximalenergie der Zerfälle von \ce{^{204}Tl} und \ce{^{22}Na} abgelesen werden.
+Darüber hinaus soll das Auflösungsvermögen des verwendeten Spektrometers bestimmt werden.
 \end{abstract}
 
 \end{titlepage}
@@ -452,7 +456,7 @@ Durch eine nicht ideale Kalibration der Zähleinheit konnten jedoch nicht die in
 Für den Untergrund des Caesium-Zerfalls bei beiden Transmissionseinstellungen sind die in Tabelle \ref{tab:untergrund_cs} notierten Werte für die Anzahl der Ereignisse $N$ gemessen worden.
 Die Messwerte wurden dabei in der untersten Zeile gemittelt und der Fehler aus der Standardabweichung berechnet.
 
-\subsubsection{Spektrum von Caesium}
+\subsubsection{Spektrum von Caesium (\ce{^{137}Cs})}
 \label{sssec:spektrum_caesium}
 Bei der Aufnahme des Spektrums wurde die Hallspannung $U_\mathrm{H}$ und die Anzahl der Ereignisse $N$ gemessen.
 Dabei wird der Fehler der gemessenen Hallspannung aufgrund fehlender Kenntnis über das genaue Messverfahren auf
@@ -582,11 +586,11 @@ Die Erwartung der Zunahme des Auflösungsvermögens und damit Abnahme der relati
 Man sieht, dass bei 1\% Transmission die relative Linienbreite minimal abgenommen hat, was aber in Anbetracht der Fehler von geringer Signifikanz ist.
 Bei der K-Linie konnte sogar eine Zunahme der relativen Linienbreite beobachtet werden.
 Dies liegt hauptsächlich an der Abweichung der Linie von der Gaußform in Abbildung \ref{fig:ba_t1_fein}, weshalb die Linienbreite durch die Anpassung nicht korrekt wiedergegeben werden kann.
-
+\newpage
 \subsection{Bestimmung der Zerfallsenergie}
 Zur Bestimmung der Zerfallsenergie $Q$ wird die in Abschnitt \ref{sssec:kurieplot} beschriebene Kurie-Darstellung verwendet, bei der sich die Zerfallsenergie direkt am Schnittpunkt des linearisierten Spektrums mit der $\epsilon$-Achse ablesen lässt.
 
-\subsubsection{Spektrum von Thallium}
+\subsubsection{Spektrum von Thallium (\ce{^{204}Tl})}
 \begin{wraptable}{o}{4.7cm}
 	\centering
 	\input{./tables/untergrund_tl.tex}
@@ -685,11 +689,10 @@ Mit der Elektronenmasse $m_\mathrm{e} c^2 = \SI{511}{\kilo\electronvolt}$ ergibt
 \end{align}
 Der in \cite{tl_literatur} gegebene Wert von $Q_\mathrm{Tl}^\mathrm{Lit.} = \SI{763.76 +- 0.18}{\kilo\electronvolt}$ kann nicht erreicht werden.
 Leider konnten keine konkreten Fehler in der Methodik gefunden werden, weshalb davon ausgegangen wird, dass die problematische Einstellung der Zähleinheit die starke Abweichung verursachte.
-
 \FloatBarrier
-\subsubsection{Spektrum von Natrium}
+\newpage
+\subsubsection{Spektrum von Natrium (\ce{^{22}Na})}
 \begin{wraptable}{o}{4.8cm}
-	\vspace{-12pt}
 	\centering
 	\input{./tables/untergrund_na.tex}
 	\caption{Untergrundmessung für \isotope[22]{Na} mit Messdauer \SI{100}{\second} bei \SI{4}{\percent} Transmission.}
@@ -735,7 +738,7 @@ Der Vergleich mit dem Literaturwert \cite{na_literatur}
 	Q^{\mathrm{Lit.}}_\mathrm{Na} = \SI{545.7 +- 0.4}{\kilo\electronvolt}
 \end{align*}
 liefert im Rahmen des Fehlers eine gute Übereinstimmung.
-
+\FloatBarrier
 \section{Fazit}
 Zusammenfassend kann man sagen, dass der Versuch nur bedingt erfolgreich verlaufen ist, dennoch einen guten Einblick in die Methodik der Spektroskopie geliefert hat.
 Die Impulskalibration des Spektrometers konnte ohne weitere Probleme durchgeführt werden.
@@ -746,7 +749,7 @@ Dies kann leider nicht von der Bestimmung der Endpunktsenergie von \isotope[204]
 Während der Versuchsdurchführung gab es Probleme mit dem verwendeten Fensterdiskriminator, welcher unter anderen Randbedingungen eingestellt wurde als dies am Tag der Durchführung der Fall war.
 Daher war eine Neueinstellung nötig, welche nicht zufriedenstellend durchgeführt werden konnte.
 Dadurch konnten die in der Praktikumsanleitung gewünschten Zählraten kaum und bei manchen Messungen garnicht erreicht werden.
-Außerdem resultierte dies in sehr hohen Untergründen, \textellipsis
+Außerdem resultierte dies in sehr hohen Untergründen, welche die Messung negativ beeinflussten.
 
 \FloatBarrier
 % BIBLIOGRAPHIE

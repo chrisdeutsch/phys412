@@ -228,6 +228,42 @@ Bildah
 
 \subsection{Szintillatoren, Halbleiterdetektor, Photomulti etc.}
 
+\subsubsection{Detektor Charakteristiken}
+Output des Detektors ein Strompuls und die Energie des detektierten Teilchens ist proportional zu der Ladung des Pulses.
+Ist die Pulsform von Teilchen verschiedener Energien immer gleich, so ist dies gleichbedeutend zu der Höhe des Pulses.\\
+\\
+Energieauflösung: Linien haben Gaußform. Weite der Linie verursacht durch Fluktuationen in der Anzahl der Ionisationen/Anregungen(Poissonverteilt) (statistischer Prozess: $\mathcal{R} \propto 1 / \sqrt{N}$ mit der Anzahl der Ionisationen bei gegebener Energie $N$. Zentraler Grenzwertsatz: $\sigma_x^2 / \braket{X} \propto 1 / \sqrt{N}$, wobei X eine Summe von N Zufallsvariablen ist.).
+Auflösung (FWHM):
+\begin{align}
+	\text{Resolution} = \frac{\Delta E}{E}
+\end{align}
+Auflösung ist eine Funktion der Energie! Generell ist die Anzahl der Ionisationen proportional zur Energie des einfallenden Teilchens. Damit skaliert die Auflösung ebenfalls wie:
+\begin{align}
+	\mathcal{R} \propto \frac{1}{\sqrt{E_\gamma}}
+\end{align}
+Neben der intrinsischen Unschärfe des Detektors kommt noch Unschärfe der verwendeten Elektron, welche sich quadratisch addiert:
+\begin{align}
+	\Delta E^2 = \Delta E_\mathrm{Detektor}^2 + \Delta E_\mathrm{Elektronik}^2
+\end{align}
+\\
+Detektoreffizienz: Unterscheidung zwischen absoluter und intrinsischer Effizienz.\\
+Absolute (totale) Effizienz:
+\begin{align}
+	\mathcal{E}_\mathrm{tot} = \frac{\text{events registered}}{\text{events emitted by source}}
+\end{align}
+(Peakeffizienz: events registered $\rightarrow$ Ereignisse im Photopeak) 
+Ist abhängig von der Detektorgeometrie und der Wahrscheinlichkeit einer Interaktion mit dem Detektor.\\
+\\
+Intrinsische Effizienz:
+\begin{align}
+	\mathcal{E}_\mathrm{int} = \frac{\text{events registered}}{\text{events impinging on detector}}
+\end{align}
+Mit der absoluten Peakeffizienz scheint die intrinsische Effizienz aus Leo gemeint zu sein.
+\begin{align}
+	\mathcal{E}_\mathrm{int} = \frac{N_\mathrm{Photo.}}{A \cdot T \cdot \frac{\pi r^2}{4\pi \, d^2}}
+\end{align}
+Der geometrische Faktor im Nenner geht von einer Punktquelle (Aktivität $A$) in hohem Abstand vom Detektor $d$ aus. Messzeit $T$, Detektorradius $r$.
+
 \subsubsection{Szintillatoren}
 Szintillator: Körper dessen Moleküle beim Durchgang von energiereichen Photonen angeregt werden und folglich Licht (meist im UV-Bereich) emittieren. In Kombination mit Photomulti geeignete Detektoren.\\
 \\
@@ -267,9 +303,10 @@ Energie für e-Loch-Bildung:
 \end{align}
 Mehr als Bandlücke da ein Teil der Energie in Anregungen des Gitter übergeht.
 Cite William R. Leo\\
-Im Vergleich zur Photoelektronenbildung in Szintillatoren zwei Größenordnung höhere e-Loch-Bildung und damit bessere Energieauflösung.
+Im Vergleich zur Photoelektronenbildung in Szintillatoren zwei Größenordnung höhere e-Loch-Bildung und damit bessere Energieauflösung.\\
 \\
-TODO: GERMANIUM DETECTORS 10.7 im Dr. Leo
+Aufgrund der hohen Ordnungszahl von Germanium ist der Photowirkungsquerschnitt 60 mal größer als der von Silizium.\\
+Vergleich von Germanium und NaI-Detektor im Leo Fig. 10{.}19.
 
 \subsection{Spektrum, Vielkanalanalysator}
 

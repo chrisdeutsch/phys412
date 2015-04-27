@@ -19,6 +19,6 @@ set grid
 load './../gnuplot_linestyles.plt'
 
 
-plot './data/szintillator/caesium.txt' using 1:2:(sqrt($2)) w yerrorbars t'Messwerte' ls 1
+plot './data/szintillator/caesium.txt' using 1:2:(sqrt($2)) w boxerror t'Messwerte' ls 1
 
 unset output

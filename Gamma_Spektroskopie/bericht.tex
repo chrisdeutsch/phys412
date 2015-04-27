@@ -99,6 +99,8 @@
 \markright{\thesubsection{} #1}
 }
 
+\newcommand{\ptt}{Peak-to-Total-Verhältnis}
+
 % DOKUMENTINFORMATIONEN
 \title{P521 \\ Gamma-Spektroskopie mit Szintillations- und Halbleiterdetektoren}
 
@@ -147,7 +149,7 @@ Tutor: & Christian Hammann
 Man kategorisiert Quellen radioaktiver Strahlung meistens in \textbf{natürliche Radioaktivität} und \textbf{künstliche Radioaktivität}.
 Zu ersterem werden vor allem radioaktive Nuklide gezählt, die bereits seit Entstehung der Erde existieren und heute noch nachweisbar sind (primordiale Nuklide).
 Weiterhin werden Nuklide, die bei Zerfällen dieser entstehen sowie kosmische Strahlung der natürlichen Radioaktivität zugeordnet.
-Künstliche Radioakivität entsteht gezielt oder als Abfallprodukt bei gesteuerten Prozessen wie der Kernspaltung zur Energiegewinnung oder für medizinischen und technischen Anwendungen.
+Künstliche Radioakivität entsteht gezielt oder als Abfallprodukt bei gesteuerten Prozessen wie der Kernspaltung zur Energiegewinnung oder für medizinischen und technische Anwendungen.
 
 \subsubsection{Zerfallsreihen}
 
@@ -160,11 +162,14 @@ Es werden hier nur einige der Nuklide aufgeführt, da die Reihen recht lang sind
 	&\isotope[235]{U}\to\dots\to\isotope[227]{Ac}\to\dots\to\isotope[211]{Pb}\to\dots\to\isotope[207]{Pb} &\qquad\text{(Uran-Actinium-Reihe)}
 \end{align*}
 Die als Thoriumreihe bezeichnete Zerfallsreihe beginnt zwar mit einem Pulloniumnuklid, ist jedoch nach dem am häufigsten auftretenden Element Thorium benannt.
-Es existiert darüber hinaus noch eine Neptunium-Reihe ($\isotope[237]{Np}\to\isotope[205]{Tl}$), diese zählt aber nicht mehr zu den natürlichen Zerfallsreihen, da das bei Entstehung der Erde Neptunium vorhandene Neptunium mittlerweile komplett zerfallen ist.
+Es existiert darüber hinaus noch eine Neptunium-Reihe ($\isotope[237]{Np}\to\isotope[205]{Tl}$), diese zählt allerdings nicht mehr zu den natürlichen Zerfallsreihen, da das bei Entstehung der Erde vorhandene Neptunium mittlerweile komplett zerfallen ist.
 Sie kann nur noch auf künstlichem Weg erzeugt werden, da \isotope[237]{Np} ein Tochternuklid von in Kernreaktoren erzeugten Nukliden ist.
 
-
 \subsubsection{$\gamma$-Strahlung}
+
+In diesem Versuch wird der atomare Zerfallsprozess mit $\gamma$-Strahlung betrachtet.
+Sie entsteht wenn ein energetisch angeregter Atomkern in einen energetisch weniger angeregten Zustand übergeht.
+Die dabei frei werdende Energie wird in Form von hochenergetischen Photonen, s.g. Gamma-Quanten ausgesendet, deren Energiebereich von wenigen \si{\kilo\electronvolt} bis zu mehreren \si{\mega\electronvolt} reicht.
 
 \subsection{Wechselwirkung von $\gamma$-Quanten mit Materie}
 
@@ -190,8 +195,9 @@ Quelle: Siegbahn
 \end{figure}
 
 \subsubsection{Compton-Effekt}
-Streuung von Photonen an freien Elektron.
-In Materie wenn $E_\gamma \gg E_\mathrm{Bind. e^{-}}$ dann Elektronen effektiv frei.
+Der Compton-Effekt beschreibt die Streuung von Photonen an freien Elektronen.
+Allerdings können Elektronen im Fall $E_\gamma \gg E_\mathrm{Bind. e^{-}}$ auch in Materie als frei betrachtet werden.
+Die Streuung beschreibt einen winkelabhängigen Energieübertrag vom Photon auf das Elektron, wobei der Streuwinkel $\theta$ des Photons relativ zur einfallenden Flugrichtung angegeben wird.
 
 (BILD mit Winkeln undso)
 
@@ -329,6 +335,38 @@ Vergleich von Germanium und NaI-Detektor im Leo Fig. 10{.}19.
 \section{Durchführung und Auswertung}
 Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
 Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
+\\
+\\
+Wenn nicht anders angegeben sind die dargestellten und genutzten Messwerte bereits um den Untergrund bereinigt worden.
+
+\subsection{NaJ(Tl) Szintillationsdetektor}
+
+\subsubsection{Energiekalibrierung}
+
+\subsubsection{Bestimmung der Halbwertsbreite}
+
+\subsubsection{Peak-to-Total-Verhältnis}
+
+\subsubsection{Absolute Peakeffizienz}
+
+\subsubsection{Relative Effizienz als Funktion der Gammaenergie}
+
+
+\subsection{Germanium Halbleiterdetektor}
+
+\subsubsection{Energiekalibrierung}
+
+\subsubsection{Bestimmung der Halbwertsbreite}
+
+\subsubsection{Intrinsische Halbwertsbreite}
+
+\subsubsection{Peak-to-Total-Verhältnis}
+
+\subsubsection{Absolute Peakeffizienz}
+
+\subsubsection{Relative Effizienz als Funktion der Gammaenergie}
+
+\subsection{Nachweis der Radioakivität in einer Probe}
 
 \section{Fazit}
 

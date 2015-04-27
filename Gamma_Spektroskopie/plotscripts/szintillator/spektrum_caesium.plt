@@ -18,6 +18,6 @@ set grid
 
 load './../gnuplot_linestyles.plt'
 
-plot './data/szintillator/caesium_bereinigt.txt' using 1:2:(sqrt($2)) w box t'Messwerte' ls 1
+plot './data/szintillator/caesium_bereinigt.txt' using 1:2 w boxes t'Messwerte' ls 1
 
 unset output

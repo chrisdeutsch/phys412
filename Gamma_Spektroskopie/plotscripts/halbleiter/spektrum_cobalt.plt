@@ -2,9 +2,9 @@ reset
 
 set term epslatex color size 5,3.5
 
-set output './plots/szintillator/caesium.tex'
+set output './plots/halbleiter/cobalt.tex'
 
-set key top right
+set key top left
 
 set decimalsign '{,}'
 #set format y "%.1f"
@@ -18,6 +18,6 @@ set grid
 
 load './../gnuplot_linestyles.plt'
 
-plot './data/szintillator/caesium_bereinigt.txt' using 1:2:(sqrt($2)) w box t'Messwerte' ls 1
+plot './data/halbleiter/cobalt_bereinigt.txt' using 1:2 w boxes t'Messwerte' ls 1
 
 unset output

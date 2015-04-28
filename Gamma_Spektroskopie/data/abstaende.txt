@@ -1,0 +1,12 @@
+Szintillator:
+Co60	2.3 cm
+Cs137	17.8 cm
+Eu152	24.0 cm
+
+Halbleiter:
+Co60	3.0 cm
+Cs137	20.1 cm
+Eu152	22.8 cm
+
+Fehler: mindestens +- 1 mm
+	eher +- 2 mm

@@ -1,5 +1,5 @@
 % PAKETE UND DOKUMENTKONFIGURATION
-\documentclass[11pt, a4paper, draft]{article}
+\documentclass[11pt, a4paper]{article}
 
 % Encoding für Umlaute
 \usepackage[utf8]{inputenc}
@@ -366,19 +366,6 @@ Vergleich von Germanium und NaI-Detektor im Leo Fig. 10{.}19.
 	\label{fig:europium_spektrum}
 \end{figure}
 
-\begin{figure}[h]
-	\centering
-	\input{./plots/szintillator/energiekalibrierung/europium5.tex}
-	\caption{Gaußfit eu1}
-	\label{fig:kalibrierung_co}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\input{./plots/halbleiter/energiekalibrierung/europium8.tex}
-	\caption{Gaußfit}
-\end{figure}
-
 \subsection{Spektrum, Vielkanalanalysator}
 
 \subsection{Auflösungsvermögen, Breite, Unterschiede der Detektoren}
@@ -428,13 +415,21 @@ Die Anpassungshypothese lautet:
 \end{align}
 In Tabelle \ref{tab:kalibrierungslinien_szinti} sind die Ergebnisse der Anpassung eingetragen.
 Den Schwerpunkten der Gaußfunktionen wurden dabei unter Benutzung der Termschemata und Tabelle in \cite{anleitung} die jeweiligen Gammaenergien zugeordnet.
-
-\begin{table}
+\begin{table}[ht]
 	\centering
 	\input{./tables/kalibrierung_szinti.tex}
 	\caption{Anpassungsergebnisse zur Energiekalibrierung für den Szintillationsdetektor}
 	\label{tab:kalibrierungslinien_szinti}
 \end{table}
+Da eine Anpassung mit \text{gnuplot} nur Fehler in $y$-Richtung berücksichtigen kann und die gegebenen Gammaenergien als fehlerlos betrachtet werden, wird die Energiekalibrierung in reziproker Darstellung durchgeführt, so dass die fehlerbehafteten Größen auf der Ordinate aufgetragen werden und die Fehler in die Anpassung eingehen.
+Der Zusammenhang zwischen Kanalnummer und Energie wird als linear betrachtet, so dass eine Anpassung an eine Ursprungsgerade mit Steigung $m$ erfolgt.
+Die Daten und durchgeführte Anpassung sind in Abbildung \ref{fig:kalibrierung_szinti} zu sehen.
+\begin{figure}[ht]
+	\centering
+	\input{./plots/kalibrierung_szinti.tex}
+	\caption{Energiekalibrierung des NaJ(Tl) Detektors}
+	\label{fig:kalibrierung_szinti}
+\end{figure}   
 
 \subsubsection{Halbwertsbreiten der Linien}
 

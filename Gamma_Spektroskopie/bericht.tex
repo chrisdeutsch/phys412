@@ -34,7 +34,7 @@
 % Einheitendefinitionen
 \DeclareSIUnit{\skt}{Skt.}
 \DeclareSIUnit{\gauss}{G}
-\DeclareSIUnit{\division}{Div.}
+\DeclareSIUnit{\division}{div.}
 
 % Operatordefinitionen
 \DeclareMathOperator{\erf}{erf}
@@ -81,7 +81,7 @@
 \renewcommand{\thesubtable}{\alph{subtable}}
 
 % Manuelle Silbentrennung
-\hyphenation{Re-so-na-tor Mo-den-ab-stand Re-so-na-tor-län-ge Spek-t-ro-me-ter}
+\hyphenation{Re-so-na-tor Mo-den-ab-stand Re-so-na-tor-län-ge Spek-t-ro-me-ter Szin-til-la-tions-de-tek-tors}
 
 % Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
 % 3 subsubsections)
@@ -387,20 +387,35 @@ Wenn nicht anders angegeben sind die dargestellten und genutzten Messwerte berei
 \subsection{NaJ(Tl) Szintillationsspektrometer}
 
 \subsubsection{Detektorsignal des Szintillationsdetektors}
+In diesem Abschnitt soll das Signalverhalten des verwendeten NaJ(Tl)-Szintillationsdetektors untersucht werden.
+Dazu wurden mit einem Oszilloskop die Signalformen jeweils am Vorverstärker des Photomultipliers sowie am Hauptverstärker aufgenommen.
+In Abbildung \ref{fig:signal_szinti_vor} ist ein beispielhaftes Signal direkt am Vorverstärker dargestellt.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=
 	0.7\textwidth]{./figures/signale/vor_szinti.png}
-	\caption{Signal am Vorverstärker des Szintillators}
+	\caption{Signal des Szintillationsdetektors am Ausgang des Vorverstärkers des Photomultipliers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{0.5}{\volt\per\division} für die Vertikale und \SI{100}{\micro\second\per\division} in der Horizontalen.}
 	\label{fig:signal_szinti_vor}
 \end{figure}
+Die im Folgenden gemessenen Größen wurden mithilfe eines Bildbearbeitungsprogrammes direkt an den Aufnahmen des Oszilloskops abgemessen.
+Dabei wurden die Fehler auf \SI{0.1}{\division} der jeweiligen Spannungs-/Zeitskala abgeschätzt.
+Das Signal am Vorverstärker des Photomultipliers weist einen (im Vergleich zur Signaldauer) instantanen Anstieg mit der Signalamplitude $\Delta U = \SI{2.75 +- 0.05}{\volt}$ auf.
+Nach diesem Anstieg fällt das Signal exponentiell mit einer Signaldauer\footnote{Als Definition der Signaldauer $\Delta t$ wird dabei die Zeit verwendet, die das Signal benötigt um von \SI{10}{\percent} der Signalamplitude an der ansteigenden Flanke auf \SI{10}{\percent} an der abfallenden Flanke zu gelangen.} von $\Delta t = \SI{395 +- 10}{\micro\second}$ ab.
+Der exponentielle Abfall des Signals kann durch das Nachleuchten des Szintillatorkristalls erklärt werden, welches darauf beruht, dass der Zerfall der angeregten Zustände im Kristall einem exponentiellem Verhalten folgt.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./figures/signale/haupt_szinti.png}
-	\caption{Signal am Hauptverstärker des Szintillators}
+	\caption{Signal des Szintillationsdetektors am Ausgang des Hauptverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{1}{\volt\per\division} für die Vertikale und \SI{1}{\micro\second\per\division} in der Horizontalen.}
 	\label{fig:signal_szinti_haupt}
 \end{figure}
-(KANNST DU DAS MENÜ RECHTS ABSCHNEIDEN? DAS CH1... xyz V soundso kHz kann auch weg aber rechts die x und y divisions nicht wegmachen)
+
+Im Vergleich dazu wurde in Abbildung \ref{fig:signal_szinti_haupt} eines der Signale am Hauptverstärker des Detektors dargestellt.
+Obwohl der Puls am unipolaren Ausgang des Verstärkers gemessen wurde, kann ein negativer Ausschlag festgestellt werden.
+Der negative Impuls ist für die Messung nicht relevant, da dieser bei der Impulshöhenmessung mit dem Vielkanalanalysator keinen Einfluss hat.
+Der für die Messung relevante positive Impuls hat eine Amplitude von $\Delta U = \SI{3.4 +- 0.1}{\volt}$ und eine Signaldauer $\Delta t = \SI{2.3 +- 0.1}{\micro\second}$.
+Der Vergleich der Amplituden\footnote{Ein direkter Vergleich der beiden Signale macht nur Sinn, wenn lediglich Größenordnungen betrachtet werden, da die beiden Signale von unabhängigen Ereignissen stammen.} an beiden Verstärkern legt nahe, dass der Hauptverstärker nicht zur Verstärkung der Spannung dient sondern vielmehr zur Impulsformung.
+Dies sieht man besonders an der um zwei Größenordnungen verkürzten Signaldauer.
+Da beide Signale von unabhängigen Ereignissen stammen, kann leider nicht verifiziert werden, dass die Impulshöhe am Hauptverstärker proportional zur im Photomultiplier gelösten Ladung, welche wiederum proportional zur Fläche über dem Signal am Vorverstärker ist.
 
 \subsubsection{Aufnahme der Gammaspektren (QUELLEN) und das Untergrundspektrum}
 
@@ -446,13 +461,13 @@ Die Daten und durchgeführte Anpassung sind in Abbildung \ref{fig:kalibrierung_s
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./figures/signale/vor_ger.png}
-	\caption{Signal am Vorverstärker des Halbleiterdetektors}
+	\caption{Signal des Halbleiterdetektors am Ausgang des Vorverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{50}{\milli\volt\per\division} für die Vertikale und \SI{25}{\micro\second\per\division} in der Horizontalen.}
 	\label{fig:signal_ger_vor}
 \end{figure}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./figures/signale/haupt_ger.png}
-	\caption{Signal am Hauptverstärker des Halbleiterdetektors}
+	\caption{Signal des Halbleiterdetektors am Ausgang des Hauptverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{1}{\volt\per\division} für die Vertikale und \SI{5}{\micro\second\per\division} in der Horizontalen.}
 	\label{fig:signal_ger_haupt}
 \end{figure}
 

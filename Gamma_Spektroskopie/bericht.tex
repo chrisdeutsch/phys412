@@ -1,5 +1,5 @@
 % PAKETE UND DOKUMENTKONFIGURATION
-\documentclass[11pt, a4paper]{article}
+\documentclass[11pt, a4paper, draft]{article}
 
 % Encoding für Umlaute
 \usepackage[utf8]{inputenc}
@@ -418,6 +418,23 @@ Wenn nicht anders angegeben sind die dargestellten und genutzten Messwerte berei
 \subsubsection{Aufnahme der Gammaspektren (QUELLEN) und das Untergrundspektrum}
 
 \subsubsection{Energiekalibrierung}
+Da die Spektren mit einem Vielkanalanalysator aufgenommen werden, kann aus den Daten keine Energieinformation gewonnen werden.
+Dazu ist eine Energiekalibrierung nötig, die mit Hilfe bekannter Linien in den jeweiligen Gamma-Spektren durchgeführt wird.
+An die beiden Peaks im Cobalt-Spektrum, sowie an das Photopeak von Caesium (das am linken Rand zu sehende Peak entsteht durch Röntgenstrahlung und ist nicht von Interesse) und an eine Auswahl von Peaks im Europium-Spektrum wird mit \texttt{gnuplot} jeweils eine Gaußfunktion mit Offset angepasst.
+Die Anpassungshypothese lautet:
+\begin{align}
+\Sigma &= \mathcal{G}(x) + u \qquad \text{mit}\\
+\mathcal{G}(x) &= A \cdot \exp\left( - \frac{(x - \mu)^2}{2 \sigma^2}\right)
+\end{align}
+In Tabelle \ref{tab:kalibrierungslinien_szinti} sind die Ergebnisse der Anpassung eingetragen.
+Den Schwerpunkten der Gaußfunktionen wurden dabei unter Benutzung der Termschemata und Tabelle in \cite{anleitung} die jeweiligen Gammaenergien zugeordnet.
+
+\begin{table}
+	\centering
+	\input{./tables/kalibrierung_szinti.tex}
+	\caption{Anpassungsergebnisse zur Energiekalibrierung für den Szintillationsdetektor}
+	\label{tab:kalibrierungslinien_szinti}
+\end{table}
 
 \subsubsection{Halbwertsbreiten der Linien}
 

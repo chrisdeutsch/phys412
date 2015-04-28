@@ -8,7 +8,7 @@ set title ''
 
 set key top left
 
-set xrange [5800:6200]
+set xrange [5350:5400]
 set yrange [0:*]
 set xlabel 'Kanalnummer $n$'
 set ylabel 'Ereignisse'
@@ -17,16 +17,16 @@ set grid
 set samples 7000
 
 # Amplituden
-a1 = 100
+a1 = 1000
 
 # Mittelwerte
-b1 = 6000
+b1 = 5380
 
 #Schwankungsbreiten
-c1 = 20
+c1 = 2
 
 # Untergrund
-d = 10
+d = 5
 
 t(x)= a1*exp(-0.5*((x-b1)/c1)**2) + d
 fit t(x) './data/halbleiter/europium_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d

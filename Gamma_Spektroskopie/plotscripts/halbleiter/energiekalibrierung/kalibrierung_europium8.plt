@@ -2,13 +2,13 @@ reset
 
 set term epslatex color size 5.2,3.5
 
-set output './plots/halbleiter/energiekalibrierung/europium1.tex'
+set output './plots/halbleiter/energiekalibrierung/europium8.tex'
 
 set title ''
 
 set key top left
 
-set xrange [500:700]
+set xrange [6970:7030]
 set yrange [0:*]
 set xlabel 'Kanalnummer $n$'
 set ylabel 'Ereignisse'
@@ -17,16 +17,16 @@ set grid
 set samples 7000
 
 # Amplituden
-a1 = 25000
+a1 = 1000
 
 # Mittelwerte
-b1 = 580
+b1 = 6985
 
 #Schwankungsbreiten
 c1 = 2
 
 # Untergrund
-d = 500
+d = 10
 
 t(x)= a1*exp(-0.5*((x-b1)/c1)**2) + d
 fit t(x) './data/halbleiter/europium_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d

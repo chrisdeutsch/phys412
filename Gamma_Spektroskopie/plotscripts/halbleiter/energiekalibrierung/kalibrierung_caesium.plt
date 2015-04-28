@@ -8,8 +8,8 @@ set title ''
 
 set key top left
 
-set xrange [3000:4200]
-set yrange [0:1200]
+set xrange [3100:3300]
+set yrange [0:*]
 set xlabel 'Kanalnummer $n$'
 set ylabel 'Ereignisse'
 
@@ -17,28 +17,21 @@ set grid
 set samples 7000
 
 # Amplituden
-a1 = 1200
-a2 = 900
-a3 = 18
+a1 = 30000
 
 # Mittelwerte
-b1 = 3800
-b2 = 6500
-b3 = 1.08
+b1 = 3270
 
 #Schwankungsbreiten
-c1 = 10
-c2 = 10
-c3 = 0.06
+c1 = 2
 
 # Untergrund
-d = 100
+d = 10
 
 t(x)= a1*exp(-0.5*((x-b1)/c1)**2) + d
 fit[x=3200:4200] t(x) './data/halbleiter/caesium_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d
 
 g1(x) = a1*exp(-0.5*((x-b1)/c1)**2) # Gaußfit 1
-g2(x) = a2*exp(-0.5*((x-b2)/c2)**2) # Gaußfit 2
 u(x) = d							# Untergrund
 
 load './../gnuplot_linestyles.plt'

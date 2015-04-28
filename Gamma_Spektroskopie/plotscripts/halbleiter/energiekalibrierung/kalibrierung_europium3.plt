@@ -8,7 +8,7 @@ set title ''
 
 set key top left
 
-set xrange [1800:2200]
+set xrange [1600:1800]
 set yrange [0:*]
 set xlabel 'Kanalnummer $n$'
 set ylabel 'Ereignisse'
@@ -17,10 +17,10 @@ set grid
 set samples 7000
 
 # Amplituden
-a1 = 500
+a1 = 12000
 
 # Mittelwerte
-b1 = 2000
+b1 = 1700
 
 #Schwankungsbreiten
 c1 = 15

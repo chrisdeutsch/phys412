@@ -8,8 +8,8 @@ set title ''
 
 set key top left
 
-set xrange [6400:6700]
-set yrange [0:1100]
+set xrange [6500:6700]
+set yrange [0:*]
 set xlabel 'Kanalnummer $n$'
 set ylabel 'Ereignisse'
 
@@ -20,14 +20,14 @@ set samples 7000
 a1 = 10000
 
 # Mittelwerte
-b1 = 6550
+b1 = 6600
 
 #Schwankungsbreiten
-c1 = 5
+c1 = 3.5
 
 
 # Untergrund
-d = 100
+d = 25
 
 t(x)= a1*exp(-0.5*((x-b1)/c1)**2) + d
 fit[x=6400:6800] t(x) './data/halbleiter/cobalt_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d

@@ -16,8 +16,11 @@ set ylabel 'Ereignisse $$'
 
 set grid
 
+set bars small
+set style data lines
+
 load './../gnuplot_linestyles.plt'
 
-plot './data/szintillator/europium_bereinigt.txt' using 1:2 w boxes t'Messwerte' ls 1
+plot './data/szintillator/europium_bereinigt.txt' using 1:2:3 w errorbars t'Messwerte' ls 1
 
 unset output

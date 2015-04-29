@@ -16,8 +16,11 @@ set ylabel 'Ereignisse $$'
 
 set grid
 
+set bars small
+set style data lines
+
 load './../gnuplot_linestyles.plt'
 
-plot './data/halbleiter/untergrund.txt' using 1:2 w boxes t'Messwerte' ls 1
+plot './data/halbleiter/untergrund.txt' using 1:2:(sqrt($2)) w errorbars t'Messwerte' ls 1
 
 unset output

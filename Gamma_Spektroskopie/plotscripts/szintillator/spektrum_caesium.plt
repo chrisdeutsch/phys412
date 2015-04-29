@@ -18,6 +18,9 @@ set grid
 
 load './../gnuplot_linestyles.plt'
 
-plot './data/szintillator/caesium_bereinigt.txt' using 1:2 w boxes t'Messwerte' ls 1
+set bars small
+set style data lines
+
+plot './data/szintillator/caesium_bereinigt.txt' using 1:2:3 w errorbars t'Messwerte' ls 1
 
 unset output

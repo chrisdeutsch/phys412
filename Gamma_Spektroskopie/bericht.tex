@@ -387,6 +387,7 @@ Wenn nicht anders angegeben sind die dargestellten und genutzten Messwerte berei
 \subsection{NaJ(Tl) Szintillationsspektrometer}
 
 \subsubsection{Detektorsignal des Szintillationsdetektors}
+\label{sec:detektorsignal_szinti}
 In diesem Abschnitt soll das Signalverhalten des verwendeten NaJ(Tl)-Szintillationsdetektors untersucht werden.
 Dazu wurden mit einem Oszilloskop die Signalformen jeweils am Vorverstärker des Photomultipliers sowie am Hauptverstärker aufgenommen.
 In Abbildung \ref{fig:signal_szinti_vor} ist ein beispielhaftes Signal direkt am Vorverstärker dargestellt.
@@ -398,9 +399,9 @@ In Abbildung \ref{fig:signal_szinti_vor} ist ein beispielhaftes Signal direkt am
 	\label{fig:signal_szinti_vor}
 \end{figure}
 Die im Folgenden gemessenen Größen wurden mithilfe eines Bildbearbeitungsprogrammes direkt an den Aufnahmen des Oszilloskops abgemessen.
-Dabei wurden die Fehler auf \SI{0.1}{\division} der jeweiligen Spannungs-/Zeitskala abgeschätzt.
-Das Signal am Vorverstärker des Photomultipliers weist einen (im Vergleich zur Signaldauer) instantanen Anstieg mit der Signalamplitude $\Delta U = \SI{2.75 +- 0.05}{\volt}$ auf.
-Nach diesem Anstieg fällt das Signal exponentiell mit einer Signaldauer\footnote{Als Definition der Signaldauer $\Delta t$ wird dabei die Zeit verwendet, die das Signal benötigt um von \SI{10}{\percent} der Signalamplitude an der ansteigenden Flanke auf \SI{10}{\percent} an der abfallenden Flanke zu gelangen.} von $\Delta t = \SI{395 +- 10}{\micro\second}$ ab.
+Dabei wurden die Fehler auf \SI{0.2}{\division} der jeweiligen Spannungs-/Zeitskala abgeschätzt.
+Das Signal am Vorverstärker des Photomultipliers weist einen (im Vergleich zur Signaldauer) instantanen Anstieg (Anstiegszeit $< \SI{5}{\micro\second}$) mit der Signalamplitude $\Delta U = \SI{2.8 +- 0.1}{\volt}$ auf.
+Nach diesem Anstieg fällt das Signal exponentiell mit einer Signaldauer\footnote{Als Definition der Signaldauer $\Delta t$ wird dabei die Zeit verwendet, die das Signal benötigt um von \SI{10}{\percent} der Signalamplitude an der ansteigenden Flanke auf \SI{10}{\percent} an der abfallenden Flanke zu gelangen.} von $\Delta t = \SI{395 +- 20}{\micro\second}$ ab.
 Der exponentielle Abfall des Signals kann durch das Nachleuchten des Szintillatorkristalls erklärt werden, welches darauf beruht, dass der Zerfall der angeregten Zustände im Kristall einem exponentiellem Verhalten folgt.
 \begin{figure}[h]
 	\centering
@@ -411,7 +412,7 @@ Der exponentielle Abfall des Signals kann durch das Nachleuchten des Szintillato
 Im Vergleich dazu wurde in Abbildung \ref{fig:signal_szinti_haupt} eines der Signale am Hauptverstärker des Detektors dargestellt.
 Obwohl der Puls am unipolaren Ausgang des Verstärkers gemessen wurde, kann ein negativer Ausschlag festgestellt werden.
 Der negative Impuls ist für die Messung nicht relevant, da dieser bei der Impulshöhenmessung mit dem Vielkanalanalysator keinen Einfluss hat.
-Der für die Messung relevante positive Impuls hat eine Amplitude von $\Delta U = \SI{3.4 +- 0.1}{\volt}$ und eine Signaldauer $\Delta t = \SI{2.3 +- 0.1}{\micro\second}$.
+Der für die Messung relevante positive Impuls hat eine Amplitude von $\Delta U = \SI{3.4 +- 0.2}{\volt}$ und eine Signaldauer $\Delta t = \SI{2.3 +- 0.2}{\micro\second}$.
 Der Vergleich der Amplituden\footnote{Ein direkter Vergleich der beiden Signale macht nur Sinn, wenn lediglich Größenordnungen betrachtet werden, da die beiden Signale von unabhängigen Ereignissen stammen.} an beiden Verstärkern legt nahe, dass der Hauptverstärker nicht zur Verstärkung der Spannung dient sondern vielmehr zur Impulsformung.
 Dies sieht man besonders an der um zwei Größenordnungen verkürzten Signaldauer.
 Da beide Signale von unabhängigen Ereignissen stammen, kann leider nicht verifiziert werden, dass die Impulshöhe am Hauptverstärker proportional zur im Photomultiplier gelösten Ladung, ist, welche wiederum proportional zur Fläche über dem Signal am Vorverstärker ist.
@@ -456,13 +457,21 @@ Die Daten und durchgeführte Anpassung sind in Abbildung \ref{fig:kalibrierung_s
 \subsection{Germanium Halbleiterdetektor}
 
 \subsubsection{Detektorsignal des Halbleiterdetektor}
-
+Im Folgenden soll analog zu Abschnitt \ref{sec:detektorsignal_szinti} das Detektorsignal an Vor- und Hauptverstärker des Ge-Halbleiterdetektors bestimmt werden.
+Die genannten Größen und ihre Fehler werden in Analogie zum Szintillationsdetektor bestimmt.
+Zunächst soll das Signal am Vorverstärker des Halbleiterdetektors in Abbildung \ref{fig:signal_ger_vor} betrachtet werden.
+Die Impulsform ist nahezu identisch mit der des Szintillationsdetektors mit der Ausnahme, dass das Signal hier einen positiven Spannungsausschlag mit der Amplitude $\Delta U = \SI{0.29 +-0.01}{\volt}$ (Anstiegszeit $<\SI{1}{\micro\second}$) aufweist.
+Auch der exponentielle Abfall mit der Signaldauer $\Delta t = \SI{137 +- 5}{\micro\second}$ (von 10 \% auf 10\%) ist wiederzuerkennen.
+ERKLÄREN.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./figures/signale/vor_ger.png}
 	\caption{Signal des Halbleiterdetektors am Ausgang des Vorverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{50}{\milli\volt\per\division} für die Vertikale und \SI{25}{\micro\second\per\division} in der Horizontalen.}
 	\label{fig:signal_ger_vor}
 \end{figure}
+Betrachtet man nun das Signal am Hauptverstärker in Abbildung \ref{fig:signal_ger_haupt}\\
+Amplitude: $\Delta U = \SI{5.1 +- 0.2}{\volt}$\\
+Signaldauer: $\Delta t = \SI{22 +- 1}{\micro\second}$\\
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./figures/signale/haupt_ger.png}
@@ -501,9 +510,6 @@ Die Daten und durchgeführte Anpassung sind in Abbildung \ref{fig:kalibrierung_s
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
-
-\bibitem{krane}
-
 \bibitem{siegbahn}
 	K. Siegbahn,
 	\emph{Alpha-, Beta- and Gamma-Ray Spectroscopy},

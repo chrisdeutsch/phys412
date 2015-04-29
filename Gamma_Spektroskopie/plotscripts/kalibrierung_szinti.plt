@@ -8,10 +8,10 @@ set key top left
 
 set decimalsign ','
 
-set xrange [0:1500]
+set xrange [0:*]
 set yrange [0:*]
-set xlabel 'Gammaenergie $E_{\gamma}$ / \si{\kilo\electronvolt}'
-set ylabel 'Linienschwerpunkt $n$'
+set xlabel 'Linienschwerpunkt $n$'
+set ylabel 'Gammaenergie $E_{\gamma}$ / \si{\kilo\electronvolt}'
 
 set grid
 
@@ -19,8 +19,8 @@ load './../gnuplot_linestyles.plt'
 
 f(x) = a * x**3 + b * x**2 + c * x + d
 
-fit[x=0:1200] f(x) './data/energiekalibrierung/szintillator.txt' using 3:1:2 yerror via a, b, c, d
+fit f(x) './data/energiekalibrierung/szintillator.txt' using 1:3 via a, b, c, d
 
-plot './data/energiekalibrierung/szintillator.txt' using 3:1:2 w yerrorbars t'Messwerte' ls 1, f(x) ls 2 lw 2 t"Anpassung"
+plot './data/energiekalibrierung/szintillator.txt' using 1:3:2 w xerrorbars t'Messwerte' ls 1, f(x) ls 2 lw 2 t"Anpassung"
 
 unset output

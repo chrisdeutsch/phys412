@@ -338,14 +338,6 @@ Vergleich von Germanium und NaI-Detektor im Leo Fig. 10{.}19.
 \section{Durchführung und Auswertung}
 Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
 Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
-\\
-\\
-Wenn nicht anders angegeben, sind die dargestellten und genutzten Messwerte bereits um den Untergrund bereinigt worden.
-Dazu wurden die Werte kanalweise mit einem Python-Skript subtrahiert.
-Da der Fehler der Ereignisse für jeden Kanal sowohl für die Untergrundmessung als auch die Spektrenaufnahme aufgrund des zugrunde liegenden statistischen Prozesses durch $\sqrt{N}$ ($N$ Anzahl Ereignisse pro Kanal) gegeben ist, ergibt sich der Fehler der untergrundbereinigten Werte mit Gaußscher Fehlerfortpflanzung zu
-\begin{align}
-\Delta N = \sqrt{N_\text{Spektrum} + N_\text{Untergrund}}
-\end{align}
 
 \subsection{NaJ(Tl) Szintillationsspektrometer}
 
@@ -357,8 +349,8 @@ In Abbildung \ref{fig:signal_szinti_vor} ist ein beispielhaftes Signal direkt am
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=
-	0.7\textwidth]{./figures/signale/vor_szinti.png}
-	\caption{Signal des Szintillationsdetektors am Ausgang des Vorverstärkers des Photomultipliers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{0.5}{\volt\per\division} für die Vertikale und \SI{100}{\micro\second\per\division} in der Horizontalen.}
+	0.7\textwidth]{./figures/signale/vor_szinti_abgeschnitten.jpg}
+	\caption{Signal des Szintillationsdetektors am Ausgang des Vorverstärkers des Photomultipliers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{0.5}{\volt\per\division} für die Vertikale und \SI{100}{\micro\second\per\division} in der Horizontalen. Die horizontale Linie markiert \SI{0}{\volt}.}
 	\label{fig:signal_szinti_vor}
 \end{figure}
 Die im Folgenden gemessenen Größen wurden mithilfe eines Bildbearbeitungsprogrammes direkt an den Aufnahmen des Oszilloskops abgemessen.
@@ -368,8 +360,8 @@ Nach diesem Anstieg fällt das Signal exponentiell mit einer Signaldauer\footnot
 Der exponentielle Abfall des Signals kann durch das Nachleuchten des Szintillatorkristalls erklärt werden, welches darauf beruht, dass der Zerfall der angeregten Zustände im Kristall einem exponentiellem Verhalten folgt.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./figures/signale/haupt_szinti.png}
-	\caption{Signal des Szintillationsdetektors am Ausgang des Hauptverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{1}{\volt\per\division} für die Vertikale und \SI{1}{\micro\second\per\division} in der Horizontalen.}
+	\includegraphics[width=0.7\textwidth]{./figures/signale/haupt_szinti_abgeschnitten.jpg}
+	\caption{Signal des Szintillationsdetektors am Ausgang des Hauptverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{1}{\volt\per\division} für die Vertikale und \SI{1}{\micro\second\per\division} in der Horizontalen. Die horizontale Linie markiert \SI{0}{\volt}.}
 	\label{fig:signal_szinti_haupt}
 \end{figure}
 Im Vergleich dazu wurde in Abbildung \ref{fig:signal_szinti_haupt} eines der Signale am Hauptverstärker des Detektors dargestellt.
@@ -381,6 +373,21 @@ Dies sieht man besonders an der um zwei Größenordnungen verkürzten Signaldaue
 Da beide Signale von unabhängigen Ereignissen stammen, kann leider nicht verifiziert werden, dass die Impulshöhe am Hauptverstärker proportional zur im Photomultiplier gelösten Ladung, ist, welche wiederum proportional zur Fläche über dem Signal am Vorverstärker ist.
 
 \subsubsection{Aufnahme der Gammaspektren von QUELLEN und das Untergrundspektrum}
+Nachdem die Signale des Szintillationsdetektors betrachtet wurden, kann mit der Aufnahme der Spektren begonnen werden.
+Dazu wird zunächst ein Untergrundspektrum aufgenommen, um die Spektren der Isotope \isotope[60]{Co}, \isotope[137]{Cs} und \isotope[152]{Eu} vom Untergrund bereinigen zu können.
+Das Spektrum des Untergrundes wurde in Abbildung (REF) dargestellt.
+Generell wird für den Fehler in der Anzahl der Ereignisse $N$ eines Kanals $n$ wegen der zugrundeliegenden Poisson-Verteilung
+\begin{align}
+	\Delta N = \sqrt{N}
+\end{align}
+angenommen.
+Der Untergrund wurde von den folgenden Spektren bereits abgezogen, sodass der Fehler der untergrundkorrigierten Spektren durch:
+\begin{align}
+	\label{eq:untergrundkorr_fehler}
+	\Delta N_\mathrm{korr.} = \sqrt{\Delta N^2 + \Delta N_\mathrm{Untergrund}^2}
+\end{align}
+gegeben ist.
+Folglich wird die Anzahl der Ereignisse stets vom Untergrund befreit sein, sodass entgegen der Bezeichnung in Gleichung \ref{eq:untergrundkorr_fehler} mit $N$ bezeichnen.
 
 \subsubsection{Energiekalibrierung}
 \label{sec:kalibrierung_szinti}
@@ -431,8 +438,8 @@ Die Impulsform ist nahezu identisch mit der des Szintillationsdetektors mit der 
 Auch der exponentielle Abfall mit der Signaldauer $\Delta t = \SI{137 +- 5}{\micro\second}$ (von 10 \% auf 10\%) ist wiederzuerkennen, wobei dieser in dem Fall nicht durch den Zerfall angeregter Zustände zu erklären ist, sondern auf die Ladungssammlung im Halbleiterkristall zurückzuführen ist.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./figures/signale/vor_ger.png}
-	\caption{Signal des Halbleiterdetektors am Ausgang des Vorverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{50}{\milli\volt\per\division} für die Vertikale und \SI{25}{\micro\second\per\division} in der Horizontalen.}
+	\includegraphics[width=0.7\textwidth]{./figures/signale/vor_ger_abgeschnitten.jpg}
+	\caption{Signal des Halbleiterdetektors am Ausgang des Vorverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{50}{\milli\volt\per\division} für die Vertikale und \SI{25}{\micro\second\per\division} in der Horizontalen. Die horizontale Linie markiert \SI{0}{\volt}.}
 	\label{fig:signal_ger_vor}
 \end{figure}
 Betrachtet man nun das Signal am Hauptverstärker in Abbildung \ref{fig:signal_ger_haupt} so beobachtet man einen gaußförmigen Impuls mit einer Signalamplitude von $\Delta U = \SI{5.1 +- 0.2}{\volt}$ und einer Signaldauer von $\Delta t = \SI{22 +- 1}{\micro\second}$.
@@ -441,8 +448,8 @@ Man beobachtet eine Kürzung des Signals durch den Hauptverstärker um etwa eine
 Der Vergleich der Impulshöhen macht auch hier wenig Sinn, da diese von unabhängigen Ereignissen stammen, dennoch sollte diese proportional zur im Halbleiter deponierten Energie sein.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.7\textwidth]{./figures/signale/haupt_ger.png}
-	\caption{Signal des Halbleiterdetektors am Ausgang des Hauptverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{1}{\volt\per\division} für die Vertikale und \SI{5}{\micro\second\per\division} in der Horizontalen.}
+	\includegraphics[width=0.7\textwidth]{./figures/signale/haupt_ger_abgeschnitten.jpg}
+	\caption{Signal des Halbleiterdetektors am Ausgang des Hauptverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{1}{\volt\per\division} für die Vertikale und \SI{5}{\micro\second\per\division} in der Horizontalen. Die horizontale Linie markiert \SI{0}{\volt}.}
 	\label{fig:signal_ger_haupt}
 \end{figure}
 

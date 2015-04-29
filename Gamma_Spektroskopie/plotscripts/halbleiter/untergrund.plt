@@ -2,7 +2,7 @@ reset
 
 set term epslatex color size 5,3.5
 
-set output './plots/szintillator/caesium.tex'
+set output './plots/halbleiter/untergrund.tex'
 
 set key top right
 
@@ -18,9 +18,6 @@ set grid
 
 load './../gnuplot_linestyles.plt'
 
-set bars small
-set style data lines
-
-plot './data/szintillator/caesium_bereinigt.txt' using 1:2:3 w errorbars t'Messwerte' ls 1
+plot './data/halbleiter/untergrund.txt' using 1:2 w boxes t'Messwerte' ls 1
 
 unset output

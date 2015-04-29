@@ -17,9 +17,9 @@ set grid
 
 load './../gnuplot_linestyles.plt'
 
-f(x) = a*x
+f(x) = a * x**3 + b * x**2 + c * x + d
 
-fit[x=0:1200] f(x) './data/energiekalibrierung/szintillator.txt' using 3:1:2 yerror via a
+fit[x=0:1200] f(x) './data/energiekalibrierung/szintillator.txt' using 3:1:2 yerror via a, b, c, d
 
 plot './data/energiekalibrierung/szintillator.txt' using 3:1:2 w yerrorbars t'Messwerte' ls 1, f(x) ls 2 lw 2 t"Anpassung"
 

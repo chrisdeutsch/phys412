@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70107" creator="Ipe 7.1.7">
-<info created="D:20150427205603" modified="D:20150427205603"/>
+<info created="D:20150427205603" modified="D:20150429175411"/>
 <preamble>\usepackage{amsmath}</preamble>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
@@ -251,7 +251,7 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<path layer="alpha" stroke="red" pen="heavier">
+<path layer="alpha" stroke="blue" pen="heavier">
 104.834 703.841 m
 120.754 735.682
 136.675 703.841
@@ -263,7 +263,7 @@ h
 232.199 703.841
 232.199 703.841 c
 </path>
-<path matrix="0.497519 0 0 0.497519 72.9926 353.588" stroke="red" pen="heavier" arrow="normal/normal">
+<path matrix="0.497519 0 0 0.497519 72.9926 353.588" stroke="blue" pen="heavier" arrow="normal/normal">
 320 704 m
 336 704 l
 </path>
@@ -271,7 +271,7 @@ h
 32 704 m
 576 704 l
 </path>
-<text matrix="0.497519 0 0 0.497519 56.9926 361.628" transformations="translations" pos="352 720" stroke="black" type="label" width="21.033" height="15.867" depth="0" valign="baseline" size="huge">$e^-$</text>
+<text matrix="0.497519 0 0 0.497519 56.9926 361.628" transformations="translations" pos="352 720" stroke="black" type="label" valign="baseline" size="huge">$e^-$</text>
 <path stroke="black" dash="dashed" pen="heavier">
 256 704 m
 432 528 l
@@ -284,8 +284,8 @@ h
 320 640 m
 90.5097 0 0 90.5097 256 704 346.51 704 a
 </path>
-<text matrix="1 0 0 1 16 -16" transformations="translations" pos="304 688" stroke="black" type="label" width="9.99" height="14.349" depth="0" valign="baseline" size="huge">$\theta$</text>
-<path stroke="blue" pen="heavier">
+<text matrix="1 0 0 1 16 -16" transformations="translations" pos="304 688" stroke="black" type="label" valign="baseline" size="huge">$\theta$</text>
+<path stroke="red" pen="heavier">
 272 688 m
 320 704
 304 656
@@ -296,7 +296,7 @@ h
 352 544
 400 560 c
 </path>
-<path stroke="red" pen="heavier">
+<path stroke="blue" pen="heavier">
 40 704 m
 56 736
 72.3575 703.841
@@ -304,20 +304,20 @@ h
 104.199 703.841
 104.199 703.841 c
 </path>
-<path stroke="blue" pen="heavier">
+<path stroke="red" pen="heavier">
 272 688 m
 267.543 692.536 l
 </path>
-<path stroke="blue" pen="heavier" arrow="normal/normal">
+<path stroke="red" pen="heavier" arrow="normal/normal">
 400 560 m
 416 544 l
 </path>
-<text matrix="1 0 0 1 -15.4648 158.287" transformations="translations" pos="41.4156 560.208" stroke="black" type="label" width="13.937" height="10.672" depth="4.82" valign="baseline" size="Huge">$\gamma$</text>
-<text matrix="1 0 0 1 345.685 -19.104" transformations="translations" pos="41.4156 560.208" stroke="black" type="label" width="13.937" height="10.672" depth="4.82" valign="baseline" size="Huge">$\gamma$</text>
+<text matrix="1 0 0 1 -15.4648 158.287" transformations="translations" pos="41.4156 560.208" stroke="black" type="label" valign="baseline" size="Huge">$\gamma$</text>
+<text matrix="1 0 0 1 345.685 -19.104" transformations="translations" pos="41.4156 560.208" stroke="black" type="label" valign="baseline" size="Huge">$\gamma$</text>
 <path stroke="black" pen="heavier" arrow="normal/large">
 272 720 m
 336 784 l
 </path>
-<text matrix="1 0 0 1 -112 0" transformations="translations" pos="384 792" stroke="black" type="label" width="132.874" height="11.954" depth="3.35" valign="baseline" size="LARGE">gestreutes Elektron</text>
+<text matrix="1 0 0 1 -112 0" transformations="translations" pos="384 792" stroke="black" type="label" valign="baseline" size="LARGE">gestreutes Elektron</text>
 </page>
 </ipe>

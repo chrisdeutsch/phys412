@@ -324,6 +324,155 @@ Im Vergleich zur Photoelektronenbildung in Szintillatoren zwei Größenordnung h
 Aufgrund der hohen Ordnungszahl von Germanium ist der Photowirkungsquerschnitt 60 mal größer als der von Silizium.\\
 Vergleich von Germanium und NaI-Detektor im Leo Fig. 10{.}19.
 
+\subsection{Spektrum, Vielkanalanalysator}
+
+\subsection{Auflösungsvermögen, Breite, Unterschiede der Detektoren}
+
+\subsection{Nachweiswahrscheinlichkeit}
+
+\subsection{Termschemata}
+
+
+\section{Versuchsaufbau}
+
+\section{Durchführung und Auswertung}
+Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
+Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
+\\
+\\
+Wenn nicht anders angegeben, sind die dargestellten und genutzten Messwerte bereits um den Untergrund bereinigt worden.
+Dazu wurden die Werte kanalweise mit einem Python-Skript subtrahiert.
+Da der Fehler der Ereignisse für jeden Kanal sowohl für die Untergrundmessung als auch die Spektrenaufnahme aufgrund des zugrunde liegenden statistischen Prozesses durch $\sqrt{N}$ ($N$ Anzahl Ereignisse pro Kanal) gegeben ist, ergibt sich der Fehler der untergrundbereinigten Werte mit Gaußscher Fehlerfortpflanzung zu
+\begin{align}
+\Delta N = \sqrt{N_\text{Spektrum} + N_\text{Untergrund}}
+\end{align}
+
+\subsection{NaJ(Tl) Szintillationsspektrometer}
+
+\subsubsection{Detektorsignal des Szintillationsdetektors}
+In diesem Abschnitt soll das Signalverhalten des verwendeten NaJ(Tl)-Szintillationsdetektors untersucht werden.
+Dazu wurden mit einem Oszilloskop die Signalformen jeweils am Vorverstärker des Photomultipliers sowie am Hauptverstärker aufgenommen.
+In Abbildung \ref{fig:signal_szinti_vor} ist ein beispielhaftes Signal direkt am Vorverstärker dargestellt.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=
+	0.7\textwidth]{./figures/signale/vor_szinti.png}
+	\caption{Signal des Szintillationsdetektors am Ausgang des Vorverstärkers des Photomultipliers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{0.5}{\volt\per\division} für die Vertikale und \SI{100}{\micro\second\per\division} in der Horizontalen.}
+	\label{fig:signal_szinti_vor}
+\end{figure}
+Die im Folgenden gemessenen Größen wurden mithilfe eines Bildbearbeitungsprogrammes direkt an den Aufnahmen des Oszilloskops abgemessen.
+Dabei wurden die Fehler auf \SI{0.1}{\division} der jeweiligen Spannungs-/Zeitskala abgeschätzt.
+Das Signal am Vorverstärker des Photomultipliers weist einen (im Vergleich zur Signaldauer) instantanen Anstieg mit der Signalamplitude $\Delta U = \SI{2.75 +- 0.05}{\volt}$ auf.
+Nach diesem Anstieg fällt das Signal exponentiell mit einer Signaldauer\footnote{Als Definition der Signaldauer $\Delta t$ wird dabei die Zeit verwendet, die das Signal benötigt um von \SI{10}{\percent} der Signalamplitude an der ansteigenden Flanke auf \SI{10}{\percent} an der abfallenden Flanke zu gelangen.} von $\Delta t = \SI{395 +- 10}{\micro\second}$ ab.
+Der exponentielle Abfall des Signals kann durch das Nachleuchten des Szintillatorkristalls erklärt werden, welches darauf beruht, dass der Zerfall der angeregten Zustände im Kristall einem exponentiellem Verhalten folgt.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figures/signale/haupt_szinti.png}
+	\caption{Signal des Szintillationsdetektors am Ausgang des Hauptverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{1}{\volt\per\division} für die Vertikale und \SI{1}{\micro\second\per\division} in der Horizontalen.}
+	\label{fig:signal_szinti_haupt}
+\end{figure}
+Im Vergleich dazu wurde in Abbildung \ref{fig:signal_szinti_haupt} eines der Signale am Hauptverstärker des Detektors dargestellt.
+Obwohl der Puls am unipolaren Ausgang des Verstärkers gemessen wurde, kann ein negativer Ausschlag festgestellt werden.
+Der negative Impuls ist für die Messung nicht relevant, da dieser bei der Impulshöhenmessung mit dem Vielkanalanalysator keinen Einfluss hat.
+Der für die Messung relevante positive Impuls hat eine Amplitude von $\Delta U = \SI{3.4 +- 0.1}{\volt}$ und eine Signaldauer $\Delta t = \SI{2.3 +- 0.1}{\micro\second}$.
+Der Vergleich der Amplituden\footnote{Ein direkter Vergleich der beiden Signale macht nur Sinn, wenn lediglich Größenordnungen betrachtet werden, da die beiden Signale von unabhängigen Ereignissen stammen.} an beiden Verstärkern legt nahe, dass der Hauptverstärker nicht zur Verstärkung der Spannung dient sondern vielmehr zur Impulsformung.
+Dies sieht man besonders an der um zwei Größenordnungen verkürzten Signaldauer.
+Da beide Signale von unabhängigen Ereignissen stammen, kann leider nicht verifiziert werden, dass die Impulshöhe am Hauptverstärker proportional zur im Photomultiplier gelösten Ladung, ist, welche wiederum proportional zur Fläche über dem Signal am Vorverstärker ist.
+
+\subsubsection{Aufnahme der Gammaspektren von QUELLEN und das Untergrundspektrum}
+
+\subsubsection{Energiekalibrierung}
+\label{sec:kalibrierung_szinti}
+Da die Spektren mit einem Vielkanalanalysator aufgenommen werden, kann aus den Daten keine Energieinformation gewonnen werden.
+Dazu ist eine Energiekalibrierung nötig, die mit Hilfe bekannter Linien in den jeweiligen Gamma-Spektren durchgeführt wird.
+An die beiden Peaks im Cobalt-Spektrum, sowie an das Photopeak von Caesium (das am linken Rand zu sehende Peak entsteht durch Röntgenstrahlung und ist nicht von Interesse) und an eine Auswahl von Peaks im Europium-Spektrum wird mit \texttt{gnuplot} jeweils eine Gaußfunktion mit Offset angepasst.
+Die Anpassungshypothese lautet:
+\begin{align}
+\Sigma &= \mathcal{G}(x) + u \qquad \text{mit}\\
+\mathcal{G}(x) &= A \cdot \exp\left( - \frac{(x - \mu)^2}{2 \sigma^2}\right)
+\label{eq:gaussfithypothese}
+\end{align}
+In Tabelle \ref{tab:kalibrierungslinien_szinti} sind die Ergebnisse der Anpassung eingetragen.
+Den Schwerpunkten der Gaußfunktionen wurden dabei unter Benutzung der Termschemata und Tabelle in \cite{anleitung} die jeweiligen Gammaenergien zugeordnet.
+\begin{table}[ht]
+	\centering
+	\input{./tables/kalibrierung_szinti.tex}
+	\caption{Anpassungsergebnisse zur Energiekalibrierung für den NaJ(Tl) Szintillationsdetektor}
+	\label{tab:kalibrierungslinien_szinti}
+\end{table}
+Da eine Anpassung mit \text{gnuplot} nur Fehler in $y$-Richtung berücksichtigen kann und die gegebenen Gammaenergien als fehlerlos betrachtet werden, wird die Energiekalibrierung in reziproker Darstellung durchgeführt, so dass die fehlerbehafteten Größen auf der Ordinate aufgetragen werden und die Fehler in die Anpassung eingehen.
+Der Zusammenhang zwischen Kanalnummer und Energie wird als linear betrachtet, so dass eine Anpassung an eine Ursprungsgerade mit Steigung $m$ erfolgt.
+Die Daten und durchgeführte Anpassung sind in Abbildung \ref{fig:kalibrierung_szinti} zu sehen.
+\begin{figure}[ht]
+	\centering
+	\input{./plots/kalibrierung_szinti.tex}
+	\caption{Energiekalibrierung des NaJ(Tl) Detektors}
+	\label{fig:kalibrierung_szinti}
+\end{figure}
+Die letzten beiden Datenpunkte wurden in der Anpassung nicht berücksichtigt, sie deuten auf einen nichtlinearen Zusammenhang zwischen Energie und Kanalnummern in den im Spektrum weit rechts liegenden Kanälen hin.
+Da die Anpassungsgerade für den Halbleiterdetektor eine deutlich bessere Übereinstimmung mit den Messwerten zeigt, liegt die Ursache hierfür nicht an dem verwendeten Vielkanalanalysator sondern ist im Verstärker oder Photomultiplier zu suchen.
+
+\subsubsection{Halbwertsbreiten der Linien}
+
+\subsubsection{Peak-to-Total Verhältnis}
+
+\subsubsection{Absolute Peakeffizienz}
+
+
+
+\subsection{Germanium Halbleiterdetektor}
+
+\subsubsection{Detektorsignal des Halbleiterdetektor}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figures/signale/vor_ger.png}
+	\caption{Signal des Halbleiterdetektors am Ausgang des Vorverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{50}{\milli\volt\per\division} für die Vertikale und \SI{25}{\micro\second\per\division} in der Horizontalen.}
+	\label{fig:signal_ger_vor}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{./figures/signale/haupt_ger.png}
+	\caption{Signal des Halbleiterdetektors am Ausgang des Hauptverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{1}{\volt\per\division} für die Vertikale und \SI{5}{\micro\second\per\division} in der Horizontalen.}
+	\label{fig:signal_ger_haupt}
+\end{figure}
+
+\subsubsection{Aufnahme der Gammaspektren (QUELLEN) und des Untergrundspektrums}
+
+\subsubsection{Energiekalibrierung}
+
+Wie beim Sztintillationsdetektor wird auch für den Halbeiterdetektor eine Energiekalibrierung durchgeführt, indem an die gefundenen Linien im Gammaspektrum der Proben eine Kurve der Form \eqref{eq:gaussfithypothese} angepasst wird.
+Im gegensatz zum NaJ(Tl)-Detektor kann jedoch auch die Europiumlinie von \SI{1085.914}{\kilo\electronvolt} deutlich gesehen und zur Kalibrierung genutzt werden.
+Es ergeben sich die in Tabelle \ref{tab:kalibrierungslinien_halb} festgehaltenen Werte für die Linienschwerpunkte und zugehörigen Gammaenergien aller drei Quellen.
+\begin{table}[ht]
+	\centering
+	\input{./tables/kalibrierung_halb.tex}
+	\caption{Anpassungsergebnisse zur Energiekalibrierung für den Ge Halbleiterdetektor}
+	\label{tab:kalibrierungslinien_halb}
+\end{table}
+Auch hier wird eine Ursprungsgerade in der gleichen, reziproken Darstellung wie in Abschnitt \ref{sec:kalibrierung_szinti} an die Daten aus Tabelle \ref{tab:kalibrierungslinien_halb} angepasst.
+Das Ergebnis der Anpassung ist in Abbildung \ref{fig:kalibrierung_halb} zu sehen.
+\begin{figure}[ht]
+	\centering
+	\input{./plots/kalibrierung_halb.tex}
+	\caption{Energiekalibrierung des Ge Detektors}
+	\label{fig:kalibrierung_halb}
+\end{figure}  
+
+\subsubsection{Bestimmung der Halbwertsbreite}
+
+\subsubsection{Intrinsische Halbwertsbreite}
+
+\subsubsection{Peak-to-Total-Verhältnis}
+
+\subsubsection{Absolute Peakeffizienz}
+
+\subsubsection{Relative Effizienz als Funktion der Gammaenergie}
+
+\subsection{Nachweis der Radioakivität in einer Probe}
+
+\section{Fazit}
+
 \begin{figure}[h]
 	\centering
 	\input{./plots/szintillator/caesium.tex}
@@ -365,135 +514,6 @@ Vergleich von Germanium und NaI-Detektor im Leo Fig. 10{.}19.
 	\caption{Euroooopium halbleiter}
 	\label{fig:europium_spektrum}
 \end{figure}
-
-\subsection{Spektrum, Vielkanalanalysator}
-
-\subsection{Auflösungsvermögen, Breite, Unterschiede der Detektoren}
-
-\subsection{Nachweiswahrscheinlichkeit}
-
-\subsection{Termschemata}
-
-
-\section{Versuchsaufbau}
-
-\section{Durchführung und Auswertung}
-Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
-Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
-\\
-\\
-Wenn nicht anders angegeben sind die dargestellten und genutzten Messwerte bereits um den Untergrund bereinigt worden.
-
-\subsection{NaJ(Tl) Szintillationsspektrometer}
-
-\subsubsection{Detektorsignal des Szintillationsdetektors}
-In diesem Abschnitt soll das Signalverhalten des verwendeten NaJ(Tl)-Szintillationsdetektors untersucht werden.
-Dazu wurden mit einem Oszilloskop die Signalformen jeweils am Vorverstärker des Photomultipliers sowie am Hauptverstärker aufgenommen.
-In Abbildung \ref{fig:signal_szinti_vor} ist ein beispielhaftes Signal direkt am Vorverstärker dargestellt.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=
-	0.7\textwidth]{./figures/signale/vor_szinti.png}
-	\caption{Signal des Szintillationsdetektors am Ausgang des Vorverstärkers des Photomultipliers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{0.5}{\volt\per\division} für die Vertikale und \SI{100}{\micro\second\per\division} in der Horizontalen.}
-	\label{fig:signal_szinti_vor}
-\end{figure}
-Die im Folgenden gemessenen Größen wurden mithilfe eines Bildbearbeitungsprogrammes direkt an den Aufnahmen des Oszilloskops abgemessen.
-Dabei wurden die Fehler auf \SI{0.1}{\division} der jeweiligen Spannungs-/Zeitskala abgeschätzt.
-Das Signal am Vorverstärker des Photomultipliers weist einen (im Vergleich zur Signaldauer) instantanen Anstieg mit der Signalamplitude $\Delta U = \SI{2.75 +- 0.05}{\volt}$ auf.
-Nach diesem Anstieg fällt das Signal exponentiell mit einer Signaldauer\footnote{Als Definition der Signaldauer $\Delta t$ wird dabei die Zeit verwendet, die das Signal benötigt um von \SI{10}{\percent} der Signalamplitude an der ansteigenden Flanke auf \SI{10}{\percent} an der abfallenden Flanke zu gelangen.} von $\Delta t = \SI{395 +- 10}{\micro\second}$ ab.
-Der exponentielle Abfall des Signals kann durch das Nachleuchten des Szintillatorkristalls erklärt werden, welches darauf beruht, dass der Zerfall der angeregten Zustände im Kristall einem exponentiellem Verhalten folgt.
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\textwidth]{./figures/signale/haupt_szinti.png}
-	\caption{Signal des Szintillationsdetektors am Ausgang des Hauptverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{1}{\volt\per\division} für die Vertikale und \SI{1}{\micro\second\per\division} in der Horizontalen.}
-	\label{fig:signal_szinti_haupt}
-\end{figure}
-Im Vergleich dazu wurde in Abbildung \ref{fig:signal_szinti_haupt} eines der Signale am Hauptverstärker des Detektors dargestellt.
-Obwohl der Puls am unipolaren Ausgang des Verstärkers gemessen wurde, kann ein negativer Ausschlag festgestellt werden.
-Der negative Impuls ist für die Messung nicht relevant, da dieser bei der Impulshöhenmessung mit dem Vielkanalanalysator keinen Einfluss hat.
-Der für die Messung relevante positive Impuls hat eine Amplitude von $\Delta U = \SI{3.4 +- 0.1}{\volt}$ und eine Signaldauer $\Delta t = \SI{2.3 +- 0.1}{\micro\second}$.
-Der Vergleich der Amplituden\footnote{Ein direkter Vergleich der beiden Signale macht nur Sinn, wenn lediglich Größenordnungen betrachtet werden, da die beiden Signale von unabhängigen Ereignissen stammen.} an beiden Verstärkern legt nahe, dass der Hauptverstärker nicht zur Verstärkung der Spannung dient sondern vielmehr zur Impulsformung.
-Dies sieht man besonders an der um zwei Größenordnungen verkürzten Signaldauer.
-Da beide Signale von unabhängigen Ereignissen stammen, kann leider nicht verifiziert werden, dass die Impulshöhe am Hauptverstärker proportional zur im Photomultiplier gelösten Ladung, ist, welche wiederum proportional zur Fläche über dem Signal am Vorverstärker ist.
-
-\subsubsection{Aufnahme der Gammaspektren von QUELLEN und das Untergrundspektrum}
-
-\subsubsection{Energiekalibrierung}
-Da die Spektren mit einem Vielkanalanalysator aufgenommen werden, kann aus den Daten keine Energieinformation gewonnen werden.
-Dazu ist eine Energiekalibrierung nötig, die mit Hilfe bekannter Linien in den jeweiligen Gamma-Spektren durchgeführt wird.
-An die beiden Peaks im Cobalt-Spektrum, sowie an das Photopeak von Caesium (das am linken Rand zu sehende Peak entsteht durch Röntgenstrahlung und ist nicht von Interesse) und an eine Auswahl von Peaks im Europium-Spektrum wird mit \texttt{gnuplot} jeweils eine Gaußfunktion mit Offset angepasst.
-Die Anpassungshypothese lautet:
-\begin{align}
-\Sigma &= \mathcal{G}(x) + u \qquad \text{mit}\\
-\mathcal{G}(x) &= A \cdot \exp\left( - \frac{(x - \mu)^2}{2 \sigma^2}\right)
-\end{align}
-In Tabelle \ref{tab:kalibrierungslinien_szinti} sind die Ergebnisse der Anpassung eingetragen.
-Den Schwerpunkten der Gaußfunktionen wurden dabei unter Benutzung der Termschemata und Tabelle in \cite{anleitung} die jeweiligen Gammaenergien zugeordnet.
-\begin{table}[ht]
-	\centering
-	\input{./tables/kalibrierung_szinti.tex}
-	\caption{Anpassungsergebnisse zur Energiekalibrierung für den Szintillationsdetektor}
-	\label{tab:kalibrierungslinien_szinti}
-\end{table}
-Da eine Anpassung mit \text{gnuplot} nur Fehler in $y$-Richtung berücksichtigen kann und die gegebenen Gammaenergien als fehlerlos betrachtet werden, wird die Energiekalibrierung in reziproker Darstellung durchgeführt, so dass die fehlerbehafteten Größen auf der Ordinate aufgetragen werden und die Fehler in die Anpassung eingehen.
-Der Zusammenhang zwischen Kanalnummer und Energie wird als linear betrachtet, so dass eine Anpassung an eine Ursprungsgerade mit Steigung $m$ erfolgt.
-Die Daten und durchgeführte Anpassung sind in Abbildung \ref{fig:kalibrierung_szinti} zu sehen.
-\begin{figure}[ht]
-	\centering
-	\input{./plots/kalibrierung_szinti.tex}
-	\caption{Energiekalibrierung des NaJ(Tl) Detektors}
-	\label{fig:kalibrierung_szinti}
-\end{figure}   
-
-\subsubsection{Halbwertsbreiten der Linien}
-
-\subsubsection{Peak-to-Total Verhältnis}
-
-\subsubsection{Absolute Peakeffizienz}
-
-
-
-\subsection{Germanium Halbleiterdetektor}
-
-\subsubsection{Detektorsignal des Halbleiterdetektor}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\textwidth]{./figures/signale/vor_ger.png}
-	\caption{Signal des Halbleiterdetektors am Ausgang des Vorverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{50}{\milli\volt\per\division} für die Vertikale und \SI{25}{\micro\second\per\division} in der Horizontalen.}
-	\label{fig:signal_ger_vor}
-\end{figure}
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.7\textwidth]{./figures/signale/haupt_ger.png}
-	\caption{Signal des Halbleiterdetektors am Ausgang des Hauptverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{1}{\volt\per\division} für die Vertikale und \SI{5}{\micro\second\per\division} in der Horizontalen.}
-	\label{fig:signal_ger_haupt}
-\end{figure}
-
-\subsubsection{Aufnahme der Gammaspektren (QUELLEN) und des Untergrundspektrums}
-
-\subsubsection{Energiekalibrierung}
-
-\begin{figure}[ht]
-	\centering
-	\input{./plots/kalibrierung_halb.tex}
-	\caption{Energiekalibrierung des Ge Detektors}
-	\label{fig:kalibrierung_halb}
-\end{figure}  
-
-\subsubsection{Bestimmung der Halbwertsbreite}
-
-\subsubsection{Intrinsische Halbwertsbreite}
-
-\subsubsection{Peak-to-Total-Verhältnis}
-
-\subsubsection{Absolute Peakeffizienz}
-
-\subsubsection{Relative Effizienz als Funktion der Gammaenergie}
-
-\subsection{Nachweis der Radioakivität in einer Probe}
-
-\section{Fazit}
 
 \FloatBarrier
 % BIBLIOGRAPHIE

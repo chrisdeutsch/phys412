@@ -428,7 +428,7 @@ Im Folgenden soll analog zu Abschnitt \ref{sec:detektorsignal_szinti} das Detekt
 Die genannten Größen und ihre Fehler werden in Analogie zum Szintillationsdetektor bestimmt.
 Zunächst soll das Signal am Vorverstärker des Halbleiterdetektors in Abbildung \ref{fig:signal_ger_vor} betrachtet werden.
 Die Impulsform ist nahezu identisch mit der des Szintillationsdetektors mit der Ausnahme, dass das Signal hier einen positiven Spannungsausschlag mit der Amplitude $\Delta U = \SI{0.29 +-0.01}{\volt}$ (Anstiegszeit $<\SI{1}{\micro\second}$) aufweist.
-Auch der exponentielle Abfall mit der Signaldauer $\Delta t = \SI{137 +- 5}{\micro\second}$ (von 10 \% auf 10\%) ist wiederzuerkennen, wobei dieser hier nicht durch den Zerfall angeregter Zustände zu erklären ist, sondern auf die Ladungssammlung im Halbleiterkristall zurückzuführen ist.
+Auch der exponentielle Abfall mit der Signaldauer $\Delta t = \SI{137 +- 5}{\micro\second}$ (von 10 \% auf 10\%) ist wiederzuerkennen, wobei dieser in dem Fall nicht durch den Zerfall angeregter Zustände zu erklären ist, sondern auf die Ladungssammlung im Halbleiterkristall zurückzuführen ist.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./figures/signale/vor_ger.png}
@@ -456,7 +456,7 @@ Es ergeben sich die in Tabelle \ref{tab:kalibrierungslinien_halb} festgehaltenen
 \begin{table}[ht]
 	\centering
 	\input{./tables/kalibrierung_halb.tex}
-	\caption{Anpassungsergebnisse zur Energiekalibrierung für den Ge Halbleiterdetektor}
+	\caption{Anpassungsergebnisse zur Energiekalibrierung für den Ge-Halbleiterdetektor}
 	\label{tab:kalibrierungslinien_halb}
 \end{table}
 Auch hier wird eine Ursprungsgerade in der gleichen, reziproken Darstellung wie in Abschnitt \ref{sec:kalibrierung_szinti} an die Daten aus Tabelle \ref{tab:kalibrierungslinien_halb} angepasst.
@@ -464,9 +464,21 @@ Das Ergebnis der Anpassung ist in Abbildung \ref{fig:kalibrierung_halb} zu sehen
 \begin{figure}[ht]
 	\centering
 	\input{./plots/kalibrierung_halb.tex}
-	\caption{Energiekalibrierung des Ge Detektors}
+	\caption{Energiekalibrierung des Ge-Halbleiterdetektors}
 	\label{fig:kalibrierung_halb}
 \end{figure}  
+Der mit \texttt{gnuplot} gefundene Wert für die Steigung $m$ lautet:
+\begin{align}
+m = \SI{4.951+-0.005}{\per\kilo\electronvolt}
+\end{align}
+Um nun die Proportionalitätskonstante $\lambda$ für den Zusammenhang $E=\lambda \cdot n$ zu erhalten, muss noch der Kehrwert berechnet werden:
+\begin{align}
+\lambda = \frac{1}{m} \qquad \Delta \lambda = \frac{\Delta m}{m^2}
+\end{align}
+Man erhält somit:
+\begin{align*}
+\lambda = \SI{0.202 +- 0.001}{\kilo\electronvolt}
+\end{align*}
 
 \subsubsection{Bestimmung der Halbwertsbreite}
 

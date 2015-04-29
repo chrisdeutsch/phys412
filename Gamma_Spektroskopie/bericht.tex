@@ -338,14 +338,6 @@ Vergleich von Germanium und NaI-Detektor im Leo Fig. 10{.}19.
 \section{Durchführung und Auswertung}
 Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
 Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
-\\
-\\
-Wenn nicht anders angegeben, sind die dargestellten und genutzten Messwerte bereits um den Untergrund bereinigt worden.
-Dazu wurden die Werte kanalweise mit einem Python-Skript subtrahiert.
-Da der Fehler der Ereignisse für jeden Kanal sowohl für die Untergrundmessung als auch die Spektrenaufnahme aufgrund des zugrunde liegenden statistischen Prozesses durch $\sqrt{N}$ ($N$ Anzahl Ereignisse pro Kanal) gegeben ist, ergibt sich der Fehler der untergrundbereinigten Werte mit Gaußscher Fehlerfortpflanzung zu
-\begin{align}
-\Delta N = \sqrt{N_\text{Spektrum} + N_\text{Untergrund}}
-\end{align}
 
 \subsection{NaJ(Tl) Szintillationsspektrometer}
 
@@ -381,6 +373,20 @@ Dies sieht man besonders an der um zwei Größenordnungen verkürzten Signaldaue
 Da beide Signale von unabhängigen Ereignissen stammen, kann leider nicht verifiziert werden, dass die Impulshöhe am Hauptverstärker proportional zur im Photomultiplier gelösten Ladung, ist, welche wiederum proportional zur Fläche über dem Signal am Vorverstärker ist.
 
 \subsubsection{Aufnahme der Gammaspektren von QUELLEN und das Untergrundspektrum}
+Nachdem die Signale des Szintillationsdetektors betrachtet wurden, kann mit der Aufnahme der Spektren begonnen werden.
+Dazu wird zunächst ein Untergrundspektrum aufgenommen, um die Spektren der Isotope \isotope[60]{Co}, \isotope[137]{Cs} und \isotope[152]{Eu} vom Untergrund bereinigen zu können.
+Das Spektrum des Untergrundes wurde in Abbildung (REF) dargestellt.
+
+
+Wenn nicht anders angegeben, sind die dargestellten und genutzten Messwerte bereits um den Untergrund bereinigt worden.
+Dazu wurden die Werte kanalweise mit einem Python-Skript subtrahiert.
+Da der Fehler der Ereignisse für jeden Kanal sowohl für die Untergrundmessung als auch die Spektrenaufnahme aufgrund des zugrunde liegenden statistischen Prozesses durch $\sqrt{N}$ ($N$ Anzahl Ereignisse pro Kanal) gegeben ist, ergibt sich der Fehler der untergrundbereinigten Werte mit Gaußscher Fehlerfortpflanzung zu
+\begin{align}
+\Delta N = \sqrt{N_\text{Spektrum} + N_\text{Untergrund}}
+\end{align}
+
+
+
 
 \subsubsection{Energiekalibrierung}
 \label{sec:kalibrierung_szinti}

@@ -376,17 +376,18 @@ Da beide Signale von unabhängigen Ereignissen stammen, kann leider nicht verifi
 Nachdem die Signale des Szintillationsdetektors betrachtet wurden, kann mit der Aufnahme der Spektren begonnen werden.
 Dazu wird zunächst ein Untergrundspektrum aufgenommen, um die Spektren der Isotope \isotope[60]{Co}, \isotope[137]{Cs} und \isotope[152]{Eu} vom Untergrund bereinigen zu können.
 Das Spektrum des Untergrundes wurde in Abbildung (REF) dargestellt.
-
-
-Wenn nicht anders angegeben, sind die dargestellten und genutzten Messwerte bereits um den Untergrund bereinigt worden.
-Dazu wurden die Werte kanalweise mit einem Python-Skript subtrahiert.
-Da der Fehler der Ereignisse für jeden Kanal sowohl für die Untergrundmessung als auch die Spektrenaufnahme aufgrund des zugrunde liegenden statistischen Prozesses durch $\sqrt{N}$ ($N$ Anzahl Ereignisse pro Kanal) gegeben ist, ergibt sich der Fehler der untergrundbereinigten Werte mit Gaußscher Fehlerfortpflanzung zu
+Generell wird für den Fehler in der Anzahl der Ereignisse $N$ eines Kanals $n$ wegen der zugrundeliegenden Poisson-Verteilung
 \begin{align}
-\Delta N = \sqrt{N_\text{Spektrum} + N_\text{Untergrund}}
+	\Delta N = \sqrt{N}
 \end{align}
-
-
-
+angenommen.
+Der Untergrund wurde von den folgenden Spektren bereits abgezogen, sodass der Fehler der untergrundkorrigierten Spektren durch:
+\begin{align}
+	\label{eq:untergrundkorr_fehler}
+	\Delta N_\mathrm{korr.} = \sqrt{\Delta N^2 + \Delta N_\mathrm{Untergrund}^2}
+\end{align}
+gegeben ist.
+Folglich wird die Anzahl der Ereignisse stets vom Untergrund befreit sein, sodass entgegen der Bezeichnung in Gleichung \ref{eq:untergrundkorr_fehler} mit $N$ bezeichnen.
 
 \subsubsection{Energiekalibrierung}
 \label{sec:kalibrierung_szinti}

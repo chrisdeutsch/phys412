@@ -436,14 +436,21 @@ Für (WAS) in Abschnitt (REF) ist der Abstand der radioaktiven Probe vom Detekto
 \label{sec:kalibrierung_szinti}
 Da die Spektren mit einem Vielkanalanalysator aufgenommen werden, kann aus den Daten keine Energieinformation gewonnen werden.
 Dazu ist eine Energiekalibrierung nötig, die mit Hilfe bekannter Linien in den jeweiligen Gamma-Spektren durchgeführt wird.
-An die beiden Peaks im Cobalt-Spektrum, sowie an das Photopeak von Caesium (das am linken Rand zu sehende Peak entsteht durch Röntgenstrahlung und ist nicht von Interesse) und an eine Auswahl von Peaks im Europium-Spektrum wird mit \texttt{gnuplot} jeweils eine Gaußfunktion mit Offset angepasst.
-Die Anpassungshypothese lautet:
+An gut getrennte Linien wurde dazu eine Gaußfunktion der Form
 \begin{align}
-\Sigma &= \mathcal{G}(x) + u \qquad \text{mit}\\
-\mathcal{G}(x) &= A \cdot \exp\left( - \frac{(x - \mu)^2}{2 \sigma^2}\right)
+\mathcal{G}(n) &= A \cdot \exp\left( - \frac{(n - \mu)^2}{2 \sigma^2}\right) \qquad\text{($n$: Kanalnummer),}
 \label{eq:gaussfithypothese}
 \end{align}
-In Tabelle \ref{tab:kalibrierungslinien_szinti} sind die Ergebnisse der Anpassung eingetragen.
+im Fall nah beieinander liegender Linien eine Summe von solchen Gaußfunktionen angepasst.
+Weiterhin wurde in der Anpassungshypothese ein Untergrund $u(n)$ berücksichtigt, der je nach Peak auf Basis der Daten entweder konstant oder linear abfallend angenommen wurde.
+Zur Verdeutlichung wurde die Anpassung für Cobalt in Abbildung \ref{fig:fit_cobalt} beispielhaft für das Vorgehen dargestellt.
+\begin{figure}[ht]
+	\centering
+	\input{./plots/szintillator/energiekalibrierung/cobalt_darstellung.tex}
+	\caption{Anpassung für die Linien im Gammaspektrum von Cobalt}
+	\label{fig:fit_cobalt}
+\end{figure}
+In Tabelle \ref{tab:kalibrierungslinien_szinti} sind die Ergebnisse für die Linienschwerpunkte der Anpassung eingetragen.
 Den Schwerpunkten der Gaußfunktionen wurden dabei unter Benutzung der Termschemata und Tabelle in \cite{anleitung} die jeweiligen Gammaenergien zugeordnet.
 \begin{table}[ht]
 	\centering
@@ -451,8 +458,9 @@ Den Schwerpunkten der Gaußfunktionen wurden dabei unter Benutzung der Termschem
 	\caption{Anpassungsergebnisse zur Energiekalibrierung für den NaJ(Tl) Szintillationsdetektor}
 	\label{tab:kalibrierungslinien_szinti}
 \end{table}
-Da eine Anpassung mit \text{gnuplot} nur Fehler in $y$-Richtung berücksichtigen kann und die gegebenen Gammaenergien als fehlerlos betrachtet werden, wird die Energiekalibrierung in reziproker Darstellung durchgeführt, so dass die fehlerbehafteten Größen auf der Ordinate aufgetragen werden und die Fehler in die Anpassung eingehen.
-Der Zusammenhang zwischen Kanalnummer und Energie wird als linear betrachtet, so dass eine Anpassung an eine Ursprungsgerade mit Steigung $m$ erfolgt.
+Der Zusammenhang zwischen Kanalnummer und Energie wird als linear betrachtet, so dass eine Anpassung an eine Gerade mit Steigung $m$ und Achsenabschnitt $b$ erfolgt.
+Für Kanalnummern über \num{6000} weichen die gefundenen Messwerte deutlich von dem linearen Verlauf der Kanalnummern kleiner als \num{6000} ab, so dass hier nicht die gleiche Kalibrierung verwendet werden kann.
+Für diesen Bereich wurde auf Grundlage der dort liegenden \num{4} Datenpunkte eine zweite Kalibrierung (mit gleicher Anpassungshypothese) durchgeführt, so dass im weiteren Verlauf je nach betrachtetem Kanalbereich die dort gültige Kalibrierung gewählt werden muss. 
 Die Daten und durchgeführte Anpassung sind in Abbildung \ref{fig:kalibrierung_szinti} zu sehen.
 \begin{figure}[ht]
 	\centering
@@ -460,8 +468,9 @@ Die Daten und durchgeführte Anpassung sind in Abbildung \ref{fig:kalibrierung_s
 	\caption{Energiekalibrierung des NaJ(Tl) Detektors}
 	\label{fig:kalibrierung_szinti}
 \end{figure}
-Die letzten beiden Datenpunkte wurden in der Anpassung nicht berücksichtigt, sie deuten auf einen nichtlinearen Zusammenhang zwischen Energie und Kanalnummern in den im Spektrum weit rechts liegenden Kanälen hin.
-Da die Anpassungsgerade für den Halbleiterdetektor eine deutlich bessere Übereinstimmung mit den Messwerten zeigt, liegt die Ursache hierfür nicht an dem verwendeten Vielkanalanalysator sondern ist im Verstärker oder Photomultiplier zu suchen.
+Die Anpassungsergebnisse lauten:
+
+Da die Anpassungsgerade für den Halbleiterdetektor eine deutlich bessere und durchgehend lineare Übereinstimmung mit den Messwerten zeigt, liegt die Ursache hierfür nicht an dem verwendeten Vielkanalanalysator sondern ist im Verstärker oder Photomultiplier zu suchen.
 
 \subsubsection{Halbwertsbreiten der Linien}
 
@@ -512,7 +521,7 @@ Der Vergleich der Impulshöhen macht auch hier wenig Sinn, da diese von unabhän
 \subsubsection{Energiekalibrierung}
 
 Wie beim Sztintillationsdetektor wird auch für den Halbeiterdetektor eine Energiekalibrierung durchgeführt, indem an die gefundenen Linien im Gammaspektrum der Proben eine Kurve der Form \eqref{eq:gaussfithypothese} angepasst wird.
-Im gegensatz zum NaJ(Tl)-Detektor kann jedoch auch die Europiumlinie von \SI{1085.914}{\kilo\electronvolt} deutlich gesehen und zur Kalibrierung genutzt werden.
+Im Gegensatz zum NaJ(Tl)-Detektor kann jedoch auch die Europiumlinie von \SI{1085.914}{\kilo\electronvolt} deutlich gesehen und zur Kalibrierung genutzt werden.
 Es ergeben sich die in Tabelle \ref{tab:kalibrierungslinien_halb} festgehaltenen Werte für die Linienschwerpunkte und zugehörigen Gammaenergien aller drei Quellen.
 \begin{table}[ht]
 	\centering
@@ -520,7 +529,7 @@ Es ergeben sich die in Tabelle \ref{tab:kalibrierungslinien_halb} festgehaltenen
 	\caption{Anpassungsergebnisse zur Energiekalibrierung für den Ge-Halbleiterdetektor}
 	\label{tab:kalibrierungslinien_halb}
 \end{table}
-Im Gegensatz zum Szintillationsdetektor wird eine Ursprungsgerade in reziproker Darstellung wie in Abschnitt \ref{sec:kalibrierung_szinti} an die Daten aus Tabelle \ref{tab:kalibrierungslinien_halb} angepasst, da die Messwerte offensichtlich einem linearen Verlauf folgen. 
+Da die Daten offensichtlich einen linearen Zusammenhang auf dem gesamten Bereich nahelegen, wird zur Anpassung eine lineare Funktion der Form $mx + b$ gewählt (analog zum NaJ(Tl) Detektor).
 Das Ergebnis der Anpassung ist in Abbildung \ref{fig:kalibrierung_halb} zu sehen.
 \begin{figure}[ht]
 	\centering
@@ -530,8 +539,8 @@ Das Ergebnis der Anpassung ist in Abbildung \ref{fig:kalibrierung_halb} zu sehen
 \end{figure}  
 Anpassungsergebnisse \texttt{gnuplot}:
 \begin{align}
-	m = \SI{0.200839 +- 0.000013}{\kilo\electronvolt} \\
-	b = \SI{4.561 +- 0.059}{\kilo\electronvolt}
+	m &= \SI{0.200839 +- 0.000013}{\kilo\electronvolt} \\
+	b &= \SI{4.561 +- 0.059}{\kilo\electronvolt}
 \end{align}
 
 

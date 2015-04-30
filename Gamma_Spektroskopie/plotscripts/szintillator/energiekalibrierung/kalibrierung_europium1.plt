@@ -28,8 +28,8 @@ c1 = 10
 # Untergrund
 d = 200
 
-t(x)= a1*exp(-0.5*((x-b1)/c1)**2) + d
-fit[x=600:900] t(x) './data/Szintillator/europium_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d
+t(x)= a1*exp(-0.5*((x-b1)/c1)**2) + d + e*x
+fit[x=650:850] t(x) './data/Szintillator/europium_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d, e
 
 g1(x) = a1*exp(-0.5*((x-b1)/c1)**2) # Gaußfit 1
 g2(x) = a2*exp(-0.5*((x-b2)/c2)**2) # Gaußfit 2

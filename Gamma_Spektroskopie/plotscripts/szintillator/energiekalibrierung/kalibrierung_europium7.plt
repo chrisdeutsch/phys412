@@ -28,11 +28,11 @@ c1 = 20
 # Untergrund
 d = 10
 
-t(x)= a1*exp(-0.5*((x-b1)/c1)**2) + d
-fit t(x) './data/Szintillator/europium_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d
+t(x)= a1*exp(-0.5*((x-b1)/c1)**2) + d + e*x
+fit [6500:6800] t(x) './data/Szintillator/europium_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d, e
 
 g1(x) = a1*exp(-0.5*((x-b1)/c1)**2) # Gaußfit 1
-u(x) = d							# Untergrund
+u(x) = d + e*x							# Untergrund
 
 load './../gnuplot_linestyles.plt'
 

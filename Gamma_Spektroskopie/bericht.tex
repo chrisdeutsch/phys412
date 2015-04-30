@@ -528,18 +528,12 @@ Das Ergebnis der Anpassung ist in Abbildung \ref{fig:kalibrierung_halb} zu sehen
 	\caption{Energiekalibrierung des Ge-Halbleiterdetektors}
 	\label{fig:kalibrierung_halb}
 \end{figure}  
-Der mit \texttt{gnuplot} gefundene Wert für die Steigung $m$ lautet:
+Anpassungsergebnisse \texttt{gnuplot}:
 \begin{align}
-m = \SI{4.951+-0.005}{\per\kilo\electronvolt}
+	m = \SI{0.200839 +- 0.000013}{\kilo\electronvolt} \\
+	b = \SI{4.561 +- 0.059}{\kilo\electronvolt}
 \end{align}
-Um nun die Proportionalitätskonstante $\lambda$ für den Zusammenhang $E=\lambda \cdot n$ zu erhalten, muss noch der Kehrwert berechnet werden:
-\begin{align}
-\lambda = \frac{1}{m} \qquad \Delta \lambda = \frac{\Delta m}{m^2}
-\end{align}
-Man erhält somit:
-\begin{align*}
-\lambda = \SI{0.202 +- 0.001}{\kilo\electronvolt}
-\end{align*}
+
 
 \subsubsection{Bestimmung der Halbwertsbreite}
 

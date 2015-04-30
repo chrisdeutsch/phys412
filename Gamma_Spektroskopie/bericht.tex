@@ -527,26 +527,48 @@ Betrachtet man nur Linien geringerer Energie so zeigt sich die erwartete Zunahme
 
 
 \subsubsection{Peak-to-Total Verhältnis}
+Zur Bestimmung des Peak-to-Total Verhältnisses muss die Gesamtzahl aller Ereignisse $\Sigma$ in den Spektren bestimmt werden.
+Diese erhält man durch Subtraktion der Gesamtzahl der Ereignisse der Untergrundmessung $\Sigma_\mathrm{Untergrund}$ von der untergrundbehafteten Ereigniszahl des Spektrums $\Sigma_0$:
+\begin{align}
+	\Sigma = \Sigma_\mathrm{0} - \Sigma_\mathrm{Untergrund}
+\end{align}
+dabei wird auf die Anzahlen der Fehler gemäß der Poisson-Verteilung angenommen.
+Neben der Gesamtzahl wird die Anzahl der Ereignisse in den Photopeaks als auch im Rückstreupeak benötigt.
+Diese können direkt durch Integration über die Anpassung der Gaußfunktion berechnet werden:
+\begin{align}
+\int_{-\infty}^{\infty} \mathcal{G}(n) \, \mathrm{d}n = \sqrt{2 \pi} \sigma A
+\label{eq:integral_peak}
+\end{align}
+Die Anpassungsparameter für die Photopeaks kann direkt aus Abschnitt \ref{sec:kalibrierung_szinti} übernommen werden.
+Analog zur Kalibrierung wird eine Anpassung an die Rückstreupeaks von \isotope[60]{Co} und \isotope[137]{Cs} durchgeführt.
+Exemplarisch dafür wurde die Anpassung an den Rückstreupeak von \isotope[137]{Cs} in Abbildung \ref{fig:fit_rueck_szinti} durchgeführt.
+\begin{figure}[h]
+	\centering
+	\input{./plots/szintillator/rueckstreupeaks/caesium.tex}
+	\caption{Anpassung einer Gaußfunktion an den Rückstreupeak von \isotope[137]{Cs}}
+	\label{fig:fit_rueck_szinti}
+\end{figure}
+Die resultierenden Anpassungsparameter wurden in Tabelle \ref{tab:fit_rueck_szinti} aufgetragen.
+\begin{table}[ht]
+	\centering
+	\input{./tables/rueckstreupeaks_szinti.tex}
+	\caption{Ergebnisse der Anpassung von Gaußfunktionen an die Rückstreupeaks}
+	\label{tab:fit_rueck_szinti}
+\end{table}
+
+
+
 
 \subsubsection{Absolute Peakeffizienz}
 \label{sec:absolute_peakeffizienz_szinti}
 Integral über Gauß:
-\begin{align}
-	\int_{-\infty}^{\infty} \mathcal{G}(x) \, \mathrm{d}x = \sqrt{2 \pi} \sigma A
-\end{align}
 
-\begin{figure}
-	\input{./plots/szintillator/rueckstreupeaks/caesium.tex}
-\end{figure}
-\begin{figure}
-	\input{./plots/szintillator/rueckstreupeaks/cobalt.tex}
-\end{figure}
-\begin{figure}
-	\input{./plots/szintillator/rueckstreupeaks/europium.tex}
-\end{figure}
+
 
 
 \subsection{Germanium Halbleiterdetektor}
+(Disclaimer: Hier sollten wir was hinschreiben was die kürze in den folgenden Kapiteln rechtfertigt damit wir nicht die ganze zeit Analog zu blabla schreiben müssen.)
+
 
 \subsubsection{Detektorsignal des Halbleiterdetektor}
 Im Folgenden soll analog zu Abschnitt \ref{sec:detektorsignal_szinti} das Detektorsignal an Vor- und Hauptverstärker des Ge-Halbleiterdetektors bestimmt werden.

@@ -6,7 +6,7 @@ set output './plots/szintillator/energiekalibrierung/cobalt_darstellung.tex'
 
 set title ''
 
-set key top center
+set key top right
 
 set xrange [6000:6700]
 set yrange [0:1200]
@@ -49,6 +49,6 @@ plot 	'./data/szintillator/cobalt_bereinigt.txt' using 1:2:3 every 2 w errorbars
 		t(x) t'$\Sigma$' ls 2 lw 2,\
 		g1(x) t'$\mathcal{G}_1$' ls 3 lw 2,\
 		g2(x) t'$\mathcal{G}_2$' ls 4 lw 2,\
-		u(x) t'$u(n)$' ls 5 lw 2
+		u(x) t'$u$' ls 5 lw 2
 
 unset output

@@ -445,7 +445,9 @@ Weiterhin wurde in der Anpassungshypothese ein Untergrund $u(n)$ berücksichtigt
 Zur Verdeutlichung wurde die Anpassung für Cobalt in Abbildung \ref{fig:fit_cobalt} beispielhaft für das Vorgehen dargestellt.
 \begin{figure}[ht]
 	\centering
+	\resizebox{0.85\textwidth}{!}{
 	\input{./plots/szintillator/energiekalibrierung/cobalt_darstellung.tex}
+	}
 	\caption{Anpassung für die Linien im Gammaspektrum von Cobalt}
 	\label{fig:fit_cobalt}
 \end{figure}
@@ -464,12 +466,23 @@ Die Daten und durchgeführte Anpassung sind in Abbildung \ref{fig:kalibrierung_s
 \begin{figure}[ht]
 	\centering
 	\input{./plots/kalibrierung_szinti.tex}
-	\caption{Energiekalibrierung des NaJ(Tl) Detektors}
+	\caption{Energiekalibrierung des NaJ(Tl) Detektors. Die Fehler sind zu klein, um gesehen werden zu können.}
 	\label{fig:kalibrierung_szinti}
 \end{figure}
 Die Anpassungsergebnisse lauten:
-
-Da die Anpassungsgerade für den Halbleiterdetektor eine deutlich bessere und durchgehend lineare Übereinstimmung mit den Messwerten zeigt, liegt die Ursache hierfür nicht an dem verwendeten Vielkanalanalysator sondern ist im Verstärker oder Photomultiplier zu suchen.
+\begin{align}
+	m = 
+	\begin{cases}
+	\SI{0.17441+-0.00076}{\kilo\electronvolt} & n < 6000 \\
+	\SI{0.48976+-0.04034}{\kilo\electronvolt} & n > 6000
+	\end{cases}\\
+	b = 
+	\begin{cases}
+	\SI{-5.189+-2.627}{\kilo\electronvolt} & n < 6000 \\
+	\SI{-1855.53+-256.50}{\kilo\electronvolt} & n > 6000
+	\end{cases}
+\end{align}
+Da die Anpassungsgerade für den Halbleiterdetektor eine deutlich bessere und durchgehend lineare Übereinstimmung mit den Messwerten zeigt, liegt die Ursache für den beobachteten Verlauf nicht an dem verwendeten Vielkanalanalysator sondern ist im Verstärker oder Photomultiplier zu suchen.
 
 \begin{figure}[h]
 	\centering
@@ -540,7 +553,7 @@ Das Ergebnis der Anpassung ist in Abbildung \ref{fig:kalibrierung_halb} zu sehen
 \begin{figure}[ht]
 	\centering
 	\input{./plots/kalibrierung_halb.tex}
-	\caption{Energiekalibrierung des Ge-Halbleiterdetektors}
+	\caption{Energiekalibrierung des Ge-Halbleiterdetektors. Die Fehler sind zu klein, um gesehen werden zu können.}
 	\label{fig:kalibrierung_halb}
 \end{figure}  
 Anpassungsergebnisse \texttt{gnuplot}:

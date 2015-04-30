@@ -385,6 +385,7 @@ Generell wird für den Fehler auf die Anzahl der Ereignisse $N$ in einem bestimm
 \Delta N = \sqrt{N}
 \end{align}
 angenommen.
+Das Untergrundspektrum wie auch die Spektren der verschiedenen Isotope wurden über eine Messdauer von $t = \SI{720}{\second}$ aufgenommen.
 Die Untergrundkorrektur erfolgt dann durch Subtraktion des Untergrundspektrums von den aufgenommenen Spektren der Isotope:
 \begin{align}
 	\label{eq:untergrundkorr_fehler}
@@ -470,10 +471,25 @@ Da die Anpassungsgerade für den Halbleiterdetektor eine deutlich bessere Übere
 \end{figure}
 
 \subsubsection{Halbwertsbreiten der Linien}
+Zur Bestimmung der Halbwertsbreiten kann die Anpassung der Gaußfunktionen an die jeweilige Linie verwendet werden, welche bereits bei der Energiekalibrierung in Abschnitt \ref{sec:kalibrierung_szinti} durchgeführt werden.
+Dazu kann die Standardabweichung $\sigma$ der Gaußfunktion in die volle Halbwertsbreite (FWHM: \textit{full width at half maximum}) durch
+\begin{align}
+	\text{FWHM} = 2 \, \sqrt{2\ln(2)} \cdot \sigma
+\end{align}
+umgerechnet werden.
+Der Fehler wird dementsprechend durch
+\begin{align}
+	\Delta \text{FWHM} = 2 \, \sqrt{2\ln(2)} \cdot \Delta \sigma
+\end{align}
+fortgepflanzt.
 
 \subsubsection{Peak-to-Total Verhältnis}
 
 \subsubsection{Absolute Peakeffizienz}
+Integral über Gauß:
+\begin{align}
+	\int_{-\infty}^{\infty} \mathcal{G}(x) \, \mathrm{d}x = \sqrt{2 \pi} \sigma A
+\end{align}
 
 
 

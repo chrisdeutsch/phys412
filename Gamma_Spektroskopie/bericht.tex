@@ -379,18 +379,20 @@ Da beide Signale von unabhängigen Ereignissen stammen, kann leider nicht verifi
 \subsubsection{Aufnahme der Gammaspektren von QUELLEN und das Untergrundspektrum}
 Nachdem die Signale des Szintillationsdetektors betrachtet wurden, kann mit der Aufnahme der Spektren begonnen werden.
 Dazu wird zunächst ein Untergrundspektrum aufgenommen, um die Spektren der Isotope \isotope[60]{Co}, \isotope[137]{Cs} und \isotope[152]{Eu} vom Untergrund bereinigen zu können.
-Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund} der Abzug des Untergrundes am Beispiel der Messung von \isotope[60]{Co} durchgeführt und bilden folglich nur noch die vom Untergrund bereinigten Spektren ab.
-Dabei wird für den Fehler in der Anzahl der Ereignisse $N$ eines Kanals $n$ wegen der zugrundeliegenden Poisson-Verteilung
+Generell wird für den Fehler auf die Anzahl der Ereignisse $N$ in einem bestimmten Kanal $n$ des Vielkanalanalysators wegen der zugrundeliegenden Poisson-Verteilung:
 \begin{align}
+\label{eq:poisson_fehler}
 \Delta N = \sqrt{N}
 \end{align}
 angenommen.
-Wird der Untergrund vom Spektrum abgezogen, so folgt für den Fehler des untergrundkorrigierten Spektrums gemäß der Gauß'schen Fehlerfortpflanzung:
+Die Untergrundkorrektur erfolgt dann durch Subtraktion des Untergrundspektrums von den aufgenommenen Spektren der Isotope:
 \begin{align}
-\label{eq:untergrundkorr_fehler}
-N_\mathrm{korr.} = N - N_\mathrm{Untergrund} \qquad \Delta N_\mathrm{korr.} = \sqrt{\Delta N^2 + \Delta N_\mathrm{Untergrund}^2}
+	\label{eq:untergrundkorr_fehler}
+	N_\mathrm{korr.} &= N - N_\mathrm{Untergrund}  \nonumber\\
+	\Delta N_\mathrm{korr.} &= \sqrt{\Delta N^2 + \Delta N_\mathrm{Untergrund}^2} = \sqrt{N + N_\mathrm{Untergrund}}
 \end{align}
-
+wobei der Fehler aufgrund von Gleichung \ref{eq:poisson_fehler} und Gauß'scher Fehlerfortpflanzung folgt.
+Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund} der Abzug des Untergrundes am Beispiel der Messung von \isotope[60]{Co} durchgeführt und bilden folglich nur noch die vom Untergrund bereinigten Spektren ab.
 \begin{figure}[hp]
 	\centering
 	\begin{subfigure}[b]{0.7\textwidth}
@@ -419,9 +421,7 @@ N_\mathrm{korr.} = N - N_\mathrm{Untergrund} \qquad \Delta N_\mathrm{korr.} = \s
 	\caption{Abzug des Untergrundes (TODO: Passend machen)}
 	\label{fig:abzug_untergrund}
 \end{figure}
-
-
-Folglich wird die Anzahl der Ereignisse stets vom Untergrund befreit sein, sodass diese entgegen der Bezeichnung in Gleichung \ref{eq:untergrundkorr_fehler} mit $N$ bezeichnen.
+Im Folgenden werden (sofern nicht anders angegeben) alle Spektren gemäß dieser Überlegungen korrigiert, weshalb die korrigierten Ereignisanzahlen ab sofort mit $N$ bezeichnet werden.
 Für (WAS) in Abschnitt (REF) ist der Abstand der radioaktiven Probe vom Detektor nötig, welcher in Tabelle \ref{tab:abstand_szinti} aufgetragen wurde.
 \begin{table}[h]
 	\centering

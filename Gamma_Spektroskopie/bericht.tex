@@ -367,7 +367,7 @@ Die im Folgenden gemessenen Größen wurden mithilfe eines Bildbearbeitungsprogr
 Dabei wurden die Fehler auf \SI{0.2}{\division} der jeweiligen Spannungs-/Zeitskala abgeschätzt.
 Das Signal am Vorverstärker des Photomultipliers weist einen (im Vergleich zur Signaldauer) instantanen Anstieg (Anstiegszeit $< \SI{5}{\micro\second}$) mit der Signalamplitude $\Delta U = \SI{2.8 +- 0.1}{\volt}$ auf.
 Nach diesem Anstieg fällt das Signal exponentiell mit einer Signaldauer\footnote{Als Definition der Signaldauer $\Delta t$ wird dabei die Zeit verwendet, die das Signal benötigt um von \SI{10}{\percent} der Signalamplitude an der ansteigenden Flanke auf \SI{10}{\percent} an der abfallenden Flanke zu gelangen.} von $\Delta t = \SI{395 +- 20}{\micro\second}$ ab.
-Der exponentielle Abfall des Signals kann durch das Nachleuchten des Szintillatorkristalls erklärt werden, welches darauf beruht, dass der Zerfall der angeregten Zustände im Kristall einem exponentiellem Verhalten folgt.
+Der exponentielle Abfall des Signals kann durch den relativ langsamen Abtransport der Ladung im Sekundarelektronenvervielfacher erklärt werden.
 Im Vergleich dazu wurde in Abbildung \ref{fig:signal_szinti_haupt} eines der Signale am Hauptverstärker des Detektors dargestellt.
 Obwohl der Puls am unipolaren Ausgang des Verstärkers gemessen wurde, kann ein negativer Ausschlag festgestellt werden.
 Der negative Impuls ist für die Messung nicht relevant, da dieser bei der Impulshöhenmessung mit dem Vielkanalanalysator keinen Einfluss hat.
@@ -378,7 +378,9 @@ Da beide Signale von unabhängigen Ereignissen stammen, kann leider nicht verifi
 
 \subsubsection{Aufnahme der Gammaspektren von QUELLEN und das Untergrundspektrum}
 Nachdem die Signale des Szintillationsdetektors betrachtet wurden, kann mit der Aufnahme der Spektren begonnen werden.
-Dazu wird zunächst ein Untergrundspektrum aufgenommen, um die Spektren der Isotope \isotope[60]{Co}, \isotope[137]{Cs} und \isotope[152]{Eu} vom Untergrund bereinigen zu können.
+Dazu muss die Verstärkung des Hauptverstärkers geeignet eingestellt werden, um den Kanalbereich des Vielkanalanalysators optimal auszunutzen.
+Dies wird dadurch erreicht, dass die hochenergetische \SI{1408}{keV}-Linie von \isotope[152]{Eu} über die Verstärkung so positioniert wird, dass diese in den Bereich um Kanal 7000 fällt.
+Anschließend wird ein Untergrundspektrum aufgenommen, um die Spektren der Isotope \isotope[60]{Co}, \isotope[137]{Cs} und \isotope[152]{Eu} vom Untergrund bereinigen zu können.
 Generell wird für den Fehler auf die Anzahl der Ereignisse $N$ in einem bestimmten Kanal $n$ des Vielkanalanalysators wegen der zugrundeliegenden Poisson-Verteilung:
 \begin{align}
 \label{eq:poisson_fehler}
@@ -393,33 +395,33 @@ Die Untergrundkorrektur erfolgt dann durch Subtraktion des Untergrundspektrums v
 	\Delta N_\mathrm{korr.} &= \sqrt{\Delta N^2 + \Delta N_\mathrm{Untergrund}^2} = \sqrt{N + N_\mathrm{Untergrund}}
 \end{align}
 wobei der Fehler aufgrund von Gleichung \ref{eq:poisson_fehler} und Gauß'scher Fehlerfortpflanzung folgt.
-Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund} der Abzug des Untergrundes am Beispiel der Messung von \isotope[60]{Co} durchgeführt und bilden folglich nur noch die vom Untergrund bereinigten Spektren ab.
+Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund} der Abzug des Untergrundes am Beispiel der Messung von \isotope[60]{Co} durchgeführt.
 \begin{figure}[hp]
 	\centering
-	\begin{subfigure}[b]{0.7\textwidth}
-		\resizebox{!}{0.3\textheight}{
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
 		\input{./plots/szintillator/untergrund.tex}
 		}
 		\caption{Untergrund des NaJ(Tl)-Szintillationsdetektors}
 		\label{fig:untergrund_szinti}
 	\end{subfigure}
 	
-	\begin{subfigure}[b]{0.7\textwidth}
-		\resizebox{!}{0.3\textheight}{
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
 		\input{./plots/szintillator/cobalt_mit_untergrund.tex}
 		}
-		\caption{Cobalt Spektrum mit Untergrund}
+		\caption{Untergrundbehaftetes \isotope[60]{Co}-Spektrum}
 		\label{fig:cobalt_mit_untergrund}
 	\end{subfigure}
 	
-	\begin{subfigure}[b]{0.7\textwidth}
-		\resizebox{!}{0.3\textheight}{
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
 		\input{./plots/szintillator/cobalt.tex}
 		}
-		\caption{Cobalt Spektrum ohne Untergrund}
+		\caption{\isotope[60]{Co}-Spektrum mit subtrahiertem Untergrund}
 		\label{fig:cobalt_ohne_untergrund}
 	\end{subfigure}
-	\caption{Abzug des Untergrundes (TODO: Passend machen)}
+	\caption{Subtraktion des gemessenen Untergrundes von dem \isotope[60]{Co}-Spektrum. Die Spektren wurden mit einer Messdauer von $t = \SI{720}{\second}$ aufgenommen. Die Korrektur ist hauptsächlich in den Kanälen $< 1000$ zu erkennen.}
 	\label{fig:abzug_untergrund}
 \end{figure}
 Im Folgenden werden (sofern nicht anders angegeben) alle Spektren gemäß dieser Überlegungen korrigiert, weshalb die korrigierten Ereignisanzahlen ab sofort mit $N$ bezeichnet werden.
@@ -434,7 +436,7 @@ Für (WAS) in Abschnitt (REF) ist der Abstand der radioaktiven Probe vom Detekto
 
 \subsubsection{Energiekalibrierung}
 \label{sec:kalibrierung_szinti}
-Da die Spektren mit einem Vielkanalanalysator aufgenommen werden, kann aus den Daten keine Energieinformation gewonnen werden.
+Da die Spektren mit einem Vielkanalanalysator aufgenommen werden, kann aus den Daten zunächst keine Energieinformation gewonnen werden.
 Dazu ist eine Energiekalibrierung nötig, die mit Hilfe bekannter Linien in den jeweiligen Gamma-Spektren durchgeführt wird.
 An gut getrennte Linien wurde dazu eine Gaußfunktion der Form
 \begin{align}
@@ -442,7 +444,7 @@ An gut getrennte Linien wurde dazu eine Gaußfunktion der Form
 \label{eq:gaussfithypothese}
 \end{align}
 im Fall nah beieinander liegender Linien eine Summe von solchen Gaußfunktionen angepasst.
-Weiterhin wurde in der Anpassungshypothese ein Untergrund $u(n)$ berücksichtigt, der je nach Peak auf Basis der Daten entweder konstant oder linear abfallend angenommen wurde.
+Weiterhin wurde in der Anpassungshypothese ein Untergrund $u(n)$ berücksichtigt, der je nach Peak auf Basis der Daten entweder konstant oder linear angenommen wurde.
 Zur Verdeutlichung wurde die Anpassung für Cobalt in Abbildung \ref{fig:fit_cobalt} beispielhaft für das Vorgehen dargestellt.
 \begin{figure}[ht]
 	\centering
@@ -452,7 +454,7 @@ Zur Verdeutlichung wurde die Anpassung für Cobalt in Abbildung \ref{fig:fit_cob
 	\caption{Anpassung für die Linien im Gammaspektrum von Cobalt}
 	\label{fig:fit_cobalt}
 \end{figure}
-In Tabelle \ref{tab:kalibrierungslinien_szinti} sind die Ergebnisse für die Linienschwerpunkte der Anpassung eingetragen.
+In Tabelle \ref{tab:kalibrierungslinien_szinti} sind die Ergebnisse der Anpassung eingetragen, wobei für die Kalibrierung zunächst nur der Linienschwerpunkt $n$ und die Gammaenergie $E_\gamma$ relevant sind.
 Den Schwerpunkten der Gaußfunktionen wurden dabei unter Benutzung der Termschemata und Tabelle in \cite{anleitung} die jeweiligen Gammaenergien zugeordnet.
 \begin{table}[ht]
 	\centering

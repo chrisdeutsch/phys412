@@ -485,7 +485,18 @@ Die Anpassungsergebnisse lauten:
 	\SI{-1855.53+-256.50}{\kilo\electronvolt} & n > 6000
 	\end{cases}
 \end{align}
-Da die Anpassungsgerade für den Halbleiterdetektor eine deutlich bessere und durchgehend lineare Übereinstimmung mit den Messwerten zeigt, liegt die Ursache für den beobachteten Verlauf nicht an dem verwendeten Vielkanalanalysator sondern ist im Verstärker oder Photomultiplier zu suchen.
+Da die Anpassungsgerade für den Halbleiterdetektor eine deutlich bessere und durchgehend lineare Übereinstimmung mit den Messwerten zeigt, liegt die Ursache für den beobachteten Verlauf nicht an dem verwendeten Vielkanalanalysator sondern ist im Verstärker zu suchen.
+
+Da im Folgenden oftmals eine Umrechnung von Kanalnummer $n$ auf Gammaenergie $E_\gamma$ erfolgt, soll hier die Vorgehensweise einmalig erklärt werden.
+Die Kalibrierung bildet den linearen Zusammenhang zwischen $E_\gamma$ und $n$:
+\begin{align}
+	E_\gamma = m \cdot n + b
+\end{align}
+da oftmals die Kanalnummer mit einem Fehler behaftet ist (z.B. bei den Linienschwerpunkten) muss dies bei der Fehlerfortpflanzung:
+\begin{align}
+	\Delta E_\gamma = \sqrt{n^2 \cdot \Delta m^2 + m^2 \cdot \Delta n^2 + \Delta b^2}
+\end{align}
+berücksichtigt werden.
 
 \begin{figure}[h]
 	\centering

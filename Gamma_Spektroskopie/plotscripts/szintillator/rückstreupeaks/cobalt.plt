@@ -8,7 +8,7 @@ set title ''
 
 set key top left
 
-set xrange [800:1500]
+set xrange [1000:1800]
 set yrange [0:*]
 set xlabel 'Kanalnummer $n$'
 set ylabel 'Ereignisse'
@@ -32,7 +32,7 @@ t(x)= a1*exp(-0.5*((x-b1)/c1)**2) + d + e * x
 fit t(x) './data/Szintillator/cobalt_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d, e
 
 g1(x) = a1*exp(-0.5*((x-b1)/c1)**2) # Gaußfit 1
-u(x) = d							# Untergrund
+u(x) = d + e * x							# Untergrund
 
 load './../gnuplot_linestyles.plt'
 

@@ -379,6 +379,7 @@ Da beide Signale von unabhängigen Ereignissen stammen, kann leider nicht verifi
 \subsubsection{Aufnahme der Gammaspektren von QUELLEN und das Untergrundspektrum}
 Nachdem die Signale des Szintillationsdetektors betrachtet wurden, kann mit der Aufnahme der Spektren begonnen werden.
 Dazu wird zunächst ein Untergrundspektrum aufgenommen, um die Spektren der Isotope \isotope[60]{Co}, \isotope[137]{Cs} und \isotope[152]{Eu} vom Untergrund bereinigen zu können.
+Die Messzeit beträgt für alle Spektrenaufnahmen \SI{720}{\second}.
 Generell wird für den Fehler auf die Anzahl der Ereignisse $N$ in einem bestimmten Kanal $n$ des Vielkanalanalysators wegen der zugrundeliegenden Poisson-Verteilung:
 \begin{align}
 \label{eq:poisson_fehler}
@@ -392,7 +393,7 @@ Die Untergrundkorrektur erfolgt dann durch Subtraktion des Untergrundspektrums v
 	\Delta N_\mathrm{korr.} &= \sqrt{\Delta N^2 + \Delta N_\mathrm{Untergrund}^2} = \sqrt{N + N_\mathrm{Untergrund}}
 \end{align}
 wobei der Fehler aufgrund von Gleichung \ref{eq:poisson_fehler} und Gauß'scher Fehlerfortpflanzung folgt.
-Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund} der Abzug des Untergrundes am Beispiel der Messung von \isotope[60]{Co} durchgeführt und bilden folglich nur noch die vom Untergrund bereinigten Spektren ab.
+Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund} der Abzug des Untergrundes am Beispiel der Messung von \isotope[60]{Co} durchgeführt und im Folgenden nur noch die vom Untergrund bereinigten Spektren abgebildet.
 \begin{figure}[hp]
 	\centering
 	\begin{subfigure}[b]{0.7\textwidth}
@@ -451,7 +452,7 @@ Zur Verdeutlichung wurde die Anpassung für Cobalt in Abbildung \ref{fig:fit_cob
 	\caption{Anpassung für die Linien im Gammaspektrum von Cobalt}
 	\label{fig:fit_cobalt}
 \end{figure}
-In Tabelle \ref{tab:kalibrierungslinien_szinti} sind die Ergebnisse für die Linienschwerpunkte der Anpassung eingetragen.
+In Tabelle \ref{tab:kalibrierungslinien_szinti} sind die Ergebnisse für die Anpassungen eingetragen.
 Den Schwerpunkten der Gaußfunktionen wurden dabei unter Benutzung der Termschemata und Tabelle in \cite{anleitung} die jeweiligen Gammaenergien zugeordnet.
 \begin{table}[ht]
 	\centering
@@ -483,13 +484,6 @@ Die Anpassungsergebnisse lauten:
 	\end{cases}
 \end{align}
 Da die Anpassungsgerade für den Halbleiterdetektor eine deutlich bessere und durchgehend lineare Übereinstimmung mit den Messwerten zeigt, liegt die Ursache für den beobachteten Verlauf nicht an dem verwendeten Vielkanalanalysator sondern ist im Verstärker oder Photomultiplier zu suchen.
-
-\begin{figure}[h]
-	\centering
-	\input{./plots/szintillator/energiekalibrierung/cobalt_darstellung.tex}
-	\caption{Darstellung fit}
-	\label{fig:fit_darstellung_szinti}
-\end{figure}
 
 \subsubsection{Halbwertsbreiten der Linien}
 
@@ -541,7 +535,7 @@ Der Vergleich der Impulshöhen macht auch hier wenig Sinn, da diese von unabhän
 
 Wie beim Sztintillationsdetektor wird auch für den Halbeiterdetektor eine Energiekalibrierung durchgeführt, indem an die gefundenen Linien im Gammaspektrum der Proben eine Kurve der Form \eqref{eq:gaussfithypothese} angepasst wird.
 Im Gegensatz zum NaJ(Tl)-Detektor kann jedoch auch die Europiumlinie von \SI{1085.914}{\kilo\electronvolt} deutlich gesehen und zur Kalibrierung genutzt werden.
-Es ergeben sich die in Tabelle \ref{tab:kalibrierungslinien_halb} festgehaltenen Werte für die Linienschwerpunkte und zugehörigen Gammaenergien aller drei Quellen.
+Es ergeben sich die in Tabelle \ref{tab:kalibrierungslinien_halb} festgehaltenen Werte für die Anpassungen und zugehörigen Gammaenergien aller drei Quellen.
 \begin{table}[ht]
 	\centering
 	\input{./tables/kalibrierung_halb.tex}

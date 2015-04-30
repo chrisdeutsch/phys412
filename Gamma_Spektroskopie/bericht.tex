@@ -394,26 +394,31 @@ N_\mathrm{korr.} = N - N_\mathrm{Untergrund} \qquad \Delta N_\mathrm{korr.} = \s
 \begin{figure}[hp]
 	\centering
 	\begin{subfigure}[b]{0.7\textwidth}
+		\resizebox{!}{0.3\textheight}{
 		\input{./plots/szintillator/untergrund.tex}
+		}
 		\caption{Untergrund des NaJ(Tl)-Szintillationsdetektors}
 		\label{fig:untergrund_szinti}
 	\end{subfigure}
 	
 	\begin{subfigure}[b]{0.7\textwidth}
+		\resizebox{!}{0.3\textheight}{
 		\input{./plots/szintillator/cobalt_mit_untergrund.tex}
+		}
 		\caption{Cobalt Spektrum mit Untergrund}
 		\label{fig:cobalt_mit_untergrund}
 	\end{subfigure}
 	
 	\begin{subfigure}[b]{0.7\textwidth}
+		\resizebox{!}{0.3\textheight}{
 		\input{./plots/szintillator/cobalt.tex}
+		}
 		\caption{Cobalt Spektrum ohne Untergrund}
 		\label{fig:cobalt_ohne_untergrund}
 	\end{subfigure}
 	\caption{Abzug des Untergrundes (TODO: Passend machen)}
 	\label{fig:abzug_untergrund}
 \end{figure}
-
 
 
 Folglich wird die Anzahl der Ereignisse stets vom Untergrund befreit sein, sodass diese entgegen der Bezeichnung in Gleichung \ref{eq:untergrundkorr_fehler} mit $N$ bezeichnen.

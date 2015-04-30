@@ -514,13 +514,16 @@ fortgepflanzt.
 Mit den Anpassungsergebnissen aus Tabelle \ref{tab:kalibrierungslinien_szinti} kann dementsprechend die Halbwertsbreite in Einheiten der Kanalnummer berechnet werden.
 Diese kann mithilfe der Energiekalibrierung in Abschnitt \ref{sec:kalibrierung_szinti} in Einheiten der Energie umgerechnet werden, wobei die Fehler erneut durch Gauß'sche Fehlerfortpflanzung ermittelt werden.
 Konkret erfolgt die Umrechnung durch Multiplikation der Halbwertsbreite in Einheiten der Kanalnummer mit der Steigung der Kalibrierungsgeraden, da die volle Halbwertsbreite eine Differenzgröße ist und dadurch konstanter Versatz keinen Einfluss nimmt.
-
 \begin{table}[ht]
 	\centering
 	\input{./tables/fwhm_szinti.tex}
-	\caption{Halbwertsbreiten Szinti}
+	\caption{Volle Halbwertsbreiten der zur Kalibration verwendeten Linien in den Spektren von \isotope[60]{Co}, \isotope[137]{Cs} und \isotope[152]{Eu}.}
 	\label{tab:fwhm_szinti}
 \end{table}
+Die berechneten Breiten wurden in Tabelle \ref{tab:fwhm_szinti} zusammengetragen.
+Leider führt die Nichtlinearität des Verstärkers bei der stückweisen Energiekalibrierung zu einer Verfälschung der Halbwertsbreite der Linien mit einer Energie größer als \SI{1000}{\kilo\electronvolt}, weshalb diese nur als Größenordnungen betrachtet werden sollten.
+Die Halbwertsbreiten für Linien geringerer Energie sollten hingegen akkurat wiedergegeben werden.
+Betrachtet man nur Linien geringerer Energie so zeigt sich die erwartete Zunahme der Linienbreite mit steigender Energie, welche in dem statistischen Prozess der Photonenemission im Szintillator begründet liegt.
 
 
 \subsubsection{Peak-to-Total Verhältnis}

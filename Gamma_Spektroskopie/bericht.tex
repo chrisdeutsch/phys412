@@ -101,6 +101,8 @@
 }
 
 \newcommand{\ptt}{Peak-to-Total-Verhältnis}
+\newcommand{\co}{\isotope[60]{Co} }
+\newcommand{\cs}{\isotope[137]{Cs} }
 
 % DOKUMENTINFORMATIONEN
 \title{P521 \\ Gamma-Spektroskopie mit Szintillations- und Halbleiterdetektoren}
@@ -525,12 +527,11 @@ Leider führt die Nichtlinearität des Verstärkers bei der stückweisen Energie
 Die Halbwertsbreiten für Linien geringerer Energie sollten hingegen akkurat wiedergegeben werden.
 Betrachtet man nur Linien geringerer Energie so zeigt sich die erwartete Zunahme der Linienbreite mit steigender Energie, welche in dem statistischen Prozess der Photonenemission im Szintillator begründet liegt.
 
-
 \subsubsection{Peak-to-Total Verhältnis}
-Zur Bestimmung des Peak-to-Total Verhältnisses muss die Gesamtzahl aller Ereignisse $\Sigma$ in den Spektren bestimmt werden.
-Diese erhält man durch Subtraktion der Gesamtzahl der Ereignisse der Untergrundmessung $\Sigma_\mathrm{Untergrund}$ von der untergrundbehafteten Ereigniszahl des Spektrums $\Sigma_0$:
+Zur Bestimmung des Peak-to-Total Verhältnisses muss die Gesamtzahl aller Ereignisse $N_\mathrm{tot.}$ in den Spektren bestimmt werden.
+Diese erhält man durch Subtraktion der Gesamtzahl der Ereignisse der Untergrundmessung $N_\mathrm{Untergrund}$ von der untergrundbehafteten Ereigniszahl des Spektrums $N_0$:
 \begin{align}
-	\Sigma = \Sigma_\mathrm{0} - \Sigma_\mathrm{Untergrund}
+	N_\mathrm{tot.} = N_\mathrm{0} - N_\mathrm{Untergrund}
 \end{align}
 dabei wird auf die Anzahlen der Fehler gemäß der Poisson-Verteilung angenommen.
 Neben der Gesamtzahl wird die Anzahl der Ereignisse in den Photopeaks als auch im Rückstreupeak benötigt.
@@ -555,7 +556,25 @@ Die resultierenden Anpassungsparameter wurden in Tabelle \ref{tab:fit_rueck_szin
 	\caption{Ergebnisse der Anpassung von Gaußfunktionen an die Rückstreupeaks}
 	\label{tab:fit_rueck_szinti}
 \end{table}
-
+Zur Bestimmung des Peak-to-Total Verhältnisses von \isotope[60]{Co} muss die Summe der Photopeaks im Spektrum berechnet werden.
+Mit den Werten aus Tabelle \ref{tab:kalibrierungslinien_szinti} und Gleichung \eqref{eq:integral_peak} berechnet sich diese zu:
+\begin{align*}
+	N_\mathrm{Photo.} &= N_\mathrm{Photo.}(E_\gamma = \SI{780.580}{\kilo\electronvolt}) +  N_\mathrm{Photo.}(E_\gamma = \SI{860.086}{\kilo\electronvolt})\\
+	&= (\num{116181 +- 972}) + (\num{106402 +- 771})\\
+	&= \num{222582 +- 1241}
+\end{align*}
+Nun kann das Peak-to-Total Verhältnis $P/T$ durch:
+\begin{align}
+	P/T = \frac{N_\mathrm{Photo.}}{N_\mathrm{tot.} - N_\mathrm{R"uck.}}
+\end{align}
+berechnet werden.
+Dies wurde in Tabelle \ref{tab:ptt_szinti} für die mittlere Energie der beiden Cobalt Linien sowie der von Caesium aufgetragen.
+\begin{table}[ht]
+	\centering
+	\input{./tables/ptt_szinti.tex}
+	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co und \cs für den Szintillationsdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$.}
+	\label{tab:ptt_szinti}
+\end{table}
 
 
 

@@ -101,8 +101,8 @@
 }
 
 \newcommand{\ptt}{Peak-to-Total-Verhältnis}
-\newcommand{\co}{\isotope[60]{Co} }
-\newcommand{\cs}{\isotope[137]{Cs} }
+\newcommand{\co}{\isotope[60]{Co}}
+\newcommand{\cs}{\isotope[137]{Cs}}
 
 % DOKUMENTINFORMATIONEN
 \title{P521 \\ Gamma-Spektroskopie mit Szintillations- und Halbleiterdetektoren}
@@ -278,6 +278,7 @@ Intrinsische Effizienz:
 \end{align}
 Mit der absoluten Peakeffizienz scheint die intrinsische Effizienz aus Leo gemeint zu sein.
 \begin{align}
+	\label{eq:peakeffizienz}
 	\mathcal{E}_\mathrm{int} = \frac{N_\mathrm{Photo.}}{A \cdot T \cdot \frac{\pi r^2}{4\pi \, d^2}}
 \end{align}
 Der geometrische Faktor im Nenner geht von einer Punktquelle (Aktivität $A$) in hohem Abstand vom Detektor $d$ aus. Messzeit $T$, Detektorradius $r$.
@@ -342,6 +343,8 @@ Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu en
 Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
 
 \subsection{NaJ(Tl) Szintillationsspektrometer}
+Es wird der Detektor mit Durchmesser \SI{48}{mm} verwendet. (????)
+
 
 \subsubsection{Detektorsignal des Szintillationsdetektors}
 \label{sec:detektorsignal_szinti}
@@ -572,7 +575,7 @@ Dies wurde in Tabelle \ref{tab:ptt_szinti} für die mittlere Energie der beiden 
 \begin{table}[ht]
 	\centering
 	\input{./tables/ptt_szinti.tex}
-	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co und \cs für den Szintillationsdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$.}
+	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co{} und \cs{} für den Szintillationsdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$.}
 	\label{tab:ptt_szinti}
 \end{table}
 
@@ -580,10 +583,21 @@ Dies wurde in Tabelle \ref{tab:ptt_szinti} für die mittlere Energie der beiden 
 
 \subsubsection{Absolute Peakeffizienz}
 \label{sec:absolute_peakeffizienz_szinti}
-Integral über Gauß:
-
-
-
+Zur Bestimmung der absoluten Peakeffizienz des Detektors wird die Aktivität der \cs{}-Quelle benötigt. Da in \cite{anleitung} die Aktivität der Quelle $A_0$ im April 1985 gegeben ist, kann mithilfe des Zerfallsgesetzes:
+\begin{align}
+	A(t) = A_0 \exp\left( - \frac{\ln(2)\, t}{t_{1/2}} \right)
+\end{align}
+die Aktivität zum Zeitpunkt der Durchführung $t = \SI{30.03 +- 0.05}{a}$ berechnet werden.
+Mit der gegebenen Aktivität $A_0 = \SI{25 +- 1}{\micro Ci}$ (der Fehler wurde gemäß der angegebenen signifikanten Stellen abgeschätzt) und der Halbwertszeit von \cs{} $t_{1/2} = \SI{30.17 +- 0.03}{a}$ aus \cite{nist} folgt zum Zeitpunkt der Durchführung:
+\begin{align}
+	A = \SI{12.5 +- 0.6}{\micro Ci}
+\end{align}
+Mit dem Abstand der Quelle vom Detektor $d = \SI{17.8 +- 0.2}{cm}$, dem Radius des Detektors $r_\mathrm{NaI(Tl)} = \SI{24 +- 0.5}{mm}$, der Messdauer $T = \SI{720 +- 1}{\second}$ und der Anzahl der Ereignisse im Photopeak des Caesium-Spektrums aus Tabelle \ref{tab:ptt_szinti} folgt für die absolute Peakeffizienz (Gleichung \ref{eq:peakeffizienz}):
+\begin{align}
+	\mathcal{E}_\mathrm{NaI(Tl)} = \SI{20.1 +- 1.4}{\percent}
+\end{align}
+dabei wird auf Angabe einer ausführlichen Fehlerformel verzichtet.
+Anschaulich bedeutet dies, dass etwa jedes fünfte Gammaquant, welches in Richtung des Detektors emittiert wird, in den Photopeak des Spektrums fällt.
 
 \subsection{Germanium Halbleiterdetektor}
 (Disclaimer: Hier sollten wir was hinschreiben was die kürze in den folgenden Kapiteln rechtfertigt damit wir nicht die ganze zeit Analog zu blabla schreiben müssen.)
@@ -735,6 +749,11 @@ Anpassungsergebnisse \texttt{gnuplot}:
 	Riezler, W.; Kopitzki, K.
 	\emph{Kernphysikalisches Praktikum},
 	Teubner 1963
+
+\bibitem{nist}
+	M. P. Unterweger, D. D. Hoppes, F. J. Schima, J.S. Coursey,
+	\emph{NIST Radionuclide Half-Life Measurements},
+	\url{http://www.nist.gov/pml/data/halflife-html.cfm} (Letzter Abruf: 1. Mai 2015)
 
 \end{thebibliography}
 

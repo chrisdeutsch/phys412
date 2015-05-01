@@ -35,6 +35,24 @@ def untergrundbereinigung(spektrum, untergrund):
     
     return ret
 
+def untergrundbereinigung_skaliert(spektrum, untergrund, scale):
+    spek, unt = read(spektrum), read(untergrund)
+    ret = list()
+    
+    for line in zip(spek, unt):
+        S, U = line
+        
+        bin = S[0]
+        korrektur = S[1]- scale * U[1]
+        
+        ds = sqrt(S[1])
+        du = scale * sqrt(U[1])
+        dkorr = sqrt(ds*ds + du*du)
+        
+        ret.append((S[0], korrektur, dkorr))
+    
+    return ret
+
 
 # Szintillator
 ug = "Szintillator/untergrund.txt"
@@ -59,3 +77,9 @@ write("Halbleiter/cobalt_bereinigt.txt",
 
 write("Halbleiter/europium_bereinigt.txt",
       untergrundbereinigung("Halbleiter/europium.txt", ug))
+
+# Langzeitmessung
+ug = "untergrund.txt"
+
+write("bodenprobe_bereinigt.txt",
+      untergrundbereinigung_skaliert("bodenprobe.txt", ug, 1.0))

@@ -1,0 +1,50 @@
+REPORT-FILE from 04/28/2015 09:55:08.437 - 09:40:32.046  written 04/29/2015 09:40:49
+REALTIME: 85524.565   
+TOTALSUM: 1815927     
+ROISUM: 1815927     
+MAXVAL: 4709        
+LIVETIME: 85482.592   
+cmline0=04/28/2015 09:55:08.437 - 09:40:32.046 
+range=8192
+prena=0
+mcsmode=4
+roimin=0
+roimax=8192
+rtpreset=10.000      
+ltpreset=43200.000   
+evpreset=0           
+swpreset=1           
+rampmode=0
+rampstart=1024
+rampstep=1
+rampbin=1
+ramplen=1024
+qdacuse=0
+qdac=2048
+dac1use=0
+dac1val=0
+impsel=f
+thrstart=1716
+thr1=1716
+thr2=1716
+thrclk=2015
+diguse=8
+digval=0
+cycles=128
+sequences=1
+mempart=0
+dwelltime=3
+dwellunit=0
+syncout=909
+histlen=0
+autoinc=0 
+;datname=C:\Dokumente und Einstellungen\admin\Eigene Dateien\SS15\alpha6\untergrund.mcd
+savedata=0
+fmt=txt
+smoothpts=5 
+caluse=0 
+caloff=0.000000
+calfact=1.000000
+calfact2=0
+calfact3=0
+calunit=keV

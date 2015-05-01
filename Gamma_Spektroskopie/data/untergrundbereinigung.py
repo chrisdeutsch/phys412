@@ -82,4 +82,4 @@ write("Halbleiter/europium_bereinigt.txt",
 ug = "untergrund.txt"
 
 write("bodenprobe_bereinigt.txt",
-      untergrundbereinigung_skaliert("bodenprobe.txt", ug, 1.0))
+      untergrundbereinigung_skaliert("bodenprobe.txt", ug, 60161.208/85482.592))

@@ -342,13 +342,13 @@ Vergleich von Germanium und NaI-Detektor im Leo Fig. 10{.}19.
 Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
 Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
 
-\subsection{NaJ(Tl) Szintillationsspektrometer}
+\subsection{NaI(Tl) Szintillationsspektrometer}
 Es wird der Detektor mit Durchmesser \SI{48}{mm} verwendet. (????)
 
 
 \subsubsection{Detektorsignal des Szintillationsdetektors}
 \label{sec:detektorsignal_szinti}
-In diesem Abschnitt soll das Signalverhalten des verwendeten NaJ(Tl)-Szintillationsdetektors untersucht werden.
+In diesem Abschnitt soll das Signalverhalten des verwendeten NaI(Tl)-Szintillationsdetektors untersucht werden.
 Dazu wurden mit einem Oszilloskop die Signalformen jeweils am Vorverstärker des Photomultipliers sowie am Hauptverstärker aufgenommen.
 In Abbildung \ref{fig:signal_szinti_vor} ist ein beispielhaftes Signal direkt am Vorverstärker dargestellt.
 \begin{figure}[h]
@@ -408,7 +408,7 @@ Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund
 		\resizebox{!}{0.285\textheight}{
 		\input{./plots/szintillator/untergrund.tex}
 		}
-		\caption{Untergrund des NaJ(Tl)-Szintillationsdetektors}
+		\caption{Untergrund des NaI(Tl)-Szintillationsdetektors}
 		\label{fig:untergrund_szinti}
 	\end{subfigure}
 	
@@ -465,7 +465,7 @@ Den Schwerpunkten der Gaußfunktionen wurden dabei unter Benutzung der Termschem
 \begin{table}[ht]
 	\centering
 	\input{./tables/kalibrierung_szinti.tex}
-	\caption{Anpassungsergebnisse zur Energiekalibrierung für den NaJ(Tl) Szintillationsdetektor}
+	\caption{Anpassungsergebnisse zur Energiekalibrierung für den NaI(Tl) Szintillationsdetektor}
 	\label{tab:kalibrierungslinien_szinti}
 \end{table}
 Der Zusammenhang zwischen Kanalnummer und Energie wird als linear betrachtet, so dass eine Anpassung an eine Gerade mit Steigung $m$ und Achsenabschnitt $b$ erfolgt.
@@ -475,7 +475,7 @@ Die Daten und durchgeführte Anpassung sind in Abbildung \ref{fig:kalibrierung_s
 \begin{figure}[ht]
 	\centering
 	\input{./plots/kalibrierung_szinti.tex}
-	\caption{Energiekalibrierung des NaJ(Tl) Detektors. Die Fehler sind zu klein, um gesehen werden zu können.}
+	\caption{Energiekalibrierung des NaI(Tl) Detektors. Die Fehler sind zu klein, um gesehen werden zu können.}
 	\label{fig:kalibrierung_szinti}
 \end{figure}
 Die Anpassungsergebnisse lauten:
@@ -537,13 +537,13 @@ Diese erhält man durch Subtraktion der Gesamtzahl der Ereignisse der Untergrund
 	N_\mathrm{tot.} = N_\mathrm{0} - N_\mathrm{Untergrund}
 \end{align}
 dabei wird auf die Anzahlen der Fehler gemäß der Poisson-Verteilung angenommen.
-Neben der Gesamtzahl wird die Anzahl der Ereignisse in den Photopeaks als auch im Rückstreupeak benötigt.
+Neben der Gesamtzahl wird sowohl die Anzahl der Ereignisse in den Photopeaks als auch im Rückstreupeak benötigt.
 Diese können direkt durch Integration über die Anpassung der Gaußfunktion berechnet werden:
 \begin{align}
 \int_{-\infty}^{\infty} \mathcal{G}(n) \, \mathrm{d}n = \sqrt{2 \pi} \sigma A
 \label{eq:integral_peak}
 \end{align}
-Die Anpassungsparameter für die Photopeaks kann direkt aus Abschnitt \ref{sec:kalibrierung_szinti} übernommen werden.
+Die Anpassungsparameter für die Photopeaks können direkt aus Abschnitt \ref{sec:kalibrierung_szinti} übernommen werden.
 Analog zur Kalibrierung wird eine Anpassung an die Rückstreupeaks von \isotope[60]{Co} und \isotope[137]{Cs} durchgeführt.
 Exemplarisch dafür wurde die Anpassung an den Rückstreupeak von \isotope[137]{Cs} in Abbildung \ref{fig:fit_rueck_szinti} durchgeführt.
 \begin{figure}[h]
@@ -574,7 +574,9 @@ berechnet werden.
 Dies wurde in Tabelle \ref{tab:ptt_szinti} für die mittlere Energie der beiden Cobalt Linien und der Caesium Linie durchgeführt.
 \begin{table}[ht]
 	\centering
+	\resizebox{\textwidth}{!}{
 	\input{./tables/ptt_szinti.tex}
+	}
 	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co{} und \cs{} für den Szintillationsdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$.}
 	\label{tab:ptt_szinti}
 \end{table}
@@ -596,12 +598,12 @@ Mit dem Abstand der Quelle vom Detektor $d = \SI{17.8 +- 0.2}{cm}$, dem Radius d
 \begin{align}
 	\mathcal{E}_\mathrm{NaI(Tl)} = \SI{20.1 +- 1.4}{\percent}
 \end{align}
-dabei wird auf Angabe einer ausführlichen Fehlerformel verzichtet.
+dabei wird aufgrund der Komplexität auf Angabe einer ausführlichen Fehlerformel verzichtet.
 Anschaulich bedeutet dies, dass etwa jedes fünfte Gammaquant, welches in Richtung des Detektors emittiert wird, in den Photopeak des Spektrums fällt.
 
 \subsection{Germanium Halbleiterdetektor}
-(Disclaimer: Hier sollten wir was hinschreiben was die kürze in den folgenden Kapiteln rechtfertigt damit wir nicht die ganze zeit Analog zu blabla schreiben müssen.)
-
+Viele der folgenden Aufgaben erfolgen in Analogie zur Auswertung für den NaI(Tl) Szintillationsdetektor, so dass hier nicht alles wiederholt werden soll.
+Dies betrifft insbesondere Formeln für die Fehler.
 
 \subsubsection{Detektorsignal des Halbleiterdetektor}
 Im Folgenden soll analog zu Abschnitt \ref{sec:detektorsignal_szinti} das Detektorsignal an Vor- und Hauptverstärker des Ge-Halbleiterdetektors bestimmt werden.
@@ -650,7 +652,7 @@ Der Vergleich der Impulshöhen macht auch hier wenig Sinn, da diese von unabhän
 \end{figure}
 
 Wie beim Sztintillationsdetektor wird auch für den Halbeiterdetektor eine Energiekalibrierung durchgeführt, indem an die gefundenen Linien im Gammaspektrum der Proben eine Kurve der Form \eqref{eq:gaussfithypothese} angepasst wird.
-Im Gegensatz zum NaJ(Tl)-Detektor kann jedoch auch die Europiumlinie von \SI{1085.914}{\kilo\electronvolt} deutlich gesehen und zur Kalibrierung genutzt werden.
+Im Gegensatz zum NaI(Tl)-Detektor kann jedoch auch die Europiumlinie von \SI{1085.914}{\kilo\electronvolt} deutlich gesehen und zur Kalibrierung genutzt werden.
 Es ergeben sich die in Tabelle \ref{tab:kalibrierungslinien_halb} festgehaltenen Werte für die Anpassungen und zugehörigen Gammaenergien aller drei Quellen.
 \begin{table}[ht]
 	\centering
@@ -658,7 +660,7 @@ Es ergeben sich die in Tabelle \ref{tab:kalibrierungslinien_halb} festgehaltenen
 	\caption{Anpassungsergebnisse zur Energiekalibrierung für den Ge-Halbleiterdetektor}
 	\label{tab:kalibrierungslinien_halb}
 \end{table}
-Da die Daten offensichtlich einen linearen Zusammenhang auf dem gesamten Bereich nahelegen, wird zur Anpassung eine lineare Funktion der Form $mx + b$ gewählt (analog zum NaJ(Tl) Detektor).
+Da die Daten offensichtlich einen linearen Zusammenhang auf dem gesamten Bereich nahelegen, wird zur Anpassung eine lineare Funktion der Form $mx + b$ gewählt (analog zum NaI(Tl) Detektor).
 Das Ergebnis der Anpassung ist in Abbildung \ref{fig:kalibrierung_halb} zu sehen.
 \begin{figure}[ht]
 	\centering

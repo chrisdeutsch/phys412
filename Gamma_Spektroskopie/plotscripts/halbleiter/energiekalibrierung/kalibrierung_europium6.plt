@@ -8,7 +8,7 @@ set title ''
 
 set key top left
 
-set xrange [5350:5400]
+set xrange [5370:5395]
 set yrange [0:*]
 set xlabel 'Kanalnummer $n$'
 set ylabel 'Ereignisse'
@@ -23,7 +23,7 @@ a1 = 1000
 b1 = 5380
 
 #Schwankungsbreiten
-c1 = 2
+c1 = 4
 
 # Untergrund
 d = 5

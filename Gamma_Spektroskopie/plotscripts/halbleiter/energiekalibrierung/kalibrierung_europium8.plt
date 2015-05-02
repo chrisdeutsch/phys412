@@ -8,7 +8,7 @@ set title ''
 
 set key top left
 
-set xrange [6970:7030]
+set xrange [6970:7005]
 set yrange [0:*]
 set xlabel 'Kanalnummer $n$'
 set ylabel 'Ereignisse'

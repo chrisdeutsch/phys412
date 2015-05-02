@@ -8,7 +8,7 @@ set title ''
 
 set key top left
 
-set xrange [3100:3300]
+set xrange [3250:3290]
 set yrange [0:*]
 set xlabel 'Kanalnummer $n$'
 set ylabel 'Ereignisse'
@@ -23,13 +23,13 @@ a1 = 30000
 b1 = 3270
 
 #Schwankungsbreiten
-c1 = 2
+c1 = 3
 
 # Untergrund
 d = 10
 
 t(x)= a1*exp(-0.5*((x-b1)/c1)**2) + d
-fit[x=3200:4200] t(x) './data/halbleiter/caesium_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d
+fit[x=3250:3290] t(x) './data/halbleiter/caesium_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d
 
 g1(x) = a1*exp(-0.5*((x-b1)/c1)**2) # Gaußfit 1
 u(x) = d							# Untergrund

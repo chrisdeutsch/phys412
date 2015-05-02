@@ -776,6 +776,35 @@ Für größere Gammaenergien beginnt die intrinsische Breite des Detektors die b
 
 \subsection{Nachweis der Radioakivität in einer Probe}
 
+\begin{figure}[hp]
+	\centering
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
+			\input{./plots/langzeitmessung/untergrund.tex}
+		}
+		\caption{Untergrund des Ge-Halbleiterdetektors}
+		\label{fig:untergrund}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
+			\input{./plots/langzeitmessung/spektrum_mit_untergrund.tex}
+		}
+		\caption{Untergrundbehaftetes Spektrum der Bodenprobe}
+		\label{fig:probe_mit_untergrund}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
+			\input{./plots/langzeitmessung/spektrum.tex}
+		}
+		\caption{Spektrum der Langzeitmessung nach Abzug des Untergrunds}
+		\label{fig:probe_ohne_untergrund}
+	\end{subfigure}
+	\caption{Subtraktion des gemessenen Untergrundes von dem aufgenommenen Spektrum der Bodenprobe}
+	\label{fig:langzeitmessung_untergrundabzug}
+\end{figure}
+
 \section{Fazit}
 
 \begin{figure}[h]

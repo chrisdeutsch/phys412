@@ -12,7 +12,7 @@ set decimalsign '{,}'
 set xrange [0:8000]
 set yrange [0:*]
 set xlabel 'Kanal $n$'
-set ylabel 'Ereignisse $$'
+set ylabel 'Ereignisse $N$'
 
 set grid
 

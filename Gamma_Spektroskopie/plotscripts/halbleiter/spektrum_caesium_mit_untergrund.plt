@@ -2,9 +2,9 @@ reset
 
 set term epslatex color size 5,3.5
 
-set output './plots/halbleiter/untergrund.tex'
+set output './plots/halbleiter/caesium_mit_untergrund.tex'
 
-set key top right
+set key top left
 
 set decimalsign '{,}'
 #set format y "%.1f"
@@ -21,6 +21,6 @@ set style data lines
 
 load './../gnuplot_linestyles.plt'
 
-plot './data/halbleiter/untergrund.txt' using 1:2:(sqrt($2)) w errorbars t'Messwerte' ls 1
+plot './data/halbleiter/caesium.txt' using 1:2:(sqrt($2))  w errorbars t'Messwerte' ls 1
 
 unset output

@@ -640,6 +640,7 @@ Der Vergleich der Impulshöhen macht auch hier wenig Sinn, da diese von unabhän
 \end{table}
 
 \subsubsection{Energiekalibrierung}
+\label{sec:kalibrierung_halb}
 \begin{figure}[ht]
 	\centering
 	\resizebox{0.85\textwidth}{!}{
@@ -674,6 +675,25 @@ Anpassungsergebnisse \texttt{gnuplot}:
 
 
 \subsubsection{Bestimmung der Halbwertsbreite}
+Zur Bestimmung der Halbwertsbreiten für den Halbleiterdetektor kann erneut die Anpassung der Gaußfunktionen an die jeweiligen Linien verwendet werden, welche bereits bei der Energiekalibrierung in Abschnitt \ref{sec:kalibrierung_halb} durchgeführt wurden.
+Analog zum Szintillationsdetektor wird dabei die volle Halbwertsbreite (FWHM) aus der Standardabweichung $\sigma$ der Anpassung berechnet.
+Mit den Anpassungsergebnissen aus Tabelle \ref{tab:kalibrierungslinien_halb} kann dementsprechend die Halbwertsbreite in Einheiten der Kanalnummer berechnet werden.
+Diese kann mithilfe der Energiekalibrierung in Abschnitt \ref{sec:kalibrierung_halb} in Einheiten der Energie umgerechnet werden, indem die Halbwertsbreite in Einheiten der Kanalnummer mit der Steigung der Kalibrierungsgeraden multipliziert wird.
+Die berechneten Breiten wurden in Tabelle \ref{tab:fwhm_halb} zusammengetragen.
+\begin{table}[ht]
+	\centering
+	\input{./tables/fwhm_halb.tex}
+	\caption{Volle Halbwertsbreiten der zur Kalibration verwendeten Linien in den Spektren von \isotope[60]{Co}, \isotope[137]{Cs} und \isotope[152]{Eu}.}
+	\label{tab:fwhm_halb}
+\end{table}
+
+\begin{figure}[h]
+	\centering
+	\input{./plots/halbleiter/linearisierung_halbwertsbreiten.tex}
+	\caption{Linearisierung}
+	\label{fig:lin_fwhm}
+\end{figure}
+
 
 \subsubsection{Intrinsische Halbwertsbreite}
 

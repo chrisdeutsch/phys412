@@ -393,7 +393,6 @@ Generell wird für den Fehler auf die Anzahl der Ereignisse $N$ in einem bestimm
 \Delta N = \sqrt{N}
 \end{align}
 angenommen.
-Das Untergrundspektrum wie auch die Spektren der verschiedenen Isotope wurden über eine Messdauer von $t = \SI{720}{\second}$ aufgenommen.
 Die Untergrundkorrektur erfolgt dann durch Subtraktion des Untergrundspektrums von den aufgenommenen Spektren der Isotope:
 \begin{align}
 	\label{eq:untergrundkorr_fehler}
@@ -631,12 +630,16 @@ Man beobachtet eine Kürzung des Signals durch den Hauptverstärker um etwa eine
 Der Vergleich der Impulshöhen macht auch hier wenig Sinn, da diese von unabhängigen Ereignissen stammen, dennoch sollte diese proportional zur im Halbleiter deponierten Energie sein.
 
 \subsubsection{Aufnahme der Gammaspektren (QUELLEN) und des Untergrundspektrums}
+Die Aufnahme der Spektren und des Untergrunds erfolgt mit dem Halbleiterdetektor analog zum Szintillationsdetektor.
+Nach erfolgter Einstellung der Verstärkung (so dass das breiteste Spektrum die zur Verfügung stehenden 8192 Kanäle des Vielkanalanalysators möglichst komplett ausnutzt) werden ein Untergrund- und die drei Gammaspektren von \co, \cs und \isotope[152]{Eu} über jeweils \SI{720}{\second} aufgenommen.
+Zur Bestimmung der absoluten Peakeffizienz werden in Tabelle \ref{tab:abstand_halbleiterdetektor} erneut die Abstände der Proben vom Detektor festgehalten.
 \begin{table}[h]
 	\centering
 	\input{./tables/abstaende_halbleiterdetektor.tex}
 	\caption{Abstände $d$ der Proben vom Halbleiterdetektor}
 	\label{tab:abstand_halbleiterdetektor}
 \end{table}
+Das Untergrundspektrum sowie beispielhaft der Vergleich des unkorrigierten und korrigierten \cs-Spektrums sind in \ref{fig:abzug_untergrund_halb} gezeigt.
 \begin{figure}[hp]
 	\centering
 	\begin{subfigure}[b]{0.65\textwidth}
@@ -696,7 +699,7 @@ Das Ergebnis der Anpassung ist in Abbildung \ref{fig:kalibrierung_halb} zu sehen
 	\caption{Energiekalibrierung des Ge-Halbleiterdetektors. Die Fehler sind zu klein, um gesehen werden zu können.}
 	\label{fig:kalibrierung_halb}
 \end{figure}  
-Anpassungsergebnisse \texttt{gnuplot}:
+Die Anpassungsergebnisse durch \texttt{gnuplot} lauten:
 \begin{align}
 	m &= \SI{0.200839 +- 0.000010}{\kilo\electronvolt} \\
 	b &= \SI{4.589 +- 0.046}{\kilo\electronvolt}
@@ -716,8 +719,8 @@ Die berechneten Breiten wurden in Tabelle \ref{tab:fwhm_halb} zusammengetragen.
 	\label{tab:fwhm_halb}
 \end{table}
 Im Gegensatz zum Szintillationsdetektor sieht man in diesem Fall einen eindeutigen Anstieg der Halbwertsbreiten mit steigender Gammaenergie.
-Dies ist in erster Linie auf die wesentlich bessere Energiekalibrierung des Halbleiterdetektors zurückzuführen. 
-
+Dies ist in erster Linie auf die wesentlich bessere Energiekalibrierung des Halbleiterdetektors zurückzuführen.\\
+\\
 Schließlich soll der Einfluss von intrinsischer Detektor-Halbwertsbreite $\Delta E_\mathrm{d}$, welche auf dem statistischen Prozess der Ladungssammlung im Ge-Kristall basiert \cite{anleitung} und der elektronische Teil der Halbwertsbreite $\Delta E_\mathrm{e}$, welche von der verwendeten Verstärkerelektronik abhängt, untersucht werden.
 Die mit dem Vielkanalysator beobachtete Linienbreite $\Delta E$ setzt sich aus beiden Anteilen zusammen und wird beschrieben durch \cite{anleitung}:
 \begin{align}
@@ -777,27 +780,6 @@ Für größere Gammaenergien beginnt die intrinsische Breite des Detektors die b
 
 \begin{figure}[h]
 	\centering
-	\input{./plots/szintillator/caesium.tex}
-	\caption{Cääääääsium szinti}
-	\label{fig:szin_caesium_spektrum}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\input{./plots/szintillator/cobalt.tex}
-	\caption{Cooooobalt szinti}
-	\label{fig:szin_cobalt_spektrum}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\input{./plots/szintillator/europium.tex}
-	\caption{Euroooopium szinti}
-	\label{fig:szin_europium_spektrum}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
 	\input{./plots/halbleiter/caesium.tex}
 	\caption{Cääääääsium halbleiter}
 	\label{fig:halb_caesium_spektrum}
@@ -815,14 +797,6 @@ Für größere Gammaenergien beginnt die intrinsische Breite des Detektors die b
 	\input{./plots/halbleiter/europium.tex}
 	\caption{Euroooopium halbleiter}
 	\label{fig:halb_europium_spektrum}
-\end{figure}
-
-\begin{figure}
-	\input{./plots/halbleiter/rueckstreupeaks/cobalt.tex}
-\end{figure}
-
-\begin{figure}
-	\input{./plots/halbleiter/rueckstreupeaks/caesium.tex}
 \end{figure}
 
 \FloatBarrier
@@ -856,9 +830,34 @@ Für größere Gammaenergien beginnt die intrinsische Breite des Detektors die b
 % APPENDIX
 \begin{appendix}
 \section{Anhang}
-Auf den folgenden Seiten sind der Vollständigkeit halber alle gemessenen Werte sowie die jeweils zur Auswertung berechneten Werte zusammengetragen.
-\clearpage
-
+Auf den folgenden Seiten sind der Vollständigkeit halber alle aufgenommenen Gammaspektren dargestellt.
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
+			\input{./plots/szintillator/caesium.tex}
+		}
+		\caption{Gammaspektrum von \cs}
+		\label{fig:szin_caesium_spektrum}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
+			\input{./plots/szintillator/cobalt.tex}
+		}
+		\caption{Gammaspektrum von \co}
+		\label{fig:szin_cobalt_spektrum}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{		
+			\input{./plots/szintillator/europium.tex}
+		}
+		\caption{Gammaspektrum von \isotope[152]{Eu}}
+		\label{fig:szin_europium_spektrum}
+	\end{subfigure}
+	\caption{Übersicht über die um den Untergrund korrigierten Spektren, die mit dem NaI(Tl)-Szintillationsdetektor aufgenommen wurden. Die Messzeit betrug jeweils \SI{720}{\second}.}
+\end{figure}
 \end{appendix}
 
 \end{document}

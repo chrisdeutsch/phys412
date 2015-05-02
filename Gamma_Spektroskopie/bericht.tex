@@ -439,7 +439,6 @@ Für die Bestimmung der absoluten Peakeffizienz in Abschnitt \ref{sec:absolute_p
 	\label{tab:abstand_szinti}
 \end{table}
 
-
 \subsubsection{Energiekalibrierung}
 \label{sec:kalibrierung_szinti}
 Da die Spektren mit einem Vielkanalanalysator aufgenommen werden, kann aus den Daten zunächst keine Energieinformation gewonnen werden.
@@ -581,8 +580,6 @@ Dies wurde in Tabelle \ref{tab:ptt_szinti} für die mittlere Energie der beiden 
 	\label{tab:ptt_szinti}
 \end{table}
 
-
-
 \subsubsection{Absolute Peakeffizienz}
 \label{sec:absolute_peakeffizienz_szinti}
 Zur Bestimmung der absoluten Peakeffizienz des Detektors wird die Aktivität der \cs{}-Quelle benötigt. Da in \cite{anleitung} die Aktivität der Quelle $A_0$ im April 1985 gegeben ist, kann mithilfe des Zerfallsgesetzes:
@@ -640,6 +637,35 @@ Der Vergleich der Impulshöhen macht auch hier wenig Sinn, da diese von unabhän
 	\caption{Abstände $d$ der Proben vom Halbleiterdetektor}
 	\label{tab:abstand_halbleiterdetektor}
 \end{table}
+\begin{figure}[hp]
+	\centering
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
+			\input{./plots/halbleiter/untergrund.tex}
+		}
+		\caption{Untergrund des Ge-Halbleiterdetektors}
+		\label{fig:untergrund_halb}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
+			\input{./plots/halbleiter/caesium_mit_untergrund.tex}
+		}
+		\caption{Untergrundbehaftetes \isotope[173]{Cs}-Spektrum}
+		\label{fig:caesium_mit_untergrund}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
+			\input{./plots/halbleiter/caesium.tex}
+		}
+		\caption{\isotope[137]{Cs}-Spektrum mit subtrahiertem Untergrund}
+		\label{fig:caesium_ohne_untergrund}
+	\end{subfigure}
+	\caption{Subtraktion des gemessenen Untergrundes von dem \isotope[137]{Cs}-Spektrum. Die Spektren wurden mit einer Messdauer von $t = \SI{720}{\second}$ aufgenommen. Der Untergrund ist im Vergleich zu dem Gammaspektrum sehr klein, so dass die Korrektur praktisch nicht sichtbar ist.}
+	\label{fig:abzug_untergrund_halb}
+\end{figure}
+
 
 \subsubsection{Energiekalibrierung}
 \label{sec:kalibrierung_halb}

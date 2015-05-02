@@ -619,7 +619,7 @@ Auch der exponentielle Abfall mit der Signaldauer $\Delta t = \SI{137 +- 5}{\mic
 		\caption{Am Ausgang des Vorverstärkers. Die eingestellten Skalenfaktoren am Oszilloskop betragen \SI{50}{\milli\volt\per\division} für die Vertikale und \SI{25}{\micro\second\per\division} in der Horizontalen.}
 		\label{fig:signal_ger_vor}
 	\end{subfigure}
-	
+
 	\begin{subfigure}[b]{0.7\textwidth}
 		\centering
 		\includegraphics[width=0.7\textwidth]{./figures/signale/haupt_ger_abgeschnitten.jpg}
@@ -650,13 +650,14 @@ Der Vergleich der Impulshöhen macht auch hier wenig Sinn, da diese von unabhän
 	\caption{Anpassung für die Linie im Gammaspektrum von Caesium}
 	\label{fig:fit_caesium}
 \end{figure}
-
 Wie beim Sztintillationsdetektor wird auch für den Halbeiterdetektor eine Energiekalibrierung durchgeführt, indem an die gefundenen Linien im Gammaspektrum der Proben eine Kurve der Form \eqref{eq:gaussfithypothese} angepasst wird.
 Im Gegensatz zum NaI(Tl)-Detektor kann jedoch auch die Europiumlinie von \SI{1085.914}{\kilo\electronvolt} deutlich gesehen und zur Kalibrierung genutzt werden.
 Es ergeben sich die in Tabelle \ref{tab:kalibrierungslinien_halb} festgehaltenen Werte für die Anpassungen und zugehörigen Gammaenergien aller drei Quellen.
 \begin{table}[ht]
 	\centering
+	\resizebox{\textwidth}{!}{
 	\input{./tables/kalibrierung_halb.tex}
+	}
 	\caption{Anpassungsergebnisse zur Energiekalibrierung für den Ge-Halbleiterdetektor}
 	\label{tab:kalibrierungslinien_halb}
 \end{table}

@@ -103,6 +103,7 @@
 \newcommand{\ptt}{Peak-to-Total-Verhältnis}
 \newcommand{\co}{\isotope[60]{Co}}
 \newcommand{\cs}{\isotope[137]{Cs}}
+\newcommand{\eu}{\isotope[152]{Eu}}
 
 % DOKUMENTINFORMATIONEN
 \title{P521 \\ Gamma-Spektroskopie mit Szintillations- und Halbleiterdetektoren}
@@ -129,6 +130,8 @@ Tutor: & Christian Hammann
 % ZUSAMMENFASSUNG
 \begin{abstract}
 \noindent
+TODO: Erklären warum wir nur einen Gauß an den Rückstreupeak von Cobalt gefittet haben (Beide Rückstreupeaks fallen ungefähr zusammen sodass sich Gaußform ergibt.)
+Erklären dass die Photopeaks in der P/T Tabelle summe beider Cobalt Linien sind.
 
 \end{abstract}
 
@@ -631,7 +634,7 @@ Der Vergleich der Impulshöhen macht auch hier wenig Sinn, da diese von unabhän
 
 \subsubsection{Aufnahme der Gammaspektren (QUELLEN) und des Untergrundspektrums}
 Die Aufnahme der Spektren und des Untergrunds erfolgt mit dem Halbleiterdetektor analog zum Szintillationsdetektor.
-Nach erfolgter Einstellung der Verstärkung (so dass das breiteste Spektrum die zur Verfügung stehenden 8192 Kanäle des Vielkanalanalysators möglichst komplett ausnutzt) werden ein Untergrund- und die drei Gammaspektren von \co, \cs und \isotope[152]{Eu} über jeweils \SI{720}{\second} aufgenommen.
+Nach erfolgter Einstellung der Verstärkung (so dass das breiteste Spektrum die zur Verfügung stehenden 8192 Kanäle des Vielkanalanalysators möglichst komplett ausnutzt) werden ein Untergrund- und die drei Gammaspektren von \co{}, \cs{} und \isotope[152]{Eu} über jeweils \SI{720}{\second} aufgenommen.
 Zur Bestimmung der absoluten Peakeffizienz werden in Tabelle \ref{tab:abstand_halbleiterdetektor} erneut die Abstände der Proben vom Detektor festgehalten.
 \begin{table}[h]
 	\centering
@@ -769,6 +772,36 @@ Für größere Gammaenergien beginnt die intrinsische Breite des Detektors die b
 
 
 \subsubsection{Peak-to-Total-Verhältnis}
+\begin{figure}[h]
+	\centering
+	\input{./plots/halbleiter/rueckstreupeaks/caesium.tex}
+	\caption{Rück}
+	\label{fig:rueck_halb_cs}
+\end{figure}
+\begin{figure}[h]
+	\centering
+	\input{./plots/halbleiter/rueckstreupeaks/cobalt.tex}
+	\caption{Rück}
+	\label{fig:rueck_halb_co}
+\end{figure}
+
+\begin{table}[ht]
+	\centering
+	\input{./tables/rueckstreupeaks_halb.tex}
+	\caption{Ergebnisse der Anpassung von Gaußfunktionen an die Rückstreupeaks}
+	\label{tab:fit_rueck_halb}
+\end{table}
+
+\begin{table}[ht]
+	\centering
+	\resizebox{\textwidth}{!}{
+		\input{./tables/ptt_halb.tex}
+	}
+	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co{} und \cs{} für den Ge-Halbleiterdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$.}
+	\label{tab:ptt_szinti}
+\end{table}
+
+
 
 \subsubsection{Absolute Peakeffizienz}
 

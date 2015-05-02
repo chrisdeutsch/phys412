@@ -8,7 +8,7 @@ set title ''
 
 set key top right
 
-set xrange [900:1100]
+set xrange [800:1050]
 set yrange [0:*]
 set xlabel 'Kanalnummer $n$'
 set ylabel 'Ereignisse $N$'
@@ -20,16 +20,16 @@ set samples 7000
 a1 = 200
 
 # Mittelwerte
-b1 = 1100
+b1 = 910
 
 #Schwankungsbreiten
 c1 = 8
 
 # Untergrund
-d = 300
+d = 500
 
 t(x)= a1*exp(-0.5*((x-b1)/c1)**2) + d + e * x
-#fit t(x) './data/halbleiter/caesium_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d, e
+fit t(x) './data/halbleiter/caesium_bereinigt.txt' using 1:2:3 yerror via a1, b1, c1, d, e
 
 g1(x) = a1*exp(-0.5*((x-b1)/c1)**2) # Gaußfit 1
 u(x) = d + e * x							# Untergrund
@@ -39,8 +39,8 @@ load './../gnuplot_linestyles.plt'
 set bars small
 
 plot 	'./data/halbleiter/caesium_bereinigt.txt' using 1:2:3 every 2 w errorbars t'Messwerte' ls 1 pt 7 ps .75,\
-#		t(x) t'$\Sigma$' ls 2 lw 2,\
-#		g1(x) t'$\mathcal{G}$' ls 3 lw 2,\
-#		u(x) t'$u$' ls 5 lw 2
+		t(x) t'$\Sigma$' ls 2 lw 2,\
+		g1(x) t'$\mathcal{G}$' ls 3 lw 2,\
+		u(x) t'$u$' ls 5 lw 2
 
 unset output

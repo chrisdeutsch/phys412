@@ -689,14 +689,54 @@ Die berechneten Breiten wurden in Tabelle \ref{tab:fwhm_halb} zusammengetragen.
 	\caption{Volle Halbwertsbreiten der zur Kalibration verwendeten Linien in den Spektren von \isotope[60]{Co}, \isotope[137]{Cs} und \isotope[152]{Eu}.}
 	\label{tab:fwhm_halb}
 \end{table}
+Im Gegensatz zum Szintillationsdetektor sieht man in diesem Fall einen eindeutigen Anstieg der Halbwertsbreiten mit steigender Gammaenergie.
+Dies ist in erster Linie auf die wesentlich bessere Energiekalibrierung des Halbleiterdetektors zurückzuführen. 
 
+Schließlich soll der Einfluss von intrinsischer Detektor-Halbwertsbreite $\Delta E_\mathrm{d}$, welche auf dem statistischen Prozess der Ladungssammlung im Ge-Kristall basiert \cite{anleitung} und der elektronische Teil der Halbwertsbreite $\Delta E_\mathrm{e}$, welche von der verwendeten Verstärkerelektronik abhängt, untersucht werden.
+Die mit dem Vielkanalysator beobachtete Linienbreite $\Delta E$ setzt sich aus beiden Anteilen zusammen und wird beschrieben durch \cite{anleitung}:
+\begin{align}
+	\Delta E(E_\gamma) = \sqrt{(\Delta E_\mathrm{d}(E_\gamma))^2 + (\Delta E_\mathrm{e})^2}
+\end{align}
+Darüber hinaus ist die intrinsische Detektor-Energiebreite abhängig von der Gammaenergie $E_\gamma$ und gegeben durch:
+\begin{align}
+	\label{eq:prop_energiebreite}
+	\Delta E_\mathrm{d}(E_\gamma) \propto \sqrt{E_\gamma}
+\end{align}
+Mithilfe dieser Überlegungen ist es möglich die intrinsische Halbwertsbreite sowie den elektronischen Teil mit den Anpassungen aus Tabelle \ref{tab:fwhm_halb} zu bestimmen.
+Dazu betrachtet man das Quadrat der beobachteten Breite unter Beachtung der Abhängigkeit aus Gleichung \eqref{eq:prop_energiebreite}:
+\begin{align}
+	\Delta E^2 = (\Delta E_\mathrm{d})^2 + (\Delta E_\mathrm{e})^2 = \lambda^2 \cdot E_\gamma + (\Delta E_\mathrm{e})^2
+\end{align}
+Liniearisiert man diesen Zusammenhang indem man die quadrierte beobachtete Halbwertsbreite $\Delta E^2$ gegen die Gammaenergie $E_\gamma$ aufträgt, so kann man die Abhängigkeit der intrinsischen Breite des Detektors von der Gammaenergie aus der Steigung der Geraden extrahieren und den elektronischen Teil aus deren Achsenabschnitt.
+Die Linearisierung wurde in Abbildung \ref{fig:lin_fwhm} dargestellt.
 \begin{figure}[h]
 	\centering
 	\input{./plots/halbleiter/linearisierung_halbwertsbreiten.tex}
-	\caption{Linearisierung}
+	\caption{Linearisierung zur Bestimmung der intrinsischen und elektronischen Anteile des verwendeten Ge-Halbleiterdetektors.}
 	\label{fig:lin_fwhm}
 \end{figure}
-
+Die Anpassung der Geraden liefert die Parameter:
+\begin{align*}
+	\lambda^2 &= \SI{2.15 +- 0.08e-3}{\kilo\electronvolt}\\
+	(\Delta E_\mathrm{e})^2 &= \SI{0.75 +- 0.05}{\kilo\electronvolt\squared}
+\end{align*}
+Zunächst soll die Proportionalität der intrinsischen Halbwertsbreite bestimmt werden.
+Dazu reicht des $\lambda$ zu bestimmen\footnote{
+Fehlerfortpflanzung bei Bildung der Quadratwurzel: $\Delta (\sqrt{x}) = \frac{\Delta x}{2 \sqrt{x}} $
+}:
+\begin{align*}
+	\lambda = \SI{4.64 +-0.08e-2}{\kilo\electronvolt\tothe{\frac{1}{2}}}
+\end{align*}
+Dann ist der Zusammenhang der intrinsischen Halbwertsbreite gegeben durch:
+\begin{align}
+	\Delta E_\mathrm{d} = \SI{4.64 +-0.08e-2}{\kilo\electronvolt\tothe{\frac{1}{2}}} \cdot \sqrt{E_\gamma}
+\end{align}
+Schließlich kann der elektronische Anteil bestimmt werden, was ebenfalls durch Bildung der Quadratwurzel geschieht:
+\begin{align}
+	\Delta E_\mathrm{e} = \SI{0.87 +- 0.03}{\kilo\electronvolt}
+\end{align}
+Betrachtet man beide Anteile an der Halbwertsbreite, so sieht man, dass der elektronische Anteil die Breite bis ca. \SI{350}{\kilo\electronvolt} dominiert.
+Für größere Gammaenergien beginnt die intrinsische Breite des Detektors die beobachtete Breite zu dominieren.
 
 \subsubsection{Intrinsische Halbwertsbreite}
 

@@ -22,6 +22,6 @@ f(x) = m*x + b
 
 fit f(x) './data/halbleiter/halbwertsbreiten.txt' using 1:($4**2):(2.0 * $4 * $5) via m, b
 
-plot './data/halbleiter/halbwertsbreiten.txt' using 1:($4**2):(2.0 * $4 * $5) w errorbars t'Messwerte' ls 1, f(x) t'Fit' ls 2
+plot './data/halbleiter/halbwertsbreiten.txt' using 1:($4**2):(2.0 * $4 * $5) w errorbars t'Messwerte' ls 1, f(x) t'Anpassung' ls 2
 
 unset output

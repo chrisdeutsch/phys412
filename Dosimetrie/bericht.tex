@@ -211,7 +211,7 @@ Durch die zwischen Draht und Zylindermantel anliegende Spannung werden die Elekt
 
 Für den Betrieb ist die angelegte Gleichspannung zwischen Anode und Kathode entscheidend:
 Bei geringer Spannung können die freien Elektronen auf der Beschleunigungsstrecke wieder mit den Ionen rekombinieren, wodurch der gemessene Stromimpuls nur von den Elektronen erzeugt wird, die die Anode erreichen.
-So kann keine verlässliche aussage über die einfallende Strahlung gemacht werden (\emph{Rekombinationsbereich}).
+So kann keine verlässliche Aussage über die einfallende Strahlung gemacht werden (\emph{Rekombinationsbereich}).
 Erst ab einer bestimmten Gleichspannung ($\sim \SI{100}{\volt}$) erreichen alle Elektronen die Anode, womit dann die von der Strahlung im Zählrohr abgegebene Energie gemessen wird (\emph{Ionisationskammer}).
 Erhöht man die Spannung weiter erreicht man den \emph{Proportionalitätsbereich}.
 Hier werden die Elektronen so stark beschleunigt, dass sie auf dem Weg zum Draht genug Energie gewinnen, um weitere Gasatome zu ionisieren.
@@ -228,6 +228,43 @@ Durch den angesprochenen Effekt der selbstständigen Gasentladung hat das Geiger
 \subsubsection{Funktionsweise}
 
 \subsubsection{Totzeit und Totzeitkorrektur}
+Endliche Zeit des Detektors ein Signal zu verarbeiten lässt ihn insensitiv für neue Ereignisse.
+Man unterscheidet zwischen Paralysierenden und Nicht-Paralysierenden Systemen.
+Bei nicht-paralysierendem Verhalten führt ein zweites Ereignis lediglich zum Verlust dieses Ereignisses.
+Bei paralysierendem Verhalten führt ein zweites Event zum "Neustart" der Totzeit.
+Bei semi-paralysierendem Verhalten erhöht ein zweites Event lediglich die Zeit in der der Detektor nicht sensitiv ist (aber nicht um die Länge der Totzeit).
+
+(Cite Leo)Unter Annahme eines nicht paralysierenden Systems (Totzeit: $\tau$) mit der wahren Count-Rate $m$ und der vom Detektor gezählten Anzahl der Events $k$ in einer Zeit $T$.
+Da jeder Count eine Totzeit auslöst ergibt sich die gesamte Totzeit zu:
+\begin{align}
+	\tau_\mathrm{ges.} = k \cdot \tau
+\end{align}
+In dieser Zeit verpasst man $m k \tau$ Events.
+Dadurch ergibt sich:
+\begin{align}
+	m T = k + m k \tau
+\end{align}
+und auflösen nach $m$:
+\begin{align}
+	m = \frac{k / T}{1 - (k/T) \tau}
+\end{align}
+
+Unter Annahme eines paralysierenden Systems werden nur Events gezählt zwischen denen eine Zeit von $\tau$ liegt.
+Die Verteilung der Zeitintervalle zwischen zwei Zerfällen ist:
+\begin{align}
+	P(t) = m \, \mathrm{e}^{-m t}
+\end{align}
+mit der Wahrscheinlichkeit für $t > \tau$:
+\begin{align}
+	P(t>\tau) = m \int_{\tau}^{\infty} \mathrm{e}^{-m t} \, \mathrm{d}t = \mathrm{e}^{-m \tau}
+\end{align}
+Dann ist die tatsächlich gemessene Rate $k$:
+\begin{align}
+	k = m T \, \mathrm{e}^{-m \tau}
+\end{align}
+Diese Gleichung hat zwei Lösungen!
+Die kleinere der Lösungen liegt auf der mit $m$ ansteigenden Zählrate $k/T$ und die größere der Lösungen liegt auf der abfallenden Flanke.
+SIEHE BILD LEO S.124 Fig.5.5!!!
 
 
 \subsection{Dosimetrische Messgrößen}

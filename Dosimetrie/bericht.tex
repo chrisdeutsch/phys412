@@ -225,7 +225,12 @@ Die im Absorberelement $\mathrm{d}V$ mit der Masse $\mathrm{d} m = \rho \cdot \m
 \end{align}
 Physikalische nicht biologische Größe.
 
-+++ Ionendosis
+\subsubsection{Ionendosis}
+Bezeichnet die elektrische Ladung die durch ionisierende Strahlung in einer bestimmten Masse entsteht:
+\begin{align}
+	J = \frac{\mathrm{d}Q}{\mathrm{d}m}
+\end{align}
+Kann durch Kenntnis der mittleren Energie für die Bildung eines Ionenpaares in Energiedosis umgerechnet werden.
 
 \subsubsection{Dosisleistung}
 \begin{align}
@@ -234,8 +239,22 @@ Physikalische nicht biologische Größe.
 
 \subsubsection{Äquivalentdosis}
 Äquivalentdosis $H$.
-Beachtet die relative biologische Wirksamkeit verschiedener Strahlungstypen
-Sievert
+Beachtet die relative biologische Wirksamkeit verschiedener Strahlungstypen durch Einführung eines Qualitätsfaktors $Q$.
+\begin{align}
+	H = Q \cdot D
+\end{align}
+Die Äquivalentdosis hat die gleiche Einheit wie die Dosis und wird daher um die physikalische Größe der Dosis von der Biologischen der Äquivalentdosis zu unterscheiden mit Sievert "beeinheitet".
+
+Typische Qualitätsfaktoren (Gerthsen):
+\begin{align*}
+	&\text{Strahlungsart} \quad & Q / \si{Sv.Gy\tothe{-1}}\\
+	&\text{Röntgen- und Gammastrahlung} \quad & 1 \\
+	&\text{Betastrahlung} \quad & 1 \\
+	&\text{Schnelle Neutronen} \quad & 10 \\
+	&\text{Langsame Neutronen} \quad & 5 \\
+	&\text{Alphastrahlung} \quad & 10 \\
+	&\text{Schwere Rückstoßkerne} \quad & 20
+\end{align*}
 
 
 \subsection{Bildkontrast, Bildhelligkeit und visuelle Ortsauflösung}

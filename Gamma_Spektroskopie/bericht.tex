@@ -591,6 +591,7 @@ Zur Bestimmung der absoluten Peakeffizienz des Detektors wird die Aktivität der
 die Aktivität zum Zeitpunkt der Durchführung $t = \SI{30.03 +- 0.05}{a}$ berechnet werden.
 Mit der gegebenen Aktivität $A_0 = \SI{25 +- 1}{\micro Ci}$ (der Fehler wurde gemäß der angegebenen signifikanten Stellen abgeschätzt) und der Halbwertszeit von \cs{} $t_{1/2} = \SI{30.17 +- 0.03}{a}$ aus \cite{nist} folgt zum Zeitpunkt der Durchführung:
 \begin{align}
+	\label{eq:aktivitaet_caesium}
 	A = \SI{12.5 +- 0.6}{\micro Ci}
 \end{align}
 Mit dem Abstand der Quelle vom Detektor $d = \SI{17.8 +- 0.2}{cm}$, dem Radius des Detektors $r_\mathrm{NaI(Tl)} = \SI{24 +- 0.5}{mm}$, der Messdauer $T = \SI{720 +- 1}{\second}$ und der Anzahl der Ereignisse im Photopeak des Caesium-Spektrums aus Tabelle \ref{tab:ptt_szinti} folgt für die absolute Peakeffizienz (Gleichung \ref{eq:peakeffizienz}):
@@ -798,14 +799,33 @@ Für größere Gammaenergien beginnt die intrinsische Breite des Detektors die b
 		\input{./tables/ptt_halb.tex}
 	}
 	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co{} und \cs{} für den Ge-Halbleiterdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$.}
-	\label{tab:ptt_szinti}
+	\label{tab:ptt_halb}
 \end{table}
 
 
 
 \subsubsection{Absolute Peakeffizienz}
+In Abschnitt \ref{sec:absolute_peakeffizienz_szinti} wurde die Aktivität der verwendeten \cs{}-Quelle zu
+\begin{align}
+	A = \SI{12.5 +- 0.6}{\micro Ci}
+\end{align}
+bestimmt.
+Nun befindet sich die Quelle im Abstand von $d = \SI{20.1 +- 0.2}{\centi\metre}$ vom Ge-Halbleiterdetektor mit dem Kristallradius $r = \SI{27.85 +- 0.05}{\milli\metre}$ entfernt.
+Die Messzeit betrug auch hier $T = \SI{720 +- 1}{\second}$ und die Anzahl der Ereignisse im Photopeak lässt sich aus Tabelle \ref{tab:ptt_halb} ablesen.
+Mit Gleichung \eqref{eq:peakeffizienz} folgt:
+\begin{align}
+	\mathcal{E}_\mathrm{Ge} = \SI{15.05 +- 0.82}{\percent}
+\end{align}
+Dies bedeutet, dass etwa $\SI{15}{\percent}$ der auf den Ge-Kristall einfallenden Quanten im Photopeak detektiert werden.
+Der Vergleich mit Abschnitt \ref{sec:absolute_peakeffizienz_szinti} zeigt, dass der Szintillationsdetektor eine höhere Peakeffizienz hat, (woran liegt das).
 
 \subsubsection{Relative Effizienz als Funktion der Gammaenergie}
+\begin{figure}[h]
+	\centering
+	\input{./plots/halbleiter/effizienz.tex}
+	\caption{Effi}
+	\label{fig:effizienz_halb}
+\end{figure}
 
 \subsection{Nachweis der Radioakivität in einer Probe}
 

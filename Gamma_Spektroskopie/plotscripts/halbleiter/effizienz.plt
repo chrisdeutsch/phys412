@@ -4,15 +4,15 @@ set term epslatex color size 5,3.5
 
 set output './plots/halbleiter/effizienz.tex'
 
-set key top left
+set key top right
 
 set decimalsign '{,}'
 #set format y "%.1f"
 
-set xrange [0:*]
+set xrange [0:1600]
 set yrange [0:*]
 set xlabel 'Gammaenergie $E_\gamma$'
-set ylabel 'relative Effizienz'
+set ylabel 'relative Effizienz $\eta$'
 
 set grid
 

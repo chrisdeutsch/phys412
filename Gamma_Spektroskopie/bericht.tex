@@ -184,6 +184,7 @@ Dabei ist vor allem ihr jeweiliger Wirkungsquerschnitt von Interesse, der angibt
 Ausgehend davon kann beispielsweise festgestellt werden, auf welchen Energiebereichen welche Form der Wechselwirkung dominiert.
 
 \subsubsection{Photoeffekt}
+\label{sec:theo_photoeffekt}
 Im Bereich niedriger Energie tritt vor allem der Photoeffekt auf.
 Dieser beschreibt die Absoprtion eines Gamma-Quants durch ein atomisches Elektron und kann aufgrund der Impulserhaltung nur im Atom stattfinden.
 Bei Einstrahlung eines Photons wird dieses absorbiert und ein Elektron aus dem Atom herausgelöst, dessen Energie der Enerie des Photons entspricht abzüglich der Bindungsenergie.
@@ -570,6 +571,7 @@ Mit den Werten aus Tabelle \ref{tab:kalibrierungslinien_szinti} und Gleichung \e
 \end{align*}
 Nun kann das Peak-to-Total Verhältnis $P/T$ durch:
 \begin{align}
+	\label{eq:ptt}
 	P/T = \frac{N_\mathrm{Photo.}}{N_\mathrm{tot.} - N_\mathrm{R"uck.}}
 \end{align}
 berechnet werden.
@@ -582,6 +584,7 @@ Dies wurde in Tabelle \ref{tab:ptt_szinti} für die mittlere Energie der beiden 
 	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co{} und \cs{} für den Szintillationsdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$.}
 	\label{tab:ptt_szinti}
 \end{table}
+Man sieht, dass das Peak-to-Total Verhältnis mit steigender Energie abzunehmen scheint, was dadurch zu erklären ist, dass der Wirkungsquerschnitt des Photoeffekts mit steigender Energie sinkt (vgl. Abschnitt \ref{sec:theo_photoeffekt}).
 
 \subsubsection{Absolute Peakeffizienz}
 \label{sec:absolute_peakeffizienz_szinti}
@@ -791,7 +794,7 @@ Die Anpassungsparameter wurden in Tabelle \ref{tab:fit_rueck_halb} zusammengefas
 	\caption{Ergebnisse der Anpassung von Gaußfunktionen an die Rückstreupeaks}
 	\label{tab:fit_rueck_halb}
 \end{table}
-Berechnet man nun durch Integration die Anzahl der Ereignisse in den verschiedenen Peaks so erhält man Tabelle \ref{tab:ptt_halb}.
+Berechnet man nun durch Integration die Anzahl der Ereignisse in den verschiedenen Peaks so erhält man Tabelle \ref{tab:ptt_halb}, wobei das Peak-to-Total Verhältnis durch Gleichung \ref{eq:ptt} berechnet wurde.
 \begin{table}[ht]
 	\centering
 	\resizebox{\textwidth}{!}{
@@ -800,6 +803,8 @@ Berechnet man nun durch Integration die Anzahl der Ereignisse in den verschieden
 	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co{} und \cs{} für den Ge-Halbleiterdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$.}
 	\label{tab:ptt_halb}
 \end{table}
+Man sieht erneut die Abnahme des Peak-to-Total Verhältnisses mit steigender Energie, was in der Abnahme des Wirkungsquerschnitts mit Zunahme der Energie begründet liegt.
+Außerdem stellt man fest, dass das Verhältnis kleiner ist als das des Szintillationsdetektors.
 
 
 \subsubsection{Absolute Peakeffizienz}
@@ -818,12 +823,43 @@ Dies bedeutet, dass etwa $\SI{15}{\percent}$ der auf den Ge-Kristall einfallende
 Der Vergleich mit Abschnitt \ref{sec:absolute_peakeffizienz_szinti} zeigt, dass der Szintillationsdetektor eine höhere Peakeffizienz hat, (woran liegt das).
 
 \subsubsection{Relative Effizienz als Funktion der Gammaenergie}
+Zur Bestimmung der relativen Effizienz des Detektors über den vermessenen Energiebereich können die in \cite{anleitung} aufgelisteten relativen Intensitäten der \eu{}-Linien genutzt werden, welche im Folgenden mit $I_\mathrm{0}$ bezeichnet werden.
+Um die Intensität $I$ der einzelnen Linien experimentell zu bestimmen, berechnen wir erneut die Anzahl der Ereignisse $N$ im Peak der Linie durch Integration über die in Tabelle \ref{tab:kalibrierungslinien_halb} angepasste Gaußfunktionen.
+Um die Anzahl der Ereignisse $N$ in eine relative Intensität $I$ umzurechnen, wird eine Linie zur Normierung genutzt.
+Konkret wird dazu die \SI{1408.011}{keV}-Linie von \eu{} genutzt, welche die relative Intensität \num{1000} habe.
+Die Normierung erfolgt durch:
+\begin{align}
+	I = 1000 \cdot \frac{N}{N_\mathrm{Ref}} \qquad \Delta I = 1000 \cdot \sqrt{\frac{\Delta N^2}{N_\mathrm{Ref}^2} + \frac{N^2 \cdot \Delta N_\mathrm{Ref}^2}{N_\mathrm{Ref}^4}}
+\end{align}
+wobei $N_\mathrm{ref} = \num{16036 +- 428}$ die Ereigniszahl in der Referenzlinie ist. 
+Anschließend führt der Vergleich der mit dem Detektor gemessenen relativen Intensität $I$ und den in \cite{anleitung} angegeben theoretischen Werten $I_0$ zu der relativen Effizienz:
+\begin{align}
+	\eta = \frac{I}{I_0} \qquad \Delta \eta = \frac{\Delta I}{I_0}
+\end{align}
+In Tabelle \ref{tab:rel_effizienz_halb} wurden die hier erwähnten Größen zusammengefasst.
+\begin{table}[ht]
+	\centering
+	\input{./tables/effizienz_halb.tex}
+	\caption{Normierung der Intensitäten $I$ auf die \SI{1408.011}{keV}-Linie von Europium und Berechnung der relativen Effizienz $\eta$}
+	\label{tab:rel_effizienz_halb}
+\end{table}
+Man erkennt, wie die relative Effizienz des Detektors mit steigender Energie sinkt.
+Auch dies liegt wieder in der Abnahme des Wirkungsquerschnitts für den Photoeffekt mit steigender Energie begründet.
+Trägt man die relative Effizienz $\eta$ gegen die Gammaenergie $E_\gamma$ auf so erhält man Abbildung \ref{fig:effizienz_halb}.
 \begin{figure}[h]
 	\centering
 	\input{./plots/halbleiter/effizienz.tex}
-	\caption{Relative Effizienz des Ge-Halbleiterdetektors bei verschiedenen Energien $E_\gamma$}
+	\caption{Relative Effizienz des Ge-Halbleiterdetektors bei verschiedenen Energien $E_\gamma$ mit Anpassung einer Exponentialfunktion}
 	\label{fig:effizienz_halb}
 \end{figure}
+Auf dem Messbereich wird die relative Effizienz gut durch eine Exponentialfunktion:
+\begin{align*}
+	\eta(E_\gamma) &= A \cdot \mathrm{e}^{-\frac{E_\gamma}{B}}  + C \\
+	A &= \num{7.21+-0.37} \\
+	B &= \SI{364 +- 20}{keV} \\
+	C &= \num{0.852 +- 0.032}
+\end{align*}
+beschrieben.
 
 \subsection{Nachweis der Radioakivität in einer Probe}
 

@@ -2,7 +2,7 @@ reset
 
 set term epslatex color size 5,3.5
 
-set output './plots/langzeitmessung/spektrum.tex'
+set output './plots/langzeitmessung/probe.tex'
 
 set key top right
 
@@ -13,6 +13,10 @@ set xrange [1:*]
 set yrange [0:*]
 set xlabel 'Kanal $n$'
 set ylabel 'Ereignisse $N$'
+
+set samples 7000
+
+set bars small
 
 set grid
 
@@ -30,33 +34,8 @@ set link x2 via 0.2*x inverse x/0.2
 
 set style fill solid
 
-# FIT STARTWERTE
-
-# Amplituden
-a = 600
-
-# Mittelwerte
-b = 350
-
-#Schwankungsbreiten
-c = 2
-
-# Untergrund
-d = 100
-
-# FIT
-
-t(x)= a*exp(-0.5*((x-b)/c)**2) + d
-fit[x=310:450] t(x) './data/bodenprobe_bereinigt.txt' using 1:2:3 yerror via a, b, c, d
-
-g(x) = a*exp(-0.5*((x-b)/c)**2) # Gaußfit
-u(x) = d				# Untergrund
-
 load './../gnuplot_linestyles.plt'
 
-plot './data/bodenprobe_bereinigt.txt' using 1:2:3 w boxes t'Messwerte' ls 1, \
-	t(x) t'$\Sigma$' ls 2 lw 2,\
-	g(x) t'$\mathcal{G}_1$' ls 3 lw 2,\
-	u(x) t'$d$' ls 5 lw 2
+plot './data/bodenprobe_bereinigt.txt' using 1:2:3 w boxes t'Messwerte' ls 1
 
 unset output

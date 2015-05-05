@@ -532,6 +532,7 @@ Die Halbwertsbreiten für Linien geringerer Energie sollten hingegen akkurat wie
 Betrachtet man nur Linien geringerer Energie so zeigt sich die erwartete Zunahme der Linienbreite mit steigender Energie, welche in dem statistischen Prozess der Photonenemission im Szintillator begründet liegt.
 
 \subsubsection{Peak-to-Total Verhältnis}
+\label{sec:ptt_szinti}
 Zur Bestimmung des Peak-to-Total Verhältnisses muss die Gesamtzahl aller Ereignisse $N_\mathrm{tot.}$ in den Spektren bestimmt werden.
 Diese erhält man durch Subtraktion der Gesamtzahl der Ereignisse der Untergrundmessung $N_\mathrm{Untergrund}$ von der untergrundbehafteten Ereigniszahl des Spektrums $N_0$:
 \begin{align}
@@ -773,26 +774,24 @@ Für größere Gammaenergien beginnt die intrinsische Breite des Detektors die b
 
 
 \subsubsection{Peak-to-Total-Verhältnis}
+Analog zum Abschnitt \ref{sec:ptt_szinti} soll das Peak-to-Total-Verhältnis berechnet werden.
+Dazu berechnet man durch Integration über die an den Peaks angepassten Gaußfunktionen die Gesamtzahl der in den Peak gefallenen Quanten.
+Mit den Anpassungen an die Photopeaks aus Abschnitt \ref{sec:kalibrierung_halb} kann direkt die Anzahl der Ereignisse berechnet werden.
+Darüber hinaus muss noch eine Anpassung an die Rückstreupeaks erfolgen, welche hier exemplarisch am Rückstreupeak von \cs{} in Abbildung \ref{fig:rueck_halb_cs} dargestellt werden soll.
 \begin{figure}[h]
 	\centering
 	\input{./plots/halbleiter/rueckstreupeaks/caesium.tex}
-	\caption{Rück}
+	\caption{Anpassung einer Gaußfunktion an den Rückstreupeak von \cs{}}
 	\label{fig:rueck_halb_cs}
 \end{figure}
-\begin{figure}[h]
-	\centering
-	\input{./plots/halbleiter/rueckstreupeaks/cobalt.tex}
-	\caption{Rück}
-	\label{fig:rueck_halb_co}
-\end{figure}
-
+Die Anpassungsparameter wurden in Tabelle \ref{tab:fit_rueck_halb} zusammengefasst.
 \begin{table}[ht]
 	\centering
 	\input{./tables/rueckstreupeaks_halb.tex}
 	\caption{Ergebnisse der Anpassung von Gaußfunktionen an die Rückstreupeaks}
 	\label{tab:fit_rueck_halb}
 \end{table}
-
+Berechnet man nun durch Integration die Anzahl der Ereignisse in den verschiedenen Peaks so erhält man Tabelle \ref{tab:ptt_halb}.
 \begin{table}[ht]
 	\centering
 	\resizebox{\textwidth}{!}{
@@ -801,7 +800,6 @@ Für größere Gammaenergien beginnt die intrinsische Breite des Detektors die b
 	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co{} und \cs{} für den Ge-Halbleiterdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$.}
 	\label{tab:ptt_halb}
 \end{table}
-
 
 
 \subsubsection{Absolute Peakeffizienz}
@@ -823,7 +821,7 @@ Der Vergleich mit Abschnitt \ref{sec:absolute_peakeffizienz_szinti} zeigt, dass 
 \begin{figure}[h]
 	\centering
 	\input{./plots/halbleiter/effizienz.tex}
-	\caption{Effi}
+	\caption{Relative Effizienz des Ge-Halbleiterdetektors bei verschiedenen Energien $E_\gamma$}
 	\label{fig:effizienz_halb}
 \end{figure}
 

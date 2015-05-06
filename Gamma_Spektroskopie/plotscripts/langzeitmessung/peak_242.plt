@@ -1,15 +1,16 @@
 reset
 
+#set term qt
 set term epslatex color size 5,3.5
 
-set output './plots/langzeitmessung/peak1.tex'
+set output './plots/langzeitmessung/peak_242.tex'
 
 set key top right
 
 set decimalsign '{,}'
 #set format y "%.1f"
 
-set xrange [340:360]
+set xrange [1170:1195]
 set yrange [0:*]
 set xlabel 'Kanal $n$'
 set ylabel 'Ereignisse $N$'
@@ -30,17 +31,17 @@ set xtics nomirror
 set x2tics nomirror
 set mx2tics 2
 set x2label 'Energie / \si{\kilo\electronvolt}'
-set link x2 via 0.2*x inverse x/0.2
+set link x2 via 0.200839*x+4.589 inverse (x-4.589)/0.200839
 
 set style fill solid
 
 # FIT STARTWERTE
 
 # Amplituden
-a = 600
+a = 100
 
 # Mittelwerte
-b = 350
+b = 1180
 
 #Schwankungsbreiten
 c = 5
@@ -51,7 +52,7 @@ d = 100
 # FIT
 
 t(x)= a*exp(-0.5*((x-b)/c)**2) + d
-fit[x=310:450] t(x) './data/bodenprobe_bereinigt.txt' using 1:2:3 yerror via a, b, c, d
+fit t(x) './data/bodenprobe_bereinigt.txt' using 1:2:3 yerror via a, b, c, d
 
 g(x) = a*exp(-0.5*((x-b)/c)**2) # Gaußfit
 u(x) = d				# Untergrund

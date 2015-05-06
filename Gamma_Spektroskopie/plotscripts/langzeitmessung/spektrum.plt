@@ -1,6 +1,7 @@
 reset
 
-set term epslatex color size 5,3.5
+set term qt
+#set term epslatex color size 5,3.5
 
 set output './plots/langzeitmessung/probe.tex'
 

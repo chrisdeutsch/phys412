@@ -1,8 +1,8 @@
 reset
 
-set term epslatex color size 5,3.5
+set term epslatex color size 8,5.6
 
-set output './plots/langzeitmessung/probe.tex'
+set output './plots/langzeitmessung/probe_gross.tex'
 
 set key top right
 
@@ -18,8 +18,7 @@ set samples 7000
 
 set bars small
 
-set grid
-#set grid x2tics ytics mx2tics
+set grid x2tics ytics mx2tics
 
 set xtics nomirror
 

@@ -16,6 +16,7 @@
 \usepackage{braket}
 \usepackage{isotope}
 \usepackage[version=3]{mhchem}
+\usepackage{chemformula}
 
 % zusätzliche mathematische Schriftarten
 \usepackage{amsfonts}
@@ -387,7 +388,7 @@ Der Vergleich der Amplituden\footnote{Ein direkter Vergleich der beiden Signale 
 Dies sieht man besonders an der um zwei Größenordnungen verkürzten Signaldauer.
 Da beide Signale von unabhängigen Ereignissen stammen, kann leider nicht verifiziert werden, dass die Impulshöhe am Hauptverstärker proportional zur im Photomultiplier gelösten Ladung, ist, welche wiederum proportional zur Fläche über dem Signal am Vorverstärker ist.
 
-\subsubsection{Aufnahme der Gammaspektren von QUELLEN und das Untergrundspektrum}
+\subsubsection{Aufnahme der Gammaspektren von \ch{^{60}Co}, \ch{^{137}Cs}, \ch{^{152}Eu} und des Untergrundspektrums}
 Nachdem die Signale des Szintillationsdetektors betrachtet wurden, kann mit der Aufnahme der Spektren begonnen werden.
 Dazu muss die Verstärkung des Hauptverstärkers geeignet eingestellt werden, um den Kanalbereich des Vielkanalanalysators optimal auszunutzen.
 Dies wird dadurch erreicht, dass die hochenergetische \SI{1408}{keV}-Linie von \isotope[152]{Eu} über die Verstärkung so positioniert wird, dass diese in den Bereich um Kanal 7000 fällt.
@@ -639,7 +640,7 @@ Im Gegensatz zum Hauptverstärker des Szintillationsdetektors kann kein Übersch
 Man beobachtet eine Kürzung des Signals durch den Hauptverstärker um etwa eine Größenordnung.
 Der Vergleich der Impulshöhen macht auch hier wenig Sinn, da diese von unabhängigen Ereignissen stammen, dennoch sollte diese proportional zur im Halbleiter deponierten Energie sein.
 
-\subsubsection{Aufnahme der Gammaspektren (QUELLEN) und des Untergrundspektrums}
+\subsubsection{Aufnahme der Gammaspektren von \ch{^{60}Co}, \ch{^{137}Cs}, \ch{^{152}Eu} und des Untergrundspektrums}
 Die Aufnahme der Spektren und des Untergrunds erfolgt mit dem Halbleiterdetektor analog zum Szintillationsdetektor.
 Nach erfolgter Einstellung der Verstärkung (so dass das breiteste Spektrum die zur Verfügung stehenden 8192 Kanäle des Vielkanalanalysators möglichst komplett ausnutzt) werden ein Untergrund- und die drei Gammaspektren von \co{}, \cs{} und \isotope[152]{Eu} über jeweils \SI{720}{\second} aufgenommen.
 Zur Bestimmung der absoluten Peakeffizienz werden in Tabelle \ref{tab:abstand_halbleiterdetektor} erneut die Abstände der Proben vom Detektor festgehalten.
@@ -994,6 +995,7 @@ Auf den folgenden Seiten sind der Vollständigkeit halber alle aufgenommenen Gam
 	\caption{Übersicht über die um den Untergrund korrigierten Spektren, die mit dem NaI(Tl)-Szintillationsdetektor aufgenommen wurden. Die Messzeit betrug jeweils \SI{720}{\second}.}
 \end{figure}
 
+<<<<<<< HEAD
 \begin{figure}[ht]
 	\centering
 	\begin{subfigure}[b]{0.65\textwidth}
@@ -1021,6 +1023,14 @@ Auf den folgenden Seiten sind der Vollständigkeit halber alle aufgenommenen Gam
 	\end{subfigure}
 	\caption{Übersicht über die um den Untergrund korrigierten Spektren, die mit dem Ge-Halbleiterdetektor aufgenommen wurden. Die Messzeit betrug jeweils \SI{720}{\second}.}
 \end{figure}
+=======
+\begin{sidewaysfigure}
+		\centering
+		\input{./plots/langzeitmessung/probe_gross.tex}
+		\caption{Gross}
+		\label{fig:langzeit_gross}
+\end{sidewaysfigure}
+>>>>>>> 87b114f365a148efdba0634d5dbee977e3608543
 \end{appendix}
 
 \end{document}

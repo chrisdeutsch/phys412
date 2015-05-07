@@ -26,7 +26,8 @@ set label 5 "\\SI{244.699}{keV}" at 1197,6375 rotate left
 set label 6 "\\SI{344.281}{keV}" at 1690,12700 rotate left
 set label 7 "\\SI{778.903}{keV}" at 3870,2840 rotate left
 set label 8 "\\SI{964.131}{keV}" at 4783,2560 rotate left
-set label 9 "\\SI{1112.116}{keV}" at 5518,2217 rotate left
+set label 1 "\\SI{1085.914}{keV}" at 5290,2217 rotate left
+set label 9 "\\SI{1112.116}{keV}" at 5600,2217 rotate left
 set label 10 "\\SI{1408.011}{keV}" at 7000,2356 rotate left
 
 unset key

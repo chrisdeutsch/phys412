@@ -68,6 +68,9 @@
 \usepackage{subcaption}
 \usepackage{rotating}
 
+% Fußnoten in Tabellen - MUSS NACH ROTATING EINGEBUNDEN WERDEN
+\usepackage{tablefootnote}
+
 % Paket für textumflossene Abbildungen und Tabellen
 \usepackage{wrapfig}
 
@@ -893,7 +896,7 @@ beschrieben.
 	\label{fig:langzeitmessung_untergrundabzug}
 \end{figure}
 
-\begin{table}
+\begin{table}[ht]
 	\centering
 	\resizebox{\textwidth}{!}{
 	\input{./tables/langzeitmessung.tex}

@@ -15,7 +15,7 @@
 % Braket Notation
 \usepackage{braket}
 \usepackage{isotope}
-\usepackage{mhchem}
+\usepackage[version=3]{mhchem}
 
 % zusätzliche mathematische Schriftarten
 \usepackage{amsfonts}
@@ -349,12 +349,12 @@ Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu en
 Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweiligen Unterkapitel dargestellt.
 
 \subsection{NaI(Tl) Szintillationsspektrometer}
-Es wird der Detektor mit Durchmesser \SI{48}{mm} verwendet. (????)
+Es wird der Detektor mit Durchmesser \SI{48}{mm} verwendet.
 
 
 \subsubsection{Detektorsignal des Szintillationsdetektors}
 \label{sec:detektorsignal_szinti}
-In diesem Abschnitt soll das Signalverhalten des verwendeten NaI(Tl)-Szintillationsdetektors untersucht werden.
+In diesem Abschnitt soll das Signalverhalten des verwendeten NaI(Tl) - Szintillationsdetektors untersucht werden.
 Dazu wurden mit einem Oszilloskop die Signalformen jeweils am Vorverstärker des Photomultipliers sowie am Hauptverstärker aufgenommen.
 In Abbildung \ref{fig:signal_szinti_vor} ist ein beispielhaftes Signal direkt am Vorverstärker dargestellt.
 \begin{figure}[h]
@@ -374,7 +374,7 @@ In Abbildung \ref{fig:signal_szinti_vor} ist ein beispielhaftes Signal direkt am
 	\end{subfigure}
 	\caption{Signalformen am Szintillationsdetektor. Die horizontalen Linien markieren \SI{0}{\volt}.}
 \end{figure}
-Die im Folgenden gemessenen Größen wurden mithilfe eines Bildbearbeitungsprogrammes direkt an den Aufnahmen des Oszilloskops abgemessen.
+Die im Folgenden gemessenen Größen wurden mithilfe eines Bildbearbeitungsprogramms direkt an den Aufnahmen des Oszilloskops abgemessen.
 Dabei wurden die Fehler auf \SI{0.2}{\division} der jeweiligen Spannungs-/Zeitskala abgeschätzt.
 Das Signal am Vorverstärker des Photomultipliers weist einen (im Vergleich zur Signaldauer) instantanen Anstieg (Anstiegszeit $< \SI{5}{\micro\second}$) mit der Signalamplitude $\Delta U = \SI{2.8 +- 0.1}{\volt}$ auf.
 Nach diesem Anstieg fällt das Signal exponentiell mit einer Signaldauer\footnote{Als Definition der Signaldauer $\Delta t$ wird dabei die Zeit verwendet, die das Signal benötigt um von \SI{10}{\percent} der Signalamplitude an der ansteigenden Flanke auf \SI{10}{\percent} an der abfallenden Flanke zu gelangen.} von $\Delta t = \SI{395 +- 20}{\micro\second}$ ab.
@@ -406,7 +406,7 @@ Die Untergrundkorrektur erfolgt dann durch Subtraktion des Untergrundspektrums v
 	\Delta N_\mathrm{korr.} &= \sqrt{\Delta N^2 + \Delta N_\mathrm{Untergrund}^2} = \sqrt{N + N_\mathrm{Untergrund}}
 \end{align}
 wobei der Fehler aufgrund von Gleichung \ref{eq:poisson_fehler} und Gauß'scher Fehlerfortpflanzung folgt.
-Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund} der Abzug des Untergrundes am Beispiel der Messung von \isotope[60]{Co} durchgeführt und im Folgenden nur noch die vom Untergrund bereinigten Spektren abgebildet.
+Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund} der Abzug des Untergrundes am Beispiel der Messung von \isotope[60]{Co} durchgeführt und im Anhang nur noch die vom Untergrund bereinigten Spektren abgebildet.
 \begin{figure}[hp]
 	\centering
 	\begin{subfigure}[b]{0.65\textwidth}
@@ -495,14 +495,14 @@ Die Anpassungsergebnisse lauten:
 	\SI{-1855.53+-256.50}{\kilo\electronvolt} & n > 6000
 	\end{cases}
 \end{align}
-Da die Anpassungsgerade für den Halbleiterdetektor eine deutlich bessere und durchgehend lineare Übereinstimmung mit den Messwerten zeigt, liegt die Ursache für den beobachteten Verlauf nicht an dem verwendeten Vielkanalanalysator sondern ist im Verstärker zu suchen.
-
+Da die Anpassungsgerade für den Halbleiterdetektor eine deutlich bessere und durchgehend lineare Übereinstimmung mit den Messwerten zeigt, liegt die Ursache für den beobachteten Verlauf nicht an dem verwendeten Vielkanalanalysator sondern ist im Verstärker zu suchen.\\
+\\
 Da im Folgenden oftmals eine Umrechnung von Kanalnummer $n$ auf Gammaenergie $E_\gamma$ erfolgt, soll hier die Vorgehensweise einmalig erklärt werden.
 Die Kalibrierung bildet den linearen Zusammenhang zwischen $E_\gamma$ und $n$:
 \begin{align}
 	E_\gamma = m \cdot n + b
 \end{align}
-da oftmals die Kanalnummer mit einem Fehler behaftet ist (z.B. bei den Linienschwerpunkten) muss dies bei der Fehlerfortpflanzung:
+Da oftmals die Kanalnummer mit einem Fehler behaftet ist (z.B. bei den Linienschwerpunkten) muss dies bei der Fehlerfortpflanzung:
 \begin{align}
 	\Delta E_\gamma = \sqrt{n^2 \cdot \Delta m^2 + m^2 \cdot \Delta n^2 + \Delta b^2}
 \end{align}
@@ -522,7 +522,7 @@ Der Fehler wird dementsprechend durch
 fortgepflanzt.
 Mit den Anpassungsergebnissen aus Tabelle \ref{tab:kalibrierungslinien_szinti} kann dementsprechend die Halbwertsbreite in Einheiten der Kanalnummer berechnet werden.
 Diese kann mithilfe der Energiekalibrierung in Abschnitt \ref{sec:kalibrierung_szinti} in Einheiten der Energie umgerechnet werden, wobei die Fehler erneut durch Gauß'sche Fehlerfortpflanzung ermittelt werden.
-Konkret erfolgt die Umrechnung durch Multiplikation der Halbwertsbreite in Einheiten der Kanalnummer mit der Steigung der Kalibrierungsgeraden, da die volle Halbwertsbreite eine Differenzgröße ist und dadurch konstanter Versatz keinen Einfluss nimmt.
+Konkret erfolgt die Umrechnung durch Multiplikation der Halbwertsbreite in Einheiten der Kanalnummer mit der Steigung der Kalibrierungsgeraden, da die volle Halbwertsbreite eine Differenzgröße ist und dadurch ein konstanter Versatz keinen Einfluss nimmt.
 \begin{table}[ht]
 	\centering
 	\input{./tables/fwhm_szinti.tex}
@@ -541,7 +541,7 @@ Diese erhält man durch Subtraktion der Gesamtzahl der Ereignisse der Untergrund
 \begin{align}
 	N_\mathrm{tot.} = N_\mathrm{0} - N_\mathrm{Untergrund}
 \end{align}
-dabei wird auf die Anzahlen der Fehler gemäß der Poisson-Verteilung angenommen.
+Dabei wird auf die Anzahlen der Fehler gemäß der Poisson-Verteilung angenommen.
 Neben der Gesamtzahl wird sowohl die Anzahl der Ereignisse in den Photopeaks als auch im Rückstreupeak benötigt.
 Diese können direkt durch Integration über die Anpassung der Gaußfunktion berechnet werden:
 \begin{align}
@@ -590,7 +590,7 @@ Man sieht, dass das Peak-to-Total Verhältnis mit steigender Energie abzunehmen 
 
 \subsubsection{Absolute Peakeffizienz}
 \label{sec:absolute_peakeffizienz_szinti}
-Zur Bestimmung der absoluten Peakeffizienz des Detektors wird die Aktivität der \cs{}-Quelle benötigt. Da in \cite{anleitung} die Aktivität der Quelle $A_0$ im April 1985 gegeben ist, kann mithilfe des Zerfallsgesetzes:
+Zur Bestimmung der absoluten Peakeffizienz des Detektors wird die Aktivität der \cs{}-Quelle benötigt. Da in \cite{anleitung} die Aktivität der Quelle $A_0$ im April 1985 gegeben ist, kann mithilfe des Zerfallsgesetzes
 \begin{align}
 	A(t) = A_0 \exp\left( - \frac{\ln(2)\, t}{t_{1/2}} \right)
 \end{align}
@@ -604,7 +604,7 @@ Mit dem Abstand der Quelle vom Detektor $d = \SI{17.8 +- 0.2}{cm}$, dem Radius d
 \begin{align}
 	\mathcal{E}_\mathrm{NaI(Tl)} = \SI{20.1 +- 1.4}{\percent}
 \end{align}
-dabei wird aufgrund der Komplexität auf Angabe einer ausführlichen Fehlerformel verzichtet.
+Dabei wird aufgrund der Komplexität auf Angabe einer ausführlichen Fehlerformel verzichtet.
 Anschaulich bedeutet dies, dass etwa jedes fünfte Gammaquant, welches in Richtung des Detektors emittiert wird, in den Photopeak des Spektrums fällt.
 
 \subsection{Germanium Halbleiterdetektor}
@@ -634,7 +634,7 @@ Auch der exponentielle Abfall mit der Signaldauer $\Delta t = \SI{137 +- 5}{\mic
 	\end{subfigure}
 	\caption{Signalformen am Halbleiterdetektor. Die horizontalen Linien markieren \SI{0}{\volt}.}
 \end{figure}
-Betrachtet man nun das Signal am Hauptverstärker in Abbildung \ref{fig:signal_ger_haupt} so beobachtet man einen gaußförmigen Impuls mit einer Signalamplitude von $\Delta U = \SI{5.1 +- 0.2}{\volt}$ und einer Signaldauer von $\Delta t = \SI{22 +- 1}{\micro\second}$.
+Betrachtet man nun das Signal am Hauptverstärker in Abbildung \ref{fig:signal_ger_haupt}, so beobachtet man einen gaußförmigen Impuls mit einer Signalamplitude von $\Delta U = \SI{5.1 +- 0.2}{\volt}$ und einer Signaldauer von $\Delta t = \SI{22 +- 1}{\micro\second}$.
 Im Gegensatz zum Hauptverstärker des Szintillationsdetektors kann kein Überschwingen am unipolaren Ausgang des Verstärkers beobachtet werden.
 Man beobachtet eine Kürzung des Signals durch den Hauptverstärker um etwa eine Größenordnung.
 Der Vergleich der Impulshöhen macht auch hier wenig Sinn, da diese von unabhängigen Ereignissen stammen, dennoch sollte diese proportional zur im Halbleiter deponierten Energie sein.
@@ -761,7 +761,7 @@ Die Anpassung der Geraden liefert die Parameter:
 	(\Delta E_\mathrm{e})^2 &= \SI{0.75 +- 0.05}{\kilo\electronvolt\squared}
 \end{align*}
 Zunächst soll die Proportionalität der intrinsischen Halbwertsbreite bestimmt werden.
-Dazu reicht des $\lambda$ zu bestimmen\footnote{
+Dazu reicht es, $\lambda$ zu bestimmen\footnote{
 Fehlerfortpflanzung bei Bildung der Quadratwurzel: $\Delta (\sqrt{x}) = \frac{\Delta x}{2 \sqrt{x}} $
 }:
 \begin{align*}
@@ -797,7 +797,7 @@ Die Anpassungsparameter wurden in Tabelle \ref{tab:fit_rueck_halb} zusammengefas
 	\caption{Ergebnisse der Anpassung von Gaußfunktionen an die Rückstreupeaks}
 	\label{tab:fit_rueck_halb}
 \end{table}
-Berechnet man nun durch Integration die Anzahl der Ereignisse in den verschiedenen Peaks so erhält man Tabelle \ref{tab:ptt_halb}, wobei das Peak-to-Total Verhältnis durch Gleichung \ref{eq:ptt} berechnet wurde.
+Berechnet man nun durch Integration die Anzahl der Ereignisse in den verschiedenen Peaks so erhält man Tabelle \ref{tab:ptt_halb}, wobei das Peak-to-Total Verhältnis durch Gleichung \eqref{eq:ptt} berechnet wurde.
 \begin{table}[ht]
 	\centering
 	\resizebox{\textwidth}{!}{
@@ -909,14 +909,12 @@ Der Fehler berechnet sich erneut mit Gaußscher Fehlerfortpflanzung zu:
 &\Delta E = \sqrt{n^2 (\Delta m)^2 + m^2 (\Delta n)^2 + (\Delta b)^2} \\
 &\text{$m$: Steigung, $b$: Achsenabschnitt der Kalibrierung} \notag
 \end{align}
-\begin{table}[ht]
+\begin{sidewaystable}[ht]
 	\centering
-	\resizebox{\textwidth}{!}{
 	\input{./tables/langzeitmessung.tex}
-	}
 	\caption{Schwerpunkte (Kanalnummer) der an jede Linie angepassten Gaußfunktionen sowie die mit der Kalibrierung aus \eqref{eq:kalibrierung_halb} berechneten Energien. Außerdem wurden die Isotope mit entsprechenden Zerfallsenergien sowie Ursprünge dieser Isotope dargestellt.}
 	\label{tab:langzeitmessung_linien}
-\end{table}
+\end{sidewaystable}
 Mit \cite{gilmore} konnten den jeweiligen Energien der beobachtbaren Linien das zerfallende Isotop zugeordnet werden.
 Darüber hinaus wurde in Tabelle \ref{tab:langzeitmessung_linien} ebenfalls der Ursprung der jeweiligen Zerfälle notiert.
 Diesen bilden in den meisten Fällen die beiden natürlichen Zerfallsreihen von \isotope[232]{Th} und \isotope[238]{U}, aber auch die \isotope[235]{U}-Zerfallsreihe ist einmal (wenn auch nicht eindeutig, beachte auch die Fußnote) vorhanden.
@@ -930,27 +928,6 @@ Bei dem Reaktorunfall von Tschernobyl im Jahr 1986 wurde \cs{} in größeren Men
 Wegen seiner Halbwertszeit von ca. \SI{30}{a} ist es bis heute noch vorhanden, so dass es möglicherweise in der untersuchten Erde beobachtet werden konnte. 
 
 \section{Fazit}
-
-\begin{figure}[h]
-	\centering
-	\input{./plots/halbleiter/caesium.tex}
-	\caption{Cääääääsium halbleiter}
-	\label{fig:halb_caesium_spektrum}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\input{./plots/halbleiter/cobalt.tex}
-	\caption{Cooooobalt halbleiter}
-	\label{fig:halb_cobalt_spektrum}
-\end{figure}
-
-\begin{figure}[h]
-	\centering
-	\input{./plots/halbleiter/europium.tex}
-	\caption{Euroooopium halbleiter}
-	\label{fig:halb_europium_spektrum}
-\end{figure}
 
 \FloatBarrier
 % BIBLIOGRAPHIE
@@ -1015,6 +992,34 @@ Auf den folgenden Seiten sind der Vollständigkeit halber alle aufgenommenen Gam
 		\label{fig:szin_europium_spektrum}
 	\end{subfigure}
 	\caption{Übersicht über die um den Untergrund korrigierten Spektren, die mit dem NaI(Tl)-Szintillationsdetektor aufgenommen wurden. Die Messzeit betrug jeweils \SI{720}{\second}.}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
+			\input{./plots/halbleiter/caesium.tex}
+		}
+		\caption{Gammaspektrum von \cs}
+		\label{fig:halb_caesium_spektrum}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
+			\input{./plots/halbleiter/cobalt.tex}
+		}
+		\caption{Gammaspektrum von \co}
+		\label{fig:halb_cobalt_spektrum}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{0.65\textwidth}
+		\resizebox{!}{0.285\textheight}{
+	\input{./plots/halbleiter/europium.tex}
+	}
+	\caption{Gammaspektrum von \isotope[152]{Eu}}
+	\label{fig:halb_europium_spektrum}
+	\end{subfigure}
+	\caption{Übersicht über die um den Untergrund korrigierten Spektren, die mit dem Ge-Halbleiterdetektor aufgenommen wurden. Die Messzeit betrug jeweils \SI{720}{\second}.}
 \end{figure}
 \end{appendix}
 

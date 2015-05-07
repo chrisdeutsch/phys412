@@ -843,7 +843,9 @@ Anschließend führt der Vergleich der mit dem Detektor gemessenen relativen Int
 In Tabelle \ref{tab:rel_effizienz_halb} wurden die hier erwähnten Größen zusammengefasst.
 \begin{table}[ht]
 	\centering
+	\resizebox{\textwidth}{!}{
 	\input{./tables/effizienz_halb.tex}
+	}
 	\caption{Normierung der Intensitäten $I$ auf die \SI{1408.011}{keV}-Linie von Europium und Berechnung der relativen Effizienz $\eta$}
 	\label{tab:rel_effizienz_halb}
 \end{table}
@@ -867,6 +869,10 @@ beschrieben.
 
 \subsection{Nachweis der Radioakivität in einer Probe}
 
+Zum Ende des Versuchs wurde mit dem Halbleiterdetektor das Spektrum einer mitgebrachten Bodenprobe aufgenommen.
+Die Messung erfolgte dazu in einer Bleiabschirmung über ca. \SI{16}{\hour}. Anschließend wurde ein Untergrundspektrum über eine andere Zeit (ca. \SI{24}{\hour}) aufgenommen.
+Um das Spektrum vom Untergrund zu bereinigen mussten die Ereignisse anhand der Aufnahmezeit der Bodenprobe skaliert werden.
+Das aufgenommene Spektrum der Bodenprobe, sowie der Untergrund und das bereinigte Spektrum, was im Folgenden weiter betrachtet wird, sind in Abbildung \ref{fig:langzeitmessung_untergrundabzug} dargestellt.
 \begin{figure}[hp]
 	\centering
 	\begin{subfigure}[b]{0.65\textwidth}
@@ -892,17 +898,37 @@ beschrieben.
 		\caption{Spektrum der Langzeitmessung nach Abzug des Untergrunds}
 		\label{fig:probe_ohne_untergrund}
 	\end{subfigure}
-	\caption{Subtraktion des gemessenen Untergrundes von dem aufgenommenen Spektrum der Bodenprobe}
+	\caption{Subtraktion des gemessenen Untergrundes von dem aufgenommenen Spektrum der Bodenprobe. Anhand der Kalibrierung in \eqref{eq:kalibrierung_halb} wurde für die letzte Grafik auch eine Energieskala zur Abbildung hinzugefügt.}
 	\label{fig:langzeitmessung_untergrundabzug}
 \end{figure}
-
+An die in dem Spektrum erkennbaren Linien wurde mit Hilfe von \texttt{gnuplot} jeweils eine Gaußfunktion mit konstantem Untergrund (s. auch \eqref{eq:gaussfithypothese}) angepasst.
+Durch eine Vergrößerung der Ansicht konnten so insgesamt \num{20} Linien gefunden und angepasst werden.
+Die Schwerpunkte dieser Anpassungen sind in Tabelle \ref{tab:langzeitmessung_linien} festgehalten worden. 
+Dort wurde ebenfalls auf Grundlage der Kalibrierung \eqref{eq:kalibrierung_halb} eine Umrechung in Energien durchgeführt.
+Der Fehler berechnet sich erneut mit Gaußscher Fehlerfortpflanzung zu:
+\begin{align}
+&\Delta E = \sqrt{n^2 (\Delta m)^2 + m^2 (\Delta n)^2 + (\Delta b)^2} \\
+&\text{$m$: Steigung, $b$: Achsenabschnitt der Kalibrierung} \notag
+\end{align}
 \begin{table}[ht]
 	\centering
 	\resizebox{\textwidth}{!}{
 	\input{./tables/langzeitmessung.tex}
 	}
 	\caption{Schwerpunkte (Kanalnummer) der an jede Linie angepassten Gaußfunktionen sowie die mit der Kalibrierung aus \eqref{eq:kalibrierung_halb} berechneten Energien. Außerdem wurden die Isotope mit entsprechenden Zerfallsenergien sowie Ursprünge dieser Isotope dargestellt.}
+	\label{tab:langzeitmessung_linien}
 \end{table}
+Mit \cite{gilmore} konnten den jeweiligen Energien der beobachtbaren Linien das zerfallende Isotop zugeordnet werden.
+Darüber hinaus wurde in Tabelle \ref{tab:langzeitmessung_linien} ebenfalls der Ursprung der jeweiligen Zerfälle notiert.
+Diesen bilden in den meisten Fällen die beiden natürlichen Zerfallsreihen von \isotope[232]{Th} und \isotope[238]{U}, aber auch die \isotope[235]{U}-Zerfallsreihe ist einmal (wenn auch nicht eindeutig, beachte auch die Fußnote) vorhanden.
+Weiterhin konnte mit \isotope[40]{K} auch das primordiale Kalium nachgewiesen werden, welches eine der größten Linien im Spektrum darstellt.
+Die Anpassungen für niedrige Energien (ca. $<\SI{500}{\kilo\electronvolt}$) gelangen nicht besonders gut, so dass die gefundenen Ursprünge dieser Linien nicht mit großer Sicherheit festgestellt werden konnten.
+Dabei handelt es sich in allen Fällen um charakteristische Röntgenlinien der jeweiligen Isotope, die bei den angegebenen Zerfällen entstehen.
+Die Mutterkerne gehören jedoch auch immer zu einer natürlichen Zerfallsreihe.
+Bei \SI{510.71+-0.13}{\kilo\electronvolt} konnte außerdem die Annihilierung von Elektronen und Positronen beobachtet werden, die erwartungsgemäß bei \SI{511}{\kilo\electronvolt} stattfindet, mit dem die gefundene Energie sehr gut übereinstimmt.
+Außedem konnte die \cs{}-Linie nachgewiesen werden, die in keiner Zerfallsreihe auftritt.
+Bei dem Reaktorunfall von Tschernobyl im Jahr 1986 wurde \cs{} in größeren Mengen freigesetzt und gelante nach Westeuropa.
+Wegen seiner Halbwertszeit von ca. \SI{30}{a} ist es bis heute noch vorhanden, so dass es möglicherweise in der untersuchten Erde beobachtet werden konnte. 
 
 \section{Fazit}
 
@@ -940,7 +966,7 @@ beschrieben.
 
 \bibitem{anleitung}
 	Physikalisches Praktikum V: Kern- und Teilchenphysik,
-	Versuchsbeschreibung \emph{P523: $\beta$-Spektrometer} (Stand: Januar 2015),
+	Versuchsbeschreibung \emph{P521: $\gamma$-Spektroskopie} (Stand: Januar 2015),
 	Universität Bonn	
 
 \bibitem{riezler}
@@ -952,6 +978,11 @@ beschrieben.
 	M. P. Unterweger, D. D. Hoppes, F. J. Schima, J.S. Coursey,
 	\emph{NIST Radionuclide Half-Life Measurements},
 	\url{http://www.nist.gov/pml/data/halflife-html.cfm} (Letzter Abruf: 1. Mai 2015)
+	
+\bibitem{gilmore}
+	Gordon R. Gilmore,
+	\emph{Practical Gamma-Ray Spectrometry, 2nd Edition, Appendix D},
+	\url{http://onlinelibrary.wiley.com/doi/10.1002/9780470861981.app4/pdf} (Letzter Abruf: 07. Mai 2015)
 
 \end{thebibliography}
 

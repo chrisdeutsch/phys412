@@ -2,7 +2,7 @@ reset
 #set term qt
 set term epslatex color size 5,3.5
 
-set output './plots/szintillator/cobalt.tex'
+set output './plots/szintillator/cobalt_darstellung.tex'
 
 set key top left
 
@@ -14,18 +14,13 @@ set yrange [0:*]
 set xlabel 'Kanal $n$'
 set ylabel 'Ereignisse $N$'
 
-unset grid
+set grid
 
 set bars small
 set style data lines
 
 load './../gnuplot_linestyles.plt'
 
-set label 2 "Rückstreupeaks" at 1342,400 rotate left
-set label 3 "Compton-Kanten" at 5490,257 rotate left
-set label 4 "\\SI{1173.237}{keV}" at 5910,650 rotate left
-set label 5 "\\SI{1332.501}{keV}" at 6830,650 rotate left
-set arrow from 5650,320 to 5912,231
 
 unset key
 set style fill solid 1.0

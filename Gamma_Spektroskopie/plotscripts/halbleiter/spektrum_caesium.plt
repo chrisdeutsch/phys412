@@ -1,5 +1,5 @@
 reset
-
+#set term qt
 set term epslatex color size 5,3.5
 
 set output './plots/halbleiter/caesium.tex'
@@ -14,13 +14,20 @@ set yrange [0:*]
 set xlabel 'Kanal $n$'
 set ylabel 'Ereignisse $N$'
 
-set grid
+unset grid
 
 set bars small
 set style data lines
 
 load './../gnuplot_linestyles.plt'
 
-plot './data/halbleiter/caesium_bereinigt.txt' using 1:2:3  w errorbars t'Messwerte' ls 1
+set label 2 "Rückstreupeak" at 917,1536 rotate left
+set label 3 "Compton-Kante" at 2290,1300 rotate left
+set label 4 "\\SI{661.660}{keV}" at 3513,18676 rotate left
+
+unset key
+set style fill solid 1.0
+
+plot './data/halbleiter/caesium_bereinigt.txt' using 1:2:3  w boxerror t'Messwerte' ls 1
 
 unset output

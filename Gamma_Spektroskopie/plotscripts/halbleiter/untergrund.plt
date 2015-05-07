@@ -21,6 +21,9 @@ set style data lines
 
 load './../gnuplot_linestyles.plt'
 
-plot './data/halbleiter/untergrund.txt' using 1:2:(sqrt($2)) w errorbars t'Messwerte' ls 1
+unset key
+set style fill solid 1.0
+
+plot './data/halbleiter/untergrund.txt' using 1:2:(sqrt($2)) w boxerror t'Messwerte' ls 1
 
 unset output

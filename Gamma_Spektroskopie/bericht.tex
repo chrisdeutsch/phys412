@@ -133,8 +133,7 @@ Tutor: & Christian Hammann
 % ZUSAMMENFASSUNG
 \begin{abstract}
 \noindent
-TODO: Erklären warum wir nur einen Gauß an den Rückstreupeak von Cobalt gefittet haben (Beide Rückstreupeaks fallen ungefähr zusammen sodass sich Gaußform ergibt.)
-Erklären dass die Photopeaks in der P/T Tabelle summe beider Cobalt Linien sind.
+TODO: Erklären dass die Photopeaks in der P/T Tabelle summe beider Cobalt Linien sind.
 
 \end{abstract}
 
@@ -428,7 +427,7 @@ Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund
 	
 	\begin{subfigure}[b]{0.65\textwidth}
 		\resizebox{!}{0.285\textheight}{
-		\input{./plots/szintillator/cobalt.tex}
+		\input{./plots/szintillator/cobalt_darstellung.tex}
 		}
 		\caption{\isotope[60]{Co}-Spektrum mit subtrahiertem Untergrund}
 		\label{fig:cobalt_ohne_untergrund}
@@ -584,7 +583,7 @@ Dies wurde in Tabelle \ref{tab:ptt_szinti} für die mittlere Energie der beiden 
 	\resizebox{\textwidth}{!}{
 	\input{./tables/ptt_szinti.tex}
 	}
-	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co{} und \cs{} für den Szintillationsdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$.}
+	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co{} und \cs{} für den Szintillationsdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$. Die Anzahl der Ereignisse im Photopeak $N_\mathrm{Photo.}$ besteht bei \co{} aus der Summe der Ereignisse beider Photopeaks.}
 	\label{tab:ptt_szinti}
 \end{table}
 Man sieht, dass das Peak-to-Total Verhältnis mit steigender Energie abzunehmen scheint, was dadurch zu erklären ist, dass der Wirkungsquerschnitt des Photoeffekts mit steigender Energie sinkt (vgl. Abschnitt \ref{sec:theo_photoeffekt}).
@@ -671,7 +670,7 @@ Das Untergrundspektrum sowie beispielhaft der Vergleich des unkorrigierten und k
 	
 	\begin{subfigure}[b]{0.65\textwidth}
 		\resizebox{!}{0.285\textheight}{
-			\input{./plots/halbleiter/caesium.tex}
+			\input{./plots/halbleiter/caesium_darstellung.tex}
 		}
 		\caption{\isotope[137]{Cs}-Spektrum mit subtrahiertem Untergrund}
 		\label{fig:caesium_ohne_untergrund}
@@ -804,7 +803,7 @@ Berechnet man nun durch Integration die Anzahl der Ereignisse in den verschieden
 	\resizebox{\textwidth}{!}{
 		\input{./tables/ptt_halb.tex}
 	}
-	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co{} und \cs{} für den Ge-Halbleiterdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$.}
+	\caption{Peak-to-Total Verhältnis $P/T$ der beiden Isotope \co{} und \cs{} für den Ge-Halbleiterdetektor. Aufgetragen ist die totale Anzahl der Ereignisse $N_\mathrm{tot.}$ (ohne Untergrund), die Anzahl der Ereignisse in den Photopeaks $N_\mathrm{Photo.}$ und die Anzahl der Ereignisse im Rückstreupeak $N_\mathrm{R"uck.}$. Die Anzahl der Ereignisse im Photopeak $N_\mathrm{Photo.}$ besteht bei \co{} aus der Summe der Ereignisse beider Photopeaks.}
 	\label{tab:ptt_halb}
 \end{table}
 Man sieht erneut die Abnahme des Peak-to-Total Verhältnisses mit steigender Energie, was in der Abnahme des Wirkungsquerschnitts mit Zunahme der Energie begründet liegt.

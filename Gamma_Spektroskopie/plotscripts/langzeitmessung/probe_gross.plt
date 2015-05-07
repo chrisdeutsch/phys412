@@ -31,11 +31,11 @@ set link x2 via 0.200839*x+4.589 inverse (x-4.589)/0.200839
 
 load './../gnuplot_linestyles.plt'
 
-set label 1 "1,2,3,4,5" at 349,1050 center
-#set label 2 "2" at 360,1100 center
+set label 1 "1,2,3" at 349,1050 center
+#set label 2 "2,3,4" at 360,1100 center
 #set label 3 "3" at 397,1100 center
-#set label 4 "4" at 411,1100 center
-#set label 5 "5" at 425,1100 center
+set label 4 "4" at 411,550 center
+set label 5 "5" at 425,477 center
 set label 6 "6,7" at 1165,1100 center
 #set label 7 "7" at 1180,1100 center
 set label 8 "8" at 1447,402 center

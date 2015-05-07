@@ -711,6 +711,7 @@ Die Anpassungsergebnisse durch \texttt{gnuplot} lauten:
 \begin{align}
 	m &= \SI{0.200839 +- 0.000010}{\kilo\electronvolt} \\
 	b &= \SI{4.589 +- 0.046}{\kilo\electronvolt}
+	\label{eq:kalibrierung_halb}
 \end{align}
 
 
@@ -891,6 +892,14 @@ beschrieben.
 	\caption{Subtraktion des gemessenen Untergrundes von dem aufgenommenen Spektrum der Bodenprobe}
 	\label{fig:langzeitmessung_untergrundabzug}
 \end{figure}
+
+\begin{table}
+	\centering
+	\resizebox{\textwidth}{!}{
+	\input{./tables/langzeitmessung.tex}
+	}
+	\caption{Schwerpunkte (Kanalnummer) der an jede Linie angepassten Gaußfunktionen sowie die mit der Kalibrierung aus \eqref{eq:kalibrierung_halb} berechneten Energien. Außerdem wurden die Isotope mit entsprechenden Zerfallsenergien sowie Ursprünge dieser Isotope dargestellt.}
+\end{table}
 
 \section{Fazit}
 

@@ -188,12 +188,12 @@ Ausgehend davon kann beispielsweise festgestellt werden, auf welchen Energiebere
 \subsubsection{Photoeffekt}
 \label{sec:theo_photoeffekt}
 Im Bereich niedriger Energie tritt vor allem der Photoeffekt auf.
-Dieser beschreibt die Absoprtion eines Gamma-Quants durch ein atomisches Elektron und kann aufgrund der Impulserhaltung nur im Atom stattfinden.
-Bei Einstrahlung eines Photons wird dieses absorbiert und ein Elektron aus dem Atom herausgelöst, dessen Energie der Enerie des Photons entspricht abzüglich der Bindungsenergie.
+Dieser beschreibt die Absorption eines Gamma-Quants durch ein atomisches Elektron und kann aufgrund der Impulserhaltung nur im Atom stattfinden.
+Bei Einstrahlung eines Photons wird dieses absorbiert und ein Elektron aus dem Atom herausgelöst, dessen kinetische Energie der Energie des Photons entspricht abzüglich der Bindungsenergie.
 \begin{align*}
-E_\mathrm{e^{-}} = h \nu - E_\mathrm{Bind.}
+E_\mathrm{kin., e^{-}} = h \nu - E_\mathrm{Bind.}
 \end{align*}
-Der Wirkungsquerschnitt ist gegeben durch:
+Der Wirkungsquerschnitt ist gegeben durch \cite{siegbahn}:
 \begin{align*}
 	\sigma_\mathrm{Photo.} \propto
 	\begin{cases}
@@ -201,54 +201,52 @@ Der Wirkungsquerschnitt ist gegeben durch:
 		Z^5 E_\gamma^{-1} & E_\gamma > m_\mathrm{e} c^2
 	\end{cases}
 \end{align*}
-Quelle: Siegbahn
-\begin{figure}[h]
-	\centering
-	\includegraphics{./figures/photoeffekt.png}
-	\caption{Wirkungsquerschnitt für den Photoeffekt an Blei. QUELLE William R. Leo}
-	\label{fig:photoeffekt}
-\end{figure}
+Insbesondere ist der Wirkungsquerschnitt stark abhängig von der Ordnungszahl $Z$, was eine ausschlaggebende Rolle für die Wahl von Detektormaterialien spielt. Darüber hinaus spiegelt sich die Schalenstruktur des Atoms im Wirkungsquerschnitt wieder, da mit dem Erreichen der Bindungsenergie der nächsthöheren Schale der Wirkungsquerschnitt rapide zunimmt (vgl. Abbildung \ref{fig:photo_total}).
 
 \subsubsection{Compton-Effekt}
 Der Compton-Effekt beschreibt die Streuung von Photonen an freien Elektronen.
-Allerdings können Elektronen im Fall $E_\gamma \gg E_\mathrm{Bind. e^{-}}$ auch in Materie als frei betrachtet werden.
+Allerdings können Elektronen im Fall $E_\gamma \gg E_\mathrm{Bind. e^{-}}$ auch in Materie als quasifrei betrachtet werden.
 Die Streuung beschreibt einen winkelabhängigen Energieübertrag vom Photon auf das Elektron, wobei der Streuwinkel $\theta$ des Photons relativ zur einfallenden Flugrichtung angegeben wird.
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{./figures/compton.pdf}
-	\caption{Comptoneffekt}
+	\includegraphics[width=0.75\textwidth]{./figures/compton.pdf}
+	\caption{Streuprozess beim Compton-Effekt}
 	\label{fig:comptoneffekt}
 \end{figure}
+Die Energie des gestreuten Photons $E_\gamma^\prime$ kann aus dem Streuwinkel $\theta$ und der ursprünglichen Energie $E_\gamma$ berechnet werden durch:
 \begin{align}
-	\frac{E_\gamma^\prime}{E_\gamma} &= \frac{1}{1 + \frac{h \nu}{m_\mathrm{e} c^2} (1-\cos\theta)} \\
-	\Delta \lambda &= \lambda_\mathrm{c} (1 - \cos\theta) \\
-	\lambda_\mathrm{c} &= \frac{h}{m_\mathrm{e} c}
+	\frac{E_\gamma^\prime}{E_\gamma} &= \frac{1}{1 + \frac{h \nu}{m_\mathrm{e} c^2} (1-\cos\theta)}
 \end{align}
-Wirkungsquerschnitt gegeben durch Klein-Nishina:
+Man sieht, dass die Energie des gestreuten Photons $E_\gamma^\prime$ kontinuierlich bis zu einem Maximalwert bei Rückstreuung ($\theta = \SI{180}{\degree}$) verteilt ist.
+Dieser Effekt führt zum Auftreten einer sogenannten Compton-Kante in den aufgenommenen Spektren (vgl. auch REF!!!).
+Die Energie- und Ordnungszahlabhängigkeit des Klein-Nishina-Wirkungsquerschnitt ist gegeben durch \cite{wermes}:
 \begin{align}
 	\sigma_\mathrm{c} \propto \frac{Z}{E_\gamma}
 \end{align}
 
-Compton-Kante...
-
-Kein Energietransfer:\\
-Thomson-Streuung: Compton im klassischen Limit\\
-Rayleigh-Streuung: Streuung am ganzen Atom\\
-
-
 \subsubsection{Paarbildung}
+Die Paarbildung beschreibt die Erzeugung eines Elektron-Positron-Paares aus einem hochenergetischen Photon:
 \begin{align}
-	\gamma \rightarrow \mathrm{e}^{+} + \mathrm{e}^{-}\\
-	E_\gamma \geq 2 m_\mathrm{e} c^2
+	\gamma \rightarrow \mathrm{e}^{+} + \mathrm{e}^{-}
 \end{align}
-
+Dabei ist $E_\gamma \geq 2 m\mathrm{e} c^2$ durch die Energieerhaltung gefordert.
+Der Wirkungsquerschnitt ist gegeben durch \cite{wermes}:
 \begin{align}
 	\sigma_\mathrm{Paar} \propto Z^2 \ln E_\gamma
 \end{align}
 
-\subsubsection{Summe aller Effekte}
-
-Bildah
+\subsubsection{Totaler Wirkungsquerschnitt}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.6\textwidth]{./figures/photocrosssection.png}
+	\caption{Summe der Wirkungsquerschnitte für Photoeffekt, Compton-Streuung und Paarbildung in Blei. Quelle: \cite{leo} (modifiziert: Beschriftung hinzugefügt)}
+	\label{fig:photo_total}
+\end{figure}
+Die Summe der in diesem Abschnitt genannten Effekte ergibt sich aus der Summe der einzelnen Wirkungsquerschnitte.
+Anhand der genannten Proportionalitäten sieht man bereits, dass für kleine Energien der Photoeffekt ($\sigma_\mathrm{Photo}\propto E_\gamma^{-7/2}$) dominiert.
+Im Gegensatz dazu wird die Paarbildung erst bei großen Energien relevant, da deren Wirkungsquerschnitt logarithmisch mit der Gammaenergie zunimmt.
+Der Compton-Effekt dominiert in einem Bereich der zwischen dem Dominanzbereich von Photoeffekt und Paarbildung liegt.
+Die Summe dieser Effekte wurde in Abbildung \ref{fig:photo_total} für Blei beispielhaft aufgetragen.
 
 \subsection{Szintillatoren, Halbleiterdetektor, Photomulti etc.}
 
@@ -1008,6 +1006,16 @@ Die Auswertung für den Halbleiterdetektor ist durchweg erfolgreich gewesen und 
 	K. Siegbahn,
 	\emph{Alpha-, Beta- and Gamma-Ray Spectroscopy},
 	Elsevier Science Ltd. 1965
+
+\bibitem{wermes}
+	N. Wermes,
+	\emph{physik511: Physik V (Kerne und Teilchen)},
+	WS 2014/15
+
+\bibitem{leo}
+	W. R. Leo,
+	\emph{Techniques for Nuclear and Particle Physics Experiments},
+	Springer 1994
 
 \bibitem{anleitung}
 	Physikalisches Praktikum V: Kern- und Teilchenphysik,

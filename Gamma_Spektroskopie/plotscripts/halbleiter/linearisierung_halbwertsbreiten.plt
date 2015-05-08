@@ -18,10 +18,12 @@ set grid
 
 load './../gnuplot_linestyles.plt'
 
+set bars small
+
 f(x) = m*x + b
 
 fit f(x) './data/halbleiter/halbwertsbreiten.txt' using 1:($4**2):(2.0 * $4 * $5) via m, b
 
-plot './data/halbleiter/halbwertsbreiten.txt' using 1:($4**2):(2.0 * $4 * $5) w errorbars t'Messwerte' ls 1, f(x) t'Anpassung' ls 2
+plot './data/halbleiter/halbwertsbreiten.txt' using 1:($4**2):(2.0 * $4 * $5) w errorbars t'Messwerte' ls 1 pt 7 ps .75, f(x) t'Anpassung' ls 2
 
 unset output

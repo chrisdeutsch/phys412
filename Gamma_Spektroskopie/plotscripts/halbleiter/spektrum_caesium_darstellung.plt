@@ -23,6 +23,7 @@ load './../gnuplot_linestyles.plt'
 
 unset key
 set style fill solid 1.0
+set bars small
 
 plot './data/halbleiter/caesium_bereinigt.txt' using 1:2:3  w boxerror t'Messwerte' ls 1
 

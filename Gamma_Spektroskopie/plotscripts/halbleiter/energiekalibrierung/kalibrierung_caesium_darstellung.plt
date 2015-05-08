@@ -36,7 +36,9 @@ u(x) = d							# Untergrund
 
 load './../gnuplot_linestyles.plt'
 
-plot 	'./data/halbleiter/caesium_bereinigt.txt' using 1:2:3 every 2 w errorbars t'Messwerte' ls 1 ,\
+set bars small
+
+plot 	'./data/halbleiter/caesium_bereinigt.txt' using 1:2:3 every 2 w errorbars t'Messwerte' ls 1 pt 7 ps .75 ,\
 		t(x) t'$\Sigma$' ls 2 lw 2,\
 		g1(x) t'$\mathcal{G}$' ls 3 lw 2,\
 		u(x) t'$d$' ls 5 lw 2

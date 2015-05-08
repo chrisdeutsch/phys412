@@ -926,13 +926,14 @@ Der Fehler berechnet sich erneut mit Gaußscher Fehlerfortpflanzung zu:
 &\Delta E = \sqrt{n^2 (\Delta m)^2 + m^2 (\Delta n)^2 + (\Delta b)^2} \\
 &\text{$m$: Steigung, $b$: Achsenabschnitt der Kalibrierung} \notag
 \end{align}
-\begin{sidewaystable}[ht]
+\begin{sidewaystable}[hp]
 	\centering
 	\input{./tables/langzeitmessung.tex}
 	\caption{Schwerpunkte (Kanalnummer) der an jede Linie angepassten Gaußfunktionen sowie die mit der Kalibrierung aus \eqref{eq:kalibrierung_halb} berechneten Energien. Außerdem wurden die Isotope mit entsprechenden Zerfallsenergien sowie Ursprünge dieser Isotope dargestellt.}
 	\label{tab:langzeitmessung_linien}
 \end{sidewaystable}
 Mit \cite{gilmore} konnten den jeweiligen Energien der beobachtbaren Linien das zerfallende Isotop zugeordnet werden.
+In Abbildung \ref{fig:langzeit_gross} wurde das aufgenommene Spektrum in groß dargestellt und die Liniennummern aus Tabelle \ref{tab:langzeitmessung_linien} den entsprechenden Peaks zugeordnet.
 Darüber hinaus wurde in Tabelle \ref{tab:langzeitmessung_linien} ebenfalls der Ursprung der jeweiligen Zerfälle notiert.
 Diesen bilden in den meisten Fällen die beiden natürlichen Zerfallsreihen von \isotope[232]{Th} und \isotope[238]{U}, aber auch die \isotope[235]{U}-Zerfallsreihe ist einmal (wenn auch nicht eindeutig, beachte auch die Fußnote) vorhanden.
 Weiterhin konnte mit \isotope[40]{K} auch das primordiale Kalium nachgewiesen werden, welches eine der größten Linien im Spektrum darstellt.
@@ -943,22 +944,23 @@ Bei \SI{510.71+-0.13}{\kilo\electronvolt} konnte vermutlich die Annihilierung vo
 Außerdem konnte die \cs{}-Linie nachgewiesen werden, die in keiner Zerfallsreihe auftritt.
 Bei dem Reaktorunfall von Tschernobyl im Jahr 1986 wurde \cs{} in größeren Mengen freigesetzt und gelangte nach Westeuropa.
 Wegen seiner Halbwertszeit von ca. \SI{30}{a} ist es bis heute noch vorhanden, so dass es möglicherweise in der untersuchten Erde beobachtet werden konnte. 
+\FloatBarrier
 
 \section{Fazit}
 
 \subsection{Vergleich der Detektoren}
-Aufgrund der unterschiedlichen Funktionsweise von Szintillationsdetektor und Halbleiterdetektor ist es nicht verwunderlich, dass diese sich teilweise unterschiedliche Eigenschaften aufweisen.
+Aufgrund der unterschiedlichen Funktionsweise von Szintillationsdetektor und Halbleiterdetektor ist es nicht verwunderlich, dass diese die beobachteten teilweise unterschiedliche Verhalten zeigen.
 In diesem Abschnitt sollen die zuvor experimentell bestimmten Eigenschaften der beiden Detektoren verglichen werden.
 \begin{itemize}
-	\item \textbf{Signalform:} Beide Detektoren weisen sehr ähnliche Signalformen sowohl am Vor- als auch am Hauptverstärker. Sie unterscheiden sich hauptsächlich in Pulsdauer und Höhe.
+	\item \textbf{Signalform:} Beide Detektoren weisen sehr ähnliche Signalformen sowohl am Vor- als auch am Hauptverstärker auf. Sie unterscheiden sich hauptsächlich in Pulsdauer und Höhe.
 	
 	\item \textbf{Energieauflösung:} Den größten Unterschied der beiden Detektoren stellt man bei dem Auflösungsvermögen fest.
-	Eine der Kenngrößen der Auflösung ist die volle Halbwertsbreite (FWHM) der Linien, welche im Falle des Szintillationsdetektors in der Größenordnung von \num{10} bis \SI{100}{keV} liegen.
+	Eine der Kenngrößen der Auflösung ist die volle Halbwertsbreite (FWHM) der Linien, welche im Falle des Szintillationsdetektors in der Größenordnung von \num{10} bis \SI{100}{keV} liegt.
 	Der Halbleiterdetektor weist eine wesentlich größeres Auflösungsvermögen auf, da dessen Halbwertsbreiten zwischen \num{1} und \SI{2}{keV} liegen.
 	Diese Tatsache sieht man deutlich in den aufgenommenen Spektren.	
 	
 	\item \textbf{Peak-to-Total Verhältnis:}
-	Das Peak-to-Total Verhältnisses, also der Wahrscheinlichkeit, dass ein detektiertes Quant in den Photopeak fällt, ist für den Szintillationsdetektor um \num{4} bis \SI{6}{\percent} größer als für den verwendeten Halbleiterdetektor.
+	Das Peak-to-Total Verhältnisses, also die Wahrscheinlichkeit, dass ein detektiertes Quant in den Photopeak fällt, ist für den Szintillationsdetektor um \num{4} bis \SI{6}{\percent} größer als für den verwendeten Halbleiterdetektor.
 	
 	\item \textbf{Absolute Peakeffizienz:}
 	Analog zum vorigen Punkt ist der Szintillationsdetektor auch bei der absoluten Peakeffizienz dem Halbleiterdetektor überlegen.
@@ -971,9 +973,10 @@ Sollte eine hohe Detektionseffizienz benötigt werden, so könnte ein Szintillat
 Andererseits kann für etwas geringere Effizienz aber mit wesentlich größerer Energieauflösung ein Halbleiterdetektor verwendet werden.
 
 \subsection{Zusammenfassung}
-Nichtlinearität des Verstärkers NaI(Tl)
-Dadurch relativ schlechte FWHM.
-
+Der durchgeführte Versuch stellt damit zwei gute Detektoren für die Gammaspektroskopie, sowie ein dafür typische Vorgehen in der Auswertung vor.
+Diese ist zu großen Teilen gut gelungen, lediglich die Energiekalibrierung des NaI(Tl)-Detektors bzw. die Nichtlinearität des dabei verwendeten Verstärkers fallen dabei störend auf.
+Besonders die Berechnung der Halbwertsbreiten ist aus diesem Grund nur bedingt möglich gewesen, so dass die gefundenen Werte keine quantitative Bewertung zulassen.
+Die Auswertung für den Halbleiterdetektor ist durchweg erfolgreich gewesen und mit der Energiekalibrierung konnten viele Linien im Spektrum der untersuchten Bodenprobe gefunden und identifiziert werden, die alle plausibel erscheinen und erklärt werden konnten.
 
 \FloatBarrier
 % BIBLIOGRAPHIE
@@ -1081,7 +1084,7 @@ Auf den folgenden Seiten sind der Vollständigkeit halber alle aufgenommenen Gam
 \begin{sidewaysfigure}
 		\centering
 		\input{./plots/langzeitmessung/probe_gross.tex}
-		\caption{Gross}
+		\caption{Aufgenommenes Gammaspektrum der Bodenprobe mit nummerierten Peaks. Die zugehörigen Energien sind in Tabelle \ref{tab:langzeitmessung_linien} notiert.}
 		\label{fig:langzeit_gross}
 \end{sidewaysfigure}
 

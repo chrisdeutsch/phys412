@@ -23,9 +23,11 @@ a = 8.5
 b = 300.0
 c = 1
 
+set bars small
+
 fit f(x) './data/halbleiter/effizienz.txt' using 1:7:8 yerror via a,b,c
 
-plot './data/halbleiter/effizienz.txt' using 1:7:8 w errorbars t'Messwerte' ls 1,\
+plot './data/halbleiter/effizienz.txt' using 1:7:8 w errorbars t'Messwerte' ls 1 pt 7 ps .75,\
 f(x) t'Anpassung' ls 2
 
 unset output

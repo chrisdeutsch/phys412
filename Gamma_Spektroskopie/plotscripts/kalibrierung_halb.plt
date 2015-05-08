@@ -17,10 +17,12 @@ set grid
 
 load './../gnuplot_linestyles.plt'
 
+set bars small
+
 f(x) = a*x + b
 
 fit f(x) './data/energiekalibrierung/halbleiter.txt' using 1:3 via a, b
 
-plot './data/energiekalibrierung/halbleiter.txt' using 1:3:2 w xerrorbars t'Messwerte' ls 1, f(x) ls 2 lw 2 t"Anpassung"
+plot './data/energiekalibrierung/halbleiter.txt' using 1:3:2 w xerrorbars t'Messwerte' ls 1 pt 7 ps .75, f(x) ls 2 lw 2 t"Anpassung"
 
 unset output

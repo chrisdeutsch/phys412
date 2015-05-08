@@ -732,7 +732,7 @@ Das Ergebnis der Anpassung ist in Abbildung \ref{fig:kalibrierung_halb} zu sehen
 \end{figure}  
 Die Anpassungsergebnisse durch \texttt{gnuplot} lauten:
 \begin{align}
-	m &= \SI{0.200839 +- 0.000010}{\kilo\electronvolt} \\
+	m &= \SI{0.200839 +- 0.000010}{\kilo\electronvolt} \nonumber\\
 	b &= \SI{4.589 +- 0.046}{\kilo\electronvolt}
 	\label{eq:kalibrierung_halb}
 \end{align}
@@ -943,12 +943,41 @@ Weiterhin konnte mit \isotope[40]{K} auch das primordiale Kalium nachgewiesen we
 Die Anpassungen für niedrige Energien (ca. $<\SI{500}{\kilo\electronvolt}$) gelangen nicht besonders gut, so dass die gefundenen Ursprünge dieser Linien nicht mit großer Sicherheit festgestellt werden konnten.
 Dabei handelt es sich in allen Fällen um charakteristische Röntgenlinien der jeweiligen Isotope, die bei den angegebenen Zerfällen entstehen.
 Die Mutterkerne gehören jedoch auch immer zu einer natürlichen Zerfallsreihe.
-Bei \SI{510.71+-0.13}{\kilo\electronvolt} konnte außerdem die Annihilierung von Elektronen und Positronen beobachtet werden, die erwartungsgemäß bei \SI{511}{\kilo\electronvolt} stattfindet, mit dem die gefundene Energie sehr gut übereinstimmt.
-Außedem konnte die \cs{}-Linie nachgewiesen werden, die in keiner Zerfallsreihe auftritt.
-Bei dem Reaktorunfall von Tschernobyl im Jahr 1986 wurde \cs{} in größeren Mengen freigesetzt und gelante nach Westeuropa.
+Bei \SI{510.71+-0.13}{\kilo\electronvolt} konnte vermutlich die Annihilierung von Elektronen und Positronen beobachtet werden, die erwartungsgemäß bei \SI{511}{\kilo\electronvolt} stattfindet, mit dem die gefundene Energie gut übereinstimmt.
+Außerdem konnte die \cs{}-Linie nachgewiesen werden, die in keiner Zerfallsreihe auftritt.
+Bei dem Reaktorunfall von Tschernobyl im Jahr 1986 wurde \cs{} in größeren Mengen freigesetzt und gelangte nach Westeuropa.
 Wegen seiner Halbwertszeit von ca. \SI{30}{a} ist es bis heute noch vorhanden, so dass es möglicherweise in der untersuchten Erde beobachtet werden konnte. 
 
 \section{Fazit}
+
+\subsection{Vergleich der Detektoren}
+Aufgrund der unterschiedlichen Funktionsweise von Szintillationsdetektor und Halbleiterdetektor ist es nicht verwunderlich, dass diese sich teilweise unterschiedliche Eigenschaften aufweisen.
+In diesem Abschnitt sollen die zuvor experimentell bestimmten Eigenschaften der beiden Detektoren verglichen werden.
+\begin{itemize}
+	\item \textbf{Signalform:} Beide Detektoren weisen sehr ähnliche Signalformen sowohl am Vor- als auch am Hauptverstärker. Sie unterscheiden sich hauptsächlich in Pulsdauer und Höhe.
+	
+	\item \textbf{Energieauflösung:} Den größten Unterschied der beiden Detektoren stellt man bei dem Auflösungsvermögen fest.
+	Eine der Kenngrößen der Auflösung ist die volle Halbwertsbreite (FWHM) der Linien, welche im Falle des Szintillationsdetektors in der Größenordnung von \num{10} bis \SI{100}{keV} liegen.
+	Der Halbleiterdetektor weist eine wesentlich größeres Auflösungsvermögen auf, da dessen Halbwertsbreiten zwischen \num{1} und \SI{2}{keV} liegen.
+	Diese Tatsache sieht man deutlich in den aufgenommenen Spektren.	
+	
+	\item \textbf{Peak-to-Total Verhältnis:}
+	Das Peak-to-Total Verhältnisses, also der Wahrscheinlichkeit, dass ein detektiertes Quant in den Photopeak fällt, ist für den Szintillationsdetektor um \num{4} bis \SI{6}{\percent} größer als für den verwendeten Halbleiterdetektor.
+	
+	\item \textbf{Absolute Peakeffizienz:}
+	Analog zum vorigen Punkt ist der Szintillationsdetektor auch bei der absoluten Peakeffizienz dem Halbleiterdetektor überlegen.
+	Mit dem NaI(Tl)-Szintillator werden \SI{20.1 +- 1.4}{\percent} aller in Richtung des Detektors emittierten $\gamma$-Quanten im Photopeak detektiert.
+	Für den Ge-Halbleiterdetektor sind dies lediglich \SI{15.05 +- 0.82}{\percent}.
+	
+\end{itemize}
+Man sieht, dass die Existenz beider Detektortypen gerechtfertigt ist, da beide Detektortypen ihre Vor- und Nachteile haben.
+Sollte eine hohe Detektionseffizienz benötigt werden, so könnte ein Szintillationsdetektor für die Aufgabe gut geeignet sein.
+Andererseits kann für etwas geringere Effizienz aber mit wesentlich größerer Energieauflösung ein Halbleiterdetektor verwendet werden.
+
+\subsection{Zusammenfassung}
+Nichtlinearität des Verstärkers NaI(Tl)
+Dadurch relativ schlechte FWHM.
+
 
 \FloatBarrier
 % BIBLIOGRAPHIE

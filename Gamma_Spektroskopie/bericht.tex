@@ -252,42 +252,45 @@ Die Summe dieser Effekte wurde in Abbildung \ref{fig:photo_total} für Blei beis
 
 \subsection{Szintillatoren, Halbleiterdetektor, Photomulti etc.}
 
-\subsubsection{Detektor Charakteristiken}
-Output des Detektors ein Strompuls und die Energie des detektierten Teilchens ist proportional zu der Ladung des Pulses.
-Ist die Pulsform von Teilchen verschiedener Energien immer gleich, so ist dies gleichbedeutend zu der Höhe des Pulses.\\
-\\
-Energieauflösung: Linien haben Gaußform. Weite der Linie verursacht durch Fluktuationen in der Anzahl der Ionisationen/Anregungen(Poissonverteilt) (statistischer Prozess: $\mathcal{R} \propto 1 / \sqrt{N}$ mit der Anzahl der Ionisationen bei gegebener Energie $N$. Zentraler Grenzwertsatz: $\sigma_x^2 / \braket{X} \propto 1 / \sqrt{N}$, wobei X eine Summe von N Zufallsvariablen ist.).
-Auflösung (FWHM):
-\begin{align}
-	\text{Resolution} = \frac{\Delta E}{E}
-\end{align}
-Auflösung ist eine Funktion der Energie! Generell ist die Anzahl der Ionisationen proportional zur Energie des einfallenden Teilchens. Damit skaliert die Auflösung ebenfalls wie:
-\begin{align}
-	\mathcal{R} \propto \frac{1}{\sqrt{E_\gamma}}
-\end{align}
-Neben der intrinsischen Unschärfe des Detektors kommt noch Unschärfe der verwendeten Elektron, welche sich quadratisch addiert:
-\begin{align}
-	\Delta E^2 = \Delta E_\mathrm{Detektor}^2 + \Delta E_\mathrm{Elektronik}^2
-\end{align}
-\\
-Detektoreffizienz: Unterscheidung zwischen absoluter und intrinsischer Effizienz.\\
-Absolute (totale) Effizienz:
-\begin{align}
-	\mathcal{E}_\mathrm{tot} = \frac{\text{events registered}}{\text{events emitted by source}}
-\end{align}
-(Peakeffizienz: events registered $\rightarrow$ Ereignisse im Photopeak) 
-Ist abhängig von der Detektorgeometrie und der Wahrscheinlichkeit einer Interaktion mit dem Detektor.\\
-\\
-Intrinsische Effizienz:
-\begin{align}
-	\mathcal{E}_\mathrm{int} = \frac{\text{events registered}}{\text{events impinging on detector}}
-\end{align}
-Mit der absoluten Peakeffizienz scheint die intrinsische Effizienz aus Leo gemeint zu sein.
-\begin{align}
-	\label{eq:peakeffizienz}
-	\mathcal{E}_\mathrm{int} = \frac{N_\mathrm{Photo.}}{A \cdot T \cdot \frac{\pi r^2}{4\pi \, d^2}}
-\end{align}
-Der geometrische Faktor im Nenner geht von einer Punktquelle (Aktivität $A$) in hohem Abstand vom Detektor $d$ aus. Messzeit $T$, Detektorradius $r$.
+\subsubsection{Charakteristische Größen eines Detektors}
+\begin{itemize}
+	\item \textbf{Energieauflösung:} 
+	Die Energieauflösung eines Detektors ist gegeben durch die volle Halbwertsbreite $\Delta E$ der mit ihm aufgenommenen monoenergetischen Linien.
+	Die Breite einer solchen Linie wird durch statistische Fluktuationen in der Anzahl der Ionisationen/Anregungen $N$ im Detektormaterial durch das detektierte Teilchen.
+	Die relative Linienbreite geht dabei wie $\mathcal{R} = \Delta E / E \propto 1 / \sqrt{N}$ und nimmt damit mit zunehmenden Ionisationen/Anregungen ab, das heißt die Auflösung nimmt zu.
+	
+	Aus diesem Grund erreicht der Ge-Halbleiterdetektor eine höheres Auflösungsvermögen, da zur Bildung eines Elektron-Loch-Paares weniger Energie benötigt wird als zur Anregung von Elektronen im Szintillator und dadurch mehr Elektronen-Loch-Paare entstehen.
+	Darüber hinaus ist das Auflösungsvermögen eine Funktion der Gammaenergie $E_\gamma$, da hochenergetische Photonen im Detektormaterial mehr Ereignisse $N$ erzeugen als niederenergetische. Wegen $N \propto E_\gamma$ folgt also:
+	\begin{align*}
+		\mathcal{R} \propto \frac{1}{\sqrt{E_\gamma}}
+	\end{align*}
+	Das Auflösungsvermögen nimmt demnach mit steigender Energie zu.
+	
+	Neben dieser intrinsischen Unschärfe des Detektors kommt es noch zu einem weiteren Beitrag durch die verwendete Elektronik, welche sich quadratisch addiert:
+	\begin{align*}
+		\Delta E^2 = \Delta E_\mathrm{Detektor}^2 + \Delta E_\mathrm{Elektronik}^2
+	\end{align*}
+	Dieser Zusammenhang wird in Abschnitt \ref{sec:fwhm_halb} experimentell überprüft.
+	
+	\item \textbf{Absolute Peakeffizienz:}
+	Die absolute Peakeffizienz ist definiert durch:
+	\begin{align*}
+		\mathcal{E} = \frac{\text{Anzahl der Ereignisse im Peak}}{\text{Anzahl der in Richtung des Detektors emittierten Teilchen}}
+	\end{align*}
+	Wird eine Punktquelle der Aktivität $A$ angenommen, so zerfallen $A\cdot T$ Kerne in einer Zeit $T$.
+	Da die Zerfälle isotrop verlaufen, kann der Bruchteil der auf den Detektor einfallenden Teilchen durch Multiplikation mit dem geometrischen Faktor $\frac{\pi r^2}{4 \pi d^2}$ berechnet werden.
+	Dabei bezeichnet $r$ den Radius des Detektors und $d$ den Abstand des Detektors von der Quelle.
+	Dieser Faktor entspricht gerade dem Bruchteil des Raumwinkels den der Detektor aufspannt und die Anzahl der auf den Detektor einfallenden Teilchen ist gegeben durch:
+	\begin{align*}
+		A \cdot T \cdot \frac{\pi r^2}{4 \pi d^2}
+	\end{align*}
+	Schließlich folgt für die absolute Peakeffizienz:
+	\begin{align}
+		\label{eq:peakeffizienz}
+		\mathcal{E}_\mathrm{int} = \frac{N_\mathrm{Peak}}{A \cdot T \cdot \frac{\pi r^2}{4\pi \, d^2}}
+	\end{align}
+	wobei $N_\mathrm{Peak}$ die Anzahl der im Peak detektierten Ereignisse ist.
+\end{itemize}
 
 \subsubsection{Szintillatoren}
 Szintillator: Körper dessen Moleküle beim Durchgang von energiereichen Photonen angeregt werden und folglich Licht (meist im UV-Bereich) emittieren. In Kombination mit Photomulti geeignete Detektoren.\\
@@ -332,12 +335,6 @@ Aufgrund der hohen Ordnungszahl von Germanium (verglichen mit Silizium) ist der 
 Zur Beobachtung der am Detektor registrierten Quanten wird ein Vielkanalanalysator verwendet, der über eine festgelegte Anzahl Kanäle verfügt.
 Ein eintreffendes Teilchen einer bestimmten Energie erzeugt ein logisches Signal, so dass der Wert in dem zu dieser Energie korrespondieren Kanal um eins erhöht wird.
 Alle auf den Detektor treffenden Teilchen werden somit nach ihrer Energie histogrammiert, die entstehende Darstellung wird dann als (Gamma-)Spektrum bezeichnet.
-
-\subsection{Auflösungsvermögen, Breite, Unterschiede der Detektoren}
-
-\subsection{Nachweiswahrscheinlichkeit}
-
-\subsection{Termschemata}
 
 
 \section{Versuchsaufbau}
@@ -736,6 +733,7 @@ Die Anpassungsergebnisse durch \texttt{gnuplot} lauten:
 
 
 \subsubsection{Bestimmung der Halbwertsbreite}
+\label{sec:fwhm_halb}
 Zur Bestimmung der Halbwertsbreiten für den Halbleiterdetektor kann erneut die Anpassung der Gaußfunktionen an die jeweiligen Linien verwendet werden, welche bereits bei der Energiekalibrierung in Abschnitt \ref{sec:kalibrierung_halb} durchgeführt wurden.
 Analog zum Szintillationsdetektor wird dabei die volle Halbwertsbreite (FWHM) aus der Standardabweichung $\sigma$ der Anpassung berechnet.
 Mit den Anpassungsergebnissen aus Tabelle \ref{tab:kalibrierungslinien_halb} kann dementsprechend die Halbwertsbreite in Einheiten der Kanalnummer berechnet werden.

@@ -133,7 +133,8 @@ Tutor: & Christian Hammann
 
 % ZUSAMMENFASSUNG
 \begin{abstract}
-\noindent
+\noindent In dem vorliegenden Versuch sollen mit Hilfe eines NaI(Tl)-Szintillationsdetektors und eines Germanium-Halbleiterdetektors Gammaspektren verschiedener Quellen aufgenommen werden.
+Diese werden genutzt, um für Detektoren wichtige Größen wie die Peakeffizienz und Energieauflösung zu bestimmen und die beiden genutzten Detektoren hinsichtlich dieser Eigenschaften zu vergleichen. Im Anschluss wird mit dem Halbleiterdetektor eine mitgebrachte Bodenprobe auf Vorkommen von Gammastrahlern hin untersucht.
 \end{abstract}
 
 \end{titlepage}
@@ -303,6 +304,19 @@ Exciton: Unreinheiten im Kristall verursachen ein Exciton-Band unter dem Leitung
 Für die Detektion von Photonen sind hohe Ordnungszahlen $Z$ wünscheswert (vgl. Wirkungsquerschnitt Photoeffekt im vergleich zu Compton)
 
 \subsubsection{Halbleiterdetektor}
+Ein Halbleiterdetektor funktioniert ähnlich einem Gas-Ionisationsdetektor, wobei anstatt Elektron-Ion-Paaren hier Elektron-Loch-Paare erzeugt werden.
+Da Elektron-Loch-Paare aufgrund der geringen Bandlücke bei Halbleitern bei geringeren Energien produziert werden, werden so insgesamt mehr Paare erzeugt und die Zählrate erhöht.
+Durch die im Vergleich zum Gas-Ionisationsdetektor höhere Dichte wird außerdem mehr Energie im Halbleiterdetektor deponiert, was angestrebt ist.
+Aufgrund der in einem Halbleiter auftretenden Leckströme (Erzeugung thermischer Elektron-Loch-Paare) ist es notwendig, diesen je nach verwendetem Halbleiter dauerhaft oder nur zur Messung herunterzukühlen (Silizium hat eine relativ große Bandlücke, so dass hier keine Kühlung notwendig ist).
+Weitere Störfaktoren sind Oberflächenströme, weswegen der Detektor gut verkapselt werden muss, sowie die Rekombination von Elektronen und Löchern.
+Da diese sowohl Energie- und Impulserhaltung erfüllen müssen, geschieht die Rekombination vergleichsweise selten (die Lebenszeiten sind in der Größenordnung Sekunde).
+Durch Verunreinigungen im Kristall entstehen allerdings s.g. Rekombinationszentren, die energetisch zwischen Valenz- und Leitungsband des Halbleiters liegen und dort Elektronen einfangen können.
+Diese stehen dann nicht mehr zur Messung zur Verfügung, können allerdings nach einer gewissen Zeit wieder zurück in das Leitungsband gelangen oder aber mit einem ebenfalls eingefangenen Loch rekombinieren.
+Aus diesem Grund sind sehr reine Kristalle notwendig, um die Anzahl dieser Rekombinationszentren zu minimieren.\\
+\\
+Das Signal des Halbleiterdetektors wird als Strom an einem in Sperrrichtung geschalteten pn-Übergang gemessen.
+Durch den Übergang zwischen p- und n-Schicht entsteht eine Verarmungszone, in der die Elektron-Loch-Paare durch einfallende Strahlung erzeugt werden.
+  
 Analog zum Gas-Ionisationsdetektor nur dass Elektronen-Loch Paare statt Elektron-Ion-Paare erzeugt werden.
 Vorteil: Erzeugung von e-Loch-Paar benötigt weniger Energie (Bandlücke); dadurch mehr Paare.\\
 \\
@@ -333,6 +347,10 @@ Aufgrund der hohen Ordnungszahl von Germanium ist der Photowirkungsquerschnitt 6
 Vergleich von Germanium und NaI-Detektor im Leo Fig. 10{.}19.
 
 \subsection{Spektrum, Vielkanalanalysator}
+
+Zur Beobachtung der am Detektor registrierten Quanten wird ein Vielkanalanalysator verwendet, der über eine festgelegte Anzahl Kanäle verfügt.
+Ein eintreffendes Teilchen einer bestimmten Energie erzeugt ein logisches Signal, so dass der Wert in dem zu dieser Energie korrespondieren Kanal um eins erhöht wird.
+Alle auf den Detektor treffenden Teilchen werden somit nach ihrer Energie histogrammiert, die entstehende Darstellung wird dann als (Gamma-)Spektrum bezeichnet.
 
 \subsection{Auflösungsvermögen, Breite, Unterschiede der Detektoren}
 

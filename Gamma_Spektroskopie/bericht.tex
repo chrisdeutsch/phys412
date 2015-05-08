@@ -96,6 +96,8 @@
 \fancyhead[EL,OR]{\thepage}
 \fancyhead[ER]{\leftmark}
 \fancyhead[OL]{\rightmark}
+\setlength{\headheight}{13.6pt}
+
 
 \renewcommand{\sectionmark}[1]{
 \markboth{\thesection{} #1}{\thesection{} #1}
@@ -133,7 +135,7 @@ Tutor: & Christian Hammann
 
 % ZUSAMMENFASSUNG
 \begin{abstract}
-\noindent In dem vorliegenden Versuch sollen mit Hilfe eines NaI(Tl)-Szintillationsdetektors und eines Germanium-Halbleiterdetektors Gammaspektren verschiedener Quellen aufgenommen werden.
+\noindent In dem vorliegenden Versuch sollen mit Hilfe eines NaI(Tl) - Szintillationsdetektors und eines Germanium-Halbleiterdetektors Gammaspektren verschiedener Quellen aufgenommen werden.
 Diese werden genutzt, um für Detektoren wichtige Größen wie die Peakeffizienz und Energieauflösung zu bestimmen und die beiden genutzten Detektoren hinsichtlich dieser Eigenschaften zu vergleichen. Im Anschluss wird mit dem Halbleiterdetektor eine mitgebrachte Bodenprobe auf Vorkommen von Gammastrahlern hin untersucht.
 \end{abstract}
 
@@ -309,40 +311,21 @@ Aufgrund der in einem Halbleiter auftretenden Leckströme (Erzeugung thermischer
 Weitere Störfaktoren sind Oberflächenströme, weswegen der Detektor gut verkapselt werden muss, sowie die Rekombination von Elektronen und Löchern.
 Da diese sowohl Energie- und Impulserhaltung erfüllen müssen, geschieht die Rekombination vergleichsweise selten (die Lebenszeiten sind in der Größenordnung Sekunde).
 Durch Verunreinigungen im Kristall entstehen allerdings s.g. Rekombinationszentren, die energetisch zwischen Valenz- und Leitungsband des Halbleiters liegen und dort Elektronen einfangen können.
-Diese stehen dann nicht mehr zur Messung zur Verfügung, können allerdings nach einer gewissen Zeit wieder zurück in das Leitungsband gelangen oder aber mit einem ebenfalls eingefangenen Loch rekombinieren.
+Diese stehen dann nicht mehr zur Messung (Ladungssammlung) zur Verfügung, können allerdings nach einer gewissen Zeit wieder zurück in das Leitungsband gelangen oder aber mit einem ebenfalls eingefangenen Loch rekombinieren.
+Ähnlich funktioniert der Effekt des Trappings, welcher auf Verunreinigungen basiert, die nur einen Typ Ladungsträger (Elektron oder Loch) einfangen können und nach einer bestimmten Zeit wieder freigeben.
 Aus diesem Grund sind sehr reine Kristalle notwendig, um die Anzahl dieser Rekombinationszentren zu minimieren.\\
 \\
 Das Signal des Halbleiterdetektors wird als Strom an einem in Sperrrichtung geschalteten pn-Übergang gemessen.
 Durch den Übergang zwischen p- und n-Schicht entsteht eine Verarmungszone, in der die Elektron-Loch-Paare durch einfallende Strahlung erzeugt werden.
-  
-Analog zum Gas-Ionisationsdetektor nur dass Elektronen-Loch Paare statt Elektron-Ion-Paare erzeugt werden.
-Vorteil: Erzeugung von e-Loch-Paar benötigt weniger Energie (Bandlücke); dadurch mehr Paare.\\
-\\
-Höhere Dichte höhere stopping-power (mehr Energiedeposition).\\
-\\
-Kompakt und hohe response time.\\
-\\
-Außer Silizium benötigen sie Kühlung da thermische e-Loch-Paare erzeugt werden können. Größter Faktor aber trotzdem Oberflächenströme, daher wird ein gut verkapselter Detektor benötigt.\\
-\\
-Rekombination in Halbleitern ist selten, da Loch und Elektron Impuls und Energieerhaltung erfüllen müssen(Lebenszeiten Größenordnung Sekunde).
-Rekombinationszentren: Verunreinigung sorgen für weitere Energieniveaus zwischen Valenz und Leitungsband, welche ein Elektron einfangen können. Folge: a) Das Elektron geht wieder in das Leitungsband. b) Nach einer Zeit trifft auf die Verunreinigung ein Loch, welches mit dem gefangenen Elektron annhiliert.
-Es folgt das Halbleiterdetektoren sehr reine Kristalle benötigt, da die Ladung an den Kathoden eingefangen werden soll.\\
-\\
-Trapping: Verunreinheiten die nur einen Typ von Ladungsträger (Elektron, Loch) einfangen können und diese für eine gewisse Zeit halten und danach wieder freigeben. Negativer Einfluss auf die Ladungssammlung.
-Ähnlicher Effekt durch Gitterdefekte.\\
-\\
-PN-Übergang in reverse Bias. In der Verarmungszone werden Elektron-Loch-Paare erzeugt (durch ionisierende Strahlung) die als Strompuls gemessen werden können. Reverse Bias: 1) Verarmungszone ist größer dadurch wird mehr Strahlung detektiert 2) Feld in der Verarmungszone ist größer und begünstigt die Ladungssammlung. An den Metallkontakten muss der Halbleiter stark dotiert sein um einen ohmschen Übergang zu erlauben. (sonst wirkt er wie eine Diode)\\
-\\
-Energie für e-Loch-Bildung:
+Das Anlegen einer Spannung in Sperrrichtung bewirkt sowohl eine Vergrößerung der Verarmungszone, in der dann mehr Strahlung detektiert wird und erhöhen das elektrische Feld in der Verarmungszone, wodurch eine bessere Ladungssammlung ermöglicht wird.
+Die zur elektron-Loch-Bildung benötigte Energie ist gegeben durch\cite{leo}:
 \begin{align}
-	E_\mathrm{Ge} = \SI{2.96}{eV} \quad \text{@ 77 K}
+E_\mathrm{Ge} = \SI{2.96}{eV} \quad \text{@ 77 K}
 \end{align}
-Mehr als Bandlücke da ein Teil der Energie in Anregungen des Gitter übergeht.
-Cite William R. Leo\\
-Im Vergleich zur Photoelektronenbildung in Szintillatoren zwei Größenordnung höhere e-Loch-Bildung und damit bessere Energieauflösung.\\
-\\
-Aufgrund der hohen Ordnungszahl von Germanium ist der Photowirkungsquerschnitt 60 mal größer als der von Silizium.\\
-Vergleich von Germanium und NaI-Detektor im Leo Fig. 10{.}19.
+Dies ist höher als die Bandlückenenergie, da ein Teil der einfallenden Energie in 
+Anregungen des Gitters übergeht.
+Im Vergleich zum Szintillationsdetektor ist die Rate für Elektron-Loch-Bildung um zwei Größenordnungen höher, wodurch eine wesentlich bessere Energieauflösung folgt.
+Aufgrund der hohen Ordnungszahl von Germanium (verglichen mit Silizium) ist der Wirkungsquerschnitt für den Photoeffekt ca. \num{60} Mal größer, weswegen man zur Gammapsketroskopie Germanium Silizium vorzieht.
 
 \subsection{Spektrum, Vielkanalanalysator}
 
@@ -392,7 +375,7 @@ Es wird der Detektor mit Durchmesser \SI{48}{mm} verwendet.
 In diesem Abschnitt soll das Signalverhalten des verwendeten NaI(Tl) - Szintillationsdetektors untersucht werden.
 Dazu wurden mit einem Oszilloskop die Signalformen jeweils am Vorverstärker des Photomultipliers sowie am Hauptverstärker aufgenommen.
 In Abbildung \ref{fig:signal_szinti_vor} ist ein beispielhaftes Signal direkt am Vorverstärker dargestellt.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\begin{subfigure}[b]{0.7\textwidth}
 		\centering
@@ -445,7 +428,7 @@ Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund
 \begin{figure}[hp]
 	\centering
 	\begin{subfigure}[b]{0.65\textwidth}
-		\resizebox{!}{0.285\textheight}{
+		\resizebox{!}{0.282\textheight}{
 		\input{./plots/szintillator/untergrund.tex}
 		}
 		\caption{Untergrund des NaI(Tl)-Szintillationsdetektors}
@@ -453,7 +436,7 @@ Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund
 	\end{subfigure}
 	
 	\begin{subfigure}[b]{0.65\textwidth}
-		\resizebox{!}{0.285\textheight}{
+		\resizebox{!}{0.282\textheight}{
 		\input{./plots/szintillator/cobalt_mit_untergrund.tex}
 		}
 		\caption{Untergrundbehaftetes \isotope[60]{Co}-Spektrum}
@@ -461,7 +444,7 @@ Aus Gründen der Übersichtlichkeit wurde in Abbildung \ref{fig:abzug_untergrund
 	\end{subfigure}
 	
 	\begin{subfigure}[b]{0.65\textwidth}
-		\resizebox{!}{0.285\textheight}{
+		\resizebox{!}{0.282\textheight}{
 		\input{./plots/szintillator/cobalt_darstellung.tex}
 		}
 		\caption{\isotope[60]{Co}-Spektrum mit subtrahiertem Untergrund}
@@ -586,7 +569,7 @@ Diese können direkt durch Integration über die Anpassung der Gaußfunktion ber
 Die Anpassungsparameter für die Photopeaks können direkt aus Abschnitt \ref{sec:kalibrierung_szinti} übernommen werden.
 Analog zur Kalibrierung wird eine Anpassung an die Rückstreupeaks von \isotope[60]{Co} und \isotope[137]{Cs} durchgeführt.
 Exemplarisch dafür wurde die Anpassung an den Rückstreupeak von \isotope[137]{Cs} in Abbildung \ref{fig:fit_rueck_szinti} durchgeführt.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\input{./plots/szintillator/rueckstreupeaks/caesium.tex}
 	\caption{Anpassung einer Gaußfunktion an den Rückstreupeak von \isotope[137]{Cs}}
@@ -688,7 +671,7 @@ Das Untergrundspektrum sowie beispielhaft der Vergleich des unkorrigierten und k
 \begin{figure}[hp]
 	\centering
 	\begin{subfigure}[b]{0.65\textwidth}
-		\resizebox{!}{0.285\textheight}{
+		\resizebox{!}{0.275\textheight}{
 			\input{./plots/halbleiter/untergrund.tex}
 		}
 		\caption{Untergrund des Ge-Halbleiterdetektors}
@@ -696,7 +679,7 @@ Das Untergrundspektrum sowie beispielhaft der Vergleich des unkorrigierten und k
 	\end{subfigure}
 	
 	\begin{subfigure}[b]{0.65\textwidth}
-		\resizebox{!}{0.285\textheight}{
+		\resizebox{!}{0.275\textheight}{
 			\input{./plots/halbleiter/caesium_mit_untergrund.tex}
 		}
 		\caption{Untergrundbehaftetes \isotope[173]{Cs}-Spektrum}
@@ -704,7 +687,7 @@ Das Untergrundspektrum sowie beispielhaft der Vergleich des unkorrigierten und k
 	\end{subfigure}
 	
 	\begin{subfigure}[b]{0.65\textwidth}
-		\resizebox{!}{0.285\textheight}{
+		\resizebox{!}{0.275\textheight}{
 			\input{./plots/halbleiter/caesium_darstellung.tex}
 		}
 		\caption{\isotope[137]{Cs}-Spektrum mit subtrahiertem Untergrund}
@@ -784,7 +767,7 @@ Dazu betrachtet man das Quadrat der beobachteten Breite unter Beachtung der Abh�
 \end{align}
 Liniearisiert man diesen Zusammenhang indem man die quadrierte beobachtete Halbwertsbreite $\Delta E^2$ gegen die Gammaenergie $E_\gamma$ aufträgt, so kann man die Abhängigkeit der intrinsischen Breite des Detektors von der Gammaenergie aus der Steigung der Geraden extrahieren und den elektronischen Teil aus deren Achsenabschnitt.
 Die Linearisierung wurde in Abbildung \ref{fig:lin_fwhm} dargestellt.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\input{./plots/halbleiter/linearisierung_halbwertsbreiten.tex}
 	\caption{Linearisierung zur Bestimmung der intrinsischen und elektronischen Anteile des verwendeten Ge-Halbleiterdetektors.}
@@ -819,7 +802,7 @@ Analog zum Abschnitt \ref{sec:ptt_szinti} soll das Peak-to-Total-Verhältnis ber
 Dazu berechnet man durch Integration über die an den Peaks angepassten Gaußfunktionen die Gesamtzahl der in den Peak gefallenen Quanten.
 Mit den Anpassungen an die Photopeaks aus Abschnitt \ref{sec:kalibrierung_halb} kann direkt die Anzahl der Ereignisse berechnet werden.
 Darüber hinaus muss noch eine Anpassung an die Rückstreupeaks erfolgen, welche hier exemplarisch am Rückstreupeak von \cs{} in Abbildung \ref{fig:rueck_halb_cs} dargestellt werden soll.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\input{./plots/halbleiter/rueckstreupeaks/caesium.tex}
 	\caption{Anpassung einer Gaußfunktion an den Rückstreupeak von \cs{}}
@@ -886,7 +869,7 @@ In Tabelle \ref{tab:rel_effizienz_halb} wurden die hier erwähnten Größen zusa
 Man erkennt, wie die relative Effizienz des Detektors mit steigender Energie sinkt.
 Auch dies liegt wieder in der Abnahme des Wirkungsquerschnitts für den Photoeffekt mit steigender Energie begründet.
 Trägt man die relative Effizienz $\eta$ gegen die Gammaenergie $E_\gamma$ auf so erhält man Abbildung \ref{fig:effizienz_halb}.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\input{./plots/halbleiter/effizienz.tex}
 	\caption{Relative Effizienz des Ge-Halbleiterdetektors bei verschiedenen Energien $E_\gamma$ mit Anpassung einer Exponentialfunktion}
@@ -910,7 +893,7 @@ Das aufgenommene Spektrum der Bodenprobe, sowie der Untergrund und das bereinigt
 \begin{figure}[hp]
 	\centering
 	\begin{subfigure}[b]{0.65\textwidth}
-		\resizebox{!}{0.28\textheight}{
+		\resizebox{!}{0.275\textheight}{
 			\input{./plots/langzeitmessung/untergrund.tex}
 		}
 		\caption{Untergrund des Ge-Halbleiterdetektors}
@@ -918,7 +901,7 @@ Das aufgenommene Spektrum der Bodenprobe, sowie der Untergrund und das bereinigt
 	\end{subfigure}
 	
 	\begin{subfigure}[b]{0.65\textwidth}
-		\resizebox{!}{0.28\textheight}{
+		\resizebox{!}{0.275\textheight}{
 			\input{./plots/langzeitmessung/spektrum_mit_untergrund.tex}
 		}
 		\caption{Untergrundbehaftetes Spektrum der Bodenprobe}

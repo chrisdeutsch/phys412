@@ -296,8 +296,8 @@ Die Summe dieser Effekte wurde in Abbildung \ref{fig:photo_total} für Blei beis
 
 \subsubsection{Szintillatoren}
 Ein Szintillator ist ein Stoff, dessen Atome/Moleküle bei Bestrahlung durch ionisierende Strahlung angeregt werden und folglich Licht emittieren.
-In Kombination mit einem Photomultiplier können Szintillatoren als Teilchendetektoren verwendet werden, da das Verhalten von Szintillatoren über einer Mindestenergie linear ist (die Anzahl der erzeugten Photonen ist proportional zur Energie des einfallenden Teilchens).
-
+In Kombination mit einem Photomultiplier können Szintillatoren als Teilchendetektoren verwendet werden, da das Verhalten von Szintillatoren über einer Mindestenergie linear ist (die Anzahl der erzeugten Photonen ist proportional zur Energie des einfallenden Teilchens).\\
+\\
 Der in diesem Versuch verwendete Szintillator ist ein NaI-Kristall, welcher mit Tl-Aktivator-Zentren dotiert wurde.
 Ein einfallendes Photon löst im Kristall eine Elektronenkaskade aus, welche solange anhält bis die Energie gleichmäßig auf den Elektronen des Kristalls verteilt wurde und die Elektronen eine ausreichend kleine Energie haben um mit den Atomen rekombinieren zu können.
 Bei der Rekombination kommt es dabei zur Emission eines Photons, welches umgehend vom Szintillator absorbiert wird, da dieser aufgrund der Bandstruktur im Kristall nicht für die Rekombinations-Photonen transparent ist.
@@ -309,7 +309,7 @@ Der Kristall ist aufgrund des geringen Konzetrationsgrades der Dotierung für di
 \subsubsection{Halbleiterdetektor}
 Ein Halbleiterdetektor funktioniert ähnlich einem Gas-Ionisationsdetektor, wobei anstatt Elektron-Ion-Paaren hier Elektron-Loch-Paare erzeugt werden.
 Da Elektron-Loch-Paare aufgrund der geringen Bandlücke bei Halbleitern bei geringeren Energien produziert werden, werden so insgesamt mehr Paare erzeugt und die Zählrate erhöht.
-Durch die im Vergleich zum Gas-Ionisationsdetektor höhere Dichte wird außerdem mehr Energie im Halbleiterdetektor deponiert, was angestrebt ist.
+Durch die im Vergleich zum Gas-Ionisationsdetektor höhere Dichte wird außerdem mehr Energie im Halbleiterdetektor deponiert, was angestrebt wird.
 Aufgrund der in einem Halbleiter auftretenden Leckströme (Erzeugung thermischer Elektron-Loch-Paare) ist es notwendig, diesen je nach verwendetem Halbleiter dauerhaft oder nur zur Messung herunterzukühlen (Silizium hat eine relativ große Bandlücke, so dass hier keine Kühlung notwendig ist).
 Weitere Störfaktoren sind Oberflächenströme, weswegen der Detektor gut verkapselt werden muss, sowie die Rekombination von Elektronen und Löchern.
 Da diese sowohl Energie- und Impulserhaltung erfüllen müssen, geschieht die Rekombination vergleichsweise selten (die Lebenszeiten sind in der Größenordnung Sekunde).
@@ -331,6 +331,14 @@ Im Vergleich zum Szintillationsdetektor ist die Rate für Elektron-Loch-Bildung 
 Aufgrund der hohen Ordnungszahl von Germanium (verglichen mit Silizium) ist der Wirkungsquerschnitt für den Photoeffekt ca. \num{60} Mal größer, weswegen man zur Gammapsketroskopie Germanium Silizium vorzieht.
 
 \subsection{Gamma-Spektroskopie}
+
+\subsubsection{Photomultiplier}
+Ein Photomultiplier dient der gleichzeitigen Messung und Verstärkung eines optischen Signals in Form eines Strompulses.
+Ein eintreffendes Photon gelangt auf eine Photokathode und löst dort ein Elektron aus, welches in einem anliegenden Feld zu einer Elektrode hin beschleunigt wird.
+Diese Elektrode wird auch als Dynode bezeichnet und ist für die Verstärkung verantwortlich.
+Das Elektron erhält durch die Beschleunigung genug Energie, um aus der Dynode mehrere Elektronen auszulösen, wodurch eine Verstärkung erreicht wird.
+Schaltet man nun mehrere dieser Beschleunigungsstrecken zwischen zwei Dynoden hintereinander ergibt sich eine mit der Anzahl Dynoden wachsende exponenzielle Verstärkung, wenn das Sekundäremissionsverhältnis (Anzahl der vom eintreffenden Elektron ausgelösten Sekundärelektronen) aller Dynoden gleich ist.
+An der letzten Dynode kann dann ein zur Anzahl der ursprünglich einfallenden Photonen proportionaler Strom gemessen werden.
 
 \subsubsection{Vielkanalanalysator}
 Zur Beobachtung der am Detektor registrierten Quanten wird ein Vielkanalanalysator verwendet, der über eine festgelegte Anzahl Kanäle verfügt.
@@ -391,9 +399,6 @@ Die durch $\gamma$-Spektroskopie aufgenommenen Spektren weisen einige charakteri
 	Dabei wird die gesamte Energie des Photons in dem Detektormaterial deponiert, was dazu führt, dass die Position des Peaks mit der Energie des einfallenden Quants korrespondiert.
 	
 \end{itemize}
-
-
-
 
 \section{Versuchsaufbau}
 

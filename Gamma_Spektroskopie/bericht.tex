@@ -147,9 +147,6 @@ Diese werden genutzt, um für Detektoren wichtige Größen wie die Peakeffizienz
 \newpage
 
 % INHALT VERSUCHSPROTOKOLL
-
-\section{Einführung}
-
 \section{Theorie}
 
 \subsection{Radioaktiver Zerfall}
@@ -308,7 +305,7 @@ Der Kristall ist aufgrund des geringen Konzentrationsgrades der Dotierung für d
 
 \subsubsection{Halbleiterdetektor}
 Ein Halbleiterdetektor funktioniert ähnlich einem Gas-Ionisationsdetektor, wobei anstatt Elektron-Ion-Paaren hier Elektron-Loch-Paare erzeugt werden.
-Da Elektron-Loch-Paare aufgrund der geringen Bandlücke bei Halbleitern bei geringeren Energien produziert werden, werden so insgesamt mehr Paare erzeugt und die Zählrate erhöht.
+Da Elektron-Loch-Paare aufgrund der geringen Bandlücke bei Halbleitern bei geringeren Energien produziert werden, werden so insgesamt mehr Paare erzeugt, was zu einer hohen Energieschärfe führt.
 Durch die im Vergleich zum Gas-Ionisationsdetektor höhere Dichte wird außerdem mehr Energie im Halbleiterdetektor deponiert, was angestrebt wird.
 Aufgrund der in einem Halbleiter auftretenden Leckströme (Erzeugung thermischer Elektron-Loch-Paare) ist es notwendig, diesen je nach verwendetem Halbleiter dauerhaft oder nur zur Messung herunterzukühlen (Silizium hat eine relativ große Bandlücke, so dass hier keine Kühlung notwendig ist).
 Weitere Störfaktoren sind Oberflächenströme, weswegen der Detektor gut verkapselt werden muss, sowie die Rekombination von Elektronen und Löchern.
@@ -319,11 +316,11 @@ Diese stehen dann nicht mehr zur Messung (Ladungssammlung) zur Verfügung, könn
 Aus diesem Grund sind sehr reine Kristalle notwendig, um die Anzahl dieser Rekombinationszentren zu minimieren.\\
 \\
 Das Signal des Halbleiterdetektors wird als Strom an einem in Sperrrichtung geschalteten pn-Übergang gemessen.
-Durch den Übergang zwischen p- und n-Schicht entsteht eine Verarmungszone, in der die Elektron-Loch-Paare durch einfallende Strahlung erzeugt werden.
+Durch den Übergang zwischen p- und n-Schicht entsteht eine Verarmungszone\footnote{Durch eine zwischen P- und N-Schicht liegende intrinsische Halbleiterschicht kann die Verarmungszone künstlich vergrößert werden.}, in der die Elektron-Loch-Paare durch einfallende Strahlung erzeugt werden.
 Das Anlegen einer Spannung in Sperrrichtung bewirkt sowohl eine Vergrößerung der Verarmungszone, in der dann mehr Strahlung detektiert wird und erhöht das elektrische Feld in der Verarmungszone, wodurch eine bessere Ladungssammlung ermöglicht wird.
-Die zur Elektron-Loch-Bildung benötigte Energie ist gegeben durch\cite{leo}:
+Die zur Elektron-Loch-Bildung benötigte Energie ist gegeben durch \cite{leo}:
 \begin{align}
-E_\mathrm{Ge} = \SI{2.96}{eV} \quad \text{@ 77 K}
+E_\mathrm{Ge} = \SI{2.96}{eV} \quad \text{für}\quad T = \SI{77}{\kelvin}
 \end{align}
 Dies ist höher als die Bandlückenenergie, da ein Teil der einfallenden Energie in 
 Anregungen des Gitters übergeht.
@@ -342,8 +339,10 @@ An der letzten Dynode kann dann ein zur Anzahl der ursprünglich einfallenden Ph
 
 \subsubsection{Vielkanalanalysator}
 Zur Beobachtung der am Detektor registrierten Quanten wird ein Vielkanalanalysator verwendet, der über eine festgelegte Anzahl Kanäle verfügt.
-Ein eintreffendes Teilchen einer bestimmten Energie erzeugt ein logisches Signal, so dass der Wert in dem zu dieser Energie korrespondieren Kanal um eins erhöht wird.
-Alle auf den Detektor treffenden Teilchen werden somit nach ihrer Energie histogrammiert, die entstehende Darstellung wird dann als (Gamma-)Spektrum bezeichnet.
+Ein im Detektor detektiertes Teilchen einer bestimmten Energie erzeugt einen Strompuls, dessen Ladung proportional zur Energie des Teilchens ist.
+In der Regel ist die Linienform dieses Pulses für Teilchen verschiedener Energien gleich, sodass man die Impulshöhe ebenfalls eine zur Energie des einfallenden Teilchens proportionale Größe ist.
+Ein Vielkanalanalysator kann diese Impulshöhe mit einem Analog-Digital-Wandler messen und dementsprechend die Ereignisse einem Kanal zuordnen.
+Dann ist ebenfalls die Kanalnummer proportional zur Energie des detektierten Ereignisses.
 
 \subsubsection{$\gamma$-Spektren}
 \label{sec:gamma_spektren}

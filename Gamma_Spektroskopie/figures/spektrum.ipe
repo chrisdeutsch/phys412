@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70005" creator="Ipe 7.1.5">
-<info created="D:20150509094156" modified="D:20150509094436"/>
+<info created="D:20150509094156" modified="D:20150509095329"/>
 <preamble>% Encoding für Umlaute
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -271,21 +271,22 @@ h
 480 568 l
 </path>
 <path stroke="black">
-124 568 m
-128.842 626.467
-136.125 619.589
-140 620
-142.194 653.98
-146.24 690.395
-149.881 651.957
-154.332 626.062
-158.783 618.779
-204.908 615.138
-218.209 639.936
-227.971 613.519
-258.317 609.069
-283.807 609.473
-308.891 611.941
+121.507 568.152 m
+125.008 623.634
+132.011 620.94
+135.243 621.21
+137.398 653.529
+140.36 688.003
+141.707 653.529
+144.4 629.02
+151.133 620.671
+168.64 617.978
+176.185 640.412
+185.338 620.132
+204.999 615.284
+241.359 611.783
+283.913 610.436
+307.614 614.207
 314.536 620.007
 319.919 632.473
 324.736 616.748
@@ -315,15 +316,15 @@ h
 383.8 560 m
 448 560 l
 </path>
-<text matrix="1 0 0 1 -2 -25" transformations="translations" pos="112 768" stroke="black" type="label" width="9.091" height="6.808" depth="0" valign="baseline">$N$</text>
-<text matrix="1 0 0 1 -9 3" transformations="translations" pos="488 568" stroke="black" type="label" width="7.929" height="6.808" depth="0" valign="baseline">$E$</text>
+<text matrix="1 0 0 1 -2 -25" transformations="translations" pos="112 768" stroke="black" type="label" valign="baseline">$N$</text>
+<text matrix="1 0 0 1 -9 3" transformations="translations" pos="488 568" stroke="black" type="label" valign="baseline">$E$</text>
 <path stroke="black" arrow="normal/normal">
 166.597 720.708 m
-150.412 681.181 l
+144.009 682.425 l
 </path>
 <path stroke="black" arrow="normal/normal">
-207.369 669.354 m
-216.395 634.806 l
+190.588 672.462 m
+179.022 639.333 l
 </path>
 <path stroke="black" arrow="normal/normal">
 295.716 685.989 m
@@ -337,22 +338,22 @@ h
 418.884 720.999 m
 442.135 681.683 l
 </path>
-<text matrix="1 0 0 1 -61.5215 -14.536" transformations="translations" pos="204 740" stroke="black" type="label" width="54.643" height="6.868" depth="1.93" valign="baseline">Röntgenlinie</text>
-<text matrix="1 0 0 1 -58.144 -14.4899" transformations="translations" pos="236 688" stroke="black" type="label" width="64.409" height="6.868" depth="1.93" valign="baseline">Rückstreupeak</text>
-<text matrix="1 0 0 1 2.96031 -33.4443" transformations="translations" pos="320 700" stroke="black" type="label" width="84.164" height="6.868" depth="1.93" valign="baseline">Single-Escape Peak</text>
-<text matrix="1 0 0 1 -61.4663 -13.1566" transformations="translations" pos="312 704" stroke="black" type="label" width="89.006" height="6.868" depth="1.93" valign="baseline">Double-Escape Peak</text>
-<text matrix="1 0 0 1 2.80114 -22.7204" transformations="translations" pos="392 748" stroke="black" type="label" width="46.619" height="6.868" depth="1.93" valign="baseline">Photopeak</text>
-<text matrix="1 0 0 1 -12 -8.40343" transformations="translations" pos="248 584" stroke="black" type="label" width="92.685" height="6.868" depth="1.93" valign="baseline">Compton-Kontinuum</text>
-<text matrix="1 0 0 1 -80.1466 -50.7649" transformations="translations" pos="406.068 646.535" stroke="black" type="label" width="69.998" height="6.868" depth="1.93" valign="baseline">Compton-Kante</text>
+<text matrix="1 0 0 1 -61.5215 -14.536" transformations="translations" pos="204 740" stroke="black" type="label" valign="baseline">Röntgenlinie</text>
+<text matrix="1 0 0 1 -73.475 -11.7966" transformations="translations" pos="236 688" stroke="black" type="label" valign="baseline">Rückstreupeak</text>
+<text matrix="1 0 0 1 2.96031 -33.4443" transformations="translations" pos="320 700" stroke="black" type="label" valign="baseline">Single-Escape Peak</text>
+<text matrix="1 0 0 1 -61.4663 -13.1566" transformations="translations" pos="312 704" stroke="black" type="label" valign="baseline">Double-Escape Peak</text>
+<text matrix="1 0 0 1 2.80114 -22.7204" transformations="translations" pos="392 748" stroke="black" type="label" valign="baseline">Photopeak</text>
+<text matrix="1 0 0 1 -12 -8.40343" transformations="translations" pos="248 584" stroke="black" type="label" valign="baseline">Compton-Kontinuum</text>
+<text matrix="1 0 0 1 -80.1466 -50.7649" transformations="translations" pos="406.068 646.535" stroke="black" type="label" valign="baseline">Compton-Kante</text>
 <path stroke="black" arrow="normal/normal">
 365.259 605.429 m
 398.873 616.323 l
 </path>
-<text matrix="1 0 0 1 -10.8333 -2.90006" transformations="translations" pos="408 552" stroke="black" type="label" width="33.624" height="6.918" depth="0" valign="baseline">$\SI{511}{keV}$</text>
+<text matrix="1 0 0 1 -10.8333 -2.90006" transformations="translations" pos="408 552" stroke="black" type="label" valign="baseline">$\SI{511}{keV}$</text>
 <path matrix="1 0 0 1 -65.9 0" stroke="black" arrow="normal/normal" rarrow="normal/normal">
 383.8 560 m
 448 560 l
 </path>
-<text matrix="1 0 0 1 -74.4407 -2.61648" transformations="translations" pos="408 552" stroke="black" type="label" width="33.624" height="6.918" depth="0" valign="baseline">$\SI{511}{keV}$</text>
+<text matrix="1 0 0 1 -74.4407 -2.61648" transformations="translations" pos="408 552" stroke="black" type="label" valign="baseline">$\SI{511}{keV}$</text>
 </page>
 </ipe>

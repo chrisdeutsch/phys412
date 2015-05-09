@@ -182,6 +182,7 @@ Sie entsteht wenn ein energetisch angeregter Atomkern (z.B. nach einem $\alpha$-
 Die dabei frei werdende Energie wird in Form von hochenergetischen Photonen, s.g. Gamma-Quanten ausgesendet, deren Energiebereich von wenigen hundert \si{\kilo\electronvolt} bis zu mehreren \si{\mega\electronvolt} reicht.
 
 \subsection{Wechselwirkung von $\gamma$-Quanten mit Materie}
+\label{sec:ww}
 
 Die Wechselwirkung von $\gamma$-Quanten mit Materie kann hauptsächlich auf drei verschiedene Arten erfolgen.
 Dabei ist vor allem ihr jeweiliger Wirkungsquerschnitt von Interesse, der angibt, wie die Wechselwirkung der hochenergetischen Photonen von der Energie und Ordnungszahl abhängt.
@@ -206,6 +207,7 @@ Der Wirkungsquerschnitt ist gegeben durch \cite{siegbahn}:
 Insbesondere ist der Wirkungsquerschnitt stark abhängig von der Ordnungszahl $Z$, was eine ausschlaggebende Rolle für die Wahl von Detektormaterialien spielt. Darüber hinaus spiegelt sich die Schalenstruktur des Atoms im Wirkungsquerschnitt wieder, da mit dem Erreichen der Bindungsenergie der nächsthöheren Schale der Wirkungsquerschnitt rapide zunimmt (vgl. Abbildung \ref{fig:photo_total}).
 
 \subsubsection{Compton-Effekt}
+\label{sec:compton}
 Der Compton-Effekt beschreibt die Streuung von Photonen an freien Elektronen.
 Allerdings können Elektronen im Fall $E_\gamma \gg E_\mathrm{Bind. e^{-}}$ auch in Materie als quasifrei betrachtet werden.
 Die Streuung beschreibt einen winkelabhängigen Energieübertrag vom Photon auf das Elektron, wobei der Streuwinkel $\theta$ des Photons relativ zur einfallenden Flugrichtung angegeben wird.
@@ -220,7 +222,7 @@ Die Energie des gestreuten Photons $E_\gamma^\prime$ kann aus dem Streuwinkel $\
 	\frac{E_\gamma^\prime}{E_\gamma} &= \frac{1}{1 + \frac{h \nu}{m_\mathrm{e} c^2} (1-\cos\theta)}
 \end{align}
 Man sieht, dass die Energie des gestreuten Photons $E_\gamma^\prime$ kontinuierlich bis zu einem Maximalwert bei Rückstreuung ($\theta = \SI{180}{\degree}$) verteilt ist.
-Dieser Effekt führt zum Auftreten einer sogenannten Compton-Kante in den aufgenommenen Spektren (vgl. auch REF!!!).
+Dieser Effekt führt zum Auftreten einer sogenannten Compton-Kante in den aufgenommenen Spektren (vgl. auch \ref{sec:gamma_spektren}).
 Die Energie- und Ordnungszahlabhängigkeit des Klein-Nishina-Wirkungsquerschnitt ist gegeben durch \cite{wermes}:
 \begin{align}
 	\sigma_\mathrm{c} \propto \frac{Z}{E_\gamma}
@@ -328,18 +330,69 @@ Anregungen des Gitters übergeht.
 Im Vergleich zum Szintillationsdetektor ist die Rate für Elektron-Loch-Bildung um zwei Größenordnungen höher, wodurch eine wesentlich bessere Energieauflösung folgt.
 Aufgrund der hohen Ordnungszahl von Germanium (verglichen mit Silizium) ist der Wirkungsquerschnitt für den Photoeffekt ca. \num{60} Mal größer, weswegen man zur Gammapsketroskopie Germanium Silizium vorzieht.
 
-\subsection{Spektrum, Vielkanalanalysator}
+\subsection{Gamma-Spektroskopie}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{./figures/spektrum.pdf}
-	\caption{Spektrum}
-	\label{fig:schema_spektrum}
-\end{figure}
-
+\subsubsection{Vielkanalanalysator}
 Zur Beobachtung der am Detektor registrierten Quanten wird ein Vielkanalanalysator verwendet, der über eine festgelegte Anzahl Kanäle verfügt.
 Ein eintreffendes Teilchen einer bestimmten Energie erzeugt ein logisches Signal, so dass der Wert in dem zu dieser Energie korrespondieren Kanal um eins erhöht wird.
 Alle auf den Detektor treffenden Teilchen werden somit nach ihrer Energie histogrammiert, die entstehende Darstellung wird dann als (Gamma-)Spektrum bezeichnet.
+
+\subsubsection{$\gamma$-Spektren}
+\label{sec:gamma_spektren}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figures/spektrum.pdf}
+	\caption{Schematische Darstellung von Gamma-Spektren}
+	\label{fig:schema_spektrum}
+\end{figure}
+Die durch $\gamma$-Spektroskopie aufgenommenen Spektren weisen einige charakteristische Merkmale (Abbildung \ref{fig:schema_spektrum}) auf, die durch die Interaktion von Photonen mit Materie entstehen:
+\begin{itemize}
+	\item \textbf{Röntgenlinie:}
+	Die Röntgenlinie entsteht durch innere Konversion des angeregten Kernes, wodurch die Anregungsenergie auf ein kernnahes Elektron übertragen wird.
+	Das Folglich entstandene Loch kann durch Emission eines Röntgenphotons oder eines Auger-Elektrons aufgefüllt werden.
+	
+	\item \textbf{Rückstreupeak:}
+	Der Rückstreupeak entsteht durch Photonen die außerhalb des Detektors z.B. am Detektorgehäuse oder in der Abschirmung durch den Compton-Effekt zurück in den Detektor gestreut werden.
+	Dadurch hat das $\gamma$-Quant schon einen Großteil seiner Energie auf das externe Elektron übertragen und kann nach der Rückstreuung in den Detektor mit dementsprechend niedrigerer Energie detektiert werden.
+	
+	\item \textbf{Escape-Peaks:}
+	Sollte die Energie des einfallenden Quants groß genug sein um Paarbildung durchzuführen, so können Elektron-Positron-Paare im Detektormaterial erzeugt werden.
+	Diese Paare deponieren ihre gesamte kinetische Energie im Detektormaterial und folglich kann das Positron unter Emission von zwei Photonen mit einem Elektron annihilieren.
+	Nun gibt es drei Fälle zu unterscheiden:
+	\begin{enumerate}
+		\item Beide durch Annihilation entstandenen Photonen verlassen den Detektor ohne weitere Wechselwirkung.
+		Dadurch wird nur die kinetische Energie des Elektron-Positron-Paares im Material deponiert und es bildet sich der \textbf{Double-Escape Peak}.
+		\begin{align*}
+			E = E_\mathrm{kin.}
+		\end{align*}
+		
+		\item Eines der entstandenen Photonen $E_\gamma = \SI{511}{keV}$ interagiert mit dem Detektormaterial durch den Photoeffekt und deponiert seine gesamte Energie im Detektor.
+		Es kommt zur Ausbildung des \textbf{Single-Escape Peaks}.
+		\begin{align*}
+			E = E_\mathrm{kin.} + \SI{511}{keV}
+		\end{align*}
+		
+		\item Fall 3:
+		Beide Photonen werden im Detektormaterial absorbiert, wodurch die gesamte Energie des eingefallenen $\gamma$-Quants im Detektor deponiert wird.
+		Die Energie eines solchen Ereignisses fällt folglich in den Photopeak:
+		\begin{align*}
+			E = E_\mathrm{kin.} + 2 \times \SI{511}{keV} = E_\gamma
+		\end{align*}
+	\end{enumerate}
+	
+	\item \textbf{Compton-Kante und Kontinuum:}
+	In Abschnitt \ref{sec:compton} wurde bereits erwähnt, dass der Energieübertrag durch den Compton-Effekt eine kontinuierliche Energieverteilung mit einer Maximalenergie aufweist.
+	Diese ensteht durch die verschiedenen Streuwinkel bei Interaktionsprozessen.
+	In den Spektren ist dies als Kontinuum bis zur Maximalenergie sichtbar.
+	Dadurch können keine Ereignisse über dem maximalen Energieübertrag durch einmalige Compton-Streuung entstehen und es bildet sich im Spektrum eine charakteristische Kante aus.	
+	
+	\item \textbf{Photopeak:}
+	Der Photopeak im wesentlichen durch die Interaktion der einfallenden $\gamma$-Quanten mit dem Detektormaterial durch den Photoeffekt.
+	Dabei wird die gesamte Energie des Photons in dem Detektormaterial deponiert, was dazu führt, dass die Position des Peaks mit der Energie des einfallenden Quants korrespondiert.
+	
+\end{itemize}
+
+
 
 
 \section{Versuchsaufbau}

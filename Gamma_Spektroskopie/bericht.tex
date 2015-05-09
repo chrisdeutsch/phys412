@@ -294,8 +294,8 @@ Die Summe dieser Effekte wurde in Abbildung \ref{fig:photo_total} für Blei beis
 
 \subsubsection{Szintillatoren}
 Ein Szintillator ist ein Stoff, dessen Atome/Moleküle bei Bestrahlung durch ionisierende Strahlung angeregt werden und folglich Licht emittieren.
-In Kombination mit einem Photomultiplier können Szintillatoren als Teilchendetektoren verwendet werden, da das Verhalten von Szintillatoren über einer Mindestenergie linear ist (die Anzahl der erzeugten Photonen ist proportional zur Energie des einfallenden Teilchens).
-
+In Kombination mit einem Photomultiplier können Szintillatoren als Teilchendetektoren verwendet werden, da das Verhalten von Szintillatoren über einer Mindestenergie linear ist (die Anzahl der erzeugten Photonen ist proportional zur Energie des einfallenden Teilchens).\\
+\\
 Der in diesem Versuch verwendete Szintillator ist ein NaI-Kristall, welcher mit Tl-Aktivator-Zentren dotiert wurde.
 Ein einfallendes Photon löst im Kristall eine Elektronenkaskade aus, welche solange anhält bis die Energie gleichmäßig auf den Elektronen des Kristalls verteilt wurde und die Elektronen eine ausreichend kleine Energie haben um mit den Atomen rekombinieren zu können.
 Bei der Rekombination kommt es dabei zur Emission eines Photons, welches umgehend vom Szintillator absorbiert wird, da dieser aufgrund der Bandstruktur im Kristall nicht für die Rekombinations-Photonen transparent ist.
@@ -328,6 +328,15 @@ Anregungen des Gitters übergeht.
 Im Vergleich zum Szintillationsdetektor ist die Rate für Elektron-Loch-Bildung um zwei Größenordnungen höher, wodurch eine wesentlich bessere Energieauflösung folgt.
 Aufgrund der hohen Ordnungszahl von Germanium (verglichen mit Silizium) ist der Wirkungsquerschnitt für den Photoeffekt ca. \num{60} Mal größer, weswegen man zur Gammapsketroskopie Germanium Silizium vorzieht.
 
+\subsubsection{Photomultiplier}
+
+Ein Photomultiplier dient der gleichzeitigen Messung und Verstärkung eines optischen Signals in Form eines Strompulses.
+Ein eintreffendes Photon gelangt auf eine Photokathode und löst dort ein Elektron aus, welches in einem anliegenden Feld zu einer Elektrode hin beschleunigt wird.
+Diese Elektrode wird auch als Dynode bezeichnet und ist für die Verstärkung verantwortlich.
+Das Elektron erhält durch die Beschleunigung genug Energie, um aus der Dynode mehrere Elektronen auszulösen, wodurch eine Verstärkung erreicht wird.
+Schaltet man nun mehrere dieser Beschleunigungsstrecken zwischen zwei Dynoden hintereinander ergibt sich eine mit der Anzahl Dynoden wachsende exponenzielle Verstärkung, wenn das Sekundäremissionsverhältnis (Anzahl der vom eintreffenden Elektron ausgelösten Sekundärelektronen) aller Dynoden gleich ist.
+An der letzten Dynode kann dann ein zur Anzahl der ursprünglich einfallenden Photonen proportionaler Strom gemessen werden.
+
 \subsection{Spektrum, Vielkanalanalysator}
 
 \begin{figure}[h]
@@ -336,7 +345,6 @@ Aufgrund der hohen Ordnungszahl von Germanium (verglichen mit Silizium) ist der 
 	\caption{Spektrum}
 	\label{fig:schema_spektrum}
 \end{figure}
-
 Zur Beobachtung der am Detektor registrierten Quanten wird ein Vielkanalanalysator verwendet, der über eine festgelegte Anzahl Kanäle verfügt.
 Ein eintreffendes Teilchen einer bestimmten Energie erzeugt ein logisches Signal, so dass der Wert in dem zu dieser Energie korrespondieren Kanal um eins erhöht wird.
 Alle auf den Detektor treffenden Teilchen werden somit nach ihrer Energie histogrammiert, die entstehende Darstellung wird dann als (Gamma-)Spektrum bezeichnet.

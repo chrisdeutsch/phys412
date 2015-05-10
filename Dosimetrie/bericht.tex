@@ -122,9 +122,9 @@
 % DURCHFÜHRUNGSDATUM UND TUTOR
 \begin{center}
 \begin{tabular}{l r}
-Durchführung: & 27./28. April 2015 \\
+Durchführung: & 4./5. Mai 2015 \\
 Gruppe: & $\alpha$ 6 \\
-Tutor: & Christian Hammann
+Tutor: & Marcus Gruener
 \end{tabular}
 \end{center}
 
@@ -423,6 +423,28 @@ Sollten Abweichungen bei der Durchführung auftreten, so werden diese im jeweili
 \subsection{Dosimetrie}
 
 \subsubsection{Plattenkondensator als Ionisationskammer}
+In diesem Versuchsteil soll die Verwendung eines Plattenkondensators als Ionisationskammer überprüft werden.
+Dazu wird der Plattenkondensator im Experimentierraum des Röntgengeräts installiert, sodass sich dessen Zwischenraum im Strahlungsfeld der Molybdän-Röntgenröhre befindet.
+Um eine Ionisationskammer zu realisieren, wird an den Kondensator eine variable Gleichspannung $U_\mathrm{C}$ angelegt, welche die durch die Röntgenstrahlung erzeugten Ionen zu den Kondensatorplatten driften lässt.
+Sollte die im Kondensator erzeugte Ladung eine der Platten erreichen, so kann dies als Ionisationsstrom $I_\mathrm{C}$ in der äußeren Beschaltung gemessen werden.
+Der Ionisationsstrom kann dann als Spannung $U_{I_\mathrm{C}}$ an einem Messwiderstand $R$ gemessen werden:
+\begin{align}
+	I_\mathrm{C} = \frac{U_{I_\mathrm{C}}}{R}
+	\label{eq:ohm_ionisationsstrom}
+\end{align}
+Da die auftretenden Ströme in der Größenordnung einiger \si{nA} liegen, muss ein dementsprechend hochohmiger Widerstand verwendet werden, was zur Folge hat, dass die Spannung nicht mit einem einfachen Voltmeter gemessen werden kann, da diese einen geringeren Innenwiderstand haben als der verwendete Messwiderstand.
+Daher wird ein Elektrometerverstärker mit einfacher Verstärkung verwendet, um die Spannung belastungsfrei am Messwiderstand mit einem Multimeter messen zu können.
+
+Folglich soll der Ionisationsstrom $I_\mathrm{C}$ in Abhängigkeit der Kondensatorspannung $U_\mathrm{C}$ für verschiedene Röhrenspannungen $U$ bestimmt werden.
+Dabei wird der Emissionsstrom\footnote{Der Fehler des Emissionsstroms wird anhand der letzten Stelle der Digitalanzeige des Röntgengeräts auf \SI{0.01}{\milli\ampere} abgeschätzt.} $I$ der Röntgenröhre auf \SI{1.00 +- 0.01}{mA} eingestellt und ein Messwiderstand $R = \SI{1}{\giga\ohm}$ verwendet, wobei auf den Widerstand ein relativer Fehler von \SI{1}{\percent} angenommen wird.
+Dann ergibt sich der Ionisationsstrom durch Gleichung \ref{eq:ohm_ionisationsstrom} und der Fehler durch Gauß'sche Fehlerfortpflanzung:
+\begin{align}
+	\Delta I_\mathrm{C} = \sqrt{\frac{\Delta U_{I_\mathrm{C}}^2}{R^2} + \frac{U_{I_\mathrm{C}}^2 \cdot \Delta R^2}{R^4}}
+\end{align}
+wobei der Fehler der Spannungsmessung am Elektrometerverstärker anhand des Rauschen am Verstärkers für jede Messung einzeln abgeschätzt wird.
+Darüber hinaus wird die variable Gleichspannung $U_\mathrm{C}$ direkt mit einem weiteren Multimeter gemessen und der Fehler im Messbereich \num{0} bis \SI{400}{V} auf \SI{0.1}{V} abgeschätzt.
+
+
 \begin{figure}[h]
 	\centering
 	\input{./plots/kondensatorspannung.tex}
@@ -498,6 +520,26 @@ Da dieser Effekt nur sehr gering ist im Vergleich zu dem Verlauf eines rein nich
 % APPENDIX
 \begin{appendix}
 \section{Anhang}
+
+\subsection{Abhängigkeit von Ionisationsstrom von der Kondensatorspannung}
+\begin{table}[hp]
+	\centering
+	\input{./tables/kondensator/15kV.tex}
+	\label{tab:kondensatorspannung_15kV}
+	\caption{15kV}
+\end{table}
+\begin{table}[hp]
+	\centering
+	\input{./tables/kondensator/25kV.tex}
+	\label{tab:kondensatorspannung_25kV}
+	\caption{25kV}
+\end{table}
+\begin{table}[hp]
+	\centering
+	\input{./tables/kondensator/35kV.tex}
+	\label{tab:kondensatorspannung_35kV}
+	\caption{35kV}
+\end{table}
 
 \end{appendix}
 

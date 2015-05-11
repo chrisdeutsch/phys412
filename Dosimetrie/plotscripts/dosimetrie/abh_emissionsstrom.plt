@@ -29,9 +29,9 @@ plot './data/abh_emissionsstrom/mo.txt' using 1:5:2:6 w xyerrorbars t'Messdaten'
 
 set output './plots/abh_emissionsstrom/cu.tex'
 
-g(x) = m2 * x + b2
+#g(x) = m2 * x + b2
 
-fit g(x) './data/abh_emissionsstrom/cu.txt' using 1:5:2:6 xyerror via m2, b2
+#fit g(x) './data/abh_emissionsstrom/cu.txt' using 1:5:2:6 xyerror via m2, b2
 
 plot './data/abh_emissionsstrom/cu.txt' using 1:5:2:6 w xyerrorbars t'Messdaten' ls 1
 

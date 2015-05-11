@@ -262,7 +262,7 @@ mit der Wahrscheinlichkeit für $t > \tau$:
 \end{align}
 Dann ist die tatsächlich gemessene Rate $k$:
 \begin{align}
-	k = m T \, \mathrm{e}^{-m \tau}
+	k = m T \, \mathrm{e}^{-m \tau} \label{eq:totzeit_paralysierend}
 \end{align}
 Diese Gleichung hat zwei Lösungen!
 Die kleinere der Lösungen liegt auf der mit $m$ ansteigenden Zählrate $k/T$ und die größere der Lösungen liegt auf der abfallenden Flanke.
@@ -517,8 +517,8 @@ Dabei gilt:
 \end{align}
 Mit Gauß'scher Fehlerfortpflanzung folgt unter der Annahme, dass der Fehler der Zeit $\Delta T=0$ ist:
 \begin{align}
-	\Delta R &= \sqrt{\frac{(\Delta N)^2}{T^2}} \qquad \Delta N = \sqrt{N} \\
-				 &= \sqrt{\frac{N}{T^2}} \qquad \frac{N}{T}=R\\
+	\Delta R &= \sqrt{\frac{(\Delta N)^2}{T^2}} &\qquad \Delta N =\sqrt{N} \\
+				 &= \sqrt{\frac{N}{T^2}} &\qquad \frac{N}{T}= R\\
 				 &= \sqrt{\frac{R}{T}}
 \end{align}
 Grafisch aufgetragen erhält man aus diesen die Abbildung \ref{fig:totzeit}
@@ -526,9 +526,16 @@ Grafisch aufgetragen erhält man aus diesen die Abbildung \ref{fig:totzeit}
 	\centering
 	\input{./plots/totzeit.tex}
 	\caption{Abhängigkeit der Zählrate vom Emissionsstrom zur Abschätzung der Totzeit. Es handelt sich um ein paralysierendes System.}
+	\label{fig:totzeit}
 \end{figure}
 Es ist deutlich zu sehen, dass es sich bei dem beobachteten Aufbau um ein paralysierendes System handelt.
 Dies ist erkennbar an der Tatsache, dass die Zählrate nicht wie für ein nicht-paralysierendes System erwartet in Sättigung geht, sondern nach Erreichen eines Maximums bei zunehmendem Emissionsstrom wieder abnimmt.
+Eine Anpassung der Form wie \eqref{eq:totzeit_paralysierend}, die bereits in Abbildung \ref{fig:totzeit} durchgeführt wurde stärkt diese Annahme.
+Dabei wird davon ausgegangen, dass die echte Zählrate $m$ proportional zum Emissionsstrom ist (Proportionalitätskonstante $\lambda$ aus der Anpassung: $\lambda$=\SI{27381.8+-305.4}{\per\second\per\milli\ampere}).
+Aus der Anpassung kann ebenfalls mit \eqref{eq:totzeit_paralysierend} die Totzeit $\tau$ des paralysierenden Systems recht gut bestimmt werden zu:
+\begin{align}
+\tau = \SI{4.29 +- 0.01e-5}{\second}
+\end{align}
 
 \subsection{Abschirmung}
 

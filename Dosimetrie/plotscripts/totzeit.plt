@@ -23,9 +23,16 @@ t = 1/(0.8*a)
 
 f(x) = a * x * exp(a * x * t)
 
+b = 40000
+u = 2.5e-5
+
+g(x) = 1 / ( u + 1/(b*x))
+
 fit f(x) './data/totzeit.txt' using 1:3:2:4 xyerror via t, a
+#fit[x=0.001:1] g(x) './data/totzeit.txt' using 1:3:2:4 xyerror via u, b
 
 plot './data/totzeit.txt' using 1:3:2:4 w xyerrorbars t'Messwerte' ls 1,\
 f(x) t'Anpassung' ls 2
+#g(x) ls 3
 
 unset output

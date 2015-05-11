@@ -427,7 +427,7 @@ In diesem Versuchsteil soll die Verwendung eines Plattenkondensators als Ionisat
 Dazu wird der Plattenkondensator im Experimentierraum des Röntgengeräts installiert, sodass sich dessen Zwischenraum im Strahlungsfeld der Molybdän-Röntgenröhre befindet.
 Um eine Ionisationskammer zu realisieren, wird an den Kondensator eine variable Gleichspannung $U_\mathrm{C}$ angelegt, welche die durch die Röntgenstrahlung erzeugten Ionen zu den Kondensatorplatten driften lässt.
 Sollte die im Kondensator erzeugte Ladung eine der Platten erreichen, so kann dies als Ionisationsstrom $I_\mathrm{C}$ in der äußeren Beschaltung gemessen werden.
-Der Ionisationsstrom kann dann als Spannung $U_{I_\mathrm{C}}$ an einem Messwiderstand $R$ gemessen werden:
+In der Praxis wird der Ionisationsstrom als Spannung $U_{I_\mathrm{C}}$ an einem Messwiderstand $R$ gemessen:
 \begin{align}
 	I_\mathrm{C} = \frac{U_{I_\mathrm{C}}}{R}
 	\label{eq:ohm_ionisationsstrom}
@@ -443,8 +443,7 @@ Dann ergibt sich der Ionisationsstrom durch Gleichung \ref{eq:ohm_ionisationsstr
 \end{align}
 wobei der Fehler der Spannungsmessung am Elektrometerverstärker anhand des Rauschen am Verstärkers für jede Messung einzeln abgeschätzt wird.
 Darüber hinaus wird die variable Gleichspannung $U_\mathrm{C}$ direkt mit einem weiteren Multimeter gemessen und der Fehler im Messbereich \num{0} bis \SI{400}{V} auf \SI{0.1}{V} abgeschätzt.
-
-
+Die aufgenommenen Messdaten für die Röhrenspannungen \SI{15}{V}, \SI{25}{V} und \SI{35}{V} wurden in Anhang \ref{app:ionisationsstrom_kondensatorspannung} dokumentiert und in Abbildung \ref{fig:kondensatorspannung} graphisch dargestellt.
 \begin{figure}[h]
 	\centering
 	\input{./plots/kondensatorspannung.tex}
@@ -537,25 +536,28 @@ Da dieser Effekt nur sehr gering ist im Vergleich zu dem Verlauf eines rein nich
 \begin{appendix}
 \section{Anhang}
 
+\FloatBarrier
 \subsection{Abhängigkeit von Ionisationsstrom von der Kondensatorspannung}
+\label{app:ionisationsstrom_kondensatorspannung}
 \begin{table}[hp]
 	\centering
 	\input{./tables/kondensator/15kV.tex}
 	\label{tab:kondensatorspannung_15kV}
-	\caption{15kV}
+	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{15}{kV}$ eingestellt.}
 \end{table}
 \begin{table}[hp]
 	\centering
 	\input{./tables/kondensator/25kV.tex}
 	\label{tab:kondensatorspannung_25kV}
-	\caption{25kV}
+	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{25}{kV}$ eingestellt.}
 \end{table}
 \begin{table}[hp]
 	\centering
 	\input{./tables/kondensator/35kV.tex}
-	\label{tab:kondensatorspannung_35kV}
-	\caption{35kV}
+	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{35}{kV}$ eingestellt.}
 \end{table}
+\FloatBarrier
+
 
 \end{appendix}
 

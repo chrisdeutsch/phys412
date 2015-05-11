@@ -9,7 +9,7 @@ set key top left
 set decimalsign '{,}'
 set format x "%.1f"
 
-set xrange [0:*]
+set xrange [0:1.1]
 set yrange [0:*]
 set xlabel 'Emissionsstrom $I_\text{E}$ / \si{mA}'
 set ylabel 'Zählrate $R$ / \si{\per\second}'

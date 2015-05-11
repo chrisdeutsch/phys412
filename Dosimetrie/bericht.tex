@@ -468,8 +468,24 @@ Dazu wird das Zählrohr auf dem Goniometer befestigt und zur Bestrahlung eine R�
 Das Zählrohr wird so positioniert, dass es sich gleich weit von der Goniometermitte entfernt befindet wie der Kollimator von der Goniometermitte (je ca. \num{5} bis \SI{7}{cm}).
 Zur Messung wird die Zählrate über $\Delta t=\SI{30}{\second}$ gemittelt und eine Röhrenspannung von $U=\SI{35}{\kilo\volt}$ fest eingestellt, während der Emissionsstrom $I_\text{E}$ von \num{0} bis \SI{1}{\milli\ampere} variiert wird.
 Das Maximum der Zählrate wird bei einer Winkeleinstellung des Zählrohrs von $\beta=\SI{-0.9}{\degree}$ lokalisiert und das Zählrohr für alle folgenden Messungen auf dieser Einstellung genutzt.
-Die so gefundenen Zählraten in Abhängigkeit des Emissionsstroms sind in Tabelle REF festgehalten.
-TABELLE
+Die so gefundenen Zählraten in Abhängigkeit des Emissionsstroms sind in Tabelle \ref{tab:totzeit} festgehalten.
+\begin{table}[ht]
+	\centering
+	\input{./tables/totzeit.tex}
+	\caption{Messwerte zur Abschätzung der Totzeit, gezeigt ist die Abhängigkeit der Zählrate vom Emissionsstrom.}
+	\label{tab:totzeit}
+\end{table}
+Der Fehler von $I_\text{E}$ wurde dabei auf \SI{0.01}{\milli\ampere} geschätzt, für den Fehler von $R$ wurde Gauß'sche Fehlerfortpflanzung genutzt.
+Dabei gilt:
+\begin{align}
+	R = \frac{N}{T}\qquad\text{$N$: Anzahl Ereignisse, $T$: gemessene Zeit}
+\end{align}
+Mit Gauß'scher Fehlerfortpflanzung folgt unter der Annahme, dass der Fehler der Zeit $\Delta T=0$ ist:
+\begin{align}
+	\Delta R &= \sqrt{\frac{(\Delta N)^2}{T^2}} \qquad \Delta N = \sqrt{N} \\
+				 &= \sqrt{\frac{N}{T^2}} \qquad \frac{N}{T}=R\\
+				 &= \sqrt{\frac{R}{T}}
+\end{align}
 Grafisch aufgetragen erhält man aus diesen die Abbildung \ref{fig:totzeit}
 \begin{figure}[ht]
 	\centering

@@ -450,6 +450,15 @@ Die aufgenommenen Messdaten für die Röhrenspannungen \SI{15}{V}, \SI{25}{V} un
 	\label{fig:kondensatorspannung}
 	\caption{Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ von der Kondensatorspannung $U_\mathrm{C}$}
 \end{figure}
+Man sieht sofort, dass sich der Verlauf von Ionisationsstrom in Abhängigkeit der Kondensatorspannung in zwei charakteristische Bereiche einteilen lässt.
+Zum einen ist dies der sogenannte Rekombinationsbereich bei kleinen Kondensatorspannungen, in dem das elektrische Feld zwischen den Platten nicht groß genug ist, um alle erzeugten Ionen zu detektieren, da diese aufgrund der geringen Feldstärke rekombinieren können.
+(Spannungsbereich: für höhere Röhrenspannung größere Kondensatorspannung, linearer Anstieg)
+Der zweite Bereich ist der Ionisationsbereich, welcher durch ein Sättigungsverhalten gekennzeichnet wird.
+In diesem ist die Feldstärke so groß, dass fast alle erzeugten Ionen ohne vorige Rekombination zu den Kondensatorplatten gelangen können und folglich als Strom detektiert werden.
+(Abflachen für noch höhere Spannungen, Höhe des Plateaus für größere Spannungen)
+Außerhalb unseres Messbereiches ($\SI{0}{V} \leq U_\mathrm{C} \leq \SI{400}{V}$) sind außerdem noch weitere Bereiche zu erwarten.
+So kann beispielsweise bei noch höheren Kondensatorspannungen ionisierte Teilchen im elektrischen Feld soviel Energie gewinnen, dass diese weitere Ionen erzeugen, was zu einem verstärkten Ionisationsstrom führt (Proportionalitätsbereich). (Geiger und Gasentladung)
+
 
 \subsubsection{Abhängigkeit des Ionisationsstromes vom Emissionsstrom der Röntgenröhre}
 
@@ -547,19 +556,21 @@ Dies ist erkennbar an der Tatsache, dass die Zählrate nicht wie für ein nicht-
 \begin{table}[hp]
 	\centering
 	\input{./tables/kondensator/15kV.tex}
-	\label{tab:kondensatorspannung_15kV}
 	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{15}{kV}$ eingestellt.}
+	\label{tab:kondensatorspannung_15kV}
 \end{table}
 \begin{table}[hp]
 	\centering
 	\input{./tables/kondensator/25kV.tex}
-	\label{tab:kondensatorspannung_25kV}
+
 	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{25}{kV}$ eingestellt.}
+	\label{tab:kondensatorspannung_25kV}
 \end{table}
 \begin{table}[hp]
 	\centering
 	\input{./tables/kondensator/35kV.tex}
 	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{35}{kV}$ eingestellt.}
+	\label{tab:kondensatorspannung_35kV}
 \end{table}
 \FloatBarrier
 

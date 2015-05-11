@@ -172,7 +172,7 @@ Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten, sind:
 	Außerdem weist das emittierte Spektrum die Aufspaltung der Energieniveaus aufgrund von Fein- und Hyperfeinstruktur auf.
 \end{itemize}
 In der Praxis treten beide Effekte bei der Erzeugung von Röntgenstrahlen in sogenannten Röntgenröhren auf, wie in Abbildung \ref{fig:spektrum} zu sehen ist.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\textwidth]{./figures/Tube_Cu_LiF.pdf}
 	\caption{Charakteristisches Spektrum einer Kupferanode nach Bragg-Reflexion an einem LiF-Kristall. Der Untergrund entsteht aufgrund der emittierten Bremsstrahlung der in der Anode gestreuten Elektronen. Auf diesem liegt das charakteristische Röntgenspektrum der Anode. Quelle: \url{http://commons.wikimedia.org/wiki/File:Tube_Cu_LiF.PNG} (Letzter Zugriff: 13. November 2014)}
@@ -182,7 +182,7 @@ In der Praxis treten beide Effekte bei der Erzeugung von Röntgenstrahlen in sog
 Eine \textbf{Röntgenröhre} (schematisch in Abbildung \ref{fig:roehre}) besteht aus einem evakuierten Glaskolben mit einer Anordnung von geheizter Kathode und Anode aus Targetmaterial.
 Zwischen Kathode und Anode wird die Beschleunigungsspannung $U$ angelegt, sodass beim Heizen der Kathode mit der Heizspannung $U_\mathrm{Heiz}$ aufgrund des glühelektrischen Effekts ein Teil der Elektronen die Austrittsarbeit der Kathode überwinden kann und durch die Beschleunigungsspannung $U$ in Richtung der Anode beschleunigt werden.
 Nachdem die Beschleunigungsspannung $U$ durchlaufen wurde, treffen die Elektronen mit der Energie $e U$ auf das Anodenmaterial und erzeugen dabei Bremsstrahlung sowie charakteristische Strahlung, welche durch ein für Röntgenstrahlung durchlässiges Fenster im Glaskolben aus der Röhre austreten können.
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{./figures/roentgenroehre.pdf}
 	\caption{schematischer Aufbau einer Röntgenröhre}
@@ -445,7 +445,7 @@ wobei der Fehler der Spannungsmessung am Elektrometerverstärker anhand des Raus
 Darüber hinaus wird die variable Gleichspannung $U_\mathrm{C}$ direkt mit einem weiteren Multimeter gemessen und der Fehler im Messbereich \num{0} bis \SI{400}{V} auf \SI{0.1}{V} abgeschätzt.
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\input{./plots/kondensatorspannung.tex}
 	\label{fig:kondensatorspannung}
@@ -470,10 +470,14 @@ Zur Messung wird die Zählrate über $\Delta t=\SI{30}{\second}$ gemittelt und e
 Das Maximum der Zählrate wird bei einer Winkeleinstellung des Zählrohrs von $\beta=\SI{-0.9}{\degree}$ lokalisiert und das Zählrohr für alle folgenden Messungen auf dieser Einstellung genutzt.
 Die so gefundenen Zählraten in Abhängigkeit des Emissionsstroms sind in Tabelle REF festgehalten.
 TABELLE
-Grafisch aufgetragen erhält man aus diesen die Abbildung REF
-Es ist deutlich zu sehen, dass es sich bei dem beobachteten Aufbau um ein nicht-paralysierendes System handelt, wobei bei genauer Betrachtung ein geringer paralysierender Anteil gefunden werden kann.
-Einen Hinweis dafür liefert die Tatsache, dass die Zählrate nicht wie für ein nicht-paralysierendes System erwartet in Sättigung geht, sondern nach Erreichen eines Maximums wieder leicht zurückgeht bei zunehmendem Emissionsstrom.
-Da dieser Effekt nur sehr gering ist im Vergleich zu dem Verlauf eines rein nicht-paralysierenden Systems kann für alle folgenden Messungen mit dem verwendeten Zählrohr von einem nicht-paralysierenden System ausgegangen werden.
+Grafisch aufgetragen erhält man aus diesen die Abbildung \ref{fig:totzeit}
+\begin{figure}[ht]
+	\centering
+	\input{./plots/totzeit.tex}
+	\caption{Abhängigkeit der Zählrate vom Emissionsstrom zur Abschätzung der Totzeit. Es handelt sich um ein paralysierendes System.}
+\end{figure}
+Es ist deutlich zu sehen, dass es sich bei dem beobachteten Aufbau um ein paralysierendes System handelt.
+Dies ist erkennbar an der Tatsache, dass die Zählrate nicht wie für ein nicht-paralysierendes System erwartet in Sättigung geht, sondern nach Erreichen eines Maximums bei zunehmendem Emissionsstrom wieder abnimmt.
 
 \subsection{Abschirmung}
 

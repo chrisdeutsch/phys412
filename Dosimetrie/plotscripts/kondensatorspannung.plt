@@ -19,8 +19,8 @@ load './../gnuplot_linestyles.plt'
 
 #set bars small
 
-plot './data/kondensator/15kV.txt' using 1:5:2:6 w xyerrorbars t'$U_\mathrm{C} = \SI{15}{kV}$' ls 1,\
-     './data/kondensator/25kV.txt' using 1:5:2:6 w xyerrorbars t'$U_\mathrm{C} = \SI{25}{kV}$' ls 2,\
-     './data/kondensator/35kV.txt' using 1:5:2:6 w xyerrorbars t'$U_\mathrm{C} = \SI{35}{kV}$' ls 3
+plot './data/kondensator/15kV.txt' using 1:5:2:6 w xyerrorbars t'$U = \SI{15}{kV}$' ls 1,\
+     './data/kondensator/25kV.txt' using 1:5:2:6 w xyerrorbars t'$U = \SI{25}{kV}$' ls 2,\
+     './data/kondensator/35kV.txt' using 1:5:2:6 w xyerrorbars t'$U = \SI{35}{kV}$' ls 3
 
 unset output

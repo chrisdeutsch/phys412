@@ -162,6 +162,7 @@ Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten, sind:
 	so ist diese Grenze gegeben durch das \textbf{Duane-Hunt-Gesetz}
 	\begin{align}
 	\lambda_\mathrm{min} = \frac{h c}{e U}
+	\label{eq:duane_hunt}
 	\end{align}
 	Eine Quelle für reine Bremsstrahlung sind Synchrotronstrahlungsquellen.
 	
@@ -447,20 +448,46 @@ Die aufgenommenen Messdaten für die Röhrenspannungen \SI{15}{V}, \SI{25}{V} un
 \begin{figure}[ht]
 	\centering
 	\input{./plots/kondensatorspannung.tex}
-	\label{fig:kondensatorspannung}
 	\caption{Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ von der Kondensatorspannung $U_\mathrm{C}$}
+	\label{fig:kondensatorspannung}
 \end{figure}
+
 Man sieht sofort, dass sich der Verlauf von Ionisationsstrom in Abhängigkeit der Kondensatorspannung in zwei charakteristische Bereiche einteilen lässt.
 Zum einen ist dies der sogenannte Rekombinationsbereich bei kleinen Kondensatorspannungen, in dem das elektrische Feld zwischen den Platten nicht groß genug ist, um alle erzeugten Ionen zu detektieren, da diese aufgrund der geringen Feldstärke rekombinieren können.
-(Spannungsbereich: für höhere Röhrenspannung größere Kondensatorspannung, linearer Anstieg)
-Der zweite Bereich ist der Ionisationsbereich, welcher durch ein Sättigungsverhalten gekennzeichnet wird.
-In diesem ist die Feldstärke so groß, dass fast alle erzeugten Ionen ohne vorige Rekombination zu den Kondensatorplatten gelangen können und folglich als Strom detektiert werden.
-(Abflachen für noch höhere Spannungen, Höhe des Plateaus für größere Spannungen)
-Außerhalb unseres Messbereiches ($\SI{0}{V} \leq U_\mathrm{C} \leq \SI{400}{V}$) sind außerdem noch weitere Bereiche zu erwarten.
-So kann beispielsweise bei noch höheren Kondensatorspannungen ionisierte Teilchen im elektrischen Feld soviel Energie gewinnen, dass diese weitere Ionen erzeugen, was zu einem verstärkten Ionisationsstrom führt (Proportionalitätsbereich). (Geiger und Gasentladung)
+Dies äußert sich in dem linearen Anstieg des Ionisationsstroms mit der Kondensatorspannung bis zu einer Grenzspannung bei der die Kurve beginnt in Sättigung zu gehen.
+Charakteristisch für diese Grenze ist, dass sie für größere Röhrenspannungen erst bei höheren Kondensatorspannungen eintritt.
 
+Der zweite Bereich ist der Ionisationsbereich, welcher durch das Sättigungsverhalten gekennzeichnet ist.
+In diesem ist die Feldstärke so groß, dass fast alle erzeugten Ionen ohne vorige Rekombination zu den Kondensatorplatten gelangen können und folglich als Strom detektiert werden.
+Weiterhin lässt sich feststellen, dass das Plateau für höhere Röhrenspannungen größere Ionisationsströme annimmt.
+Dies lässt sich dadurch erklären, dass mit wachsender Röhrenspannung das Röntgenspektrum höhere (mittlere) Energie aufweist (vgl. Gleichung \ref{eq:duane_hunt}) und dementsprechend mehr Ionisationsprozesse im Kondensator stattfinden.
+
+Außerhalb unseres Messbereiches ($\SI{0}{V} \leq U_\mathrm{C} \leq \SI{400}{V}$) sind außerdem noch weitere Bereiche zu erwarten.
+So kann beispielsweise bei noch höheren Kondensatorspannungen ionisierte Teilchen im elektrischen Feld soviel Energie gewinnen, dass diese weitere Ionen erzeugen, was zu einem verstärkten Ionisationsstrom führt (Proportionalitätsbereich).
+Weiterhin kann diese Verstärkung so groß werden, dass die Ionisationsprozesse kaskadieren (Geiger-Bereich).
+In Fällen extrem hoher Spannungen kann es zur selbständigen Gasentladung kommen.
+
+Da im Folgenden der Kondensator als Ionisationsdetektor genutzt wird, wird als Betriebsspannung $U_\mathrm{C} = \SI{200}{V}$ gewählt, da sich der Kondensator dort selbst für die maximale Röhrenspannung im Ionisationsbereich befindet.
 
 \subsubsection{Abhängigkeit des Ionisationsstromes vom Emissionsstrom der Röntgenröhre}
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{1\textwidth}
+		\input{./plots/abh_emissionsstrom/mo.tex}
+		\subcaption{Molybdän-Röhre mit Anpassung einer linearen Funktion}
+		\label{fig:mo_emissionsstrom}
+	\end{subfigure}
+	
+	\begin{subfigure}[b]{1\textwidth}
+		\input{./plots/abh_emissionsstrom/cu.tex}
+		\subcaption{Kupfer-Röhre}
+		\label{fig:cu_emissionsstrom}
+	\end{subfigure}
+	\caption{Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ vom Emissionsstrom $I_\mathrm{E}$ für verschiedene Röntgenröhren.}
+\end{figure}
+
+
+\subsubsection{Abhängigkeit des Ionisationsstromes von der Röhrenspannung}
 
 \subsubsection{Bestimmung der Ionendosisleistung im Kondensator}
 

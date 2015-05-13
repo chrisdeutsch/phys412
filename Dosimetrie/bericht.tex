@@ -487,14 +487,28 @@ Die Messdaten finden sich in Anhang \ref{app:ionisationsstrom_emissionsstrom} un
 	
 	\begin{subfigure}[b]{1\textwidth}
 		\input{./plots/abh_emissionsstrom/cu.tex}
-		\subcaption{Kupfer-Röhre}
+		\subcaption{Kupfer-Röhre mit starker Abweichung vom erwarteten linearen Verhalten}
 		\label{fig:cu_emissionsstrom}
 	\end{subfigure}
 	\caption{Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ vom Emissionsstrom $I_\mathrm{E}$ für verschiedene Röntgenröhren. Beide Messungen wurden bei maximaler Röhrenspannung $U=\SI{35}{kV}$ durchgeführt.}
 	\label{fig:abh_emissionsstrom}
 \end{figure}
-
-
+Eine Erhöhung des Emissionsstroms führt zu einer proportionalen Anstieg der Anzahl der Elektronen, die in einem Zeitintervall aus der Röhrenkathode austreten.
+Dadurch erhöht sich dementsprechend die Intensität der Röntgenstrahlung um denselben Faktor, da jedes der emittierten Elektronen (unabhängig von deren Anzahl, sofern Raumladungseffekte vernachlässigt werden können) mit dem Anodenmaterial interagiert.
+Somit steigt die Intensität der Röntgenstrahlung, wobei das Spektrum selbst unverändert bleibt, da die Beschleunigungsspannung gleich bleibt.
+Darüber hinaus führt eine Intensitätserhöhung zu einem proportionalen Anstieg der Ionisationen zwischen den Kondensatorplatten, was dann zu einer ebenso proportionalen Erhöhung des Ionisationsstroms führt.
+Diese Tatsache ist für die Molybdän-Röhre in Abbildung \ref{fig:mo_emissionsstrom} gut zu beobachten.
+An diese wurde die Anpassung einer Geraden:
+\begin{align}
+	I_\mathrm{C} = \lambda \cdot I_\mathrm{E} + I_0
+\end{align}
+durchgeführt, wobei entgegen der erwarteten Ursprungsgerade ein Achsenabschnitt $I_0$ verwendet wird, welcher im Spannungsoffset des Elektrometerverstärkers begründet liegt.
+\begin{align*}
+	\lambda &= \num{4.910 +- 0.049e-6}\\
+	I_0 &= \SI{0.143 +- 0.026}{nA}
+\end{align*}
+Für die Kupferröhre in Abbildung \ref{fig:cu_emissionsstrom} ist eine starke Abweichung von dem linearen Zusammenhang sichtbar.
+(Dies könnte auf die hohe Intensität der Kupferröhre zurückzuführen sein, welche zwischen den Kondensatorplatten soviel Ionisationen durchführt, dass Raumladungseffekte zur Sättigung führen.)
 
 
 \subsubsection{Abhängigkeit des Ionisationsstromes von der Röhrenspannung}

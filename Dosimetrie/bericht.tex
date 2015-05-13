@@ -470,7 +470,11 @@ In Fällen extrem hoher Spannungen kann es zur selbständigen Gasentladung komme
 Da im Folgenden der Kondensator als Ionisationsdetektor genutzt wird, wird als Betriebsspannung $U_\mathrm{C} = \SI{200}{V}$ gewählt, da sich der Kondensator dort selbst für die maximale Röhrenspannung im Ionisationsbereich befindet.
 
 \subsubsection{Abhängigkeit des Ionisationsstromes vom Emissionsstrom der Röntgenröhre}
-
+Nun wird der Kondensator als Ionisationsdetektor bei einer Spannung $U_\mathrm{C} = \SI{200}{V}$ betrieben, um den Ionisationsstrom in Abhängigkeit des Emissionsstroms $I_\mathrm{E}$ der Röhre zu bestimmen.
+Zunächst wird diese mit dem gleichen Versuchsaufbau des vorigen Teils und einer Molybdän-Anode und anschließend mit einer Kupfer-Anode bestimmt.
+Dabei wird bei maximaler Röhrenspannung $U = \SI{35}{kV}$ in Emissionsstrom-Schritten von \SI{0.10}{mA} gemessen.
+Außerdem ist zu beachten, dass zur Messbereichserweiterung des Elektrometerverstärkers für die Kupferröhre ein Messwiderstand von $R=\SI{100}{\mega\ohm}$ verwendet wurde.
+Die Messdaten finden sich in Anhang \ref{app:ionisationsstrom_emissionsstrom} und wurden in Abbildung \ref{fig:abh_emissionsstrom} grafisch dargestellt.
 \begin{figure}[hp]
 	\centering
 	\begin{subfigure}[b]{1\textwidth}
@@ -479,13 +483,32 @@ Da im Folgenden der Kondensator als Ionisationsdetektor genutzt wird, wird als B
 		\label{fig:mo_emissionsstrom}
 	\end{subfigure}
 	
+	\vspace{10mm}
+	
 	\begin{subfigure}[b]{1\textwidth}
 		\input{./plots/abh_emissionsstrom/cu.tex}
-		\subcaption{Kupfer-Röhre}
+		\subcaption{Kupfer-Röhre mit starker Abweichung vom erwarteten linearen Verhalten}
 		\label{fig:cu_emissionsstrom}
 	\end{subfigure}
-	\caption{Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ vom Emissionsstrom $I_\mathrm{E}$ für verschiedene Röntgenröhren.}
+	\caption{Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ vom Emissionsstrom $I_\mathrm{E}$ für verschiedene Röntgenröhren. Beide Messungen wurden bei maximaler Röhrenspannung $U=\SI{35}{kV}$ durchgeführt.}
+	\label{fig:abh_emissionsstrom}
 \end{figure}
+Eine Erhöhung des Emissionsstroms führt zu einer proportionalen Anstieg der Anzahl der Elektronen, die in einem Zeitintervall aus der Röhrenkathode austreten.
+Dadurch erhöht sich dementsprechend die Intensität der Röntgenstrahlung um denselben Faktor, da jedes der emittierten Elektronen (unabhängig von deren Anzahl, sofern Raumladungseffekte vernachlässigt werden können) mit dem Anodenmaterial interagiert.
+Somit steigt die Intensität der Röntgenstrahlung, wobei das Spektrum selbst unverändert bleibt, da die Beschleunigungsspannung gleich bleibt.
+Darüber hinaus führt eine Intensitätserhöhung zu einem proportionalen Anstieg der Ionisationen zwischen den Kondensatorplatten, was dann zu einer ebenso proportionalen Erhöhung des Ionisationsstroms führt.
+Diese Tatsache ist für die Molybdän-Röhre in Abbildung \ref{fig:mo_emissionsstrom} gut zu beobachten.
+An diese wurde die Anpassung einer Geraden:
+\begin{align}
+	I_\mathrm{C} = \lambda \cdot I_\mathrm{E} + I_0
+\end{align}
+durchgeführt, wobei entgegen der erwarteten Ursprungsgerade ein Achsenabschnitt $I_0$ verwendet wird, welcher im Spannungsoffset des Elektrometerverstärkers begründet liegt.
+\begin{align*}
+	\lambda &= \num{4.910 +- 0.049e-6}\\
+	I_0 &= \SI{0.143 +- 0.026}{nA}
+\end{align*}
+Für die Kupferröhre in Abbildung \ref{fig:cu_emissionsstrom} ist eine starke Abweichung von dem linearen Zusammenhang sichtbar.
+(Dies könnte auf die hohe Intensität der Kupferröhre zurückzuführen sein, welche zwischen den Kondensatorplatten soviel Ionisationen durchführt, dass Raumladungseffekte zur Sättigung führen.)
 
 
 \subsubsection{Abhängigkeit des Ionisationsstromes von der Röhrenspannung}
@@ -594,7 +617,7 @@ Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.01}{\milli\ampere} a
 \section{Anhang}
 
 \FloatBarrier
-\subsection{Abhängigkeit von Ionisationsstrom von der Kondensatorspannung}
+\subsection{Abhängigkeit des Ionisationsstroms von der Kondensatorspannung}
 \label{app:ionisationsstrom_kondensatorspannung}
 \begin{table}[hp]
 	\centering
@@ -614,6 +637,27 @@ Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.01}{\milli\ampere} a
 	\input{./tables/kondensator/35kV.tex}
 	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{35}{kV}$ eingestellt.}
 	\label{tab:kondensatorspannung_35kV}
+\end{table}
+\FloatBarrier
+
+\subsection{Abhängigkeit des Ionisationsstroms von dem Emissionsstrom}
+\label{app:ionisationsstrom_emissionsstrom}
+\begin{table}[hp]
+	\centering
+	\begin{subtable}[c]{0.75\textwidth}
+		\input{./tables/emissionsstrom/mo.tex}
+		\subcaption{Molybdän-Röhre mit Messwiderstand $R = \SI{1}{\giga\ohm}$}
+		\label{tab:emissionsstrom_mo}
+	\end{subtable}
+	
+	\vspace{10mm}
+	
+	\begin{subtable}[c]{0.75\textwidth}
+		\input{./tables/emissionsstrom/cu.tex}
+		\subcaption{Kupfer-Röhre mit Messwiderstand $R = \SI{100}{\mega\ohm}$}
+		\label{tab:emissionsstrom_cu}
+	\end{subtable}	
+	\caption{Gemessener Zusammenhang zwischen Emissionsstrom $I_\mathrm{E}$ der Röntgenröhre und Ionisationsstrom $I_\mathrm{C}$. Der Ionisationsstrom wurde als Spannungsabfall $U_{I_\mathrm{C}}$ über einem Messwiderstand $R$ gemessen.}
 \end{table}
 \FloatBarrier
 

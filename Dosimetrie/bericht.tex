@@ -520,7 +520,7 @@ Mit Gauß'scher Fehlerfortpflanzung folgt unter der Annahme, dass der Fehler der
 \begin{align}
 	\Delta R &= \sqrt{\frac{(\Delta N)^2}{T^2}} &\qquad \Delta N =\sqrt{N} \\
 				 &= \sqrt{\frac{N}{T^2}} &\qquad \frac{N}{T}= R\\
-				 &= \sqrt{\frac{R}{T}}
+				 &= \sqrt{\frac{R}{T}} \label{eq:zählrate_fehler}
 \end{align}
 Grafisch aufgetragen erhält man aus diesen die Abbildung \ref{fig:totzeit}
 \begin{figure}[ht]
@@ -539,6 +539,15 @@ Aus der Anpassung kann ebenfalls mit \eqref{eq:totzeit_paralysierend} die Totzei
 \end{align}
 
 \subsection{Abschirmung}
+
+Die Messungen zu diesem Abschnitt wurden mit den gleichen Einstellungen wie oben durchgeführt ($\Delta t=\SI{30}{\second}, U=\SI{35}{\kilo\volt}$, maximale Zählrate bei $\beta=\SI{-0.9}{\degree}$).
+Nun wird jedoch vor dem Zählrohr einer der beiden Absorbersätze auf dem Targethalter eingebaut und die Zählrate dahinter gemessen.
+Dafür wird der Emissionsstrom so gewählt, dass keine Totzeitkorrektur durchgeführt werden muss, hier wurde für alle Messungen eine maximale Zählrate von ca. \SI{400}{\per\second} angestrebt.
+Der Targethalter wurde dann in Schritten von $\Delta\alpha=$\SI{10}{\degree} gedreht, um für das jeweilige Material bzw. die jeweilige Dicke der Aluminiumschicht die Zählrate zu bestimmen.
+Die Messungen wurden einmal mit und einmal ohne Zirkonfilter duchgeführt.
+Dieser filtert den kurzwelligen Anteil des Spektrums der erzeugten Bremsstrahlung aus.
+Die so gefundenen Messwerte sind in Tabelle \ref{tab:absorber} und \ref{tab:absorber_zr} zu finden.
+Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.01}{\milli\ampere} abgeschätzt und der Fehler der Zählrate mit \eqref{eq:zählrate_fehler} berechnet.
 
 \subsubsection{Korrigierte Zählraten}
 

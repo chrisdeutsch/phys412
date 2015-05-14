@@ -534,7 +534,7 @@ Die so gefundenen Zählraten in Abhängigkeit des Emissionsstroms sind in Tabell
 	\caption{Messwerte zur Abschätzung der Totzeit, gezeigt ist die Abhängigkeit der Zählrate vom Emissionsstrom.}
 	\label{tab:totzeit}
 \end{table}
-Der Fehler von $I_\text{E}$ wurde dabei auf \SI{0.01}{\milli\ampere} geschätzt, für den Fehler von $R$ wurde Gauß'sche Fehlerfortpflanzung genutzt.
+Der Fehler von $I_\text{E}$ wurde dabei wie oben auf \SI{0.005}{\milli\ampere} geschätzt, für den Fehler von $R$ wurde Gauß'sche Fehlerfortpflanzung genutzt.
 Dabei gilt:
 \begin{align}
 	R = \frac{N}{T}\qquad\text{$N$: Anzahl Ereignisse, $T$: gemessene Zeit}
@@ -580,7 +580,17 @@ Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.01}{\milli\ampere} a
 
 \subsection{Computertomographie}
 
+Zum Abschluss wurde mit einem Computertomographie-Gerät ein CT-Scan eines gefriergetrockneten Frosches aufgenommen.
+Dazu wird das zu untersuchende Objekt in einer für Röntgenstrahlung beinahe durchsichtigen Styroporkugel so gelagert, dass es sich nicht bewegen kann (hier wurde genügend Watte in den Hohlraum der Styroporkugel gegeben).
+Anschließend kann das Objekt an dem Goniometer montiert werden.
+Neben dem Röntgengerät wird das CT-Modul mit der Kamera aufgebaut, so dass die beiden Geräte möglichst dicht aneinander stehen, um kein Licht von außen in das CT-Modul gelangen zu lassen (das Röntgengerät ist mit einer Fluoreszenzschicht am Übergang ausgestattet, auf dem das mit der Kamera aufzunehmende Bild entsteht).
+Nach dem Start des Computertomographie-Programms werden dort die Parameter des Aufbaus (insbesondere der Abstand des Targets von der Kamera) sowie die gewünschten Einstellungen der Röntgenröhre eingegeben.
+Für den hier durchgeführten CT-Scan wurde eine Röhrenspannung von \SI{35}{\kilo\volt} bei \SI{1}{\milli\ampere} Emissionsstrom an der Molybdän-Röntgenröhre angelegt.
+Nach Bildjustage und Kalibrierung der Kamera zur optimalen Aufnahme des Fluoreszenzschirms (Verzeichnungskorrektur, Größe des Schirms etc.) werden die Aufnahmeparameter, namentlich die Anzahl der Projektionen, ihre Größe und die Rekonstruktionsgröße gewählt.
+Die Projektionsgröße wurde dabei auf \SI{250x250}{px} eingestellt, da so das ganze Objekt in dem aufgenommenen Bildbereich liegt, größere Projektionen hätten zusätzlich nur störende Aufnahmen der Befestigungen aufgenommen und keine Verbesserung des Bildes bewirkt.
+Den Hinweisen des Programms folgend wurde die Rekonstruktionsgröße kleiner als die Projektionsgröße gewählt, auf \SI{240x240x240}{px}.
 
+Zur Drehachsenkorrektur wurde die Anzahl Projektionen zunächst gering gewählt (verschiedene Messungen mit maximal \num{45} Projektionen) und die Aufnahme gestartet
 
 \section{Fazit}
 

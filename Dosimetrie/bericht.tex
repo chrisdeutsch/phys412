@@ -292,6 +292,7 @@ Die im Absorberelement $\mathrm{d}V$ mit der Masse $\mathrm{d} m = \rho \cdot \m
 Physikalische nicht biologische Größe.
 
 \subsubsection{Ionendosis}
+\label{sec:ionendosis}
 Bezeichnet die elektrische Ladung die durch ionisierende Strahlung in einer bestimmten Masse entsteht:
 \begin{align}
 	J = \frac{\mathrm{d}Q}{\mathrm{d}m}
@@ -471,6 +472,7 @@ Da im Folgenden der Kondensator als Ionisationsdetektor genutzt wird, wird als B
 
 
 \subsubsection{Abhängigkeit des Ionisationsstroms vom Emissionsstrom der Röntgenröhre}
+\label{sec:abh_emissionsstrom}
 Nun wird der Kondensator als Ionisationsdetektor bei einer Spannung $U_\mathrm{C} = \SI{200}{V}$ betrieben, um den Ionisationsstrom in Abhängigkeit des Emissionsstroms $I_\mathrm{E}$ der Röhre zu bestimmen.
 Zunächst wird diese mit dem gleichen Versuchsaufbau des vorigen Teils und einer Molybdän-Anode und anschließend mit einer Kupfer-Anode bestimmt.
 Dabei wird bei maximaler Röhrenspannung $U = \SI{35}{kV}$ in Emissionsstrom-Schritten von \SI{0.10}{mA} gemessen.
@@ -513,6 +515,7 @@ Eine mögliche Ursache dafür könnte die höhere Intensität der emittierten R�
 
 
 \subsubsection{Abhängigkeit des Ionisationsstroms von der Röhrenspannung}
+\label{sec:abh_roehrenspannung}
 Analog zum vorigen Abschnitt soll nun die Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ von der Röhrenspannung $U$ für Molybdän- und Kupferröhre untersucht werden.
 Dabei wird beim maximalen Emissionsstrom $I_\mathrm{E} = \SI{1.00}{mA}$ die Röhrenspannung in Schritten von \SI{2.5}{kV} von \SI{0}{kV} bis \SI{35}{kV} variiert und der Ionisationsstrom mithilfe des Elektrometerverstärkers gemessen.
 Der Fehler der Röhrenspannung wird anhand der letzten Stelle der Digitalanzeige des Röntgengerätes auf $\Delta U = \SI{0.05}{kV}$ abgeschätzt.
@@ -546,56 +549,151 @@ Weiterhin ist für die Kupfer-Röhre in Abbildung \ref{fig:cu_roehrenspannung} e
 
 
 \subsubsection{Bestimmung der Ionendosisleistung im Kondensator}
-\textbf{Volumen:}\\
+Zur Bestimmung der Ionendosisleistung im Raum zwischen den Kondensatorplatten, muss gemäß Abschnitt \ref{sec:ionendosis} die Masse des durchstrahlten Volumens berechnet werden.
+Dies geschieht indem durch geometrische Betrachtungen das durchstrahlte Volumen im Kondensator berechnet wird und anschließend anhand der gemessenen Temperatur $T$ und Luftdruck $p$ die Dichte der Luft $\rho$ im Experimentierraum berechnet wird.\\
+\\
+\textbf{Berechnung des durchstrahlten Volumens:}\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figures/volumen_kondensator.png}
+	\caption{Geometrie des durchstrahlten Volumens im Plattenkondensator \cite{ld_didactic}. Die näherungsweise punktförmige Röntgenquelle wird durch eine Rechteckblende der Fläche $A_0 = a_0 \cdot b_0$ begrenzt. In einer Entfernung $d$ von der Blende befindet sich der Plattenkondensator mit Länge $D$.}
+	\label{fig:kondensator_volumen}
+\end{figure}
+Das Volumen des Pyramidenstumpfs in Abbildung \ref{fig:kondensator_volumen} kann einfach durch Integration über die Schnittfläche $A(s)$ im Abstand $s$ von der Röntgenquelle berechnet werden:
 \begin{align}
 	V = \int_{s_1}^{s_2} A(s) \, \mathrm{d}s
 \end{align}
-Strahlensatz: $a(s) = \frac{a_0}{s_0} \cdot s$ und $b(s) = \frac{b_0}{s_0} \cdot s$
+Da die Abstände der einzelnen Komponenten von der Quelle bekannt sind, kann über die bekannten Blendenmaße und dem Strahlensatz die Kantenlängen der Schnittfläche durch:
+\begin{align}
+	a(s) = \frac{a_0}{s_0} \cdot s \qquad b(s) = \frac{b_0}{s_0} \cdot s
+\end{align}
+berechnet werden.
+Dann ergibt sich für die Schnittfläche:
 \begin{align}
 	A(s) = a(s) \cdot b(s) = \frac{a_0 \, b_0}{s_0^2} \cdot s^2
 \end{align}
+Die Durchführung der Integration liefert folglich:
 \begin{align}
-	V &= \frac{1}{3} \, \frac{a_0 \, b_0}{s_0^2} \left[ s_2^3 - s_1^3 \right] \\
+	V &= \frac{1}{3} \, \frac{a_0 \, b_0}{s_0^2} \left[ s_2^3 - s_1^3 \right] \nonumber\\
 	  &= \frac{1}{3} \, \frac{a_0 \, b_0}{s_0^2} \left[ (s_0 + d + D)^3 - (s_0 + d)^3 \right]
+	  \label{eq:volumen_kondensator}
 \end{align}
-Annahme Fehler $\Delta  = \SI{0.05}{cm}$
+wobei im letzten Schritt die bekannten Größen substituiert wurden.
+Mit den in \cite{anleitung} aufgeführten Maßen:
+\begin{align*}
+	a_0 &= \SI{4.50 +- 0.05}{cm} \qquad b_0 = \SI{0.6 +- 0.05}{cm}\\
+	d &= \SI{2.5 +- 0.05}{cm} \qquad D = \SI{16.00 +- 0.05}{cm}\\
+	s_0 &= \SI{15.50 +- 0.05}{cm}
+\end{align*}
+Dabei wurde der Fehler der einzelnen Maße anhand der in \cite{anleitung} angegeben Stellen abgeschätzt.
+Mit dem Volumen aus Gleichung \eqref{eq:volumen_kondensator} und der Gauß'schen Fehlerfortpflanzung folgt:
 \begin{align}
 	V = \SI{125 +- 11}{\centi\meter\cubed}
 \end{align}
-Gauß'sche Fehlerfortpflanzung auf Angabe der expliziten Formel wird verzichtet.\\
+dabei soll aus Übersichtsgründen auf eine explizite Angabe der Formel verzichtet werden.\\
 \\
-\textbf{Dichte von Luft:}\\
-Messwerte:
+\textbf{Dichte der Luft im Experimentierraum:}\\
+Die Dichte der Luft kann mit der idealen Gasgleichung aus Luftdruck und Temperatur im Versuchsraum berechnet werden.
+Diese wurden an einem Thermometer/Barometer abgelesen:
 \begin{align}
-	T = \SI{24.5 +- 1.5}{\degreeCelsius} \\
-	p = \SI{993 +- 3}{hPa}
+	T &= \SI{24.5 +- 1.5}{\degreeCelsius} \\
+	p &= \SI{993 +- 3}{hPa}
 \end{align}
-Standardbedingungen:
+dabei wurden die Messgenauigkeiten in \cite{anleitung} gegeben.
+Mit der idealen Gasgleichung folgt dann:
+\begin{align*}
+	\frac{p \, V}{T} = \mathrm{const}
+\end{align*}
+was unter den Normalbedingungen ($p_0 = \SI{1013}{hPa}$, $T_0 = \SI{273}{K}$ und $\rho_0 = \SI{1.293}{\kilogram\per\metre\cubed}$) auf:
+\begin{align*}
+	\frac{p_0 \, V_0}{T_0} = \frac{p \, V}{T}
+\end{align*}
+führt.
+Division beider Seiten durch $\rho = \frac{M}{V}$ und Auflösen nach $\rho$ führt zu:
 \begin{align}
-	T_0 = \SI{273}{\kelvin}\\
-	p_0 = \SI{1013}{hPa}\\
-	\rho_0 = \SI{1.293}{\kilogram\per\metre\cubed}
+	\rho = \rho_0 \cdot \frac{T_0}{T} \cdot \frac{p}{p_0}
 \end{align}
-
+Der Fehler ist erneut durch Gauß'sche Fehlerfortpflanzung gegeben durch:
 \begin{align}
-	\rho = \rho_0 \cdot \frac{T_0}{T} \cdot \frac{p}{p_0}\\
 	\Delta \rho = \rho \, \sqrt{ \left( \frac{\Delta T}{T} \right)^2 + \left( \frac{\Delta p}{p} \right)^2}
 \end{align}
-
+Mit den oben erwähnten Messwerten ergibt sich für die Dichte der Luft zum Zeitpunkt der Versuchsdurchführung:
 \begin{align}
 	\rho = \SI{1.1625 +- 0.0069}{\kilogram\per\metre\cubed}
 \end{align}\\
 \\
-\textbf{Gesamtmasse:}
+\textbf{Berechnung der Gesamtmasse des durchstrahlten Volumens:}\\
+Die Gesamtmasse kann nun einfach als Produkt von Dichte $\rho$ und Volumen $V$ berechnet werden:
 \begin{align}
 	m = \rho \cdot V \qquad \Delta m = \sqrt{V^2 \cdot \Delta \rho^2 + \rho^2 \cdot \Delta V^2}
 \end{align}
-
+Mit den obigen Werten ergibt sich:
 \begin{align}
-	m = \SI{1.45 +- 0.13e-4}{kg} = \SI{145 +- 13}{mg}
+	m = \SI{1.45 +- 0.13e-4}{kg}
+\end{align}\\
+Da nun die Masse des durchstrahlten Volumens berechnet ist, kann die mittlere Ionendosisleistungen $\braket{j}$ aus den Messungen des Ionisationsstroms der vorigen Aufgabenteile berechnet werden.
+Die konkrete Berechung erfolgt durch:
+\begin{align}
+	\braket{j} = \frac{I_\mathrm{C}}{m} \qquad \Delta \braket{j} = \braket{j} \cdot \sqrt{\frac{\Delta I_\mathrm{C}^2}{I_\mathrm{C}^2} + \frac{\Delta m^2}{m^2}}
+	\label{eq:fehler_dosisleistung}
 \end{align}
+Der Umrechnungsfaktor:
+\begin{align*}
+	\SI{1}{\micro\ampere\per\kilogram} = \SI{32.4}{\micro\sievert\per\second} = \SI{0.11664}{\sievert\per\hour}
+\end{align*}
+ermöglicht die Umrechnung der mittleren Ionendosisleistung $\braket{j}$ in die Äquivalentdosisleistung $\dot{H}$.
+Zur Berechnung der Ionendosisleistung die Messwerte der vorigen Aufgabenteile verwendet, welche in Anhang \ref{app:ionisationsstrom_emissionsstrom} und \ref{app:ionisationsstrom_roehrenspannung} tabelliert sind.
+Die grafische Darstellung der Dosisleistungen wurde in den Abbildungen \ref{fig:dosis_emissionsstrom} und \ref{fig:dosis_roehrenspannung} durchgeführt.
+\begin{figure}[hp]
+	\centering
+	\begin{subfigure}[b]{1\textwidth}
+		\input{./plots/dosis_emissionsstrom/mo.tex}
+		\subcaption{Molybdän-Röhre}
+		\label{fig:mo_emissionsstrom_dosis}
+	\end{subfigure}
+	
+	\vspace{10mm}
+	
+	\begin{subfigure}[b]{1\textwidth}
+		\input{./plots/dosis_emissionsstrom/cu.tex}
+		\subcaption{Kupfer-Röhre}
+		\label{fig:cu_emissionsstrom_dosis}
+	\end{subfigure}
+	\caption{Abhängigkeit der mittleren Ionendosisleistung $\braket{j}$ beziehungsweise der Äquivalentdosisleistung $\dot{H}$ vom Emissionsstrom $I_\mathrm{E}$ für verschiedene Röntgenröhren. Beide Messungen wurden bei maximaler Röhrenspannung $U=\SI{35}{kV}$ durchgeführt.}
+	\label{fig:dosis_emissionsstrom}
+\end{figure}
+\begin{figure}[hp]
+	\centering
+	\vspace{-10mm}
+	
+	\begin{subfigure}[b]{1\textwidth}
+		\input{./plots/dosis_roehrenspannung/mo.tex}
+		\subcaption{Molybdän-Röhre mit charakteristischen Linien $\mathrm{K}_\alpha$ (\SI{17.4}{keV}) und $\mathrm{K}_\beta$ (\SI{19.6}{keV}) \cite{booklet}}
+		\label{fig:mo_roehrenspannung_dosis}
+	\end{subfigure}
+	
+	\vspace{2.5mm}
+	
+	\begin{subfigure}[b]{1\textwidth}
+		\input{./plots/dosis_roehrenspannung/cu.tex}
+		\subcaption{Kupfer-Röhre mit charakteristischen Linien $\mathrm{K}_\alpha$ (\SI{8.04}{keV}) und $\mathrm{K}_\beta$ (\SI{8.91}{keV}) \cite{booklet}}
+		\label{fig:cu_roehrenspannung_dosis}
+	\end{subfigure}
+	\caption{Abhängigkeit der mittleren Ionendosisleistung $\braket{j}$ beziehungsweise der Äquivalentdosisleistung $\dot{H}$ von der Röhrenspannung $U$ für verschiedene Röntgenröhren. Beide Messungen wurden bei maximalem Emissionsstrom $I_\mathrm{E} = \SI{1.00}{mA}$ durchgeführt.}
+	\label{fig:dosis_roehrenspannung}
+\end{figure}
 
+Die Form der Kurven wurde in den Abschnitten \ref{sec:abh_emissionsstrom} und \ref{sec:abh_roehrenspannung} bereits diskutiert, da sich der Kurvenverlauf lediglich in einer Skalierung der $y$-Achse unterscheidet\footnote{Die Fehler wurden nicht skaliert sondern durch \eqref{eq:fehler_dosisleistung} berechnet.} und soll hier nur kurz wiederholt werden.
+Bei der Variation des Emissionsstroms der Röhre in Abbildung \ref{fig:dosis_emissionsstrom} ist ein linearer Verlauf zu erwarten, welcher beim Verlauf der Dosisleistung der Molybdän-Röhre zu beobachten ist.
+Die Kupfer-Röhre hingegen weicht stark von dem erwarteten Verlauf ab, was auf die um einen Faktor 10 höhere Intensität der Röhre zurückzuführen sein könnte.
+Der Grund dafür ist, dass im Kondensator soviel Ionisationen stattfinden, dass die stationäre Raumladung für einen Sättigung der Ionisationskammer sorgt.
 
+Betrachtet man den Verlauf der Dosisleistungen bei Variation der Röhrenspannung $U$ in Abbildung \ref{fig:dosis_roehrenspannung}, so erkennt man einen starken Anstieg der Dosisleistung, sobald die Energie der durch die Röhrenspannung beschleunigten Elektronen groß genug ist, um charakteristische Röntgenlinien zu erzeugen.
+Dazu wurden in der Abbildung die wichtigsten charakteristischen Linien der jeweiligen Anode markiert.
+
+Abschließend soll das Volumen des Kondensators anhand der Dosisleistung in Überwachungs-, Kontroll- oder Sperrbereich klassifiziert werden.
+In den Abbildungen kann man erkennen, dass die Ortsdosisleistung im Kondensator von der Größenordnung \SI{1}{\sievert\per\hour} ist, welche die Untergrenze für den Sperrbereich von \SI{3}{\milli\sievert\per\hour} stark überschreitet.
+Demnach muss das Volumen des Kondensators als Sperrbereich klassifiziert werden.
 
 \subsubsection{Bestimmung der Dosisleistung mit einem Stabdosimeter}
 
@@ -770,11 +868,6 @@ Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufg
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
-\bibitem{siegbahn}
-	K. Siegbahn,
-	\emph{Alpha-, Beta- and Gamma-Ray Spectroscopy},
-	Elsevier Science Ltd. 1965
-
 \bibitem{anleitung}
 	Physikalisches Praktikum V: Kern- und Teilchenphysik,
 	Versuchsbeschreibung \emph{P523: $\beta$-Spektrometer} (Stand: Januar 2015),
@@ -786,13 +879,17 @@ Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufg
 	Lawrence Berkeley National Laboratory,
 	3. Ausgabe,
 	September 2009.
+
+\bibitem{ld_didactic}
+	LD Handblätter Physik,
+	\emph{P6.3.1.4: Bestimmung der Ionendosisleistung der Röntgenröhre mit Molybdän-Anode}
 	
-	\bibitem{kalender}
+\bibitem{kalender}
 	Kalender, W.
 	\emph{Computertomographie},
 	Publicis Corporate Publishing 2006
 	
-	\bibitem{alkadhi}
+\bibitem{alkadhi}
 	Alkadhi, H.;Leschka, S.;Stolzmann, P.; Scheffel, H.
 	\emph{Wie funktioniert CT?},
 	Springer 2011

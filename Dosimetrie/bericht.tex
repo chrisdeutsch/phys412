@@ -437,7 +437,7 @@ Da die auftretenden Ströme in der Größenordnung einiger \si{nA} liegen, muss 
 Daher wird ein Elektrometerverstärker mit einfacher Verstärkung verwendet, um die Spannung belastungsfrei am Messwiderstand mit einem Multimeter messen zu können.
 
 Folglich soll der Ionisationsstrom $I_\mathrm{C}$ in Abhängigkeit der Kondensatorspannung $U_\mathrm{C}$ für verschiedene Röhrenspannungen $U$ bestimmt werden.
-Dabei wird der Emissionsstrom\footnote{Der Fehler des Emissionsstroms wird anhand der letzten Stelle der Digitalanzeige des Röntgengeräts auf \SI{0.01}{\milli\ampere} abgeschätzt.} $I$ der Röntgenröhre auf \SI{1.00 +- 0.01}{mA} eingestellt und ein Messwiderstand $R = \SI{1}{\giga\ohm}$ verwendet, wobei auf den Widerstand ein relativer Fehler von \SI{1}{\percent} angenommen wird.
+Dabei wird der Emissionsstrom\footnote{Der Fehler des Emissionsstroms wird anhand der letzten Stelle der Digitalanzeige des Röntgengeräts auf \SI{0.005}{\milli\ampere} abgeschätzt.} $I$ der Röntgenröhre auf \SI{1.000 +- 0.005}{mA} eingestellt und ein Messwiderstand $R = \SI{1}{\giga\ohm}$ verwendet, wobei auf den Widerstand ein relativer Fehler von \SI{1}{\percent} angenommen wird.
 Dann ergibt sich der Ionisationsstrom durch Gleichung \ref{eq:ohm_ionisationsstrom} und der Fehler durch Gauß'sche Fehlerfortpflanzung:
 \begin{align}
 	\Delta I_\mathrm{C} = \sqrt{\frac{\Delta U_{I_\mathrm{C}}^2}{R^2} + \frac{U_{I_\mathrm{C}}^2 \cdot \Delta R^2}{R^4}}
@@ -504,14 +504,32 @@ An diese wurde die Anpassung einer Geraden:
 \end{align}
 durchgeführt, wobei entgegen der erwarteten Ursprungsgerade ein Achsenabschnitt $I_0$ verwendet wird, welcher im Spannungsoffset des Elektrometerverstärkers begründet liegt.
 \begin{align*}
-	\lambda &= \num{4.910 +- 0.049e-6}\\
-	I_0 &= \SI{0.143 +- 0.026}{nA}
+	\lambda &= \num{4.948 +- 0.052e-6}\\
+	I_0 &= \SI{0.130 +- 0.024}{nA}
 \end{align*}
 Für die Kupferröhre in Abbildung \ref{fig:cu_emissionsstrom} ist eine starke Abweichung von dem linearen Zusammenhang sichtbar.
 (Dies könnte auf die hohe Intensität der Kupferröhre zurückzuführen sein, welche zwischen den Kondensatorplatten soviel Ionisationen durchführt, dass Raumladungseffekte zur Sättigung führen.)
 
 
 \subsubsection{Abhängigkeit des Ionisationsstromes von der Röhrenspannung}
+\begin{figure}[hp]
+	\centering
+	\begin{subfigure}[b]{1\textwidth}
+		\input{./plots/abh_roehrenspannung/mo.tex}
+		\subcaption{Molybdän-Röhre mit charakteristischen Linien $\mathrm{K}_\alpha$ (\SI{17.4}{keV}) und $\mathrm{K}_\beta$ (\SI{19.6}{keV}) \cite{booklet}}
+		\label{fig:mo_roehrenspannung}
+	\end{subfigure}
+	
+	\vspace{10mm}
+	
+	\begin{subfigure}[b]{1\textwidth}
+		\input{./plots/abh_roehrenspannung/cu.tex}
+		\subcaption{Kupfer-Röhre mit charakteristischen Linien $\mathrm{K}_\alpha$ (\SI{8.04}{keV}) und $\mathrm{K}_\beta$ (\SI{8.91}{keV}) \cite{booklet}}
+		\label{fig:cu_roehrenspannung}
+	\end{subfigure}
+	\caption{Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ von der Röhrenspannung $U$ für verschiedene Röntgenröhren. Beide Messungen wurden bei maximalem Emissionsstrom $I_\mathrm{E} = \SI{1.00}{mA}$ durchgeführt.}
+	\label{fig:abh_roehrenspannung}
+\end{figure}
 
 \subsubsection{Bestimmung der Ionendosisleistung im Kondensator}
 
@@ -591,6 +609,13 @@ Aus der Anpassung kann ebenfalls mit \eqref{eq:totzeit_paralysierend} die Totzei
 	Versuchsbeschreibung \emph{P523: $\beta$-Spektrometer} (Stand: Januar 2015),
 	Universität Bonn	
 
+\bibitem{booklet}
+	Center for X-ray Optics and Advanced Light Source,
+	\emph{X-Ray Data Booklet}.
+	Lawrence Berkeley National Laboratory,
+	3. Ausgabe,
+	September 2009.
+
 \bibitem{riezler}
 	Riezler, W.; Kopitzki, K.
 	\emph{Kernphysikalisches Praktikum},
@@ -613,20 +638,20 @@ Aus der Anpassung kann ebenfalls mit \eqref{eq:totzeit_paralysierend} die Totzei
 \begin{table}[hp]
 	\centering
 	\input{./tables/kondensator/15kV.tex}
-	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{15}{kV}$ eingestellt.}
+	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{15}{kV}$ und der Emissionsstrom auf $I_\mathrm{E} = \SI{1.00}{mA}$ eingestellt.}
 	\label{tab:kondensatorspannung_15kV}
 \end{table}
 \begin{table}[hp]
 	\centering
 	\input{./tables/kondensator/25kV.tex}
 
-	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{25}{kV}$ eingestellt.}
+	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{25}{kV}$ und der Emissionsstrom auf $I_\mathrm{E} = \SI{1.00}{mA}$ eingestellt.}
 	\label{tab:kondensatorspannung_25kV}
 \end{table}
 \begin{table}[hp]
 	\centering
 	\input{./tables/kondensator/35kV.tex}
-	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{35}{kV}$ eingestellt.}
+	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{35}{kV}$ und der Emissionsstrom auf $I_\mathrm{E} = \SI{1.00}{mA}$ eingestellt.}
 	\label{tab:kondensatorspannung_35kV}
 \end{table}
 \FloatBarrier

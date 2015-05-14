@@ -673,7 +673,7 @@ Die Projektionsgröße wurde dabei auf \SI{250x250}{px} eingestellt, da so das g
 Den Hinweisen des Programms folgend wurde die Rekonstruktionsgröße kleiner als die Projektionsgröße gewählt, auf \SI{240x240x240}{px}.
 
 Zur Drehachsenkorrektur wurde die Anzahl Projektionen zunächst gering gewählt (verschiedene Messungen mit maximal \num{45} Projektionen) und die Aufnahme gestartet.
-Ausgehend von dem aufgenommenen Bild kann dann durch das Programm eine Korrektur der Drehachse berechnet und die Kamera entspreched justiert werden, so dass keine Doppelkonturen mehr im Bild zu erkennen sind.
+Ausgehend von dem aufgenommenen Bild kann dann durch das Programm eine Korrektur der Drehachse berechnet und die Kamera entspreched manuell justiert werden, so dass keine Doppelkonturen mehr im Bild zu erkennen sind.
 Nach mehreren Aufnahmen und anschließender Korrektur konnte so eine gute Justage erreicht werden.
 
 \subsubsection{Aufnahme und Rekonstruktion}
@@ -700,7 +700,7 @@ Ein paar ausgewählte Einzelprojektionen sind in Abbildung \ref{fig:ct_projektio
 Diese Projektionen entsprechen jeweils einer gewöhnlichen Röntgenaufnahme eines Objekts mit dafür typischen Kontrasten.
 Zur Kontrastverbesserung werden die einzelnen Projektionen bei der Computertomographie überlagert und so ein dreidimensionales kontrastreiches Bild erstellt.
 Bei der hier genutzten Software und Vorgehensweise wird das Objekt mittels s.g. Rückprojektion (engl. \emph{back projection}) aus den einzelnen Aufnahmen rekonstruiert.
-Die allgemeine Vorgehensweise\footnote{Dabei wird vereinfachend davon ausgegangen, dass das Bild in einem geeigneten Detektor entsteht, wobei dieser in dem Versuch aus Fluoreszenzschirm und der Kamera zusammengesetzt ist.} umfasst dabei folgende Punkte (nach \cite{kalender}, Abb. 1.7):
+Die allgemeine Vorgehensweise\footnote{Dabei wird vereinfachend davon ausgegangen, dass das Bild in einem geeigneten Detektor entsteht, wobei dieser in dem Versuch aus Fluoreszenzschirm und Kamera zusammengesetzt ist.} umfasst dabei folgende Punkte (nach \cite{kalender}, Abb. 1.7):
 \begin{enumerate}
 	\item \textbf{Aufnahme der Projektionen} Hierbei entstehen gerasterte Bilder (d.h. diskrete Pixel), wobei jedem Pixel eine Helligkeit, abhängig von der Transmission des Strahls in diesem Bildpunkt, zugeordnet wird.
 	\item \textbf{Faltung mit geeignetem Faltungskern} Die Projektionen werden mit einem Kern gefaltet, der je nach Anwendung gewählt werden kann.
@@ -757,6 +757,10 @@ Das durch die Software rekonstruierte Objekt ist in Abbildung \ref{fig:ct_frosch
 Der Frosch ist dabei sehr deutlich zu erkennen, die gewählte Anzahl Projektionen sorgt offensichtlich für eine qualitativ gute Rekonstruktion.
 Die nah am Frosch befindliche Watte zur stabilen Lagerung ist ebenfalls gut erkennbar, sowie ein außen liegender Ring der Befestigung.
 
+\subsubsection{Strahlenbelastung bei CT-Aufnahmen}
+Die folgenden Überlegungen sollen eine Einschätzung der Strahlenbelastung bei einem CT-Scan liefern, in der Praxis sind konkrete aufgenommene Dosen nur schwer zu berechnen und von vielen verschiedenen Faktoren abhängig.
+Im Gegesatz zu gewöhnlichen Röntgenaufnahmen, bei denen die Dosis etwa exponenziell mit der Dicke des durchstrahlten Objektes abnimmt (die Dosis ist proportional zur Intensiät) ergibt sich für ein in der Computertomographie aufgenommenes Objekt oder auch Patienten bei medizinischen Anwendungen eine andere Dosisverteilung.
+Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufgenommenen Dosen, so dass sich insgesamt eine homogene Verteilung ergibt.
 
 \section{Fazit}
 

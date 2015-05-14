@@ -18,8 +18,9 @@ set grid
 
 load './../gnuplot_linestyles.plt'
 
-a = 280
-t = 1/(0.8*a)
+t = 4.3e-5
+a = 1/(0.8*t)
+
 
 f(x) = a * x * exp(a * x * t)
 

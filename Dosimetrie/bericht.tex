@@ -469,7 +469,8 @@ In Fällen extrem hoher Spannungen kann es zur selbständigen Gasentladung komme
 
 Da im Folgenden der Kondensator als Ionisationsdetektor genutzt wird, wird als Betriebsspannung $U_\mathrm{C} = \SI{200}{V}$ gewählt, da sich der Kondensator dort selbst für die maximale Röhrenspannung im Ionisationsbereich befindet.
 
-\subsubsection{Abhängigkeit des Ionisationsstromes vom Emissionsstrom der Röntgenröhre}
+
+\subsubsection{Abhängigkeit des Ionisationsstroms vom Emissionsstrom der Röntgenröhre}
 Nun wird der Kondensator als Ionisationsdetektor bei einer Spannung $U_\mathrm{C} = \SI{200}{V}$ betrieben, um den Ionisationsstrom in Abhängigkeit des Emissionsstroms $I_\mathrm{E}$ der Röhre zu bestimmen.
 Zunächst wird diese mit dem gleichen Versuchsaufbau des vorigen Teils und einer Molybdän-Anode und anschließend mit einer Kupfer-Anode bestimmt.
 Dabei wird bei maximaler Röhrenspannung $U = \SI{35}{kV}$ in Emissionsstrom-Schritten von \SI{0.10}{mA} gemessen.
@@ -504,14 +505,18 @@ An diese wurde die Anpassung einer Geraden:
 \end{align}
 durchgeführt, wobei entgegen der erwarteten Ursprungsgerade ein Achsenabschnitt $I_0$ verwendet wird, welcher im Spannungsoffset des Elektrometerverstärkers begründet liegt.
 \begin{align*}
-	\lambda &= \num{4.948 +- 0.052e-6}\\
-	I_0 &= \SI{0.130 +- 0.024}{nA}
+	\lambda &= \num{4.970 +- 0.055e-6}\\
+	I_0 &= \SI{0.120 +- 0.022}{nA}
 \end{align*}
 Für die Kupferröhre in Abbildung \ref{fig:cu_emissionsstrom} ist eine starke Abweichung von dem linearen Zusammenhang sichtbar.
-(Dies könnte auf die hohe Intensität der Kupferröhre zurückzuführen sein, welche zwischen den Kondensatorplatten soviel Ionisationen durchführt, dass Raumladungseffekte zur Sättigung führen.)
+Eine mögliche Ursache dafür könnte die höhere Intensität der emittierten Röntgenstrahlung sein, welche im Kondensator so viele Ionisationen durchführt, dass die zwischen den Kondensatorplatten entstehende Raumladung zu einer Sättigung führt.
 
 
-\subsubsection{Abhängigkeit des Ionisationsstromes von der Röhrenspannung}
+\subsubsection{Abhängigkeit des Ionisationsstroms von der Röhrenspannung}
+Analog zum vorigen Abschnitt soll nun die Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ von der Röhrenspannung $U$ für Molybdän- und Kupferröhre untersucht werden.
+Dabei wird beim maximalen Emissionsstrom $I_\mathrm{E} = \SI{1.00}{mA}$ die Röhrenspannung in Schritten von \SI{2.5}{kV} von \SI{0}{kV} bis \SI{35}{kV} variiert und der Ionisationsstrom mithilfe des Elektrometerverstärkers gemessen.
+Der Fehler der Röhrenspannung wird anhand der letzten Stelle der Digitalanzeige des Röntgengerätes auf $\Delta U = \SI{0.05}{kV}$ abgeschätzt.
+Die aufgenommenen Messdaten wurden im Anhang \ref{app:ionisationsstrom_roehrenspannung} aufgetragen und in Abbildung \ref{fig:abh_roehrenspannung} grafisch dargestellt.
 \begin{figure}[hp]
 	\centering
 	\vspace{-10mm}
@@ -533,7 +538,64 @@ Für die Kupferröhre in Abbildung \ref{fig:cu_emissionsstrom} ist eine starke A
 	\label{fig:abh_roehrenspannung}
 \end{figure}
 
+Im Gegensatz zur Variation des Emissionsstroms kann hier kein lineares Verhältnis zwischen Ionisationsstrom und Röhrenspannung beobachtet werden.
+Dies liegt zum einen daran, dass die mittlere Energie des kontinuierlichen Bremsstrahlungsspektrums nicht proportional zur Röhrenspannung ist und darüber hinaus daran, dass die charakteristischen Linien der Anode eine signifikante Auswirkung auf das resultierende Spektrum haben.
+Generell wird aber eine Zunahme des Ionisationsstroms erwartet, da der Anstieg der mittleren Energie des Röntgenspektrums zur Zunahme der Anzahl von Ionisationen zwischen den Kondensatorplatten führt.
+Die minimalen Beschleunigungsspannungen (Duane-Hunt-Gesetz) zur Anregung der wichtigsten charakteristischen Linien der jeweiligen Anode wurden in Abbildung \ref{fig:abh_roehrenspannung} markiert und fallen mit dem starken Anstieg des Ionisationsstroms zusammen.
+Weiterhin ist für die Kupfer-Röhre in Abbildung \ref{fig:cu_roehrenspannung} erneut ein Abflachen des Ionisationsstroms bei hohen Röhrenspannungen zu beobachten, was erneut auf Raumladungseffekte zurückzuführen sein könnte.
+
+
 \subsubsection{Bestimmung der Ionendosisleistung im Kondensator}
+\textbf{Volumen:}\\
+\begin{align}
+	V = \int_{s_1}^{s_2} A(s) \, \mathrm{d}s
+\end{align}
+Strahlensatz: $a(s) = \frac{a_0}{s_0} \cdot s$ und $b(s) = \frac{b_0}{s_0} \cdot s$
+\begin{align}
+	A(s) = a(s) \cdot b(s) = \frac{a_0 \, b_0}{s_0^2} \cdot s^2
+\end{align}
+\begin{align}
+	V &= \frac{1}{3} \, \frac{a_0 \, b_0}{s_0^2} \left[ s_2^3 - s_1^3 \right] \\
+	  &= \frac{1}{3} \, \frac{a_0 \, b_0}{s_0^2} \left[ (s_0 + d + D)^3 - (s_0 + d)^3 \right]
+\end{align}
+Annahme Fehler $\Delta  = \SI{0.05}{cm}$
+\begin{align}
+	V = \SI{125 +- 11}{\centi\meter\cubed}
+\end{align}
+Gauß'sche Fehlerfortpflanzung auf Angabe der expliziten Formel wird verzichtet.\\
+\\
+\textbf{Dichte von Luft:}\\
+Messwerte:
+\begin{align}
+	T = \SI{24.5 +- 1.5}{\degreeCelsius} \\
+	p = \SI{993 +- 3}{hPa}
+\end{align}
+Standardbedingungen:
+\begin{align}
+	T_0 = \SI{273}{\kelvin}\\
+	p_0 = \SI{1013}{hPa}\\
+	\rho_0 = \SI{1.293}{\kilogram\per\metre\cubed}
+\end{align}
+
+\begin{align}
+	\rho = \rho_0 \cdot \frac{T_0}{T} \cdot \frac{p}{p_0}\\
+	\Delta \rho = \rho \, \sqrt{ \left( \frac{\Delta T}{T} \right)^2 + \left( \frac{\Delta p}{p} \right)^2}
+\end{align}
+
+\begin{align}
+	\rho = \SI{1.1625 +- 0.0069}{\kilogram\per\metre\cubed}
+\end{align}\\
+\\
+\textbf{Gesamtmasse:}
+\begin{align}
+	m = \rho \cdot V \qquad \Delta m = \sqrt{V^2 \cdot \Delta \rho^2 + \rho^2 \cdot \Delta V^2}
+\end{align}
+
+\begin{align}
+	m = \SI{1.45 +- 0.13e-4}{kg} = \SI{145 +- 13}{mg}
+\end{align}
+
+
 
 \subsubsection{Bestimmung der Dosisleistung mit einem Stabdosimeter}
 
@@ -753,20 +815,20 @@ Die nah am Frosch befindliche Watte zur stabilen Lagerung ist ebenfalls gut erke
 \begin{table}[hp]
 	\centering
 	\input{./tables/kondensator/15kV.tex}
-	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{15}{kV}$ und der Emissionsstrom auf $I_\mathrm{E} = \SI{1.00}{mA}$ eingestellt.}
+	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1.00+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{15}{kV}$ und der Emissionsstrom auf $I_\mathrm{E} = \SI{1.00}{mA}$ eingestellt.}
 	\label{tab:kondensatorspannung_15kV}
 \end{table}
 \begin{table}[hp]
 	\centering
 	\input{./tables/kondensator/25kV.tex}
 
-	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{25}{kV}$ und der Emissionsstrom auf $I_\mathrm{E} = \SI{1.00}{mA}$ eingestellt.}
+	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1.00+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{25}{kV}$ und der Emissionsstrom auf $I_\mathrm{E} = \SI{1.00}{mA}$ eingestellt.}
 	\label{tab:kondensatorspannung_25kV}
 \end{table}
 \begin{table}[hp]
 	\centering
 	\input{./tables/kondensator/35kV.tex}
-	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{35}{kV}$ und der Emissionsstrom auf $I_\mathrm{E} = \SI{1.00}{mA}$ eingestellt.}
+	\caption{Zusammenhang von Ionisationsstrom $I_\mathrm{C}$, welcher anhand des Spannungsabfalls $U_{I_\mathrm{C}}$ an einem Messwiderstand $R = \SI{1.00+-0.01}{\giga\ohm}$ gemessen wurde und Kondensatorspannung $U_\mathrm{C}$. Die Röntgenröhrenspannung der Molybdän-Röhre wurde auf $U = \SI{35}{kV}$ und der Emissionsstrom auf $I_\mathrm{E} = \SI{1.00}{mA}$ eingestellt.}
 	\label{tab:kondensatorspannung_35kV}
 \end{table}
 \FloatBarrier
@@ -777,7 +839,7 @@ Die nah am Frosch befindliche Watte zur stabilen Lagerung ist ebenfalls gut erke
 	\centering
 	\begin{subtable}[c]{0.75\textwidth}
 		\input{./tables/emissionsstrom/mo.tex}
-		\subcaption{Molybdän-Röhre mit Messwiderstand $R = \SI{1}{\giga\ohm}$}
+		\subcaption{Molybdän-Röhre mit Messwiderstand $R = \SI{1.00+-0.01}{\giga\ohm}$}
 		\label{tab:emissionsstrom_mo}
 	\end{subtable}
 	
@@ -785,13 +847,33 @@ Die nah am Frosch befindliche Watte zur stabilen Lagerung ist ebenfalls gut erke
 	
 	\begin{subtable}[c]{0.75\textwidth}
 		\input{./tables/emissionsstrom/cu.tex}
-		\subcaption{Kupfer-Röhre mit Messwiderstand $R = \SI{100}{\mega\ohm}$}
+		\subcaption{Kupfer-Röhre mit Messwiderstand $R = \SI{100 +- 1}{\mega\ohm}$}
 		\label{tab:emissionsstrom_cu}
 	\end{subtable}	
 	\caption{Gemessener Zusammenhang zwischen Emissionsstrom $I_\mathrm{E}$ der Röntgenröhre und Ionisationsstrom $I_\mathrm{C}$. Der Ionisationsstrom wurde als Spannungsabfall $U_{I_\mathrm{C}}$ über einem Messwiderstand $R$ gemessen.}
 \end{table}
 \FloatBarrier
 
+\subsection{Abhängigkeit des Ionisationsstroms von der Röhrenspannung}
+\label{app:ionisationsstrom_roehrenspannung}
+\begin{table}[hp]
+	\centering
+	\begin{subtable}[c]{0.75\textwidth}
+		\input{./tables/roehrenspannung/mo.tex}
+		\subcaption{Molybdän-Röhre mit Messwiderstand $R = \SI{1.00+-0.01}{\giga\ohm}$}
+		\label{tab:roehrenspannung_mo}
+	\end{subtable}
+	
+	\vspace{10mm}
+	
+	\begin{subtable}[c]{0.75\textwidth}
+		\input{./tables/roehrenspannung/cu.tex}
+		\subcaption{Kupfer-Röhre mit Messwiderstand $R = \SI{100+-1}{\mega\ohm}$}
+		\label{tab:roehrenspannung_cu}
+	\end{subtable}	
+	\caption{Gemessener Zusammenhang zwischen Röhrenspannung $U$ und Ionisationsstrom $I_\mathrm{C}$. Der Ionisationsstrom wurde als Spannungsabfall $U_{I_\mathrm{C}}$ über einem Messwiderstand $R$ gemessen.}
+\end{table}
+\FloatBarrier
 
 \end{appendix}
 

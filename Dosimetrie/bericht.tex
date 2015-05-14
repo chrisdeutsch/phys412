@@ -629,10 +629,10 @@ Grafisch aufgetragen erhält man aus diesen die Abbildung \ref{fig:totzeit}
 Es ist deutlich zu sehen, dass es sich bei dem beobachteten Aufbau um ein paralysierendes System handelt.
 Dies ist erkennbar an der Tatsache, dass die Zählrate nicht wie für ein nicht-paralysierendes System erwartet in Sättigung geht, sondern nach Erreichen eines Maximums bei zunehmendem Emissionsstrom wieder abnimmt.
 Eine Anpassung der Form wie \eqref{eq:totzeit_paralysierend}, die bereits in Abbildung \ref{fig:totzeit} durchgeführt wurde stärkt diese Annahme.
-Dabei wird davon ausgegangen, dass die echte Zählrate $m$ proportional zum Emissionsstrom ist (Proportionalitätskonstante $\lambda$ aus der Anpassung: $\lambda$=\SI{27381.8+-305.4}{\per\second\per\milli\ampere}).
+Dabei wird davon ausgegangen, dass die echte Zählrate $m$ proportional zum Emissionsstrom ist (Proportionalitätskonstante $\lambda$ aus der Anpassung: $\lambda$=\SI{27169.8+-339.3}{\per\second\per\milli\ampere}).
 Aus der Anpassung kann ebenfalls mit \eqref{eq:totzeit_paralysierend} die Totzeit $\tau$ des paralysierenden Systems recht gut bestimmt werden zu:
 \begin{align}
-\tau = \SI{4.29 +- 0.01e-5}{\second}
+\tau = \SI{4.29 +- 0.02e-5}{\second}
 \end{align}
 
 \subsection{Abschirmung}
@@ -664,7 +664,55 @@ Nach Bildjustage und Kalibrierung der Kamera zur optimalen Aufnahme des Fluoresz
 Die Projektionsgröße wurde dabei auf \SI{250x250}{px} eingestellt, da so das ganze Objekt in dem aufgenommenen Bildbereich liegt, größere Projektionen hätten zusätzlich nur störende Aufnahmen der Befestigungen aufgenommen und keine Verbesserung des Bildes bewirkt.
 Den Hinweisen des Programms folgend wurde die Rekonstruktionsgröße kleiner als die Projektionsgröße gewählt, auf \SI{240x240x240}{px}.
 
-Zur Drehachsenkorrektur wurde die Anzahl Projektionen zunächst gering gewählt (verschiedene Messungen mit maximal \num{45} Projektionen) und die Aufnahme gestartet
+Zur Drehachsenkorrektur wurde die Anzahl Projektionen zunächst gering gewählt (verschiedene Messungen mit maximal \num{45} Projektionen) und die Aufnahme gestartet.
+Ausgehend von dem aufgenommenen Bild kann dann durch das Programm eine Korrektur der Drehachse berechnet und die Kamera entspreched justiert werden, so dass keine Doppelkonturen mehr im Bild zu erkennen sind.
+Nach mehreren Aufnahmen und anschließender Korrektur konnte so eine gute Justage erreicht werden.
+
+\subsubsection{Aufnahme und Rekonstruktion}
+
+Im Folgenden soll das allgemeine Vorgehen bei einer Computertomographieaufnahme anhand des im Versuch durchgeführten Scans beschrieben werden.
+Nach entsprechender Justage (s.o.) wird für eine qualitativ gute Aufnahme die Anzahl der Projektionen möglichst hoch gewählt.
+Sie gibt die Menge der Bilder an, die während einer kompletten Umdrehung des Objekts aufgenommen werden.
+In dem Versuch wurden \num{720} Projektionen eingestellt, was einer Winkelschrittweite pro Bild von $\Delta\alpha=$\SI{0.5}{\degree} entspricht.
+Ein paar ausgewählte Einzelprojektionen sind in Abbildung \ref{fig:ct_projektionen} dargestellt.
+\begin{figure}[ht]
+	\begin{subfigure}[c]{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{./figures/ct/Projection2_5.png}
+		\subcaption{Projektion für $\alpha$=\SI{2.5}{\degree}}
+	\end{subfigure}
+	\begin{subfigure}[c]{0.5\textwidth}
+		\centering
+		\includegraphics[width=0.9\textwidth]{./figures/ct/Projection264.png}
+		\subcaption{Projektion für $\alpha$=\SI{264}{\degree}}
+	\end{subfigure}
+	\caption{Beispielhafte Projektionen für unterschiedliche Drehwinkel $\alpha$ des Objekts.}
+	\label{fig:ct_projektionen}
+\end{figure}
+Diese Projektionen entsprechen jeweils einer gewöhnlichen Röntgenaufnahme eines Objekts mit dafür typischen Kontrasten.
+Zur Kontrastverbesserung werden die einzelnen Projektionen bei der Computertomographie überlagert und so ein dreidimensionales kontrastreiches Bild erstellt.
+Bei der hier genutzten Software und Vorgehensweise wird das Objekt mittels s.g. Rückprojektion (engl. \emph{back projection}) aus den einzelnen Aufnahmen rekonstruiert.
+Die allgemeine Vorgehensweise\footnote{Dabei wird vereinfachend davon ausgegangen, dass das Bild in einem geeigneten Detektor entsteht, obwohl dieser in dem Versuch aus Fluoreszenzschirm und der Kamera zusammengesetzt ist.} umfasst dabei folgende Punkte (nach \cite{kalender}, Abb. 1.7):
+\begin{enumerate}
+	\item \textbf{Aufnahme der Projektionen} Hierbei entstehen gerasterte Bilder (d.h. diskrete Pixel), wobei jedem Pixel eine Helligkeit, abhängig von der Transmission des Strahls in diesem Bildpunkt, zugeordnet wird.
+	\item \textbf{Faltung mit geeignetem Faltungskern} Die Projektionen werden mit einem Kern gefaltet, der je nach Anwendung gewählt werden kann.
+	Er erzeugt Über- und Unterschwinger an Kanten, um diese beispielsweise zu betonen oder zu glätten (siehe auch Abb. \ref{fig:ct_faltung}).
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.7\textwidth]{./figures/ct/faltung.jpg}
+		\caption{Faltung als Hochpassfilterung des Schwächungsprofils (aus \cite{alkadhi}).}
+		\label{fig:ct_faltung}
+	\end{figure}
+	Aus Implementierungsgründen wird das Bild vorher fouriertransformiert, da die Faltung dadurch in eine deutlich schneller zu berechnende Multiplikation übergeht und anschließend rücktransformiert.
+	\item \textbf{Überlagerung der Projektionen} Zur dreidimensionalen Rekonstruktion werden die einzelnen Projektionen entsprechend ihres zugehörigen Aufnahmewinkels überlagert.
+	Siehe dazu auch die schematische Abbildung \ref{fig:ct_überlagerung}.
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.8\textwidth]{./figures/ct/ueberlagerung.pdf}
+		\caption{Schematische Darstellung zur Überlagerung einzelner Projektionen in Draufsicht. Links: Aufnahme von 8 Projektionen eines Zylinders. Mitte: Einzelne Projektion. Rechts: Überlagerung der Projektionen. Es ist offensichtlich, dass mit steigender Anzahl Projektionen die Rekonstruktion immer besser wird.}
+		\label{fig:ct_überlagerung}
+	\end{figure}
+\end{enumerate}
 
 \section{Fazit}
 
@@ -690,6 +738,16 @@ Zur Drehachsenkorrektur wurde die Anzahl Projektionen zunächst gering gewählt 
 	Lawrence Berkeley National Laboratory,
 	3. Ausgabe,
 	September 2009.
+	
+	\bibitem{kalender}
+	Kalender, W.
+	\emph{Computertomographie},
+	Publicis Corporate Publishing 2006
+	
+	\bibitem{alkadhi}
+	Alkadhi, H.;Leschka, S.;Stolzmann, P.; Scheffel, H.
+	\emph{Wie funktioniert CT?},
+	Springer 2011
 
 \bibitem{riezler}
 	Riezler, W.; Kopitzki, K.

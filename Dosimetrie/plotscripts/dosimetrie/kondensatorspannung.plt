@@ -6,7 +6,7 @@ set output './plots/kondensatorspannung.tex'
 
 set key top left
 
-set decimalsign ','
+set decimalsign '{,}'
 
 set xrange [0:*]
 set yrange [0:6.5]

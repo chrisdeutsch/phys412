@@ -4,7 +4,7 @@ set term epslatex color size 5,3.5
 
 set key top left
 
-set decimalsign ','
+set decimalsign '{,}'
 
 set xrange [0:35.0]
 set yrange [0:*]

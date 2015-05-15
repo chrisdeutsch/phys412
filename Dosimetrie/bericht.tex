@@ -839,6 +839,7 @@ Ausgehend von dem aufgenommenen Bild kann dann durch das Programm eine Korrektur
 Nach mehreren Aufnahmen und anschließender Korrektur konnte so eine gute Justage erreicht werden.
 
 \subsubsection{Aufnahme und Rekonstruktion}
+\label{ct_aufnahme}
 
 Im Folgenden soll das allgemeine Vorgehen bei einer Computertomographieaufnahme anhand des im Versuch durchgeführten Scans beschrieben werden.
 Nach entsprechender Justage (s.o.) wird für eine qualitativ gute Aufnahme die Anzahl der Projektionen möglichst hoch gewählt.
@@ -921,8 +922,21 @@ Die nah am Frosch befindliche Watte zur stabilen Lagerung ist ebenfalls gut erke
 
 \subsubsection{Strahlenbelastung bei CT-Aufnahmen}
 Die folgenden Überlegungen sollen eine Einschätzung der Strahlenbelastung bei einem CT-Scan liefern, in der Praxis sind konkrete aufgenommene Dosen nur schwer zu berechnen und von vielen verschiedenen Faktoren abhängig.
+Aufgrund der begrenzten Verfügbarkeit allgemeiner Quellen sind die angegebenen Informationen in den meisten Fällen auf Computertomographiegeräte für medizinische Anwendungen bezogen.
 Im Gegesatz zu gewöhnlichen Röntgenaufnahmen, bei denen die Dosis etwa exponenziell mit der Dicke des durchstrahlten Objektes abnimmt (die Dosis ist proportional zur Intensiät) ergibt sich für ein in der Computertomographie aufgenommenes Objekt oder auch Patienten bei medizinischen Anwendungen eine andere Dosisverteilung.
 Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufgenommenen Dosen, so dass sich insgesamt eine homogene Verteilung ergibt.
+Bei schichtweisen CT-Aufnahmen eines Objekts, bei dem das in \ref{ct_aufnahme} beschriebene Vorgehen für jede Schicht durchgeführt wird (die Schichten, engl. \emph{slices} sind in $z$-Richtung aneinandergereiht), ergibt sich ein Dosisprofil wie in Abbildung \ref{fig:ct_dosisprofil} bei dem ersichtlich ist, dass auch die angrenzenden Schichten der aktuell bestrahlten Schicht mit Dicke $d$ durch Streuung eine Strahlenbelastung erfahren.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.9\textwidth]{./figures/ct/dosisprofil.png}
+	\caption{a: beobachtetes Dosisprofil einer Schicht der Dicke $d$=\SI{10}{mm} und b: ideales rechteckiges Dosisprofil und \emph{CTDI} als Fläche des Dosisprofils (aus \cite{buzug}, Abb 11.2)}
+	\label{fig:ct_dosisprofil}
+\end{figure}
+Zur einheitlichen Beschreibung der gerätespezifischen Dosis wurde der s.g. \emph{CTDI} (engl. \emph{computed tomography dose index}) eingeführt, der die totale Dosis eines idealerweise rechteckförmigen Dosisprofils entlang der $z$-Achse angibt (wenn die Projektion in der $x$-$y$-Ebene stattfindet)\cite{buzug}.
+Er ist definiert als:
+\begin{align}
+	CTDI=\frac{1}{d}\int_{-\infty}^{+\infty}D(z)\,\mathrm{d}z
+\end{align}
 
 \section{Fazit}
 
@@ -957,6 +971,11 @@ Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufg
 	Alkadhi, H.;Leschka, S.;Stolzmann, P.; Scheffel, H.
 	\emph{Wie funktioniert CT?},
 	Springer 2011
+	
+\bibitem{buzug}
+	Buzug, T.
+	\emph{Computed Tomography},
+	Springer 2008
 
 \bibitem{riezler}
 	Riezler, W.; Kopitzki, K.

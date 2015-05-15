@@ -696,8 +696,47 @@ In den Abbildungen kann man erkennen, dass die Ortsdosisleistung im Kondensator 
 Demnach muss das Volumen des Kondensators als Sperrbereich klassifiziert werden.
 
 \subsubsection{Bestimmung der Dosisleistung mit einem Stabdosimeter}
+Zur Bestimmung der Dosisleistung mit dem Stabdosimeter (Messbereich: \num{0} bis \SI{10}{mSv}) wird der Kondensator im Experimentierraum des Röntgengeräts durch eine Experimentierschiene mit Längenskala ausgetauscht.
+Der Nullpunkt der Skala liegt in \SI{110 +- 0.5}{mm} Entfernung von der Anode der Röntgenröhre.
+Nun wird das Stabdosimeter etwa an der Position des Kondensators bei \SI{16 +- 0.1}{cm} auf der Skala der Schiene positioniert.
+Damit ergibt sich ein Abstand von der Anode von:
+\begin{align*}
+	d = \SI{27.0 +- 0.2}{cm}
+\end{align*}
+Anschließend werden für die Molybdän- und die Kupfer-Röhre jeweils fünf Messungen der Dosis durchgeführt.
+Dazu wird das Röntgengerät auf die Röhrenspannung $U = \SI{35}{kV}$, den Emissionsstrom $I_\mathrm{E} = \SI{1.00}{mA}$ und die Bestrahlungszeit $t = \SI{15}{s}$ gestellt.
+Auf den Fehler der Bestrahlungszeit werden $\Delta t = \SI{1}{s}$ angenommen, da die Röntgenröhre nicht instantan ihre maximale Intensität erreicht.
+In Tabelle \ref{tab:dosis_stabdosimeter} wurden die gemessenen Dosen aufgetragen.
+\begin{table}[h]
+	\centering
+	\input{./tables/dosis_stabdosimeter.tex}
+	\caption{Gemessene Dosen}
+	\label{tab:dosis_stabdosimeter}
+\end{table}
+Bildung des Mittelwerts und der korrigierten Stichprobenvarianz der jeweiligen Messreihen liefern:
+\begin{align*}
+	D_\mathrm{Mo} = \SI{6.90 +- 0.14}{mSv} \\
+	D_\mathrm{Cu} = \SI{7.20 +- 0.21}{mSv}
+\end{align*}
+Die Dosisleistung $\dot{D}$ kann nun durch Division durch die Bestrahlungszeit $t$ berechnet werden, wobei der Fehler durch Gauß'sche Fehlerfortpflanzung zu:
+\begin{align}
+	\Delta \dot{D} = \dot{D} \cdot \sqrt{\left( \frac{\Delta D}{D} \right)^2 + \left( \frac{\Delta t}{t} \right)^2}
+\end{align}
+gegeben ist.
+Es folgen die Dosisleistungen:
+\begin{align*}
+	\dot{D}_\mathrm{Mo} = \SI{460 +- 10}{\micro\sievert\per\second} = \SI{1.656 +- 0.035}{\sievert\per\hour}\\
+	\dot{D}_\mathrm{Cu} = \SI{480 +- 35}{\micro\sievert\per\second} = \SI{1.728 +- 0.126}{\sievert\per\hour}
+\end{align*}
+Leider kann weder die Größenordnung, noch der Faktor 10 höhere Intensität der Kupfer-Röhre reproduziert werden.
 
 \subsubsection{Überprüfung des Abstandsquadratgesetzes}
+\begin{figure}[h]
+	\centering
+	\input{./plots/abstandsquadrat.tex}
+	\caption{Abstandsquadrat}
+	\label{fig:abstandsquadrat}
+\end{figure}
 
 
 \subsection{Totzeit}

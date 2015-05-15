@@ -710,7 +710,7 @@ In Tabelle \ref{tab:dosis_stabdosimeter} wurden die gemessenen Dosen aufgetragen
 \begin{table}[h]
 	\centering
 	\input{./tables/dosis_stabdosimeter.tex}
-	\caption{Gemessene Dosen}
+	\caption{Dosen im Strahlungsfeld der Röntgenröhre bei einer Bestrahlungszeit von $t=\SI{15}{s}$ mit Röhrenspannung $U=\SI{35}{kV}$ und Emissionsstrom $I_\mathrm{E} = \SI{1.00}{mA}$ bei einem Abstand $d=\SI{27 +- 0.2}{cm}$ von der Anode der Röntgenröhre.}
 	\label{tab:dosis_stabdosimeter}
 \end{table}
 Bildung des Mittelwerts und der korrigierten Stichprobenvarianz der jeweiligen Messreihen liefern:
@@ -731,13 +731,38 @@ Es folgen die Dosisleistungen:
 Leider kann weder die Größenordnung, noch der Faktor 10 höhere Intensität der Kupfer-Röhre reproduziert werden.
 
 \subsubsection{Überprüfung des Abstandsquadratgesetzes}
+Im Folgenden soll das Abstandsquadratgesetz der Kupfer-Röntgenröhre mithilfe eines Stabdosimeters überprüft werden.
+Um eine Sättigung des Dosimeters im Experimentierraum zu vermeiden, musste der Emissionsstrom $I_\mathrm{E}$ der Röhre auf \SI{0.50}{mA} reduziert werden.
+Weiterhin wird eine Röhrenspannung $U = \SI{35}{kV}$ und eine Bestrahlungszeit $t = \SI{15}{s}$ gewählt.
+Die Messdaten wurden in Tabelle \ref{tab:abstandsquadrat} aufgetragen, wobei die Umrechnung von der Skala im Experimentierraum auf den Abstand des Dosimeters von der Röhrenanode $d$ bereits erfolgt ist.
+\begin{table}[h]
+	\centering
+	\input{./tables/abstandsquadrat.tex}
+	\caption{Messdaten der Dosis über eine Bestrahlungszeit von $t=\SI{15}{s}$ bei einem Emissionsstrom $I_\mathrm{E} = \SI{0.50}{mA}$ zur Bestätigung des Abstandsquadratsgesetzes. Der Abstand $d$ ist bereits in den Abstand Dosimeter-Anode umgerechnet worden.}
+	\label{tab:abstandsquadrat}
+\end{table}
 \begin{figure}[h]
 	\centering
 	\input{./plots/abstandsquadrat.tex}
-	\caption{Abstandsquadrat}
+	\caption{Bestätigung des Abstandsquadratsgesetzes für die verwendete Kupfer-Röntgenröhre. Bei der Anpassung wurden die ersten beiden Messpunkte ignoriert.}
 	\label{fig:abstandsquadrat}
 \end{figure}
+Die Messdaten wurden in Abbildung \ref{fig:abstandsquadrat} grafisch dargestellt, wobei die Anpassungshypothese:
+\begin{align}
+	D(d) = \frac{\lambda}{d^2} + D_0
+\end{align}
+gewählt wurde.
+Die die Anpassung liefert die Parameter:
+\begin{align*}
+	\lambda &= \SI{1875 +- 95}{\milli\sievert\centi\metre\squared}\\
+	D_0 &= \SI{1.15 +- 0.18}{\milli\sievert}
+\end{align*}
+Auffällig ist die starke Abweichung vom Abstandsquadratsgesetzes bei kleinen Abständen von der Anode.
+Diese stammt daher, dass die Länge des Stabdosimeters nicht auf die Höhe der Rechteckblende im Röntgengerät abgestimmt wurde und daher die Ionisationskammer bei kleinen Abständen zumindest teilweise aus dem Strahlungsfeld hinausragt.
+Dies ist ein rein geometrischer Effekt und sollte für größere Abstände vernachlässigbar sein, da das Strahlungsfeld dort eine höhere Aufweitung aufweist und somit die Ionisationskammer im Dosimeter komplett ausfüllt.
 
+Unter Berücksichtigung dieses Effekts zeigt die Anpassung eine gute Übereinstimmung mit dem Abstandsquadratgesetzes.
+Die Notwendigkeit eines konstanten Versatzes $D_0$ für einen guten Fit könnte ebenfalls auf geometrische Effekte zurückzuführen sein, wie z.B. die Abweichung von einer idealen Punktquelle oder den Weglängenunterschied (jeweils von der Quelle) zwischen der Mitte der Ionisationskammer und des oberen/unteren Randes zurückzuführen sein.
 
 \subsection{Totzeit}
 

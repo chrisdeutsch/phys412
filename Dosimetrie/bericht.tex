@@ -698,9 +698,73 @@ In den Abbildungen kann man erkennen, dass die Ortsdosisleistung im Kondensator 
 Demnach muss das Volumen des Kondensators als Sperrbereich klassifiziert werden.
 
 \subsubsection{Bestimmung der Dosisleistung mit einem Stabdosimeter}
+Zur Bestimmung der Dosisleistung mit dem Stabdosimeter (Messbereich: \num{0} bis \SI{10}{mSv}) wird der Kondensator im Experimentierraum des Röntgengeräts durch eine Experimentierschiene mit Längenskala ausgetauscht.
+Der Nullpunkt der Skala liegt in \SI{110 +- 0.5}{mm} Entfernung von der Anode der Röntgenröhre.
+Nun wird das Stabdosimeter etwa an der Position des Kondensators bei \SI{16 +- 0.1}{cm} auf der Skala der Schiene positioniert.
+Damit ergibt sich ein Abstand von der Anode von:
+\begin{align*}
+	d = \SI{27.0 +- 0.2}{cm}
+\end{align*}
+Anschließend werden für die Molybdän- und die Kupfer-Röhre jeweils fünf Messungen der Dosis durchgeführt.
+Dazu wird das Röntgengerät auf die Röhrenspannung $U = \SI{35}{kV}$, den Emissionsstrom $I_\mathrm{E} = \SI{1.00}{mA}$ und die Bestrahlungszeit $t = \SI{15}{s}$ gestellt.
+Auf den Fehler der Bestrahlungszeit werden $\Delta t = \SI{1}{s}$ angenommen, da die Röntgenröhre nicht instantan ihre maximale Intensität erreicht.
+In Tabelle \ref{tab:dosis_stabdosimeter} wurden die gemessenen Dosen aufgetragen.
+\begin{table}[h]
+	\centering
+	\input{./tables/dosis_stabdosimeter.tex}
+	\caption{Dosen im Strahlungsfeld der Röntgenröhre bei einer Bestrahlungszeit von $t=\SI{15}{s}$ mit Röhrenspannung $U=\SI{35}{kV}$ und Emissionsstrom $I_\mathrm{E} = \SI{1.00}{mA}$ bei einem Abstand $d=\SI{27 +- 0.2}{cm}$ von der Anode der Röntgenröhre.}
+	\label{tab:dosis_stabdosimeter}
+\end{table}
+Bildung des Mittelwerts und der korrigierten Stichprobenvarianz der jeweiligen Messreihen liefern:
+\begin{align*}
+	D_\mathrm{Mo} = \SI{6.90 +- 0.14}{mSv} \\
+	D_\mathrm{Cu} = \SI{7.20 +- 0.21}{mSv}
+\end{align*}
+Die Dosisleistung $\dot{D}$ kann nun durch Division durch die Bestrahlungszeit $t$ berechnet werden, wobei der Fehler durch Gauß'sche Fehlerfortpflanzung zu:
+\begin{align}
+	\Delta \dot{D} = \dot{D} \cdot \sqrt{\left( \frac{\Delta D}{D} \right)^2 + \left( \frac{\Delta t}{t} \right)^2}
+\end{align}
+gegeben ist.
+Es folgen die Dosisleistungen:
+\begin{align*}
+	\dot{D}_\mathrm{Mo} = \SI{460 +- 10}{\micro\sievert\per\second} = \SI{1.656 +- 0.035}{\sievert\per\hour}\\
+	\dot{D}_\mathrm{Cu} = \SI{480 +- 35}{\micro\sievert\per\second} = \SI{1.728 +- 0.126}{\sievert\per\hour}
+\end{align*}
+Leider kann weder die Größenordnung, noch der Faktor 10 höhere Intensität der Kupfer-Röhre reproduziert werden.
 
 \subsubsection{Überprüfung des Abstandsquadratgesetzes}
+Im Folgenden soll das Abstandsquadratgesetz der Kupfer-Röntgenröhre mithilfe eines Stabdosimeters überprüft werden.
+Um eine Sättigung des Dosimeters im Experimentierraum zu vermeiden, musste der Emissionsstrom $I_\mathrm{E}$ der Röhre auf \SI{0.50}{mA} reduziert werden.
+Weiterhin wird eine Röhrenspannung $U = \SI{35}{kV}$ und eine Bestrahlungszeit $t = \SI{15}{s}$ gewählt.
+Die Messdaten wurden in Tabelle \ref{tab:abstandsquadrat} aufgetragen, wobei die Umrechnung von der Skala im Experimentierraum auf den Abstand des Dosimeters von der Röhrenanode $d$ bereits erfolgt ist.
+\begin{table}[h]
+	\centering
+	\input{./tables/abstandsquadrat.tex}
+	\caption{Messdaten der Dosis über eine Bestrahlungszeit von $t=\SI{15}{s}$ bei einem Emissionsstrom $I_\mathrm{E} = \SI{0.50}{mA}$ zur Bestätigung des Abstandsquadratsgesetzes. Der Abstand $d$ ist bereits in den Abstand Dosimeter-Anode umgerechnet worden.}
+	\label{tab:abstandsquadrat}
+\end{table}
+\begin{figure}[h]
+	\centering
+	\input{./plots/abstandsquadrat.tex}
+	\caption{Bestätigung des Abstandsquadratsgesetzes für die verwendete Kupfer-Röntgenröhre. Bei der Anpassung wurden die ersten beiden Messpunkte ignoriert.}
+	\label{fig:abstandsquadrat}
+\end{figure}
+Die Messdaten wurden in Abbildung \ref{fig:abstandsquadrat} grafisch dargestellt, wobei die Anpassungshypothese:
+\begin{align}
+	D(d) = \frac{\lambda}{d^2} + D_0
+\end{align}
+gewählt wurde.
+Die die Anpassung liefert die Parameter:
+\begin{align*}
+	\lambda &= \SI{1875 +- 95}{\milli\sievert\centi\metre\squared}\\
+	D_0 &= \SI{1.15 +- 0.18}{\milli\sievert}
+\end{align*}
+Auffällig ist die starke Abweichung vom Abstandsquadratsgesetzes bei kleinen Abständen von der Anode.
+Diese stammt daher, dass die Länge des Stabdosimeters nicht auf die Höhe der Rechteckblende im Röntgengerät abgestimmt wurde und daher die Ionisationskammer bei kleinen Abständen zumindest teilweise aus dem Strahlungsfeld hinausragt.
+Dies ist ein rein geometrischer Effekt und sollte für größere Abstände vernachlässigbar sein, da das Strahlungsfeld dort eine höhere Aufweitung aufweist und somit die Ionisationskammer im Dosimeter komplett ausfüllt.
 
+Unter Berücksichtigung dieses Effekts zeigt die Anpassung eine gute Übereinstimmung mit dem Abstandsquadratgesetzes.
+Die Notwendigkeit eines konstanten Versatzes $D_0$ für einen guten Fit könnte ebenfalls auf geometrische Effekte zurückzuführen sein, wie z.B. die Abweichung von einer idealen Punktquelle oder den Weglängenunterschied (jeweils von der Quelle) zwischen der Mitte der Ionisationskammer und des oberen/unteren Randes zurückzuführen sein.
 
 \subsection{Totzeit}
 
@@ -763,7 +827,7 @@ Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.01}{\milli\ampere} a
 \subsection{Computertomographie}
 
 Zum Abschluss wurde mit einem Computertomographie-Gerät ein CT-Scan eines gefriergetrockneten Frosches aufgenommen.
-Dazu wird das zu untersuchende Objekt in einer für Röntgenstrahlung beinahe durchsichtigen Styroporkugel so gelagert, dass es sich nicht bewegen kann (hier wurde genügend Watte in den Hohlraum der Styroporkugel gegeben).
+Dazu wird das zu untersuchende Objekt in einer für Röntgenstrahlung beinahe durchsichtigen Styroporkugel so gelagert, dass es sich nicht bewegen kann (hierzu wurde genügend Watte in den Hohlraum der Styroporkugel gegeben).
 Anschließend kann das Objekt an dem Goniometer montiert werden.
 Neben dem Röntgengerät wird das CT-Modul mit der Kamera aufgebaut, so dass die beiden Geräte möglichst dicht aneinander stehen, um kein Licht von außen in das CT-Modul gelangen zu lassen (das Röntgengerät ist mit einer Fluoreszenzschicht am Übergang ausgestattet, auf dem das mit der Kamera aufzunehmende Bild entsteht).
 Nach dem Start des Computertomographie-Programms werden dort die Parameter des Aufbaus (insbesondere der Abstand des Targets von der Kamera) sowie die gewünschten Einstellungen der Röntgenröhre eingegeben.
@@ -773,13 +837,14 @@ Die Projektionsgröße wurde dabei auf \SI{250x250}{px} eingestellt, da so das g
 Den Hinweisen des Programms folgend wurde die Rekonstruktionsgröße kleiner als die Projektionsgröße gewählt, auf \SI{240x240x240}{px}.
 
 Zur Drehachsenkorrektur wurde die Anzahl Projektionen zunächst gering gewählt (verschiedene Messungen mit maximal \num{45} Projektionen) und die Aufnahme gestartet.
-Ausgehend von dem aufgenommenen Bild kann dann durch das Programm eine Korrektur der Drehachse berechnet und die Kamera entspreched manuell justiert werden, so dass keine Doppelkonturen mehr im Bild zu erkennen sind.
-Nach mehreren Aufnahmen und anschließender Korrektur konnte so eine gute Justage erreicht werden.
+Ausgehend von dem aufgenommenen Bild kann durch das Programm eine Korrektur der Drehachse berechnet und die Kamera entsprechend manuell justiert werden, so dass keine Doppelkonturen mehr im Bild zu erkennen sind.
+Nach mehreren Aufnahmen und anschließender Korrektur konnte so eine gute Justierung erreicht werden.
 
 \subsubsection{Aufnahme und Rekonstruktion}
+\label{ct_aufnahme}
 
 Im Folgenden soll das allgemeine Vorgehen bei einer Computertomographieaufnahme anhand des im Versuch durchgeführten Scans beschrieben werden.
-Nach entsprechender Justage (s.o.) wird für eine qualitativ gute Aufnahme die Anzahl der Projektionen möglichst hoch gewählt.
+Nach entsprechender Justierung (s.o.) wird für eine qualitativ gute Aufnahme die Anzahl der Projektionen möglichst hoch gewählt.
 Sie gibt die Menge der Bilder an, die während einer kompletten Umdrehung des Objekts aufgenommen werden.
 In dem Versuch wurden \num{720} Projektionen eingestellt, was einer Winkelschrittweite pro Bild von $\Delta\alpha=$\SI{0.5}{\degree} entspricht.
 Ein paar ausgewählte Einzelprojektionen sind in Abbildung \ref{fig:ct_projektionen} dargestellt.
@@ -803,12 +868,12 @@ Bei der hier genutzten Software und Vorgehensweise wird das Objekt mittels s.g. 
 Die allgemeine Vorgehensweise\footnote{Dabei wird vereinfachend davon ausgegangen, dass das Bild in einem geeigneten Detektor entsteht, wobei dieser in dem Versuch aus Fluoreszenzschirm und Kamera zusammengesetzt ist.} umfasst dabei folgende Punkte (nach \cite{kalender}, Abb. 1.7):
 \begin{enumerate}
 	\item \textbf{Aufnahme der Projektionen} Hierbei entstehen gerasterte Bilder (d.h. diskrete Pixel), wobei jedem Pixel eine Helligkeit, abhängig von der Transmission des Strahls in diesem Bildpunkt, zugeordnet wird.
-	\item \textbf{Faltung mit geeignetem Faltungskern} Die Projektionen werden mit einem Kern gefaltet, der je nach Anwendung gewählt werden kann.
+	\item \textbf{Filterung mit geeignetem Faltungskern} Die Projektionen werden mit einem Kern gefaltet, der je nach Anwendung gewählt werden kann.
 	Er erzeugt Über- und Unterschwinger an Kanten, um diese beispielsweise zu betonen oder zu glätten (siehe auch Abb. \ref{fig:ct_faltung}).
 	\begin{figure}[ht]
 		\centering
 		\includegraphics[width=0.7\textwidth]{./figures/ct/faltung.jpg}
-		\caption{Hochpassfilterung durch Faltung des Schwächungsprofils mit einem geegineten Faltungskern (aus \cite{alkadhi}).}
+		\caption{Hochpassfilterung durch Faltung des Schwächungsprofils mit einem geeigneten Faltungskern (aus \cite{alkadhi}).}
 		\label{fig:ct_faltung}
 	\end{figure}
 	Aus Implementierungsgründen wird das Bild vorher fouriertransformiert, da die Faltung dadurch in eine deutlich schneller zu berechnende Multiplikation übergeht und anschließend rücktransformiert.
@@ -858,10 +923,33 @@ Der Frosch ist dabei sehr deutlich zu erkennen, die gewählte Anzahl Projektione
 Die nah am Frosch befindliche Watte zur stabilen Lagerung ist ebenfalls gut erkennbar, sowie ein außen liegender Ring der Befestigung.
 
 \subsubsection{Strahlenbelastung bei CT-Aufnahmen}
-Die folgenden Überlegungen sollen eine Einschätzung der Strahlenbelastung bei einem CT-Scan liefern, in der Praxis sind konkrete aufgenommene Dosen nur schwer zu berechnen und von vielen verschiedenen Faktoren abhängig.
-Im Gegesatz zu gewöhnlichen Röntgenaufnahmen, bei denen die Dosis etwa exponenziell mit der Dicke des durchstrahlten Objektes abnimmt (die Dosis ist proportional zur Intensiät) ergibt sich für ein in der Computertomographie aufgenommenes Objekt oder auch Patienten bei medizinischen Anwendungen eine andere Dosisverteilung.
+Die folgenden Überlegungen sollen eine Einschätzung der Strahlenbelastung bei einem CT-Scan liefern, in der Praxis jedoch sind konkrete aufgenommene Dosen nur schwer zu berechnen und von vielen verschiedenen Faktoren abhängig.
+Aufgrund der begrenzten Verfügbarkeit allgemeiner Quellen sind die angegebenen Informationen in den meisten Fällen auf Computertomographiegeräte für medizinische Anwendungen bezogen.
+Im Gegesatz zu gewöhnlichen Röntgenaufnahmen, bei denen die Dosis etwa exponentiell mit der Dicke des durchstrahlten Objektes abnimmt (die Dosis ist proportional zur Intensität) ergibt sich für ein in der Computertomographie aufgenommenes Objekt oder auch Patienten bei medizinischen Anwendungen eine andere Dosisverteilung.
 Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufgenommenen Dosen, so dass sich insgesamt eine homogene Verteilung ergibt.
-
+Bei schichtweisen CT-Aufnahmen eines Objekts, bei dem das in \ref{ct_aufnahme} beschriebene Vorgehen für jede Schicht durchgeführt wird (die Schichten, engl. \emph{slices} sind in $z$-Richtung aneinandergereiht), ergibt sich ein Dosisprofil wie in Abbildung \ref{fig:ct_dosisprofil} bei dem ersichtlich ist, dass auch die angrenzenden Schichten der aktuell bestrahlten Schicht mit Dicke $d$ durch Streuung eine Strahlenbelastung erfahren.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figures/ct/dosisprofil.png}
+	\caption{a: beobachtetes Dosisprofil einer Schicht der Dicke $d$=\SI{10}{mm} und b: ideales rechteckiges Dosisprofil und \emph{CTDI} als Fläche des Dosisprofils (aus \cite{buzug}, Abb 11.2)}
+	\label{fig:ct_dosisprofil}
+\end{figure}
+Zur einheitlichen Beschreibung der gerätespezifischen Dosis wurde der s.g. \emph{CTDI} (engl. \emph{computed tomography dose index}) eingeführt, der die totale Dosis eines idealerweise rechteckförmigen Dosisprofils entlang der $z$-Achse angibt (wenn die Projektion in der $x$-$y$-Ebene stattfindet)\cite{buzug}.
+Er ist definiert als:
+\begin{align}
+	\text{\emph{CTDI}}=\frac{1}{d}\int_{-\infty}^{+\infty}D(z)\,\mathrm{d}z
+\end{align}
+Im Rahmen der Strahlenschutzbestimmungen ist es ein ständiges Ziel, die Dosen bei CT-Aufnahmen zu minimieren.
+Der Wunsch nach höheren Auflösungen und Kontrasten steht dazu allerdings im Gegensatz, wie die folgenden Überlegungen zeigen, denn die Dosis ist ein entscheidender Faktor der Bildqualität.
+Im Rahmen der softwarebasierten Verbesserung der Bildqualität wurde bereits die Nutzung entsprechender Faltungskerne zur Filterung des Signals erwähnt.
+Diese können bei gleicher Dosis die Bildschärfe auf Kosten eines steigenden Bildrauschens verbessern oder umgekehrt.
+Bei gleichem Signal-Rausch-Verhältnis (\emph{SNR}, engl. \emph{signal-to-noise-ratio}) ist die zur Aufnahme nötige Dosis $D$ proportional zur (mittleren) Transmission des durchstrahlten Objekts\cite{buzug}, so dass für dickere und stärker abschwächende Objekte eine höhere Dosis notwendig ist, um das Bildrauschen gleich zu halten. 
+Weiterhin kann gezeigt werden, dass
+\begin{align}
+	D \propto \frac{(\text{\emph{SNR}})^2}{(\Delta\xi)^4}
+\end{align}
+gilt, mit $\Delta\xi$ der Größe eines Detektorelements (hier also Aufnahmepixels der Kamera).
+Dadurch ergibt sich auch für die Baugröße in Form kleinerer Detektorelemente eine Begrenzung, wenn die Dosis minimiert werden soll.
 \section{Fazit}
 
 \FloatBarrier
@@ -895,6 +983,11 @@ Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufg
 	Alkadhi, H.;Leschka, S.;Stolzmann, P.; Scheffel, H.
 	\emph{Wie funktioniert CT?},
 	Springer 2011
+	
+\bibitem{buzug}
+	Buzug, T.
+	\emph{Computed Tomography},
+	Springer 2008
 
 \bibitem{riezler}
 	Riezler, W.; Kopitzki, K.

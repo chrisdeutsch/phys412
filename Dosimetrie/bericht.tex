@@ -935,9 +935,19 @@ Bei schichtweisen CT-Aufnahmen eines Objekts, bei dem das in \ref{ct_aufnahme} b
 Zur einheitlichen Beschreibung der gerätespezifischen Dosis wurde der s.g. \emph{CTDI} (engl. \emph{computed tomography dose index}) eingeführt, der die totale Dosis eines idealerweise rechteckförmigen Dosisprofils entlang der $z$-Achse angibt (wenn die Projektion in der $x$-$y$-Ebene stattfindet)\cite{buzug}.
 Er ist definiert als:
 \begin{align}
-	CTDI=\frac{1}{d}\int_{-\infty}^{+\infty}D(z)\,\mathrm{d}z
+	\text{\emph{CTDI}}=\frac{1}{d}\int_{-\infty}^{+\infty}D(z)\,\mathrm{d}z
 \end{align}
-
+Im Rahmen der Strahlenschutzbestimmungen ist es ein ständiges Ziel, die Dosen bei CT-Aufnahmen zu minimieren.
+Der Wunsch nach höheren Auflösungen und Kontrasten steht dazu allerdings im Gegensatz, wie die folgenden Überlegungen zeigen, denn die Dosis ist ein entscheidender Faktor der Bildqualität.
+Im Rahmen der softwarebasierten Verbesserung der Bildqualität wurde bereits die Nutzung entsprechender Faltungskerne zur Filterung des Signals erwähnt.
+Diese können bei gleicher Dosis die Bildschärfe auf Kosten eines steigenden Bildrauschens verbessern oder umgekehrt.
+Bei gleichem Signal-Rausch-Verhältnis (\emph{SNR}, engl. \emph{signal-to-noise-ratio}) ist die zur Aufnahme nötige Dosis $D$ proportional zur (mittleren) Transmission des durchstrahlten Objekts\cite{buzug}, so dass für dickere und stärker abschwächende Objekte eine höhere Dosis notwendig ist, um das Bildrauschen gleich zu halten. 
+Weiterhin kann gezeigt werden, dass
+\begin{align}
+	D \propto \frac{(\text{\emph{SNR}})^2}{(\Delta\xi)^4}
+\end{align}
+gilt, mit $\Delta\xi$ der Größe eines Detektorelements (hier also Aufnahmepixels der Kamera).
+Dadurch ergibt sich auch für die Baugröße in Form kleinerer Detektorelemente eine Begrenzung, wenn die Dosis minimiert werden soll.
 \section{Fazit}
 
 \FloatBarrier

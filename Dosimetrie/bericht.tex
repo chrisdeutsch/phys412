@@ -825,7 +825,7 @@ Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.01}{\milli\ampere} a
 \subsection{Computertomographie}
 
 Zum Abschluss wurde mit einem Computertomographie-Gerät ein CT-Scan eines gefriergetrockneten Frosches aufgenommen.
-Dazu wird das zu untersuchende Objekt in einer für Röntgenstrahlung beinahe durchsichtigen Styroporkugel so gelagert, dass es sich nicht bewegen kann (hier wurde genügend Watte in den Hohlraum der Styroporkugel gegeben).
+Dazu wird das zu untersuchende Objekt in einer für Röntgenstrahlung beinahe durchsichtigen Styroporkugel so gelagert, dass es sich nicht bewegen kann (hierzu wurde genügend Watte in den Hohlraum der Styroporkugel gegeben).
 Anschließend kann das Objekt an dem Goniometer montiert werden.
 Neben dem Röntgengerät wird das CT-Modul mit der Kamera aufgebaut, so dass die beiden Geräte möglichst dicht aneinander stehen, um kein Licht von außen in das CT-Modul gelangen zu lassen (das Röntgengerät ist mit einer Fluoreszenzschicht am Übergang ausgestattet, auf dem das mit der Kamera aufzunehmende Bild entsteht).
 Nach dem Start des Computertomographie-Programms werden dort die Parameter des Aufbaus (insbesondere der Abstand des Targets von der Kamera) sowie die gewünschten Einstellungen der Röntgenröhre eingegeben.
@@ -835,14 +835,14 @@ Die Projektionsgröße wurde dabei auf \SI{250x250}{px} eingestellt, da so das g
 Den Hinweisen des Programms folgend wurde die Rekonstruktionsgröße kleiner als die Projektionsgröße gewählt, auf \SI{240x240x240}{px}.
 
 Zur Drehachsenkorrektur wurde die Anzahl Projektionen zunächst gering gewählt (verschiedene Messungen mit maximal \num{45} Projektionen) und die Aufnahme gestartet.
-Ausgehend von dem aufgenommenen Bild kann dann durch das Programm eine Korrektur der Drehachse berechnet und die Kamera entspreched manuell justiert werden, so dass keine Doppelkonturen mehr im Bild zu erkennen sind.
-Nach mehreren Aufnahmen und anschließender Korrektur konnte so eine gute Justage erreicht werden.
+Ausgehend von dem aufgenommenen Bild kann durch das Programm eine Korrektur der Drehachse berechnet und die Kamera entsprechend manuell justiert werden, so dass keine Doppelkonturen mehr im Bild zu erkennen sind.
+Nach mehreren Aufnahmen und anschließender Korrektur konnte so eine gute Justierung erreicht werden.
 
 \subsubsection{Aufnahme und Rekonstruktion}
 \label{ct_aufnahme}
 
 Im Folgenden soll das allgemeine Vorgehen bei einer Computertomographieaufnahme anhand des im Versuch durchgeführten Scans beschrieben werden.
-Nach entsprechender Justage (s.o.) wird für eine qualitativ gute Aufnahme die Anzahl der Projektionen möglichst hoch gewählt.
+Nach entsprechender Justierung (s.o.) wird für eine qualitativ gute Aufnahme die Anzahl der Projektionen möglichst hoch gewählt.
 Sie gibt die Menge der Bilder an, die während einer kompletten Umdrehung des Objekts aufgenommen werden.
 In dem Versuch wurden \num{720} Projektionen eingestellt, was einer Winkelschrittweite pro Bild von $\Delta\alpha=$\SI{0.5}{\degree} entspricht.
 Ein paar ausgewählte Einzelprojektionen sind in Abbildung \ref{fig:ct_projektionen} dargestellt.
@@ -866,12 +866,12 @@ Bei der hier genutzten Software und Vorgehensweise wird das Objekt mittels s.g. 
 Die allgemeine Vorgehensweise\footnote{Dabei wird vereinfachend davon ausgegangen, dass das Bild in einem geeigneten Detektor entsteht, wobei dieser in dem Versuch aus Fluoreszenzschirm und Kamera zusammengesetzt ist.} umfasst dabei folgende Punkte (nach \cite{kalender}, Abb. 1.7):
 \begin{enumerate}
 	\item \textbf{Aufnahme der Projektionen} Hierbei entstehen gerasterte Bilder (d.h. diskrete Pixel), wobei jedem Pixel eine Helligkeit, abhängig von der Transmission des Strahls in diesem Bildpunkt, zugeordnet wird.
-	\item \textbf{Faltung mit geeignetem Faltungskern} Die Projektionen werden mit einem Kern gefaltet, der je nach Anwendung gewählt werden kann.
+	\item \textbf{Filterung mit geeignetem Faltungskern} Die Projektionen werden mit einem Kern gefaltet, der je nach Anwendung gewählt werden kann.
 	Er erzeugt Über- und Unterschwinger an Kanten, um diese beispielsweise zu betonen oder zu glätten (siehe auch Abb. \ref{fig:ct_faltung}).
 	\begin{figure}[ht]
 		\centering
 		\includegraphics[width=0.7\textwidth]{./figures/ct/faltung.jpg}
-		\caption{Hochpassfilterung durch Faltung des Schwächungsprofils mit einem geegineten Faltungskern (aus \cite{alkadhi}).}
+		\caption{Hochpassfilterung durch Faltung des Schwächungsprofils mit einem geeigneten Faltungskern (aus \cite{alkadhi}).}
 		\label{fig:ct_faltung}
 	\end{figure}
 	Aus Implementierungsgründen wird das Bild vorher fouriertransformiert, da die Faltung dadurch in eine deutlich schneller zu berechnende Multiplikation übergeht und anschließend rücktransformiert.
@@ -921,14 +921,14 @@ Der Frosch ist dabei sehr deutlich zu erkennen, die gewählte Anzahl Projektione
 Die nah am Frosch befindliche Watte zur stabilen Lagerung ist ebenfalls gut erkennbar, sowie ein außen liegender Ring der Befestigung.
 
 \subsubsection{Strahlenbelastung bei CT-Aufnahmen}
-Die folgenden Überlegungen sollen eine Einschätzung der Strahlenbelastung bei einem CT-Scan liefern, in der Praxis sind konkrete aufgenommene Dosen nur schwer zu berechnen und von vielen verschiedenen Faktoren abhängig.
+Die folgenden Überlegungen sollen eine Einschätzung der Strahlenbelastung bei einem CT-Scan liefern, in der Praxis jedoch sind konkrete aufgenommene Dosen nur schwer zu berechnen und von vielen verschiedenen Faktoren abhängig.
 Aufgrund der begrenzten Verfügbarkeit allgemeiner Quellen sind die angegebenen Informationen in den meisten Fällen auf Computertomographiegeräte für medizinische Anwendungen bezogen.
-Im Gegesatz zu gewöhnlichen Röntgenaufnahmen, bei denen die Dosis etwa exponenziell mit der Dicke des durchstrahlten Objektes abnimmt (die Dosis ist proportional zur Intensiät) ergibt sich für ein in der Computertomographie aufgenommenes Objekt oder auch Patienten bei medizinischen Anwendungen eine andere Dosisverteilung.
+Im Gegesatz zu gewöhnlichen Röntgenaufnahmen, bei denen die Dosis etwa exponentiell mit der Dicke des durchstrahlten Objektes abnimmt (die Dosis ist proportional zur Intensität) ergibt sich für ein in der Computertomographie aufgenommenes Objekt oder auch Patienten bei medizinischen Anwendungen eine andere Dosisverteilung.
 Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufgenommenen Dosen, so dass sich insgesamt eine homogene Verteilung ergibt.
 Bei schichtweisen CT-Aufnahmen eines Objekts, bei dem das in \ref{ct_aufnahme} beschriebene Vorgehen für jede Schicht durchgeführt wird (die Schichten, engl. \emph{slices} sind in $z$-Richtung aneinandergereiht), ergibt sich ein Dosisprofil wie in Abbildung \ref{fig:ct_dosisprofil} bei dem ersichtlich ist, dass auch die angrenzenden Schichten der aktuell bestrahlten Schicht mit Dicke $d$ durch Streuung eine Strahlenbelastung erfahren.
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.9\textwidth]{./figures/ct/dosisprofil.png}
+	\includegraphics[width=0.8\textwidth]{./figures/ct/dosisprofil.png}
 	\caption{a: beobachtetes Dosisprofil einer Schicht der Dicke $d$=\SI{10}{mm} und b: ideales rechteckiges Dosisprofil und \emph{CTDI} als Fläche des Dosisprofils (aus \cite{buzug}, Abb 11.2)}
 	\label{fig:ct_dosisprofil}
 \end{figure}

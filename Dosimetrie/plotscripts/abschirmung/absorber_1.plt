@@ -2,11 +2,11 @@ reset
 
 set term epslatex color size 5,3.5
 
-set key top left
+set key top right
 
 set decimalsign '{,}'
 
-set xrange [0:*]
+set xrange [0:3.1]
 set yrange [*:*]
 set xlabel 'Absorberdicke $d$ / \si{mm}'
 set ylabel 'Transmission $T$ / \si{\percent}'
@@ -20,21 +20,31 @@ load './../gnuplot_linestyles.plt'
 ### PLOT 1
 set output './plots/abschirmung/absorber_1.tex'
 
-f(x) = m*x
-fit f(x) './data/abschirmung/absorber_1.txt' using 1:(log($9/100.0)):($10/$9) yerror via m
+set ylabel 'Transmission $T$ / \si{\percent}'
 
-plot './data/abschirmung/absorber_1.txt' using 1:(log($9/100.0)):($10/$9) w yerrorbars t'Absorber 1' ls 1,\
-     f(x) t'Fit' ls 2
-
+plot './data/abschirmung/absorber_1.txt' using 1:9:(0.05):10 w xyerrorbars t'ohne Filter' ls 1,\
+     './data/abschirmung/absorber_1_zr.txt' using 1:9:(0.05):10 w xyerrorbars t'Zr-Filter' ls 2
 
 
-### PLOT 2
-set output './plots/abschirmung/absorber_1_zr.tex'
 
-g(x) = m*x
-fit g(x) './data/abschirmung/absorber_1_zr.txt' using 1:(log($9/100.0)):($10/$9) yerror via m
+### PLOT 2 LOG
+set output './plots/abschirmung/absorber_1_log.tex'
 
-plot './data/abschirmung/absorber_1_zr.txt' using 1:(log($9/100.0)):($10/$9) w yerrorbars t'Absorber 1' ls 1,\
-     g(x) t'Fit' ls 2
+set ylabel 'Transmission $\log(T)$'
+
+set yrange [-5.5:0]
+
+
+f(x) = m1 * x + b1
+g(x) = m2 * x + b2
+
+fit f(x) './data/abschirmung/absorber_1.txt' using 1:(log($9/100.0)):(0.05):($10/$9) xyerror via m1, b1
+fit g(x) './data/abschirmung/absorber_1_zr.txt' using 1:(log($9/100.0)):(0.05):($10/$9) xyerror via m2, b2
+
+
+plot './data/abschirmung/absorber_1.txt' using 1:(log($9/100.0)):(0.05):($10/$9) w xyerrorbars t'ohne Filter' ls 1,\
+     './data/abschirmung/absorber_1_zr.txt' using 1:(log($9/100.0)):(0.05):($10/$9) w xyerrorbars t'Zr-Filter' ls 2,\
+     f(x) t'Anpassung ohne Filter' ls 3,\
+     g(x) t'Anpassung Zr-Filter' ls 4
 
 unset output

@@ -784,24 +784,19 @@ Dazu wird das Zählrohr auf dem Goniometer befestigt und zur Bestrahlung eine R�
 Das Zählrohr wird so positioniert, dass es sich gleich weit von der Goniometermitte entfernt befindet wie der Kollimator von der Goniometermitte (je ca. \num{5} bis \SI{7}{cm}).
 Zur Messung wird die Zählrate über $\Delta t=\SI{30}{\second}$ gemittelt und eine Röhrenspannung von $U=\SI{35}{\kilo\volt}$ fest eingestellt, während der Emissionsstrom $I_\text{E}$ von \num{0} bis \SI{1}{\milli\ampere} variiert wird.
 Das Maximum der Zählrate wird bei einer Winkeleinstellung des Zählrohrs von $\beta=\SI{-0.9}{\degree}$ lokalisiert und das Zählrohr für alle folgenden Messungen auf dieser Einstellung genutzt.
-Die so gefundenen Zählraten in Abhängigkeit des Emissionsstroms sind in Tabelle \ref{tab:totzeit} festgehalten.
-\begin{table}[ht]
-	\centering
-	\input{./tables/totzeit.tex}
-	\caption{Messwerte zur Abschätzung der Totzeit, gezeigt ist die Abhängigkeit der Zählrate vom Emissionsstrom.}
-	\label{tab:totzeit}
-\end{table}
-Der Fehler von $I_\text{E}$ wurde dabei wie oben auf \SI{0.005}{\milli\ampere} geschätzt, für den Fehler von $R$ wurde Gauß'sche Fehlerfortpflanzung genutzt.
+Die so gefundenen Zählraten $R$ in Abhängigkeit des Emissionsstroms $I_\mathrm{E}$ sind in Tabelle \ref{tab:totzeit} festgehalten.
+Der Fehler von $I_\text{E}$ wurde dabei wie oben auf \SI{0.005}{\milli\ampere} geschätzt, für den Fehler der Zählrate wurde Gauß'sche Fehlerfortpflanzung genutzt.
 Dabei gilt:
 \begin{align}
 	R = \frac{N}{T}\qquad\text{$N$: Anzahl Ereignisse, $T$: gemessene Zeit}
 \end{align}
 Mit Gauß'scher Fehlerfortpflanzung folgt unter der Annahme, dass der Fehler der Zeit $\Delta T=0$ ist:
 \begin{align}
-	\Delta R &= \sqrt{\frac{(\Delta N)^2}{T^2}} &\qquad \Delta N =\sqrt{N} \\
-				 &= \sqrt{\frac{N}{T^2}} &\qquad \frac{N}{T}= R\\
-				 &= \sqrt{\frac{R}{T}} \label{eq:zählrate_fehler}
+	\Delta R &= \sqrt{\frac{(\Delta N)^2}{T^2}} = \sqrt{\frac{N}{T^2}} \nonumber \\
+		     &= \sqrt{\frac{R}{T}}
+		     \label{eq:zählrate_fehler}
 \end{align}
+dabei wurde im zweiten Schritt $\Delta N = \sqrt{N}$ aus der Poisson-Statistik der Anzahl der gemessenen Ereignisse verwendet.
 Grafisch aufgetragen erhält man aus diesen die Abbildung \ref{fig:totzeit}.
 \begin{figure}[ht]
 	\centering
@@ -812,11 +807,27 @@ Grafisch aufgetragen erhält man aus diesen die Abbildung \ref{fig:totzeit}.
 Es ist deutlich zu sehen, dass es sich bei dem beobachteten Aufbau um ein paralysierendes System handelt.
 Dies ist erkennbar an der Tatsache, dass die Zählrate nicht wie für ein nicht-paralysierendes System erwartet in Sättigung geht, sondern nach Erreichen eines Maximums bei zunehmendem Emissionsstrom wieder abnimmt.
 Eine Anpassung der Form wie \eqref{eq:totzeit_paralysierend}, die bereits in Abbildung \ref{fig:totzeit} durchgeführt wurde stärkt diese Annahme.
-Dabei wird davon ausgegangen, dass die echte Zählrate $m$ proportional zum Emissionsstrom ist (Proportionalitätskonstante $\lambda$ aus der Anpassung: $\lambda$=\SI{27169.8+-339.3}{\per\second\per\milli\ampere}).
-Aus der Anpassung kann ebenfalls mit \eqref{eq:totzeit_paralysierend} die Totzeit $\tau$ des paralysierenden Systems recht gut bestimmt werden zu:
+Dabei wird davon ausgegangen, dass die echte Zählrate $m$ proportional\footnote{Im Dosimetrie-Kapitel sieht man eindeutig, dass starke Nichtlinearitäten bei der Kupfer-Röhre auftreten. Es ist nicht klar, ob der Ursprung in der verwendeten Röhre oder der Ionisationskammer liegt. Da in diesem Abschnitt aber nur eine Abschätzung der Totzeit erfolgen soll, sollen die Nichtlinearitäten vernachlässigt werden.} zum Emissionsstrom $I_\mathrm{E}$ mit der Proportionalitätskonstante:
 \begin{align}
-\tau = \SI{4.29 +- 0.02e-5}{\second}
+	\lambda =\SI{27.17 +- 0.34}{\per\second\per\nano\ampere}
 \end{align}
+ist.
+Aus der Anpassung kann ebenfalls die Totzeit $\tau$ des Systems abgeschätzt werden:
+\begin{align}
+\tau = \SI{42.9 +- 0.2}{\micro\second}
+\end{align}
+Nach dieser Abschätzung sollte die Totzeit $\tau$ des Geiger-Müller-Zählrohrs im Bereich zwischen \num{10} und \SI{100}{\micro\second} bewegen.
+Nun soll die benötigte Totzeitkorrektur in Abhängigkeit der gemessenen Rate berechnet werden.
+Dazu löst man Gleichung \eqref{eq:totzeit_paralysierend} numerisch und erhält für den Totzeitkorrekturfaktor $\frac{m(k)}{k}$, wobei $m$ die tatsächliche und $k$ die gemessene Rate ist.
+Der Faktor ist für $\tau = \SI{42.9}{\micro\second}$ in Abbildung \ref{fig:totzeitkorrektur_messung} aufgetragen, wobei hier auf eine ausführliche Fehlerrechnung verzichtet wird.
+\begin{figure}[ht]
+	\centering
+	\input{./plots/totzeitkorrektur.tex}
+	\caption{Numerische Berechnung der benötigten Totzeitkorrektur in Abhängigkeit der gemessenen Zählrate für ein paralysierendes Zählrohr der Totzeit $\tau =\SI{42.9}{\micro\second}$.}
+	\label{fig:totzeitkorrektur_messung}
+\end{figure}
+Wie man sieht, ist die benötigte Korrektur für Zahlraten unter \SI{1000}{\per\second} kleiner als \SI{5}{\percent}, weshalb im folgenden die Zählraten stets so gewählt wurden, dass sie \SI{1000}{\per\second} nicht überschreiten und dadurch auf eine Totzeitkorrektur verzichtet werden kann.
+
 
 \subsection{Abschirmung}
 
@@ -1095,6 +1106,15 @@ Dadurch ergibt sich auch für die Baugröße in Form kleinerer Detektorelemente 
 		\label{tab:roehrenspannung_cu}
 	\end{subtable}	
 	\caption{Gemessener Zusammenhang zwischen Röhrenspannung $U$ und Ionisationsstrom $I_\mathrm{C}$. Der Ionisationsstrom wurde als Spannungsabfall $U_{I_\mathrm{C}}$ über einem Messwiderstand $R$ gemessen.}
+\end{table}
+\FloatBarrier
+
+\subsection{Messdaten: Totzeit}
+\begin{table}[ht]
+	\centering
+	\input{./tables/totzeit.tex}
+	\caption{Messwerte zur Abschätzung der Totzeit, gezeigt ist die Abhängigkeit der Zählrate $R$ vom Emissionsstrom $I_\mathrm{E}$.}
+	\label{tab:totzeit}
 \end{table}
 \FloatBarrier
 

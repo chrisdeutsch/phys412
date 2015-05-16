@@ -731,7 +731,9 @@ Es folgen die Dosisleistungen:
 	\dot{D}_\mathrm{Mo} = \SI{460 +- 10}{\micro\sievert\per\second} = \SI{1.656 +- 0.035}{\sievert\per\hour}\\
 	\dot{D}_\mathrm{Cu} = \SI{480 +- 35}{\micro\sievert\per\second} = \SI{1.728 +- 0.126}{\sievert\per\hour}
 \end{align*}
-\korr{TODO:} Leider kann weder die Größenordnung, noch der Faktor 10 höhere Intensität der Kupfer-Röhre reproduziert werden.
+Leider kann die Größenordnung (\SI{4}{\sievert\per\hour} für Molybdän und \SI{40}{\sievert\per\hour} für Kupfer) nicht reproduziert werden.
+Auch die zehnfach größere Dosisleistung der Kupferröhre kann nicht beobachtet werden, stattdessen sind die mit dem Stabdosimeter gemessenen Dosisleistungen fast identisch.
+Die Messung zwei nahezu identischer Dosisleistungen könnte auf einen Sättigungseffekt des Stabdosimeters zurückzuführen sein, wobei die Quartzfaser in beiden Fällen noch auf der Skala (0 bis \SI{10}{mSv}) sichtbar war.
 
 \subsubsection{Überprüfung des Abstandsquadratgesetzes}
 Im Folgenden soll das Abstandsquadratgesetz der Kupfer-Röntgenröhre mithilfe eines Stabdosimeters überprüft werden.
@@ -858,7 +860,7 @@ In Abbildung \ref{fig:absorber_1} wurden die so berechneten Transmissionen gegen
 	\caption{Transmissionskoeffizienten der Aluminiumabsorber verschiedener Dicken $d$}
 	\label{fig:absorber_1}
 \end{figure}
-\korr{TODO: Interpretation}
+Die höhere Transmission mit Zirkonfilter lässt sich nicht erklären, da man erwarten würde, dass die ungefilterte Röntgenstrahlung eine höhere Transmission aufweist, weil dort der hochenergetische Teil des Spektrums nicht herausgefiltert wurde und der Schwächungskoeffizient mit steigender Energie abnehmen sollte.
 Der Vergleich mit der Theorie in Abschnitt \ref{sec:lambert} liefert den Zusammenhang:
 \begin{align}
 	T = e^{-\mu \cdot d}
@@ -877,7 +879,7 @@ Diese Linearisierung wurde in Abbildung \ref{fig:absorber_1_log} abgebildet.
 Offensichtlich liegen die linearisierten Datenpunkt auf einer Gerade, die jedoch stark von der theoretischen erwarteten Ursprungsgerade abweichen.
 In der logarithmischen Darstellung entspricht die Abweichung von der Ursprungsgerade um einen Achsenabschnitt $b$ einem multiplikativen Faktor $e^b$ auf die berechneten Transmissionen.
 Hinsichtlich der Theorie macht dies jedoch wenig Sinn, da ohne Absorber $d = \SI{0}{mm}$ ein Transmissionskoeffizient von $T = \num{1.0}$ erreicht werden sollte, was nur für Ursprungsgeraden der Fall ist.
-Aus Mangel an besseren Optionen\footnote{Eine genaue Diskussion der Fehlerquellen findet sich im Anschluss an die folgende Auswertung} werden Geraden der Form:
+Entgegen der theoretischen Betrachtung\footnote{Eine genaue Diskussion der Fehlerquellen findet sich im Anschluss an die folgende Auswertung} werden Geraden der Form:
 \begin{align}
 	y = -\mu \cdot d + b
 \end{align}
@@ -916,7 +918,7 @@ Durch Bildung des Mittelwerts erhält man die für die weitere Auswertung genutz
 \begin{align}
 	d = \SI{0.47+-0.05}{cm}
 \end{align}
-Ausgehend davon kann \eqref{eq:dicke} nach $\mu$ umgerechnet werden und mit den Transmissionen aus \ref{tab:absorber_elem} die Transmissionskoeffizienten $\mu_0$ (ohne Zirkonfilter) und $\mu_\mathrm{Zr}$ (mit Zirkonfilter) bestimmt und anschließend wieder gemittelt werden, so dass man mit
+Ausgehend davon kann \eqref{eq:dicke} nach $\mu$ umgestellt werden und mit den Transmissionen aus Tabelle \ref{tab:absorber_elem} die Transmissionskoeffizienten $\mu_0$ (ohne Zirkonfilter) und $\mu_\mathrm{Zr}$ (mit Zirkonfilter) bestimmt und anschließend wieder gemittelt werden, so dass man mit
 \begin{align}
 	\mu&=-\frac{\ln(T)}{d} \\
 	\Delta\mu &= \sqrt{\frac{\ln^2(T)\,(\Delta d)^2}{d^4} + \frac{(\Delta T)^2}{T^2d^2}}

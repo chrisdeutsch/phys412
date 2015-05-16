@@ -203,17 +203,19 @@ Zum Nachweis von Röntgenstrahlung gibt es mehrere Verfahren, die zum Einsatz ko
 	
 	\item \textbf{Photographischer Effekt:} Röntgenstrahlung schwärzt einen Röntgenfilm direkt.
 	
-	\item \textbf{Szintillationszähler, Halbleiterdetektoren, Geigerzähler}
+	\item \textbf{Szintillationszähler, Halbleiterdetektoren, Geiger-Müller-Zählrohr} Einfallende Teilchen erzeugen freie Ladungsträger, die als Stromimpuls gemessen werden können. Das in dem Versuch zum Einsatz kommende Geiger-Müller-Zählrohr wird im folgenden Abschnitt konkreter vorgestellt.
 \end{itemize}
 
-\subsubsection{kontinuierliches und charakteristisches Röntgenspektrum}
-
-
 \subsection{Geiger-Müller-Zählrohr}
+
+\subsubsection{Aufbau}
+
 Das Geiger-Müller-Zählrohr besteht aus einem Metallzylinder, der die Kathode darstellt und einem Draht im Inneren des Zylinders, der die Anode bildet.
 Der Zylinder ist mit einem Gas unter hohem Druck gefüllt, wobei meistens ein Edelgas verwendet wird, da dieses keine negativen Ionen bildet, die den Betrieb stören können.
 Bei Eintritt von Teilchen in das Zählrohr werden die Gasatome im Inneren ionisiert und so freie Elektronen und positiv geladene Ionen erzeugt.
 Durch die zwischen Draht und Zylindermantel anliegende Spannung werden die Elektronen zum Draht beschleunigt, die Ionen aufgrund ihrer höheren Masse deutlich langsamer zum Mantel hin.
+
+\subsubsection{Funktionsweise}
 
 Für den Betrieb ist die angelegte Gleichspannung zwischen Anode und Kathode entscheidend:
 Bei geringer Spannung können die freien Elektronen auf der Beschleunigungsstrecke wieder mit den Ionen rekombinieren, wodurch der gemessene Stromimpuls nur von den Elektronen erzeugt wird, die die Anode erreichen.
@@ -227,36 +229,29 @@ Der Lawineneffekt wird also deutlich verstärkt und eine selbstständige Gasentl
 Diese endet erst, wenn sich durch die entstandenen, positiv geladenen Ionen, die (langsam) zum Mantel des Zylinders beschleunigt werden, eine Raumladungszone im Rohr ausbildet, die die Feldstärke verringert.
 Zur Auslösung wird nur ein einzelnes Ereignis benötigt, wodurch das Geiger-Müller-Zählrohr maximale Empfindlichkeit besitzt.
 Die gemessenen Stromimpulse sind durch die hohe Beschleunigungsspannung, die die Elektronen erfahren, alle gleich groß, es wird also nur die Anzahl und nicht die Energie der einfallenden Strahlung gemessen.
-Durch den angesprochenen Effekt der selbstständigen Gasentladung hat das Geiger-Müller-Zählrohr eine s.g. \emph{Totzeit}, welche beschreibt, wie lange keine neu einfallende Strahlung gemessen werden kann, da die Gasatome vorher beinahe alle ionisiert sind und erst wieder mit den Elektronen rekombinieren müssen.
-
-\subsubsection{Aufbau}
-
-\subsubsection{Funktionsweise}
+Durch den angesprochenen Effekt der selbstständigen Gasentladung hat das Geiger-Müller-Zählrohr eine s.g. Totzeit, welche beschreibt, wie lange keine neu einfallende Strahlung gemessen werden kann, da die Gasatome vorher beinahe alle ionisiert sind und erst wieder mit den Elektronen rekombinieren müssen.
 
 \subsubsection{Totzeit und Totzeitkorrektur}
-Endliche Zeit des Detektors ein Signal zu verarbeiten lässt ihn insensitiv für neue Ereignisse.
-Man unterscheidet zwischen Paralysierenden und Nicht-Paralysierenden Systemen.
-Bei nicht-paralysierendem Verhalten führt ein zweites Ereignis lediglich zum Verlust dieses Ereignisses.
-Bei paralysierendem Verhalten führt ein zweites Event zum "Neustart" der Totzeit.
-Bei semi-paralysierendem Verhalten erhöht ein zweites Event lediglich die Zeit in der der Detektor nicht sensitiv ist (aber nicht um die Länge der Totzeit).
+Die bereits erwähnte Totzeit stellt die endliche Zeit des Detektors dar, ein Signal zu verarbeiten wodurch er in dieser Zeit insensitiv für neue Ereignisse ist.
+Man unterscheidet dabei zwischen paralysierenden und nicht-paralysierenden Systemen:
+bei nicht-paralysierendem Verhalten führen alle in der Totzeit auftretenden Ereignis lediglich zum Verlust dieser, wohingegen bei paralysierendem Verhalten ein zweites Event zum "`Neustart"' der Totzeit führt.
+Als semi-paralysierendes Verhalten bezeichnet man Systeme, bei denen die Zeit in der der Detektor nicht sensitiv ist durch ein zweites Event lediglich erhöht wird (aber nicht um die Länge der Totzeit).
 
-(Cite Leo)Unter Annahme eines nicht paralysierenden Systems (Totzeit: $\tau$) mit der wahren Count-Rate $m$ und der vom Detektor gezählten Anzahl der Events $k$ in einer Zeit $T$.
+Unter Annahme eines nicht paralysierenden Systems mit der Totzeit $\tau$, der wahren Count-Rate $m$ und der vom Detektor gezählten Anzahl der Events $k$ in einer Zeit $T$ ergeben sich folgende Überlegungen\cite{leo}:
 Da jeder Count eine Totzeit auslöst ergibt sich die gesamte Totzeit zu:
 \begin{align}
 	\tau_\mathrm{ges.} = k \cdot \tau
 \end{align}
-In dieser Zeit verpasst man $m k \tau$ Events.
-Dadurch ergibt sich:
+In dieser Zeit verpasst man $m k \tau$ Events, wodurch sich
 \begin{align}
 	m T = k + m k \tau
 \end{align}
-und auflösen nach $m$:
+ergibt. Aufgelöst nach der wahren Count-Rate $m$ erhält man:
 \begin{align}
 	m = \frac{k / T}{1 - (k/T) \tau}
 \end{align}
-
 Unter Annahme eines paralysierenden Systems werden nur Events gezählt zwischen denen eine Zeit von $\tau$ liegt.
-Die Verteilung der Zeitintervalle zwischen zwei Zerfällen ist:
+Die Verteilung der Zeitintervalle zwischen zwei Zerfällen ist mit der gleichen Notation wie oben
 \begin{align}
 	P(t) = m \, \mathrm{e}^{-m t}
 \end{align}
@@ -988,6 +983,11 @@ Dadurch ergibt sich auch für die Baugröße in Form kleinerer Detektorelemente 
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
+\bibitem{leo}
+	W. R. Leo,
+	\emph{Techniques for Nuclear and Particle Physics Experiments},
+	Springer 1994
+
 \bibitem{anleitung}
 	Physikalisches Praktikum V: Kern- und Teilchenphysik,
 	Versuchsbeschreibung \emph{P523: $\beta$-Spektrometer} (Stand: Januar 2015),

@@ -267,7 +267,7 @@ Diese Gleichung hat zwei Lösungen!
 Die kleinere der Lösungen liegt auf der mit $m$ ansteigenden Zählrate $k/T$ und die größere der Lösungen liegt auf der abfallenden Flanke.
 SIEHE BILD LEO S.124 Fig.5.5!!!
 Plotten von Zählrate für paralysierende Systeme und nichtparalysierende Systeme (Christopher weiß bescheid)!
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\input{./plots/theo_totzeitkorrektur.tex}
 	\caption{Totzeitkorrektur}
@@ -457,7 +457,6 @@ Die aufgenommenen Messdaten für die Röhrenspannungen \SI{15}{V}, \SI{25}{V} un
 	\caption{Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ von der Kondensatorspannung $U_\mathrm{C}$}
 	\label{fig:kondensatorspannung}
 \end{figure}
-
 Man sieht sofort, dass sich der Verlauf von Ionisationsstrom in Abhängigkeit der Kondensatorspannung in zwei charakteristische Bereiche einteilen lässt.
 Zum einen ist dies der sogenannte Rekombinationsbereich bei kleinen Kondensatorspannungen, in dem das elektrische Feld zwischen den Platten nicht groß genug ist, um alle erzeugten Ionen zu detektieren, da diese aufgrund der geringen Feldstärke rekombinieren können.
 Dies äußert sich in dem linearen Anstieg des Ionisationsstroms mit der Kondensatorspannung bis zu einer Grenzspannung bei der die Kurve beginnt in Sättigung zu gehen.
@@ -484,8 +483,8 @@ Dabei wird bei maximaler Röhrenspannung $U = \SI{35}{kV}$ in Emissionsstrom-Sch
 Außerdem ist zu beachten, dass zur Messbereichserweiterung des Elektrometerverstärkers für die Kupferröhre ein Messwiderstand von $R=\SI{100}{\mega\ohm}$ verwendet wurde.
 Die Messdaten finden sich in Anhang \ref{app:ionisationsstrom_emissionsstrom} und wurden in Abbildung \ref{fig:abh_emissionsstrom} grafisch dargestellt.
 \begin{figure}[hp]
-	\centering
 	\begin{subfigure}[b]{1\textwidth}
+		\centering
 		\input{./plots/abh_emissionsstrom/mo.tex}
 		\subcaption{Molybdän-Röhre mit Anpassung einer linearen Funktion}
 		\label{fig:mo_emissionsstrom}
@@ -494,6 +493,7 @@ Die Messdaten finden sich in Anhang \ref{app:ionisationsstrom_emissionsstrom} un
 	\vspace{10mm}
 	
 	\begin{subfigure}[b]{1\textwidth}
+		\centering
 		\input{./plots/abh_emissionsstrom/cu.tex}
 		\subcaption{Kupfer-Röhre mit starker Abweichung vom erwarteten linearen Verhalten}
 		\label{fig:cu_emissionsstrom}
@@ -526,10 +526,10 @@ Dabei wird beim maximalen Emissionsstrom $I_\mathrm{E} = \SI{1.00}{mA}$ die Röh
 Der Fehler der Röhrenspannung wird anhand der letzten Stelle der Digitalanzeige des Röntgengerätes auf $\Delta U = \SI{0.05}{kV}$ abgeschätzt.
 Die aufgenommenen Messdaten wurden im Anhang \ref{app:ionisationsstrom_roehrenspannung} aufgetragen und in Abbildung \ref{fig:abh_roehrenspannung} grafisch dargestellt.
 \begin{figure}[hp]
-	\centering
 	\vspace{-10mm}
 	
 	\begin{subfigure}[b]{1\textwidth}
+		\centering
 		\input{./plots/abh_roehrenspannung/mo.tex}
 		\subcaption{Molybdän-Röhre mit charakteristischen Linien $\mathrm{K}_\alpha$ (\SI{17.4}{keV}) und $\mathrm{K}_\beta$ (\SI{19.6}{keV}) \cite{booklet}}
 		\label{fig:mo_roehrenspannung}
@@ -538,6 +538,7 @@ Die aufgenommenen Messdaten wurden im Anhang \ref{app:ionisationsstrom_roehrensp
 	\vspace{2.5mm}
 	
 	\begin{subfigure}[b]{1\textwidth}
+		\centering
 		\input{./plots/abh_roehrenspannung/cu.tex}
 		\subcaption{Kupfer-Röhre mit charakteristischen Linien $\mathrm{K}_\alpha$ (\SI{8.04}{keV}) und $\mathrm{K}_\beta$ (\SI{8.91}{keV}) \cite{booklet}}
 		\label{fig:cu_roehrenspannung}
@@ -558,7 +559,7 @@ Zur Bestimmung der Ionendosisleistung im Raum zwischen den Kondensatorplatten, m
 Dies geschieht indem durch geometrische Betrachtungen das durchstrahlte Volumen im Kondensator berechnet wird und anschließend anhand der gemessenen Temperatur $T$ und Luftdruck $p$ die Dichte der Luft $\rho$ im Experimentierraum berechnet wird.\\
 \\
 \textbf{Berechnung des durchstrahlten Volumens:}\\
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.8\textwidth]{./figures/volumen_kondensator.png}
 	\caption{Geometrie des durchstrahlten Volumens im Plattenkondensator \cite{ld_didactic}. Die näherungsweise punktförmige Röntgenquelle wird durch eine Rechteckblende der Fläche $A_0 = a_0 \cdot b_0$ begrenzt. In einer Entfernung $d$ von der Blende befindet sich der Plattenkondensator mit Länge $D$.}
@@ -714,7 +715,7 @@ Anschließend werden für die Molybdän- und die Kupfer-Röhre jeweils fünf Mes
 Dazu wird das Röntgengerät auf die Röhrenspannung $U = \SI{35}{kV}$, den Emissionsstrom $I_\mathrm{E} = \SI{1.00}{mA}$ und die Bestrahlungszeit $t = \SI{15}{s}$ gestellt.
 Auf den Fehler der Bestrahlungszeit werden $\Delta t = \SI{1}{s}$ angenommen, da die Röntgenröhre nicht instantan ihre maximale Intensität erreicht.
 In Tabelle \ref{tab:dosis_stabdosimeter} wurden die gemessenen Dosen aufgetragen.
-\begin{table}[h]
+\begin{table}[ht]
 	\centering
 	\input{./tables/dosis_stabdosimeter.tex}
 	\caption{Dosen im Strahlungsfeld der Röntgenröhre bei einer Bestrahlungszeit von $t=\SI{15}{s}$ mit Röhrenspannung $U=\SI{35}{kV}$ und Emissionsstrom $I_\mathrm{E} = \SI{1.00}{mA}$ bei einem Abstand $d=\SI{27 +- 0.2}{cm}$ von der Anode der Röntgenröhre.}
@@ -742,13 +743,13 @@ Im Folgenden soll das Abstandsquadratgesetz der Kupfer-Röntgenröhre mithilfe e
 Um eine Sättigung des Dosimeters im Experimentierraum zu vermeiden, musste der Emissionsstrom $I_\mathrm{E}$ der Röhre auf \SI{0.50}{mA} reduziert werden.
 Weiterhin wird eine Röhrenspannung $U = \SI{35}{kV}$ und eine Bestrahlungszeit $t = \SI{15}{s}$ gewählt.
 Die Messdaten wurden in Tabelle \ref{tab:abstandsquadrat} aufgetragen, wobei die Umrechnung von der Skala im Experimentierraum auf den Abstand des Dosimeters von der Röhrenanode $d$ bereits erfolgt ist.
-\begin{table}[h]
+\begin{table}[ht]
 	\centering
 	\input{./tables/abstandsquadrat.tex}
 	\caption{Messdaten der Dosis über eine Bestrahlungszeit von $t=\SI{15}{s}$ bei einem Emissionsstrom $I_\mathrm{E} = \SI{0.50}{mA}$ zur Bestätigung des Abstandsquadratsgesetzes. Der Abstand $d$ ist bereits in den Abstand Dosimeter-Anode umgerechnet worden.}
 	\label{tab:abstandsquadrat}
 \end{table}
-\begin{figure}[h]
+\begin{figure}[ht]
 	\centering
 	\input{./plots/abstandsquadrat.tex}
 	\caption{Bestätigung des Abstandsquadratsgesetzes für die verwendete Kupfer-Röntgenröhre. Bei der Anpassung wurden die ersten beiden Messpunkte ignoriert.}
@@ -831,8 +832,27 @@ Dafür wird der Emissionsstrom so gewählt, dass keine Totzeitkorrektur durchgef
 Der Targethalter wurde dann in Schritten von $\Delta\alpha=$\SI{10}{\degree} gedreht, um für das jeweilige Material bzw. die jeweilige Dicke der Aluminiumschicht die Zählrate zu bestimmen.
 Die Messungen wurden einmal mit und einmal ohne Zirkonfilter duchgeführt.
 Dieser filtert den kurzwelligen Anteil des Spektrums der erzeugten Bremsstrahlung aus.
-Die so gefundenen Messwerte sind in Tabelle \ref{tab:absorber} und \ref{tab:absorber_zr} zu finden.
-Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.01}{\milli\ampere} abgeschätzt und der Fehler der Zählrate mit \eqref{eq:zählrate_fehler} berechnet.
+Die so gefundenen Messwerte sind in Tabelle \ref{tab:absorber_alu} zu finden.
+Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.005}{\milli\ampere} abgeschätzt und der Fehler der Zählrate mit \eqref{eq:zählrate_fehler} berechnet.
+\begin{table}[ht]
+	\centering
+	\resizebox{\textwidth}{!}{
+	\input{./tables/absorber/alu.tex}}
+	\caption{Messwerte und Berechnung für den Absorbersatz mit Aluminium unterschiedlicher Dicken $d$. Der Fehler für die Dicke wird auf \SI{0.05}{mm} geschätzt, der für den Emissionsstrom $I_\mathrm{E}$ erneut auf \SI{0.005}{mA}.
+	Die Zählraten $R$ wurden auf die maximale Zählrate bei \SI{1}{mA} Emissionsstrom skaliert und daraus die Transmission $T$ für alle Absorberdicken berechnet.}
+	\label{tab:absorber_alu}
+\end{table}
+Die auf \SI{1}{mA} skalierte Zählrate berechnet sich mit:
+\begin{align}
+	R_\mathrm{max} &= R\cdot\frac{\SI{1}{mA}}{I_\mathrm{E}}\\
+	\Delta R_\mathrm{max} &= \sqrt{\frac{(\Delta R)^2}{I_\mathrm{E}^2} + \frac{R^2\,(\Delta I_\mathrm{E})^2}{I_\mathrm{E}^2}}
+\end{align}
+Daraus kann die Transmission $T$ berechnet werden aus:
+\begin{align}
+	T &= \frac{R_\mathrm{max}}{R_\mathrm{max, 0}}\\
+	\Delta T &= \sqrt{\frac{(\Delta R_\mathrm{max})^2}{R_\mathrm{max, 0}^2} + \frac{R_\mathrm{max}^2\,(\Delta R_\mathrm{max, 0})^2}{R_\mathrm{max, 0}^2}} 
+\end{align}
+$R_\mathrm{max, 0}$ beschreibt dabei normalerweise die Zählrate vor dem Absorber, da diese jedoch nicht gemessen werden konnte, wurde sie gleich der Zählrate ohne Absorber gesetzt.
 
 \begin{figure}[h]
 	\centering

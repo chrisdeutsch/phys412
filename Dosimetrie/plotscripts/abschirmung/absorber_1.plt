@@ -10,7 +10,7 @@ set xrange [0:3.1]
 set yrange [*:*]
 set xlabel 'Absorberdicke $d$ / \si{mm}'
 set ylabel 'Transmission $T$ / \si{\percent}'
-
+set format x "%.1f"
 set grid
 
 load './../gnuplot_linestyles.plt'

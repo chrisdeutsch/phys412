@@ -378,21 +378,19 @@ Zur Bestimmung der Dosis wird der Film entwickelt, der durch die Bestrahlung ges
 Durch Vergleichen der Schwärzung mit Filmen, die mit bekannter Dosis bestrahlt wurden, kann so die Dosis bestimmt werden.
 
 \subsubsection{Thermolumineszenzdosimeter (TLD)}
-Ausnutzung von Thermolumineszenz: bestimmte kristalline Stoffe emittieren beim erhitzen Licht (keine Schwarzkörperstrahlung!) abhängig von der vorigen Bestrahlung mit elektromagnetischer oder ionisierender Strahlung.
-Die Intensität dieser Strahlung ist abhängig von der Strahlenbelastung.
+In manchen kristallinen Stoffen wird durch die Bestrahlung mit Gamma- oder Röntgenstrahlung eine mikroskopische Veränderung hervorgerufen, die bei anschließendem Erhitzen dafür sorgt, dass der Stoff Licht emittiert.
+Das emittierte Licht (keine Schwarzkörperstrahlung) ist abhängig von der Bestrahlung und durch Messung der Intensität kann die Dosis der Strahlung bestimmt werden.
 
 \subsubsection{Electronic Personal Dosimeter}
-Elektronische Geräte die mithilfe von Halbleiterdetektoren (PIN-Diode, MOSFETs) die Energie von einfallender Strahlung bestimmen.\\
-\\
-\textbf{PIN-Diode:} Dotiertes Halbleiterstück in P-I(Intrinsisch)-N\\
-In der Verarmungszone kann durch einfallende ionisierende Strahlung eine Elektron-Loch Kaskade entstehen wobei die ausgelöste Ladung proportional zur Energie des absorbierten Quants ist.\\
-Mithilfe eines Integrators kann damit die Energie bestimmt werden und die Dosis berechnet werden.\\
-\\
-\textbf{MOSFET:} Die Grenzspannung zum Durchschalten des MOSFET $V_\mathrm{TH}$.\\
-Wird der MOSFET bestrahlt so bildet sich gefangene Ladung im Oxid des MOSFET und es werden Elektronen-Loch Paare erzeugt.
-Durch die geringere Mobilität der Löcher werden diese im Halbleitermaterial gefangen und führen zu einer negativen Spannungsverschiebung der Grenzspannung $\Delta V_\mathrm{TH}$.
-Die Spannungsverschiebung ist proportional zur Dosis.
-
+Als Electronic Personal Dosimeter werden elektronische Geräte zusammengefasst, die mithilfe von Halbleiterdetektoren (PIN-Diode, MOSFETs) die Energie von einfallender Strahlung bestimmen.
+\begin{itemize}
+	\item \textbf{PIN-Diode:} Ein dotiertes Halbleiterstück mit pin-Übergang (i: intrinsisch) besitzt eine Verarmungszone, in der durch einfallende ionisierende Strahlung eine Elektron-Loch Kaskade entstehen kann, wobei die ausgelöste Ladung proportional zur Energie des absorbierten Strahlungsquants ist.
+	Mithilfe eines Integrators kann damit die Energie bestimmt und darüber die Dosis berechnet werden.
+	\item \textbf{MOSFET:} Es sei die Grenzspannung zum Durchschalten des MOSFET $V_\mathrm{TH}$.
+	Wird der MOSFET nun bestrahlt so bildet sich gefangene Ladung im Oxid des MOSFET und es werden Elektronen-Loch Paare erzeugt.
+	Durch die geringere Mobilität der Löcher werden diese im Halbleitermaterial gefangen und führen zu einer negativen Spannungsverschiebung der Grenzspannung $\Delta V_\mathrm{TH}$.
+	Die Spannungsverschiebung ist proportional zur Dosis.
+\end{itemize}
 
 \subsection{Abschwächung von Röntgenstrahlen (Lambertsches Schwächungsgesetz)}
 \label{sec:lambert}
@@ -888,7 +886,6 @@ Die Ergebnisse der Anpassung lauten:
 	\text{mit Filter:} \qquad \mu = \SI{4.4 +- 0.4}{\per\centi\metre},\quad b = \num{-1.6 +- 0.1}
 \end{align*}
 
-
 Mit den gerade bestimmten Absorptionskoeffizienten kann so die Dicke des Aluminiums im zweiten Absorbersatz bestimmt werden, die gleich groß ist wie die Dicke der anderen Absorberelemente.
 Die zur Berechnung notwendigen Messwerte für den zweiten Absorbersatz sind in Tabelle \ref{tab:absorber_elem} notiert.
 Für die Berechnungen gelten weiterhin \eqref{eq:max_rate} bis \eqref{eq:transmission}.
@@ -931,6 +928,16 @@ die Werte in Tabelle \ref{tab:absorber_koeff} erhält.
 	\caption{Transmissionskoeffizienten für die verschiedenen Absorberelemente jeweils mit und ohne Zirkonfilter sowie die gemittelten Transmissionskoeffizienten.}
 	\label{tab:absorber_koeff}
 \end{table}
+In Folge der für die Auswertung ungeeigneten Messung (s.u.) unterscheiden sich die hier gefundenen Werte für die Transmissionskoeffizienten zum Teil stark von den Literaturwerten.
+Während der Koeffizient für Aluminium wie auch im ersten Teil in der gleichen Größenordnung liegt wie der Literaturwert weicht der Transmissionskoeffizient für Silber schon um ein bis zwei Größenordnungen vom Literaturwert ab\footnote{Da der Transmissionskoeffizient stark von der Energie der Strahlung abhängig ist, die hier nicht bestimmt wird und die Werte nur tabelliert vorliegen ist kein genauer Vergleich möglich.}.
+Trotz der schlecht zu bewertenden Ergebnisse wurden die Transmissionskoeffizienten der Vollständigkeit halber in Abhängigkeit der Ordnungszahl in Abbildung \ref{fig:scheiss_messung} aufgetragen.
+\begin{figure}[ht]
+	\centering
+	\input{./plots/abschirmung/koeffizienten.tex}
+	\caption{Transmissionskoeffizienten in Abhängigkeit der Ordnungszahl des abschirmenden Elements.  Aufgrund der bekannten schlechten Ergebnisse ist diese Abbildung nicht geeignet, um den zu zeigenden Zusammenhang zu erkennen.}
+	\label{fig:scheiss_messung}
+\end{figure}
+Da die Zahlenwerte nicht bewertet werden können, kann lediglich der ungefähr erwartete Verlauf bestätigt werden, dass der Koeffizient mit der Ordnungszahl zunimmt.
 
 \subsection{Computertomografie}
 

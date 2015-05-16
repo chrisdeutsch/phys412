@@ -830,19 +830,21 @@ Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.01}{\milli\ampere} a
 \subsubsection{Transmissionskoeffizienten}
 
 \subsection{Computertomographie}
+\korr{Es fehlt das Bild vom Strichgitter und eine Einschätzung des Auflösevermögens}
+
 
 Zum Abschluss wurde mit einem Computertomographie-Gerät ein CT-Scan eines gefriergetrockneten Frosches aufgenommen.
 Dazu wird das zu untersuchende Objekt in einer für Röntgenstrahlung beinahe durchsichtigen Styroporkugel so gelagert, dass es sich nicht bewegen kann (hierzu wurde genügend Watte in den Hohlraum der Styroporkugel gegeben).
 Anschließend kann das Objekt an dem Goniometer montiert werden.
 Neben dem Röntgengerät wird das CT-Modul mit der Kamera aufgebaut, so dass die beiden Geräte möglichst dicht aneinander stehen, um kein Licht von außen in das CT-Modul gelangen zu lassen (das Röntgengerät ist mit einer Fluoreszenzschicht am Übergang ausgestattet, auf dem das mit der Kamera aufzunehmende Bild entsteht).
 Nach dem Start des Computertomographie-Programms werden dort die Parameter des Aufbaus (insbesondere der Abstand des Targets von der Kamera) sowie die gewünschten Einstellungen der Röntgenröhre eingegeben.
-Für den hier durchgeführten CT-Scan wurde eine Röhrenspannung von \SI{35}{\kilo\volt} bei \SI{1}{\milli\ampere} Emissionsstrom an der Molybdän-Röntgenröhre angelegt.
+Für den hier durchgeführten CT-Scan wurde eine Röhrenspannung von \SI{35}{\kilo\volt} bei \SI{1}{\milli\ampere} Emissionsstrom an der Molybdän-Röntgenröhre \korr{Ich dachte wir haben eine Kupferröhre genommen weil die höhere Intensität hat?} angelegt.
 Nach Bildjustage und Kalibrierung der Kamera zur optimalen Aufnahme des Fluoreszenzschirms (Verzeichnungskorrektur, Größe des Schirms etc.) werden die Aufnahmeparameter, namentlich die Anzahl der Projektionen, ihre Größe und die Rekonstruktionsgröße gewählt.
 Die Projektionsgröße wurde dabei auf \SI{250x250}{px} eingestellt, da so das ganze Objekt in dem aufgenommenen Bildbereich liegt, größere Projektionen hätten zusätzlich nur störende Aufnahmen der Befestigungen aufgenommen und keine Verbesserung des Bildes bewirkt.
 Den Hinweisen des Programms folgend wurde die Rekonstruktionsgröße kleiner als die Projektionsgröße gewählt, auf \SI{240x240x240}{px}.
 
 Zur Drehachsenkorrektur wurde die Anzahl Projektionen zunächst gering gewählt (verschiedene Messungen mit maximal \num{45} Projektionen) und die Aufnahme gestartet.
-Ausgehend von dem aufgenommenen Bild kann durch das Programm eine Korrektur der Drehachse berechnet und die Kamera entsprechend manuell justiert werden, so dass keine Doppelkonturen mehr im Bild zu erkennen sind.
+Ausgehend von dem aufgenommenen Bild kann durch das Programm eine Korrektur der Drehachse \korr{Vllt. erklären was das Problem mit der Drehachse ist.} berechnet und die Kamera entsprechend manuell justiert werden, so dass keine Doppelkonturen mehr im Bild zu erkennen sind.
 Nach mehreren Aufnahmen und anschließender Korrektur konnte so eine gute Justierung erreicht werden.
 
 \subsubsection{Aufnahme und Rekonstruktion}
@@ -872,17 +874,17 @@ Zur Kontrastverbesserung werden die einzelnen Projektionen bei der Computertomog
 Bei der hier genutzten Software und Vorgehensweise wird das Objekt mittels s.g. Rückprojektion (engl. \emph{back projection}) aus den einzelnen Aufnahmen rekonstruiert.
 Die allgemeine Vorgehensweise\footnote{Dabei wird vereinfachend davon ausgegangen, dass das Bild in einem geeigneten Detektor entsteht, wobei dieser in dem Versuch aus Fluoreszenzschirm und Kamera zusammengesetzt ist.} umfasst dabei folgende Punkte (nach \cite{kalender}, Abb. 1.7):
 \begin{enumerate}
-	\item \textbf{Aufnahme der Projektionen} Hierbei entstehen gerasterte Bilder (d.h. diskrete Pixel), wobei jedem Pixel eine Helligkeit, abhängig von der Transmission des Strahls in diesem Bildpunkt, zugeordnet wird.
-	\item \textbf{Filterung mit geeignetem Faltungskern} Die Projektionen werden mit einem Kern gefaltet, der je nach Anwendung gewählt werden kann.
-	Er erzeugt Über- und Unterschwinger an Kanten, um diese beispielsweise zu betonen oder zu glätten (siehe auch Abb. \ref{fig:ct_faltung}).
+	\item \textbf{Aufnahme der Projektionen:} Hierbei entstehen gerasterte Bilder (d.h. diskrete Pixel), wobei jedem Pixel eine Helligkeit, abhängig von der Transmission des Strahls in diesem Bildpunkt, zugeordnet wird.
+	\item \textbf{Filterung mit geeignetem Faltungskern:} Die Projektionen werden mit einem Kern gefaltet, der je nach Anwendung gewählt werden kann.
+	Er erzeugt Über- und Unterschwinger an Kanten \korr{Ich glaube das verstehe ich nur weil du es mir erklärt hattest. Z.b. erklären welche Kanten gemeint sind. Intensitätskanten?}, um diese beispielsweise zu betonen oder zu glätten (siehe auch Abb. \ref{fig:ct_faltung}).
 	\begin{figure}[ht]
 		\centering
 		\includegraphics[width=0.7\textwidth]{./figures/ct/faltung.jpg}
-		\caption{Hochpassfilterung durch Faltung des Schwächungsprofils mit einem geeigneten Faltungskern (aus \cite{alkadhi}).}
+		\caption{\korr{Was ist ein Schwächungsprofil?} Hochpassfilterung durch Faltung des Schwächungsprofils mit einem geeigneten Faltungskern (aus \cite{alkadhi}).}
 		\label{fig:ct_faltung}
 	\end{figure}
 	Aus Implementierungsgründen wird das Bild vorher fouriertransformiert, da die Faltung dadurch in eine deutlich schneller zu berechnende Multiplikation übergeht und anschließend rücktransformiert.
-	\item \textbf{Überlagerung der Projektionen} Zur dreidimensionalen Rekonstruktion werden die einzelnen Projektionen entsprechend ihres zugehörigen Aufnahmewinkels überlagert.
+	\item \textbf{Überlagerung der Projektionen:} Zur dreidimensionalen Rekonstruktion werden die einzelnen Projektionen entsprechend ihres zugehörigen Aufnahmewinkels überlagert.
 	Siehe dazu auch die schematische Abbildung \ref{fig:ct_überlagerung}.
 	\begin{figure}[ht]
 		\centering
@@ -893,7 +895,7 @@ Die allgemeine Vorgehensweise\footnote{Dabei wird vereinfachend davon ausgegange
 \end{enumerate}
 Da die Projektionen während der Rekonstruktion modifiziert werden, indem sie durch eine Faltung eine Filterung erfahren wird das Verfahren auch als gefilterte Rückprojektion bezeichnet.
 
-Mathematisch wird die Projektion durch eine s.g. Radontransformation beschrieben, die die Objektfunktion $f(x, y)$ in eine Projektionsfunktion $p(\vartheta, \xi)$ überführt.
+Mathematisch wird die Projektion durch eine s.g. Radontransformation beschrieben, die die Objektfunktion $f(x, y)$ in eine Projektionsfunktion $p(\vartheta, \xi)$ überführt. \korr{Was sind Objektfunktion und Projektionsfunktion? Rest ist schwer verständlich vermutlich weil hier ne konkrete Definition fehlt.}
 Die Variablen $\vartheta$ und $\xi$ parametrisieren den Röntgenstrahl in Polarkoordinaten, wobei der Ursprung im Zentrum des Objekts liegt.
 Dann gilt:
 \begin{align}
@@ -910,7 +912,7 @@ Analytisch erhält man bei der Herleitung der inversen Radontransformation das F
 F(u\,\cos\vartheta, u\,\sin\vartheta)=P(\vartheta, u)
 \end{align}
 Mit Großbuchstaben bezeichnete Funktionen sind dabei Fouriertransformierte, so dass man erhält, dass die zweidimensionale Fouriertransformation der Objektfunktion in Polarkoordinaten $f(u\,\cos\vartheta, u\,\sin\vartheta)$ gleich der Fouriertransformation der Projektionsfunktion bezüglich $\xi$ ist.
-Ausgehend von diesem Theorem kann man über inverse Fouriertransformationen und den Faltungssatz zeigen, dass die inverse Radontransformation gegeben ist durch\cite{kalender}:
+Ausgehend von diesem Theorem kann man über inverse Fouriertransformationen und den Faltungssatz zeigen, dass die inverse Radontransformation gegeben ist durch \cite{kalender}:
 \begin{align}
 f(x,y)=\int_{0}^{\pi}\left.\mathrm{d}\vartheta\,P(\vartheta, \xi)*k(\xi)\right|_{\xi=x\,\cos\vartheta + y\,\sin\vartheta}
 \end{align}
@@ -931,7 +933,7 @@ Die nah am Frosch befindliche Watte zur stabilen Lagerung ist ebenfalls gut erke
 Die folgenden Überlegungen sollen eine Einschätzung der Strahlenbelastung bei einem CT-Scan liefern, in der Praxis jedoch sind konkrete aufgenommene Dosen nur schwer zu berechnen und von vielen verschiedenen Faktoren abhängig.
 Aufgrund der begrenzten Verfügbarkeit allgemeiner Quellen sind die angegebenen Informationen in den meisten Fällen auf Computertomographiegeräte für medizinische Anwendungen bezogen.
 Im Gegesatz zu gewöhnlichen Röntgenaufnahmen, bei denen die Dosis etwa exponentiell mit der Dicke des durchstrahlten Objektes abnimmt (die Dosis ist proportional zur Intensität) ergibt sich für ein in der Computertomographie aufgenommenes Objekt oder auch Patienten bei medizinischen Anwendungen eine andere Dosisverteilung.
-Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufgenommenen Dosen, so dass sich insgesamt eine homogene Verteilung ergibt.
+Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufgenommenen Dosen, so dass sich insgesamt eine homogene \korr{Ist homogen das richtige Wort? Ein einzelnes Röntgenbild hat auch eine homogene Dosisverteilung.} Verteilung ergibt.
 Bei schichtweisen CT-Aufnahmen eines Objekts, bei dem das in \ref{ct_aufnahme} beschriebene Vorgehen für jede Schicht durchgeführt wird (die Schichten, engl. \emph{slices} sind in $z$-Richtung aneinandergereiht), ergibt sich ein Dosisprofil wie in Abbildung \ref{fig:ct_dosisprofil} bei dem ersichtlich ist, dass auch die angrenzenden Schichten der aktuell bestrahlten Schicht mit Dicke $d$ durch Streuung eine Strahlenbelastung erfahren.
 \begin{figure}[ht]
 	\centering
@@ -948,7 +950,7 @@ Im Rahmen der Strahlenschutzbestimmungen ist es ein ständiges Ziel, die Dosen b
 Der Wunsch nach höheren Auflösungen und Kontrasten steht dazu allerdings im Gegensatz, wie die folgenden Überlegungen zeigen, denn die Dosis ist ein entscheidender Faktor der Bildqualität.
 Im Rahmen der softwarebasierten Verbesserung der Bildqualität wurde bereits die Nutzung entsprechender Faltungskerne zur Filterung des Signals erwähnt.
 Diese können bei gleicher Dosis die Bildschärfe auf Kosten eines steigenden Bildrauschens verbessern oder umgekehrt.
-Bei gleichem Signal-Rausch-Verhältnis (\emph{SNR}, engl. \emph{signal-to-noise-ratio}) ist die zur Aufnahme nötige Dosis $D$ proportional zur (mittleren) Transmission des durchstrahlten Objekts\cite{buzug}, so dass für dickere und stärker abschwächende Objekte eine höhere Dosis notwendig ist, um das Bildrauschen gleich zu halten. 
+Bei gleichem Signal-Rausch-Verhältnis (\emph{SNR}, engl. \emph{signal-to-noise-ratio}) ist die zur Aufnahme nötige Dosis $D$ proportional zur (mittleren) Transmission des durchstrahlten Objekts \cite{buzug}, so dass für dickere und stärker abschwächende Objekte eine höhere Dosis notwendig ist, um das Bildrauschen gleich zu halten. 
 Weiterhin kann gezeigt werden, dass
 \begin{align}
 	D \propto \frac{(\text{\emph{SNR}})^2}{(\Delta\xi)^4}

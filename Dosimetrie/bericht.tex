@@ -845,7 +845,7 @@ Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.005}{\milli\ampere} 
 Die auf \SI{1}{mA} skalierte Zählrate berechnet sich mit:
 \begin{align}
 	R_\mathrm{max} &= R\cdot\frac{\SI{1}{mA}}{I_\mathrm{E}}\\
-	\Delta R_\mathrm{max} &= \sqrt{\frac{(\Delta R)^2}{I_\mathrm{E}^2} + \frac{R^2\,(\Delta I_\mathrm{E})^2}{I_\mathrm{E}^2}}
+	\Delta R_\mathrm{max} &= R_\mathrm{max} \, \sqrt{\frac{(\Delta R)^2}{R^2} + \frac{(\Delta I_\mathrm{E})^2}{I_\mathrm{E}^2}}
 \end{align}
 Daraus kann die Transmission $T$ berechnet werden aus:
 \begin{align}

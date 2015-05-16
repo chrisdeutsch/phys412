@@ -164,7 +164,7 @@ Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten, sind:
 	\begin{align}
 	&E_\mathrm{kin. e^-} = h \cdot \nu_\mathrm{max} = \frac{hc}{\lambda_\mathrm{min}}
 	\end{align}
-	so ist diese Grenze gegeben durch das \textbf{Duane-Hunt-Gesetz}
+	so ist diese Grenze gegeben durch das Duane-Hunt-Gesetz:
 	\begin{align}
 	\lambda_\mathrm{min} = \frac{h c}{e U}
 	\label{eq:duane_hunt}
@@ -180,8 +180,8 @@ Die beiden Strahlungsarten, welche in der Praxis oft zusammen auftreten, sind:
 In der Praxis treten beide Effekte bei der Erzeugung von Röntgenstrahlen in sogenannten Röntgenröhren auf, wie in Abbildung \ref{fig:spektrum} zu sehen ist.
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=1\textwidth]{./figures/Tube_Cu_LiF.pdf}
-	\caption{Charakteristisches Spektrum einer Kupferanode nach Bragg-Reflexion an einem LiF-Kristall. Der Untergrund entsteht aufgrund der emittierten Bremsstrahlung der in der Anode gestreuten Elektronen. Auf diesem liegt das charakteristische Röntgenspektrum der Anode. Quelle: \url{http://commons.wikimedia.org/wiki/File:Tube_Cu_LiF.PNG} (Letzter Zugriff: 13. November 2014)}
+	\input{./plots/roentgenspektrum.tex}
+	\caption{Charakteristisches Röntgenspektrum von Wolfram nach Bragg-Reflexion an einem NaCl-Kristall. Der Untergrund entsteht aufgrund der emittierten Bremsstrahlung der in der Anode gestreuten Elektronen. Auf diesem liegt das charakteristische Röntgenspektrum der Anode (Daten aus Versuch P428, Praktikum IV).}
 	\label{fig:spektrum}
 \end{figure}
 
@@ -195,10 +195,9 @@ Nachdem die Beschleunigungsspannung $U$ durchlaufen wurde, treffen die Elektrone
 	\label{fig:roehre}
 \end{figure}
 
-\subsection{Röntgenstrahlung}
 
-\subsubsection{Erzeugung und Nachweis}
-NACHWEIS:
+\subsubsection{Nachweis}
+Zum Nachweis von Röntgenstrahlung gibt es mehrere Verfahren, die zum Einsatz kommen können:
 \begin{itemize}
 	\item \textbf{Lumineszenz:} Bestimmte Stoffe werden durch Röntgenstrahlung zur Emission von Licht angeregt.
 	
@@ -847,8 +846,6 @@ Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.01}{\milli\ampere} a
 \subsubsection{Transmissionskoeffizienten}
 
 \subsection{Computertomografie}
-\korr{Es fehlt das Bild vom Strichgitter und eine Einschätzung des Auflösevermögens}
-
 
 Zum Abschluss wurde mit einem Computertomografie-Gerät ein CT-Scan eines gefriergetrockneten Frosches aufgenommen.
 Dazu wird das zu untersuchende Objekt in einer für Röntgenstrahlung beinahe durchsichtigen Styroporkugel so gelagert, dass es sich nicht bewegen kann (hierzu wurde genügend Watte in den Hohlraum der Styroporkugel gegeben).
@@ -897,7 +894,7 @@ Die allgemeine Vorgehensweise\footnote{Dabei wird vereinfachend davon ausgegange
 	\item \textbf{Filterung mit geeignetem Faltungskern:} Die Projektionen werden mit einem Kern gefaltet, der je nach Anwendung gewählt werden kann.
 	Er erzeugt Über- und Unterschwinger an Kanten der Projektion, um diese beispielsweise zu betonen oder zu glätten (siehe auch Abb. \ref{fig:ct_faltung}).
 	Die Projektion wird auch als Schwächungsprofil bezeichnet, da das entstehende Helligkeitsprofil einer Projektion durch die Abschwächung der Röntgenstrahlen im Objekt entsteht. 
-	\begin{minipage}[t]{\linewidth}
+	\begin{minipage}[ht]{\linewidth}
 		\centering
 	   \includegraphics[width=0.7\textwidth]{./figures/ct/faltung.jpg}
 		\captionof{figure}{Hochpassfilterung durch Faltung des Schwächungsprofils eines Zylinders mit einem geeigneten Faltungskern (aus \cite{alkadhi}).}
@@ -908,12 +905,14 @@ Die allgemeine Vorgehensweise\footnote{Dabei wird vereinfachend davon ausgegange
 	Aus Implementierungsgründen wird das Bild vorher fouriertransformiert, da die Faltung dadurch in eine deutlich schneller zu berechnende Multiplikation übergeht und anschließend rücktransformiert.
 	\item \textbf{Überlagerung der Projektionen:} Zur dreidimensionalen Rekonstruktion werden die einzelnen Projektionen entsprechend ihres zugehörigen Aufnahmewinkels überlagert.
 	Siehe dazu auch die schematische Abbildung \ref{fig:ct_überlagerung}.
-	\begin{figure}[ht]
+	
+		\begin{minipage}[ht]{\linewidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{./figures/ct/ueberlagerung.pdf}
-		\caption{Schematische Darstellung zur Überlagerung einzelner Projektionen in Draufsicht. Links: Aufnahme von 8 Projektionen eines Zylinders. Mitte: Einzelne Projektion, vgl. auch Abb. \ref{fig:ct_faltung}. Rechts: Überlagerung der Projektionen. Es ist offensichtlich, dass mit steigender Anzahl Projektionen die Rekonstruktion immer besser wird.}
+		\captionof{figure}{Schematische Darstellung zur Überlagerung einzelner Projektionen in Draufsicht. Links: Aufnahme von 8 Projektionen eines Zylinders. Mitte: Einzelne Projektion, vgl. auch Abb. \ref{fig:ct_faltung}. Rechts: Überlagerung der Projektionen. Es ist offensichtlich, dass mit steigender Anzahl Projektionen die Rekonstruktion immer besser wird.}
 		\label{fig:ct_überlagerung}
-	\end{figure}
+	\end{minipage}
+	
 \end{enumerate}
 Da die Projektionen während der Rekonstruktion modifiziert werden, indem sie durch eine Faltung eine Filterung erfahren wird das Verfahren auch als gefilterte Rückprojektion bezeichnet.
 

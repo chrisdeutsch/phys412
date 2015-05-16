@@ -839,13 +839,14 @@ Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.005}{\milli\ampere} 
 \end{table}
 Die auf \SI{1}{mA} skalierte Zählrate berechnet sich mit:
 \begin{align}
-	R_\mathrm{max} &= R\cdot\frac{\SI{1}{mA}}{I_\mathrm{E}}\\
+	R_\mathrm{max} &= R\cdot\frac{\SI{1}{mA}}{I_\mathrm{E}} 	\label{eq:max_rate}\\
 	\Delta R_\mathrm{max} &= \sqrt{\frac{(\Delta R)^2}{I_\mathrm{E}^2} + \frac{R^2\,(\Delta I_\mathrm{E})^2}{I_\mathrm{E}^2}}
 \end{align}
 Daraus kann die Transmission $T$ berechnet werden aus:
 \begin{align}
 	T &= \frac{R_\mathrm{max}}{R_\mathrm{max, 0}}\\
 	\Delta T &= \sqrt{\frac{(\Delta R_\mathrm{max})^2}{R_\mathrm{max, 0}^2} + \frac{R_\mathrm{max}^2\,(\Delta R_\mathrm{max, 0})^2}{R_\mathrm{max, 0}^2}} 
+	\label{eq:transmission}
 \end{align}
 $R_\mathrm{max, 0}$ beschreibt dabei normalerweise die Zählrate vor dem Absorber, da diese jedoch nicht gemessen werden konnte, wurde sie gleich der Zählrate ohne Absorber gesetzt.
 
@@ -867,6 +868,49 @@ $R_\mathrm{max, 0}$ beschreibt dabei normalerweise die Zählrate vor dem Absorbe
 \subsubsection{Transmissionen für Absorber}
 
 \subsubsection{Transmissionskoeffizienten}
+
+Mit den gerade bestimmten Absorptionskoeffizienten kann so die Dicke des Aluminiums im zweiten Absorbersatz bestimmt werden, die gleich groß ist wie die Dicke der anderen Absorberelemente.
+Die zur Berechnung notwendigen Messwerte für den zweiten Absorbersatz sind in Tabelle \ref{tab:absorber_elem} notiert.
+Für die Berechnungen gelten weiterhin \eqref{eq:max_rate} bis \eqref{eq:transmission}.
+\begin{table}[ht]
+	\centering
+	\resizebox{\textwidth}{!}{
+	\input{./tables/absorber/elemente.tex}
+	}
+	\caption{Messwerte und Berechnung für den Absorbersatz mit verschiedenen Elementen gleicher Dicke. Der Fehler für den Emissionsstrom $I_\mathrm{E}$ wird erneut auf \SI{0.005}{mA} geschätzt.
+	Die Zählraten $R$ wurden auf die maximale Zählrate bei \SI{1}{mA} Emissionsstrom skaliert und daraus die Transmission $T$ für alle Absorberdicken berechnet.}
+	\label{tab:absorber_elem}
+\end{table}
+Aus den Transmissionswerten für Aluminium kann nun die Dicke $d$ bestimmt werden.
+Dies geschieht für die Messung mit und ohne Zirkonfilter getrennt.
+Es folgt aus dem Lambertschen Gesetz:
+\begin{align}
+	d&=-\frac{\log(T)}{\mu} \label{eq:dicke}\\
+	\Delta d &= \sqrt{\frac{\log^2(T)\,(\Delta\mu)^2}{\mu^4} + \frac{(\Delta T)^2}{T^2\mu^2}}
+\end{align}
+Damit kann die Dicke des Aluminiumabsorbers bestimmt werden zu:
+\begin{align}
+d &= \SI{0.60+-0.08}{cm} \qquad\text{(ohne Zirkonfilter)}\\
+d &= \SI{0.33+-0.04}{cm} \qquad\text{(mit Zirkonfilter)}
+\end{align}
+Durch Bildung des Mittelwerts erhält man die für die weitere Auswertung genutzte Dicke aller Absorber:
+\begin{align}
+	d = \SI{0.47+-0.05}{cm}
+\end{align}
+Ausgehend davon kann \eqref{eq:dicke} nach $\mu$ umgerechnet werden und mit den Transmissionen aus \ref{tab:absorber_elem} die Transmissionskoeffizienten $\mu_0$ (ohne Zirkonfilter) und $\mu_\mathrm{Zr}$ (mit Zirkonfilter) bestimmt und anschließend wieder gemittelt werden, so dass man mit
+\begin{align}
+	\mu&=-\frac{\log(T)}{d} \\
+	\Delta\mu &= \sqrt{\frac{\log^2(T)\,(\Delta d)^2}{d^4} + \frac{(\Delta T)^2}{T^2d^2}}
+\end{align}
+die Werte in Tabelle \ref{tab:absorber_koeff} erhält.
+\begin{table}
+	\centering
+	\resizebox{\textwidth}{!}{
+	\input{./tables/absorber/koeffizienten.tex}
+	}
+	\caption{Transmissionskoeffizienten für die verschiedenen Absorberelemente jeweils mit und ohne Zirkonfilter sowie die gemittelten Transmissionskoeffizienten.}
+	\label{tab:absorber_koeff}
+\end{table}
 
 \subsection{Computertomografie}
 

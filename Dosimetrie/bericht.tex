@@ -149,9 +149,6 @@ Bei allen Messungen sollen dabei stets strahlenschutztechnische Gedanken berück
 \newpage
 
 % INHALT VERSUCHSPROTOKOLL
-
-\section{Einführung}
-
 \section{Theorie}
 \subsection{Röntgenstrahlung}
 Als Röntgenstrahlung wird der Teil des elektromagnetischen Spektrums mit Photon-Energien zwischen \SI{100}{\electronvolt} und \SI{100}{\kilo\electronvolt} bezeichnet, wobei diese Grenzen nicht scharf sind und deshalb oft hinsichtlich der Strahlungsquelle eine Einordnung vollzogen wird.
@@ -206,7 +203,7 @@ Zum Nachweis von Röntgenstrahlung gibt es mehrere Verfahren, die zum Einsatz ko
 	
 	\item \textbf{Photographischer Effekt:} Röntgenstrahlung schwärzt einen Röntgenfilm direkt.
 	
-	\item \textbf{Szintillationszähler, Halbleiterdetektoren, Geiger-Müller-Zählrohr} Einfallende Teilchen erzeugen freie Ladungsträger, die als Stromimpuls gemessen werden können. Das in dem Versuch zum Einsatz kommende Geiger-Müller-Zählrohr wird im folgenden Abschnitt konkreter vorgestellt.
+	\item \textbf{Szintillationszähler, Halbleiterdetektoren, Geiger-Müller-Zählrohr:} Einfallende Teilchen erzeugen freie Ladungsträger, die als Stromimpuls (am Szintillationsdetektor am Photomultiplier) gemessen werden können. Das in dem Versuch zum Einsatz kommende Geiger-Müller-Zählrohr wird im folgenden Abschnitt konkreter vorgestellt.
 \end{itemize}
 
 \subsection{Geiger-Müller-Zählrohr}
@@ -360,7 +357,7 @@ Zur Dosisminimierung gibt es viele Möglichkeiten, von denen die wichtigsten vie
 Zur Messung der durch Personen aufgenommenen Dosis werden Dosimeter eingesetzt, die im Gegensatz zu Dosisleistungsmessgeräten die über die Zeit summierte Dosis messen können.
 Einige solche sollen im Folgenden kurz vorgestellt werden.
 
-\subsubsection{Füllhalterdosimeter (Quartz fiber dosimeter)}
+\subsubsection{Füllhalterdosimeter}
 
 Ein Füllhalterdosimeter besteht aus einer zylinderförmigen mit Luft gefüllten Ionisationskammer in der sich ein Elektrodendraht befindet.
 Am Ende der Elektrode ist eine Quarzfaser welche parallel zur Elektrode ruht und leitend mit dieser verbunden ist.
@@ -415,8 +412,6 @@ Dannn ist:
 \end{align}
 wobei $\mu = \alpha$ der lineare Schwächungskoeffizient ist.
 Da die an der Abschwächung beteiligten Prozesse vor allem von der Energie der einfallenden Strahlun als auch der Ordnungszahl des bestrahlten Materials abhängt, eignen sich dichte Elemente mit hohen Ordnungszahlen gut zur Abschirmung, weswegen für Röntgen- und Gammastrahlung häufig Blei zu Abschirmungszwecken genutzt wird.
-
-\section{Versuchsaufbau}
 
 \section{Durchführung und Auswertung}
 Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
@@ -481,7 +476,7 @@ Die Messdaten finden sich in Anhang \ref{app:ionisationsstrom_emissionsstrom} un
 	\begin{subfigure}[b]{1\textwidth}
 		\centering
 		\input{./plots/abh_emissionsstrom/mo.tex}
-		\subcaption{Molybdän-Röhre mit Anpassung einer linearen Funktion}
+		\subcaption{Molybdän-Röhre mit Anpassung einer linearen Funktion: $I_\mathrm{C} = \SI{4.97 +- 0.06}{\nano\ampere\per\milli\ampere} \cdot I_\mathrm{E} + \SI{0.12 +- 0.03}{nA}$}
 		\label{fig:mo_emissionsstrom}
 	\end{subfigure}
 	
@@ -490,7 +485,7 @@ Die Messdaten finden sich in Anhang \ref{app:ionisationsstrom_emissionsstrom} un
 	\begin{subfigure}[b]{1\textwidth}
 		\centering
 		\input{./plots/abh_emissionsstrom/cu.tex}
-		\subcaption{Kupfer-Röhre mit starker Abweichung vom erwarteten linearen Verhalten}
+		\subcaption{Kupfer-Röhre mit starker Abweichung vom erwarteten linearen Verhalten: $I_\mathrm{C} = \SI{94.5 +- 0.9}{\nano\ampere\per\milli\ampere} \cdot I_\mathrm{E} - \SI{42.9 +- 1.1}{\nano\ampere\per\milli\ampere\squared} \cdot I_\mathrm{E}^2$}
 		\label{fig:cu_emissionsstrom}
 	\end{subfigure}
 	\caption{Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ vom Emissionsstrom $I_\mathrm{E}$ für verschiedene Röntgenröhren. Beide Messungen wurden bei maximaler Röhrenspannung $U=\SI{35}{kV}$ durchgeführt.}

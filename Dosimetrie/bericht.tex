@@ -149,9 +149,6 @@ Bei allen Messungen sollen dabei stets strahlenschutztechnische Gedanken berück
 \newpage
 
 % INHALT VERSUCHSPROTOKOLL
-
-\section{Einführung}
-
 \section{Theorie}
 \subsection{Röntgenstrahlung}
 Als Röntgenstrahlung wird der Teil des elektromagnetischen Spektrums mit Photon-Energien zwischen \SI{100}{\electronvolt} und \SI{100}{\kilo\electronvolt} bezeichnet, wobei diese Grenzen nicht scharf sind und deshalb oft hinsichtlich der Strahlungsquelle eine Einordnung vollzogen wird.
@@ -481,7 +478,7 @@ Die Messdaten finden sich in Anhang \ref{app:ionisationsstrom_emissionsstrom} un
 	\begin{subfigure}[b]{1\textwidth}
 		\centering
 		\input{./plots/abh_emissionsstrom/mo.tex}
-		\subcaption{Molybdän-Röhre mit Anpassung einer linearen Funktion}
+		\subcaption{Molybdän-Röhre mit Anpassung einer linearen Funktion: $I_\mathrm{C} = \SI{4.97 +- 0.06}{\nano\ampere\per\milli\ampere} \cdot I_\mathrm{E} + \SI{0.12 +- 0.03}{nA}$}
 		\label{fig:mo_emissionsstrom}
 	\end{subfigure}
 	
@@ -490,7 +487,7 @@ Die Messdaten finden sich in Anhang \ref{app:ionisationsstrom_emissionsstrom} un
 	\begin{subfigure}[b]{1\textwidth}
 		\centering
 		\input{./plots/abh_emissionsstrom/cu.tex}
-		\subcaption{Kupfer-Röhre mit starker Abweichung vom erwarteten linearen Verhalten}
+		\subcaption{Kupfer-Röhre mit starker Abweichung vom erwarteten linearen Verhalten: $I_\mathrm{C} = \SI{94.5 +- 0.9}{\nano\ampere\per\milli\ampere} \cdot I_\mathrm{E} - \SI{42.9 +- 1.1}{\nano\ampere\per\milli\ampere\squared} \cdot I_\mathrm{E}^2$}
 		\label{fig:cu_emissionsstrom}
 	\end{subfigure}
 	\caption{Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ vom Emissionsstrom $I_\mathrm{E}$ für verschiedene Röntgenröhren. Beide Messungen wurden bei maximaler Röhrenspannung $U=\SI{35}{kV}$ durchgeführt.}

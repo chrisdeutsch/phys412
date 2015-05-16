@@ -30,10 +30,13 @@ plot './data/abh_emissionsstrom/mo.txt' using 1:5:2:6 w xyerrorbars t'Messdaten'
 set output './plots/abh_emissionsstrom/cu.tex'
 
 g(x) = m2 * x + b2
+h(x) = a1 * x + a2 * x**2
 
 fit [0.0:0.4] g(x) './data/abh_emissionsstrom/cu.txt' using 1:5:2:6 xyerror via m2, b2
+fit h(x) './data/abh_emissionsstrom/cu.txt' using 1:5:2:6 xyerror via a1, a2
 
 plot './data/abh_emissionsstrom/cu.txt' using 1:5:2:6 w xyerrorbars t'Messdaten' ls 1,\
-     g(x) t'Anpassung' ls 2
+     g(x) t'Anpassung' ls 2,\
+     h(x) t'Anpassung 2'
 
 unset output

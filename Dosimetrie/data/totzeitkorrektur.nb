@@ -1,0 +1,271 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      9734,        262]
+NotebookOptionsPosition[      8964,        233]
+NotebookOutlinePosition[      9328,        249]
+CellTagsIndexPosition[      9285,        246]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"m", "[", 
+    RowBox[{"k_", ",", "\[Tau]_"}], "]"}], ":=", 
+   RowBox[{"m", "/.", 
+    RowBox[{
+     RowBox[{"Solve", "[", 
+      RowBox[{
+       RowBox[{"k", "==", 
+        RowBox[{"m", "*", 
+         RowBox[{"Exp", "[", 
+          RowBox[{
+           RowBox[{"-", "m"}], "*", "\[Tau]"}], "]"}]}]}], ",", "m"}], "]"}], 
+     "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.640766403694152*^9, 3.640766481885386*^9}, {
+   3.6407665380764775`*^9, 3.6407665573725133`*^9}, 3.640767091361467*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"m", "[", 
+     RowBox[{"k", ",", "42.9*^-6"}], "]"}], "/", "k"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "2000"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6407665745095406`*^9, 3.640766616473612*^9}, {
+  3.6407666759029865`*^9, 3.6407666760629873`*^9}, {3.640766880638212*^9, 
+  3.640766880888212*^9}, {3.640767089841465*^9, 3.640767095323474*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.6407666169636126`*^9, 3.640766676302987*^9, 3.640766882400215*^9, {
+   3.640767090221465*^9, 3.6407670956354747`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {}, 
+   {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJwV0X0w1HkYAPDN0tjcYZW7IkrrLqUSakLxPCimjfTi1NSSiVCn3byEJaL1
+XlgWu972t1xepjfSuFDprrYrXZPVnKLSUVdzvWy+vxWqLe53fzzzzGeeeZ6Z
+53ns9ot2HDBgsViBTPyf3+q+BPhFGYF/cAojAvGNYteN9S8gISlfYc04xUQb
+taB+HI7sW+q8jnFaTxPLsJ6NUdXcSCHjr3JJ4CfVXNT5KjRPGfcY6sbHVTz0
++Sde3TWLgO36Zf60yhW3hmZ9n8gmsPWhmoypfPGds33sm9kEsFRisikxGMFs
+41iCKQHueEhbaUQYssJH3PMsCXhdSdmebh6J/adcbDIXElAl9Jx/uvsgrgxx
+q7KyJ/Bs8/ADvZ8Qf/aCiQ2OBA5sSdXu74tDvvSs3sCVgHf3lGGfMBG9WDkd
+rR4ETDpHWdajSVgQejHwuTcBR9pfuCFfjCNGwT5XNhPw6LL6zdPgGGbJIi0X
+bCfQunnfD3+IMrC3Cmv37iZwbY75NLcgE2/ap67xDydg1dn0pO1mFrZ+iVJ1
+RBNYItHHdc+XYPVFnz19IgJhLpyyvOhsLNk1pb+fzOy3LPC0msrB8g5DftBx
+AiLPIFGsLhfFErP+9DwCG6vyVmSvykfHXgudYwkBtUVGw+ycAjSKGTpTKCeQ
+fGRlQ8BAIVbatWjvUwTqLeeWG5idwstzbuVKm5n64K9evIgirLeP1Ri1Mf3P
+pU8uqYpxuH/TtqnLzPx+noHxYAnuZS+yunedQKew+8iLcilOrl7VvusOgYL5
+GUOpLqV4foexc6iGwOp+ldJ/uBRJZgV34RABoqccJrPL8OUYNl4fJRDL7z4r
+sJNhcv+jC49fM/dpdj358a4MM7fxxe06Ancd7kQEHCxHfpdYwtIToK3dZ50w
+rEDB0bq/VrNp0Npw9O/OVSDdYhNg9w0Njb4ftGb8SpRJRrJz5tHgkuLlGfOh
+Eu8PuF46Z0NDmuaXnBSZHK0n5AK/H2kYrn5ZdshJga9OF2l+X0WDZWLul9JB
+Bb4XigbZbjRw4nz2xSUxzzvM6e5AGh4cC7XNtatG8xntSmc+DR2fgxuO9Vbj
+rZM+86U7adhZG73IMaoGE++lzBUIaLgdMPTR1LwW96C8ZOIADZOLo/48c6EW
+OV81Vz4LaYDovv0O/DrkOi+rG0mmIeyqPOSJrg7Nptkf5Vk0uK1N8/WTKjHp
+WphDZyEND9N8lhvJlPgTSeCMMj56g8NVVyhRU9P2lnOShvYgxTPvGiUOKFSX
+9jJecahD7NmkxFaNYPsM48XUWOuaq0qMjNmp9iti9uNELuT9q0Txp4b8hyU0
+tAQ5sp+/UeJUurp4hrFfpe61SqvEB2FmlQ5SGrJ5WZdtx5UYHm/Xksp42lO5
+w2paiemFbo9tS2nQxQ/mc+dRGNMHSdFlNEi7KJHmOwqN108XSxk7saJDShZQ
+qJh81dLFOLZogvftIgqp6nUjJjIaXjVbXDdeTuHf3o8EbYyz3w813l5BYdPg
+64whxry19adynSisdV/aYFBOQ/gNpz2Gayl0ly95F8x42ngKb66j8Hj7iEUG
+47qgnqUnPChcPtDr0cx4Q2WOqbcnhYWmzyI0jB8/DZiYAQrHDtsUf2L8Hxo2
+XBk=
+     "]]}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 1.},
+  Method->{},
+  PlotRange->{{0, 2000}, {1.0000000017510204`, 1.098870806824262}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{
+    Scaled[0.02], 
+    Scaled[0.02]}]], "Output",
+ CellChangeTimes->{3.640767095845475*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"k", ",", " ", 
+       RowBox[{
+        RowBox[{"m", "[", 
+         RowBox[{"k", ",", "42.9*^-6"}], "]"}], "/", "k"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"k", ",", "0", ",", "2000", ",", "1"}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.640766914170298*^9, 3.6407669516053653`*^9}, {
+  3.640766994614436*^9, 3.6407669947144365`*^9}, {3.640767100892484*^9, 
+  3.6407671510735846`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.640766952035366*^9, 3.640766995254437*^9, {3.640767105681492*^9, 
+   3.640767151463585*^9}, 3.640768310916339*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Power", "::", "infy"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Infinite expression \[NoBreak]\\!\\(1\\/0\\)\[NoBreak] \
+encountered. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/infy\\\", ButtonNote -> \
+\\\"Power::infy\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.640766952035366*^9, 3.640766995254437*^9, {3.640767105681492*^9, 
+   3.640767151463585*^9}, 3.640768310964342*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Infinity", "::", "indet"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Indeterminate expression \[NoBreak]\\!\\(0.`\\\\ \
+ComplexInfinity\\)\[NoBreak] encountered. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/indet\\\", ButtonNote -> \
+\\\"Infinity::indet\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.640766952035366*^9, 3.640766995254437*^9, {3.640767105681492*^9, 
+   3.640767151463585*^9}, 3.640768311012345*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.640766952035366*^9, 3.640766995254437*^9, {3.640767105681492*^9, 
+   3.640767151463585*^9}, 3.640768311040346*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(Solve\\)\[NoBreak], so some solutions may not be found; use \
+Reduce for complete solution information. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", ButtonNote -> \
+\\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.640766952035366*^9, 3.640766995254437*^9, {3.640767105681492*^9, 
+   3.640767151463585*^9}, 3.640768311068348*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"General", "::", "stop"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Further output of \[NoBreak]\\!\\(\\*StyleBox[\\(Solve :: \
+ifun\\), \\\"MessageName\\\"]\\)\[NoBreak] will be suppressed during this \
+calculation. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/stop\\\", ButtonNote -> \
+\\\"General::stop\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{
+  3.640766952035366*^9, 3.640766995254437*^9, {3.640767105681492*^9, 
+   3.640767151463585*^9}, 3.6407683110933495`*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"NotebookDirectory", "[", "]"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{"\"\<totzeitkorrektur.tsv\>\"", ",", " ", "data"}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.6407671531935873`*^9, 3.640767193982661*^9}, {
+  3.64076830691411*^9, 3.6407683071781254`*^9}}]
+},
+WindowSize->{944, 1012},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+ShowSelection->True,
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (January 25, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 578, 17, 31, "Input"],
+Cell[CellGroupData[{
+Cell[1160, 41, 445, 10, 31, "Input"],
+Cell[1608, 53, 632, 13, 21, "Message"],
+Cell[2243, 68, 2100, 42, 242, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4380, 115, 534, 15, 31, "Input"],
+Cell[4917, 132, 628, 13, 21, "Message"],
+Cell[5548, 147, 542, 12, 40, "Message"],
+Cell[6093, 161, 574, 12, 21, "Message"],
+Cell[6670, 175, 628, 13, 21, "Message"],
+Cell[7301, 190, 628, 13, 21, "Message"],
+Cell[7932, 205, 627, 13, 21, "Message"]
+}, Open  ]],
+Cell[8574, 221, 386, 10, 52, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)

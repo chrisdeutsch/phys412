@@ -838,13 +838,15 @@ Dazu wird das zu untersuchende Objekt in einer für Röntgenstrahlung beinahe du
 Anschließend kann das Objekt an dem Goniometer montiert werden.
 Neben dem Röntgengerät wird das CT-Modul mit der Kamera aufgebaut, so dass die beiden Geräte möglichst dicht aneinander stehen, um kein Licht von außen in das CT-Modul gelangen zu lassen (das Röntgengerät ist mit einer Fluoreszenzschicht am Übergang ausgestattet, auf dem das mit der Kamera aufzunehmende Bild entsteht).
 Nach dem Start des Computertomographie-Programms werden dort die Parameter des Aufbaus (insbesondere der Abstand des Targets von der Kamera) sowie die gewünschten Einstellungen der Röntgenröhre eingegeben.
-Für den hier durchgeführten CT-Scan wurde eine Röhrenspannung von \SI{35}{\kilo\volt} bei \SI{1}{\milli\ampere} Emissionsstrom an der Molybdän-Röntgenröhre \korr{Ich dachte wir haben eine Kupferröhre genommen weil die höhere Intensität hat?} angelegt.
+Für den hier durchgeführten CT-Scan wurde eine Röhrenspannung von \SI{35}{\kilo\volt} bei \SI{1}{\milli\ampere} Emissionsstrom an der Kupfer-Röntgenröhre angelegt.
 Nach Bildjustage und Kalibrierung der Kamera zur optimalen Aufnahme des Fluoreszenzschirms (Verzeichnungskorrektur, Größe des Schirms etc.) werden die Aufnahmeparameter, namentlich die Anzahl der Projektionen, ihre Größe und die Rekonstruktionsgröße gewählt.
 Die Projektionsgröße wurde dabei auf \SI{250x250}{px} eingestellt, da so das ganze Objekt in dem aufgenommenen Bildbereich liegt, größere Projektionen hätten zusätzlich nur störende Aufnahmen der Befestigungen aufgenommen und keine Verbesserung des Bildes bewirkt.
 Den Hinweisen des Programms folgend wurde die Rekonstruktionsgröße kleiner als die Projektionsgröße gewählt, auf \SI{240x240x240}{px}.
 
+Um ein optimales Bild zu erhalten, muss vor der Aufnahme die Ausrichtung der Kamera bezüglich der Drehachse des Objektes eingestellt werden.
+Die horizontale Bildachse sollte, wenn man ein Koordinatensystem zentriert in das aufgenommene Bild legt, mit der Drehachse übereinstimmen, so dass keine störenden Doppelkonturen aufgenommen werden.
 Zur Drehachsenkorrektur wurde die Anzahl Projektionen zunächst gering gewählt (verschiedene Messungen mit maximal \num{45} Projektionen) und die Aufnahme gestartet.
-Ausgehend von dem aufgenommenen Bild kann durch das Programm eine Korrektur der Drehachse \korr{Vllt. erklären was das Problem mit der Drehachse ist.} berechnet und die Kamera entsprechend manuell justiert werden, so dass keine Doppelkonturen mehr im Bild zu erkennen sind.
+Ausgehend von dem aufgenommenen Bild kann durch das Programm eine Korrektur der Drehachse berechnet und die Kamera entsprechend manuell justiert werden, so dass keine Doppelkonturen mehr im Bild zu erkennen sind.
 Nach mehreren Aufnahmen und anschließender Korrektur konnte so eine gute Justierung erreicht werden.
 
 \subsubsection{Aufnahme und Rekonstruktion}
@@ -876,13 +878,16 @@ Die allgemeine Vorgehensweise\footnote{Dabei wird vereinfachend davon ausgegange
 \begin{enumerate}
 	\item \textbf{Aufnahme der Projektionen:} Hierbei entstehen gerasterte Bilder (d.h. diskrete Pixel), wobei jedem Pixel eine Helligkeit, abhängig von der Transmission des Strahls in diesem Bildpunkt, zugeordnet wird.
 	\item \textbf{Filterung mit geeignetem Faltungskern:} Die Projektionen werden mit einem Kern gefaltet, der je nach Anwendung gewählt werden kann.
-	Er erzeugt Über- und Unterschwinger an Kanten \korr{Ich glaube das verstehe ich nur weil du es mir erklärt hattest. Z.b. erklären welche Kanten gemeint sind. Intensitätskanten?}, um diese beispielsweise zu betonen oder zu glätten (siehe auch Abb. \ref{fig:ct_faltung}).
-	\begin{figure}[ht]
+	Er erzeugt Über- und Unterschwinger an Kanten der Projektion, um diese beispielsweise zu betonen oder zu glätten (siehe auch Abb. \ref{fig:ct_faltung}).
+	Die Projektion wird auch als Schwächungsprofil bezeichnet, da das entstehende Helligkeitsprofil einer Projektion durch die Abschwächung der Röntgenstrahlen im Objekt entsteht. 
+	\begin{minipage}[t]{\linewidth}
 		\centering
-		\includegraphics[width=0.7\textwidth]{./figures/ct/faltung.jpg}
-		\caption{\korr{Was ist ein Schwächungsprofil?} Hochpassfilterung durch Faltung des Schwächungsprofils mit einem geeigneten Faltungskern (aus \cite{alkadhi}).}
+	   \includegraphics[width=0.7\textwidth]{./figures/ct/faltung.jpg}
+		\captionof{figure}{Hochpassfilterung durch Faltung des Schwächungsprofils eines Zylinders mit einem geeigneten Faltungskern (aus \cite{alkadhi}).}
 		\label{fig:ct_faltung}
-	\end{figure}
+		\medskip
+	\end{minipage}
+	Eine Rekonstruktion mit dem ungefilterten Schwächungsprofil würde ein verwaschenes Bild liefern.
 	Aus Implementierungsgründen wird das Bild vorher fouriertransformiert, da die Faltung dadurch in eine deutlich schneller zu berechnende Multiplikation übergeht und anschließend rücktransformiert.
 	\item \textbf{Überlagerung der Projektionen:} Zur dreidimensionalen Rekonstruktion werden die einzelnen Projektionen entsprechend ihres zugehörigen Aufnahmewinkels überlagert.
 	Siehe dazu auch die schematische Abbildung \ref{fig:ct_überlagerung}.
@@ -895,7 +900,9 @@ Die allgemeine Vorgehensweise\footnote{Dabei wird vereinfachend davon ausgegange
 \end{enumerate}
 Da die Projektionen während der Rekonstruktion modifiziert werden, indem sie durch eine Faltung eine Filterung erfahren wird das Verfahren auch als gefilterte Rückprojektion bezeichnet.
 
-Mathematisch wird die Projektion durch eine s.g. Radontransformation beschrieben, die die Objektfunktion $f(x, y)$ in eine Projektionsfunktion $p(\vartheta, \xi)$ überführt. \korr{Was sind Objektfunktion und Projektionsfunktion? Rest ist schwer verständlich vermutlich weil hier ne konkrete Definition fehlt.}
+Mathematisch wird die Projektion durch eine s.g. Radontransformation beschrieben, die die Objektfunktion $f(x, y)$ in eine Projektionsfunktion $p(\vartheta, \xi)$ überführt.
+Sie beschreiben durch einen funktionalen Zusammenhang das Objekt bzw. die Projektion (das Schwächungsprofil) in einer Aufnahme (Rotation in der $x$-$y$-Ebene um die $z$-Achse).
+Die Helligkeitswerte eines zweidimensionalen Bildes werden durch die Projektionsfunktion beschrieben, die durch Bestrahlung des Objektes, gegeben durch die Objektfunktion, entstehen.
 Die Variablen $\vartheta$ und $\xi$ parametrisieren den Röntgenstrahl in Polarkoordinaten, wobei der Ursprung im Zentrum des Objekts liegt.
 Dann gilt:
 \begin{align}
@@ -929,11 +936,28 @@ Das durch die Software rekonstruierte Objekt ist in Abbildung \ref{fig:ct_frosch
 Der Frosch ist dabei sehr deutlich zu erkennen, die gewählte Anzahl Projektionen sorgt offensichtlich für eine qualitativ gute Rekonstruktion.
 Die nah am Frosch befindliche Watte zur stabilen Lagerung ist ebenfalls gut erkennbar, sowie ein außen liegender Ring der Befestigung.
 
+\subsubsection{Berachtung von Auflösung und Kontrast}
+
+Für eine Einschätzung des Auflösungsvermögens und Kontrasts der CT-Aufnahmen wurde ein Strichgitter beleuchtet und mit der Kamera das Bild auf dem Fluoreszenzschirm aufgenommen.
+Die Aufnahme ist in Abbildung \ref{fig:ct_kontrast} dargestellt.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.8\textwidth]{./figures/ct/strichgitter2.png}
+	\caption{Aufnahme des Strichgitters zur Abschätzung von Auflösung und Kontrast}
+	\label{fig:ct_kontrast}
+\end{figure}
+Entsprechend den Angaben in \cite{anleitung} ist gut ersichtlich, dass drei Felder (im Bild die beiden Felder rechts und das Feld unten links) mit Balkenbreiten von \SI{2}{mm} bis \SI{4}{mm} sehr gut aufgelöst werden können.
+Der Kontrast ist in diesen Feldern hoch und der Weißwert zwischen den Balken im Vergleich zum Weißwert außerhalb des Strichgitters unverfälscht.
+Für die Felder mit Balkenbreiten \SI{1}{mm} und \SI{0.5}{mm} erkennt man, dass das Rauschen zunimmt und der Weißwert mit der Balkenbreite abnimmt und sich grau verfärbt, der Kontrast nimmt also ab.
+Dennoch können die einzelnen Balken scharf dargestellt und gut getrennt werden im Gegensatz zu dem Feld mit Balkenbreite \SI{0.3}{mm}.
+Der Kontrast ist hier vergleichbar mit dem Feld der nächstgrößeren Balkenbreite, das Rauschen jedoch nimmt zu und die einzelnen Balken können nicht mehr aufgelöst werden.
+Mit dem hier genutzten CT-Gerät, der Kupfer-Röntgenröhre und den oben genannten Einstellungen können also zwei Objekte bis zu einem Abstand von \SI{0.5}{mm} noch gut getrennt werden, trotz recht geringem Kontrast.
+
 \subsubsection{Strahlenbelastung bei CT-Aufnahmen}
 Die folgenden Überlegungen sollen eine Einschätzung der Strahlenbelastung bei einem CT-Scan liefern, in der Praxis jedoch sind konkrete aufgenommene Dosen nur schwer zu berechnen und von vielen verschiedenen Faktoren abhängig.
 Aufgrund der begrenzten Verfügbarkeit allgemeiner Quellen sind die angegebenen Informationen in den meisten Fällen auf Computertomographiegeräte für medizinische Anwendungen bezogen.
-Im Gegesatz zu gewöhnlichen Röntgenaufnahmen, bei denen die Dosis etwa exponentiell mit der Dicke des durchstrahlten Objektes abnimmt (die Dosis ist proportional zur Intensität) ergibt sich für ein in der Computertomographie aufgenommenes Objekt oder auch Patienten bei medizinischen Anwendungen eine andere Dosisverteilung.
-Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufgenommenen Dosen, so dass sich insgesamt eine homogene \korr{Ist homogen das richtige Wort? Ein einzelnes Röntgenbild hat auch eine homogene Dosisverteilung.} Verteilung ergibt.
+Im Gegesatz zu gewöhnlichen Röntgenaufnahmen, bei denen die Dosis etwa exponentiell mit der Dicke des durchstrahlten Objektes abnimmt (die Dosis ist proportional zur Intensität), ergibt sich für ein in der Computertomographie aufgenommenes Objekt oder auch Patienten bei medizinischen Anwendungen eine andere Dosisverteilung.
+Bei einer gewöhnlichen Röntgenaufnahme ist die Strahlungsdeposition innerhalb des Objektes für die Bereiche höher, die näher an der Röntgenröhre liegen. Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufgenommenen Dosen, so dass sich insgesamt eine homogene Verteilung im durchstrahlten Objekt ergibt.
 Bei schichtweisen CT-Aufnahmen eines Objekts, bei dem das in \ref{ct_aufnahme} beschriebene Vorgehen für jede Schicht durchgeführt wird (die Schichten, engl. \emph{slices} sind in $z$-Richtung aneinandergereiht), ergibt sich ein Dosisprofil wie in Abbildung \ref{fig:ct_dosisprofil} bei dem ersichtlich ist, dass auch die angrenzenden Schichten der aktuell bestrahlten Schicht mit Dicke $d$ durch Streuung eine Strahlenbelastung erfahren.
 \begin{figure}[ht]
 	\centering

@@ -10,7 +10,7 @@ set xrange [0:3.1]
 set yrange [*:*]
 set xlabel 'Absorberdicke $d$ / \si{mm}'
 set ylabel 'Transmission $T$ / \si{\percent}'
-
+set format x "%.1f"
 set grid
 
 load './../gnuplot_linestyles.plt'
@@ -30,7 +30,7 @@ plot './data/abschirmung/absorber_1.txt' using 1:9:(0.05):10 w xyerrorbars t'ohn
 ### PLOT 2 LOG
 set output './plots/abschirmung/absorber_1_log.tex'
 
-set ylabel 'Transmission $\log(T)$'
+set ylabel 'Transmission $\ln(T)$'
 
 set yrange [-5.5:0]
 
@@ -38,8 +38,8 @@ set yrange [-5.5:0]
 f(x) = m1 * x + b1
 g(x) = m2 * x + b2
 
-fit f(x) './data/abschirmung/absorber_1.txt' using 1:(log($9/100.0)):(0.05):($10/$9) xyerror via m1, b1
-fit g(x) './data/abschirmung/absorber_1_zr.txt' using 1:(log($9/100.0)):(0.05):($10/$9) xyerror via m2, b2
+fit [0.75:3.1] f(x) './data/abschirmung/absorber_1.txt' using 1:(log($9/100.0)):(0.05):($10/$9) xyerror via m1, b1
+fit [0.75:3.1] g(x) './data/abschirmung/absorber_1_zr.txt' using 1:(log($9/100.0)):(0.05):($10/$9) xyerror via m2, b2
 
 
 plot './data/abschirmung/absorber_1.txt' using 1:(log($9/100.0)):(0.05):($10/$9) w xyerrorbars t'ohne Filter' ls 1,\

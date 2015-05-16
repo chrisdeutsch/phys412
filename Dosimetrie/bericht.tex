@@ -395,6 +395,7 @@ Die Spannungsverschiebung ist proportional zur Dosis.
 
 
 \subsection{Abschwächung von Röntgenstrahlen (Lambertsches Schwächungsgesetz)}
+\label{sec:lambert}
 Beschreibt Abschwächung der Intensität von Strahlung in einem Absorber durch Streuung und Absorption.
 Trifft auf einen infinitesimalen Absorber der Dicke $\mathrm{d} x$ Strahlung der Intensität $I$, so kommt es zur Änderung der Strahlungsintensität hinter dem Absorber um:
 \begin{align}
@@ -829,45 +830,64 @@ Die Messungen wurden einmal mit und einmal ohne Zirkonfilter duchgeführt.
 Dieser filtert den kurzwelligen Anteil des Spektrums der erzeugten Bremsstrahlung aus.
 Die so gefundenen Messwerte sind in Tabelle \ref{tab:absorber_alu} zu finden.
 Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.005}{\milli\ampere} abgeschätzt und der Fehler der Zählrate mit \eqref{eq:zählrate_fehler} berechnet.
-\begin{table}[ht]
-	\centering
-	\resizebox{\textwidth}{!}{
-	\input{./tables/absorber/alu.tex}}
-	\caption{Messwerte und Berechnung für den Absorbersatz mit Aluminium unterschiedlicher Dicken $d$. Der Fehler für die Dicke wird auf \SI{0.05}{mm} geschätzt, der für den Emissionsstrom $I_\mathrm{E}$ erneut auf \SI{0.005}{mA}.
-	Die Zählraten $R$ wurden auf die maximale Zählrate bei \SI{1}{mA} Emissionsstrom skaliert und daraus die Transmission $T$ für alle Absorberdicken berechnet.}
-	\label{tab:absorber_alu}
-\end{table}
 Die auf \SI{1}{mA} skalierte Zählrate berechnet sich mit:
 \begin{align}
-	R_\mathrm{max} &= R\cdot\frac{\SI{1}{mA}}{I_\mathrm{E}} 	\label{eq:max_rate}\\
-	\Delta R_\mathrm{max} &= \sqrt{\frac{(\Delta R)^2}{I_\mathrm{E}^2} + \frac{R^2\,(\Delta I_\mathrm{E})^2}{I_\mathrm{E}^2}}
+	R_\mathrm{max} &= R\cdot\frac{\SI{1}{mA}}{I_\mathrm{E}} \label{eq:max_rate}\\
+	\Delta R_\mathrm{max} &= R_\mathrm{max} \, \sqrt{\frac{(\Delta R)^2}{R^2} + \frac{(\Delta I_\mathrm{E})^2}{I_\mathrm{E}^2}}
 \end{align}
 Daraus kann die Transmission $T$ berechnet werden aus:
 \begin{align}
 	T &= \frac{R_\mathrm{max}}{R_\mathrm{max, 0}}\\
-	\Delta T &= \sqrt{\frac{(\Delta R_\mathrm{max})^2}{R_\mathrm{max, 0}^2} + \frac{R_\mathrm{max}^2\,(\Delta R_\mathrm{max, 0})^2}{R_\mathrm{max, 0}^2}} 
+	\Delta T &= T \, \sqrt{\frac{(\Delta R_\mathrm{max})^2}{R_\mathrm{max}^2} + \frac{(\Delta R_\mathrm{max, 0})^2}{R_\mathrm{max, 0}^2}} 
 	\label{eq:transmission}
 \end{align}
 $R_\mathrm{max, 0}$ beschreibt dabei normalerweise die Zählrate vor dem Absorber, da diese jedoch nicht gemessen werden konnte, wurde sie gleich der Zählrate ohne Absorber gesetzt.
-
+In Tabelle \ref{tab:absorber_alu} wurden die jeweiligen Skalierungen und Transmissionsberechnungen durchgeführt.
+\begin{table}[ht]
+	\centering
+	\resizebox{\textwidth}{!}{
+		\input{./tables/absorber/alu.tex}}
+	\caption{Messwerte und Berechnung für den Absorbersatz mit Aluminium unterschiedlicher Dicken $d$. Der Fehler für die Dicke wird auf \SI{0.05}{mm} geschätzt, der für den Emissionsstrom $I_\mathrm{E}$ erneut auf \SI{0.005}{mA}.
+		Die Zählraten $R$ wurden auf die maximale Zählrate bei \SI{1}{mA} Emissionsstrom skaliert und daraus die Transmission $T$ für alle Absorberdicken berechnet.}
+	\label{tab:absorber_alu}
+\end{table}
+In Abbildung \ref{fig:absorber_1} wurden die so berechneten Transmissionen gegen die Absorberdicke aufgetragen.
 \begin{figure}[h]
 	\centering
 	\input{./plots/abschirmung/absorber_1.tex}
-	\caption{Absorber 1}
+	\caption{Transmissionskoeffizienten der Aluminiumabsorber verschiedener Dicken $d$}
 	\label{fig:absorber_1}
 \end{figure}
-\begin{figure}[h]
+\korr{TODO: Interpretation}
+Der Vergleich mit der Theorie in Abschnitt \ref{sec:lambert} liefert den Zusammenhang:
+\begin{align}
+	T = e^{-\mu \cdot d}
+\end{align}
+Trägt man die Transmission halblogarithmisch gegen die Dicke des Absorbermaterials auf, so ergibt sich demnach eine Ursprungsgerade mit der Steigung $-\mu$:
+\begin{align}
+	\ln(T) = - \mu \cdot d
+\end{align}
+Diese Linearisierung wurde in Abbildung \ref{fig:absorber_1_log} abgebildet.
+\begin{figure}[hbt]
 	\centering
 	\input{./plots/abschirmung/absorber_1_log.tex}
-	\caption{Absorber 1 Zr}
-	\label{fig:absorber_1_zr}
+	\caption{Linearisierung zur Bestimmung des linearen Schwächungskoeffizientens $\mu$. Die Anpassung erfolgt wegen der systematischen Abweichung für den \SI{0.5}{mm} Absorber erst ab dem Absorber der Dicke \SI{1}{mm}.}
+	\label{fig:absorber_1_log}
 \end{figure}
+Offensichtlich liegen die linearisierten Datenpunkt auf einer Gerade, die jedoch stark von der theoretischen erwarteten Ursprungsgerade abweichen.
+In der logarithmischen Darstellung entspricht die Abweichung von der Ursprungsgerade um einen Achsenabschnitt $b$ einem multiplikativen Faktor $e^b$ auf die berechneten Transmissionen.
+Hinsichtlich der Theorie macht dies jedoch wenig Sinn, da ohne Absorber $d = \SI{0}{mm}$ ein Transmissionskoeffizient von $T = \num{1.0}$ erreicht werden sollte, was nur für Ursprungsgeraden der Fall ist.
+Aus Mangel an besseren Optionen\footnote{Eine genaue Diskussion der Fehlerquellen findet sich im Anschluss an die folgende Auswertung} werden Geraden der Form:
+\begin{align}
+	y = -\mu \cdot d + b
+\end{align}
+an die Datenpunkte angepasst und der multiplikative Faktor aufgrund des Achsenabschnittes $b$ ignoriert.
+Die Ergebnisse der Anpassung lauten:
+\begin{align*}
+	\text{ohne Filter:} \qquad \mu = \SI{5.4 +- 0.7}{\per\centi\metre},\quad b = \num{-3.4 +- 0.2}\\
+	\text{mit Filter:} \qquad \mu = \SI{4.4 +- 0.4}{\per\centi\metre},\quad b = \num{-1.6 +- 0.1}
+\end{align*}
 
-\subsubsection{Korrigierte Zählraten}
-
-\subsubsection{Transmissionen für Absorber}
-
-\subsubsection{Transmissionskoeffizienten}
 
 Mit den gerade bestimmten Absorptionskoeffizienten kann so die Dicke des Aluminiums im zweiten Absorbersatz bestimmt werden, die gleich groß ist wie die Dicke der anderen Absorberelemente.
 Die zur Berechnung notwendigen Messwerte für den zweiten Absorbersatz sind in Tabelle \ref{tab:absorber_elem} notiert.

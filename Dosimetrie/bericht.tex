@@ -769,6 +769,7 @@ Unter Berücksichtigung dieses Effekts zeigt die Anpassung eine gute Übereinsti
 Die Notwendigkeit eines konstanten Versatzes $D_0$ für einen guten Fit könnte ebenfalls auf geometrische Effekte zurückzuführen sein, wie z.B. die Abweichung von einer idealen Punktquelle oder den Weglängenunterschied (jeweils von der Quelle) zwischen der Mitte der Ionisationskammer und des oberen/unteren Randes zurückzuführen sein.
 
 \subsection{Totzeit}
+\label{sec:totzeit}
 
 Da bei den weiteren Messungen das Geiger-Müller-Zählrohr verwendet wird, ist es notwendig, zunächst seine Totzeit abzuschätzen.
 Dazu wird das Zählrohr auf dem Goniometer befestigt und zur Bestrahlung eine Röntgenröhre aus Kupfer mit davor sitzendem Kollimator (bei diesem Versuch wurde der Kollimator mit breitem Spalt verwendet) genutzt.
@@ -888,8 +889,7 @@ Die Ergebnisse der Anpassung lauten:
 	\text{mit Filter:} \qquad \mu = \SI{4.4 +- 0.4}{\per\centi\metre},\quad b = \num{-1.6 +- 0.1}
 \end{align*}
 
-
-Mit den gerade bestimmten Absorptionskoeffizienten kann so die Dicke des Aluminiums im zweiten Absorbersatz bestimmt werden, die gleich groß ist wie die Dicke der anderen Absorberelemente.
+Mit den bestimmten Absorptionskoeffizienten kann die Dicke des Aluminiums im zweiten Absorbersatz bestimmt werden, die gleich der Dicke der anderen Absorberelemente ist.
 Die zur Berechnung notwendigen Messwerte für den zweiten Absorbersatz sind in Tabelle \ref{tab:absorber_elem} notiert.
 Für die Berechnungen gelten weiterhin \eqref{eq:max_rate} bis \eqref{eq:transmission}.
 \begin{table}[ht]
@@ -905,22 +905,22 @@ Aus den Transmissionswerten für Aluminium kann nun die Dicke $d$ bestimmt werde
 Dies geschieht für die Messung mit und ohne Zirkonfilter getrennt.
 Es folgt aus dem Lambertschen Gesetz:
 \begin{align}
-	d&=-\frac{\log(T)}{\mu} \label{eq:dicke}\\
-	\Delta d &= \sqrt{\frac{\log^2(T)\,(\Delta\mu)^2}{\mu^4} + \frac{(\Delta T)^2}{T^2\mu^2}}
+	d&=-\frac{\ln(T)}{\mu} \label{eq:dicke}\\
+	\Delta d &= \sqrt{\frac{\ln^2(T)\,(\Delta\mu)^2}{\mu^4} + \frac{(\Delta T)^2}{T^2\mu^2}}
 \end{align}
 Damit kann die Dicke des Aluminiumabsorbers bestimmt werden zu:
-\begin{align}
+\begin{align*}
 d &= \SI{0.60+-0.08}{cm} \qquad\text{(ohne Zirkonfilter)}\\
 d &= \SI{0.33+-0.04}{cm} \qquad\text{(mit Zirkonfilter)}
-\end{align}
+\end{align*}
 Durch Bildung des Mittelwerts erhält man die für die weitere Auswertung genutzte Dicke aller Absorber:
 \begin{align}
 	d = \SI{0.47+-0.05}{cm}
 \end{align}
 Ausgehend davon kann \eqref{eq:dicke} nach $\mu$ umgerechnet werden und mit den Transmissionen aus \ref{tab:absorber_elem} die Transmissionskoeffizienten $\mu_0$ (ohne Zirkonfilter) und $\mu_\mathrm{Zr}$ (mit Zirkonfilter) bestimmt und anschließend wieder gemittelt werden, so dass man mit
 \begin{align}
-	\mu&=-\frac{\log(T)}{d} \\
-	\Delta\mu &= \sqrt{\frac{\log^2(T)\,(\Delta d)^2}{d^4} + \frac{(\Delta T)^2}{T^2d^2}}
+	\mu&=-\frac{\ln(T)}{d} \\
+	\Delta\mu &= \sqrt{\frac{\ln^2(T)\,(\Delta d)^2}{d^4} + \frac{(\Delta T)^2}{T^2d^2}}
 \end{align}
 die Werte in Tabelle \ref{tab:absorber_koeff} erhält.
 \begin{table}
@@ -931,6 +931,23 @@ die Werte in Tabelle \ref{tab:absorber_koeff} erhält.
 	\caption{Transmissionskoeffizienten für die verschiedenen Absorberelemente jeweils mit und ohne Zirkonfilter sowie die gemittelten Transmissionskoeffizienten.}
 	\label{tab:absorber_koeff}
 \end{table}
+
+Die in diesem Versuchsteil erzielten Ergebnisse sollten höchstens als Größenordnungen verstanden werden, da bei der Auswertung einige Probleme auftraten.
+Im Folgenden sollen die Fehlerquellen diskutiert und Verbesserungen der Methodik angesprochen werden.
+
+Zunächst fällt die Abweichung der linearisierten Transmissions-Absorberdicke-Graphen von der Ursprungsgeraden auf.
+Wie bereits erwähnt äußert sich dies in einem Faktor $T = e^b \cdot e^{-\mu \cdot d}$, welcher der Tatsache widerspricht, dass die Transmission ohne Absorber \SI{100}{\percent} beträgt.
+Die Ursache dafür könnte in der Skalierung der Zählrate mit dem am Röntgengerät eingestellten Emissionsstrom zu suchen sein.
+Zum einen muss für die Referenzmessung ohne Absorber ein sehr kleiner Emissionsstrom $I_\mathrm{E} \approx \SI{0.01}{mA}$ eingestellt werden, um Totzeitkorrekturen zu vermeiden.
+Dies hat zur Folge, dass große Fehler in die Berechnungen einfließen.
+Darüber hinaus konnte schon im Abschnitt der Dosimetrie festgestellt werden, dass die Abhängigkeit des Ionisationsstrom im Kondensator zum Emissionsstrom der Kupferröhre eine starke Nicht-Linearität aufweist.
+Sollte dies nicht auf die Ionisationskammer zurückzuführen sein, sondern auf die Röntgenröhre selber, so hat dies natürlich einen Einfluss auf die Skalierung der Zählraten, da dort ein linearer Zusammenhang zwischen Zählrate und Emissionsstrom vorausgesetzt wird.
+
+Diese Einflüsse könnten vermieden werden, indem man entgegen der in \cite{anleitung} vorgeschlagenen Methodik der Variation des Emissionsstroms vor jeder Messung eine Messreihe bei konstantem Emissionsstrom durchführt.
+Da die Anpassung des Emissionsstroms zur Vermeidung der Totzeitkorrektur diente, muss stattdessen ein kleiner Emissionsstrom gewählt werden, damit ohne Absorber keine Totzeitkorrektur nötig ist.
+Dies hätte zur Folge, dass bei dickeren/stärkeren Absorbern die Zählrate sehr klein wird.
+Um dennoch eine passable Statistik zu erhalten könnte man die Messzeit erhöhen.
+Eine Alternative dazu ist, eine Bestimmung der Totzeit durchzuführen (dies ist zum Teil schon in Abschnitt \ref{sec:totzeit} geschehen) und schließlich Totzeitkorrekturen an den gemessenen Raten durchzuführen.
 
 \subsection{Computertomografie}
 

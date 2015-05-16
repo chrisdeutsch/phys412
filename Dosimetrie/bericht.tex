@@ -135,7 +135,10 @@ Tutor: & Marcus Gruener
 
 % ZUSAMMENFASSUNG
 \begin{abstract}
-\noindent
+\noindent In dem vorliegenden Versuch sollen verschiedene Möglichkeiten der Messung dosimetrischer Größen vorgestellt werden.
+Darüber hinaus werden Eigenschaften der verwendeten Röntgenröhren und Detektoren bestimmt und Messungen zur Abschirmung von ionisierender Strahlung durchgeführt.
+Zuletzt wird mit einem Computertomografie-Modul ein CT-Scan eines Froschs durchgeführt und ein Einblick in Aufnahme- und Rekonstruktionsverfahren dieser vor allem in der Medizin genutzten Technik gewährt.
+Bei allen Messungen sollen dabei stets strahlenschutztechnische Gedanken berücksichtigt werden.
 \end{abstract}
 
 \end{titlepage}
@@ -320,7 +323,7 @@ Die Äquivalentdosis $H$ beachtet im Gegensatz zu den physikalischen Dosisbegrif
 	H = Q \cdot D
 \end{align}
 Sie hat die gleiche Einheit wie $D$ und wird daher, um die physikalische Größe der Dosis von der Äquivalentdosis zu unterscheiden, in der Einheit Sievert angegeben.
-Einige typische Qualitätsfaktoren sind in der folgenden Auflistung genannt \cite{gerthsen}:
+Einige typische Qualitätsfaktoren sind in der folgenden Auflistung genannt\cite{gerthsen}:
 \begin{align*}
 	&\text{Strahlungsart} \quad & Q / \si{Sv.Gy\tothe{-1}}\\
 	&\text{Röntgen- und Gammastrahlung} \quad & 1 \\
@@ -411,9 +414,7 @@ Dannn ist:
 	T = \mathrm{e}^{-\mu x}
 \end{align}
 wobei $\mu = \alpha$ der lineare Schwächungskoeffizient ist.
-
-(WIKI:) Für Energien über \SI{50}{keV} gilt:
-je weniger dicht und je weniger klein $Z$ desto geringer ist $\mu$. Daher ist Blei beliebtes Material zur Abschirmung.
+Da die an der Abschwächung beteiligten Prozesse vor allem von der Energie der einfallenden Strahlun als auch der Ordnungszahl des bestrahlten Materials abhängt, eignen sich dichte Elemente mit hohen Ordnungszahlen gut zur Abschirmung, weswegen für Röntgen- und Gammastrahlung häufig Blei zu Abschirmungszwecken genutzt wird.
 
 \section{Versuchsaufbau}
 
@@ -1052,6 +1053,9 @@ Ausgehend von diesem Theorem kann man über inverse Fouriertransformationen und 
 f(x,y)=\int_{0}^{\pi}\left.\mathrm{d}\vartheta\,P(\vartheta, \xi)*k(\xi)\right|_{\xi=x\,\cos\vartheta + y\,\sin\vartheta}
 \end{align}
 $k(\xi)$ beschreibt hier den Faltungskern für die Filterung.
+An dieser Stelle soll darauf hingewiesen werden, dass die vorgestellte gefilterte Rückprojektion zur Rekonstruktion s.g. zweidimensionaler Paralleldaten genutzt werden kann.
+Die in dem Versuch genutzte Software führt eine Kegelstrahlprojektion durch, die eine dreidimensionale Verallgemeinerung einer Fächerstrahlprojektion darstellt.
+Die gefilterte Rückprojektion liefert jedoch einen recht anschaulichen Eindruck und führt das wichtige Konzept der Radontransformation ein, eine detaillierte Darstellung verschiedener Rekonstruktionsmöglichkeiten würde über den Umfang eines Praktikumsprotokolls weit hinausgehen.
 
 \subsubsection{Rekonstruiertes Objekt}
 Das durch die Software rekonstruierte Objekt ist in Abbildung \ref{fig:ct_frosch} dargestellt.
@@ -1109,7 +1113,19 @@ Weiterhin kann gezeigt werden, dass
 \end{align}
 gilt, mit $\Delta\xi$ der Größe eines Detektorelements (hier also Aufnahmepixels der Kamera).
 Dadurch ergibt sich auch für die Baugröße in Form kleinerer Detektorelemente eine Begrenzung, wenn die Dosis minimiert werden soll.
+
 \section{Fazit}
+
+Der durchgeführte Versuch kann größtenteils als gelungen bewertet werden.
+Es konnte erfolgreich der Einsatz eines Plattenkondensators als Ionisationskammer überprüft werden und damit die Abhängigkeiten des Ionisationsstroms von Emissionsstrom und Spannung der Röntgenröhre gezeigt werden.
+Weiterhin konnte mit dem Stabdosimeter ein weiteres Gerät zur Messung der Dosisleistung kennengelernt und genutzt werden.
+Damit wurde das Abstandsquadratgesetz für Strahlung erfolgreich bestätigt.
+Die Abschätzung der Totzeit des zu verwendeden Geiger-Müller-Zählrohrs lieferte einen Wert in der erwarteten Größenordnung und ließ die Frage nach der Notwendikeit einer Totzeitkorrektur beantworten.
+Der Versuchsteil zur Abschirmung hingegen konte nicht erfolgreich durchgeführt werden.
+Die gefundenen Messwerte ließen keine sinnvolle Auswertung zu, so dass das Vorgehen eher beispielhaft zu verstehen ist und keine bewertbaren quantitativen Ergebnsse liefert.
+Die vermuteten Gründe dafür wurden in dem entsprechenden Kapitel genannt.
+Der zum Ende durchgeführte Computertomografie-Scan gelang wieder gut und stellte eine interessante aktuelle Anwendung der erworbenen Kenntnisse über Röntgenstrahlung und Abschwächung dar.
+Die Funktionsweise eines Computertomografen wurde dabei deutlich und gewährte einen kleinen Einblick in die verschiedenen Möglichkeiten der Bildrekonstruktion.
 
 \FloatBarrier
 % BIBLIOGRAPHIE

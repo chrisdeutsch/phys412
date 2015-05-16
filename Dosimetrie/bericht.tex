@@ -859,9 +859,9 @@ In Abbildung \ref{fig:absorber_1} wurden die so berechneten Transmissionen gegen
 \end{figure}
 \korr{TODO: Interpretation}
 Der Vergleich mit der Theorie in Abschnitt \ref{sec:lambert} liefert den Zusammenhang:
-\begin{align*}
+\begin{align}
 	T = e^{-\mu \cdot d}
-\end{align*}
+\end{align}
 Trägt man die Transmission halblogarithmisch gegen die Dicke des Absorbermaterials auf, so ergibt sich demnach eine Ursprungsgerade mit der Steigung $-\mu$:
 \begin{align}
 	\ln(T) = - \mu \cdot d
@@ -874,14 +874,19 @@ Diese Linearisierung wurde in Abbildung \ref{fig:absorber_1_log} abgebildet.
 	\label{fig:absorber_1_log}
 \end{figure}
 Offensichtlich liegen die linearisierten Datenpunkt auf einer Gerade, die jedoch stark von der theoretischen erwarteten Ursprungsgerade abweichen.
-In der logarithmischen Darstellung entspricht die Abweichung von der Ursprungsgerade einem multiplikativen Faktor auf die berechneten Transmissionen.
-Hinsichtlich der Theorie macht dies jedoch wenig Sinn, da eine 
+In der logarithmischen Darstellung entspricht die Abweichung von der Ursprungsgerade um einen Achsenabschnitt $b$ einem multiplikativen Faktor $e^b$ auf die berechneten Transmissionen.
+Hinsichtlich der Theorie macht dies jedoch wenig Sinn, da ohne Absorber $d = \SI{0}{mm}$ ein Transmissionskoeffizient von $T = \num{1.0}$ erreicht werden sollte, was nur für Ursprungsgeraden der Fall ist.
+Aus Mangel an besseren Optionen\footnote{Eine genaue Diskussion der Fehlerquellen findet sich im Anschluss an die folgende Auswertung} werden Geraden der Form:
+\begin{align}
+	y = -\mu \cdot d + b
+\end{align}
+an die Datenpunkte angepasst und der multiplikative Faktor aufgrund des Achsenabschnittes $b$ ignoriert.
+Die Ergebnisse der Anpassung lauten:
+\begin{align*}
+	\text{ohne Filter:} \qquad \mu = \SI{5.4 +- 0.7}{\per\centi\metre},\quad b = \num{-3.4 +- 0.2}\\
+	\text{mit Filter:} \qquad \mu = \SI{4.4 +- 0.4}{\per\centi\metre},\quad b = \num{-1.6 +- 0.1}
+\end{align*}
 
-\subsubsection{Korrigierte Zählraten}
-
-\subsubsection{Transmissionen für Absorber}
-
-\subsubsection{Transmissionskoeffizienten}
 
 \subsection{Computertomografie}
 

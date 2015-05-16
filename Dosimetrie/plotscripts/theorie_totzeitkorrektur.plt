@@ -11,7 +11,7 @@ set format y "%.1f"
 set format x "%.1f"
 
 set xlabel 'tatsächliche Rate $m$'
-set ylabel 'gemessene Rate $k$'
+set ylabel 'gemessene Rate $k/T$'
 
 unset xtics
 unset ytics

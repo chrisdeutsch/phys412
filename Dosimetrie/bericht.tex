@@ -263,61 +263,64 @@ Dann ist die tatsächlich gemessene Rate $k$:
 \begin{align}
 	k = m T \, \mathrm{e}^{-m \tau} \label{eq:totzeit_paralysierend}
 \end{align}
-Diese Gleichung hat zwei Lösungen!
-Die kleinere der Lösungen liegt auf der mit $m$ ansteigenden Zählrate $k/T$ und die größere der Lösungen liegt auf der abfallenden Flanke.
-SIEHE BILD LEO S.124 Fig.5.5!!!
-Plotten von Zählrate für paralysierende Systeme und nichtparalysierende Systeme (Christopher weiß bescheid)!
+Diese Gleichung hat zwei Lösungen für die echte Zählrate $m$, die nur numerisch berechnet werden können.
+Die kleinere der Lösungen liegt auf der ansteigenden Flanke der mit $m$ ansteigenden Zählrate $k/T$ und die größere der Lösungen liegt auf der abfallenden Flanke.
+Die beiden Verläufe der gemessenen Zählrate $k/T$ in Abhängigkeit der echten Zählrate $m$ sind in Abbildung \ref{fig:totzeitkorrektur} dargestellt.
 \begin{figure}[ht]
 	\centering
 	\input{./plots/theo_totzeitkorrektur.tex}
-	\caption{Totzeitkorrektur}
+	\caption{Zusammenhang zwischen der echten und gemessenen Zählrate für paralysierende und nicht-paralysierende Systeme.}
 	\label{fig:totzeitkorrektur}
 \end{figure}
 
 
 \subsection{Dosimetrische Messgrößen}
 
+Als Strahlendosis wird die Aufnahmemenge ionisierender Strahlen bezeichnet.
+Diese ist vor allem im Strahlenschutz von großer Bedeutung, da ionisierende Strahlung schädliche Wirkungen auf den menschlichen Körper hat und somit stets minimiert werden sollte.
+
 \subsubsection{Aktivität}
-Zerfallsgesetz:
+Die Aktivität bezeichnet die Anzahl Teilchenzerfälle (hierbei entsteht für gewöhnlich ionisierende Strahlung) pro Zeiteinheit und kann recht einfach aus dem Zerfallsgesetz
 \begin{align}
 	\frac{\mathrm{d} N(t)}{\mathrm{d} t} = - \lambda \cdot N(t)
 \end{align}
-beschreibt die Abnahme von Teilchen.
-Aktivität beschreibt die Anzahl der Zerfälle pro Zeiteinheit also:
+hergeleitet werden.
+Aus der Definiton der Aktivität folgt unmittelbar:
 \begin{align}
 	A(t) = - \frac{\mathrm{d} N(t)}{\mathrm{d} t} = \lambda \cdot N(t)
 \end{align}
+Als Einheit wurde das Becquerel (Bq) definiert, das einem Zerfall pro Sekunde entspricht (\SI{1}{Bq} $=$ \SI{1}{\per\second}).
 
 \subsubsection{Energiedosis}
-Die im Absorberelement $\mathrm{d}V$ mit der Masse $\mathrm{d} m = \rho \cdot \mathrm{d}V$ deponierte Energie $\mathrm{d}E$:
+\label{sec:enegiedosis}
+Als Energiedosis wird die im Absorberelement $\mathrm{d}V$ mit der Masse $\mathrm{d} m = \rho \cdot \mathrm{d}V$ deponierte Energie $\mathrm{d}E$ bezeichnet:
 \begin{align}
 	D &= \frac{\mathrm{d}E}{\mathrm{d}m} = \frac{1}{\rho}\frac{\mathrm{d}E}{\mathrm{d}V}\\
 	[D] &= \frac{\mathrm{J}}{\mathrm{kg}} = \mathrm{Gy} \quad \text{(Gray)}
 \end{align}
-Physikalische nicht biologische Größe.
+Sie entspricht dabei einer physikalischen Größe und berücksichtigt keine biologischen Faktoren.
 
 \subsubsection{Ionendosis}
 \label{sec:ionendosis}
-Bezeichnet die elektrische Ladung die durch ionisierende Strahlung in einer bestimmten Masse entsteht:
+Die Ionendosis bezeichnet die elektrische Ladung $\mathrm{d}Q$, die durch ionisierende Strahlung in einer bestimmten Masse $\mathrm{d}m$ entsteht:
 \begin{align}
 	J = \frac{\mathrm{d}Q}{\mathrm{d}m}
 \end{align}
-Kann durch Kenntnis der mittleren Energie für die Bildung eines Ionenpaares in Energiedosis umgerechnet werden.
+Durch Kenntnis der mittleren Energie für die Bildung eines Ionenpaares kann diese Größe leicht in eine Energiedosis umgerechnet werden.
 
 \subsubsection{Dosisleistung}
+Dosisleistung beschreibt die pro Zeiteinheit aufgenommene bzw. deponierte Dosis. Siehe auch \ref{sec:enegiedosis}.
 \begin{align}
 	\dot{D} = \frac{\mathrm{d}D}{\mathrm{d}t}
 \end{align}
 
 \subsubsection{Äquivalentdosis}
-Äquivalentdosis $H$.
-Beachtet die relative biologische Wirksamkeit verschiedener Strahlungstypen durch Einführung eines Qualitätsfaktors $Q$.
+Die Äquivalentdosis $H$ beachtet im Gegensatz zu den physikalischen Dosisbegriffen die relative biologische Wirksamkeit verschiedener Strahlungstypen durch Einführung eines Qualitätsfaktors $Q$.
 \begin{align}
 	H = Q \cdot D
 \end{align}
-Die Äquivalentdosis hat die gleiche Einheit wie die Dosis und wird daher um die physikalische Größe der Dosis von der Biologischen der Äquivalentdosis zu unterscheiden mit Sievert "beeinheitet".
-
-Typische Qualitätsfaktoren (Gerthsen):
+Sie hat die gleiche Einheit wie $D$ und wird daher, um die physikalische Größe der Dosis von der Äquivalentdosis zu unterscheiden, in der Einheit Sievert angegeben.
+Einige typische Qualitätsfaktoren sind in der folgenden Auflistung genannt\cite{gerthsen}:
 \begin{align*}
 	&\text{Strahlungsart} \quad & Q / \si{Sv.Gy\tothe{-1}}\\
 	&\text{Röntgen- und Gammastrahlung} \quad & 1 \\
@@ -327,31 +330,27 @@ Typische Qualitätsfaktoren (Gerthsen):
 	&\text{Alphastrahlung} \quad & 10 \\
 	&\text{Schwere Rückstoßkerne} \quad & 20
 \end{align*}
-
-
-\subsection{Bildkontrast, Bildhelligkeit und visuelle Ortsauflösung}
-
+Unabhängig von dem Qualitätsfaktor sollte im Sinne des Strahlenschutzes die aufgenommene Dosis stets minimiert werden. 
 
 \subsection{4-A Regel im Strahlenschutz}
+
+Zur Dosisminimierung gibt es viele Möglichkeiten, von denen die wichtigsten vier in der s.g. 4-A-Regel festgehalten sind.
 \begin{itemize}
 	\item \textbf{Abstand:}
-	Die Wirkung von ionisierender Strahlung sinkt stark mit dem Abstand von der Quelle ($1/r^2$-Gesetz) und sollte daher stehts maximiert werden.
-	Z.B. durch Sperrbereiche, ausgestrecktem Arm und andere Haltewerkzeuge (Zangen).
-	
+	Die Wirkung von ionisierender Strahlung sinkt stark mit dem Abstand von der Quelle ($1/r^2$-Gesetz), so dass dieser stets maximiert werden sollte.
+	Dies kann beispielsweise durch das Ausstrecken des Arms beim Tragen radioaktiver Materialen, das Nutzen von Werkzeugen wie Zangen oder durch Einrichtung von Sperrbereichen, die den Zutritt zu Bereichen hoher ionisierender Strahlung verbieten, geschehen.	
 	
 	\item \textbf{Aufenthaltszeit:}
-	Die zugeführte Dosis ist proportional zur Aufenthaltszeit und sollte damit minimiert werden.
-	
+	Die zugeführte Dosis ist proportional zur Aufenthaltszeit, die entsprechend minimiert werden sollte.
+	Durch geübten Umgang mit dem Aufbau und Werkzeugen kann diese möglichst kurz gehalten werden, so dass nicht unter Anwesenheit der Quelle Fragen zum durchzuführenden Experiment beantwortet werden müssen.	
 	
 	\item \textbf{Abschirmung:}
-	Durch geeignete Abschirmung kommt es zu einem exponentiellen Abfall der Strahlungsintensität im Absorber (Lambert-Beer-Gesetz).
-		
+	Durch für die jeweilige Strahlung geeignete Abschirmung kann die Intensität der Strahlung und damit die dazu proportionale Dosis reduziert werden.
+	Eine quantitative Betrachtung dazu liefert das Lambertsche Schwächungsgesetz in \eqref{eq:schwächung}.		
 	
 	\item \textbf{Aktivität:}
-	Die Aktivität eines Präparats sollte bekannt sein und wenn möglich minimiert werden.
-	D.h. wenn es das Experiment erlaubt sollte ein Präparat geringerer Aktivität verwendet werden.
-	
-	
+	Die Aktivität aller verwendeten Präparate sollte bekannt sein und wenn möglich Quellen geringer Aktivität verwendet werden.
+
 \end{itemize}
 
 
@@ -410,6 +409,7 @@ Dabei beschreibt $\alpha$ den materialabhängigen Absorptionskoeffizienten, welc
 Gemäß der Differentialgleichung ist das Lambertsche Schwächungsgesetz gegeben durch:
 \begin{align}
 	I(x) = I_0 \, \mathrm{e}^{-\alpha x}
+	\label{eq:schwächung}
 \end{align}
 
 Oftmals alternative Darstellung durch die Transmission $T = I(x)/I_0$:
@@ -1037,6 +1037,12 @@ Dadurch ergibt sich auch für die Baugröße in Form kleinerer Detektorelemente 
 	W. R. Leo,
 	\emph{Techniques for Nuclear and Particle Physics Experiments},
 	Springer 1994
+	
+\bibitem{gerthsen}
+	Dieter Meschede,
+	\emph{Gerthsen Physik}.
+	Springer Verlag,
+	23. Auflage
 
 \bibitem{anleitung}
 	Physikalisches Praktikum V: Kern- und Teilchenphysik,

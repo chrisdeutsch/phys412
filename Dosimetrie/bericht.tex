@@ -829,15 +829,15 @@ Dabei wurde der Fehler des Emissionsstroms erneut auf \SI{0.01}{\milli\ampere} a
 
 \subsubsection{Transmissionskoeffizienten}
 
-\subsection{Computertomographie}
+\subsection{Computertomografie}
 \korr{Es fehlt das Bild vom Strichgitter und eine Einschätzung des Auflösevermögens}
 
 
-Zum Abschluss wurde mit einem Computertomographie-Gerät ein CT-Scan eines gefriergetrockneten Frosches aufgenommen.
+Zum Abschluss wurde mit einem Computertomografie-Gerät ein CT-Scan eines gefriergetrockneten Frosches aufgenommen.
 Dazu wird das zu untersuchende Objekt in einer für Röntgenstrahlung beinahe durchsichtigen Styroporkugel so gelagert, dass es sich nicht bewegen kann (hierzu wurde genügend Watte in den Hohlraum der Styroporkugel gegeben).
 Anschließend kann das Objekt an dem Goniometer montiert werden.
 Neben dem Röntgengerät wird das CT-Modul mit der Kamera aufgebaut, so dass die beiden Geräte möglichst dicht aneinander stehen, um kein Licht von außen in das CT-Modul gelangen zu lassen (das Röntgengerät ist mit einer Fluoreszenzschicht am Übergang ausgestattet, auf dem das mit der Kamera aufzunehmende Bild entsteht).
-Nach dem Start des Computertomographie-Programms werden dort die Parameter des Aufbaus (insbesondere der Abstand des Targets von der Kamera) sowie die gewünschten Einstellungen der Röntgenröhre eingegeben.
+Nach dem Start des Computertomografie-Programms werden dort die Parameter des Aufbaus (insbesondere der Abstand des Targets von der Kamera) sowie die gewünschten Einstellungen der Röntgenröhre eingegeben.
 Für den hier durchgeführten CT-Scan wurde eine Röhrenspannung von \SI{35}{\kilo\volt} bei \SI{1}{\milli\ampere} Emissionsstrom an der Kupfer-Röntgenröhre angelegt.
 Nach Bildjustage und Kalibrierung der Kamera zur optimalen Aufnahme des Fluoreszenzschirms (Verzeichnungskorrektur, Größe des Schirms etc.) werden die Aufnahmeparameter, namentlich die Anzahl der Projektionen, ihre Größe und die Rekonstruktionsgröße gewählt.
 Die Projektionsgröße wurde dabei auf \SI{250x250}{px} eingestellt, da so das ganze Objekt in dem aufgenommenen Bildbereich liegt, größere Projektionen hätten zusätzlich nur störende Aufnahmen der Befestigungen aufgenommen und keine Verbesserung des Bildes bewirkt.
@@ -852,7 +852,7 @@ Nach mehreren Aufnahmen und anschließender Korrektur konnte so eine gute Justie
 \subsubsection{Aufnahme und Rekonstruktion}
 \label{ct_aufnahme}
 
-Im Folgenden soll das allgemeine Vorgehen bei einer Computertomographieaufnahme anhand des im Versuch durchgeführten Scans beschrieben werden.
+Im Folgenden soll das allgemeine Vorgehen bei einer Computertomografieaufnahme anhand des im Versuch durchgeführten Scans beschrieben werden.
 Nach entsprechender Justierung (s.o.) wird für eine qualitativ gute Aufnahme die Anzahl der Projektionen möglichst hoch gewählt.
 Sie gibt die Menge der Bilder an, die während einer kompletten Umdrehung des Objekts aufgenommen werden.
 In dem Versuch wurden \num{720} Projektionen eingestellt, was einer Winkelschrittweite pro Bild von $\Delta\alpha=$\SI{0.5}{\degree} entspricht.
@@ -872,7 +872,7 @@ Ein paar ausgewählte Einzelprojektionen sind in Abbildung \ref{fig:ct_projektio
 	\label{fig:ct_projektionen}
 \end{figure}
 Diese Projektionen entsprechen jeweils einer gewöhnlichen Röntgenaufnahme eines Objekts mit dafür typischen Kontrasten.
-Zur Kontrastverbesserung werden die einzelnen Projektionen bei der Computertomographie überlagert und so ein dreidimensionales kontrastreiches Bild erstellt.
+Zur Kontrastverbesserung werden die einzelnen Projektionen bei der Computertomografie überlagert und so ein dreidimensionales kontrastreiches Bild erstellt.
 Bei der hier genutzten Software und Vorgehensweise wird das Objekt mittels s.g. Rückprojektion (engl. \emph{back projection}) aus den einzelnen Aufnahmen rekonstruiert.
 Die allgemeine Vorgehensweise\footnote{Dabei wird vereinfachend davon ausgegangen, dass das Bild in einem geeigneten Detektor entsteht, wobei dieser in dem Versuch aus Fluoreszenzschirm und Kamera zusammengesetzt ist.} umfasst dabei folgende Punkte (nach \cite{kalender}, Abb. 1.7):
 \begin{enumerate}
@@ -955,8 +955,8 @@ Mit dem hier genutzten CT-Gerät, der Kupfer-Röntgenröhre und den oben genannt
 
 \subsubsection{Strahlenbelastung bei CT-Aufnahmen}
 Die folgenden Überlegungen sollen eine Einschätzung der Strahlenbelastung bei einem CT-Scan liefern, in der Praxis jedoch sind konkrete aufgenommene Dosen nur schwer zu berechnen und von vielen verschiedenen Faktoren abhängig.
-Aufgrund der begrenzten Verfügbarkeit allgemeiner Quellen sind die angegebenen Informationen in den meisten Fällen auf Computertomographiegeräte für medizinische Anwendungen bezogen.
-Im Gegesatz zu gewöhnlichen Röntgenaufnahmen, bei denen die Dosis etwa exponentiell mit der Dicke des durchstrahlten Objektes abnimmt (die Dosis ist proportional zur Intensität), ergibt sich für ein in der Computertomographie aufgenommenes Objekt oder auch Patienten bei medizinischen Anwendungen eine andere Dosisverteilung.
+Aufgrund der begrenzten Verfügbarkeit allgemeiner Quellen sind die angegebenen Informationen in den meisten Fällen auf Computertomografiegeräte für medizinische Anwendungen bezogen.
+Im Gegesatz zu gewöhnlichen Röntgenaufnahmen, bei denen die Dosis etwa exponentiell mit der Dicke des durchstrahlten Objektes abnimmt (die Dosis ist proportional zur Intensität), ergibt sich für ein in der Computertomografie aufgenommenes Objekt oder auch Patienten bei medizinischen Anwendungen eine andere Dosisverteilung.
 Bei einer gewöhnlichen Röntgenaufnahme ist die Strahlungsdeposition innerhalb des Objektes für die Bereiche höher, die näher an der Röntgenröhre liegen. Durch eine Messung über \SI{360}{\degree} addieren sich die pro Einzelbild aufgenommenen Dosen, so dass sich insgesamt eine homogene Verteilung im durchstrahlten Objekt ergibt.
 Bei schichtweisen CT-Aufnahmen eines Objekts, bei dem das in \ref{ct_aufnahme} beschriebene Vorgehen für jede Schicht durchgeführt wird (die Schichten, engl. \emph{slices} sind in $z$-Richtung aneinandergereiht), ergibt sich ein Dosisprofil wie in Abbildung \ref{fig:ct_dosisprofil} bei dem ersichtlich ist, dass auch die angrenzenden Schichten der aktuell bestrahlten Schicht mit Dicke $d$ durch Streuung eine Strahlenbelastung erfahren.
 \begin{figure}[ht]
@@ -1007,7 +1007,7 @@ Dadurch ergibt sich auch für die Baugröße in Form kleinerer Detektorelemente 
 	
 \bibitem{kalender}
 	Kalender, W.
-	\emph{Computertomographie},
+	\emph{Computertomografie},
 	Publicis Corporate Publishing 2006
 	
 \bibitem{alkadhi}

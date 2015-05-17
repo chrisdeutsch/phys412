@@ -185,7 +185,7 @@ In der Praxis treten beide Effekte bei der Erzeugung von Röntgenstrahlen in sog
 	\label{fig:spektrum}
 \end{figure}
 
-Eine \textbf{Röntgenröhre} (schematisch in Abbildung \ref{fig:roehre}) besteht aus einem evakuierten Glaskolben mit einer Anordnung von geheizter Kathode und Anode aus Targetmaterial.
+Eine Röntgenröhre (schematisch in Abbildung \ref{fig:roehre}) besteht aus einem evakuierten Glaskolben mit einer Anordnung von geheizter Kathode und Anode aus Targetmaterial.
 Zwischen Kathode und Anode wird die Beschleunigungsspannung $U$ angelegt, sodass beim Heizen der Kathode mit der Heizspannung $U_\mathrm{Heiz}$ aufgrund des glühelektrischen Effekts ein Teil der Elektronen die Austrittsarbeit der Kathode überwinden kann und durch die Beschleunigungsspannung $U$ in Richtung der Anode beschleunigt werden.
 Nachdem die Beschleunigungsspannung $U$ durchlaufen wurde, treffen die Elektronen mit der Energie $e U$ auf das Anodenmaterial und erzeugen dabei Bremsstrahlung sowie charakteristische Strahlung, welche durch ein für Röntgenstrahlung durchlässiges Fenster im Glaskolben aus der Röhre austreten können.
 \begin{figure}[ht]
@@ -430,14 +430,14 @@ In der Praxis wird der Ionisationsstrom als Spannung $U_{I_\mathrm{C}}$ an einem
 	I_\mathrm{C} = \frac{U_{I_\mathrm{C}}}{R}
 	\label{eq:ohm_ionisationsstrom}
 \end{align}
-Da die auftretenden Ströme in der Größenordnung einiger \si{nA} liegen, muss ein dementsprechend hochohmiger Widerstand verwendet werden, was zur Folge hat, dass die Spannung nicht mit einem einfachen Voltmeter gemessen werden kann, da diese einen geringeren Innenwiderstand haben als der verwendete Messwiderstand.
+Da die auftretenden Ströme in der Größenordnung einiger \si{nA} liegen, muss ein mentsprechend hochohmiger Widerstand verwendet werden, was zur Folge hat, dass die Spannung nicht mit einem einfachen Voltmeter gemessen werden kann, da diese einen geringeren Innenwiderstand haben als der verwendete Messwiderstand.
 Daher wird ein Elektrometerverstärker mit einfacher Verstärkung verwendet, um die Spannung belastungsfrei am Messwiderstand mit einem Multimeter messen zu können.
 
 Folglich soll der Ionisationsstrom $I_\mathrm{C}$ in Abhängigkeit der Kondensatorspannung $U_\mathrm{C}$ für verschiedene Röhrenspannungen $U$ bestimmt werden.
 Dabei wird der Emissionsstrom\footnote{Der Fehler des Emissionsstroms wird anhand der letzten Stelle der Digitalanzeige des Röntgengeräts auf \SI{0.005}{\milli\ampere} abgeschätzt.} $I$ der Röntgenröhre auf \SI{1.000 +- 0.005}{mA} eingestellt und ein Messwiderstand $R = \SI{1}{\giga\ohm}$ verwendet, wobei auf den Widerstand ein relativer Fehler von \SI{1}{\percent} angenommen wird.
 Dann ergibt sich der Ionisationsstrom durch Gleichung \ref{eq:ohm_ionisationsstrom} und der Fehler durch Gauß'sche Fehlerfortpflanzung:
 \begin{align}
-	\Delta I_\mathrm{C} = \sqrt{\frac{\Delta U_{I_\mathrm{C}}^2}{R^2} + \frac{U_{I_\mathrm{C}}^2 \cdot \Delta R^2}{R^4}}
+	\Delta I_\mathrm{C} = \sqrt{\frac{(Delta U_{I_\mathrm{C}})^2}{R^2} + \frac{U_{I_\mathrm{C}}^2 \cdot \Delta R^2}{R^4}}
 \end{align}
 wobei der Fehler der Spannungsmessung am Elektrometerverstärker anhand des Rauschen am Verstärkers für jede Messung einzeln abgeschätzt wird.
 Darüber hinaus wird die variable Gleichspannung $U_\mathrm{C}$ direkt mit einem weiteren Multimeter gemessen und der Fehler im Messbereich \num{0} bis \SI{400}{V} auf \SI{0.1}{V} abgeschätzt.
@@ -448,7 +448,7 @@ Die aufgenommenen Messdaten für die Röhrenspannungen \SI{15}{V}, \SI{25}{V} un
 	\caption{Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ von der Kondensatorspannung $U_\mathrm{C}$}
 	\label{fig:kondensatorspannung}
 \end{figure}
-Man sieht sofort, dass sich der Verlauf von Ionisationsstrom in Abhängigkeit der Kondensatorspannung in zwei charakteristische Bereiche einteilen lässt.
+Man sieht sofort, dass sich der Verlauf des Ionisationsstroms in Abhängigkeit der Kondensatorspannung in zwei charakteristische Bereiche einteilen lässt.
 Zum einen ist dies der sogenannte Rekombinationsbereich bei kleinen Kondensatorspannungen, in dem das elektrische Feld zwischen den Platten nicht groß genug ist, um alle erzeugten Ionen zu detektieren, da diese aufgrund der geringen Feldstärke rekombinieren können.
 Dies äußert sich in dem linearen Anstieg des Ionisationsstroms mit der Kondensatorspannung bis zu einer Grenzspannung bei der die Kurve beginnt in Sättigung zu gehen.
 Charakteristisch für diese Grenze ist, dass sie für größere Röhrenspannungen erst bei höheren Kondensatorspannungen eintritt.
@@ -458,8 +458,8 @@ In diesem ist die Feldstärke so groß, dass fast alle erzeugten Ionen ohne vori
 Weiterhin lässt sich feststellen, dass das Plateau für höhere Röhrenspannungen größere Ionisationsströme annimmt.
 Dies lässt sich dadurch erklären, dass mit wachsender Röhrenspannung das Röntgenspektrum höhere (mittlere) Energie aufweist (vgl. Gleichung \ref{eq:duane_hunt}) und dementsprechend mehr Ionisationsprozesse im Kondensator stattfinden.
 
-Außerhalb unseres Messbereiches ($\SI{0}{V} \leq U_\mathrm{C} \leq \SI{400}{V}$) sind außerdem noch weitere Bereiche zu erwarten.
-So kann beispielsweise bei noch höheren Kondensatorspannungen ionisierte Teilchen im elektrischen Feld soviel Energie gewinnen, dass diese weitere Ionen erzeugen, was zu einem verstärkten Ionisationsstrom führt (Proportionalitätsbereich).
+Außerhalb des Messbereichs ($\SI{0}{V} \leq U_\mathrm{C} \leq \SI{400}{V}$) sind außerdem noch weitere Bereiche zu erwarten.
+So können beispielsweise bei noch höheren Kondensatorspannungen ionisierte Teilchen im elektrischen Feld soviel Energie gewinnen, dass diese weitere Ionen erzeugen, was zu einem verstärkten Ionisationsstrom führt (Proportionalitätsbereich).
 Weiterhin kann diese Verstärkung so groß werden, dass die Ionisationsprozesse kaskadieren (Geiger-Bereich).
 In Fällen extrem hoher Spannungen kann es zur selbständigen Gasentladung kommen.
 
@@ -542,7 +542,7 @@ Im Gegensatz zur Variation des Emissionsstroms kann hier kein lineares Verhältn
 Dies liegt zum einen daran, dass die mittlere Energie des kontinuierlichen Bremsstrahlungsspektrums nicht proportional zur Röhrenspannung ist und darüber hinaus daran, dass die charakteristischen Linien der Anode eine signifikante Auswirkung auf das resultierende Spektrum haben.
 Generell wird aber eine Zunahme des Ionisationsstroms erwartet, da der Anstieg der mittleren Energie des Röntgenspektrums zur Zunahme der Anzahl von Ionisationen zwischen den Kondensatorplatten führt.
 Die minimalen Beschleunigungsspannungen (Duane-Hunt-Gesetz) zur Anregung der wichtigsten charakteristischen Linien der jeweiligen Anode wurden in Abbildung \ref{fig:abh_roehrenspannung} markiert und fallen mit dem starken Anstieg des Ionisationsstroms zusammen.
-Weiterhin ist für die Kupfer-Röhre in Abbildung \ref{fig:cu_roehrenspannung} erneut ein Abflachen des Ionisationsstroms bei hohen Röhrenspannungen zu beobachten, was erneut auf Raumladungseffekte zurückzuführen sein könnte.
+Weiterhin ist für die Kupfer-Röhre in Abbildung \ref{fig:cu_roehrenspannung} erneut ein Abflachen des Ionisationsstroms bei hohen Röhrenspannungen zu beobachten, was abermals auf Raumladungseffekte zurückzuführen sein könnte.
 
 
 \subsubsection{Bestimmung der Ionendosisleistung im Kondensator}
@@ -587,7 +587,7 @@ Mit dem Volumen aus Gleichung \eqref{eq:volumen_kondensator} und der Gauß'schen
 \begin{align}
 	V = \SI{125 +- 11}{\centi\meter\cubed}
 \end{align}
-dabei soll aus Übersichtsgründen auf eine explizite Angabe der Formel verzichtet werden.\\
+Dabei soll aus Übersichtsgründen auf eine explizite Angabe der Formel verzichtet werden.\\
 \\
 \textbf{Dichte der Luft im Experimentierraum:}\\
 Die Dichte der Luft kann mit der idealen Gasgleichung aus Luftdruck und Temperatur im Versuchsraum berechnet werden.
@@ -596,7 +596,7 @@ Diese wurden an einem Thermometer/Barometer abgelesen:
 	T &= \SI{24.5 +- 1.5}{\degreeCelsius} \\
 	p &= \SI{993 +- 3}{hPa}
 \end{align}
-dabei wurden die Messgenauigkeiten in \cite{anleitung} gegeben.
+Dabei wurden die Messgenauigkeiten in \cite{anleitung} gegeben.
 Mit der idealen Gasgleichung folgt dann:
 \begin{align*}
 	\frac{p \, V}{T} = \mathrm{const}
@@ -681,7 +681,6 @@ Die grafische Darstellung der Dosisleistungen wurde in den Abbildungen \ref{fig:
 	\caption{Abhängigkeit der mittleren Ionendosisleistung $\braket{j}$ beziehungsweise der Äquivalentdosisleistung $\dot{H}$ von der Röhrenspannung $U$ für verschiedene Röntgenröhren. Beide Messungen wurden bei maximalem Emissionsstrom $I_\mathrm{E} = \SI{1.00}{mA}$ durchgeführt.}
 	\label{fig:dosis_roehrenspannung}
 \end{figure}
-
 Die Form der Kurven wurde in den Abschnitten \ref{sec:abh_emissionsstrom} und \ref{sec:abh_roehrenspannung} bereits diskutiert, da sich der Kurvenverlauf lediglich in einer Skalierung der $y$-Achse unterscheidet\footnote{Die Fehler wurden nicht skaliert sondern durch \eqref{eq:fehler_dosisleistung} berechnet.} und soll hier nur kurz wiederholt werden.
 Bei der Variation des Emissionsstroms der Röhre in Abbildung \ref{fig:dosis_emissionsstrom} ist ein linearer Verlauf zu erwarten, welcher beim Verlauf der Dosisleistung der Molybdän-Röhre zu beobachten ist.
 Die Kupfer-Röhre hingegen weicht stark von dem erwarteten Verlauf ab, was auf die um einen Faktor 10 höhere Intensität der Röhre zurückzuführen sein könnte.
@@ -717,7 +716,7 @@ Bildung des Mittelwerts und der korrigierten Stichprobenvarianz der jeweiligen M
 	D_\mathrm{Mo} = \SI{6.90 +- 0.14}{mSv} \\
 	D_\mathrm{Cu} = \SI{7.20 +- 0.21}{mSv}
 \end{align*}
-Die Dosisleistung $\dot{D}$ kann nun durch Division durch die Bestrahlungszeit $t$ berechnet werden, wobei der Fehler durch Gauß'sche Fehlerfortpflanzung zu:
+Die Dosisleistung $\dot{D}$ kann nun durch Division durch die Bestrahlungszeit $t$ berechnet werden, wobei der Fehler durch Gauß'sche Fehlerfortpflanzung durch:
 \begin{align}
 	\Delta \dot{D} = \dot{D} \cdot \sqrt{\left( \frac{\Delta D}{D} \right)^2 + \left( \frac{\Delta t}{t} \right)^2}
 \end{align}
@@ -729,7 +728,7 @@ Es folgen die Dosisleistungen:
 \end{align*}
 Leider kann die Größenordnung (\SI{4}{\sievert\per\hour} für Molybdän und \SI{40}{\sievert\per\hour} für Kupfer) nicht reproduziert werden.
 Auch die zehnfach größere Dosisleistung der Kupferröhre kann nicht beobachtet werden, stattdessen sind die mit dem Stabdosimeter gemessenen Dosisleistungen fast identisch.
-Die Messung zwei nahezu identischer Dosisleistungen könnte auf einen Sättigungseffekt des Stabdosimeters zurückzuführen sein, wobei die Quartzfaser in beiden Fällen noch auf der Skala (0 bis \SI{10}{mSv}) sichtbar war.
+Die Messung zwei nahezu identischer Dosisleistungen könnte auf einen Sättigungseffekt des Stabdosimeters zurückzuführen sein, wobei die Quarzfaser in beiden Fällen noch auf der Skala (0 bis \SI{10}{mSv}) sichtbar war.
 
 \subsubsection{Überprüfung des Abstandsquadratgesetzes}
 Im Folgenden soll das Abstandsquadratgesetz der Kupfer-Röntgenröhre mithilfe eines Stabdosimeters überprüft werden.
@@ -753,17 +752,17 @@ Die Messdaten wurden in Abbildung \ref{fig:abstandsquadrat} grafisch dargestellt
 	D(d) = \frac{\lambda}{d^2} + D_0
 \end{align}
 gewählt wurde.
-Die die Anpassung liefert die Parameter:
+Die Anpassung liefert die Parameter:
 \begin{align*}
 	\lambda &= \SI{1875 +- 95}{\milli\sievert\centi\metre\squared}\\
 	D_0 &= \SI{1.15 +- 0.18}{\milli\sievert}
 \end{align*}
-Auffällig ist die starke Abweichung vom Abstandsquadratsgesetzes bei kleinen Abständen von der Anode.
+Auffällig ist die starke Abweichung vom Abstandsquadratsgesetz bei kleinen Abständen von der Anode.
 Diese stammt daher, dass die Länge des Stabdosimeters nicht auf die Höhe der Rechteckblende im Röntgengerät abgestimmt wurde und daher die Ionisationskammer bei kleinen Abständen zumindest teilweise aus dem Strahlungsfeld hinausragt.
 Dies ist ein rein geometrischer Effekt und sollte für größere Abstände vernachlässigbar sein, da das Strahlungsfeld dort eine höhere Aufweitung aufweist und somit die Ionisationskammer im Dosimeter komplett ausfüllt.
 
-Unter Berücksichtigung dieses Effekts zeigt die Anpassung eine gute Übereinstimmung mit dem Abstandsquadratgesetzes.
-Die Notwendigkeit eines konstanten Versatzes $D_0$ für einen guten Fit könnte ebenfalls auf geometrische Effekte zurückzuführen sein, wie z.B. die Abweichung von einer idealen Punktquelle oder den Weglängenunterschied (jeweils von der Quelle) zwischen der Mitte der Ionisationskammer und des oberen/unteren Randes zurückzuführen sein.
+Unter Berücksichtigung dieses Effekts zeigt die Anpassung eine gute Übereinstimmung mit dem Abstandsquadratgesetz.
+Die Notwendigkeit eines konstanten Versatzes $D_0$ für eine gute Anpassung könnte ebenfalls auf geometrische Effekte zurückzuführen sein, wie z.B. die Abweichung von einer idealen Punktquelle oder den Weglängenunterschied (jeweils von der Quelle) zwischen der Mitte der Ionisationskammer und des oberen/unteren Randes.
 
 \subsection{Totzeit}
 \label{sec:totzeit}
@@ -771,7 +770,7 @@ Die Notwendigkeit eines konstanten Versatzes $D_0$ für einen guten Fit könnte 
 Da bei den weiteren Messungen das Geiger-Müller-Zählrohr verwendet wird, ist es notwendig, zunächst seine Totzeit abzuschätzen.
 Dazu wird das Zählrohr auf dem Goniometer befestigt und zur Bestrahlung eine Röntgenröhre aus Kupfer mit davor sitzendem Kollimator (bei diesem Versuch wurde der Kollimator mit breitem Spalt verwendet) genutzt.
 Das Zählrohr wird so positioniert, dass es sich gleich weit von der Goniometermitte entfernt befindet wie der Kollimator von der Goniometermitte (je ca. \num{5} bis \SI{7}{cm}).
-Zur Messung wird die Zählrate über $\Delta t=\SI{30}{\second}$ gemittelt und eine Röhrenspannung von $U=\SI{35}{\kilo\volt}$ fest eingestellt, während der Emissionsstrom $I_\text{E}$ von \num{0} bis \SI{1}{\milli\ampere} variiert wird.
+Zur Messung wird die Zählrate über $t=\SI{30}{\second}$ gemittelt und eine Röhrenspannung von $U=\SI{35}{\kilo\volt}$ fest eingestellt, während der Emissionsstrom $I_\text{E}$ von \num{0} bis \SI{1}{\milli\ampere} variiert wird.
 Das Maximum der Zählrate wird bei einer Winkeleinstellung des Zählrohrs von $\beta=\SI{-0.9}{\degree}$ lokalisiert und das Zählrohr für alle folgenden Messungen auf dieser Einstellung genutzt.
 Die so gefundenen Zählraten $R$ in Abhängigkeit des Emissionsstroms $I_\mathrm{E}$ sind in Tabelle \ref{tab:totzeit} festgehalten.
 Der Fehler von $I_\text{E}$ wurde dabei wie oben auf \SI{0.005}{\milli\ampere} geschätzt, für den Fehler der Zählrate wurde Gauß'sche Fehlerfortpflanzung genutzt.
@@ -805,7 +804,7 @@ Aus der Anpassung kann ebenfalls die Totzeit $\tau$ des Systems abgeschätzt wer
 \begin{align}
 \tau = \SI{42.9 +- 0.2}{\micro\second}
 \end{align}
-Nach dieser Abschätzung sollte die Totzeit $\tau$ des Geiger-Müller-Zählrohrs im Bereich zwischen \num{10} und \SI{100}{\micro\second} bewegen.
+Nach dieser Abschätzung sollte die Totzeit $\tau$ des Geiger-Müller-Zählrohrs im Bereich zwischen \num{10} und \SI{100}{\micro\second} liegen.
 Nun soll die benötigte Totzeitkorrektur in Abhängigkeit der gemessenen Rate berechnet werden.
 Dazu löst man Gleichung \eqref{eq:totzeit_paralysierend} numerisch und erhält für den Totzeitkorrekturfaktor $\frac{m(k)}{k}$, wobei $m$ die tatsächliche und $k$ die gemessene Rate ist.
 Der Faktor ist für $\tau = \SI{42.9}{\micro\second}$ in Abbildung \ref{fig:totzeitkorrektur_messung} aufgetragen, wobei hier auf eine ausführliche Fehlerrechnung verzichtet wird.
@@ -820,7 +819,7 @@ Wie man sieht, ist die benötigte Korrektur für Zahlraten unter \SI{1000}{\per\
 
 \subsection{Abschirmung}
 
-Die Messungen zu diesem Abschnitt wurden mit den gleichen Einstellungen wie oben durchgeführt ($\Delta t=\SI{30}{\second}, U=\SI{35}{\kilo\volt}$, maximale Zählrate bei $\beta=\SI{-0.9}{\degree}$).
+Die Messungen zu diesem Abschnitt wurden mit den gleichen Einstellungen wie oben durchgeführt ($t=\SI{30}{\second}, U=\SI{35}{\kilo\volt}$, maximale Zählrate bei $\beta=\SI{-0.9}{\degree}$).
 Nun wird jedoch vor dem Zählrohr einer der beiden Absorbersätze auf dem Targethalter eingebaut und die Zählrate dahinter gemessen.
 Dafür wird der Emissionsstrom so gewählt, dass keine Totzeitkorrektur durchgeführt werden muss, hier wurde für alle Messungen eine maximale Zählrate von ca. \SI{400}{\per\second} angestrebt.
 Der Targethalter wurde dann in Schritten von $\Delta\alpha=$\SI{10}{\degree} gedreht, um für das jeweilige Material bzw. die jeweilige Dicke der Aluminiumschicht die Zählrate zu bestimmen.
@@ -874,8 +873,8 @@ Diese Linearisierung wurde in Abbildung \ref{fig:absorber_1_log} abgebildet.
 \end{figure}
 Offensichtlich liegen die linearisierten Datenpunkt auf einer Gerade, die jedoch stark von der theoretischen erwarteten Ursprungsgerade abweichen.
 In der logarithmischen Darstellung entspricht die Abweichung von der Ursprungsgerade um einen Achsenabschnitt $b$ einem multiplikativen Faktor $e^b$ auf die berechneten Transmissionen.
-Hinsichtlich der Theorie macht dies jedoch wenig Sinn, da ohne Absorber $d = \SI{0}{mm}$ ein Transmissionskoeffizient von $T = \num{1.0}$ erreicht werden sollte, was nur für Ursprungsgeraden der Fall ist.
-Entgegen der theoretischen Betrachtung\footnote{Eine genaue Diskussion der Fehlerquellen findet sich im Anschluss an die folgende Auswertung} werden Geraden der Form:
+Hinsichtlich der Theorie macht dies jedoch wenig Sinn, da ohne Absorber ($d = \SI{0}{mm}$) ein Transmissionskoeffizient von $T = \num{1.0}$ erreicht werden sollte, was nur für Ursprungsgeraden der Fall ist.
+Entgegen der theoretischen Betrachtung\footnote{Eine genaue Diskussion der Fehlerquellen findet sich im Anschluss an die folgende Auswertung.} werden Geraden der Form:
 \begin{align}
 	y = -\mu \cdot d + b
 \end{align}
@@ -885,7 +884,6 @@ Die Ergebnisse der Anpassung lauten:
 	\text{ohne Filter:} \qquad \mu = \SI{5.4 +- 0.7}{\per\centi\metre},\quad b = \num{-3.4 +- 0.2}\\
 	\text{mit Filter:} \qquad \mu = \SI{4.4 +- 0.4}{\per\centi\metre},\quad b = \num{-1.6 +- 0.1}
 \end{align*}
-
 Mit den bestimmten Absorptionskoeffizienten kann die Dicke des Aluminiums im zweiten Absorbersatz bestimmt werden, die gleich der Dicke der anderen Absorberelemente ist.
 Die zur Berechnung notwendigen Messwerte für den zweiten Absorbersatz sind in Tabelle \ref{tab:absorber_elem} notiert.
 Für die Berechnungen gelten weiterhin \eqref{eq:max_rate} bis \eqref{eq:transmission}.
@@ -920,7 +918,7 @@ Ausgehend davon kann \eqref{eq:dicke} nach $\mu$ umgestellt werden und mit den T
 	\Delta\mu &= \sqrt{\frac{\ln^2(T)\,(\Delta d)^2}{d^4} + \frac{(\Delta T)^2}{T^2d^2}}
 \end{align}
 die Werte in Tabelle \ref{tab:absorber_koeff} erhält.
-\begin{table}
+\begin{table}[ht]
 	\centering
 	\resizebox{\textwidth}{!}{
 	\input{./tables/absorber/koeffizienten.tex}

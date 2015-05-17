@@ -303,7 +303,7 @@ Sie entspricht dabei einer physikalischen Größe und berücksichtigt keine biol
 
 \subsubsection{Ionendosis}
 \label{sec:ionendosis}
-Die Ionendosis bezeichnet die elektrische Ladung $\mathrm{d}Q$, die durch ionisierende Strahlung in einer bestimmten Masse $\mathrm{d}m$ entsteht:
+Die Ionendosis bezeichnet die freie elektrische Ladung $\mathrm{d}Q$, die durch ionisierende Strahlung in einer bestimmten Massenelement $\mathrm{d}m$ entsteht:
 \begin{align}
 	J = \frac{\mathrm{d}Q}{\mathrm{d}m}
 \end{align}
@@ -314,6 +314,10 @@ Dosisleistung beschreibt die pro Zeiteinheit aufgenommene bzw. deponierte Dosis.
 \begin{align}
 	\dot{D} = \frac{\mathrm{d}D}{\mathrm{d}t}
 \end{align}
+oder für die Ionendosisleistung \ref{sec:ionendosis}:
+\begin{align}
+	\dot{J} = \frac{\mathrm{d}J}{\mathrm{d}t}
+\end{align}
 
 \subsubsection{Äquivalentdosis}
 Die Äquivalentdosis $H$ beachtet im Gegensatz zu den physikalischen Dosisbegriffen die relative biologische Wirksamkeit verschiedener Strahlungstypen durch Einführung eines Qualitätsfaktors $Q$.
@@ -321,7 +325,7 @@ Die Äquivalentdosis $H$ beachtet im Gegensatz zu den physikalischen Dosisbegrif
 	H = Q \cdot D
 \end{align}
 Sie hat die gleiche Einheit wie $D$ und wird daher, um die physikalische Größe der Dosis von der Äquivalentdosis zu unterscheiden, in der Einheit Sievert angegeben.
-Einige typische Qualitätsfaktoren sind in der folgenden Auflistung genannt\cite{gerthsen}:
+Einige typische Qualitätsfaktoren sind in der folgenden Auflistung genannt \cite{gerthsen}:
 \begin{align*}
 	&\text{Strahlungsart} \quad & Q / \si{Sv.Gy\tothe{-1}}\\
 	&\text{Röntgen- und Gammastrahlung} \quad & 1 \\
@@ -371,19 +375,18 @@ Ein Vorteil ist die sehr kompakte Bauform und einfache Bedienung, es muss ledigl
 
 \subsubsection{Filmdosimeter}
 Beim Filmdosimeter wird der photographische Effekt ionisierender Strahlung genutzt.
-In einem Halter ist ein Film eingesetzt, der häufig in verschiedene Bereiche unterteilt ist, die jeweils auf eine andere Strahlungsart (Röntgen-, Gamma- und Beta-Strahlung) sensitiv sind.
-Oft werden außerdem mehrere Filme mit verschiedenen dynamischen Bereichen verwendet, um den Messbereich der Dosis zu maximieren.
-Der Halter enthält neben dem Film auch verschiedene Filter für gewisse Strahlungstypen um zwischen den Typen unterscheiden und die Äquivalentdosis berechnen zu können.
+In einem Halter ist ein Film eingesetzt, der durch Filter in verschiedene Bereiche eingeteilt ist, welche durch unterschiedliche Dicken/Dichten den dynamischen Bereich des Dosimeters erweitern.
+Die Filter erlauben eine Unterscheidung verschiedener Strahlungstypen, was es ermöglicht die Äquivalentdosis zu berechnen.
 Zum Einsatz kommen beispielsweise Aluminium- oder Kupferfilter für Gammastrahlung und Plastik verschiedener Dichte für Betastrahlung.
 Zur Bestimmung der Dosis wird der Film entwickelt, der durch die Bestrahlung geschwärzt wurde.
 Durch Vergleichen der Schwärzung mit Filmen, die mit bekannter Dosis bestrahlt wurden, kann so die Dosis bestimmt werden.
 
-\subsubsection{Thermolumineszenzdosimeter (TLD)}
+\subsubsection{Thermolumineszenzdosimeter}
 In manchen kristallinen Stoffen wird durch die Bestrahlung mit Gamma- oder Röntgenstrahlung eine mikroskopische Veränderung hervorgerufen, die bei anschließendem Erhitzen dafür sorgt, dass der Stoff Licht emittiert.
 Das emittierte Licht (keine Schwarzkörperstrahlung) ist abhängig von der Bestrahlung und durch Messung der Intensität kann die Dosis der Strahlung bestimmt werden.
 
-\subsubsection{Electronic Personal Dosimeter}
-Als Electronic Personal Dosimeter werden elektronische Geräte zusammengefasst, die mithilfe von Halbleiterdetektoren (PIN-Diode, MOSFETs) die Energie von einfallender Strahlung bestimmen.
+\subsubsection{Elektronische Personendosimeter}
+Als elektronisches Personendosimeter werden elektronische Geräte zusammengefasst, die mithilfe von Halbleiterdetektoren (PIN-Diode, MOSFETs) die Energie von einfallender Strahlung bestimmen.
 \begin{itemize}
 	\item \textbf{PIN-Diode:} Ein dotiertes Halbleiterstück mit pin-Übergang (i: intrinsisch) besitzt eine Verarmungszone, in der durch einfallende ionisierende Strahlung eine Elektron-Loch Kaskade entstehen kann, wobei die ausgelöste Ladung proportional zur Energie des absorbierten Strahlungsquants ist.
 	Mithilfe eines Integrators kann damit die Energie bestimmt und darüber die Dosis berechnet werden.
@@ -407,12 +410,12 @@ Lösen der Differenzialgleichung führt auf das Lambertsche Schwächungsgesetz:
 	\label{eq:schwächung}
 \end{align}
 Oftmals findet sich auch die alternative Darstellung durch die Transmission $T = I(x)/I_0$. 
-Dannn ist:
+Dann ist:
 \begin{align}
 	T = \mathrm{e}^{-\mu x}
 \end{align}
 wobei $\mu = \alpha$ der lineare Schwächungskoeffizient ist.
-Da die an der Abschwächung beteiligten Prozesse vor allem von der Energie der einfallenden Strahlun als auch der Ordnungszahl des bestrahlten Materials abhängt, eignen sich dichte Elemente mit hohen Ordnungszahlen gut zur Abschirmung, weswegen für Röntgen- und Gammastrahlung häufig Blei zu Abschirmungszwecken genutzt wird.
+Da die an der Abschwächung beteiligten Prozesse vor allem von der Energie der einfallenden Strahlung als auch der Ordnungszahl des bestrahlten Materials abhängt, eignen sich dichte Elemente mit hohen Ordnungszahlen gut zur Abschirmung, weswegen für Röntgen- und Gammastrahlung häufig Blei zu Abschirmungszwecken genutzt wird.
 
 \section{Durchführung und Auswertung}
 Die ausführliche Durchführung ist der Versuchsanleitung \cite{anleitung} zu entnehmen.
@@ -437,7 +440,7 @@ Folglich soll der Ionisationsstrom $I_\mathrm{C}$ in Abhängigkeit der Kondensat
 Dabei wird der Emissionsstrom\footnote{Der Fehler des Emissionsstroms wird anhand der letzten Stelle der Digitalanzeige des Röntgengeräts auf \SI{0.005}{\milli\ampere} abgeschätzt.} $I$ der Röntgenröhre auf \SI{1.000 +- 0.005}{mA} eingestellt und ein Messwiderstand $R = \SI{1}{\giga\ohm}$ verwendet, wobei auf den Widerstand ein relativer Fehler von \SI{1}{\percent} angenommen wird.
 Dann ergibt sich der Ionisationsstrom durch Gleichung \ref{eq:ohm_ionisationsstrom} und der Fehler durch Gauß'sche Fehlerfortpflanzung:
 \begin{align}
-	\Delta I_\mathrm{C} = \sqrt{\frac{(Delta U_{I_\mathrm{C}})^2}{R^2} + \frac{U_{I_\mathrm{C}}^2 \cdot \Delta R^2}{R^4}}
+	\Delta I_\mathrm{C} = \sqrt{\frac{\Delta U_{I_\mathrm{C}}^2}{R^2} + \frac{U_{I_\mathrm{C}}^2 \cdot \Delta R^2}{R^4}}
 \end{align}
 wobei der Fehler der Spannungsmessung am Elektrometerverstärker anhand des Rauschen am Verstärkers für jede Messung einzeln abgeschätzt wird.
 Darüber hinaus wird die variable Gleichspannung $U_\mathrm{C}$ direkt mit einem weiteren Multimeter gemessen und der Fehler im Messbereich \num{0} bis \SI{400}{V} auf \SI{0.1}{V} abgeschätzt.
@@ -477,7 +480,7 @@ Die Messdaten finden sich in Anhang \ref{app:ionisationsstrom_emissionsstrom} un
 	\begin{subfigure}[b]{1\textwidth}
 		\centering
 		\input{./plots/abh_emissionsstrom/mo.tex}
-		\subcaption{Molybdän-Röhre mit Anpassung einer linearen Funktion: $I_\mathrm{C} = \SI{4.97 +- 0.06}{\nano\ampere\per\milli\ampere} \cdot I_\mathrm{E} + \SI{0.12 +- 0.03}{nA}$}
+		\subcaption{Molybdän-Röhre mit Anpassung einer linearen Funktion: \\$I_\mathrm{C} = \SI{4.97 +- 0.06}{\nano\ampere\per\milli\ampere} \cdot I_\mathrm{E} + \SI{0.12 +- 0.03}{nA}$}
 		\label{fig:mo_emissionsstrom}
 	\end{subfigure}
 	
@@ -486,7 +489,7 @@ Die Messdaten finden sich in Anhang \ref{app:ionisationsstrom_emissionsstrom} un
 	\begin{subfigure}[b]{1\textwidth}
 		\centering
 		\input{./plots/abh_emissionsstrom/cu.tex}
-		\subcaption{Kupfer-Röhre mit starker Abweichung vom erwarteten linearen Verhalten: $I_\mathrm{C} = \SI{94.5 +- 0.9}{\nano\ampere\per\milli\ampere} \cdot I_\mathrm{E} - \SI{42.9 +- 1.1}{\nano\ampere\per\milli\ampere\squared} \cdot I_\mathrm{E}^2$}
+		\subcaption{Kupfer-Röhre mit starker Abweichung vom erwarteten linearen Verhalten: \\$I_\mathrm{C} = \SI{94.5 +- 0.9}{\nano\ampere\per\milli\ampere} \cdot I_\mathrm{E} - \SI{42.9 +- 1.1}{\nano\ampere\per\milli\ampere\squared} \cdot I_\mathrm{E}^2$}
 		\label{fig:cu_emissionsstrom}
 	\end{subfigure}
 	\caption{Abhängigkeit des Ionisationsstroms $I_\mathrm{C}$ vom Emissionsstrom $I_\mathrm{E}$ für verschiedene Röntgenröhren. Beide Messungen wurden bei maximaler Röhrenspannung $U=\SI{35}{kV}$ durchgeführt.}
@@ -684,7 +687,7 @@ Die grafische Darstellung der Dosisleistungen wurde in den Abbildungen \ref{fig:
 Die Form der Kurven wurde in den Abschnitten \ref{sec:abh_emissionsstrom} und \ref{sec:abh_roehrenspannung} bereits diskutiert, da sich der Kurvenverlauf lediglich in einer Skalierung der $y$-Achse unterscheidet\footnote{Die Fehler wurden nicht skaliert sondern durch \eqref{eq:fehler_dosisleistung} berechnet.} und soll hier nur kurz wiederholt werden.
 Bei der Variation des Emissionsstroms der Röhre in Abbildung \ref{fig:dosis_emissionsstrom} ist ein linearer Verlauf zu erwarten, welcher beim Verlauf der Dosisleistung der Molybdän-Röhre zu beobachten ist.
 Die Kupfer-Röhre hingegen weicht stark von dem erwarteten Verlauf ab, was auf die um einen Faktor 10 höhere Intensität der Röhre zurückzuführen sein könnte.
-Der Grund dafür ist, dass im Kondensator soviel Ionisationen stattfinden, dass die stationäre Raumladung für einen Sättigung der Ionisationskammer sorgt.
+Der Grund könnte sein, dass im Kondensator soviele Ionisationen stattfinden, dass die stationäre Raumladung für einen Sättigung der Ionisationskammer sorgt.
 
 Betrachtet man den Verlauf der Dosisleistungen bei Variation der Röhrenspannung $U$ in Abbildung \ref{fig:dosis_roehrenspannung}, so erkennt man einen starken Anstieg der Dosisleistung, sobald die Energie der durch die Röhrenspannung beschleunigten Elektronen groß genug ist, um charakteristische Röntgenlinien zu erzeugen.
 Dazu wurden in der Abbildung die wichtigsten charakteristischen Linien der jeweiligen Anode markiert.
@@ -905,7 +908,7 @@ Es folgt aus dem Lambertschen Gesetz:
 \end{align}
 Damit kann die Dicke des Aluminiumabsorbers bestimmt werden zu:
 \begin{align*}
-d &= \SI{0.60+-0.08}{cm} \qquad\text{(ohne Zirkonfilter)}\\
+d &= \SI{0.60+-0.13}{cm} \qquad\text{(ohne Zirkonfilter)}\\
 d &= \SI{0.33+-0.04}{cm} \qquad\text{(mit Zirkonfilter)}
 \end{align*}
 Durch Bildung des Mittelwerts erhält man die für die weitere Auswertung genutzte Dicke aller Absorber:
@@ -923,7 +926,7 @@ die Werte in Tabelle \ref{tab:absorber_koeff} erhält.
 	\resizebox{\textwidth}{!}{
 	\input{./tables/absorber/koeffizienten.tex}
 	}
-	\caption{Transmissionskoeffizienten für die verschiedenen Absorberelemente jeweils mit und ohne Zirkonfilter sowie die gemittelten Transmissionskoeffizienten.}
+	\caption{\korr{Neu} Transmissionskoeffizienten für die verschiedenen Absorberelemente jeweils mit und ohne Zirkonfilter sowie die gemittelten Transmissionskoeffizienten.}
 	\label{tab:absorber_koeff}
 \end{table}
 In Folge der für die Auswertung ungeeigneten Messung (s.u.) unterscheiden sich die hier gefundenen Werte für die Transmissionskoeffizienten zum Teil stark von den Literaturwerten.
@@ -932,7 +935,7 @@ Trotz der schlecht zu bewertenden Ergebnisse wurden die Transmissionskoeffizient
 \begin{figure}[ht]
 	\centering
 	\input{./plots/abschirmung/koeffizienten.tex}
-	\caption{Transmissionskoeffizienten in Abhängigkeit der Ordnungszahl des abschirmenden Elements.  Aufgrund der bekannten schlechten Ergebnisse ist diese Abbildung nicht geeignet, um den zu zeigenden Zusammenhang zu erkennen.}
+	\caption{\korr{Neu} Transmissionskoeffizienten in Abhängigkeit der Ordnungszahl des abschirmenden Elements.  Aufgrund der bekannten schlechten Ergebnisse ist diese Abbildung nicht geeignet, um den zu zeigenden Zusammenhang zu erkennen.}
 	\label{fig:scheiss_messung}
 \end{figure}
 Da die Zahlenwerte nicht bewertet werden können, kann lediglich der ungefähr erwartete Verlauf bestätigt werden, dass der Koeffizient mit der Ordnungszahl zunimmt.

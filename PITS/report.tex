@@ -1,0 +1,166 @@
+% PAKETE UND DOKUMENTKONFIGURATION
+\documentclass[11pt, a4paper]{article}
+
+% Encoding für Umlaute
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Silbentrennung
+\usepackage[english]{babel}
+
+% erweiterte Matheumgebungen und Formelnummer mit Sectionnummer
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+
+% Braket Notation
+\usepackage{braket}
+\usepackage{isotope}
+\usepackage{mhchem}
+
+% zusätzliche mathematische Schriftarten
+\usepackage{amsfonts}
+
+% verschiedene mathematische Symbole
+\usepackage{amssymb}
+
+% Einheiten setzen z.B. \SI{10}{\kilo\gram\meter\per\second\squared}
+% Fehler: \SI{10 +- 0,2e-4}{\metre}
+\usepackage{siunitx}
+\sisetup{
+  separate-uncertainty
+}
+
+% Einheitendefinitionen
+\DeclareSIUnit{\skt}{Skt.}
+\DeclareSIUnit{\gauss}{G}
+
+% Operatordefinitionen
+\DeclareMathOperator{\erf}{erf}
+
+% Randbreiten
+\usepackage[left=3.5cm,right=3.5cm,top=3cm,bottom=3cm,twoside]{geometry}
+
+% Bilder einfügen
+\usepackage{graphicx}
+
+% Verweise innerhalb des Dokuments
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,
+	allcolors = {black}
+}
+
+% bessere Tabellenlayouts
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+
+% Seitenlayout (Kopfzeile)
+\usepackage{fancyhdr}
+
+% Float Barriers
+\usepackage{placeins}
+
+% Pakete für gedrehte Subfigures
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{rotating}
+
+% Paket für textumflossene Abbildungen und Tabellen
+\usepackage{wrapfig}
+
+\usepackage{float}
+
+% Caption-Setup
+\captionsetup{font={small}}
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\renewcommand{\thesubfigure}{\alph{subfigure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\thesubtable}{\alph{subtable}}
+
+% Manuelle Silbentrennung
+\hyphenation{Re-so-na-tor Mo-den-ab-stand Re-so-na-tor-län-ge Spek-t-ro-me-ter}
+
+% Tiefe des Inhaltsverzeichnisses (Level: 1 sections, 2 subsections,
+% 3 subsubsections)
+\setcounter{tocdepth}{3}
+
+% FANCYHDR SETUP
+\pagestyle{fancy}
+\fancyhead[EL,OR]{\thepage}
+\fancyhead[ER]{\leftmark}
+\fancyhead[OL]{\rightmark}
+
+\renewcommand{\sectionmark}[1]{
+\markboth{\thesection{} #1}{\thesection{} #1}
+}
+\renewcommand{\subsectionmark}[1]{
+\markright{\thesubsection{} #1}
+}
+
+% DOKUMENTINFORMATIONEN
+\title{Poland \\ Pi in the Sky}
+
+\author{Christopher Deutsch\footnote{christopher.deutsch@uni-bonn.de} \and Christian Bespin\footnote{christian.bespin@uni-bonn.de}}
+
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+
+\maketitle
+
+% DURCHFÜHRUNGSDATUM UND TUTOR
+\begin{center}
+\begin{tabular}{l r}
+Execution: & May 25, 2015 \\
+Group: & $\alpha$ 6 \\
+Tutor: & Rui Zhang
+\end{tabular}
+\end{center}
+
+% ZUSAMMENFASSUNG
+\begin{abstract}
+\noindent 
+\end{abstract}
+
+\end{titlepage}
+
+% INHALTSVERZEICHNIS
+\tableofcontents
+% Neue Seite nach TOC
+\newpage
+
+% INHALT VERSUCHSPROTOKOLL
+
+\section{Introduction}
+
+\section{Theory}
+
+\section{Analysis}
+
+\section{Conclusion}
+
+
+\FloatBarrier
+% BIBLIOGRAPHIE
+\vspace{\fill}
+% Maximale Anzahl der Einträge in Klammer
+% Zitieren mit \cite{lamport94}
+\begin{thebibliography}{19}
+
+\bibitem{krane}
+	Kenneth S. Krane,
+	\emph{Introductory Nuclear Physics},
+	John Wiley \& Sons 1988
+
+\end{thebibliography}
+
+% APPENDIX
+\begin{appendix}
+\section{Appendix}
+
+\end{appendix}
+
+\end{document}

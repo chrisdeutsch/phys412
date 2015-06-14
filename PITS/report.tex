@@ -136,16 +136,61 @@ This report shall be concerned with determining the orbital parameters of the as
 % INHALT VERSUCHSPROTOKOLL
 
 \section{Introduction}
-In january 2015 a near-earth approach of the asteroid 2004 BL86 took place.
-
-Intro: Pi in the sky, Chile, Lon Lat.
-The Asteroid
-
-
+In the night of January 26/27, 2015 a near-earth approach of the asteroid 2004 BL86 took place and was observed with the telescope \emph{Pi in the Sky} in Chile, San Pedro de Atacama.\\
+Observatory location:
+\begin{itemize}
+	\item longitudude: \SI{-68.18000000}{\degree}
+	\item latitude: \SI{-22.95332778}{\degree}
+	\item altitude: \SI{2430}{\meter}
+\end{itemize}
+The asteroid was visible on more than a thousand photos which where shot with an exposure time of \SI{10}{s}, which where shot from 3:10 to 6:30 UT.
+After some preprocessing of the collected images the position of the asteroid could be determined using stationary reference stars.
 
 \section{Theory}
 
+\subsection{Astronomical Coordinates}
+terrestrial: RA, DEC (vernal equinox)
+
+\subsection{Orbital Elements}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{./figures/orbital_elements.pdf}
+	\caption{Illustration of the classical orbital elements of an arbitrary celestial body. Credit: \url{https://en.wikipedia.org/wiki/File:Orbit1.svg}}
+\end{figure}
+
+
+Keplarian Elements:
+\begin{itemize}
+	\item $a$: length of the semimajor axis of the ellipse
+	
+	\item $e$: eccentricity of the ellipse
+	
+	\item $i$: inclination
+	
+	\item $\Omega$: right ascension of the ascending node
+	
+	\item $\omega$: angular distance of the periapsis from the ascending node
+	
+	\item $\nu$: true anomaly defining the position of the orbiting body at a certain point in time
+\end{itemize}
+
+
 \section{Analysis}
+
+Correction of exposure time\\
+Transforming of Coordinates:
+\begin{itemize}
+	\item Determining earths position at time of observation $\nu$ true anomaly! using keplarian elements (wiki)
+	
+	\item Determining the position of the observatory on earths surface
+\end{itemize}
+Hypothesis of asteroid parameters for fit\\
+Propagation of the Orbit with regards to time\\
+Determining observation angles (on earth) from asteroid position\\
+Minimizing $\chi^2$
+
+
+
 
 \section{Conclusion}
 

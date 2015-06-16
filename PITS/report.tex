@@ -215,11 +215,13 @@ To determine the effective time $t^*$ of measurement, half the exposure time has
 \end{align}
 
 \subsection{Transforming of Coordinates}
-\begin{itemize}
-	\item Determining earths position at time of observation $\nu$ true anomaly! using keplarian elements (wiki)
-	
-	\item Determining the position of the observatory on earths surface
-\end{itemize}
+As a first approach, earth's position in the equatorial coordinate frame at observation time is reconstructed.
+Since all Keplerian elements but true anomaly are not dependent on time they can be looked up, see for example \url{http://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html}.
+True anomaly itself can not be easily computed so we did a linear approximation based on the data \url{http://www.wolframalpha.com} gives for the time period of observation which is short compared to earth's revolution time so that a linear approximation for $\nu(t)$ should be sufficient for our needs.
+
+Second, the observatory's position on earth is taken into account.
+Based on the given location, altitude and in the used reference frame it can be easily computed in spherical coordinates.
+After transforming both earth's position (to be precise the position of the center of the earth) from Keplerian elements and the obersavtory's position from spherical to spacial coordinates and velocity the time-dependent state vector of the observer can be calculated.
 
 \subsection{?}
 Hypothesis of asteroid parameters for fit\\

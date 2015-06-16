@@ -15,7 +15,6 @@
 % Braket Notation
 \usepackage{braket}
 \usepackage{isotope}
-\usepackage{mhchem}
 
 % zusätzliche mathematische Schriftarten
 \usepackage{amsfonts}
@@ -166,23 +165,20 @@ It is because of this reference point, that the equatorial coordinate system is 
 	\includegraphics[width=0.75\textwidth]{./figures/orbital_elements.pdf}
 	\caption{Illustration of the classical orbital elements of an arbitrary celestial body. Credit: \url{https://en.wikipedia.org/wiki/File:Orbit1.svg}}
 \end{figure}
-
-
-Keplarian Elements:
+The position of a body on an ellipse can be described with the so called orbital elements which are a set of parameters to identify a specific orbit.
+For astronomical purposes those parameters are chosen as the so called Keplerian elements given as:
 \begin{itemize}
-	\item $a$: length of the semimajor axis of the ellipse
-	
-	\item $e$: eccentricity of the ellipse
-	
-	\item $i$: inclination
-	
-	\item $\Omega$: right ascension of the ascending node
-	
-	\item $\omega$: angular distance of the periapsis from the ascending node
-	
+	\item $a$: length of the semimajor axis of the ellipse	
+	\item $e$: eccentricity of the ellipse	
+	\item $i$: inclination	
+	\item $\Omega$: right ascension of the ascending node	
+	\item $\omega$: angular distance of the periapsis from the ascending node	
 	\item $\nu$: true anomaly defining the position of the orbiting body at a certain point in time
 \end{itemize}
-
+An orbiting body can be identified by those parameters which are given in a coordinate system with its origin in the center of the ellipse and relative to a reference plane.
+While the first five values define time-independent size and orientation of the orbit, the anomaly is a function of time and leads to the position of the body on the orbit.
+For a given time it is necessary to know six parameters to describe an orbit and distinguish between different orbits because of the six degrees of freedom for orbit determination.
+They correspond to three spacial dimensions and the respective velocities which can also be used for orbit identification.
 
 \section{Analysis}
 

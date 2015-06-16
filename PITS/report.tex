@@ -165,7 +165,7 @@ In the case of astronomy, an object (e.g.\ planets, asteroids) is bound by the g
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.7\textwidth]{./figures/equatorial_cs.png}
-	\caption{Credit: \url{https://commons.wikimedia.org/wiki/File:Ra_and_dec_on_celestial_sphere.png}}
+	\caption{Illustration explaining the equatorial coordinate system in astronomy. Credit: \url{https://commons.wikimedia.org/wiki/File:Ra_and_dec_on_celestial_sphere.png}}
 \end{figure}
 The equatorial coordinate system is an astronomical coordinate system using earth's equator as its reference plane as opposed to the ecliptic coordinate system using the ecliptic for reference.
 The position of an object on the celestial sphere is then defined with two angles $\alpha$ and $\delta$.
@@ -174,6 +174,7 @@ The right ascension $\alpha$ is the angular distance of the object's projection 
 It is because of this reference point, that the equatorial coordinate system is independent of earth's rotation.
 
 \subsection{Orbital Elements}
+\label{sec:orbital_elements}
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.75\textwidth]{./figures/orbital_elements.pdf}
@@ -205,7 +206,30 @@ Each data point containing UT time $t$ of the beginning of exposure, declination
 	\item altitude: \SI{2430}{\meter}
 \end{itemize}
 
-\subsection{Idea?}
+\subsection{Idea}
+Due to the lack of time and resources the usual methods of orbit determination were unfeasible.
+Therefore we tried to find a simpler method of orbit determination based on a least-squares fit.
+Our method involved the following steps:
+\begin{enumerate}
+	\item \textbf{Hypothesis of the asteroid's orbit:}\\
+	Guess the approximate orbital elements (c.f.\ \ref{sec:orbital_elements}) of the asteroid's orbit, which will be refined in the following steps.
+	
+	\item \textbf{Position of the asteroid at time of observation:}\\
+	From the (guessed) orbital elements the asteroids trajectory at the time of observation can be calculated.
+	
+	\item \textbf{Determining observatory location in sun's coordinate system:}\\
+	Using literature values for the orbital elements the position of earth can be determined at the time of observation.
+	Moreover the location of the observatory on earth has to be considered.
+	Using the longitude, latitude and altitude of the observatory and the position of earth, the observation location in the coordinate system of the sun can be determined.
+	
+	\item \textbf{Calculation of the observation angles of the hypothetical asteroid:}\\
+	The hypothesis of the asteroid's orbit and the determined location of the observatory in sun's coordinate system allows us to calculate the angles $\alpha$ and $\delta$ at which the asteroid appears on the celestial sphere. In the next step will improve on the hypothesis using a least-squares fit to the observed trajectory.
+	
+	\item \textbf{Fitting of the orbital elements to the observed trajectory on the celestial sphere:}\\
+	We improve on the hypothesis of the asteroid's orbit by using a least-squares fit (via orbital elements of the asteroid) to the observational data. Using this method it is imperative that a good guess of the asteroid's orbit has to be made.	
+\end{enumerate}
+
+
 
 \subsection{Correction of Exposure Time}
 The given UT time $t$ measured the start of the exposure time of length \SI{10}{s}.

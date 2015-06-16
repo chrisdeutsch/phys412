@@ -98,7 +98,7 @@
 }
 
 % DOKUMENTINFORMATIONEN
-\title{Warsaw\\Orbit Determination of 2004 BL86}
+\title{Pi in the Sky\\Orbit Determination of 2004 BL86}
 
 \author{Christopher Deutsch\footnote{christopher.deutsch@uni-bonn.de} \and Christian Bespin\footnote{christian.bespin@uni-bonn.de}}
 
@@ -113,7 +113,7 @@
 % DURCHFÜHRUNGSDATUM UND TUTOR
 \begin{center}
 \begin{tabular}{l r}
-Execution: & May 25, 2015 \\
+Execution: & May 25/26, 2015 \\
 Group: & $\alpha$ 6 \\
 Tutor: & Rui Zhang
 \end{tabular}
@@ -135,14 +135,8 @@ This report shall be concerned with determining the orbital parameters of the as
 % INHALT VERSUCHSPROTOKOLL
 
 \section{Introduction}
-In the night of January 26/27, 2015 a near-earth approach of the asteroid 2004 BL86 took place and was observed with the telescope \emph{Pi in the Sky} in Chile, San Pedro de Atacama.\\
-Observatory location:
-\begin{itemize}
-	\item longitudude: \SI{-68.18000000}{\degree}
-	\item latitude: \SI{-22.95332778}{\degree}
-	\item altitude: \SI{2430}{\meter}
-\end{itemize}
-The asteroid was visible on more than a thousand photos which where shot with an exposure time of \SI{10}{s}, which where shot from 3:10 to 6:30 UT.
+In the night of January 26/27, 2015 a near-earth approach of the asteroid 2004 BL86 took place and was observed with the telescope \emph{Pi in the Sky} in Chile, San Pedro de Atacama.
+The asteroid was visible on more than a thousand photos, which where shot from 3:10 to 6:30 UT.
 After some preprocessing of the collected images the position of the asteroid could be determined using stationary reference stars.
 
 \section{Theory}
@@ -173,8 +167,8 @@ In the case of astronomy, an object (e.g.\ planets, asteroids) is bound by the g
 	\includegraphics[width=0.7\textwidth]{./figures/equatorial_cs.png}
 	\caption{Credit: \url{https://commons.wikimedia.org/wiki/File:Ra_and_dec_on_celestial_sphere.png}}
 \end{figure}
-The equatorial coordinate system is an astronomical coordinate system using earth's equator as its reference plane (as opposed to the ecliptic coordinate system using the ecliptic for reference).
-The position of an object on the celestial sphere is then defined with two angles $\alpha$ (right ascension) and $\delta$ (declination).
+The equatorial coordinate system is an astronomical coordinate system using earth's equator as its reference plane as opposed to the ecliptic coordinate system using the ecliptic for reference.
+The position of an object on the celestial sphere is then defined with two angles $\alpha$ and $\delta$.
 The declination~$\delta$ measures the height of the object from the celestial equator (projection of earth's equator on the celestial sphere), where the north celestial pole has declination $+\SI{90}{\degree}$.
 The right ascension $\alpha$ is the angular distance of the object's projection on the equator plane to the vernal equinox, which is the intersection of ecliptic and equatorial plane.
 It is because of this reference point, that the equatorial coordinate system is independent of earth's rotation.
@@ -202,13 +196,32 @@ They correspond to three spacial dimensions and the respective velocities which 
 
 \section{Analysis}
 
-Correction of exposure time\\
-Transforming of Coordinates:
+\subsection{Description}
+We were given the measurement data of the approach.
+Each data point containing UT time $t$ of the beginning of exposure, declination $\delta$ and right ascension $\alpha$ of the asteroid as measured at the observatory location in Chile: 
+\begin{itemize}
+	\item longitude: \SI{-68.18000000}{\degree}
+	\item latitude: \SI{-22.95332778}{\degree}
+	\item altitude: \SI{2430}{\meter}
+\end{itemize}
+
+\subsection{Idea?}
+
+\subsection{Correction of Exposure Time}
+The given UT time $t$ measured the start of the exposure time of length \SI{10}{s}.
+To determine the effective time $t^*$ of measurement, half the exposure time has to be added:
+\begin{align}
+	t^* = t + \SI{5}{s}
+\end{align}
+
+\subsection{Transforming of Coordinates}
 \begin{itemize}
 	\item Determining earths position at time of observation $\nu$ true anomaly! using keplarian elements (wiki)
 	
 	\item Determining the position of the observatory on earths surface
 \end{itemize}
+
+\subsection{?}
 Hypothesis of asteroid parameters for fit\\
 Propagation of the Orbit with regards to time\\
 Determining observation angles (on earth) from asteroid position\\

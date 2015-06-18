@@ -246,10 +246,23 @@ True anomaly itself can not be easily computed so we did a linear approximation 
 Second, the observatory's position on earth is taken into account.
 Based on the given location, altitude and in the used reference frame it can be easily computed in spherical coordinates.
 After transforming both earth's position (to be precise the position of the center of the earth) from Keplerian elements and the obersavtory's position from spherical to spacial coordinates and velocity the time-dependent state vector of the observer can be calculated.
+This is done with the Python module \emph{poliastro}.
 
 \subsection{?}
 Hypothesis of asteroid parameters for fit\\
-Propagation of the Orbit with regards to time\\
+In order to propagate  a given state vector along an orbit it is necessary to solve Kepler's equation
+\begin{align}
+	M = E - e\, \sin E
+\end{align}
+(M: mean anomaly, E: eccentric anomaly, e: eccentricity).
+While eccentricity is a orbit parameter, $M$ is often chosen as an orbital element and is, as eccentric anomaly, connected with true anomaly while all of them can be used to determine a body's position on an orbit.
+There are multiple ways of numerically solving Kepler's equation in order to find the true anomaly where findig the eccentric anomaly as root of the equation is one of these alongside a way using Banach fixed-point theorem.
+True anomaly can then be calculated with
+\begin{align}
+\cos\nu = \frac{\cos E - e}{1 - e \cos E}
+\end{align}
+Again the \emph{poliastro} package is used for this task as it offers a convenient function to propagate the body's position for a given time $t$ based on the current state vector.
+
 Determining observation angles (on earth) from asteroid position\\
 Minimizing $\chi^2$
 

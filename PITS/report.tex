@@ -264,9 +264,30 @@ True anomaly can then be calculated with
 Again the \emph{poliastro} package is used for this task as it offers a convenient function to propagate the body's position for a given time $t$ based on the current state vector.
 
 Determining observation angles (on earth) from asteroid position\\
-Minimizing $\chi^2$
 
+\subsection{Fitting of the orbital elements}
+The fitting of a hypothesis $f(x, \vec{\lambda})$ with regard to the parameters $\vec{\lambda}$ to a set of data points $(x_i, f_i)$ is based on minimization of $\chi^2$:
+\begin{align}
+	\chi^2(\vec{\lambda}) = \sum_{i = 1}^{n} r_i^2 = \sum_{i = 1}^{n} \left( f_i - f(x_i, \vec{\lambda}) \right)^2
+\end{align}
+where $r_i$ is called a residual.
+In our case the data points for right ascension $\alpha_i$ and declination $\delta_i$ are given with respect to time $t_i$.
+Moreover the parameters that are to be optimized are given by the orbital elements of our hypothesis in section \ref{}:
+\begin{align}
+	\vec{\lambda} = (a, e, i, \Omega, \omega, \nu)
+\end{align}
+The propagation of the hypothetical orbit provides the necessary observational angles $\alpha(t, \vec{\lambda})$, $\delta(t, \vec{\lambda})$ which allow us to form residuals for least-squares optimization:
+\begin{align}
+	(r_\alpha)_i &= \alpha_i - \alpha(t_i, \vec{\lambda}) \\
+	(r_\delta)_i &= \delta_i - \delta(t_i, \vec{\lambda})
+\end{align}
+The sum of squared residuals $\chi_\alpha^2$ and $\chi_\delta^2$ can then minimized independently.
+For the task of minimizing the $\chi^2$ the Broyden–Fletcher–Goldfarb–Shanno algorithm (short BFGS) is used.
 
+The minimization results in a set of parameters $\vec{\lambda} = (a, e, i, \Omega, \omega, \nu)$ for which the deviation of the observed angles $\alpha_i$, $\delta_i$ from the hypothetical asteroid's observation angles is minimized.
+These parameters should coincide with the real orbital elements of the asteroid.
+
+"Geht nicht" hier hin!
 
 
 \section{Conclusion}

@@ -240,20 +240,54 @@ To determine the effective time $t^*$ of measurement, half the exposure time has
 
 \subsection{Transforming of Coordinates}
 As a first approach, earth's position in the equatorial coordinate frame at observation time is reconstructed.
-Since all Keplerian elements but true anomaly are not dependent on time they can be looked up, see for example \url{http://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html}.
-True anomaly itself can not be easily computed so we did a linear approximation based on the data \url{http://www.wolframalpha.com} gives for the time period of observation which is short compared to earth's revolution time so that a linear approximation for $\nu(t)$ should be sufficient for our needs.
+Since all Keplerian elements but true anomaly are not dependent on time they can be looked up, see for example in \emph{Earth Fact Sheet}\footnote{http://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html}.
+True anomaly itself can not be easily computed so we did a linear approximation based on the data \emph{Wolfram Alpha}\footnote{e.g. http://www.wolframalpha.com/input/?i=true+anomaly+earth+01-26-2015} gives for the time period of observation which is short compared to earth's revolution time so that a linear approximation for $\nu(t)$ should be sufficient for our needs.
 
 Second, the observatory's position on earth is taken into account.
 Based on the given location, altitude and in the used reference frame it can be easily computed in spherical coordinates.
-After transforming both earth's position (to be precise the position of the center of the earth) from Keplerian elements and the observatory's position from spherical to spacial coordinates and velocity the time-dependent state vector of the observer can be calculated.
+After transforming both earth's position (to be precise the position of the center of the earth) from Keplerian elements and the obersavtory's position from spherical to spacial coordinates and velocity the time-dependent state vector of the observer can be calculated.
+This is done with the Python module \emph{poliastro}.
 
 \subsection{?}
 Hypothesis of asteroid parameters for fit\\
-Propagation of the Orbit with regards to time\\
+In order to propagate  a given state vector along an orbit it is necessary to solve Kepler's equation
+\begin{align}
+	M = E - e\, \sin E
+\end{align}
+(M: mean anomaly, E: eccentric anomaly, e: eccentricity).
+While eccentricity is a orbit parameter, $M$ is often chosen as an orbital element and is, as eccentric anomaly, connected with true anomaly while all of them can be used to determine a body's position on an orbit.
+There are multiple ways of numerically solving Kepler's equation in order to find the true anomaly where findig the eccentric anomaly as root of the equation is one of these alongside a way using Banach fixed-point theorem.
+True anomaly can then be calculated with
+\begin{align}
+\cos\nu = \frac{\cos E - e}{1 - e \cos E}
+\end{align}
+Again the \emph{poliastro} package is used for this task as it offers a convenient function to propagate the body's position for a given time $t$ based on the current state vector.
+
 Determining observation angles (on earth) from asteroid position\\
-Minimizing $\chi^2$
 
+\subsection{Fitting of the orbital elements}
+The fitting of a hypothesis $f(x, \vec{\lambda})$ with regard to the parameters $\vec{\lambda}$ to a set of data points $(x_i, f_i)$ is based on minimization of $\chi^2$:
+\begin{align}
+	\chi^2(\vec{\lambda}) = \sum_{i = 1}^{n} r_i^2 = \sum_{i = 1}^{n} \left( f_i - f(x_i, \vec{\lambda}) \right)^2
+\end{align}
+where $r_i$ is called a residual.
+In our case the data points for right ascension $\alpha_i$ and declination $\delta_i$ are given with respect to time $t_i$.
+Moreover the parameters that are to be optimized are given by the orbital elements of our hypothesis in section \ref{}:
+\begin{align}
+	\vec{\lambda} = (a, e, i, \Omega, \omega, \nu)
+\end{align}
+The propagation of the hypothetical orbit provides the necessary observational angles $\alpha(t, \vec{\lambda})$, $\delta(t, \vec{\lambda})$ which allow us to form residuals for least-squares optimization:
+\begin{align}
+	(r_\alpha)_i &= \alpha_i - \alpha(t_i, \vec{\lambda}) \\
+	(r_\delta)_i &= \delta_i - \delta(t_i, \vec{\lambda})
+\end{align}
+The sum of squared residuals $\chi_\alpha^2$ and $\chi_\delta^2$ can then minimized independently.
+For the task of minimizing the $\chi^2$ the Broyden–Fletcher–Goldfarb–Shanno algorithm (short BFGS) is used.
 
+The minimization results in a set of parameters $\vec{\lambda} = (a, e, i, \Omega, \omega, \nu)$ for which the deviation of the observed angles $\alpha_i$, $\delta_i$ from the hypothetical asteroid's observation angles is minimized.
+These parameters should coincide with the real orbital elements of the asteroid.
+
+"Geht nicht" hier hin!
 
 
 \section{Conclusion}

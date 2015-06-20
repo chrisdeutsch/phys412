@@ -250,6 +250,7 @@ After transforming both earth's position (to be precise the position of the cent
 This is done with the Python module \texttt{poliastro}.
 
 \subsection{Hypothesis of the Asteroid's Orbit}
+\label{sec:hypothesis}
 A guess for the asteroid's orbit in terms of its orbital elements $(a, e, i, \Omega, \omega, \nu)$ is made, which will be refined in the following steps.
 From section \ref{sec:cstransform} the position of the observer~$\vec{r}_\mathrm{obs.}$ is known in cartesian coordinates with the origin at the sun.
 Moreover the Python module \texttt{poliastro} is used to determine the position of the asteroid with the guessed orbital elements $\vec{r}_\mathrm{ast.}$
@@ -283,7 +284,7 @@ The fitting of a hypothesis $f(x, \vec{\lambda})$ with regard to the parameters 
 \end{align}
 where $r_i$ is called a residual.
 In our case the data points for right ascension $\alpha_i$ and declination $\delta_i$ are given with respect to time $t_i$.
-Moreover the parameters that are to be optimized are given by the orbital elements of our hypothesis in section \ref{}:
+Moreover the parameters that are to be optimized are given by the orbital elements of our hypothesis in section \ref{sec:hypothesis}:
 \begin{align}
 	\vec{\lambda} = (a, e, i, \Omega, \omega, \nu)
 \end{align}
@@ -298,10 +299,20 @@ For the task of minimizing the $\chi^2$ the Broyden–Fletcher–Goldfarb–Shan
 The minimization results in a set of parameters $\vec{\lambda} = (a, e, i, \Omega, \omega, \nu)$ for which the deviation of the observed angles $\alpha_i$, $\delta_i$ from the hypothetical asteroid's observation angles is minimized.
 These parameters should coincide with the real orbital elements of the asteroid.
 
-For unknown reasons the minimization function from Python's \texttt{scipy.optimize} returned the initial guess after a long computation time.
-As a possible cause for this behaviour, ...BLA 
-
 \section{Conclusion}
+
+
+
+
+Literature \cite{JPL}:
+\begin{align*}
+	a &= \SI{1.502202119 +- 0.000000008}{AU} \\
+	e &= \num{0.40307310 +-0.00000003} \\
+	i &= \SI{23.743609 +- 0.000002}{\degree} \\
+	\Omega &= \SI{126.7203838 +- 0.0000003}{\degree} \\
+	\omega &= \SI{311.254974 +- 0.000010}{\degree} \\
+\end{align*}
+(the true anomaly $\nu$ is not required to fully describe the orbit)
 
 
 \FloatBarrier
@@ -310,12 +321,11 @@ As a possible cause for this behaviour, ...BLA
 % Maximale Anzahl der Einträge in Klammer
 % Zitieren mit \cite{lamport94}
 \begin{thebibliography}{19}
-
-\bibitem{krane}
-	Kenneth S. Krane,
-	\emph{Introductory Nuclear Physics},
-	John Wiley \& Sons 1988
-
+	
+\bibitem{JPL}
+	Jet Propulsion Laboratory,
+	\emph{Small-Body Database Browser},\\
+	\url{http://ssd.jpl.nasa.gov/sbdb.cgi?sstr=2004%20BL86;old=0;orb=0;cov=0;log=0;cad=0#orb} (Last access: 20. June 2015)
 \end{thebibliography}
 
 % APPENDIX

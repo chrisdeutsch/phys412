@@ -249,15 +249,6 @@ Based on the given location, altitude and in the used reference frame it can be 
 After transforming both earth's position (to be precise the position of the center of the earth) from Keplerian elements and the obersavtory's position from spherical to spacial coordinates and velocity the time-dependent state vector of the observer can be calculated.
 This is done with the Python module \texttt{poliastro}.
 
-In a second step a function that calculates observable right ascension and declination from a state vector is implemented. 
-To do so, it needs earth's position (as state vector) at a given time and the orbiting body's state vector at the same time and in the same reference frame.
-The difference between those state vectors is then corrected by earth's ecliptic of \SI{23.4}{\degree} where a rotation matrix is used.
-Afterwards, right ascension and declination can be calculated as tranformation to spherical coordinates:
-\begin{align}
-	\alpha &= \arctan\left(\frac{y}{x}\right) \\
-	\delta &= \arctan\left(\frac{z}{\sqrt{x^2 + y^2}}\right)
-\end{align}
-
 \subsection{Hypothesis of the Asteroid's Orbit}
 \label{sec:hypothesis}
 A guess for the asteroid's orbit in terms of its orbital elements $(a, e, i, \Omega, \omega, \nu)$ is made, which will be refined in the following steps.
@@ -270,6 +261,15 @@ The observation vector $\vec{r}$ (the vector pointing from the observer to the a
 This vector allows us to calculate the right ascension $\alpha$ and declination $\delta$ in the equatorial coordinate system under which the asteroid with the orbital elements $(a, e, i, \Omega, \omega, \nu)$ is observed.
 
 \subsection{Observation Angles of the hypothetical Asteroid}
+
+In a second step a function that calculates observable right ascension and declination from a state vector is implemented. 
+To do so, it needs earth's position (as state vector) at a given time and the orbiting body's state vector at the same time and in the same reference frame.
+The difference between those state vectors is then corrected by earth's ecliptic of \SI{23.4}{\degree} where a rotation matrix is used.
+Afterwards, right ascension and declination can be calculated as tranformation to spherical coordinates:
+\begin{align}
+\alpha &= \arctan\left(\frac{y}{x}\right) \\
+\delta &= \arctan\left(\frac{z}{\sqrt{x^2 + y^2}}\right)
+\end{align}
 
 \subsection{Propagation of the Asteroid's Orbit}
 In order to propagate  a given state vector along an orbit it is necessary to solve Kepler's equation

@@ -239,6 +239,7 @@ To determine the effective time $t^*$ of measurement, half the exposure time has
 \end{align}
 
 \subsection{Transforming of Coordinates}
+\label{sec:cstransform}
 As a first approach, earth's position in the equatorial coordinate frame at observation time is reconstructed.
 Since all Keplerian elements but true anomaly are not dependent on time they can be looked up, see for example in \emph{Earth Fact Sheet}\footnote{\url{http://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html}}.
 True anomaly itself can not be easily computed so we did a linear approximation based on the data \emph{Wolfram Alpha}\footnote{e.g. \url{http://www.wolframalpha.com/input/?i=true+anomaly+earth+01-26-2015}} gives for the time period of observation which is short compared to earth's revolution time so that a linear approximation for $\nu(t)$ should be sufficient for our needs.
@@ -246,10 +247,17 @@ True anomaly itself can not be easily computed so we did a linear approximation 
 Second, the observatory's position on earth is taken into account.
 Based on the given location, altitude and in the used reference frame it can be easily computed in spherical coordinates.
 After transforming both earth's position (to be precise the position of the center of the earth) from Keplerian elements and the obersavtory's position from spherical to spacial coordinates and velocity the time-dependent state vector of the observer can be calculated.
-This is done with the Python module \emph{poliastro}.
+This is done with the Python module \texttt{poliastro}.
 
-\subsection{Hypothesis of the Asteroids Orbit}
-
+\subsection{Hypothesis of the Asteroid's Orbit}
+A guess for the asteroid's orbit in terms of its orbital elements $(a, e, i, \Omega, \omega, \nu)$ is made, which will be refined in the following steps.
+From section \ref{sec:cstransform} the position of the observer~$\vec{r}_\mathrm{obs.}$ is known in cartesian coordinates with the origin at the sun.
+Moreover the Python module \texttt{poliastro} is used to determine the position of the asteroid with the guessed orbital elements $\vec{r}_\mathrm{ast.}$
+The observation vector $\vec{r}$ (the vector pointing from the observer to the asteroid) is given by:
+\begin{align}
+	\vec{r} = \vec{r}_\mathrm{ast.} - \vec{r}_\mathrm{obs.}
+\end{align}
+This vector allows us to calculate the right ascension $\alpha$ and declination $\delta$ in the equatorial coordinate system under which the asteroid with the orbital elements $(a, e, i, \Omega, \omega, \nu)$ is observed.
 
 \subsection{Observation Angles of the hypothetical Asteroid}
 
@@ -265,10 +273,8 @@ True anomaly can then be calculated with
 \begin{align}
 \cos\nu = \frac{\cos E - e}{1 - e \cos E}
 \end{align}
-Again, the \emph{poliastro} package is used for this task as it offers a convenient function to propagate the body's position for a given time $t$ based on the current state vector.
+Again, the \texttt{poliastro} package is used for this task as it offers a convenient function to propagate the body's position for a given time $t$ based on the current state vector.
 Since the calculations are performed numerically we chose small time intervals for propagation to get more precise results
-\\
-Determining observation angles (on earth) from asteroid position\\
 
 \subsection{Fitting of the orbital elements}
 The fitting of a hypothesis $f(x, \vec{\lambda})$ with regard to the parameters $\vec{\lambda}$ to a set of data points $(x_i, f_i)$ is based on minimization of $\chi^2$:

@@ -312,11 +312,8 @@ These parameters should coincide with the real orbital elements of the asteroid.
 Sadly the method we developed to determine the orbit of the asteroid was not successful.
 The minimization of $\chi^2$ took a lot of computation time and nevertheless the minimized orbital elements did not differ from the initial guess.
 As a result of this, we assume that the algorithm we developed was not stable enough, to allow orbit determination.
-
-
-
-
-Literature \cite{JPL}:
+The method is highly dependent on the initial guess, which cannot be made without a preliminary orbit determination.
+We also tried to use initial values near the values given in literature \cite{JPL}:
 \begin{align*}
 	a &= \SI{1.502202119 +- 0.000000008}{AU} \\
 	e &= \num{0.40307310 +-0.00000003} \\
@@ -324,7 +321,11 @@ Literature \cite{JPL}:
 	\Omega &= \SI{126.7203838 +- 0.0000003}{\degree} \\
 	\omega &= \SI{311.254974 +- 0.000010}{\degree} \\
 \end{align*}
-(the true anomaly $\nu$ is not required to fully describe the orbit)
+but also without success.
+
+The reasons for this could be, that a mistake in the implementation of the algorithm was made.
+But since we thoroughly tested our implementation we assume, that the problem lies within the algorithm itself, which is unsuitable for orbit determination.
+It would be better to use an established algorithm like Gauss' or Laplace's Method of Orbit Determination, which could not be implemented in this analysis due to time constraints.
 
 
 \FloatBarrier

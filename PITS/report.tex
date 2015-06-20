@@ -123,7 +123,7 @@ Tutor: & Rui Zhang
 % ZUSAMMENFASSUNG
 \begin{abstract}
 \noindent 
-This report shall be concerned with determining the orbital parameters of the asteroid 2004 B86 from terestial observation with the Pi in the Sky telescope in Chile.
+This report shall be concerned with determining the orbital parameters of the asteroid 2004 B86 from terrestrial observation with the Pi in the Sky telescope in Chile.
 \end{abstract}
 
 \end{titlepage}
@@ -184,7 +184,7 @@ It is because of this reference point, that the equatorial coordinate system is 
 The position of a body on an ellipse can be described with the so called orbital elements which are a set of parameters to identify a specific orbit.
 For astronomical purposes those parameters are chosen as the so called Keplerian elements given as:
 \begin{itemize}
-	\item $a$: length of the semimajor axis of the ellipse	
+	\item $a$: length of the semi-major axis of the ellipse	
 	\item $e$: eccentricity of the ellipse	
 	\item $i$: inclination	
 	\item $\Omega$: right ascension of the ascending node	
@@ -208,7 +208,7 @@ Each data point containing UT time $t$ of the beginning of exposure, declination
 \end{itemize}
 
 \subsection{Idea}
-Due to the lack of time and resources the usual methods of orbit determination were unfeasible.
+Due to the lack of time and resources the usual methods of orbit determination were infeasible.
 Therefore we tried to find a simpler method of orbit determination based on a least-squares fit.
 Our method involved the following steps:
 \begin{enumerate}
@@ -263,10 +263,10 @@ This vector allows us to calculate the right ascension $\alpha$ and declination 
 
 \subsection{Observation Angles of the hypothetical Asteroid}
 
-A function was implemented to calculate the oberserved right ascension and declination from the asteroid's guessed position.
+A function was implemented to calculate the observed right ascension and declination from the asteroid's guessed position.
 The difference $\vec{r} = (x,y,z)$ between the positions from observer and asteroid is then corrected by earth's ecliptic of \SI{23.4}{\degree} where a rotation matrix is used.
 This is done to keep the reference frame right.
-Afterwards, right ascension and declination can be calculated as tranformation to spherical coordinates:
+Afterwards, right ascension and declination can be calculated as transformation to spherical coordinates:
 \begin{align}
 \alpha &= \atanzwei\left(\frac{y}{x}\right) \\
 \delta &= \atanzwei\left(\frac{z}{\sqrt{x^2 + y^2}}\right)
@@ -279,7 +279,7 @@ In order to propagate  a given state vector along an orbit it is necessary to so
 \end{align}
 (M: mean anomaly, E: eccentric anomaly, e: eccentricity).
 While eccentricity is an orbit parameter, $M$ is often chosen as an orbital element and is, as eccentric anomaly, connected with true anomaly while all of them can be used to determine a body's position on an orbit.
-There are multiple ways of numerically solving Kepler's equation in order to find the true anomaly where findig the eccentric anomaly as root of the equation is one of these alongside a way using Banach fixed-point theorem.
+There are multiple ways of numerically solving Kepler's equation in order to find the true anomaly where finding the eccentric anomaly as root of the equation is one of these alongside a way using Banach fixed-point theorem.
 True anomaly can then be calculated with
 \begin{align}
 \cos\nu = \frac{\cos E - e}{1 - e \cos E}
